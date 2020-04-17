@@ -26,5 +26,14 @@ namespace RPG_Maker_VX_Ace_Import.Messages
         public DialogBoxStyle style;
         public DialogBoxPosition position;
         public Color backgroundColor;
+
+        public DisplayDialogMessageModel(string locutor, string message, DialogBoxStyle style, DialogBoxPosition position, Color backgroundColor)
+        {
+            this.locutor = locutor;
+            this.message = message;
+            this.style = style;
+            this.position = position;
+            this.backgroundColor = backgroundColor;
+        }
     }
 }

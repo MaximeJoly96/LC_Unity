@@ -5,17 +5,16 @@ namespace RPG_Maker_VX_Ace_Import.Messages
 {
     public class DialogBuilder : MonoBehaviour
     {
-        private static Vector2 LOCUTOR_BOX_STANDARD_SIZE { get { return new Vector2(300.0f, 60.0f); } }
-        private static Vector2 BOX_STANDARD_SIZE { get { return new Vector2(960.0f, 200.0f); } }
-        private static float SCREEN_MIDDLE_X { get { return Screen.width / 2.0f; } }
-        private static float LOCUTOR_BOX_Y_OFFSET { get { return BOX_STANDARD_SIZE.y / 2.0f + LOCUTOR_BOX_STANDARD_SIZE.y / 2.0f; } }
-
-        private const float LOCUTOR_MARGIN_Y = 10.0f;
-        private const float LOCUTOR_MARGIN_X = 15.0f;
-        private const float MARGIN = 20.0f;
-        private const int FONT_SIZE = 32;
-        private const float PIXELS_PER_UNIT_MULTIPLIER = 0.75f;
-
+        public static Vector2 LOCUTOR_BOX_STANDARD_SIZE { get { return new Vector2(300.0f, 60.0f); } }
+        public static Vector2 BOX_STANDARD_SIZE { get { return new Vector2(960.0f, 200.0f); } }
+        public static float SCREEN_MIDDLE_X { get { return Screen.width / 2.0f; } }
+        public static float LOCUTOR_BOX_Y_OFFSET { get { return BOX_STANDARD_SIZE.y / 2.0f + LOCUTOR_BOX_STANDARD_SIZE.y / 2.0f; } }
+        public static float PIXELS_PER_UNIT_MULTIPLIER { get { return 0.75f; } }
+        public static float MARGIN { get { return 20.0f; } }
+        public static int FONT_SIZE { get { return 32; } }
+        public static float LOCUTOR_MARGIN_Y { get { return 10.0f; } }
+        public static float LOCUTOR_MARGIN_X { get { return 15.0f; } }
+        
         [SerializeField]
         private Sprite _windowBorder;
         [SerializeField]
@@ -23,13 +22,10 @@ namespace RPG_Maker_VX_Ace_Import.Messages
         [SerializeField]
         private Font _font;
 
-        private Image _boxBackground;
-        private Text _dialogText;
-
-        private Image _locutorBoxBackground;
-        private Text _locutorText;
-
-        private Image _locutorFace;
+        public Image BoxBackground { get; protected set; }
+        public Image LocutorBoxBackground { get; protected set; }
+        public Text DialogText { get; protected set; }
+        public Text LocutorText { get; protected set; }
 
         public void BuildDialog(DisplayDialogMessageModel model)
         {
@@ -38,38 +34,48 @@ namespace RPG_Maker_VX_Ace_Import.Messages
             CreateLocutor(model);
         }
 
-        private void CreateBaseDialog(DisplayDialogMessageModel model)
+        public void CreateBaseDialog(DisplayDialogMessageModel model, Canvas canvas)
         {
             GameObject child = new GameObject("Dialog box");
-            child.transform.parent = _canvas.transform;
+            child.transform.parent = canvas.transform;
 
-            _boxBackground = child.AddComponent<Image>();
+            BoxBackground = child.AddComponent<Image>();
 
-            if(model.style == DialogBoxStyle.Classic)
+            if (model.style == DialogBoxStyle.Classic)
             {
-                _boxBackground.sprite = _windowBorder;
-                _boxBackground.type = Image.Type.Sliced;
-                _boxBackground.pixelsPerUnitMultiplier = PIXELS_PER_UNIT_MULTIPLIER;
+                BoxBackground.sprite = _windowBorder;
+                BoxBackground.type = Image.Type.Sliced;
+                BoxBackground.pixelsPerUnitMultiplier = PIXELS_PER_UNIT_MULTIPLIER;
             }
             else
-                _boxBackground.color = new Color(_boxBackground.color.r,
-                                                 _boxBackground.color.g,
-                                                 _boxBackground.color.b,
-                                                 0.0f);
+                BoxBackground.color = new Color(BoxBackground.color.r,
+                                                BoxBackground.color.g,
+                                                BoxBackground.color.b,
+                                                0.0f);
 
-            _boxBackground.transform.position = GetDialogPosition(model.position);
-            _boxBackground.rectTransform.sizeDelta = BOX_STANDARD_SIZE;
+            BoxBackground.transform.position = GetDialogPosition(model.position);
+            BoxBackground.rectTransform.sizeDelta = BOX_STANDARD_SIZE;
 
+            AddExtraBackgroundToBox(model, child);
+        }
+
+        public void CreateBaseDialog(DisplayDialogMessageModel model)
+        {
+            CreateBaseDialog(model, _canvas);
+        }
+
+        public void AddExtraBackgroundToBox(DisplayDialogMessageModel model, GameObject parent)
+        {
             GameObject extraBgGO = new GameObject("Background");
-            extraBgGO.transform.parent = child.transform;
+            extraBgGO.transform.parent = parent.transform;
 
             Image bg = extraBgGO.AddComponent<Image>();
             bg.color = model.backgroundColor * 0.5f;
-            bg.transform.position = _boxBackground.transform.position;
-            bg.rectTransform.sizeDelta = _boxBackground.rectTransform.sizeDelta;
+            bg.transform.position = parent.transform.position;
+            bg.rectTransform.sizeDelta = parent.GetComponent<Image>().rectTransform.sizeDelta;
         }
 
-        private Vector2 GetDialogPosition(DialogBoxPosition position)
+        public static Vector2 GetDialogPosition(DialogBoxPosition position)
         {
             switch(position)
             {
@@ -83,73 +89,77 @@ namespace RPG_Maker_VX_Ace_Import.Messages
             }
         }
 
-        private void CreateText(DisplayDialogMessageModel model)
+        public void CreateText(DisplayDialogMessageModel model)
         {
             GameObject textGO = new GameObject("Dialog Text");
-            textGO.transform.parent = _boxBackground.transform;
+            textGO.transform.parent = BoxBackground.transform;
 
-            _dialogText = textGO.AddComponent<Text>();
-            _dialogText.text = model.message;
+            DialogText = textGO.AddComponent<Text>();
+            DialogText.text = model.message;
 
-            _dialogText.transform.localPosition = new Vector3(MARGIN, -1.0f * MARGIN, 0.0f);
-            _dialogText.rectTransform.sizeDelta = BOX_STANDARD_SIZE;
-            _dialogText.font = _font;
-            _dialogText.fontSize = FONT_SIZE;
-            _dialogText.color = Color.white;
+            DialogText.transform.localPosition = new Vector3(MARGIN, -1.0f * MARGIN, 0.0f);
+            DialogText.rectTransform.sizeDelta = BOX_STANDARD_SIZE;
+
+            if(_font)
+                DialogText.font = _font;
+
+            DialogText.fontSize = FONT_SIZE;
+            DialogText.color = Color.white;
         }
 
-        private void CreateLocutor(DisplayDialogMessageModel model)
+        public void CreateLocutor(DisplayDialogMessageModel model, Canvas canvas)
         {
             if(model.locutor != "")
             {
                 GameObject locutorBoxGO = new GameObject("Locutor box");
-                locutorBoxGO.transform.parent = _canvas.transform;
+                locutorBoxGO.transform.parent = canvas.transform;
 
-                _locutorBoxBackground = locutorBoxGO.AddComponent<Image>();
+                LocutorBoxBackground = locutorBoxGO.AddComponent<Image>();
 
                 if (model.style == DialogBoxStyle.Classic)
                 {
-                    _locutorBoxBackground.sprite = _windowBorder;
-                    _locutorBoxBackground.type = Image.Type.Sliced;
-                    _locutorBoxBackground.pixelsPerUnitMultiplier = PIXELS_PER_UNIT_MULTIPLIER;
+                    LocutorBoxBackground.sprite = _windowBorder;
+                    LocutorBoxBackground.type = Image.Type.Sliced;
+                    LocutorBoxBackground.pixelsPerUnitMultiplier = PIXELS_PER_UNIT_MULTIPLIER;
                 }
                 else
-                    _locutorBoxBackground.color = new Color(_locutorBoxBackground.color.r,
-                                                            _locutorBoxBackground.color.g,
-                                                            _locutorBoxBackground.color.b,
-                                                            0.0f);
+                    LocutorBoxBackground.color = new Color(LocutorBoxBackground.color.r,
+                                                           LocutorBoxBackground.color.g,
+                                                           LocutorBoxBackground.color.b,
+                                                           0.0f);
 
-                _locutorBoxBackground.transform.position = GetLocutorWindowPosition(model.position);
-                _locutorBoxBackground.rectTransform.sizeDelta = LOCUTOR_BOX_STANDARD_SIZE;
+                LocutorBoxBackground.transform.position = GetLocutorWindowPosition(model.position);
+                LocutorBoxBackground.rectTransform.sizeDelta = LOCUTOR_BOX_STANDARD_SIZE;
 
-                GameObject extraBgGO = new GameObject("Locutor Background");
-                extraBgGO.transform.parent = locutorBoxGO.transform;
-
-                Image bg = extraBgGO.AddComponent<Image>();
-                bg.color = model.backgroundColor * 0.5f;
-                bg.transform.position = _locutorBoxBackground.transform.position;
-                bg.rectTransform.sizeDelta = _locutorBoxBackground.rectTransform.sizeDelta;
-
+                AddExtraBackgroundToBox(model, locutorBoxGO);
                 CreateLocutorText(model.locutor);
             }
         }
 
-        private void CreateLocutorText(string text)
+        public void CreateLocutor(DisplayDialogMessageModel model)
         {
-            GameObject locutorTextGO = new GameObject("Locutor text");
-            locutorTextGO.transform.parent = _locutorBoxBackground.transform;
-
-            _locutorText = locutorTextGO.AddComponent<Text>();
-            _locutorText.text = text;
-
-            _locutorText.transform.localPosition = new Vector3(LOCUTOR_MARGIN_X, -1.0f * LOCUTOR_MARGIN_Y, 0.0f);
-            _locutorText.rectTransform.sizeDelta = LOCUTOR_BOX_STANDARD_SIZE;
-            _locutorText.font = _font;
-            _locutorText.fontSize = FONT_SIZE;
-            _locutorText.color = Color.white;
+            CreateLocutor(model, _canvas);
         }
 
-        private Vector2 GetLocutorWindowPosition(DialogBoxPosition position)
+        public void CreateLocutorText(string text)
+        {
+            GameObject locutorTextGO = new GameObject("Locutor text");
+            locutorTextGO.transform.parent = LocutorBoxBackground.transform;
+
+            LocutorText = locutorTextGO.AddComponent<Text>();
+            LocutorText.text = text;
+
+            LocutorText.transform.localPosition = new Vector3(LOCUTOR_MARGIN_X, -1.0f * LOCUTOR_MARGIN_Y, 0.0f);
+            LocutorText.rectTransform.sizeDelta = LOCUTOR_BOX_STANDARD_SIZE;
+
+            if(_font)
+                LocutorText.font = _font;
+
+            LocutorText.fontSize = FONT_SIZE;
+            LocutorText.color = Color.white;
+        }
+
+        public static Vector2 GetLocutorWindowPosition(DialogBoxPosition position)
         {
             switch(position)
             {
