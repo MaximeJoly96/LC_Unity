@@ -9,7 +9,7 @@ namespace Tests
         [Test]
         public void CreateBattlerTest()
         {
-            Battler battler = new Battler();
+            Battler battler = new Battler(3);
 
             Assert.IsNotNull(battler.Stats);
         }
@@ -17,7 +17,7 @@ namespace Tests
         [Test]
         public void AddNewStatTest()
         {
-            Battler battler = new Battler();
+            Battler battler = new Battler(5);
 
             int count = battler.Stats.Count;
 
