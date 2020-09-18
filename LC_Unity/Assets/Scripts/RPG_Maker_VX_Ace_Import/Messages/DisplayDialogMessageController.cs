@@ -9,7 +9,7 @@ namespace RPG_Maker_VX_Ace_Import.Messages
 
         private DialogBuilder _builder;
 
-        private void Awake()
+        public void DisplayDialog()
         {
             _builder = FindObjectOfType<DialogBuilder>();
             _builder.BuildDialog(_message);
