@@ -9,24 +9,23 @@ namespace LC_Unity.Movement
         private const float TILE_SIZE_PIXELS = 32.0f;
         private const float SPEED = 4.0f;
 
-        private Player _player;
-
         private Rigidbody2D _rb;
         private Vector3 _change;
         private Animator _animator;
         private Collider2D _collider;
-
-        [SerializeField]
-        private PlayerMovementAnimationSet[] _playerAnimationSet;
 
         private SpriteRenderer _renderer
         {
             get { return GetComponent<SpriteRenderer>(); }
         }
 
+        public Vector3 Position
+        {
+            get { return transform.position; }
+        }
+
         private void Awake()
         {
-            _player = new Player();
             _rb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _collider = GetComponent<Collider2D>();
