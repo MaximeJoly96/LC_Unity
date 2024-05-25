@@ -5,6 +5,7 @@ using Engine.Message;
 using Engine.GameProgression;
 using Engine.FlowControl;
 using Engine.Party;
+using Engine.Actor;
 
 namespace Engine.Events
 {
@@ -55,6 +56,24 @@ namespace Engine.Events
                         break;
                     case EventType.ChangePartyMember:
                         sequence.Add(XmlPartyParser.ParseChangePartyMember(evt));
+                        break;
+                    case EventType.RecoverAll:
+                        sequence.Add(XmlActorParser.ParseRecoverAll(evt));
+                        break;
+                    case EventType.ChangeExp:
+                        sequence.Add(XmlActorParser.ParseChangeExp(evt));
+                        break;
+                    case EventType.ChangeLevel:
+                        sequence.Add(XmlActorParser.ParseChangeLevel(evt));
+                        break;
+                    case EventType.ChangeSkills:
+                        sequence.Add(XmlActorParser.ParseChangeSkills(evt));
+                        break;
+                    case EventType.ChangeEquipment:
+                        sequence.Add(XmlActorParser.ParseChangeEquipment(evt));
+                        break;
+                    case EventType.ChangeName:
+                        sequence.Add(XmlActorParser.ParseChangeName(evt));
                         break;
                 }
             }

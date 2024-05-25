@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<ChangeGold Value="500" />
-	<ChangeItems Id="1" Quantity="1" />
-	<ChangePartyMember Id="1" Action="Add" Initialize="true" />
-	<ChangePartyMember Id="1" Action="Remove" />
+	<RecoverAll />
+	
+	<ChangeExp Target="All" Amount="500" />
+	<ChangeExp Target="1" Amount="500" />
+	
+	<ChangeLevel Target="All" Amount="1" />
+	<ChangeLevel Target="1" Amount="1" />
+	
+	<ChangeSkills Target="All" SkillId="1" Action="Learn" />
+	<ChangeSkills Target="1" SkillId="1" Action="Forget" />
+	
+	<ChangeEquipment CharacterId="1" ItemId="1" />
+	
+	<ChangeName CharacterId="1" Value="New" />
 </EventsSequence>

@@ -18,6 +18,14 @@
         // Party
         ChangeGold,
         ChangeItems,
-        ChangePartyMember
+        ChangePartyMember,
+
+        // Actor
+        ChangeEquipment,
+        ChangeExp,
+        ChangeLevel,
+        ChangeName,
+        ChangeSkills,
+        RecoverAll
     }
 }
