@@ -1,30 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<TransferObject>
-		<Direction>Retain</Direction>
-		<Fade>White</Fade>
-		<Destination X="3" Y="5" MapId="1" />
-	</TransferObject>
-	<GetOnOffVehicle />
-	<ScrollMap X="300" Y="200" Speed="3" />
-	<SetMoveRoute RepeatAction="true" SkipIfCannotMove="false" WaitForCompletion="true">
-		<MoveRelative X="3" Y="3" />
-		<MoveTowards Target="Player" Distance="3" />
-		<MoveAway Target="Player" Distance="3" />
-		<StepForward />
-		<StepBackward />
-		<JumpRelative X="4" Y="2" />
-		<Wait Duration="50" />
-		<Turn Direction="Left" />
-		<TurnRelative Angle="-90" />
-		<TurnTowards Target="Player" />
-		<TurnAway Target="Player" />
-		<ChangeSpeed Speed="5" />
-		<ChangeFrequency Speed="4" />
-		<WalkingAnimation Status="true" />
-		<DirectionFix Status="true" />
-		<Through Status="true" />
-		<Transparent Status="false" />
-		<ChangeOpacity Alpha="0.5" />
-	</SetMoveRoute>
+	<ShowAnimation Target="target" AnimationId="1" WaitForCompletion="true" />
+	<ShowBalloonIcon Target="target" BalloonIconId="2" WaitForCompletion="false" />
 </EventsSequence>

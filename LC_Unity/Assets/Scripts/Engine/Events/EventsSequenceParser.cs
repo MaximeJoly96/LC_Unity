@@ -7,6 +7,7 @@ using Engine.FlowControl;
 using Engine.Party;
 using Engine.Actor;
 using Engine.Movement;
+using Engine.Character;
 
 namespace Engine.Events
 {
@@ -87,6 +88,12 @@ namespace Engine.Events
                         break;
                     case EventType.TransferObject:
                         sequence.Add(XmlMovementParser.ParseTransferObject(evt));
+                        break;
+                    case EventType.ShowAnimation:
+                        sequence.Add(XmlCharacterParser.ParseShowAnimation(evt));
+                        break;
+                    case EventType.ShowBalloonIcon:
+                        sequence.Add(XmlCharacterParser.ParseShowBalloonIcon(evt));
                         break;
                 }
             }

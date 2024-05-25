@@ -32,6 +32,10 @@
         GetOnOffVehicle,
         ScrollMap,
         SetMoveRoute,
-        TransferObject
+        TransferObject,
+
+        // Character
+        ShowAnimation,
+        ShowBalloonIcon
     }
 }
