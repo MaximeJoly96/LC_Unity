@@ -4,6 +4,7 @@ using System;
 using Engine.Message;
 using Engine.GameProgression;
 using Engine.FlowControl;
+using Engine.Party;
 
 namespace Engine.Events
 {
@@ -45,6 +46,15 @@ namespace Engine.Events
                         break;
                     case EventType.ConditionalBranch:
                         sequence.Add(XmlFlowControlParser.ParseConditionalBranch(evt));
+                        break;
+                    case EventType.ChangeGold:
+                        sequence.Add(XmlPartyParser.ParseChangeGold(evt));
+                        break;
+                    case EventType.ChangeItems:
+                        sequence.Add(XmlPartyParser.ParseChangeItems(evt));
+                        break;
+                    case EventType.ChangePartyMember:
+                        sequence.Add(XmlPartyParser.ParseChangePartyMember(evt));
                         break;
                 }
             }

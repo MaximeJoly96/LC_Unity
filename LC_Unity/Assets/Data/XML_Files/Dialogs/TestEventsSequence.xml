@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<ConditionalBranch Type="SwitchCondition" Condition="true" />
-	<ConditionalBranch Type="SwitchCondition" Condition="false" />
-	
-	<ConditionalBranch Type="VariableCondition" Condition="Equal" />
-	<ConditionalBranch Type="VariableCondition" Condition="GreaterThan" />
-	<ConditionalBranch Type="VariableCondition" Condition="SmallerThan" />
-	<ConditionalBranch Type="VariableCondition" Condition="Different" />
-	<ConditionalBranch Type="VariableCondition" Condition="EqualOrGreaterThan" />
-	<ConditionalBranch Type="VariableCondition" Condition="EqualOrSmallerThan" />
-	
-	<ConditionalBranch Type="TimerCondition" Condition="Greater" />
-	<ConditionalBranch Type="TimerCondition" Condition="Smaller" />
+	<ChangeGold Value="500" />
+	<ChangeItems Id="1" Quantity="1" />
+	<ChangePartyMember Id="1" Action="Add" Initialize="true" />
+	<ChangePartyMember Id="1" Action="Remove" />
 </EventsSequence>
