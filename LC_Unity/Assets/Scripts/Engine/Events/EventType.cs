@@ -36,6 +36,22 @@
 
         // Character
         ShowAnimation,
-        ShowBalloonIcon
+        ShowBalloonIcon,
+
+        // ScreenEffects
+        FadeScreen,
+        FlashScreen,
+        ShakeScreen,
+        TintScreen,
+
+        // Timing
+        Wait,
+
+        // PictureAndWeather
+        MovePicture,
+        RotatePicture,
+        SetWeatherEffects,
+        ShowPicture,
+        TintPicture,
     }
 }

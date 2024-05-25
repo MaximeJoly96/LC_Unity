@@ -8,6 +8,9 @@ using Engine.Party;
 using Engine.Actor;
 using Engine.Movement;
 using Engine.Character;
+using Engine.ScreenEffects;
+using Engine.Timing;
+using Engine.PictureAndWeather;
 
 namespace Engine.Events
 {
@@ -94,6 +97,36 @@ namespace Engine.Events
                         break;
                     case EventType.ShowBalloonIcon:
                         sequence.Add(XmlCharacterParser.ParseShowBalloonIcon(evt));
+                        break;
+                    case EventType.ShakeScreen:
+                        sequence.Add(XmlScreenEffectsParser.ParseShakeScreen(evt));
+                        break;
+                    case EventType.TintScreen:
+                        sequence.Add(XmlScreenEffectsParser.ParseTintScreen(evt));
+                        break;
+                    case EventType.FlashScreen:
+                        sequence.Add(XmlScreenEffectsParser.ParseFlashScreen(evt));
+                        break;
+                    case EventType.FadeScreen:
+                        sequence.Add(XmlScreenEffectsParser.ParseFadeScreen(evt));
+                        break;
+                    case EventType.Wait:
+                        sequence.Add(XmlTimingParser.ParseWait(evt));
+                        break;
+                    case EventType.MovePicture:
+                        sequence.Add(XmlPictureAndWeatherParser.ParseMovePicture(evt));
+                        break;
+                    case EventType.RotatePicture:
+                        sequence.Add(XmlPictureAndWeatherParser.ParseRotatePicture(evt));
+                        break;
+                    case EventType.SetWeatherEffects:
+                        sequence.Add(XmlPictureAndWeatherParser.ParseSetWeatherEffects(evt));
+                        break;
+                    case EventType.ShowPicture:
+                        sequence.Add(XmlPictureAndWeatherParser.ParseShowPicture(evt));
+                        break;
+                    case EventType.TintPicture:
+                        sequence.Add(XmlPictureAndWeatherParser.ParseTintPicture(evt));
                         break;
                 }
             }
