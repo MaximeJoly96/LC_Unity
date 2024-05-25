@@ -5,7 +5,7 @@ namespace Engine.Events
     public class EventsRunner : MonoBehaviour
     {
         [SerializeField]
-        private TextAsset _file;
+        private TextAsset _test;
 
         private void Awake()
         {
@@ -15,7 +15,7 @@ namespace Engine.Events
         public void RunEvents()
         {
             EventsSequenceParser parser = new EventsSequenceParser();
-            var sequence = parser.ParseEventsSequence(_file);
+            var sequence = parser.ParseEventsSequence(_test);
 
             Debug.Log("");
         }

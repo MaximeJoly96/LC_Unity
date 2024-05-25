@@ -2,6 +2,8 @@
 using UnityEngine;
 using System;
 using Engine.Message;
+using Engine.GameProgression;
+using Engine.FlowControl;
 
 namespace Engine.Events
 {
@@ -32,10 +34,24 @@ namespace Engine.Events
                     case EventType.InputNumber:
                         sequence.Add(XmlMessageParser.ParseInputNumberData(evt));
                         break;
+                    case EventType.ControlSwitch:
+                        sequence.Add(XmlGameProgressionParser.ParseControlSwitch(evt));
+                        break;
+                    case EventType.ControlVariable:
+                        sequence.Add(XmlGameProgressionParser.ParseControlVariable(evt));
+                        break;
+                    case EventType.ControlTimer:
+                        sequence.Add(XmlGameProgressionParser.ParseControlTimer(evt));
+                        break;
+                    case EventType.ConditionalBranch:
+                        sequence.Add(XmlFlowControlParser.ParseConditionalBranch(evt));
+                        break;
                 }
             }
 
             return sequence;
         }
+
+
     }
 }

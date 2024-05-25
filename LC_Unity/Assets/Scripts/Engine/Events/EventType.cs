@@ -4,6 +4,10 @@
     {
         DisplayDialog,
         DisplayChoice,
-        InputNumber
+        InputNumber,
+        ControlSwitch,
+        ControlVariable,
+        ControlTimer,
+        ConditionalBranch
     }
 }
