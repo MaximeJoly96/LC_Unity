@@ -6,6 +6,7 @@ using Engine.GameProgression;
 using Engine.FlowControl;
 using Engine.Party;
 using Engine.Actor;
+using Engine.Movement;
 
 namespace Engine.Events
 {
@@ -74,6 +75,18 @@ namespace Engine.Events
                         break;
                     case EventType.ChangeName:
                         sequence.Add(XmlActorParser.ParseChangeName(evt));
+                        break;
+                    case EventType.SetMoveRoute:
+                        sequence.Add(XmlMovementParser.ParseSetMoveRoute(evt));
+                        break;
+                    case EventType.GetOnOffVehicle:
+                        sequence.Add(XmlMovementParser.ParseGetOnOffVehicle(evt));
+                        break;
+                    case EventType.ScrollMap:
+                        sequence.Add(XmlMovementParser.ParseScrollMap(evt));
+                        break;
+                    case EventType.TransferObject:
+                        sequence.Add(XmlMovementParser.ParseTransferObject(evt));
                         break;
                 }
             }

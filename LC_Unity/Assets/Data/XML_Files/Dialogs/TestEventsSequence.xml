@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<RecoverAll />
-	
-	<ChangeExp Target="All" Amount="500" />
-	<ChangeExp Target="1" Amount="500" />
-	
-	<ChangeLevel Target="All" Amount="1" />
-	<ChangeLevel Target="1" Amount="1" />
-	
-	<ChangeSkills Target="All" SkillId="1" Action="Learn" />
-	<ChangeSkills Target="1" SkillId="1" Action="Forget" />
-	
-	<ChangeEquipment CharacterId="1" ItemId="1" />
-	
-	<ChangeName CharacterId="1" Value="New" />
+	<TransferObject>
+		<Direction>Retain</Direction>
+		<Fade>White</Fade>
+		<Destination X="3" Y="5" MapId="1" />
+	</TransferObject>
+	<GetOnOffVehicle />
+	<ScrollMap X="300" Y="200" Speed="3" />
+	<SetMoveRoute RepeatAction="true" SkipIfCannotMove="false" WaitForCompletion="true">
+		<MoveRelative X="3" Y="3" />
+		<MoveTowards Target="Player" Distance="3" />
+		<MoveAway Target="Player" Distance="3" />
+		<StepForward />
+		<StepBackward />
+		<JumpRelative X="4" Y="2" />
+		<Wait Duration="50" />
+		<Turn Direction="Left" />
+		<TurnRelative Angle="-90" />
+		<TurnTowards Target="Player" />
+		<TurnAway Target="Player" />
+		<ChangeSpeed Speed="5" />
+		<ChangeFrequency Speed="4" />
+		<WalkingAnimation Status="true" />
+		<DirectionFix Status="true" />
+		<Through Status="true" />
+		<Transparent Status="false" />
+		<ChangeOpacity Alpha="0.5" />
+	</SetMoveRoute>
 </EventsSequence>

@@ -26,6 +26,12 @@
         ChangeLevel,
         ChangeName,
         ChangeSkills,
-        RecoverAll
+        RecoverAll,
+
+        // Movement
+        GetOnOffVehicle,
+        ScrollMap,
+        SetMoveRoute,
+        TransferObject
     }
 }
