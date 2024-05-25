@@ -18,13 +18,13 @@ namespace Engine.Message
 
     public class DisplayDialog : IRunnable
     {
-        public string Locutor;
-        public string Message;
+        public string Locutor { get; set; }
+        public string Message { get; set; }
 
-        public DialogBoxStyle BoxStyle;
-        public DialogBoxPosition BoxPosition;
-        public Color BackgroundColor;
-        public string FaceGraphics;
+        public DialogBoxStyle BoxStyle { get; set; }
+        public DialogBoxPosition BoxPosition { get; set; }
+        public Color BackgroundColor { get; set; }
+        public string FaceGraphics { get; set; }
 
         public void Run()
         {

@@ -1,16 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
-using Engine.Message;
 
 namespace Engine.Events
 {
     public class EventsRunner : MonoBehaviour
     {
         [SerializeField]
-        private List<IRunnable> _steps;
-
-        [SerializeField]
-        private TextAsset _test;
+        private TextAsset _file;
 
         private void Awake()
         {
@@ -19,8 +14,8 @@ namespace Engine.Events
 
         public void RunEvents()
         {
-            XmlDialogParser parser = new XmlDialogParser();
-            var dialog = parser.ParseDialogData(_test);
+            EventsSequenceParser parser = new EventsSequenceParser();
+            var sequence = parser.ParseEventsSequence(_file);
 
             Debug.Log("");
         }
