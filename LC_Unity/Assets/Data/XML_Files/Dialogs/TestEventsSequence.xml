@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<MovePicture Id="1" X="100" Y="150" Alpha="0.5" Duration="100" WaitForCompletion="false" />
-	<RotatePicture Id="2" Angle="-90" Duration="150" />
-	<SetWeatherEffects Weather="Rain" Power="5" TransitionDuration="60" WaitForCompletion="true" />
-	<ShowPicture Id="3" Show="true" Graphic="something" X="5" Y="3" Alpha="0.5" />
-	<ShowPicture Id="4" Show="false" />
-	<TintPicture Id="5" Duration="60" WaitForCompletion="false">
-		<TargetColor R="255" G="255" B="255" />
-	</TintPicture>
+	<PlayBgm Name="song" Volume="100" Pitch="100" />
+	<FadeOutBgm Name="song" TransitionDuration="10" />
+	<SaveBgm Name="song" />
+	<ReplayBgm Name="song" />
+	<PlayBgs Name="bg" Volume="100" Pitch="100" />
+	<FadeOutBgs Name="bg" TransitionDuration="10" />
+	<PlayMusicalEffect Name="me" Volume="100" Pitch="100" />
+	<PlaySoundEffect Name="se" Volume="100" Pitch="100" />
 </EventsSequence>

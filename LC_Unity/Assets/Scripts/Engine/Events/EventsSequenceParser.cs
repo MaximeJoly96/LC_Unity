@@ -11,6 +11,7 @@ using Engine.Character;
 using Engine.ScreenEffects;
 using Engine.Timing;
 using Engine.PictureAndWeather;
+using Engine.MusicAndSounds;
 
 namespace Engine.Events
 {
@@ -127,6 +128,30 @@ namespace Engine.Events
                         break;
                     case EventType.TintPicture:
                         sequence.Add(XmlPictureAndWeatherParser.ParseTintPicture(evt));
+                        break;
+                    case EventType.PlayBgm:
+                        sequence.Add(XmlMusicAndSoundsParser.ParsePlayBgm(evt));
+                        break;
+                    case EventType.PlayBgs:
+                        sequence.Add(XmlMusicAndSoundsParser.ParsePlayBgs(evt));
+                        break;
+                    case EventType.PlayMusicalEffect:
+                        sequence.Add(XmlMusicAndSoundsParser.ParsePlayMusicalEffect(evt));
+                        break;
+                    case EventType.PlaySoundEffect:
+                        sequence.Add(XmlMusicAndSoundsParser.ParsePlaySoundEffect(evt));
+                        break;
+                    case EventType.FadeOutBgm:
+                        sequence.Add(XmlMusicAndSoundsParser.ParseFadeOutBgm(evt));
+                        break;
+                    case EventType.FadeOutBgs:
+                        sequence.Add(XmlMusicAndSoundsParser.ParseFadeOutBgs(evt));
+                        break;
+                    case EventType.SaveBgm:
+                        sequence.Add(XmlMusicAndSoundsParser.ParseSaveBgm(evt));
+                        break;
+                    case EventType.ReplayBgm:
+                        sequence.Add(XmlMusicAndSoundsParser.ParseReplayBgm(evt));
                         break;
                 }
             }
