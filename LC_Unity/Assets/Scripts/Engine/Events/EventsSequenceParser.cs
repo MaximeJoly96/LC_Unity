@@ -13,6 +13,7 @@ using Engine.Timing;
 using Engine.PictureAndWeather;
 using Engine.MusicAndSounds;
 using Engine.SceneControl;
+using Engine.SystemSettings;
 
 namespace Engine.Events
 {
@@ -174,6 +175,30 @@ namespace Engine.Events
                         break;
                     case EventType.ReturnToTitle:
                         sequence.Add(XmlSceneControlParser.ParseReturnToTitle(evt));
+                        break;
+                    case EventType.ChangeBattleBgm:
+                        sequence.Add(XmlSystemSettingsParser.ParseChangeBattleBgm(evt));
+                        break;
+                    case EventType.ChangeBattleEndMusicalEffect:
+                        sequence.Add(XmlSystemSettingsParser.ParseChangeBattleEndMusicalEffect(evt));
+                        break;
+                    case EventType.ChangeSaveAccess:
+                        sequence.Add(XmlSystemSettingsParser.ParseChangeSaveAccess(evt));
+                        break;
+                    case EventType.ChangeMenuAccess:
+                        sequence.Add(XmlSystemSettingsParser.ParseChangeMenuAccess(evt));
+                        break;
+                    case EventType.ChangeEncounterAccess:
+                        sequence.Add(XmlSystemSettingsParser.ParseChangeEncounterAccess(evt));
+                        break;
+                    case EventType.ChangeFormationAccess:
+                        sequence.Add(XmlSystemSettingsParser.ParseChangeFormationAccess(evt));
+                        break;
+                    case EventType.ChangeWindowColor:
+                        sequence.Add(XmlSystemSettingsParser.ParseChangeWindowColor(evt));
+                        break;
+                    case EventType.ChangeActorGraphic:
+                        sequence.Add(XmlSystemSettingsParser.ParseChangeActorGraphic(evt));
                         break;
                 }
             }

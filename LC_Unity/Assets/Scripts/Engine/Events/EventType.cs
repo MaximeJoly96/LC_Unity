@@ -72,5 +72,15 @@
         OpenSave,
         GameOver,
         ReturnToTitle,
+
+        // SystemSettings
+        ChangeBattleBgm,
+        ChangeBattleEndMusicalEffect,
+        ChangeMenuAccess,
+        ChangeSaveAccess,
+        ChangeEncounterAccess,
+        ChangeFormationAccess,
+        ChangeWindowColor,
+        ChangeActorGraphic,
     }
 }
