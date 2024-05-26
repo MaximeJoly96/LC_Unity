@@ -14,10 +14,6 @@ namespace Engine.Message
             dialog.BoxPosition = (DialogBoxPosition)Enum.Parse(typeof(DialogBoxPosition), data.SelectSingleNode("DialogBoxPosition").InnerText);
             dialog.Locutor = data.SelectSingleNode("Locutor").InnerText;
             dialog.Message = data.SelectSingleNode("Message").InnerText;
-            dialog.BackgroundColor = new Color(float.Parse(data.SelectSingleNode("BackgroundColor").Attributes["r"].InnerText) / 255.0f,
-                                               float.Parse(data.SelectSingleNode("BackgroundColor").Attributes["g"].InnerText) / 255.0f,
-                                               float.Parse(data.SelectSingleNode("BackgroundColor").Attributes["b"].InnerText) / 255.0f,
-                                               float.Parse(data.SelectSingleNode("BackgroundColor").Attributes["a"].InnerText) / 255.0f);
             dialog.FaceGraphics = data.SelectSingleNode("FaceGraphics").InnerText;
 
             return dialog;

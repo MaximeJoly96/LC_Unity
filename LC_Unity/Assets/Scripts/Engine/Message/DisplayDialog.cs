@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Engine.Events;
+using Dialogs;
 
 namespace Engine.Message
 {
@@ -23,12 +24,11 @@ namespace Engine.Message
 
         public DialogBoxStyle BoxStyle { get; set; }
         public DialogBoxPosition BoxPosition { get; set; }
-        public Color BackgroundColor { get; set; }
         public string FaceGraphics { get; set; }
 
         public void Run()
         {
-            
+            Object.FindObjectOfType<DialogBoxController>().CreateDialog(this);
         }
     }
 }

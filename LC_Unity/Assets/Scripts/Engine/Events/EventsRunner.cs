@@ -17,7 +17,7 @@ namespace Engine.Events
             EventsSequenceParser parser = new EventsSequenceParser();
             var sequence = parser.ParseEventsSequence(_test);
 
-            Debug.Log("");
+            sequence.Run();
         }
     }
 }

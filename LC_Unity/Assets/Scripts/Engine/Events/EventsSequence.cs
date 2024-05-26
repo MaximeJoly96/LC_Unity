@@ -13,5 +13,11 @@ namespace Engine.Events
 
             Events.Add(evt);
         }
+
+        public void Run()
+        {
+            for (int i = 0; i < Events.Count; i++)
+                Events[i].Run();
+        }
     }
 }
