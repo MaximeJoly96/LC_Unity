@@ -14,6 +14,7 @@ using Engine.PictureAndWeather;
 using Engine.MusicAndSounds;
 using Engine.SceneControl;
 using Engine.SystemSettings;
+using Engine.Map;
 
 namespace Engine.Events
 {
@@ -199,6 +200,9 @@ namespace Engine.Events
                         break;
                     case EventType.ChangeActorGraphic:
                         sequence.Add(XmlSystemSettingsParser.ParseChangeActorGraphic(evt));
+                        break;
+                    case EventType.ChangeMapNameDisplay:
+                        sequence.Add(XmlMapParser.ParseChangeMapNameDisplay(evt));
                         break;
                 }
             }

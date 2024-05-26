@@ -82,5 +82,10 @@
         ChangeFormationAccess,
         ChangeWindowColor,
         ChangeActorGraphic,
+
+        // Map
+        ChangeMapNameDisplay,
+
+
     }
 }
