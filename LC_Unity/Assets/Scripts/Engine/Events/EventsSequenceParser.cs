@@ -12,6 +12,7 @@ using Engine.ScreenEffects;
 using Engine.Timing;
 using Engine.PictureAndWeather;
 using Engine.MusicAndSounds;
+using Engine.SceneControl;
 
 namespace Engine.Events
 {
@@ -152,6 +153,27 @@ namespace Engine.Events
                         break;
                     case EventType.ReplayBgm:
                         sequence.Add(XmlMusicAndSoundsParser.ParseReplayBgm(evt));
+                        break;
+                    case EventType.BattleProcessing:
+                        sequence.Add(XmlSceneControlParser.ParseBattleProcessing(evt));
+                        break;
+                    case EventType.ShopProcessing:
+                        sequence.Add(XmlSceneControlParser.ParseShopProcessing(evt));
+                        break;
+                    case EventType.NameInputProcessing:
+                        sequence.Add(XmlSceneControlParser.ParseNameInputProcessing(evt));
+                        break;
+                    case EventType.OpenMenu:
+                        sequence.Add(XmlSceneControlParser.ParseOpenMenu(evt));
+                        break;
+                    case EventType.OpenSave:
+                        sequence.Add(XmlSceneControlParser.ParseOpenSave(evt));
+                        break;
+                    case EventType.GameOver:
+                        sequence.Add(XmlSceneControlParser.ParseGameOver(evt));
+                        break;
+                    case EventType.ReturnToTitle:
+                        sequence.Add(XmlSceneControlParser.ParseReturnToTitle(evt));
                         break;
                 }
             }

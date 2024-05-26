@@ -63,5 +63,14 @@
         FadeOutBgs,
         PlayMusicalEffect,
         PlaySoundEffect,
+
+        // SceneControl
+        BattleProcessing,
+        ShopProcessing,
+        NameInputProcessing,
+        OpenMenu,
+        OpenSave,
+        GameOver,
+        ReturnToTitle,
     }
 }
