@@ -134,6 +134,7 @@ namespace Dialogs
 
         public void FinishedClosing()
         {
+            _dialog.Close();
             HasClosed.Invoke();
         }
 
