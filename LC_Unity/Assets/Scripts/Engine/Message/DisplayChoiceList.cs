@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Engine.Events;
+using UnityEngine.Events;
 
 namespace Engine.Message
 {
@@ -12,6 +13,12 @@ namespace Engine.Message
     public class DisplayChoiceList : IRunnable
     {
         public List<Choice> Choices { get; set; }
+        public UnityEvent Finished { get; set; }
+
+        public DisplayChoiceList()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Add(Choice choice)
         {

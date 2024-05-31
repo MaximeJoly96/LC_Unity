@@ -1,4 +1,5 @@
 ﻿using Engine.Events;
+using UnityEngine.Events;
 
 namespace Engine.Party
 {
@@ -9,7 +10,13 @@ namespace Engine.Party
         public int Id { get; set; }
         public ActionType Action { get; set; }
         public bool Initialize { get; set; }
-        
+        public UnityEvent Finished { get; set; }
+
+        public ChangePartyMember()
+        {
+            Finished = new UnityEvent();
+        }
+
         public void Run()
         {
 

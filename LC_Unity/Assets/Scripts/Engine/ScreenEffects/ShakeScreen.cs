@@ -1,4 +1,5 @@
 ﻿using Engine.Events;
+using UnityEngine.Events;
 
 namespace Engine.ScreenEffects
 {
@@ -8,6 +9,12 @@ namespace Engine.ScreenEffects
         public int Speed { get; set; }
         public int Duration { get; set; }
         public bool WaitForCompletion { get; set; }
+        public UnityEvent Finished { get; set; }
+
+        public ShakeScreen()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Run()
         {

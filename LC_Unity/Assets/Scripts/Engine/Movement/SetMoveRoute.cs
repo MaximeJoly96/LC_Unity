@@ -1,6 +1,7 @@
 ﻿using Engine.Events;
 using System.Collections.Generic;
 using Engine.Movement.Moves;
+using UnityEngine.Events;
 
 namespace Engine.Movement
 {
@@ -10,6 +11,12 @@ namespace Engine.Movement
         public bool SkipIfCannotMove { get; set; }
         public bool WaitForCompletion { get; set; }
         public List<Move> Moves { get; private set; }
+        public UnityEvent Finished { get; set; }
+
+        public SetMoveRoute()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Run()
         {

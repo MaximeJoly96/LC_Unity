@@ -1,4 +1,5 @@
 ﻿using Engine.Events;
+using UnityEngine.Events;
 
 namespace Engine.SystemSettings
 {
@@ -7,6 +8,12 @@ namespace Engine.SystemSettings
         public int CharacterId { get; set; }
         public string Charset { get; set; }
         public string Faceset { get; set; }
+        public UnityEvent Finished { get; set; }
+
+        public ChangeActorGraphic()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Run()
         {

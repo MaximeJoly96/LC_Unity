@@ -1,4 +1,5 @@
 ﻿using Engine.Events;
+using UnityEngine.Events;
 
 namespace Engine.PictureAndWeather
 {
@@ -10,6 +11,12 @@ namespace Engine.PictureAndWeather
         public int X { get; set; }
         public int Y { get; set; }
         public float Alpha { get; set; }
+        public UnityEvent Finished { get; set; }
+
+        public ShowPicture()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Run()
         {

@@ -1,5 +1,6 @@
 ﻿using Engine.Events;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 namespace Engine.GameProgression
 {
@@ -11,6 +12,12 @@ namespace Engine.GameProgression
         public Operator Operation { get; set; }
         public OperandType Operand { get; set; }
         public List<int> Values { get; private set; }
+        public UnityEvent Finished { get; set; }
+
+        public ControlVariable()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Run()
         {

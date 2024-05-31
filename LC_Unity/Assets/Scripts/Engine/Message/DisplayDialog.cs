@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Engine.Events;
 using Dialogs;
+using UnityEngine.Events;
 
 namespace Engine.Message
 {
@@ -25,6 +26,12 @@ namespace Engine.Message
         public DialogBoxStyle BoxStyle { get; set; }
         public DialogBoxPosition BoxPosition { get; set; }
         public string FaceGraphics { get; set; }
+        public UnityEvent Finished { get; set; }
+
+        public DisplayDialog()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Run()
         {

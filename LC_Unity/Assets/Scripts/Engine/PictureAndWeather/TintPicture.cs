@@ -1,5 +1,6 @@
 ﻿using Engine.Events;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Engine.PictureAndWeather
 {
@@ -9,6 +10,12 @@ namespace Engine.PictureAndWeather
         public int Duration { get; set; }
         public bool WaitForCompletion { get; set; }
         public Color TargetColor { get; set; }
+        public UnityEvent Finished { get; set; }
+
+        public TintPicture()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Run()
         {

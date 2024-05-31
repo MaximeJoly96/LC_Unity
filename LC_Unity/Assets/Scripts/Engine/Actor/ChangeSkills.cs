@@ -1,4 +1,5 @@
 ﻿using Engine.Events;
+using UnityEngine.Events;
 
 namespace Engine.Actor
 {
@@ -9,6 +10,12 @@ namespace Engine.Actor
         public int TargetCount { get; set; }
         public int SkillId { get; set; }
         public ActionType Action { get; set; }
+        public UnityEvent Finished { get; set; }
+
+        public ChangeSkills()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Run()
         {

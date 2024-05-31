@@ -1,4 +1,5 @@
 ﻿using Engine.Events;
+using UnityEngine.Events;
 
 namespace Engine.SceneControl
 {
@@ -6,6 +7,12 @@ namespace Engine.SceneControl
     {
         public int CharacterId { get; set; }
         public int MaxCharacters { get; set; }
+        public UnityEvent Finished { get; set; }
+
+        public NameInputProcessing()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Run()
         {

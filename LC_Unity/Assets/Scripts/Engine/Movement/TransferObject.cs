@@ -1,4 +1,5 @@
 ﻿using Engine.Events;
+using UnityEngine.Events;
 
 namespace Engine.Movement
 {
@@ -12,7 +13,12 @@ namespace Engine.Movement
         public int Y { get; set; }
         public PossibleDirection Direction { get; set; }
         public FadeType Fade { get; set; }
+        public UnityEvent Finished { get; set; }
 
+        public TransferObject()
+        {
+            Finished = new UnityEvent();
+        }
 
         public void Run()
         {
