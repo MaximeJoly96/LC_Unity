@@ -4,6 +4,7 @@ using TMPro;
 using Engine.Message;
 using System.Collections;
 using System.Text;
+using UnityEngine.Events;
 
 namespace Dialogs
 {
@@ -32,6 +33,7 @@ namespace Dialogs
                 return DIALOG_BOX_HEIGHT + _locutorBox.Height;
             }
         }
+        public UnityEvent HasClosed { get; set; }
 
         public void Feed(DisplayDialog dialog)
         {
@@ -107,12 +109,14 @@ namespace Dialogs
 
         public void Open()
         {
+            HasClosed = new UnityEvent();
             Animator.Play("DialogBoxOpen");
         }
 
         public void Close()
         {
             _locutorBox.Hide();
+            _text.gameObject.SetActive(false);
             Animator.Play("DialogBoxClose");
         }
 
@@ -126,6 +130,11 @@ namespace Dialogs
 
             SetMessage();
             DisplayCursor();
+        }
+
+        public void FinishedClosing()
+        {
+            HasClosed.Invoke();
         }
 
         private void DisplayCursor()

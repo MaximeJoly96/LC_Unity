@@ -1,11 +1,33 @@
-﻿using System.Collections;
+﻿using UnityEngine.Events;
 using UnityEngine;
 
 namespace Inputs
 {
+    public enum InputAction
+    {
+        MoveLeft,
+        MoveRight,
+        MoveUp,
+        MoveDown,
+        Select,
+        Cancel
+    }
+
     public class InputController : MonoBehaviour
     {
-        // Update is called once per frame
+        #region Events
+        public UnityEvent<InputAction> ButtonClicked { get; set; }
+        public UnityEvent<Vector2> LeftClick { get; set; }
+        public UnityEvent<Vector2> RightClick { get; set; }
+        #endregion
+
+        private void Awake()
+        {
+            ButtonClicked = new UnityEvent<InputAction>();
+            LeftClick = new UnityEvent<Vector2>();
+            RightClick = new UnityEvent<Vector2>();
+        }
+
         private void Update()
         {
             HandleAxes();
@@ -17,20 +39,20 @@ namespace Inputs
         {
             if (Input.GetAxis("Horizontal") > 0.0f)
             {
-                Debug.Log("going right");
+                ButtonClicked.Invoke(InputAction.MoveRight);
             }
             else if (Input.GetAxis("Horizontal") < 0.0f)
             {
-                Debug.Log("going left");
+                ButtonClicked.Invoke(InputAction.MoveLeft);
             }
 
             if (Input.GetAxis("Vertical") > 0.0f)
             {
-                Debug.Log("going up");
+                ButtonClicked.Invoke(InputAction.MoveUp);
             }
             else if (Input.GetAxis("Vertical") < 0.0f)
             {
-                Debug.Log("going down");
+                ButtonClicked.Invoke(InputAction.MoveDown);
             }
         }
 
@@ -38,12 +60,12 @@ namespace Inputs
         {
             if(Input.GetButtonDown("Select"))
             {
-                Debug.Log("Pressed select");
+                ButtonClicked.Invoke(InputAction.Select);
             }
 
             if(Input.GetButtonDown("Cancel"))
             {
-                Debug.Log("Pressed cancel");
+                ButtonClicked.Invoke(InputAction.Cancel);
             }
         }
 
@@ -51,12 +73,12 @@ namespace Inputs
         {
             if(Input.GetButton("Fire1"))
             {
-                Debug.Log("Clicked left");
+                LeftClick.Invoke(Input.mousePosition);
             }
 
             if(Input.GetButtonDown("Fire2"))
             {
-                Debug.Log("Clicked right");
+                RightClick.Invoke(Input.mousePosition);
             }
         }
     }
