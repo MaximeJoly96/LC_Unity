@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Engine.Events;
 using UnityEngine.Events;
+using UnityEngine;
+using Dialogs;
 
 namespace Engine.Message
 {
@@ -13,6 +15,7 @@ namespace Engine.Message
     public class DisplayChoiceList : IRunnable
     {
         public List<Choice> Choices { get; set; }
+        public string Message { get; set; }
         public UnityEvent Finished { get; set; }
 
         public DisplayChoiceList()
@@ -30,7 +33,7 @@ namespace Engine.Message
 
         public void Run()
         {
-
+            Object.FindObjectOfType<ChoiceListController>().CreateChoiceList(this);
         }
     }
 }

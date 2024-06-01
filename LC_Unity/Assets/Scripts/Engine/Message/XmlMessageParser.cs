@@ -23,6 +23,7 @@ namespace Engine.Message
         {
             DisplayChoiceList choiceList = new DisplayChoiceList();
 
+            choiceList.Message = data.SelectSingleNode("Message").InnerText;
             XmlNode choices = data.SelectSingleNode("Choices");
 
             foreach(XmlNode child in choices.ChildNodes)

@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<DisplayDialog>
-		<DialogBoxStyle>Classic</DialogBoxStyle>
-		<DialogBoxPosition>Bottom</DialogBoxPosition>
-		<Locutor>Maxah</Locutor>
-		<Message>This is a test message\nBack to next row</Message>
-		<FaceGraphics></FaceGraphics>
-	</DisplayDialog>
-	<DisplayDialog>
-		<DialogBoxStyle>Classic</DialogBoxStyle>
-		<DialogBoxPosition>Bottom</DialogBoxPosition>
-		<Locutor>Maxah</Locutor>
-		<Message>blablabla</Message>
-		<FaceGraphics></FaceGraphics>
-	</DisplayDialog>
+	<DisplayChoiceList>
+		<Message>Pick a card, any card</Message>
+		<Choices>
+			<Choice Id="0">Goldshire Footman</Choice>
+			<Choice Id="1">Deathwing, Mad Aspect</Choice>
+			<Choice Id="2">Scourgelord Garrosh</Choice>
+			<Choice Id="3">Cover Artist</Choice>
+		</Choices>
+	</DisplayChoiceList>
 </EventsSequence>

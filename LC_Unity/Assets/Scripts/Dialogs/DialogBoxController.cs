@@ -4,26 +4,23 @@ using Inputs;
 
 namespace Dialogs
 {
-    public class DialogBoxController : MonoBehaviour
+    public class DialogBoxController : CanvasMessageController
     {
         private DialogBox _currentDialogBox;
-        private InputController _inputController;
 
         [SerializeField]
         private DialogBox _dialogBoxPrefab;
-        [SerializeField]
-        private Canvas _dialogBoxCanvas;
 
-        private void Awake()
+        protected override void Awake()
         {
-            _inputController = FindObjectOfType<InputController>();
+            base.Awake();
             _inputController.ButtonClicked.AddListener(TryToCloseDialog);
             _inputController.LeftClick.AddListener(TryToCloseDialog);
         }
 
         public void CreateDialog(DisplayDialog dialog)
         {
-            _currentDialogBox = Instantiate(_dialogBoxPrefab, _dialogBoxCanvas.transform);
+            _currentDialogBox = Instantiate(_dialogBoxPrefab, _canvas.transform);
 
             _currentDialogBox.Feed(dialog);
             _currentDialogBox.Open();
