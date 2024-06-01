@@ -46,16 +46,21 @@ namespace Dialogs
 
         public void FinishedOpeningList()
         {
-            for(int i = 0; i < _choiceList.Choices.Count; i++)
+            CreateChoices();
+
+            _currentSelectionIndex = 0;
+            UpdateCursorPosition(_currentSelectionIndex);
+        }
+
+        private void CreateChoices()
+        {
+            for (int i = 0; i < _choiceList.Choices.Count; i++)
             {
                 SelectableChoice choice = Instantiate(_selectableChoicePrefab, _choicesWrapper);
                 choice.SetText(_choiceList.Choices[i].Text);
 
                 _selectableChoices.Add(choice);
             }
-
-            _currentSelectionIndex = 0;
-            UpdateCursorPosition(_currentSelectionIndex);
         }
 
         public void Close()
