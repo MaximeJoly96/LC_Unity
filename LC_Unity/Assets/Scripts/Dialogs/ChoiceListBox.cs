@@ -13,6 +13,10 @@ namespace Dialogs
 
         [SerializeField]
         private TMP_Text _message;
+        [SerializeField]
+        private Transform _choicesWrapper;
+        [SerializeField]
+        private SelectableChoice _selectableChoicePrefab;
 
         public UnityEvent HasClosed { get; set; }
         public Animator Animator { get { return GetComponent<Animator>(); } }
@@ -38,7 +42,11 @@ namespace Dialogs
 
         public void FinishedOpeningList()
         {
-
+            for(int i = 0; i < _choiceList.Choices.Count; i++)
+            {
+                SelectableChoice choice = Instantiate(_selectableChoicePrefab, _choicesWrapper);
+                choice.SetText(_choiceList.Choices[i].Text);
+            }
         }
 
         public void Close()
