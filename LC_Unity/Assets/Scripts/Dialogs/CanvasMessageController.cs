@@ -10,7 +10,7 @@ namespace Dialogs
         [SerializeField]
         protected Canvas _canvas;
 
-        protected virtual void Awake()
+        protected virtual void Start()
         {
             _inputController = FindObjectOfType<InputController>();
         }

@@ -4,12 +4,15 @@ using TMPro;
 using System.Collections;
 using System.Text;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 namespace Dialogs
 {
     public class ChoiceListBox : MonoBehaviour
     {
         private DisplayChoiceList _choiceList;
+        private List<SelectableChoice> _selectableChoices;
+        private int _currentSelectionIndex;
 
         [SerializeField]
         private TMP_Text _message;
@@ -25,6 +28,7 @@ namespace Dialogs
         {
             _choiceList = list;
             _choiceList.Message = _choiceList.Message.Replace("\\n", "<br>");
+            _selectableChoices = new List<SelectableChoice>();
 
             SetPosition();
         }
@@ -46,16 +50,27 @@ namespace Dialogs
             {
                 SelectableChoice choice = Instantiate(_selectableChoicePrefab, _choicesWrapper);
                 choice.SetText(_choiceList.Choices[i].Text);
+
+                _selectableChoices.Add(choice);
             }
+
+            _currentSelectionIndex = 0;
+            UpdateCursorPosition(_currentSelectionIndex);
         }
 
         public void Close()
         {
+            _message.gameObject.SetActive(false);
 
+            for (int i = 0; i < _selectableChoices.Count; i++)
+                _selectableChoices[i].gameObject.SetActive(false);
+
+            Animator.Play("ChoiceListClose");
         }
 
         public void FinishedClosing()
         {
+            _choiceList.Finished.Invoke();
             HasClosed.Invoke();
         }
 
@@ -83,6 +98,31 @@ namespace Dialogs
 
             rt.anchoredPosition = new Vector2(rt.anchoredPosition.x,
                                               124.0f);
+        }
+
+        public void MoveCursorUp()
+        {
+            _currentSelectionIndex = _currentSelectionIndex == 0 ? _selectableChoices.Count - 1 : --_currentSelectionIndex;
+            UpdateCursorPosition(_currentSelectionIndex);
+        }
+
+        public void MoveCursorDown()
+        {
+            _currentSelectionIndex = _currentSelectionIndex == _selectableChoices.Count - 1 ? 0 : ++_currentSelectionIndex;
+            UpdateCursorPosition(_currentSelectionIndex);
+        }
+
+        public Choice PickChoice()
+        {
+            return _choiceList.Choices[_currentSelectionIndex];
+        }
+
+        private void UpdateCursorPosition(int position)
+        {
+            for(int i = 0; i < _selectableChoices.Count; i++)
+            {
+                _selectableChoices[i].ShowCursor(i == position);
+            }
         }
     }
 }
