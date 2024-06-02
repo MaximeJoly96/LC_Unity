@@ -1,15 +1,30 @@
 ﻿using UnityEngine;
 using Engine.Events;
 using Inputs;
+using Engine.Message;
 
 namespace Dialogs
 {
-    public class DialogBoxController : CanvasMessageController<UiBox<IRunnable>>
+    public class DialogBoxController : CanvasMessageController
     {
+        private DialogBox _currentDialogBox;
+
+        [SerializeField]
+        private DialogBox _dialogBoxPrefab;
+
         protected override void Start()
         {
             base.Start();
             _inputController.LeftClick.AddListener(TryToCloseDialog);
+        }
+
+        public void CreateDialog(DisplayDialog dialog)
+        {
+            _currentDialogBox = Instantiate(_dialogBoxPrefab, _canvas.transform);
+
+            _currentDialogBox.Feed(dialog);
+            _currentDialogBox.Open();
+            _currentDialogBox.HasClosed.AddListener(DestroyCurrentDialog);
         }
 
         protected override void ReceiveInput(InputAction input)
@@ -30,8 +45,13 @@ namespace Dialogs
 
         private void CloseDialog()
         {
-            if (_currentItem)
-                _currentItem.Close();  
+            if (_currentDialogBox)
+                _currentDialogBox.Close();
+        }
+
+        private void DestroyCurrentDialog()
+        {
+            Destroy(_currentDialogBox.gameObject);
         }
     }
 }

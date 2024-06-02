@@ -7,15 +7,17 @@ using System.Text;
 
 namespace Dialogs
 {
-    public abstract class UiBox<T> : MonoBehaviour where T : IRunnable
+    public class UiBox : UiBox<IRunnable> { }
+
+    public class UiBox<T> : MonoBehaviour where T : IRunnable
     {
         protected T _element;
 
         public Animator Animator { get { return GetComponent<Animator>(); } }
         public UnityEvent HasClosed { get; set; }
         
-        protected abstract string OpenAnimatioName { get; }
-        protected abstract string CloseAnimationName { get; }
+        protected virtual string OpenAnimatioName { get; }
+        protected virtual string CloseAnimationName { get; }
 
         public virtual void Feed(T element)
         {

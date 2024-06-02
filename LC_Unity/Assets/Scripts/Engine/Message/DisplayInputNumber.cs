@@ -17,7 +17,7 @@ namespace Engine.Message
 
         public void Run()
         {
-            Object.FindObjectOfType<CanvasSelectableController>().CreateItem(this);
+            Object.FindObjectOfType<InputNumberController>().CreateInputNumber(this);
         }
     }
 }

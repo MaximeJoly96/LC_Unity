@@ -331,6 +331,8 @@ GameObject:
   - component: {fileID: 1026237601}
   - component: {fileID: 1026237600}
   - component: {fileID: 1026237604}
+  - component: {fileID: 1026237606}
+  - component: {fileID: 1026237605}
   m_Layer: 0
   m_Name: DialogCanvas
   m_TagString: Untagged
@@ -432,7 +434,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvas: {fileID: 1026237602}
-  _itemPrefab: {fileID: 0}
+  _dialogBoxPrefab: {fileID: 7503608989394505428, guid: bf2c48cef0e07ea489d454fb0589f659,
+    type: 3}
+--- !u!114 &1026237605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026237599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe292424a2e71e449686566386cd34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvas: {fileID: 1026237602}
+  _choiceListPrefab: {fileID: 8890197218537046572, guid: 3ab57a5498865f14593b1ce228f744c6,
+    type: 3}
+--- !u!114 &1026237606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026237599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69db3f3939d9b134e9b6dd6b8be2ab02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvas: {fileID: 1026237602}
+  _inputNumberPrefab: {fileID: 8787729274583329232, guid: ff22285140259f34eb08f2fec6113548,
+    type: 3}
 --- !u!1 &1931385115
 GameObject:
   m_ObjectHideFlags: 0

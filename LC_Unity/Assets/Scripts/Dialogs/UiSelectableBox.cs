@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Dialogs
 {
-    public abstract class UiSelectableBox<T> : UiBox<T> where T : IRunnable
+    public class UiSelectableBox<T> : UiBox<T> where T : IRunnable
     {
         protected int _currentSelectionIndex;
         protected List<SelectableDialogItem> _selectableItems;
@@ -35,8 +35,8 @@ namespace Dialogs
         {
         }
 
-        public abstract string Validate();
-        protected abstract void CreateItems();
+        public virtual string Validate() { return ""; }
+        protected virtual void CreateItems() { }
 
         protected void UpdateCursorPosition(int position)
         {
