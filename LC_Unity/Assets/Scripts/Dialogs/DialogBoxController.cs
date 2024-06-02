@@ -14,7 +14,6 @@ namespace Dialogs
         protected override void Start()
         {
             base.Start();
-            _inputController.ButtonClicked.AddListener(TryToCloseDialog);
             _inputController.LeftClick.AddListener(TryToCloseDialog);
         }
 
@@ -25,6 +24,11 @@ namespace Dialogs
             _currentDialogBox.Feed(dialog);
             _currentDialogBox.Open();
             _currentDialogBox.HasClosed.AddListener(DestroyCurrentDialog);
+        }
+
+        protected override void ReceiveInput(InputAction input)
+        {
+            TryToCloseDialog(input);
         }
 
         private void TryToCloseDialog(Vector2 mousePosition)

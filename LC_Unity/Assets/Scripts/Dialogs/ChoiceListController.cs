@@ -6,23 +6,11 @@ namespace Dialogs
 {
     public class ChoiceListController : CanvasMessageController
     {
-        private const float SELECTION_DELAY = 0.2f; // seconds
-
         private ChoiceListBox _currentChoiceList;
         private Choice _selectedChoice;
-        private float _selectionDelayCount;
-        private bool _delayOn;
 
         [SerializeField]
         private ChoiceListBox _choiceListPrefab;
-
-        protected override void Start()
-        {
-            base.Start();
-            _inputController.ButtonClicked.AddListener(UpdateSelectedChoice);
-
-            _selectionDelayCount = 0.0f;
-        }
 
         public void CreateChoiceList(DisplayChoiceList list)
         {
@@ -33,7 +21,7 @@ namespace Dialogs
             _currentChoiceList.HasClosed.AddListener(DestroyCurrentList);
         }
 
-        private void UpdateSelectedChoice(InputAction input)
+        protected override void ReceiveInput(InputAction input)
         {
             if(_currentChoiceList != null && !_delayOn && _selectedChoice.Id != "")
             {
@@ -53,24 +41,6 @@ namespace Dialogs
                     StartSelectionDelay();
                 }
             }
-        }
-
-        private void Update()
-        {
-            if(_delayOn)
-            {
-                _selectionDelayCount += Time.deltaTime;
-                if (_selectionDelayCount > SELECTION_DELAY)
-                {
-                    _selectionDelayCount = 0.0f;
-                    _delayOn = false;
-                } 
-            }
-        }
-
-        private void StartSelectionDelay()
-        {
-            _delayOn = true;
         }
 
         private void DestroyCurrentList()

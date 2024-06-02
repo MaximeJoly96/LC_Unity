@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 1026237600}
   - component: {fileID: 1026237604}
   - component: {fileID: 1026237605}
+  - component: {fileID: 1026237606}
   m_Layer: 0
   m_Name: DialogCanvas
   m_TagString: Untagged
@@ -396,7 +397,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -449,6 +450,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvas: {fileID: 1026237602}
   _choiceListPrefab: {fileID: 8890197218537046572, guid: 3ab57a5498865f14593b1ce228f744c6,
+    type: 3}
+--- !u!114 &1026237606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026237599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac8156203e27b643a28cebd36aa48a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvas: {fileID: 1026237602}
+  _inputNumberPrefab: {fileID: 8787729274583329232, guid: ff22285140259f34eb08f2fec6113548,
     type: 3}
 --- !u!1 &1931385115
 GameObject:

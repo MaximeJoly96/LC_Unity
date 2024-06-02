@@ -3,17 +3,17 @@ using UnityEngine;
 
 namespace Dialogs
 {
-    public class SelectableChoice : MonoBehaviour
+    public class SelectableDialogItem : MonoBehaviour
     {
         [SerializeField]
-        private TMP_Text _choiceText;
+        protected TMP_Text _text;
         [SerializeField]
-        private Transform _cursor;
+        protected Transform _cursor;
 
         public void SetText(string text)
         {
             text = text.Replace("\\n", "<br>");
-            _choiceText.text = text;
+            _text.text = text;
         }
 
         public void ShowCursor(bool show)

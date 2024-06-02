@@ -11,7 +11,7 @@ namespace Dialogs
     public class ChoiceListBox : MonoBehaviour
     {
         private DisplayChoiceList _choiceList;
-        private List<SelectableChoice> _selectableChoices;
+        private List<SelectableDialogItem> _selectableChoices;
         private int _currentSelectionIndex;
 
         [SerializeField]
@@ -19,7 +19,7 @@ namespace Dialogs
         [SerializeField]
         private Transform _choicesWrapper;
         [SerializeField]
-        private SelectableChoice _selectableChoicePrefab;
+        private SelectableDialogItem _selectableChoicePrefab;
 
         public UnityEvent HasClosed { get; set; }
         public Animator Animator { get { return GetComponent<Animator>(); } }
@@ -28,7 +28,7 @@ namespace Dialogs
         {
             _choiceList = list;
             _choiceList.Message = _choiceList.Message.Replace("\\n", "<br>");
-            _selectableChoices = new List<SelectableChoice>();
+            _selectableChoices = new List<SelectableDialogItem>();
 
             SetPosition();
         }
@@ -56,7 +56,7 @@ namespace Dialogs
         {
             for (int i = 0; i < _choiceList.Choices.Count; i++)
             {
-                SelectableChoice choice = Instantiate(_selectableChoicePrefab, _choicesWrapper);
+                SelectableDialogItem choice = Instantiate(_selectableChoicePrefab, _choicesWrapper);
                 choice.SetText(_choiceList.Choices[i].Text);
 
                 _selectableChoices.Add(choice);

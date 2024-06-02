@@ -1,5 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using UnityEngine;
+using Dialogs;
 
 namespace Engine.Message
 {
@@ -15,7 +17,7 @@ namespace Engine.Message
 
         public void Run()
         {
-
+            Object.FindObjectOfType<InputNumberController>().CreateInputNumber(this);
         }
     }
 }
