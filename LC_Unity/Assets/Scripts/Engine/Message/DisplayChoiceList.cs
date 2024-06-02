@@ -33,7 +33,7 @@ namespace Engine.Message
 
         public void Run()
         {
-            Object.FindObjectOfType<ChoiceListController>().CreateChoiceList(this);
+            Object.FindObjectOfType<CanvasSelectableController>().CreateItem(this);
         }
     }
 }

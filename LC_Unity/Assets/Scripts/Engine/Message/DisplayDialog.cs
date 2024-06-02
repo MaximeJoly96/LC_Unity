@@ -35,7 +35,7 @@ namespace Engine.Message
 
         public void Run()
         {
-            Object.FindObjectOfType<DialogBoxController>().CreateDialog(this);
+            Object.FindObjectOfType<DialogBoxController>().CreateItem(this);
         }
     }
 }
