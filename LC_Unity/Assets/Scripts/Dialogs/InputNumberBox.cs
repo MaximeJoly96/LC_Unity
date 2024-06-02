@@ -2,6 +2,7 @@
 using Engine.Message;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Dialogs
 {
@@ -43,6 +44,11 @@ namespace Dialogs
 
         public void Close()
         {
+            for(int i = 0; i < _selectableNumbers.Count; i++)
+            {
+                _selectableNumbers[i].gameObject.SetActive(false);
+            }
+
             Animator.Play("InputNumberClose");
         }
 
@@ -85,17 +91,27 @@ namespace Dialogs
 
         public void MoveCursorUp()
         {
+            int currentValue = int.Parse(_selectableNumbers[_horizontalCursorIndex].TextValue);
+            int targetValue = currentValue == 9 ? 0 : ++currentValue;
 
+            _selectableNumbers[_horizontalCursorIndex].SetText(targetValue.ToString());
         }
 
         public void MoveCursorDown()
         {
+            int currentValue = int.Parse(_selectableNumbers[_horizontalCursorIndex].TextValue);
+            int targetValue = currentValue == 0 ? 9 : --currentValue;
 
+            _selectableNumbers[_horizontalCursorIndex].SetText(targetValue.ToString());
         }
 
-        public void Validate()
+        public string Validate()
         {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < _selectableNumbers.Count; i++)
+                sb = sb.Append(_selectableNumbers[i].TextValue);
 
+            return sb.ToString();
         }
 
         private void AdjustWindowSize(int digitsCount)

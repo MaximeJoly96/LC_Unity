@@ -10,6 +10,8 @@ namespace Dialogs
         [SerializeField]
         protected Transform _cursor;
 
+        public string TextValue { get { return _text.text; } }
+
         public void SetText(string text)
         {
             text = text.Replace("\\n", "<br>");

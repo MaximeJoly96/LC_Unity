@@ -40,7 +40,8 @@ namespace Dialogs
                         _currentInputNumber.MoveCursorRight();
                         break;
                     case InputAction.Select:
-                        _currentInputNumber.Validate();
+                        _selectedNumberCode = _currentInputNumber.Validate();
+                        _currentInputNumber.Close();
                         break;
                 }
 
