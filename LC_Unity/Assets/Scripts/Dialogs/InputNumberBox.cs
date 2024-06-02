@@ -1,115 +1,66 @@
 ﻿using UnityEngine;
 using Engine.Message;
-using UnityEngine.Events;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Dialogs
 {
-    public class InputNumberBox : MonoBehaviour
+    public class InputNumberBox : UiSelectableBox<DisplayInputNumber>
     {
-        private DisplayInputNumber _inputNumber;
-        private int _horizontalCursorIndex;
-        private List<SelectableDialogItem> _selectableNumbers;
+        protected override string OpenAnimatioName { get { return "InputNumberOpen"; } }
+        protected override string CloseAnimationName { get { return "InputNumberClose"; } }
 
-        [SerializeField]
-        private SelectableDialogItem _selectableNumberPrefab;
-        [SerializeField]
-        private Transform _wrapper;
-
-        public UnityEvent HasClosed { get; set; }
-        public Animator Animator { get { return GetComponent<Animator>(); } }
-
-        public void Feed(DisplayInputNumber inputNumber)
+        public override void Feed(DisplayInputNumber element)
         {
-            _inputNumber = inputNumber;
-            _selectableNumbers = new List<SelectableDialogItem>();
+            base.Feed(element);
 
-            AdjustWindowSize(_inputNumber.DigitsCount);
+            AdjustWindowSize(_element.DigitsCount);
         }
 
-        public void FinishedOpening()
+        protected override void CreateItems()
         {
-            CreateNumbers();
-
-            _horizontalCursorIndex = 0;
-            UpdateHorizontalCursorPosition(_horizontalCursorIndex);
-        }
-
-        public void Open()
-        {
-            HasClosed = new UnityEvent();
-            Animator.Play("InputNumberOpen");
-        }
-
-        public void Close()
-        {
-            for(int i = 0; i < _selectableNumbers.Count; i++)
+            for(int i = 0; i < _element.DigitsCount; i++)
             {
-                _selectableNumbers[i].gameObject.SetActive(false);
-            }
-
-            Animator.Play("InputNumberClose");
-        }
-
-        public void FinishedClosing()
-        {
-            _inputNumber.Finished.Invoke();
-            HasClosed.Invoke();
-        }
-
-        private void CreateNumbers()
-        {
-            for(int i = 0; i < _inputNumber.DigitsCount; i++)
-            {
-                SelectableDialogItem number = Instantiate(_selectableNumberPrefab, _wrapper);
+                SelectableDialogItem number = Instantiate(_selectableItemPrefab, _wrapper);
                 number.SetText(0.ToString());
 
-                _selectableNumbers.Add(number);
+                _selectableItems.Add(number);
             }
         }
 
-        private void UpdateHorizontalCursorPosition(int position)
+        public override void MoveCursorLeft()
         {
-            for(int i = 0; i < _selectableNumbers.Count; i++)
-            {
-                _selectableNumbers[i].ShowCursor(i == position);
-            }
+            _currentSelectionIndex = _currentSelectionIndex == 0 ? _element.DigitsCount - 1 : --_currentSelectionIndex;
+            UpdateCursorPosition(_currentSelectionIndex);
         }
 
-        public void MoveCursorLeft()
+        public override void MoveCursorRight()
         {
-            _horizontalCursorIndex = _horizontalCursorIndex == 0 ? _inputNumber.DigitsCount - 1 : --_horizontalCursorIndex;
-            UpdateHorizontalCursorPosition(_horizontalCursorIndex);
+            _currentSelectionIndex = _currentSelectionIndex == _element.DigitsCount - 1 ? 0 : ++_currentSelectionIndex;
+            UpdateCursorPosition(_currentSelectionIndex);
         }
 
-        public void MoveCursorRight()
+        public override void MoveCursorUp()
         {
-            _horizontalCursorIndex = _horizontalCursorIndex == _inputNumber.DigitsCount - 1 ? 0 : ++_horizontalCursorIndex;
-            UpdateHorizontalCursorPosition(_horizontalCursorIndex);
-        }
-
-        public void MoveCursorUp()
-        {
-            int currentValue = int.Parse(_selectableNumbers[_horizontalCursorIndex].TextValue);
+            int currentValue = int.Parse(_selectableItems[_currentSelectionIndex].TextValue);
             int targetValue = currentValue == 9 ? 0 : ++currentValue;
 
-            _selectableNumbers[_horizontalCursorIndex].SetText(targetValue.ToString());
+            _selectableItems[_currentSelectionIndex].SetText(targetValue.ToString());
         }
 
-        public void MoveCursorDown()
+        public override void MoveCursorDown()
         {
-            int currentValue = int.Parse(_selectableNumbers[_horizontalCursorIndex].TextValue);
+            int currentValue = int.Parse(_selectableItems[_currentSelectionIndex].TextValue);
             int targetValue = currentValue == 0 ? 9 : --currentValue;
 
-            _selectableNumbers[_horizontalCursorIndex].SetText(targetValue.ToString());
+            _selectableItems[_currentSelectionIndex].SetText(targetValue.ToString());
         }
 
-        public string Validate()
+        public override string Validate()
         {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < _selectableNumbers.Count; i++)
-                sb = sb.Append(_selectableNumbers[i].TextValue);
+            for (int i = 0; i < _selectableItems.Count; i++)
+                sb = sb.Append(_selectableItems[i].TextValue);
 
             return sb.ToString();
         }

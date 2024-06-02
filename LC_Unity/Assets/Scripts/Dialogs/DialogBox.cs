@@ -2,13 +2,10 @@
 using UnityEngine.UI;
 using TMPro;
 using Engine.Message;
-using System.Collections;
-using System.Text;
-using UnityEngine.Events;
 
 namespace Dialogs
 {
-    public class DialogBox : MonoBehaviour
+    public class DialogBox : UiBox<DisplayDialog>
     {
         private const float DIALOG_BOX_HEIGHT = 200.0f; // pixels
 
@@ -21,11 +18,8 @@ namespace Dialogs
         [SerializeField]
         private LocutorBox _locutorBox;
 
-        private DisplayDialog _dialog;
-
         public bool HasLocutor { get { return _locutorBox.Displayed; } }
         public Image Background { get { return GetComponent<Image>(); } }
-        public Animator Animator { get { return GetComponent<Animator>(); } }
         public float Height
         {
             get
@@ -33,12 +27,14 @@ namespace Dialogs
                 return DIALOG_BOX_HEIGHT + _locutorBox.Height;
             }
         }
-        public UnityEvent HasClosed { get; set; }
 
-        public void Feed(DisplayDialog dialog)
+        protected override string OpenAnimatioName { get { return "DialogBoxOpen"; } }
+        protected override string CloseAnimationName { get { return "DialogBoxClose"; } }
+
+        public override void  Feed(DisplayDialog element)
         {
-            _dialog = dialog;
-            _dialog.Message = _dialog.Message.Replace("\\n", "<br>");
+            base.Feed(element);
+            _element.Message = _element.Message.Replace("\\n", "<br>");
 
             SetStyle();
             SetPosition();
@@ -49,7 +45,7 @@ namespace Dialogs
             RectTransform rt = GetComponent<RectTransform>();
             float yOffset = rt.anchoredPosition.y;
 
-            switch (_dialog.BoxPosition)
+            switch (_element.BoxPosition)
             {
                 case DialogBoxPosition.Bottom:
                     rt.anchoredPosition = new Vector2(rt.anchoredPosition.x, yOffset);
@@ -65,7 +61,7 @@ namespace Dialogs
 
         public void SetStyle()
         {
-            switch(_dialog.BoxStyle)
+            switch(_element.BoxStyle)
             {
                 case DialogBoxStyle.Classic:
                     break;
@@ -78,18 +74,18 @@ namespace Dialogs
 
         public void SetMessage()
         {
-            StartCoroutine(AnimateText());
+            StartCoroutine(AnimateText(_text, _element.Message));
         }
 
         public void SetLocutor()
         {
-            if(string.IsNullOrEmpty(_dialog.Locutor))
+            if(string.IsNullOrEmpty(_element.Locutor))
             {
                 _locutorBox.Hide();
                 return;
             }
 
-            _locutorBox.SetName(_dialog.Locutor);
+            _locutorBox.SetName(_element.Locutor);
         }
 
         public void SetBackground(Color color)
@@ -107,20 +103,14 @@ namespace Dialogs
             _cursor.GetComponent<Animator>().Play("Animated");
         }
 
-        public void Open()
-        {
-            HasClosed = new UnityEvent();
-            Animator.Play("DialogBoxOpen");
-        }
-
-        public void Close()
+        public override void Close()
         {
             _locutorBox.Hide();
             _text.gameObject.SetActive(false);
-            Animator.Play("DialogBoxClose");
+            base.Close();
         }
 
-        public void FinishedOpening()
+        public override void FinishedOpening()
         {
             if(_locutorBox.Displayed)
             {
@@ -132,29 +122,10 @@ namespace Dialogs
             DisplayCursor();
         }
 
-        public void FinishedClosing()
-        {
-            _dialog.Close();
-            HasClosed.Invoke();
-        }
-
         private void DisplayCursor()
         {
             _cursor.gameObject.SetActive(true);
             Animate();
-        }
-
-        private IEnumerator AnimateText()
-        {
-            StringBuilder builder = new StringBuilder();
-            WaitForEndOfFrame wait = new WaitForEndOfFrame();
-            
-            for(int i = 0; i < _dialog.Message.Length; i++)
-            {
-                builder = builder.Append(_dialog.Message[i]);
-                _text.text = builder.ToString();
-                yield return wait;
-            }
         }
     }
 }

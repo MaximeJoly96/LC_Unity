@@ -7,7 +7,7 @@ namespace Dialogs
     public class ChoiceListController : CanvasMessageController
     {
         private ChoiceListBox _currentChoiceList;
-        private Choice _selectedChoice;
+        private string _selectedChoice;
 
         [SerializeField]
         private ChoiceListBox _choiceListPrefab;
@@ -23,11 +23,11 @@ namespace Dialogs
 
         protected override void ReceiveInput(InputAction input)
         {
-            if(_currentChoiceList != null && !_delayOn && _selectedChoice.Id != "")
+            if(_currentChoiceList != null && !_delayOn && _selectedChoice != "")
             {
                 if (input == InputAction.Select)
                 {
-                    _selectedChoice = _currentChoiceList.PickChoice();
+                    _selectedChoice = _currentChoiceList.Validate();
                     _currentChoiceList.Close();
                 }
                 else if (input == InputAction.MoveDown)

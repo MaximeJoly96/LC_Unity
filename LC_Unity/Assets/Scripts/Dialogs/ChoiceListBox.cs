@@ -3,40 +3,24 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using System.Text;
-using UnityEngine.Events;
 using System.Collections.Generic;
 
 namespace Dialogs
 {
-    public class ChoiceListBox : MonoBehaviour
+    public class ChoiceListBox : UiSelectableBox<DisplayChoiceList>
     {
-        private DisplayChoiceList _choiceList;
-        private List<SelectableDialogItem> _selectableChoices;
-        private int _currentSelectionIndex;
-
         [SerializeField]
         private TMP_Text _message;
-        [SerializeField]
-        private Transform _choicesWrapper;
-        [SerializeField]
-        private SelectableDialogItem _selectableChoicePrefab;
 
-        public UnityEvent HasClosed { get; set; }
-        public Animator Animator { get { return GetComponent<Animator>(); } }
+        protected override string OpenAnimatioName { get { return "ChoiceListOpen"; } }
+        protected override string CloseAnimationName { get { return "ChoiceListClose"; } }
 
-        public void Feed(DisplayChoiceList list)
+        public override void Feed(DisplayChoiceList element)
         {
-            _choiceList = list;
-            _choiceList.Message = _choiceList.Message.Replace("\\n", "<br>");
-            _selectableChoices = new List<SelectableDialogItem>();
+            base.Feed(element);
+            _element.Message = _element.Message.Replace("\\n", "<br>");
 
             SetPosition();
-        }
-
-        public void Open()
-        {
-            HasClosed = new UnityEvent();
-            Animator.Play("ChoiceListOpen");
         }
 
         public void FinishedOpeningMessage()
@@ -44,57 +28,26 @@ namespace Dialogs
             SetMessage();
         }
 
-        public void FinishedOpeningList()
+        protected override void CreateItems()
         {
-            CreateChoices();
-
-            _currentSelectionIndex = 0;
-            UpdateCursorPosition(_currentSelectionIndex);
-        }
-
-        private void CreateChoices()
-        {
-            for (int i = 0; i < _choiceList.Choices.Count; i++)
+            for (int i = 0; i < _element.Choices.Count; i++)
             {
-                SelectableDialogItem choice = Instantiate(_selectableChoicePrefab, _choicesWrapper);
-                choice.SetText(_choiceList.Choices[i].Text);
+                SelectableDialogItem choice = Instantiate(_selectableItemPrefab, _wrapper);
+                choice.SetText(_element.Choices[i].Text);
 
-                _selectableChoices.Add(choice);
+                _selectableItems.Add(choice);
             }
         }
 
-        public void Close()
+        public override void Close()
         {
             _message.gameObject.SetActive(false);
-
-            for (int i = 0; i < _selectableChoices.Count; i++)
-                _selectableChoices[i].gameObject.SetActive(false);
-
-            Animator.Play("ChoiceListClose");
-        }
-
-        public void FinishedClosing()
-        {
-            _choiceList.Finished.Invoke();
-            HasClosed.Invoke();
+            base.Close();
         }
 
         public void SetMessage()
         {
-            StartCoroutine(AnimateText());
-        }
-
-        private IEnumerator AnimateText()
-        {
-            StringBuilder builder = new StringBuilder();
-            WaitForEndOfFrame wait = new WaitForEndOfFrame();
-
-            for (int i = 0; i < _choiceList.Message.Length; i++)
-            {
-                builder = builder.Append(_choiceList.Message[i]);
-                _message.text = builder.ToString();
-                yield return wait;
-            }
+            StartCoroutine(AnimateText(_message, _element.Message));
         }
 
         private void SetPosition()
@@ -105,29 +58,21 @@ namespace Dialogs
                                               124.0f);
         }
 
-        public void MoveCursorUp()
+        public override void MoveCursorUp()
         {
-            _currentSelectionIndex = _currentSelectionIndex == 0 ? _selectableChoices.Count - 1 : --_currentSelectionIndex;
+            _currentSelectionIndex = _currentSelectionIndex == 0 ? _selectableItems.Count - 1 : --_currentSelectionIndex;
             UpdateCursorPosition(_currentSelectionIndex);
         }
 
-        public void MoveCursorDown()
+        public override void MoveCursorDown()
         {
-            _currentSelectionIndex = _currentSelectionIndex == _selectableChoices.Count - 1 ? 0 : ++_currentSelectionIndex;
+            _currentSelectionIndex = _currentSelectionIndex == _selectableItems.Count - 1 ? 0 : ++_currentSelectionIndex;
             UpdateCursorPosition(_currentSelectionIndex);
         }
 
-        public Choice PickChoice()
+        public override string Validate()
         {
-            return _choiceList.Choices[_currentSelectionIndex];
-        }
-
-        private void UpdateCursorPosition(int position)
-        {
-            for(int i = 0; i < _selectableChoices.Count; i++)
-            {
-                _selectableChoices[i].ShowCursor(i == position);
-            }
+            return _element.Choices[_currentSelectionIndex].Id;
         }
     }
 }

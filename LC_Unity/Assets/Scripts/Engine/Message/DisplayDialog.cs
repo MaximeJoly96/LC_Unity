@@ -37,10 +37,5 @@ namespace Engine.Message
         {
             Object.FindObjectOfType<DialogBoxController>().CreateDialog(this);
         }
-
-        public void Close()
-        {
-            Finished.Invoke();
-        }
     }
 }
