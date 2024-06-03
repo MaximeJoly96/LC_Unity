@@ -10,7 +10,11 @@ namespace Engine.GameProgression
             ControlSwitch ctrlSwitch = new ControlSwitch();
 
             ctrlSwitch.Key = data.Attributes["Key"].InnerText;
-            ctrlSwitch.Value = bool.Parse(data.Attributes["Value"].InnerText);
+
+            if (data.Attributes["Source"] == null)
+                ctrlSwitch.Value = bool.Parse(data.Attributes["Value"].InnerText);
+            else
+                ctrlSwitch.Source = data.Attributes["Source"].InnerText;
 
             return ctrlSwitch;
         }
@@ -38,6 +42,7 @@ namespace Engine.GameProgression
                         ctrlVariable.AddValue(int.Parse(v));
                     break;
                 case ControlVariable.OperandType.Variable:
+                    ctrlVariable.Source = operandNode.InnerText;
                     break;
             }
 
@@ -52,7 +57,13 @@ namespace Engine.GameProgression
             ctrlTimer.Action = (ControlTimer.TimerAction)Enum.Parse(typeof(ControlTimer.TimerAction), data.SelectSingleNode("Action").InnerText);
 
             if (ctrlTimer.Action == ControlTimer.TimerAction.Start)
-                ctrlTimer.Duration = int.Parse(data.SelectSingleNode("Duration").InnerText);
+            {
+                if (data.Attributes["Source"] == null)
+                    ctrlTimer.Duration = int.Parse(data.SelectSingleNode("Duration").InnerText);
+                else
+                    ctrlTimer.Source = data.Attributes["Source"].InnerText;
+            }
+                
 
             return ctrlTimer;
         }

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using GameProgression;
+using System;
 
 namespace Engine.GameProgression
 {
@@ -13,7 +15,31 @@ namespace Engine.GameProgression
 
         public override void Run()
         {
+            PersistentDataHolder holder = PersistentDataHolder.Instance;
+            int value = GetValue();
+            int currentValue = (int)holder.GetData(Key);
 
+            switch (Operation)
+            {
+                case Operator.Add:
+                    holder.StoreData(Key, currentValue + value);
+                    break;
+                case Operator.Sub:
+                    holder.StoreData(Key, currentValue - value);
+                    break;
+                case Operator.Mul:
+                    holder.StoreData(Key, currentValue * value);
+                    break;
+                case Operator.Div:
+                    holder.StoreData(Key, currentValue / value);
+                    break;
+                case Operator.Mod:
+                    holder.StoreData(Key, currentValue % value);
+                    break;
+                case Operator.Set:
+                    holder.StoreData(Key, value);
+                    break;
+            }
         }
 
         public void AddValue(int value)
@@ -22,6 +48,22 @@ namespace Engine.GameProgression
                 Values = new List<int>();
 
             Values.Add(value);
+        }
+
+        private int GetValue()
+        {
+            switch(Operand)
+            {
+                case OperandType.Constant:
+                    return Values[0];
+                case OperandType.Random:
+                    Random r = new Random();
+                    return r.Next(Values[0], Values[1] + 1); // Bounds are inclusive
+                case OperandType.Variable:
+                    return (int)PersistentDataHolder.Instance.GetData(Source);
+                default:
+                    throw new InvalidOperationException("Provided operand does not exist.");
+            }
         }
     }
 }

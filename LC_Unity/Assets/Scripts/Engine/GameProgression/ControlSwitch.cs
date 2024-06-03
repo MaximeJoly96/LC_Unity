@@ -1,4 +1,6 @@
-﻿namespace Engine.GameProgression
+﻿using GameProgression;
+
+namespace Engine.GameProgression
 {
     public class ControlSwitch : PersistentData
     {
@@ -6,7 +8,7 @@
 
         public override void Run()
         {
-
+            PersistentDataHolder.Instance.StoreData(Key, Value);
         }
     }
 }
