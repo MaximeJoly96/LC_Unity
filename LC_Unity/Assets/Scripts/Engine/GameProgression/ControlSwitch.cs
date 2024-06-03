@@ -1,19 +1,10 @@
-﻿using Engine.Events;
-using UnityEngine.Events;
-
-namespace Engine.GameProgression
+﻿namespace Engine.GameProgression
 {
-    public class ControlSwitch : IRunnable
+    public class ControlSwitch : PersistentData
     {
         public bool Value { get; set; }
-        public UnityEvent Finished { get; set; }
 
-        public ControlSwitch()
-        {
-            Finished = new UnityEvent();
-        }
-
-        public void Run()
+        public override void Run()
         {
 
         }

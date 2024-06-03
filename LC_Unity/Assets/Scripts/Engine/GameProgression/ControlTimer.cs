@@ -1,22 +1,13 @@
-﻿using Engine.Events;
-using UnityEngine.Events;
-
-namespace Engine.GameProgression
+﻿namespace Engine.GameProgression
 {
-    public class ControlTimer : IRunnable
+    public class ControlTimer : PersistentData
     {
         public enum TimerAction { Start, Stop }
 
         public TimerAction Action { get; set; }
         public int Duration { get; set; } // seconds
-        public UnityEvent Finished { get; set; }
 
-        public ControlTimer()
-        {
-            Finished = new UnityEvent();
-        }
-
-        public void Run()
+        public override void Run()
         {
 
         }

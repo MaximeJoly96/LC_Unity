@@ -1,27 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<InputNumber DigitsCount="3" />
-	<DisplayDialog>
-		<DialogBoxStyle>Classic</DialogBoxStyle>
-		<DialogBoxPosition>Bottom</DialogBoxPosition>
-		<Locutor>Maxah</Locutor>
-		<Message>aaaaaaaaaaaaaaaa</Message>
-		<FaceGraphics></FaceGraphics>
-	</DisplayDialog>
-	<DisplayChoice>
-		<Message>Pick a card, any card</Message>
-		<Choices>
-			<Choice Id="0">Goldshire Footman</Choice>
-			<Choice Id="1">Deathwing, Mad Aspect</Choice>
-			<Choice Id="2">Scourgelord Garrosh</Choice>
-			<Choice Id="3">Cover Artist</Choice>
-		</Choices>
-	</DisplayChoice>
-	<DisplayDialog>
-		<DialogBoxStyle>Classic</DialogBoxStyle>
-		<DialogBoxPosition>Bottom</DialogBoxPosition>
-		<Locutor>Maxah</Locutor>
-		<Message>bbbbb</Message>
-		<FaceGraphics></FaceGraphics>
-	</DisplayDialog>
+  <ControlSwitch Value="true" Key="testSwitch" />
+  <ControlSwitch Value="false" Key="testSwitch" />
+  <ControlVariable Key="testVariable1">
+    <Operation>Set</Operation>
+    <Operand Type="Constant">10</Operand>
+  </ControlVariable>
+  <ControlVariable Key="testVariable1">
+    <Operation>Add</Operation>
+    <Operand Type="Constant">-10</Operand>
+  </ControlVariable>
+  <ControlVariable Key="testVariable1">
+    <Operation>Sub</Operation>
+    <Operand Type="Constant">40</Operand>
+  </ControlVariable>
+  <ControlVariable Key="testVariable1">
+    <Operation>Mul</Operation>
+    <Operand Type="Random">1,10</Operand>
+  </ControlVariable>
+  <ControlVariable Key="testVariable1">
+    <Operation>Div</Operation>
+    <Operand Type="Random">3,15</Operand>
+  </ControlVariable>
+  <ControlVariable Key="testVariable1">
+    <Operation>Mod</Operation>
+    <Operand Type="Random">-60,100</Operand>
+  </ControlVariable>
+  <ControlTimer Key="testTimer1">
+    <Action>Start</Action>
+    <Duration>10</Duration>
+  </ControlTimer>
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Locutor>Maxah</Locutor>
+    <Message>aaaaaaaaaaaaaaaa</Message>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <ControlTimer Key="testTimer1">
+    <Action>Stop</Action>
+  </ControlTimer>
 </EventsSequence>

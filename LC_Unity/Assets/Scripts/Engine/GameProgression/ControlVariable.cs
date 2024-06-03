@@ -1,10 +1,8 @@
-﻿using Engine.Events;
-using System.Collections.Generic;
-using UnityEngine.Events;
+﻿using System.Collections.Generic;
 
 namespace Engine.GameProgression
 {
-    public class ControlVariable : IRunnable
+    public class ControlVariable : PersistentData
     {
         public enum Operator { Set, Add, Sub, Mul, Div, Mod }
         public enum OperandType { Constant, Variable, Random }
@@ -12,14 +10,8 @@ namespace Engine.GameProgression
         public Operator Operation { get; set; }
         public OperandType Operand { get; set; }
         public List<int> Values { get; private set; }
-        public UnityEvent Finished { get; set; }
 
-        public ControlVariable()
-        {
-            Finished = new UnityEvent();
-        }
-
-        public void Run()
+        public override void Run()
         {
 
         }
