@@ -9,6 +9,8 @@ namespace Engine.GameProgression
         public override void Run()
         {
             PersistentDataHolder.Instance.StoreData(Key, Value);
+
+            Finished.Invoke();
         }
     }
 }

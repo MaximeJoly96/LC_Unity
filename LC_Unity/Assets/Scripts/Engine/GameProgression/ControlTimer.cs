@@ -1,4 +1,7 @@
-﻿namespace Engine.GameProgression
+﻿using GameProgression;
+using UnityEngine;
+
+namespace Engine.GameProgression
 {
     public class ControlTimer : PersistentData
     {
@@ -9,7 +12,20 @@
 
         public override void Run()
         {
+            TimersManager manager = Object.FindObjectOfType<TimersManager>();
 
+            switch(Action)
+            {
+                case TimerAction.Start:
+                    manager.AddTimer(this);
+                    manager.StartTimer(Key);
+                    break;
+                case TimerAction.Stop:
+                    manager.StopTimer(Key);
+                    break;
+            }
+
+            Finished.Invoke();
         }
     }
 }

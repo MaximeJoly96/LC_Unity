@@ -26,7 +26,7 @@ namespace GameProgression
 
         public void StoreData(string key, object data)
         {
-            if (_data.ContainsKey(key))
+            if (HasKey(key))
             {
                 _data[key] = data;
                 return;
@@ -43,6 +43,11 @@ namespace GameProgression
         public void EraseData(string key)
         {
             _data.Remove(key);
+        }
+
+        public bool HasKey(string key)
+        {
+            return _data.ContainsKey(key);
         }
     }
 }

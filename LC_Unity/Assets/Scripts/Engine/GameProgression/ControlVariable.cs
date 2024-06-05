@@ -17,7 +17,8 @@ namespace Engine.GameProgression
         {
             PersistentDataHolder holder = PersistentDataHolder.Instance;
             int value = GetValue();
-            int currentValue = (int)holder.GetData(Key);
+
+            int currentValue = holder.HasKey(Key) ? (int)holder.GetData(Key) : 0;
 
             switch (Operation)
             {
@@ -40,6 +41,8 @@ namespace Engine.GameProgression
                     holder.StoreData(Key, value);
                     break;
             }
+
+            Finished.Invoke();
         }
 
         public void AddValue(int value)
