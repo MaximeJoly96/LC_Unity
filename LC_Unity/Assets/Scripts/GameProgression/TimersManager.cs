@@ -35,7 +35,6 @@ namespace GameProgression
                 if (currentTimer.CurrentState == Timer.State.Running)
                 {
                     currentTimer.CurrentTime += Time.deltaTime;
-                    Debug.Log("timer " + currentTimer.Key + " time " + currentTimer.CurrentTime);
 
                     if (currentTimer.CurrentTime >= currentTimer.MaxDuration)
                         currentTimer.Stop();
