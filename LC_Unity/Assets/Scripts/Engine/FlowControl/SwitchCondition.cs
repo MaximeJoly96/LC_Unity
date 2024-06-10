@@ -1,12 +1,17 @@
-﻿namespace Engine.FlowControl
+﻿using FlowControl;
+using System;
+
+namespace Engine.FlowControl
 {
     public class SwitchCondition : ConditionalBranch
     {
-        public bool Condition { get; set; }
+        public enum Type { Equal, NotEqual }
+        public Type Condition { get; set; }
 
         public override void Run()
         {
-
+            ConditionEvaluator.Instance.EvaluateSwitchCondition(this);
+            Finished.Invoke();
         }
     }
 }

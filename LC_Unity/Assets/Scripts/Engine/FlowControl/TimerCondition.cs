@@ -1,4 +1,6 @@
-﻿namespace Engine.FlowControl
+﻿using FlowControl;
+
+namespace Engine.FlowControl
 {
     public class TimerCondition : ConditionalBranch
     {
@@ -8,7 +10,8 @@
 
         public override void Run()
         {
-
+            ConditionEvaluator.Instance.EvaluateTimerCondition(this);
+            Finished.Invoke();
         }
     }
 }

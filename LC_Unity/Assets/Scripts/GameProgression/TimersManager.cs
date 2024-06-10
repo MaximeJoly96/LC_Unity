@@ -44,7 +44,7 @@ namespace GameProgression
 
         public void StartTimer(string key)
         {
-            Timer timer = Timers.FirstOrDefault(t => t.Key == key);
+            Timer timer = GetTimer(key);
 
             if (timer != null)
                 timer.Run();
@@ -52,10 +52,20 @@ namespace GameProgression
 
         public void StopTimer(string key)
         {
-            Timer timer = Timers.FirstOrDefault(t => t.Key == key);
+            Timer timer = GetTimer(key);
 
             if (timer != null)
                 timer.Stop();
+        }
+
+        public bool HasTimer(string key)
+        {
+            return GetTimer(key) != null;
+        }
+
+        public Timer GetTimer(string key)
+        {
+            return Timers.FirstOrDefault(t => t.Key == key);
         }
     }
 }

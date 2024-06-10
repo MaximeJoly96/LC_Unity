@@ -1,48 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-  <ControlSwitch Value="true" Key="testSwitch" />
-  <ControlSwitch Value="false" Key="testSwitch" />
-  <ControlSwitch Key="testSwitch1" Source="testSwitch"/>
-  <ControlVariable Key="testVariable1">
-    <Operation>Set</Operation>
-    <Operand Type="Constant">10</Operand>
-  </ControlVariable>
-  <ControlVariable Key="testVariable1">
-    <Operation>Add</Operation>
-    <Operand Type="Constant">-10</Operand>
-  </ControlVariable>
-  <ControlVariable Key="testVariable1">
-    <Operation>Sub</Operation>
-    <Operand Type="Constant">40</Operand>
-  </ControlVariable>
-  <ControlVariable Key="testVariable1">
-    <Operation>Mul</Operation>
-    <Operand Type="Random">1,10</Operand>
-  </ControlVariable>
-  <ControlVariable Key="testVariable1">
-    <Operation>Div</Operation>
-    <Operand Type="Random">3,15</Operand>
-  </ControlVariable>
-  <ControlVariable Key="testVariable1">
-    <Operation>Mod</Operation>
-    <Operand Type="Random">-60,100</Operand>
-  </ControlVariable>
-  <ControlVariable Key="testVariable2">
-    <Operation>Set</Operation>
-    <Operand Type="Variable">testVariable1</Operand>
-  </ControlVariable>
-  <ControlTimer Key="testTimer1">
-    <Action>Start</Action>
-    <Duration>10</Duration>
-  </ControlTimer>
-  <DisplayDialog>
-    <DialogBoxStyle>Classic</DialogBoxStyle>
-    <DialogBoxPosition>Bottom</DialogBoxPosition>
-    <Locutor>Maxah</Locutor>
-    <Message>aaaaaaaaaaaaaaaa</Message>
-    <FaceGraphics></FaceGraphics>
-  </DisplayDialog>
-  <ControlTimer Key="testTimer1">
-    <Action>Stop</Action>
-  </ControlTimer>
+  <ConditionalBranch Type="SwitchCondition" FirstMember="switch1" SecondMember="true" Condition="Equal" />
+  <ConditionalBranch Type="SwitchCondition" FirstMember="switch1" SecondMember="switch2" Condition="NotEqual" />
+  <ConditionalBranch Type="SwitchCondition" FirstMember="true" SecondMember="switch2" Condition="NotEqual" />
+  
+  <ConditionalBranch Type="VariableCondition" Condition="GreaterThan" FirstMember="var1" SecondMember="var2" />
+  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="var1" SecondMember="0" />
+  <ConditionalBranch Type="VariableCondition" Condition="SmallerThan" FirstMember="2" SecondMember="var2" />
+  
+  <ConditionalBranch Type="TimerCondition" Condition="Greater" FirstMember="timer1" SecondMember="20" />
+  <ConditionalBranch Type="TimerCondition" Condition="Smaller" FirstMember="timer1" SecondMember="timer2" />
+  <ConditionalBranch Type="TimerCondition" Condition="Smaller" FirstMember="20" SecondMember="timer2" />
 </EventsSequence>

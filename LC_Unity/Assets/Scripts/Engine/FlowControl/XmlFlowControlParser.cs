@@ -8,12 +8,16 @@ namespace Engine.FlowControl
         public static ConditionalBranch ParseConditionalBranch(XmlNode data)
         {
             string type = data.Attributes["Type"].InnerText;
+            string firstMember = data.Attributes["FirstMember"].InnerText;
+            string secondMember = data.Attributes["SecondMember"].InnerText;
 
             if (type == typeof(SwitchCondition).Name)
             {
-                bool conditionValue = bool.Parse(data.Attributes["Condition"].InnerText);
+                SwitchCondition.Type conditionValue = (SwitchCondition.Type)Enum.Parse(typeof(SwitchCondition.Type), data.Attributes["Condition"].InnerText);
                 SwitchCondition condition = new SwitchCondition();
                 condition.Condition = conditionValue;
+                condition.FirstMember = firstMember;
+                condition.SecondMember = secondMember;
 
                 return condition;
             }
@@ -22,6 +26,8 @@ namespace Engine.FlowControl
                 VariableCondition.Type conditionType = (VariableCondition.Type)Enum.Parse(typeof(VariableCondition.Type), data.Attributes["Condition"].InnerText);
                 VariableCondition condition = new VariableCondition();
                 condition.Condition = conditionType;
+                condition.FirstMember = firstMember;
+                condition.SecondMember = secondMember;
 
                 return condition;
             }
@@ -30,6 +36,8 @@ namespace Engine.FlowControl
                 TimerCondition.Type conditionType = (TimerCondition.Type)Enum.Parse(typeof(TimerCondition.Type), data.Attributes["Condition"].InnerText);
                 TimerCondition condition = new TimerCondition();
                 condition.Condition = conditionType;
+                condition.FirstMember = firstMember;
+                condition.SecondMember = secondMember;
 
                 return condition;
             }
