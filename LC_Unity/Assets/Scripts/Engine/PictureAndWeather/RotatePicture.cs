@@ -9,6 +9,7 @@ namespace Engine.PictureAndWeather
         public int Angle { get; set; }
         public int Duration { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public RotatePicture()
         {

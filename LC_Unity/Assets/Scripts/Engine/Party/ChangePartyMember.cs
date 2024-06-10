@@ -11,6 +11,7 @@ namespace Engine.Party
         public ActionType Action { get; set; }
         public bool Initialize { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ChangePartyMember()
         {

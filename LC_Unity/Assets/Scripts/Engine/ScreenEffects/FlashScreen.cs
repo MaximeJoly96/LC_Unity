@@ -9,6 +9,7 @@ namespace Engine.ScreenEffects
         public Color TargetColor { get; set; }
         public bool WaitForCompletion { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public FlashScreen()
         {

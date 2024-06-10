@@ -9,6 +9,7 @@ namespace Engine.Message
     {
         public int DigitsCount { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public DisplayInputNumber()
         {

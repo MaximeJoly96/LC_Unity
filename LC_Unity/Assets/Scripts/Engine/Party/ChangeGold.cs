@@ -7,6 +7,7 @@ namespace Engine.Party
     {
         public int Value { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ChangeGold()
         {

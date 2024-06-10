@@ -12,6 +12,7 @@ namespace Engine.PictureAndWeather
         public int Y { get; set; }
         public float Alpha { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ShowPicture()
         {

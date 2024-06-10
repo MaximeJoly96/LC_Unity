@@ -8,6 +8,7 @@ namespace Engine.Actor
         public int CharacterId { get; set; }
         public int ItemId { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ChangeEquipment()
         {

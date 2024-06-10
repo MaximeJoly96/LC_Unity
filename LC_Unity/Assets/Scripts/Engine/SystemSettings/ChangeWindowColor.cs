@@ -8,6 +8,7 @@ namespace Engine.SystemSettings
     {
         public Color TargetColor { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ChangeWindowColor()
         {

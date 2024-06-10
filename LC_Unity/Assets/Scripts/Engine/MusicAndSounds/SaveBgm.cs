@@ -7,6 +7,7 @@ namespace Engine.MusicAndSounds
     {
         public string Name { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public SaveBgm()
         {

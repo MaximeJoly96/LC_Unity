@@ -8,6 +8,7 @@ namespace Engine.GameProgression
         public string Key { get; set; }
         public string Source { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         protected PersistentData()
         {

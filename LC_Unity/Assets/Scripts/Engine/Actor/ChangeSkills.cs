@@ -11,6 +11,7 @@ namespace Engine.Actor
         public int SkillId { get; set; }
         public ActionType Action { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ChangeSkills()
         {

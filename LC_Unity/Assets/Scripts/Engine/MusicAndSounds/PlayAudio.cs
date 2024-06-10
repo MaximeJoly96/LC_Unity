@@ -9,6 +9,7 @@ namespace Engine.MusicAndSounds
         public int Volume { get; set; }
         public int Pitch { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         protected PlayAudio()
         {

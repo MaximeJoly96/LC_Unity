@@ -14,6 +14,7 @@ namespace Engine.Movement
         public PossibleDirection Direction { get; set; }
         public FadeType Fade { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public TransferObject()
         {

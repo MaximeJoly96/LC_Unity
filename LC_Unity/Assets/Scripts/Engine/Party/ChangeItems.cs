@@ -8,6 +8,7 @@ namespace Engine.Party
         public int Id { get; set; }
         public int Quantity { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ChangeItems()
         {

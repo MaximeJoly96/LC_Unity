@@ -39,6 +39,7 @@ namespace Dialogs
         {
             _element.Finished.Invoke();
             HasClosed.Invoke();
+            _element.IsFinished = true;
         }
 
         public virtual void FinishedOpening() { }

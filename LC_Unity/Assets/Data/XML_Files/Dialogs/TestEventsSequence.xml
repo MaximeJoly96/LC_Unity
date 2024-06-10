@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<ControlSwitch Key="switch1" Value="true" />
+	<ControlSwitch Key="switch1" Value="false" />
 	
 	<ConditionalBranch Type="SwitchCondition" FirstMember="switch1" Condition="Equal" SecondMember="true">
 		<true>
 			<ControlSwitch Key="switch2" Value="true" />
 		</true>
 		<false>
+			<ControlSwitch Key="switch3" Value="true" />
+			<ControlSwitch Key="switch5" Value="true" />
+			<ControlSwitch Key="switch6" Value="true" />
+			<ConditionalBranch Type="SwitchCondition" FirstMember="switch3" Condition="Equal" SecondMember="true">
+				<true>
+					<ControlSwitch Key="switch7" Value="true" />
+				</true>
+			</ConditionalBranch>
 		</false>
 	</ConditionalBranch>
-  
+	<ControlSwitch Key="switch4" Value="true" />
 </EventsSequence>

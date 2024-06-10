@@ -6,6 +6,7 @@ namespace Engine.SceneControl
     public class ReturnToTitle : IRunnable
     {
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ReturnToTitle()
         {

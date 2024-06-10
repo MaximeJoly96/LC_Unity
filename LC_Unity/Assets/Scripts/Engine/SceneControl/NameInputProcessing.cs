@@ -8,6 +8,7 @@ namespace Engine.SceneControl
         public int CharacterId { get; set; }
         public int MaxCharacters { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public NameInputProcessing()
         {

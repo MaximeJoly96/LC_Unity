@@ -8,6 +8,7 @@ namespace Engine.Actor
         public int TargetId { get; set; }
         public int Amount { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ChangeExp()
         {

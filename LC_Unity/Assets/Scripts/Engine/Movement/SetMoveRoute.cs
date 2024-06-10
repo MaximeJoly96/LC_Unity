@@ -12,6 +12,7 @@ namespace Engine.Movement
         public bool WaitForCompletion { get; set; }
         public List<Move> Moves { get; private set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public SetMoveRoute()
         {

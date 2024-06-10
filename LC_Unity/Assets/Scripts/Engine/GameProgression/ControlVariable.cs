@@ -43,7 +43,8 @@ namespace Engine.GameProgression
             }
 
             Finished.Invoke();
-        }
+            IsFinished = true;
+    }
 
         public void AddValue(int value)
         {

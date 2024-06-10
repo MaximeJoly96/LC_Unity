@@ -10,6 +10,7 @@ namespace Engine.SceneControl
         public bool CanEscape { get; set; }
         public bool DefeatAllowed { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public BattleProcessing()
         {

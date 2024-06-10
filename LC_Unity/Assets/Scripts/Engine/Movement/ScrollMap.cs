@@ -9,6 +9,7 @@ namespace Engine.Movement
         public int Y { get; set; }
         public int Speed { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ScrollMap()
         {

@@ -7,6 +7,7 @@ namespace Engine.SystemSettings
     {
         public bool Enabled { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         protected ChangeAccess()
         {

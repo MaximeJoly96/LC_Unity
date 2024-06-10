@@ -8,6 +8,7 @@ namespace Engine.FlowControl
         public string FirstMember { get; set; }
         public string SecondMember { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public EventsSequence SequenceWhenTrue { get; set; }
         public EventsSequence SequenceWhenFalse { get; set; }

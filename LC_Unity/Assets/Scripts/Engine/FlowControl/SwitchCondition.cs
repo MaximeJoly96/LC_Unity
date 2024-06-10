@@ -14,9 +14,22 @@ namespace Engine.FlowControl
             EventsRunner runner = Object.FindObjectOfType<EventsRunner>();
             bool result = ConditionEvaluator.Instance.EvaluateSwitchCondition(this);
 
-            runner.RunEvents(result ? SequenceWhenTrue : SequenceWhenFalse);
+            if (result)
+            {
+                SequenceWhenTrue.Finished.AddListener(Conclude);
+                runner.RunEvents(SequenceWhenTrue);
+            }
+            else
+            {
+                SequenceWhenFalse.Finished.AddListener(Conclude);
+                runner.RunEvents(SequenceWhenFalse);
+            }
+        }
 
+        private void Conclude()
+        {
             Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

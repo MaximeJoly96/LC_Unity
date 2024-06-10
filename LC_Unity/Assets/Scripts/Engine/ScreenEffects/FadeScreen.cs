@@ -7,6 +7,7 @@ namespace Engine.ScreenEffects
     {
         public bool FadeIn { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public FadeScreen()
         {

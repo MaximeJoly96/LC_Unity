@@ -8,6 +8,7 @@ namespace Engine.Events
     public interface IRunnable
     {
         UnityEvent Finished { get; set; }
+        bool IsFinished { get; set; }
         void Run();
     }
 }

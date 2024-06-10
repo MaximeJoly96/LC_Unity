@@ -17,6 +17,7 @@ namespace Engine.Message
         public List<Choice> Choices { get; set; }
         public string Message { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public DisplayChoiceList()
         {

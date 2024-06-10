@@ -27,6 +27,7 @@ namespace Engine.Message
         public DialogBoxPosition BoxPosition { get; set; }
         public string FaceGraphics { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public DisplayDialog()
         {

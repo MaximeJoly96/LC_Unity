@@ -12,6 +12,7 @@ namespace Engine.PictureAndWeather
         public int Duration { get; set; }
         public bool WaitForCompletion { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public MovePicture()
         {

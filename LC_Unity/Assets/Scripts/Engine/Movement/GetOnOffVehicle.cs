@@ -6,6 +6,7 @@ namespace Engine.Movement
     public class GetOnOffVehicle : IRunnable
     {
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public GetOnOffVehicle()
         {

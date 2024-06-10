@@ -1,4 +1,5 @@
 ﻿using GameProgression;
+using UnityEngine;
 
 namespace Engine.GameProgression
 {
@@ -9,8 +10,10 @@ namespace Engine.GameProgression
         public override void Run()
         {
             PersistentDataHolder.Instance.StoreData(Key, Value);
+            Debug.Log("stored " + Key);
 
             Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

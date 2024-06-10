@@ -7,6 +7,7 @@ namespace Engine.SceneControl
     {
         public int MerchantId { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ShopProcessing()
         {

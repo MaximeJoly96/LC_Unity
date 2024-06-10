@@ -26,6 +26,7 @@ namespace Engine.GameProgression
             }
 
             Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

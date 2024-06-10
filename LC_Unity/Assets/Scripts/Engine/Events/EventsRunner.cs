@@ -5,8 +5,6 @@ namespace Engine.Events
 {
     public class EventsRunner : MonoBehaviour
     {
-        private bool _moveNext;
-
         [SerializeField]
         private TextAsset _test;
 
@@ -27,22 +25,16 @@ namespace Engine.Events
             StartCoroutine(RunSequence(sequence));
         }
 
-        private void MoveNext()
-        {
-            _moveNext = true;
-        }
-
         private IEnumerator RunSequence(EventsSequence sequence)
         {
             for (int i = 0; i < sequence.Events.Count; i++)
             {
-                _moveNext = false;
-                sequence.Events[i].Finished.AddListener(MoveNext);
-
                 sequence.Events[i].Run();
 
-                yield return new WaitUntil(() => _moveNext);
+                yield return new WaitUntil(() => sequence.Events[i].IsFinished);
             }
+
+            sequence.Finished.Invoke();
         }
     }
 }

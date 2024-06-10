@@ -7,10 +7,11 @@ namespace Engine.Map
     {
         public bool Enabled { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ChangeMapNameDisplay()
         {
-
+            Finished = new UnityEvent();
         }
 
         public void Run()

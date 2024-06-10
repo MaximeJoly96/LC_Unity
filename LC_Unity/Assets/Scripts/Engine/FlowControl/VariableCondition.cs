@@ -12,6 +12,7 @@ namespace Engine.FlowControl
         {
             ConditionEvaluator.Instance.EvaluateVariableCondition(this);
             Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

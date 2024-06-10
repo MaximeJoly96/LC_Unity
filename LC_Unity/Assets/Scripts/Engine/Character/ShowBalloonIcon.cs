@@ -9,6 +9,7 @@ namespace Engine.Character
         public int BalloonIconId { get; set; }
         public bool WaitForCompletion { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public ShowBalloonIcon()
         {

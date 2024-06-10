@@ -7,6 +7,7 @@ namespace Engine.Timing
     {
         public int Duration { get; set; }
         public UnityEvent Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         public Wait()
         {
