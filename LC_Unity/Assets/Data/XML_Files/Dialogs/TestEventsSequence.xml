@@ -3,10 +3,11 @@
 	<ControlSwitch Key="switch1" Value="true" />
 	
 	<ConditionalBranch Type="SwitchCondition" FirstMember="switch1" Condition="Equal" SecondMember="true">
-		<Result Value="true">
-		</Result>
-		<Result Value="false">
-		</Result>
+		<true>
+			<ControlSwitch Key="switch2" Value="true" />
+		</true>
+		<false>
+		</false>
 	</ConditionalBranch>
   
 </EventsSequence>

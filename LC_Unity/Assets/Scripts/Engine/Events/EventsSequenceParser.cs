@@ -18,23 +18,18 @@ using Engine.Map;
 
 namespace Engine.Events
 {
-    public class EventsSequenceParser
+    public static class EventsSequenceParser
     {
-        public EventsSequence ParseEventsSequence(TextAsset file)
+        public static EventsSequence ParseEventsSequence(XmlNode baseNode)
         {
             EventsSequence sequence = new EventsSequence();
 
-            XmlDocument document = new XmlDocument();
-            document.LoadXml(file.text);
-
-            XmlNode eventsSequenceNode = document.SelectSingleNode("EventsSequence");
-
-            foreach(XmlNode evt in eventsSequenceNode)
+            foreach (XmlNode evt in baseNode)
             {
                 string nodeName = evt.Name;
                 EventType eventType = (EventType)Enum.Parse(typeof(EventType), nodeName);
 
-                switch(eventType)
+                switch (eventType)
                 {
                     case EventType.DisplayDialog:
                         sequence.Add(XmlMessageParser.ParseDialogData(evt));
@@ -210,6 +205,14 @@ namespace Engine.Events
             return sequence;
         }
 
+        public static EventsSequence ParseEventsSequence(TextAsset file)
+        {
+            XmlDocument document = new XmlDocument();
+            document.LoadXml(file.text);
 
+            XmlNode eventsSequenceNode = document.SelectSingleNode("EventsSequence");
+
+            return ParseEventsSequence(eventsSequenceNode);
+        }
     }
 }

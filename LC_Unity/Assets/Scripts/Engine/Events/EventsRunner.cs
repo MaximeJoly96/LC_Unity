@@ -17,9 +17,13 @@ namespace Engine.Events
 
         public void RunEvents()
         {
-            EventsSequenceParser parser = new EventsSequenceParser();
-            var sequence = parser.ParseEventsSequence(_test);
+            var sequence = EventsSequenceParser.ParseEventsSequence(_test);
 
+            RunEvents(sequence);
+        }
+
+        public void RunEvents(EventsSequence sequence)
+        {
             StartCoroutine(RunSequence(sequence));
         }
 

@@ -9,6 +9,9 @@ namespace Engine.FlowControl
         public string SecondMember { get; set; }
         public UnityEvent Finished { get; set; }
 
+        public EventsSequence SequenceWhenTrue { get; set; }
+        public EventsSequence SequenceWhenFalse { get; set; }
+
         protected ConditionalBranch()
         {
             Finished = new UnityEvent();

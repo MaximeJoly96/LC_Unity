@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using System;
+using Engine.Events;
 
 namespace Engine.FlowControl
 {
@@ -19,6 +20,9 @@ namespace Engine.FlowControl
                 condition.FirstMember = firstMember;
                 condition.SecondMember = secondMember;
 
+                condition.SequenceWhenTrue = ParseConditionResults(true, data);
+                condition.SequenceWhenFalse = ParseConditionResults(false, data);
+
                 return condition;
             }
             else if (type == typeof(VariableCondition).Name)
@@ -28,6 +32,9 @@ namespace Engine.FlowControl
                 condition.Condition = conditionType;
                 condition.FirstMember = firstMember;
                 condition.SecondMember = secondMember;
+
+                condition.SequenceWhenTrue = ParseConditionResults(true, data);
+                condition.SequenceWhenFalse = ParseConditionResults(false, data);
 
                 return condition;
             }
@@ -39,10 +46,25 @@ namespace Engine.FlowControl
                 condition.FirstMember = firstMember;
                 condition.SecondMember = secondMember;
 
+                condition.SequenceWhenTrue = ParseConditionResults(true, data);
+                condition.SequenceWhenFalse = ParseConditionResults(false, data);
+
                 return condition;
             }
             else
                 throw new InvalidOperationException("Unsupported ConditionalBranch type");
+        }
+
+        private static EventsSequence ParseConditionResults(bool conditionSuccess, XmlNode node)
+        {
+            var child = node.SelectSingleNode(conditionSuccess.ToString().ToLower());
+
+            if(child != null)
+            {
+                return EventsSequenceParser.ParseEventsSequence(child);
+            }
+
+            return new EventsSequence();
         }
     }
 }

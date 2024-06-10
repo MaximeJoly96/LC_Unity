@@ -1,4 +1,6 @@
 ﻿using FlowControl;
+using UnityEngine;
+using Engine.Events;
 
 namespace Engine.FlowControl
 {
@@ -9,7 +11,11 @@ namespace Engine.FlowControl
 
         public override void Run()
         {
-            ConditionEvaluator.Instance.EvaluateSwitchCondition(this);
+            EventsRunner runner = Object.FindObjectOfType<EventsRunner>();
+            bool result = ConditionEvaluator.Instance.EvaluateSwitchCondition(this);
+
+            runner.RunEvents(result ? SequenceWhenTrue : SequenceWhenFalse);
+
             Finished.Invoke();
         }
     }
