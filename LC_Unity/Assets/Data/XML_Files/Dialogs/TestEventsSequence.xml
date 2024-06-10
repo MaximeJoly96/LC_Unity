@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<ControlSwitch Key="switch1" Value="false" />
+	<ControlVariable Key="var1">
+		<Operation>Set</Operation>
+		<Operand Type="Constant">0</Operand>
+	</ControlVariable>
 	
-	<ConditionalBranch Type="SwitchCondition" FirstMember="switch1" Condition="Equal" SecondMember="true">
+	<ConditionalBranch Type="VariableCondition" FirstMember="var1" Condition="Equal" SecondMember="0">
 		<true>
-			<ControlSwitch Key="switch2" Value="true" />
-		</true>
-		<false>
-			<ControlSwitch Key="switch3" Value="true" />
-			<ControlSwitch Key="switch5" Value="true" />
-			<ControlSwitch Key="switch6" Value="true" />
-			<ConditionalBranch Type="SwitchCondition" FirstMember="switch3" Condition="Equal" SecondMember="true">
-				<true>
-					<ControlSwitch Key="switch7" Value="true" />
-				</true>
+			<ControlVariable Key="var1">
+				<Operation>Add</Operation>
+				<Operand Type="Constant">5</Operand>
+			</ControlVariable>
+			<ConditionalBranch Type="VariableCondition" FirstMember="var1" Condition="Equal" SecondMember="5">
+				<false>
+					<ControlVariable Key="var1">
+						<Operation>Mul</Operation>
+						<Operand Type="Constant">4</Operand>
+					</ControlVariable>
+				</false>
 			</ConditionalBranch>
-		</false>
+		</true>
 	</ConditionalBranch>
-	<ControlSwitch Key="switch4" Value="true" />
+	<ControlVariable Key="var1">
+		<Operation>Sub</Operation>
+		<Operand Type="Constant">2</Operand>
+	</ControlVariable>
 </EventsSequence>

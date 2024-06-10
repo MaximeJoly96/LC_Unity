@@ -11,13 +11,11 @@ namespace Engine.Events
         public EventsSequence()
         {
             Finished = new UnityEvent();
+            Events = new List<IRunnable>();
         }
 
         public void Add(IRunnable evt)
         {
-            if (Events == null)
-                Events = new List<IRunnable>();
-
             Events.Add(evt);
         }
     }

@@ -10,9 +10,9 @@ namespace Engine.FlowControl
 
         public override void Run()
         {
-            ConditionEvaluator.Instance.EvaluateTimerCondition(this);
-            Finished.Invoke();
-            IsFinished = true;
+            bool result = ConditionEvaluator.Instance.EvaluateTimerCondition(this);
+
+            DefineSequences(result);
         }
     }
 }
