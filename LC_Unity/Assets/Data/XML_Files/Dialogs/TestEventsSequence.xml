@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-  <ConditionalBranch Type="SwitchCondition" FirstMember="switch1" SecondMember="true" Condition="Equal" />
-  <ConditionalBranch Type="SwitchCondition" FirstMember="switch1" SecondMember="switch2" Condition="NotEqual" />
-  <ConditionalBranch Type="SwitchCondition" FirstMember="true" SecondMember="switch2" Condition="NotEqual" />
+	<ControlTimer Key="timer1">
+		<Action>Start</Action>
+		<Duration>10</Duration>
+	</ControlTimer>
+	<ControlTimer Key="timer2">
+		<Action>Start</Action>
+		<Duration>40</Duration>
+	</ControlTimer>
+	
+	<ConditionalBranch Type="TimerCondition" Condition="Before" FirstMember="timer1" SecondMember="20" />
+	<ConditionalBranch Type="TimerCondition" Condition="After" FirstMember="timer1" SecondMember="timer2" />
+	<ConditionalBranch Type="TimerCondition" Condition="After" FirstMember="20" SecondMember="timer2" />
   
-  <ConditionalBranch Type="VariableCondition" Condition="GreaterThan" FirstMember="var1" SecondMember="var2" />
-  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="var1" SecondMember="0" />
-  <ConditionalBranch Type="VariableCondition" Condition="SmallerThan" FirstMember="2" SecondMember="var2" />
-  
-  <ConditionalBranch Type="TimerCondition" Condition="Greater" FirstMember="timer1" SecondMember="20" />
-  <ConditionalBranch Type="TimerCondition" Condition="Smaller" FirstMember="timer1" SecondMember="timer2" />
-  <ConditionalBranch Type="TimerCondition" Condition="Smaller" FirstMember="20" SecondMember="timer2" />
 </EventsSequence>

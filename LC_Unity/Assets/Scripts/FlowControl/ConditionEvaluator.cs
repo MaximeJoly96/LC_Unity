@@ -102,8 +102,8 @@ namespace FlowControl
         {
             return condition switch
             {
-                TimerCondition.Type.Greater => timer.CurrentTime > threshold,
-                TimerCondition.Type.Smaller => timer.CurrentTime < threshold,
+                TimerCondition.Type.After => timer.CurrentTime > threshold,
+                TimerCondition.Type.Before => timer.CurrentTime < threshold,
                 _ => throw new InvalidOperationException("Provided condition does not exist for TimerCondition : " + condition.ToString()),
             };
         }
@@ -112,8 +112,8 @@ namespace FlowControl
         {
             return condition switch
             {
-                TimerCondition.Type.Greater => t1.CurrentTime > t2.CurrentTime,
-                TimerCondition.Type.Smaller => t1.CurrentTime < t2.CurrentTime,
+                TimerCondition.Type.After => t1.CurrentTime > t2.CurrentTime,
+                TimerCondition.Type.Before => t1.CurrentTime < t2.CurrentTime,
                 _ => throw new InvalidOperationException("Provided condition does not exist for TimerCondition : " + condition.ToString()),
             };
         }

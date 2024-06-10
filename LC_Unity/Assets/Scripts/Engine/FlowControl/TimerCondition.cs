@@ -4,7 +4,7 @@ namespace Engine.FlowControl
 {
     public class TimerCondition : ConditionalBranch
     {
-        public enum Type { Greater, Smaller }
+        public enum Type { Before, After }
 
         public Type Condition { get; set; }
 
