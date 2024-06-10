@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<ControlTimer Key="timer1">
-		<Action>Start</Action>
-		<Duration>10</Duration>
-	</ControlTimer>
-	<ControlTimer Key="timer2">
-		<Action>Start</Action>
-		<Duration>40</Duration>
-	</ControlTimer>
+	<ControlSwitch Key="switch1" Value="true" />
 	
-	<ConditionalBranch Type="TimerCondition" Condition="Before" FirstMember="timer1" SecondMember="20" />
-	<ConditionalBranch Type="TimerCondition" Condition="After" FirstMember="timer1" SecondMember="timer2" />
-	<ConditionalBranch Type="TimerCondition" Condition="After" FirstMember="20" SecondMember="timer2" />
+	<ConditionalBranch Type="SwitchCondition" FirstMember="switch1" Condition="Equal" SecondMember="true">
+		<Result Value="true">
+		</Result>
+		<Result Value="false">
+		</Result>
+	</ConditionalBranch>
   
 </EventsSequence>
