@@ -1,4 +1,5 @@
 ﻿using System.Xml;
+using System.Globalization;
 
 namespace Engine.Timing
 {
@@ -8,7 +9,7 @@ namespace Engine.Timing
         {
             Wait wait = new Wait();
 
-            wait.Duration = int.Parse(data.Attributes["Duration"].InnerText);
+            wait.Duration = float.Parse(data.Attributes["Duration"].InnerText, CultureInfo.InvariantCulture);
 
             return wait;
         }

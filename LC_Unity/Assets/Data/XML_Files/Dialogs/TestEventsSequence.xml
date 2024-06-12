@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<ControlVariable Key="var1">
-		<Operation>Set</Operation>
-		<Operand Type="Constant">0</Operand>
-	</ControlVariable>
-	
-	<ConditionalBranch Type="VariableCondition" FirstMember="var1" Condition="Equal" SecondMember="0">
-		<true>
-			<ControlVariable Key="var1">
-				<Operation>Add</Operation>
-				<Operand Type="Constant">5</Operand>
-			</ControlVariable>
-			<ConditionalBranch Type="VariableCondition" FirstMember="var1" Condition="Equal" SecondMember="5">
-				<false>
-					<ControlVariable Key="var1">
-						<Operation>Mul</Operation>
-						<Operand Type="Constant">4</Operand>
-					</ControlVariable>
-				</false>
-			</ConditionalBranch>
-		</true>
-	</ConditionalBranch>
-	<ControlVariable Key="var1">
-		<Operation>Sub</Operation>
-		<Operand Type="Constant">2</Operand>
-	</ControlVariable>
+	<DisplayDialog>
+		<DialogBoxStyle>Classic</DialogBoxStyle>
+		<DialogBoxPosition>Bottom</DialogBoxPosition>
+		<Locutor>TestLocutor</Locutor>
+		<Message>TestMessage</Message>
+		<BackgroundColor r="255" g="255" b="255" a="255" />
+		<FaceGraphics>TestFaceGraphics</FaceGraphics>
+	</DisplayDialog>
+	<Wait Duration="2.5" />
+	<DisplayDialog>
+		<DialogBoxStyle>Classic</DialogBoxStyle>
+		<DialogBoxPosition>Bottom</DialogBoxPosition>
+		<Locutor>TestLocutor</Locutor>
+		<Message>TestMessage</Message>
+		<BackgroundColor r="255" g="255" b="255" a="255" />
+		<FaceGraphics>TestFaceGraphics</FaceGraphics>
+	</DisplayDialog>
 </EventsSequence>
