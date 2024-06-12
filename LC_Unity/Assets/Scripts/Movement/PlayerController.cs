@@ -2,11 +2,10 @@
 using System.Linq;
 using LC_Unity.Interactions;
 
-namespace LC_Unity.Movement
+namespace Movement
 {
     public class PlayerController : MonoBehaviour
     {
-        private const float TILE_SIZE_PIXELS = 32.0f;
         private const float SPEED = 4.0f;
 
         private Rigidbody2D _rb;
