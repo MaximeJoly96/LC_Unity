@@ -8,11 +8,6 @@ namespace Engine.Events
         [SerializeField]
         private TextAsset _test;
 
-        private void Awake()
-        {
-            RunEvents();
-        }
-
         public void RunEvents()
         {
             var sequence = EventsSequenceParser.ParseEventsSequence(_test);

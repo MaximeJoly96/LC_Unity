@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Engine.Timing;
+using Logging;
 
 namespace Timing
 {
@@ -11,7 +12,7 @@ namespace Timing
             if (wait.Duration > 0.0f)
                 StartCoroutine(DoWait(wait));
             else
-                Debug.LogError("You're trying to wait a negative duration. This is not allowed.");
+                LogsHandler.Instance.LogError("You're trying to wait a negative duration. This is not allowed.");
         }
 
         private IEnumerator DoWait(Wait wait)

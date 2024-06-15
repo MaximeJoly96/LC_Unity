@@ -2,6 +2,7 @@
 using GameProgression;
 using System;
 using UnityEngine;
+using Logging;
 
 namespace FlowControl
 {
@@ -145,12 +146,12 @@ namespace FlowControl
                 }
                 catch (InvalidCastException)
                 {
-                    Debug.LogError("Provided member is not a bool " + member + " but you are using it in SwitchCondition.");
+                    LogsHandler.Instance.LogError("Provided member is not a bool " + member + " but you are using it in SwitchCondition.");
                 }
             }
             else
             {
-                Debug.LogError("Cannot evaluate switch condition because key " + member + " does not exist.");
+                LogsHandler.Instance.LogError("Cannot evaluate switch condition because key " + member + " does not exist.");
             }
 
             return false;
@@ -168,14 +169,14 @@ namespace FlowControl
                 }
                 catch (InvalidCastException)
                 {
-                    Debug.LogError("One of the provided members (" + condition.FirstMember + " or "
-                                   + condition.SecondMember + " or both) is not a bool but you are using it in SwitchCondition.");
+                    LogsHandler.Instance.LogError("One of the provided members (" + condition.FirstMember + " or "
+                                                  + condition.SecondMember + " or both) is not a bool but you are using it in SwitchCondition.");
                 }
             }
             else
             {
-                Debug.LogError("One of the provided members (" + condition.FirstMember + " or " +
-                               condition.SecondMember + " or both) does not exist.");
+                LogsHandler.Instance.LogError("One of the provided members (" + condition.FirstMember + " or " +
+                                              condition.SecondMember + " or both) does not exist.");
             }
 
             return false;
@@ -192,7 +193,7 @@ namespace FlowControl
             }
             else
             {
-                Debug.LogError("Timer " + member + " does not exist but you are trying to use it in TimerCondition.");
+                LogsHandler.Instance.LogError("Timer " + member + " does not exist but you are trying to use it in TimerCondition.");
             }
 
             return false;
@@ -209,8 +210,8 @@ namespace FlowControl
             }
             else
             {
-                Debug.LogError("One of the provided member (" + condition.FirstMember + " or "
-                               + condition.SecondMember + " or both) does not exist.");
+                LogsHandler.Instance.LogError("One of the provided member (" + condition.FirstMember + " or "
+                                              + condition.SecondMember + " or both) does not exist.");
             }
 
             return false;
@@ -229,13 +230,13 @@ namespace FlowControl
                 }
                 catch (InvalidCastException)
                 {
-                    Debug.LogError("You are trying to use " + member
-                                   + " as an integer in a VariableCondition but it was not stored as such.");
+                    LogsHandler.Instance.LogError("You are trying to use " + member
+                                                  + " as an integer in a VariableCondition but it was not stored as such.");
                 }
             }
             else
             {
-                Debug.LogError("Provided variable " + member + " does not exist.");
+                LogsHandler.Instance.LogError("Provided variable " + member + " does not exist.");
             }
 
             return false;
@@ -255,14 +256,14 @@ namespace FlowControl
                 }
                 catch(InvalidCastException)
                 {
-                    Debug.LogError("One of the provided members (" + condition.FirstMember + " or "
-                                   + condition.SecondMember + " or both) is not a int but you are using it in VariableCondition.");
+                    LogsHandler.Instance.LogError("One of the provided members (" + condition.FirstMember + " or "
+                                                  + condition.SecondMember + " or both) is not a int but you are using it in VariableCondition.");
                 }
             }
             else
             {
-                Debug.LogError("One of the provided members (" + condition.FirstMember + " or " +
-                               condition.SecondMember + " or both) does not exist.");
+                LogsHandler.Instance.LogError("One of the provided members (" + condition.FirstMember + " or " +
+                                                   condition.SecondMember + " or both) does not exist.");
             }
 
             return false;
