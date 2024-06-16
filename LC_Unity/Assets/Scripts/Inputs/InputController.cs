@@ -28,9 +28,13 @@ namespace Inputs
             RightClick = new UnityEvent<Vector2>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             HandleAxes();
+        }
+
+        private void Update()
+        {
             HandleButtons();
             HandleClicks();
         }

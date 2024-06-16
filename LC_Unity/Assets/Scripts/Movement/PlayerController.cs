@@ -14,6 +14,7 @@ namespace Movement
         private Animator _animator;
         private Collider2D _collider;
         private InputController _inputController;
+        private bool _busy;
 
         private SpriteRenderer _renderer
         {
@@ -42,17 +43,20 @@ namespace Movement
 
         private void HandleInput(InputAction input)
         {
-            switch(input)
+            if(!_busy)
             {
-                case InputAction.Select:
-                    CheckForInteraction();
-                    break;
-                case InputAction.MoveDown:
-                case InputAction.MoveLeft:
-                case InputAction.MoveRight:
-                case InputAction.MoveUp:
-                    GetInput();
-                    break;
+                switch (input)
+                {
+                    case InputAction.Select:
+                        CheckForInteraction();
+                        break;
+                    case InputAction.MoveDown:
+                    case InputAction.MoveLeft:
+                    case InputAction.MoveRight:
+                    case InputAction.MoveUp:
+                        GetInput();
+                        break;
+                }
             }
         }
 
@@ -100,7 +104,10 @@ namespace Movement
             if(interactible != null)
             {
                 _change = interactible.transform.position - _collider.bounds.center;
-                _rb.MovePosition(transform.position + _change * SPEED * Time.deltaTime);
+                HandleAnimationAndMovement();
+                _rb.velocity = Vector3.zero;
+                _change = Vector3.zero;
+                _busy = true;
                 interactible.GetComponent<EventsRunner>().RunEvents();
             }
         }
