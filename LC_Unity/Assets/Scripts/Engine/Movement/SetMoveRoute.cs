@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using Engine.Movement.Moves;
 using UnityEngine.Events;
+using Movement;
+using UnityEngine;
 
 namespace Engine.Movement
 {
     public class SetMoveRoute : IRunnable
     {
+        public string AgentId { get; set; }
         public bool RepeatAction { get; set; }
         public bool SkipIfCannotMove { get; set; }
         public bool WaitForCompletion { get; set; }
@@ -21,7 +24,7 @@ namespace Engine.Movement
 
         public void Run()
         {
-
+            Object.FindObjectOfType<MoveRouteRunner>().MoveAgent(this);
         }
 
         public void AddMove(Move move)

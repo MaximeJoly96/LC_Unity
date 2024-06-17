@@ -29,5 +29,10 @@ namespace Field
         {
             _registeredAgents.Add(agent.Id, agent);
         }
+
+        public Agent GetAgent(string id)
+        {
+            return _registeredAgents[id];
+        }
     }
 }

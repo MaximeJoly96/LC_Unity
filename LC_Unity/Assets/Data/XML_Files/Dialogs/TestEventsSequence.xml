@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<Wait Duration="0.2" />
-	<DisplayChoice>
-		<Message>Open the door ?</Message>
-		<Choices>
-			<Choice Id="0">Yes</Choice>
-			<Choice Id="1">No</Choice>
-		</Choices>
-	</DisplayChoice>
+	<SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="0">
+		<MoveRelative DeltaX="3.5" DeltaY="0" />
+		<MoveRelative DeltaX="0" DeltaY="2" />
+	</SetMoveRoute>
 </EventsSequence>

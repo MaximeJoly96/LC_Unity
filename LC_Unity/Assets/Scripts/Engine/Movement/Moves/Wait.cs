@@ -1,10 +1,12 @@
-﻿namespace Engine.Movement.Moves
+﻿using Field;
+
+namespace Engine.Movement.Moves
 {
     public class Wait : Move
     {
         public int Duration { get; set; }
 
-        public override void Run()
+        public override void Run(Agent agent)
         {
             
         }

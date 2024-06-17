@@ -1,6 +1,7 @@
 ﻿using System.Xml;
 using System;
 using Engine.Movement.Moves;
+using System.Globalization;
 
 namespace Engine.Movement
 {
@@ -47,6 +48,7 @@ namespace Engine.Movement
             route.RepeatAction = bool.Parse(data.Attributes["RepeatAction"].InnerText);
             route.SkipIfCannotMove = bool.Parse(data.Attributes["SkipIfCannotMove"].InnerText);
             route.WaitForCompletion = bool.Parse(data.Attributes["WaitForCompletion"].InnerText);
+            route.AgentId = data.Attributes["AgentId"].InnerText;
 
             foreach(XmlNode node in data.ChildNodes)
             {
@@ -55,8 +57,8 @@ namespace Engine.Movement
                 if (nodeName == typeof(MoveRelative).Name)
                 {
                     MoveRelative moveRel = new MoveRelative();
-                    moveRel.X = int.Parse(node.Attributes["X"].InnerText);
-                    moveRel.Y = int.Parse(node.Attributes["Y"].InnerText);
+                    moveRel.DeltaX = float.Parse(node.Attributes["DeltaX"].InnerText, CultureInfo.InvariantCulture);
+                    moveRel.DeltaY = float.Parse(node.Attributes["DeltaY"].InnerText, CultureInfo.InvariantCulture);
 
                     route.AddMove(moveRel);
                 }

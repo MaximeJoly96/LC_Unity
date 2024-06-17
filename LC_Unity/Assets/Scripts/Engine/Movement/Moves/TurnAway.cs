@@ -1,10 +1,12 @@
-﻿namespace Engine.Movement.Moves
+﻿using Field;
+
+namespace Engine.Movement.Moves
 {
     public class TurnAway : Move
     {
         public string Target { get; set; }
 
-        public override void Run()
+        public override void Run(Agent agent)
         {
             
         }

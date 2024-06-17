@@ -1,13 +1,20 @@
-﻿namespace Engine.Movement.Moves
+﻿using Field;
+using Movement;
+
+namespace Engine.Movement.Moves
 {
     public class MoveRelative : Move
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public float DeltaX { get; set; }
+        public float DeltaY { get; set; }
 
-        public override void Run()
+        public override void Run(Agent agent)
         {
+            IsFinished = false;
 
+            AgentMover mover = agent.gameObject.AddComponent<AgentMover>();
+            mover.StartMoving(DeltaX, DeltaY);
+            mover.DestinationReached.AddListener(() => IsFinished = true);
         }
     }
 }

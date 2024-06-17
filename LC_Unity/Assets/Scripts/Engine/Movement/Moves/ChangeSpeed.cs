@@ -1,10 +1,12 @@
-﻿namespace Engine.Movement.Moves
+﻿using Field;
+
+namespace Engine.Movement.Moves
 {
     public class ChangeSpeed : Move
     {
         public int Speed { get; set; }
 
-        public override void Run()
+        public override void Run(Agent agent)
         {
             
         }
