@@ -2,6 +2,7 @@
 using System.Linq;
 using Engine.Events;
 using Inputs;
+using Field;
 
 namespace Movement
 {
@@ -100,7 +101,7 @@ namespace Movement
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(_collider.bounds.center, 0.2f);
 
-            Collider2D interactible = colliders.FirstOrDefault(c => c.gameObject.GetComponent<EventsRunner>());
+            Collider2D interactible = colliders.FirstOrDefault(c => c.gameObject.GetComponent<RunnableAgent>());
             if(interactible != null)
             {
                 _change = interactible.transform.position - _collider.bounds.center;
@@ -108,7 +109,10 @@ namespace Movement
                 _rb.velocity = Vector3.zero;
                 _change = Vector3.zero;
                 _busy = true;
-                interactible.GetComponent<EventsRunner>().RunEvents();
+
+                RunnableAgent agent = interactible.GetComponent<RunnableAgent>();
+
+                agent.RunSequence();
             }
         }
     }

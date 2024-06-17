@@ -5,16 +5,6 @@ namespace Engine.Events
 {
     public class EventsRunner : MonoBehaviour
     {
-        [SerializeField]
-        private TextAsset _test;
-
-        public void RunEvents()
-        {
-            var sequence = EventsSequenceParser.ParseEventsSequence(_test);
-
-            RunEvents(sequence);
-        }
-
         public void RunEvents(EventsSequence sequence)
         {
             StartCoroutine(RunSequence(sequence));

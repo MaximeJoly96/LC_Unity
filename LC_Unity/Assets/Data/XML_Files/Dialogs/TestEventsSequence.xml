@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<DisplayDialog>
-		<DialogBoxStyle>Classic</DialogBoxStyle>
-		<DialogBoxPosition>Bottom</DialogBoxPosition>
-		<Locutor>TestLocutor</Locutor>
-		<Message>TestMessage</Message>
-		<BackgroundColor r="255" g="255" b="255" a="255" />
-		<FaceGraphics>TestFaceGraphics</FaceGraphics>
-	</DisplayDialog>
-	<Wait Duration="2.5" />
-	<DisplayDialog>
-		<DialogBoxStyle>Classic</DialogBoxStyle>
-		<DialogBoxPosition>Bottom</DialogBoxPosition>
-		<Locutor>TestLocutor</Locutor>
-		<Message>TestMessage</Message>
-		<BackgroundColor r="255" g="255" b="255" a="255" />
-		<FaceGraphics>TestFaceGraphics</FaceGraphics>
-	</DisplayDialog>
+	<Wait Duration="0.2" />
+	<DisplayChoice>
+		<Message>Open the door ?</Message>
+		<Choices>
+			<Choice Id="0">Yes</Choice>
+			<Choice Id="1">No</Choice>
+		</Choices>
+	</DisplayChoice>
 </EventsSequence>
