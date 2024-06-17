@@ -4,6 +4,9 @@ namespace Field
 {
     public class Agent : MonoBehaviour
     {
-        public string Id { get; set; }
+        [SerializeField]
+        private string _id;
+
+        public string Id { get { return _id; } }
     }
 }
