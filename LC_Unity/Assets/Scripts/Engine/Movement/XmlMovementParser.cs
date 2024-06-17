@@ -66,7 +66,7 @@ namespace Engine.Movement
                 {
                     MoveTowards moveTow = new MoveTowards();
                     moveTow.Target = node.Attributes["Target"].InnerText;
-                    moveTow.Distance = int.Parse(node.Attributes["Distance"].InnerText);
+                    moveTow.Distance = float.Parse(node.Attributes["Distance"].InnerText, CultureInfo.InvariantCulture);
 
                     route.AddMove(moveTow);
                 }
@@ -74,7 +74,7 @@ namespace Engine.Movement
                 {
                     MoveAway moveAway = new MoveAway();
                     moveAway.Target = node.Attributes["Target"].InnerText;
-                    moveAway.Distance = int.Parse(node.Attributes["Distance"].InnerText);
+                    moveAway.Distance = float.Parse(node.Attributes["Distance"].InnerText, CultureInfo.InvariantCulture);
 
                     route.AddMove(moveAway);
                 }

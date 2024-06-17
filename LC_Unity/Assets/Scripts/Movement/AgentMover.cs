@@ -6,33 +6,38 @@ namespace Movement
     public class AgentMover : MonoBehaviour
     {
         private Vector3 _destination;
+        protected Vector3 _delta;
 
-        public Vector3 Delta { get; set; }
         public float Speed { get; set; } = 1.0f;
-        public bool Moving { get; private set; }
-        public UnityEvent DestinationReached { get; private set; }
+        public bool Moving { get; protected set; }
+        public UnityEvent DestinationReached { get; protected set; }
 
         public void StartMoving(float deltaX, float deltaY)
         {
-            Delta = new Vector3(deltaX, deltaY);
-            _destination = transform.position + Delta;
+            _delta = new Vector3(deltaX, deltaY);
+            _destination = transform.position + _delta;
             DestinationReached = new UnityEvent();
 
             Moving = true;
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             if(Moving)
             {
-                transform.Translate(Delta * Time.deltaTime * Speed);
+                Move();
+            }
+        }
 
-                if (Vector3.Distance(transform.position, _destination) < 0.05f)
-                {
-                    DestinationReached.Invoke();
-                    Moving = false;
-                    Destroy(this);
-                }
+        protected virtual void Move()
+        {
+            transform.Translate(_delta * Time.deltaTime * Speed);
+
+            if (Vector3.Distance(transform.position, _destination) < 0.05f)
+            {
+                DestinationReached.Invoke();
+                Moving = false;
+                Destroy(this);
             }
         }
     }
