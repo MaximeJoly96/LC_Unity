@@ -8,7 +8,9 @@ namespace Engine.Movement.Moves
 
         public override void Run(Agent agent)
         {
-            
+            agent.WalkingAnimationActive = On;
+
+            IsFinished = true;
         }
     }
 }

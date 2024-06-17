@@ -2,6 +2,7 @@
 using System;
 using Engine.Movement.Moves;
 using System.Globalization;
+using Movement;
 
 namespace Engine.Movement
 {
@@ -89,22 +90,22 @@ namespace Engine.Movement
                 else if(nodeName == typeof(JumpRelative).Name)
                 {
                     JumpRelative jump = new JumpRelative();
-                    jump.X = int.Parse(node.Attributes["X"].InnerText);
-                    jump.Y = int.Parse(node.Attributes["Y"].InnerText);
+                    jump.DeltaX = float.Parse(node.Attributes["DeltaX"].InnerText, CultureInfo.InvariantCulture);
+                    jump.DeltaY = float.Parse(node.Attributes["DeltaY"].InnerText, CultureInfo.InvariantCulture);
 
                     route.AddMove(jump);
                 }
                 else if(nodeName == typeof(Wait).Name)
                 {
                     Wait wait = new Wait();
-                    wait.Duration = int.Parse(node.Attributes["Duration"].InnerText);
+                    wait.Duration = float.Parse(node.Attributes["Duration"].InnerText, CultureInfo.InvariantCulture);
 
                     route.AddMove(wait);
                 }
                 else if(nodeName == typeof(Turn).Name)
                 {
                     Turn turn = new Turn();
-                    turn.Direction = (Turn.PossibleDirection)Enum.Parse(typeof(Turn.PossibleDirection), node.Attributes["Direction"].InnerText);
+                    turn.Direction = (Direction)Enum.Parse(typeof(Direction), node.Attributes["Direction"].InnerText);
 
                     route.AddMove(turn);
                 }
@@ -132,14 +133,7 @@ namespace Engine.Movement
                 else if(nodeName == typeof(ChangeSpeed).Name)
                 {
                     ChangeSpeed change = new ChangeSpeed();
-                    change.Speed = int.Parse(node.Attributes["Speed"].InnerText);
-
-                    route.AddMove(change);
-                }
-                else if (nodeName == typeof(ChangeFrequency).Name)
-                {
-                    ChangeFrequency change = new ChangeFrequency();
-                    change.Speed = int.Parse(node.Attributes["Speed"].InnerText);
+                    change.Speed = float.Parse(node.Attributes["Speed"].InnerText, CultureInfo.InvariantCulture);
 
                     route.AddMove(change);
                 }
@@ -174,7 +168,7 @@ namespace Engine.Movement
                 else if(nodeName == typeof(ChangeOpacity).Name)
                 {
                     ChangeOpacity change = new ChangeOpacity();
-                    change.Alpha = float.Parse(node.Attributes["Alpha"].InnerText);
+                    change.Alpha = float.Parse(node.Attributes["Alpha"].InnerText, CultureInfo.InvariantCulture);
 
                     route.AddMove(change);
                 }

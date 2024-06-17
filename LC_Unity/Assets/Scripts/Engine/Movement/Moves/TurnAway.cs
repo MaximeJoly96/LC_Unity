@@ -8,7 +8,9 @@ namespace Engine.Movement.Moves
 
         public override void Run(Agent agent)
         {
-            
+            Agent target = AgentsManager.Instance.GetAgent(Target);
+            agent.UpdateDirection(target.CurrentDirection);
+            IsFinished = true;
         }
     }
 }

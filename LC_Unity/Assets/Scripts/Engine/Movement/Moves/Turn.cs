@@ -1,16 +1,16 @@
 ﻿using Field;
+using Movement;
 
 namespace Engine.Movement.Moves
 {
     public class Turn : Move
     {
-        public enum PossibleDirection { Left, Right, Bottom, Top }
-
-        public PossibleDirection Direction { get; set; }
+        public Direction Direction { get; set; }
 
         public override void Run(Agent agent)
         {
-            
+            agent.UpdateDirection(Direction);
+            IsFinished = true;
         }
     }
 }

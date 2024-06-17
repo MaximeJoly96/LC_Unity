@@ -1,4 +1,5 @@
 ﻿using Field;
+using Movement;
 
 namespace Engine.Movement.Moves
 {
@@ -8,7 +9,8 @@ namespace Engine.Movement.Moves
 
         public override void Run(Agent agent)
         {
-            
+            agent.UpdateDirection(DirectionUtils.ApplyAngleToDirection(Angle, agent.CurrentDirection));
+            IsFinished = true;
         }
     }
 }

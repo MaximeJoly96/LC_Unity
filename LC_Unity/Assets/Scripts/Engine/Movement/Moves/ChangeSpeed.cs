@@ -4,11 +4,12 @@ namespace Engine.Movement.Moves
 {
     public class ChangeSpeed : Move
     {
-        public int Speed { get; set; }
+        public float Speed { get; set; }
 
         public override void Run(Agent agent)
         {
-            
+            agent.UpdateSpeed(Speed);
+            IsFinished = true;
         }
     }
 }

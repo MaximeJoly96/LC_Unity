@@ -13,12 +13,13 @@ namespace Movement
         public void StartMoving(Agent target, float distance)
         {
             DestinationReached = new UnityEvent();
-            Speed = 2.0f;
 
             _delta = target.transform.position - transform.position;
 
             if(distance < 0.0f)
                 _delta *= -1.0f;
+
+            UpdateAgentDirection();
 
             _distanceToTravel = Math.Abs(distance);
             _travelledDistance = 0.0f;
