@@ -1,5 +1,7 @@
 ﻿using System.Xml;
 using System.Globalization;
+using Logging;
+using System;
 
 namespace Engine.Timing
 {
@@ -9,7 +11,14 @@ namespace Engine.Timing
         {
             Wait wait = new Wait();
 
-            wait.Duration = float.Parse(data.Attributes["Duration"].InnerText, CultureInfo.InvariantCulture);
+            try
+            {
+                wait.Duration = float.Parse(data.Attributes["Duration"].InnerText, CultureInfo.InvariantCulture);
+            }
+            catch(Exception e)
+            {
+                LogsHandler.Instance.LogFatalError("XmlGameProgressionParser cannot parse ControlSwitch. Exception: " + e.Message);
+            }
 
             return wait;
         }

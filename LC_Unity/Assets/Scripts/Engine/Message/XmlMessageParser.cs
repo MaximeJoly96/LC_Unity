@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Xml;
+﻿using System.Xml;
 using System;
+using Logging;
 
 namespace Engine.Message
 {
@@ -10,11 +10,18 @@ namespace Engine.Message
         {
             DisplayDialog dialog = new DisplayDialog();
 
-            dialog.BoxStyle = (DialogBoxStyle)Enum.Parse(typeof(DialogBoxStyle), data.SelectSingleNode("DialogBoxStyle").InnerText);
-            dialog.BoxPosition = (DialogBoxPosition)Enum.Parse(typeof(DialogBoxPosition), data.SelectSingleNode("DialogBoxPosition").InnerText);
-            dialog.Locutor = data.SelectSingleNode("Locutor").InnerText;
-            dialog.Message = data.SelectSingleNode("Message").InnerText;
-            dialog.FaceGraphics = data.SelectSingleNode("FaceGraphics").InnerText;
+            try
+            {
+                dialog.BoxStyle = (DialogBoxStyle)Enum.Parse(typeof(DialogBoxStyle), data.SelectSingleNode("DialogBoxStyle").InnerText);
+                dialog.BoxPosition = (DialogBoxPosition)Enum.Parse(typeof(DialogBoxPosition), data.SelectSingleNode("DialogBoxPosition").InnerText);
+                dialog.Locutor = data.SelectSingleNode("Locutor").InnerText;
+                dialog.Message = data.SelectSingleNode("Message").InnerText;
+                dialog.FaceGraphics = data.SelectSingleNode("FaceGraphics").InnerText;
+            }
+            catch(Exception e)
+            {
+                LogsHandler.Instance.LogFatalError("XmlMessageParser cannot parse DisplayDialog. Exception: " + e.Message);
+            }
 
             return dialog;
         }
@@ -23,17 +30,24 @@ namespace Engine.Message
         {
             DisplayChoiceList choiceList = new DisplayChoiceList();
 
-            choiceList.Message = data.SelectSingleNode("Message").InnerText;
-            XmlNode choices = data.SelectSingleNode("Choices");
-
-            foreach(XmlNode child in choices.ChildNodes)
+            try
             {
-                Choice choice = new Choice();
+                choiceList.Message = data.SelectSingleNode("Message").InnerText;
+                XmlNode choices = data.SelectSingleNode("Choices");
 
-                choice.Id = child.Attributes["Id"].InnerText;
-                choice.Text = child.InnerText;
+                foreach (XmlNode child in choices.ChildNodes)
+                {
+                    Choice choice = new Choice();
 
-                choiceList.Add(choice);
+                    choice.Id = child.Attributes["Id"].InnerText;
+                    choice.Text = child.InnerText;
+
+                    choiceList.Add(choice);
+                }
+            }
+            catch (Exception e)
+            {
+                LogsHandler.Instance.LogFatalError("XmlMessageParser cannot parse DisplayChoiceList. Exception: " + e.Message);
             }
 
             return choiceList;
@@ -43,7 +57,14 @@ namespace Engine.Message
         {
             DisplayInputNumber inputNumber = new DisplayInputNumber();
 
-            inputNumber.DigitsCount = int.Parse(data.Attributes["DigitsCount"].InnerText);
+            try
+            {
+                inputNumber.DigitsCount = int.Parse(data.Attributes["DigitsCount"].InnerText);
+            }
+            catch(Exception e)
+            {
+                LogsHandler.Instance.LogFatalError("XmlMessageParser cannot parse DisplayInputNumber. Exception: " + e.Message);
+            }
 
             return inputNumber;
         }
