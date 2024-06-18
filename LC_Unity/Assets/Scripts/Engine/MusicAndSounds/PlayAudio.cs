@@ -6,8 +6,8 @@ namespace Engine.MusicAndSounds
     public abstract class PlayAudio : IRunnable
     {
         public string Name { get; set; }
-        public int Volume { get; set; }
-        public int Pitch { get; set; }
+        public float Volume { get; set; }
+        public float Pitch { get; set; }
         public UnityEvent Finished { get; set; }
         public bool IsFinished { get; set; }
 

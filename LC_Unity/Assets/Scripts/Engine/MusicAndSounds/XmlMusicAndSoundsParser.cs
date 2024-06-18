@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml;
+using System.Globalization;
 
 namespace Engine.MusicAndSounds
 {
@@ -10,8 +11,8 @@ namespace Engine.MusicAndSounds
             PlayBgm play = new PlayBgm();
 
             play.Name = data.Attributes["Name"].InnerText;
-            play.Volume = int.Parse(data.Attributes["Volume"].InnerText);
-            play.Pitch = int.Parse(data.Attributes["Pitch"].InnerText);
+            play.Volume = float.Parse(data.Attributes["Volume"].InnerText, CultureInfo.InvariantCulture);
+            play.Pitch = float.Parse(data.Attributes["Pitch"].InnerText, CultureInfo.InvariantCulture);
 
             return play;
         }
@@ -49,8 +50,8 @@ namespace Engine.MusicAndSounds
             PlayBgs play = new PlayBgs();
 
             play.Name = data.Attributes["Name"].InnerText;
-            play.Volume = int.Parse(data.Attributes["Volume"].InnerText);
-            play.Pitch = int.Parse(data.Attributes["Pitch"].InnerText);
+            play.Volume = float.Parse(data.Attributes["Volume"].InnerText, CultureInfo.InvariantCulture);
+            play.Pitch = float.Parse(data.Attributes["Pitch"].InnerText, CultureInfo.InvariantCulture);
 
             return play;
         }
@@ -70,8 +71,8 @@ namespace Engine.MusicAndSounds
             PlayMusicalEffect play = new PlayMusicalEffect();
 
             play.Name = data.Attributes["Name"].InnerText;
-            play.Volume = int.Parse(data.Attributes["Volume"].InnerText);
-            play.Pitch = int.Parse(data.Attributes["Pitch"].InnerText);
+            play.Volume = float.Parse(data.Attributes["Volume"].InnerText, CultureInfo.InvariantCulture);
+            play.Pitch = float.Parse(data.Attributes["Pitch"].InnerText, CultureInfo.InvariantCulture);
 
             return play;
         }
@@ -81,8 +82,8 @@ namespace Engine.MusicAndSounds
             PlaySoundEffect play = new PlaySoundEffect();
 
             play.Name = data.Attributes["Name"].InnerText;
-            play.Volume = int.Parse(data.Attributes["Volume"].InnerText);
-            play.Pitch = int.Parse(data.Attributes["Pitch"].InnerText);
+            play.Volume = float.Parse(data.Attributes["Volume"].InnerText, CultureInfo.InvariantCulture);
+            play.Pitch = float.Parse(data.Attributes["Pitch"].InnerText, CultureInfo.InvariantCulture);
 
             return play;
         }

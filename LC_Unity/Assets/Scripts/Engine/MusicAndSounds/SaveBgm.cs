@@ -1,5 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using UnityEngine;
+using MusicAndSounds;
 
 namespace Engine.MusicAndSounds
 {
@@ -16,7 +18,9 @@ namespace Engine.MusicAndSounds
 
         public void Run()
         {
-
+            Object.FindObjectOfType<AudioPlayer>().SaveBgm(this);
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

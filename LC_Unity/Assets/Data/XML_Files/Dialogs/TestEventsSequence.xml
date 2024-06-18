@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<TintScreen WaitForCompletion="true" Duration="5">
-		<TargetColor R="1" G="0" B="0" A="0.5" />
-	</TintScreen>
-	<InputNumber DigitsCount="3" />
+	<PlayBgm Name="town" Volume="0.5" Pitch="1" />
+	<Wait Duration="2" />
+	<PlayBgs Name="forest" Volume="0.5" Pitch="1" />
+	<Wait Duration="2" />
+	<PlayMusicalEffect Name="goodnight" Volume="1" Pitch="1" />
+	<Wait Duration="2" />
+	<PlaySoundEffect Name="mining" Volume="2" Pitch="1" />
 </EventsSequence>
