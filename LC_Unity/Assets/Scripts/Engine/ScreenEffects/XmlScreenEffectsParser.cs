@@ -20,7 +20,7 @@ namespace Engine.ScreenEffects
         {
             TintScreen tint = new TintScreen();
 
-            tint.Duration = int.Parse(data.Attributes["Duration"].InnerText);
+            tint.Duration = float.Parse(data.Attributes["Duration"].InnerText, CultureInfo.InvariantCulture);
             tint.WaitForCompletion = bool.Parse(data.Attributes["WaitForCompletion"].InnerText);
 
             XmlNode colorNode = data.SelectSingleNode("TargetColor");

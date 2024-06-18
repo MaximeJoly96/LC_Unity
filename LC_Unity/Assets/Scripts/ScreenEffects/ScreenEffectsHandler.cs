@@ -110,12 +110,29 @@ namespace ScreenEffects
 
         private IEnumerator DoTintScreen(TintScreen tint)
         {
-            WaitForFixedUpdate wait = new WaitForFixedUpdate();
+            Color startColor = CanvasBackground.color;
 
-            yield return wait;
+            if(!tint.WaitForCompletion)
+            {
+                tint.Finished.Invoke();
+                tint.IsFinished = true;
+            }
 
-            tint.Finished.Invoke();
-            tint.IsFinished = true;
+            WaitForSeconds wait = new WaitForSeconds(tint.Duration / 50.0f);
+            int step = 0;
+
+            while(!ColorsAreSimilar(CanvasBackground.color, tint.TargetColor))
+            {
+                CanvasBackground.color = Color.Lerp(startColor, tint.TargetColor, step / 50.0f);
+                step++;
+                yield return wait;
+            }
+
+            if(tint.WaitForCompletion)
+            {
+                tint.Finished.Invoke();
+                tint.IsFinished = true;
+            }
         }
 
         private static bool ColorsAreSimilar(Color c1, Color c2)
