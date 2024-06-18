@@ -1,5 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using ScreenEffects;
+using UnityEngine;
 
 namespace Engine.ScreenEffects
 {
@@ -19,7 +21,7 @@ namespace Engine.ScreenEffects
 
         public void Run()
         {
-
+            Object.FindObjectOfType<ScreenEffectsHandler>().ShakeScreen(this);
         }
     }
 }

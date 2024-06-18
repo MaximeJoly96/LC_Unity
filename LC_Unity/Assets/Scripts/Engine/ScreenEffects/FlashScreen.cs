@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Engine.Events;
 using UnityEngine.Events;
+using ScreenEffects;
 
 namespace Engine.ScreenEffects
 {
@@ -18,7 +19,7 @@ namespace Engine.ScreenEffects
 
         public void Run()
         {
-
+            Object.FindObjectOfType<ScreenEffectsHandler>().FlashScreen(this);
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using UnityEngine;
+using ScreenEffects;
 
 namespace Engine.ScreenEffects
 {
@@ -16,7 +18,7 @@ namespace Engine.ScreenEffects
 
         public void Run()
         {
-
+            Object.FindObjectOfType<ScreenEffectsHandler>().FadeScreen(this);
         }
     }
 }
