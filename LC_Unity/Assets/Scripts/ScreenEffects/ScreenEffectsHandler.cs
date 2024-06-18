@@ -33,16 +33,6 @@ namespace ScreenEffects
                 LogsHandler.Instance.LogError("You forgot to define screen effects canvas while trying to use FlashScreen.");
         }
 
-        public void ShakeScreen(ShakeScreen shake)
-        {
-            if (_screenEffectsCanvas)
-            {
-                StartCoroutine(DoShakeScreen(shake));
-            }
-            else
-                LogsHandler.Instance.LogError("You forgot to define screen effects canvas while trying to use ShakeScreen.");
-        }
-
         public void TintScreen(TintScreen tint)
         {
             if (_screenEffectsCanvas)
@@ -96,16 +86,6 @@ namespace ScreenEffects
                 flash.Finished.Invoke();
                 flash.IsFinished = true;
             }
-        }
-
-        private IEnumerator DoShakeScreen(ShakeScreen shake)
-        {
-            WaitForFixedUpdate wait = new WaitForFixedUpdate();
-
-            yield return wait;
-
-            shake.Finished.Invoke();
-            shake.IsFinished = true;
         }
 
         private IEnumerator DoTintScreen(TintScreen tint)

@@ -68,24 +68,5 @@ namespace Engine.ScreenEffects
 
             return flash;
         }
-
-        public static ShakeScreen ParseShakeScreen(XmlNode data)
-        {
-            ShakeScreen shake = new ShakeScreen();
-
-            try
-            {
-                shake.WaitForCompletion = bool.Parse(data.Attributes["WaitForCompletion"].InnerText);
-                shake.Power = int.Parse(data.Attributes["Power"].InnerText);
-                shake.Speed = int.Parse(data.Attributes["Speed"].InnerText);
-                shake.Duration = int.Parse(data.Attributes["Duration"].InnerText);
-            }
-            catch(Exception e)
-            {
-                LogsHandler.Instance.LogFatalError("XmlScreenEffectsParser cannot parse ShakeScreen. Exception: " + e.Message);
-            }
-
-            return shake;
-        }
     }
 }

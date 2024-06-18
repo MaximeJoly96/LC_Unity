@@ -41,7 +41,6 @@
         // ScreenEffects
         FadeScreen,
         FlashScreen,
-        ShakeScreen,
         TintScreen,
 
         // Timing
