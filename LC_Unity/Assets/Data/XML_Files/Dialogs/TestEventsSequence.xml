@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<FadeScreen FadeIn="true" />
-	<FadeScreen FadeIn="false" />
-	<InputNumber DigitsCount="5" />
+	<FlashScreen WaitForCompletion="true">
+		<TargetColor R="1" G="0" B="0" A="1" />
+	</FlashScreen>
+	<InputNumber DigitsCount="3" />
 </EventsSequence>

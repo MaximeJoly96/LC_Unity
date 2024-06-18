@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml;
 using UnityEngine;
+using System.Globalization;
 
 namespace Engine.ScreenEffects
 {
@@ -23,9 +24,10 @@ namespace Engine.ScreenEffects
             tint.WaitForCompletion = bool.Parse(data.Attributes["WaitForCompletion"].InnerText);
 
             XmlNode colorNode = data.SelectSingleNode("TargetColor");
-            tint.TargetColor = new Color(float.Parse(colorNode.Attributes["R"].InnerText),
-                                         float.Parse(colorNode.Attributes["G"].InnerText),
-                                         float.Parse(colorNode.Attributes["B"].InnerText));
+            tint.TargetColor = new Color(float.Parse(colorNode.Attributes["R"].InnerText, CultureInfo.InvariantCulture),
+                                         float.Parse(colorNode.Attributes["G"].InnerText, CultureInfo.InvariantCulture),
+                                         float.Parse(colorNode.Attributes["B"].InnerText, CultureInfo.InvariantCulture),
+                                         float.Parse(colorNode.Attributes["A"].InnerText, CultureInfo.InvariantCulture));
 
             return tint;
         }
@@ -37,9 +39,10 @@ namespace Engine.ScreenEffects
             flash.WaitForCompletion = bool.Parse(data.Attributes["WaitForCompletion"].InnerText);
 
             XmlNode colorNode = data.SelectSingleNode("TargetColor");
-            flash.TargetColor = new Color(float.Parse(colorNode.Attributes["R"].InnerText),
-                                          float.Parse(colorNode.Attributes["G"].InnerText),
-                                          float.Parse(colorNode.Attributes["B"].InnerText));
+            flash.TargetColor = new Color(float.Parse(colorNode.Attributes["R"].InnerText, CultureInfo.InvariantCulture),
+                                          float.Parse(colorNode.Attributes["G"].InnerText, CultureInfo.InvariantCulture),
+                                          float.Parse(colorNode.Attributes["B"].InnerText, CultureInfo.InvariantCulture),
+                                          float.Parse(colorNode.Attributes["A"].InnerText, CultureInfo.InvariantCulture));
 
             return flash;
         }

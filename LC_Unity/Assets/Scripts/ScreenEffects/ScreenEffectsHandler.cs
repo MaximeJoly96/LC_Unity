@@ -74,12 +74,28 @@ namespace ScreenEffects
 
         private IEnumerator DoFlashScreen(FlashScreen flash)
         {
+            Color previousColor = CanvasBackground.color;
+            CanvasBackground.color = flash.TargetColor;
+
+            if(!flash.WaitForCompletion)
+            {
+                flash.Finished.Invoke();
+                flash.IsFinished = true;
+            }
+
             WaitForFixedUpdate wait = new WaitForFixedUpdate();
 
-            yield return wait;
+            while(!ColorsAreSimilar(previousColor, CanvasBackground.color))
+            {
+                CanvasBackground.color -= Color.Lerp(previousColor, flash.TargetColor, 0.05f);
+                yield return wait;
+            }
 
-            flash.Finished.Invoke();
-            flash.IsFinished = true;
+            if(flash.WaitForCompletion)
+            {
+                flash.Finished.Invoke();
+                flash.IsFinished = true;
+            }
         }
 
         private IEnumerator DoShakeScreen(ShakeScreen shake)
@@ -100,6 +116,14 @@ namespace ScreenEffects
 
             tint.Finished.Invoke();
             tint.IsFinished = true;
+        }
+
+        private static bool ColorsAreSimilar(Color c1, Color c2)
+        {
+            return Mathf.Abs(c1.r - c2.r) < 0.01f &&
+                   Mathf.Abs(c1.g - c2.g) < 0.01f &&
+                   Mathf.Abs(c1.b - c2.b) < 0.01f &&
+                   Mathf.Abs(c1.a - c2.a) < 0.01f;
         }
     }
 }
