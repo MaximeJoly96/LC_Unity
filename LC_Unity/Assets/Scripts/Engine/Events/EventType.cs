@@ -56,8 +56,6 @@
         // MusicAndSounds
         PlayBgm,
         FadeOutBgm,
-        SaveBgm,
-        ReplayBgm,
         PlayBgs,
         FadeOutBgs,
         PlayMusicalEffect,

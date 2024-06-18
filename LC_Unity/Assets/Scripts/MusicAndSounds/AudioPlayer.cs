@@ -2,6 +2,7 @@
 using Engine.MusicAndSounds;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 
 namespace MusicAndSounds
 {
@@ -66,22 +67,22 @@ namespace MusicAndSounds
 
         public void FadeOutBgm(FadeOutBgm bgm)
         {
+            RunningAudio audio = _runningAudios.FirstOrDefault(a => a.Sound.key == bgm.Name);
 
+            if(audio != null)
+            {
+                StartCoroutine(FadeOutAudio(audio.Source, bgm.TransitionDuration));
+            }
         }
 
         public void FadeOutBgs(FadeOutBgs bgs)
         {
+            RunningAudio audio = _runningAudios.FirstOrDefault(a => a.Sound.key == bgs.Name);
 
-        }
-
-        public void ReplayBgm(ReplayBgm bgm)
-        {
-
-        }
-
-        public void SaveBgm(SaveBgm bgm)
-        {
-
+            if (audio != null)
+            {
+                StartCoroutine(FadeOutAudio(audio.Source, bgs.TransitionDuration));
+            }
         }
 
         private void Awake()
@@ -129,8 +130,7 @@ namespace MusicAndSounds
         {
             for(int i = 0; i < _runningAudios.Count; i++)
             {
-                _runningAudios[i].Source.Pause();
-                _pausedAudios.Add(_runningAudios[i]);
+                PauseAudio(_runningAudios[i]);
             }
         }
 
@@ -141,8 +141,40 @@ namespace MusicAndSounds
 
             for(int i = 0; i < _runningAudios.Count; i++)
             {
-                _runningAudios[i].Source.UnPause();
+                ResumeAudio(_runningAudios[i]);
             }
+        }
+
+        private void PauseAudio(RunningAudio audio)
+        {
+            if(_pausedAudios.FirstOrDefault(a => a.Sound.key == audio.Sound.key) == null)
+            {
+                audio.Source.Pause();
+                _pausedAudios.Add(audio);
+            }
+        }
+
+        private void ResumeAudio(RunningAudio audio)
+        {
+            audio.Source.UnPause();
+            _pausedAudios.Remove(audio);
+        }
+
+        private IEnumerator FadeOutAudio(AudioSource source, float duration)
+        {
+            WaitForFixedUpdate wait = new WaitForFixedUpdate();
+
+            float baseVolume = source.volume;
+            float step = baseVolume / (duration / Time.fixedDeltaTime);
+
+            for(float i = 0.0f; i < duration; i += Time.fixedDeltaTime)
+            {
+                source.volume -= step;
+
+                yield return wait;
+            }
+
+            source.Stop();
         }
     }
 }

@@ -22,27 +22,9 @@ namespace Engine.MusicAndSounds
             FadeOutBgm fadeOut = new FadeOutBgm();
 
             fadeOut.Name = data.Attributes["Name"].InnerText;
-            fadeOut.TransitionDuration = int.Parse(data.Attributes["TransitionDuration"].InnerText);
+            fadeOut.TransitionDuration = float.Parse(data.Attributes["TransitionDuration"].InnerText, CultureInfo.InvariantCulture);
 
             return fadeOut;
-        }
-
-        public static SaveBgm ParseSaveBgm(XmlNode data)
-        {
-            SaveBgm save = new SaveBgm();
-
-            save.Name = data.Attributes["Name"].InnerText;
-
-            return save;
-        }
-
-        public static ReplayBgm ParseReplayBgm(XmlNode data)
-        {
-            ReplayBgm save = new ReplayBgm();
-
-            save.Name = data.Attributes["Name"].InnerText;
-
-            return save;
         }
 
         public static PlayBgs ParsePlayBgs(XmlNode data)
@@ -61,7 +43,7 @@ namespace Engine.MusicAndSounds
             FadeOutBgs fadeOut = new FadeOutBgs();
 
             fadeOut.Name = data.Attributes["Name"].InnerText;
-            fadeOut.TransitionDuration = int.Parse(data.Attributes["TransitionDuration"].InnerText);
+            fadeOut.TransitionDuration = float.Parse(data.Attributes["TransitionDuration"].InnerText, CultureInfo.InvariantCulture);
 
             return fadeOut;
         }

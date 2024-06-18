@@ -145,12 +145,6 @@ namespace Engine.Events
                         case EventType.FadeOutBgs:
                             sequence.Add(XmlMusicAndSoundsParser.ParseFadeOutBgs(evt));
                             break;
-                        case EventType.SaveBgm:
-                            sequence.Add(XmlMusicAndSoundsParser.ParseSaveBgm(evt));
-                            break;
-                        case EventType.ReplayBgm:
-                            sequence.Add(XmlMusicAndSoundsParser.ParseReplayBgm(evt));
-                            break;
                         case EventType.BattleProcessing:
                             sequence.Add(XmlSceneControlParser.ParseBattleProcessing(evt));
                             break;
