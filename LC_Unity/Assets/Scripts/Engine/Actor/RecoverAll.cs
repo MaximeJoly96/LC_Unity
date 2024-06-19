@@ -1,5 +1,6 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using Actors;
 
 namespace Engine.Actor
 {
@@ -15,7 +16,9 @@ namespace Engine.Actor
 
         public void Run()
         {
-
+            CharactersManager.Instance.RecoverAll(this);
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

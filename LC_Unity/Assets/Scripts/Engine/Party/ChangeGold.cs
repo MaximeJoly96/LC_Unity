@@ -1,5 +1,6 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using Party;
 
 namespace Engine.Party
 {
@@ -16,7 +17,9 @@ namespace Engine.Party
 
         public void Run()
         {
-
+            PartyManager.Instance.ChangeGold(this);
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

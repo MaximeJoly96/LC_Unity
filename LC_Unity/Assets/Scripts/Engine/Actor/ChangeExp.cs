@@ -5,7 +5,7 @@ namespace Engine.Actor
 {
     public class ChangeExp : IRunnable
     {
-        public int TargetId { get; set; }
+        public int CharacterId { get; set; }
         public int Amount { get; set; }
         public UnityEvent Finished { get; set; }
         public bool IsFinished { get; set; }
@@ -17,7 +17,8 @@ namespace Engine.Actor
 
         public void Run()
         {
-            Finished = new UnityEvent();
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

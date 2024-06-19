@@ -20,9 +20,7 @@ namespace Engine.Actor
             ChangeExp change = new ChangeExp();
 
             change.Amount = int.Parse(data.Attributes["Amount"].InnerText);
-
-            string targetText = data.Attributes["Target"].InnerText;
-            change.TargetId = targetText == "All" ? -1 : int.Parse(targetText);
+            change.CharacterId = int.Parse(data.Attributes["Target"].InnerText);
 
             return change;
         }
@@ -32,9 +30,7 @@ namespace Engine.Actor
             ChangeLevel change = new ChangeLevel();
 
             change.Amount = int.Parse(data.Attributes["Amount"].InnerText);
-
-            string targetText = data.Attributes["Target"].InnerText;
-            change.TargetCount = targetText == "All" ? -1 : int.Parse(targetText);
+            change.CharacterId = int.Parse(data.Attributes["Target"].InnerText);
 
             return change;
         }
@@ -53,9 +49,7 @@ namespace Engine.Actor
         {
             ChangeSkills change = new ChangeSkills();
 
-            string targetText = data.Attributes["Target"].InnerText;
-            change.TargetCount = targetText == "All" ? -1 : int.Parse(targetText);
-
+            change.CharacterId = int.Parse(data.Attributes["CharacterId"].InnerText);
             change.SkillId = int.Parse(data.Attributes["SkillId"].InnerText);
             change.Action = (ChangeSkills.ActionType)Enum.Parse(typeof(ChangeSkills.ActionType), data.Attributes["Action"].InnerText);
 

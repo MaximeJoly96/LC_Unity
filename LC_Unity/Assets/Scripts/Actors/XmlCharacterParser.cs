@@ -16,15 +16,8 @@ namespace Actors
 
                 XmlNode characterNode = document.SelectSingleNode("Character");
 
-                return new Character(ParseSpecificStat("Health", characterNode),
-                                     ParseSpecificStat("Mana", characterNode),
-                                     ParseSpecificStat("Essence", characterNode),
-                                     ParseSpecificStat("Strength", characterNode),
-                                     ParseSpecificStat("Defense", characterNode),
-                                     ParseSpecificStat("Magic", characterNode),
-                                     ParseSpecificStat("MagicDefense", characterNode),
-                                     ParseSpecificStat("Agility", characterNode),
-                                     ParseSpecificStat("Luck", characterNode));
+                return new Character(ParseIntValue(characterNode, "Id"),
+                                     ParseStringValue(characterNode, "Name"));
             }
             catch (Exception e)
             {
@@ -33,9 +26,14 @@ namespace Actors
             }
         }
 
-        private static int ParseSpecificStat(string stat, XmlNode parentNode)
+        private static string ParseStringValue(XmlNode parentNode, string tag)
         {
-            return int.Parse(parentNode.SelectSingleNode(stat).InnerText);
+            return parentNode.SelectSingleNode(tag).InnerText;
+        }
+
+        private static int ParseIntValue(XmlNode parentNode, string tag)
+        {
+            return int.Parse(ParseStringValue(parentNode, tag));
         }
     }
 }

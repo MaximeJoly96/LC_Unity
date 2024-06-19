@@ -1,34 +1,54 @@
-﻿namespace Actors
+﻿using Logging;
+
+namespace Actors
 {
     public class Character
     {
-        public Resource Health { get; set; }
-        public Resource Mana { get; set; }
-        public Resource Essence { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Exp { get; private set; }
 
-        public int Strength { get; set; }
-        public int Defense { get; set; }
-        public int Magic { get; set; }
-        public int MagicDefense { get; set; }
-        public int Agility { get; set; }
-        public int Luck { get; set; }
 
-        public Character() : this(100, 50, 100, 10, 10, 10, 10, 10, 10)
+        public Character() : this(0, "Test")
         {
 
         }
 
-        public Character(int maxHealth, int maxMana, int maxEssence, int strength, int defense, int magic, int magicDefense, int agility, int luck)
+        public Character(int id, string name)
         {
-            Health = new Resource(maxHealth);
-            Mana = new Resource(maxMana);
-            Essence = new Resource(maxEssence);
-            Strength = strength;
-            Defense = defense;
-            Magic = magic;
-            MagicDefense = magicDefense;
-            Agility = agility;
-            Luck = luck;
+            Id = id;
+            Name = name;
+            Exp = 0;
+        }
+
+        public void ChangeLevel(int amount)
+        {
+            LogsHandler.Instance.LogWarning("ChangeLevel has not been implemented yet.");
+        }
+
+        public void GiveExp(int amount)
+        {
+            Exp += amount;
+        }
+
+        public void Recover()
+        {
+            LogsHandler.Instance.LogWarning("Recover has not been implemented yet.");
+        }
+
+        public void ChangeEquipment(int itemId)
+        {
+            LogsHandler.Instance.LogWarning("ChangeEquipment has not been implemented yet.");
+        }
+
+        public void LearnSkill(int skillId)
+        {
+            LogsHandler.Instance.LogWarning("LearnSkill has not been implemented yet.");
+        }
+
+        public void ForgetSkill(int skillId)
+        {
+            LogsHandler.Instance.LogWarning("ForgetSkill has not been implemented yet.");
         }
     }
 }

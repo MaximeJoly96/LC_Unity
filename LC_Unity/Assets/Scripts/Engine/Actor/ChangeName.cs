@@ -1,5 +1,6 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using Actors;
 
 namespace Engine.Actor
 {
@@ -17,7 +18,9 @@ namespace Engine.Actor
 
         public void Run()
         {
-
+            CharactersManager.Instance.ChangeCharacterName(this);
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

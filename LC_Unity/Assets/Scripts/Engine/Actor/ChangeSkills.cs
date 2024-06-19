@@ -1,5 +1,6 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using Actors;
 
 namespace Engine.Actor
 {
@@ -7,7 +8,7 @@ namespace Engine.Actor
     {
         public enum ActionType { Learn, Forget }
 
-        public int TargetCount { get; set; }
+        public int CharacterId { get; set; }
         public int SkillId { get; set; }
         public ActionType Action { get; set; }
         public UnityEvent Finished { get; set; }
@@ -20,7 +21,9 @@ namespace Engine.Actor
 
         public void Run()
         {
-
+            CharactersManager.Instance.ChangeSkills(this);
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

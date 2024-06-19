@@ -1,5 +1,6 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using Party;
 
 namespace Engine.Party
 {
@@ -17,7 +18,9 @@ namespace Engine.Party
 
         public void Run()
         {
-
+            PartyManager.Instance.ChangeItems(this);
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

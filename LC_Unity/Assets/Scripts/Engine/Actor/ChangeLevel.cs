@@ -1,11 +1,12 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using Actors;
 
 namespace Engine.Actor
 {
     public class ChangeLevel : IRunnable
     {
-        public int TargetCount { get; set; }
+        public int CharacterId { get; set; }
         public int Amount { get; set; }
         public UnityEvent Finished { get; set; }
         public bool IsFinished { get; set; }
@@ -17,7 +18,9 @@ namespace Engine.Actor
 
         public void Run()
         {
-
+            CharactersManager.Instance.ChangeCharacterLevel(this);
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }
