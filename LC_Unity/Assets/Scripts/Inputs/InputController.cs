@@ -10,7 +10,8 @@ namespace Inputs
         MoveUp,
         MoveDown,
         Select,
-        Cancel
+        Cancel,
+        OpenMenu
     }
 
     public class InputController : MonoBehaviour
@@ -70,6 +71,11 @@ namespace Inputs
             if(Input.GetButtonDown("Cancel"))
             {
                 ButtonClicked.Invoke(InputAction.Cancel);
+            }
+
+            if(Input.GetButtonDown("Submit"))
+            {
+                ButtonClicked.Invoke(InputAction.OpenMenu);
             }
         }
 
