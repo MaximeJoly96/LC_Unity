@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using Inputs;
-using Logging;
+using System.Collections;
 
 namespace Menus
 {
     public class MainMenuController : MonoBehaviour
     {
+        [SerializeField]
+        protected Canvas _canvas;
+
         protected InputController _inputController;
+        protected bool _busy;
 
         private void Start()
         {
@@ -16,12 +20,52 @@ namespace Menus
 
         private void HandleInputs(InputAction input)
         {
-            switch(input)
+            if(!_busy)
             {
-                case InputAction.OpenMenu:
-                    LogsHandler.Instance.Log("open menu");
-                    break;
+                switch (input)
+                {
+                    case InputAction.OpenMenu:
+                        StartCoroutine(OpenMenu());
+                        break;
+                    case InputAction.Cancel:
+                        StartCoroutine(CloseMenu());
+                        break;
+                }
             }
+        }
+
+        protected IEnumerator OpenMenu()
+        {
+            _busy = true;
+            CanvasGroup group = _canvas.GetComponent<CanvasGroup>();
+            float currentAlpha = group.alpha;
+            WaitForFixedUpdate wait = new WaitForFixedUpdate();
+
+            for(float i = currentAlpha; i < 1.0f; i += 0.05f)
+            {
+                group.alpha = i;
+                yield return wait;
+            }
+
+            group.interactable = true;
+            _busy = false;
+        }
+
+        protected IEnumerator CloseMenu()
+        {
+            _busy = true;
+            CanvasGroup group = _canvas.GetComponent<CanvasGroup>();
+            group.interactable = false;
+            float currentAlpha = group.alpha;
+            WaitForFixedUpdate wait = new WaitForFixedUpdate();
+
+            for(float i = currentAlpha; i > 0.0f; i -= 0.05f)
+            {
+                group.alpha = i;
+                yield return wait;
+            }
+
+            _busy = false;
         }
     }
 }
