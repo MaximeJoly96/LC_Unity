@@ -15,6 +15,7 @@ namespace Dialogs
 
         public Animator Animator { get { return GetComponent<Animator>(); } }
         public UnityEvent HasClosed { get; set; }
+        public UnityEvent HasFinishedOpening { get; set; }
         
         protected virtual string OpenAnimatioName { get; }
         protected virtual string CloseAnimationName { get; }
@@ -27,6 +28,7 @@ namespace Dialogs
         public virtual void Open()
         {
             HasClosed = new UnityEvent();
+            HasFinishedOpening = new UnityEvent();
             Animator.Play(OpenAnimatioName);
         }
 

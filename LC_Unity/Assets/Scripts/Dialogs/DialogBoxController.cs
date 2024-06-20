@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Engine.Events;
 using Inputs;
 using Engine.Message;
 
@@ -24,22 +23,26 @@ namespace Dialogs
 
             _currentDialogBox.Feed(dialog);
             _currentDialogBox.Open();
+            _busy = true;
             _currentDialogBox.HasClosed.AddListener(DestroyCurrentDialog);
+            _currentDialogBox.HasFinishedOpening.AddListener(() => _busy = false);
         }
 
         protected override void ReceiveInput(InputAction input)
         {
-            TryToCloseDialog(input);
+            if(!_busy)
+                TryToCloseDialog(input);
         }
 
         private void TryToCloseDialog(Vector2 mousePosition)
         {
-            CloseDialog();
+            if(!_busy)
+                CloseDialog();
         }
 
         private void TryToCloseDialog(InputAction button)
         {
-            if (button == InputAction.Select)
+            if (button == InputAction.Select && !_busy)
                 CloseDialog();
         }
 

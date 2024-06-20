@@ -22,6 +22,9 @@ namespace Movement
 
                 yield return new WaitUntil(() => route.Moves[i].IsFinished);
             }
+
+            route.Finished.Invoke();
+            route.IsFinished = true;
         }
     }
 }

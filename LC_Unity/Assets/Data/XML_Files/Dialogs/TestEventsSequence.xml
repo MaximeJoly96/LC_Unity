@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <EventsSequence>
-	<PlayBgm Name="town" Volume="0.5" Pitch="1" />
-	<Wait Duration="2" />
-	<FadeOutBgm Name="town" TransitionDuration="4.5" />
+	<DisplayDialog>
+		<DialogBoxStyle>Classic</DialogBoxStyle>
+		<DialogBoxPosition>Bottom</DialogBoxPosition>
+		<Message>I am going to move away from hero</Message>
+		<Locutor>My name</Locutor>
+		<FaceGraphics></FaceGraphics>
+	</DisplayDialog>
+	<SetMoveRoute WaitForCompletion="true" RepeatAction="false" SkipIfCannotMove="true" AgentId="0">
+		<MoveAway Target="Player" Distance="2" />
+	</SetMoveRoute>
+	<DisplayDialog>
+		<DialogBoxStyle>Classic</DialogBoxStyle>
+		<DialogBoxPosition>Bottom</DialogBoxPosition>
+		<Message>Now the screen is going to fade away</Message>
+		<Locutor>My name</Locutor>
+		<FaceGraphics></FaceGraphics>
+	</DisplayDialog>
+	<FadeScreen FadeIn="false" />
+	<DisplayDialog>
+		<DialogBoxStyle>Classic</DialogBoxStyle>
+		<DialogBoxPosition>Bottom</DialogBoxPosition>
+		<Message>Now we will play a song for 3 seconds then have it fade away</Message>
+		<Locutor>My name</Locutor>
+		<FaceGraphics></FaceGraphics>
+	</DisplayDialog>
+	<PlayBgm Name="town" Volume="1" Pitch="1" />
+	<Wait Duration="3" />
+	<FadeOutBgm Name="town" TransitionDuration="5" />
 </EventsSequence>

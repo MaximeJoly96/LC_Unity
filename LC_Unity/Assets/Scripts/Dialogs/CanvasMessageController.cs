@@ -11,6 +11,7 @@ namespace Dialogs
         protected InputController _inputController;
         protected float _selectionDelayCount;
         protected bool _delayOn;
+        protected bool _busy;
 
         [SerializeField]
         protected Canvas _canvas;

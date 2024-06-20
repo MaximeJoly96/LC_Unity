@@ -60,6 +60,7 @@ namespace Dialogs
 
             _currentSelectionIndex = 0;
             UpdateCursorPosition(_currentSelectionIndex);
+            HasFinishedOpening.Invoke();
         }
     }
 }

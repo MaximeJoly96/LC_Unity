@@ -31,7 +31,8 @@ namespace Dialogs
         protected override string OpenAnimatioName { get { return "DialogBoxOpen"; } }
         protected override string CloseAnimationName { get { return "DialogBoxClose"; } }
 
-        public override void  Feed(DisplayDialog element)
+
+        public override void Feed(DisplayDialog element)
         {
             base.Feed(element);
             _element.Message = _element.Message.Replace("\\n", "<br>");
@@ -120,6 +121,7 @@ namespace Dialogs
 
             SetMessage();
             DisplayCursor();
+            HasFinishedOpening.Invoke();
         }
 
         private void DisplayCursor()
