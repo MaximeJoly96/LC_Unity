@@ -1,10 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 namespace Engine.Events
 {
     public class EventsRunner : MonoBehaviour
     {
+        private UnityEvent _finished;
+
+        public UnityEvent Finished
+        {
+            get
+            {
+                if (_finished == null)
+                    _finished = new UnityEvent();
+
+                return _finished;
+            }
+        }
+
         public void RunEvents(EventsSequence sequence)
         {
             StartCoroutine(RunSequence(sequence));
@@ -20,6 +34,7 @@ namespace Engine.Events
             }
 
             sequence.Finished.Invoke();
+            Finished.Invoke();
         }
     }
 }

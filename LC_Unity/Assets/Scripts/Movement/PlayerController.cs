@@ -3,6 +3,7 @@ using System.Linq;
 using Engine.Events;
 using Inputs;
 using Field;
+using Core;
 
 namespace Movement
 {
@@ -15,7 +16,7 @@ namespace Movement
         private Animator _animator;
         private Collider2D _collider;
         private InputController _inputController;
-        private bool _busy;
+
 
         private SpriteRenderer _renderer
         {
@@ -44,7 +45,7 @@ namespace Movement
 
         private void HandleInput(InputAction input)
         {
-            if(!_busy)
+            if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
             {
                 switch (input)
                 {
@@ -108,10 +109,11 @@ namespace Movement
                 HandleAnimationAndMovement();
                 _rb.velocity = Vector3.zero;
                 _change = Vector3.zero;
-                _busy = true;
+                GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.Interacting);
 
                 RunnableAgent agent = interactible.GetComponent<RunnableAgent>();
 
+                agent.FinishedSequence.AddListener(() => GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField));
                 agent.RunSequence();
             }
         }

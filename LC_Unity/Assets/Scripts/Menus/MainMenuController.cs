@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Inputs;
 using System.Collections;
+using Core;
 
 namespace Menus
 {
@@ -10,7 +11,6 @@ namespace Menus
         protected Canvas _canvas;
 
         protected InputController _inputController;
-        protected bool _busy;
 
         private void Start()
         {
@@ -20,23 +20,22 @@ namespace Menus
 
         private void HandleInputs(InputAction input)
         {
-            if(!_busy)
+            switch (input)
             {
-                switch (input)
-                {
-                    case InputAction.OpenMenu:
+                case InputAction.OpenMenu:
+                    if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
                         StartCoroutine(OpenMenu());
-                        break;
-                    case InputAction.Cancel:
+                    break;
+                case InputAction.Cancel:
+                    if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenu)
                         StartCoroutine(CloseMenu());
-                        break;
-                }
+                    break;
             }
         }
 
         protected IEnumerator OpenMenu()
         {
-            _busy = true;
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OpeningMenu);
             CanvasGroup group = _canvas.GetComponent<CanvasGroup>();
             float currentAlpha = group.alpha;
             WaitForFixedUpdate wait = new WaitForFixedUpdate();
@@ -48,12 +47,12 @@ namespace Menus
             }
 
             group.interactable = true;
-            _busy = false;
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenu);
         }
 
         protected IEnumerator CloseMenu()
         {
-            _busy = true;
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.ClosingMenu);
             CanvasGroup group = _canvas.GetComponent<CanvasGroup>();
             group.interactable = false;
             float currentAlpha = group.alpha;
@@ -65,7 +64,7 @@ namespace Menus
                 yield return wait;
             }
 
-            _busy = false;
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
         }
     }
 }

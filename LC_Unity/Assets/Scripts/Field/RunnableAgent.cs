@@ -1,6 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine;
 using Logging;
+using UnityEngine.Events;
 
 namespace Field
 {
@@ -20,6 +21,7 @@ namespace Field
         private AgentTrigger _trigger;
 
         private EventsSequence _sequence;
+        private UnityEvent _finishedSequence;
 
         public EventsRunner Runner
         {
@@ -31,6 +33,17 @@ namespace Field
                     LogsHandler.Instance.LogError("There is no EventsRunner attached to a RunnableAgent but you are trying to access it.");
 
                 return runner;
+            }
+        }
+
+        public UnityEvent FinishedSequence
+        {
+            get
+            {
+                if (_finishedSequence == null)
+                    _finishedSequence = new UnityEvent();
+
+                return _finishedSequence;
             }
         }
 
@@ -52,6 +65,9 @@ namespace Field
                 SetSequence(EventsSequenceParser.ParseEventsSequence(_sequenceFile));
             }
 
+            Runner.Finished.RemoveAllListeners();
+
+            Runner.Finished.AddListener(() => FinishedSequence.Invoke());
             Runner.RunEvents(_sequence); 
         }
     }
