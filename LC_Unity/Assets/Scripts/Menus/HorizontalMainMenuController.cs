@@ -20,6 +20,12 @@ namespace Menus
         {
             _inputController = FindObjectOfType<InputController>();
             _inputController.ButtonClicked.AddListener(HandleInputs);
+
+            Init();
+        }
+
+        public void Init()
+        {
             _cursorPosition = 0;
             _selectionDelay = 0.0f;
             _busy = false;
@@ -70,7 +76,7 @@ namespace Menus
 
         private void SelectSubMenu()
         {
-
+            _subMenuButtons[_cursorPosition].SelectSubMenu();
         }
 
         private void Update()

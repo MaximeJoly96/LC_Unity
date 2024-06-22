@@ -76,5 +76,20 @@ namespace Party
             if(item != null)
                 item.ChangeAmount(change.Quantity);
         }
+
+        public List<Character> GetParty()
+        {
+            return _party;
+        }
+
+        public void LoadPartyFromBaseFile(TextAsset dataFile)
+        {
+            _party.AddRange(XmlCharacterParser.ParseCharacters(dataFile));
+        }
+
+        private void LoadPartyFromSave(List<Character> characters)
+        {
+            _party.AddRange(characters);
+        }
     }
 }

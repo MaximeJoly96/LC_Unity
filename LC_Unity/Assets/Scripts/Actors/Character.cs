@@ -15,7 +15,8 @@ namespace Actors
         {
             get
             {
-                return Mathf.FloorToInt(ExpFunction.Compute(Exp));
+                float discriminant = ExpFunction.B * ExpFunction.B - 4 * ExpFunction.A * (ExpFunction.C - Exp);
+                return Mathf.FloorToInt((-ExpFunction.B + Mathf.Sqrt(discriminant)) / (2 * ExpFunction.A));
             }
         }
 
@@ -105,16 +106,37 @@ namespace Actors
         public StatScalingFunction MaxEssenceFunction { get; set; }
         #endregion
 
-        public Character() : this(0, "Test")
+        public Character()
         {
 
         }
 
-        public Character(int id, string name)
+        public Character(int id, string name, 
+                         QuadraticFunction exp, 
+                         StatScalingFunction health,
+                         StatScalingFunction mana,
+                         StatScalingFunction essence,
+                         StatScalingFunction strength,
+                         StatScalingFunction defense,
+                         StatScalingFunction magic,
+                         StatScalingFunction magicDefense,
+                         StatScalingFunction agility,
+                         StatScalingFunction luck)
         {
             Id = id;
             Name = name;
-            Exp = 0;
+            Exp = 10;
+
+            ExpFunction = exp;
+            MaxHealthFunction = health;
+            MaxManaFunction = mana;
+            MaxEssenceFunction = essence;
+            StrengthFunction = strength;
+            DefenseFunction = defense;
+            MagicFunction = magic;
+            MagicDefenseFunction = magicDefense;
+            AgilityFunction = agility;
+            LuckFunction = luck;
         }
 
         public void ChangeLevel(int amount)
@@ -145,6 +167,25 @@ namespace Actors
         public void ForgetSkill(int skillId)
         {
             LogsHandler.Instance.LogWarning("ForgetSkill has not been implemented yet.");
+        }
+
+        public int GetXpForCurrentLevel()
+        {
+            int requiredXp = GetTotalRequiredXpForLevel(Level);
+            return Exp - requiredXp;
+        }
+
+        public int GetTotalRequiredXpForLevel(int level)
+        {
+            return Mathf.FloorToInt(ExpFunction.Compute(level));
+        }
+
+        public int GetXpRequiredForLevel(int level)
+        {
+            int required = GetTotalRequiredXpForLevel(level);
+            int requiredNext = GetTotalRequiredXpForLevel(level + 1);
+
+            return requiredNext - required;
         }
     }
 }

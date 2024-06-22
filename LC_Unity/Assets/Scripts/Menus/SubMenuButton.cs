@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using Menus.SubMenus;
 
 namespace Menus
 {
     public class SubMenuButton : MonoBehaviour
     {
+        [SerializeField]
+        private bool _needsTarget;
+        [SerializeField]
+        private SubMenu _subMenu;
+
         private Transform Background
         {
             get { return transform.Find("Bg"); }
@@ -19,6 +24,21 @@ namespace Menus
         {
             Background.gameObject.SetActive(display);
             Cursor.gameObject.SetActive(display);
+        }
+
+        public void SelectSubMenu()
+        {
+            if (_needsTarget)
+            {
+                PromptCharacterSelection();
+            }
+            else
+                _subMenu.Open();
+        }
+
+        private void PromptCharacterSelection()
+        {
+
         }
     }
 }
