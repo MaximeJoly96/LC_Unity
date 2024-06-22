@@ -10,7 +10,8 @@ namespace Core
             InMenu,
             Interacting,
             ClosingMenu,
-            OpeningMenu
+            OpeningMenu,
+            SelectingCharacterPreview
         }
 
         private static GlobalStateMachine _instance;

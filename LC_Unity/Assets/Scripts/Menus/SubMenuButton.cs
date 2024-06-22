@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Menus.SubMenus;
+using Core;
 
 namespace Menus
 {
@@ -38,7 +39,8 @@ namespace Menus
 
         private void PromptCharacterSelection()
         {
-
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SelectingCharacterPreview);
+            FindObjectOfType<CharacterSelector>().HoverCharacters();
         }
     }
 }

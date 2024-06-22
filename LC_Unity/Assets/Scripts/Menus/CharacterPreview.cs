@@ -32,5 +32,15 @@ namespace Menus
 
             _xpGauge.SetLevel(character.GetXpForCurrentLevel(), character.GetXpRequiredForLevel(character.Level), character.Level);
         }
+
+        public void Hover()
+        {
+            GetComponent<Animator>().Play("Hovered");
+        }
+
+        public void Unselect()
+        {
+            GetComponent<Animator>().Play("Idle");
+        }
     }
 }
