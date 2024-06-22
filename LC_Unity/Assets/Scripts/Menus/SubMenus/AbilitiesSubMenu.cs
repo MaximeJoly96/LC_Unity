@@ -6,7 +6,12 @@ namespace Menus.SubMenus
     {
         public override void Open()
         {
-            throw new System.NotImplementedException();
+            StartCoroutine(DoOpen());
+        }
+
+        public override void Close()
+        {
+            StartCoroutine(DoClose());
         }
     }
 }
