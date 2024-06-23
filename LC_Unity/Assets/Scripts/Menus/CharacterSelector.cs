@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Inputs;
 using Core;
 using System.Collections;
+using UnityEngine.Events;
 
 namespace Menus
 {
@@ -19,6 +20,18 @@ namespace Menus
         private bool _busy;
         private int _cursorPosition;
         private float _selectionDelay;
+        private UnityEvent<Character> _characterSelected;
+        
+        public UnityEvent<Character> CharacterSelected
+        {
+            get
+            {
+                if (_characterSelected == null)
+                    _characterSelected = new UnityEvent<Character>();
+
+                return _characterSelected;
+            }
+        }
 
         private void Start()
         {
@@ -77,6 +90,9 @@ namespace Menus
                         break;
                     case InputAction.Cancel:
                         StartCoroutine(ReturnToMainMenu());
+                        break;
+                    case InputAction.Select:
+                        SelectCharacter();
                         break;
                 }
 
@@ -152,6 +168,11 @@ namespace Menus
 
             yield return new WaitForSeconds(0.2f);
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenu);
+        }
+
+        private void SelectCharacter()
+        {
+            CharacterSelected.Invoke(_previews[_cursorPosition].Character);
         }
     }
 }

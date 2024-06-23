@@ -21,6 +21,8 @@ namespace Menus
         [SerializeField]
         private XpGauge _xpGauge;
 
+        public Character Character { get { return _character; } }
+
         public void Feed(Character character)
         {
             _character = character;

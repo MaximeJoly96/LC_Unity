@@ -11,7 +11,13 @@ namespace Core
             Interacting,
             ClosingMenu,
             OpeningMenu,
-            SelectingCharacterPreview
+            SelectingCharacterPreview,
+            InMenuItemsTab,
+            InMenuEquipmentTab,
+            InMenuAbilitiesTab,
+            InMenuStatusTab,
+            InMenuQuestsTab,
+            InMenuSystemTab
         }
 
         private static GlobalStateMachine _instance;

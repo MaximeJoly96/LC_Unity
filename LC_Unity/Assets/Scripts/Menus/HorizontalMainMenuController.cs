@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Core;
 using Inputs;
+using Actors;
 
 namespace Menus
 {
@@ -77,6 +78,11 @@ namespace Menus
         private void SelectSubMenu()
         {
             _subMenuButtons[_cursorPosition].SelectSubMenu();
+        }
+
+        public void OpenCharacterTabWithSelectedCharacter(Character character)
+        {
+            _subMenuButtons[_cursorPosition].OpenSubMenu();
         }
 
         private void Update()

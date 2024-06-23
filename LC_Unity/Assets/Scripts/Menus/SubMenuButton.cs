@@ -34,13 +34,18 @@ namespace Menus
                 PromptCharacterSelection();
             }
             else
-                _subMenu.Open();
+                OpenSubMenu();
         }
 
         private void PromptCharacterSelection()
         {
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SelectingCharacterPreview);
             FindObjectOfType<CharacterSelector>().HoverCharacters();
+        }
+
+        public void OpenSubMenu()
+        {
+            _subMenu.Open();
         }
     }
 }

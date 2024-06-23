@@ -3,6 +3,7 @@ using Inputs;
 using System.Collections;
 using Core;
 using Party;
+using Actors;
 
 namespace Menus
 {
@@ -28,6 +29,7 @@ namespace Menus
             _horizontalMainMenu.Init();
             _characterSelector.Clear();
             _characterSelector.Feed(PartyManager.Instance.GetParty());
+            _characterSelector.CharacterSelected.AddListener(OpenCharacterTab);
         }
 
         private void HandleInputs(InputAction input)
@@ -78,6 +80,11 @@ namespace Menus
             }
 
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
+        }
+
+        private void OpenCharacterTab(Character character)
+        {
+            _horizontalMainMenu.OpenCharacterTabWithSelectedCharacter(character);
         }
     }
 }
