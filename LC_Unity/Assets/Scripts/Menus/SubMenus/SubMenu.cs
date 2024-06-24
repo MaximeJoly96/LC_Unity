@@ -33,6 +33,7 @@ namespace Menus.SubMenus
                 yield return wait;
             }
 
+            group.alpha = 1.0f;
             group.interactable = true;
             _busy = false;
         }
@@ -51,6 +52,7 @@ namespace Menus.SubMenus
                 yield return wait;
             }
 
+            group.alpha = 0.0f;
             _busy = false;
 
             yield return new WaitForSeconds(0.2f);
