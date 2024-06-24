@@ -82,6 +82,7 @@ namespace Menus
 
         public void OpenCharacterTabWithSelectedCharacter(Character character)
         {
+            _subMenuButtons[_cursorPosition].FeedCharacterDataToSubMenu(character);
             _subMenuButtons[_cursorPosition].OpenSubMenu();
         }
 

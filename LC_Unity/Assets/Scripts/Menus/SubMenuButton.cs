@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Menus.SubMenus;
 using Core;
+using Actors;
 
 namespace Menus
 {
@@ -46,6 +47,11 @@ namespace Menus
         public void OpenSubMenu()
         {
             _subMenu.Open();
+        }
+
+        public void FeedCharacterDataToSubMenu(Character character)
+        {
+            _subMenu.Feed(character);
         }
     }
 }

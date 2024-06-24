@@ -2,6 +2,7 @@
 using System.Collections;
 using Inputs;
 using Core;
+using Actors;
 
 namespace Menus.SubMenus
 {
@@ -11,6 +12,7 @@ namespace Menus.SubMenus
         private Transform _boundView;
 
         protected bool _busy;
+        protected Character _fedCharacter;
 
         public abstract void Open();
         public abstract void Close();
@@ -79,5 +81,10 @@ namespace Menus.SubMenus
         }
 
         protected abstract void FinishedClosing();
+
+        public void Feed(Character character)
+        {
+            _fedCharacter = character;
+        }
     }
 }

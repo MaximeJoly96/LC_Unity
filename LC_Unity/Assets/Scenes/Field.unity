@@ -10905,6 +10905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 995887156}
+  - component: {fileID: 995887157}
   m_Layer: 5
   m_Name: Mana
   m_TagString: Untagged
@@ -10935,6 +10936,20 @@ RectTransform:
   m_AnchoredPosition: {x: 20, y: -45}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &995887157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995887155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6fc048fff02854f8dcbcaafdafa5db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filledGauge: {fileID: 96214182}
+  _value: {fileID: 1919198484}
 --- !u!1 &1000082016
 GameObject:
   m_ObjectHideFlags: 0
@@ -14273,6 +14288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327538786}
   - component: {fileID: 1327538787}
+  - component: {fileID: 1327538788}
   m_Layer: 5
   m_Name: Stats
   m_TagString: Untagged
@@ -14339,6 +14355,31 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1327538788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327538785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c136af57c993c4dbc64235afa633b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 1469638137}
+  _mana: {fileID: 1604057999}
+  _essence: {fileID: 1558607155}
+  _strength: {fileID: 2065434237}
+  _defense: {fileID: 1992346997}
+  _magic: {fileID: 1081703642}
+  _magicDefense: {fileID: 1070714973}
+  _agility: {fileID: 877800558}
+  _luck: {fileID: 13619441}
+  _critChance: {fileID: 747840445}
+  _evasion: {fileID: 1859103856}
+  _parry: {fileID: 1693977853}
+  _provocation: {fileID: 416980748}
 --- !u!1 &1327600390
 GameObject:
   m_ObjectHideFlags: 0
@@ -14924,6 +14965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1408267121}
+  - component: {fileID: 1408267122}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -14954,6 +14996,20 @@ RectTransform:
   m_AnchoredPosition: {x: 20, y: 5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1408267122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408267120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6fc048fff02854f8dcbcaafdafa5db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filledGauge: {fileID: 167458371}
+  _value: {fileID: 1825007233}
 --- !u!1 &1416043239
 GameObject:
   m_ObjectHideFlags: 0
@@ -18781,6 +18837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1747256845}
+  - component: {fileID: 1747256846}
   m_Layer: 5
   m_Name: Essence
   m_TagString: Untagged
@@ -18811,6 +18868,20 @@ RectTransform:
   m_AnchoredPosition: {x: 20, y: -95}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1747256846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747256844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc6fc048fff02854f8dcbcaafdafa5db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filledGauge: {fileID: 849912056}
+  _value: {fileID: 447745393}
 --- !u!1 &1748083997
 GameObject:
   m_ObjectHideFlags: 0
@@ -20922,6 +20993,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boundView: {fileID: 1160477253}
+  _characterName: {fileID: 2002222526}
+  _health: {fileID: 1408267122}
+  _mana: {fileID: 995887157}
+  _essence: {fileID: 1747256846}
+  _xpGauge: {fileID: 323023914}
+  _level: {fileID: 67966188}
+  _xpValue: {fileID: 1983674548}
+  _statsPanel: {fileID: 1327538788}
 --- !u!1 &1926096561
 GameObject:
   m_ObjectHideFlags: 0
