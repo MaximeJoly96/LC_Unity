@@ -1,6 +1,8 @@
 ﻿using Logging;
 using Utils;
 using UnityEngine;
+using System.Collections.Generic;
+using Actors.Equipment;
 
 namespace Actors
 {
@@ -9,6 +11,14 @@ namespace Actors
         public int Id { get; set; }
         public string Name { get; set; }
         public int Exp { get; private set; }
+        public List<ElementalAffinity> ElementalAffinities { get; private set; }
+        public List<ActiveEffect> ActiveEffects { get; private set; }
+        public EquipmentSlot LeftHand { get; private set; }
+        public EquipmentSlot RightHand { get; private set; }
+        public EquipmentSlot Head { get; private set; }
+        public EquipmentSlot Body { get; private set; }
+        public EquipmentSlot Accessory { get; private set; }
+        public EssenceAffinity EssenceAffinity { get; set; }
 
         #region Stats
         public int Level
@@ -108,7 +118,14 @@ namespace Actors
 
         public Character()
         {
+            ElementalAffinities = new List<ElementalAffinity>();
+            ActiveEffects = new List<ActiveEffect>();
+            ActiveEffects.Add(new ActiveEffect { Effect = EffectType.Poison });
 
+            EssenceAffinity = new EssenceAffinity("Avenge", "Gathers Essence when damage is dealt to an ally.");
+
+            InitBasicAffinities();
+            InitEquipmentSlots();
         }
 
         public Character(int id, string name, 
@@ -121,7 +138,7 @@ namespace Actors
                          StatScalingFunction magic,
                          StatScalingFunction magicDefense,
                          StatScalingFunction agility,
-                         StatScalingFunction luck)
+                         StatScalingFunction luck) : this()
         {
             Id = id;
             Name = name;
@@ -186,6 +203,29 @@ namespace Actors
             int requiredNext = GetTotalRequiredXpForLevel(level + 1);
 
             return requiredNext - required;
+        }
+
+        private void InitBasicAffinities()
+        {
+            ElementalAffinities.Add(new ElementalAffinity(Element.Neutral, 1.0f));
+            ElementalAffinities.Add(new ElementalAffinity(Element.Fire, 1.0f));
+            ElementalAffinities.Add(new ElementalAffinity(Element.Ice, 1.0f));
+            ElementalAffinities.Add(new ElementalAffinity(Element.Thunder, 1.0f));
+            ElementalAffinities.Add(new ElementalAffinity(Element.Water, 1.0f));
+            ElementalAffinities.Add(new ElementalAffinity(Element.Earth, 1.0f));
+            ElementalAffinities.Add(new ElementalAffinity(Element.Wind, 1.0f));
+            ElementalAffinities.Add(new ElementalAffinity(Element.Holy, 1.0f));
+            ElementalAffinities.Add(new ElementalAffinity(Element.Darkness, 1.0f));
+            ElementalAffinities.Add(new ElementalAffinity(Element.Healing, 1.0f));
+        }
+
+        private void InitEquipmentSlots()
+        {
+            Head = new EquipmentSlot(EquipmentPosition.Helmet, 0);
+            LeftHand = new EquipmentSlot(EquipmentPosition.LeftHand, 0);
+            RightHand = new EquipmentSlot(EquipmentPosition.RightHand, 0);
+            Body = new EquipmentSlot(EquipmentPosition.Body, 0);
+            Accessory = new EquipmentSlot(EquipmentPosition.Accessory, 0);
         }
     }
 }

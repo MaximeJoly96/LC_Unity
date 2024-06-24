@@ -23,7 +23,15 @@ namespace Menus.SubMenus
         [SerializeField]
         private TMP_Text _xpValue;
         [SerializeField]
-        private StatsPanel _statsPanel;
+        private StatusSubPanel _statsPanel;
+        [SerializeField]
+        private StatusSubPanel _affinitiesPanel;
+        [SerializeField]
+        private StatusSubPanel _equipmentPanel;
+        [SerializeField]
+        private StatusSubPanel _effectsPanel;
+        [SerializeField]
+        private StatusSubPanel _essenceAffinityPanel;
 
         public override void Open()
         {
@@ -61,6 +69,10 @@ namespace Menus.SubMenus
                 _xpValue.text = currentLvlXp + " / " + requiredXp;
 
                 _statsPanel.Feed(_fedCharacter);
+                _affinitiesPanel.Feed(_fedCharacter);
+                _equipmentPanel.Feed(_fedCharacter);
+                _effectsPanel.Feed(_fedCharacter);
+                _essenceAffinityPanel.Feed(_fedCharacter);
             }
         }
     }

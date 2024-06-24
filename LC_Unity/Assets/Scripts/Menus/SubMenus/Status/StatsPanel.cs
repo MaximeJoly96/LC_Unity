@@ -4,7 +4,7 @@ using Actors;
 
 namespace Menus.SubMenus.Status
 {
-    public class StatsPanel : MonoBehaviour
+    public class StatsPanel : StatusSubPanel
     {
         [SerializeField]
         private TMP_Text _health;
@@ -33,7 +33,7 @@ namespace Menus.SubMenus.Status
         [SerializeField]
         private TMP_Text _provocation;
 
-        public void Feed(Character character)
+        public override void Feed(Character character)
         {
             _health.text = FormatAbsoluteStat(character.BaseHealth.MaxValue, 0);
             _mana.text = FormatAbsoluteStat(character.BaseMana.MaxValue, 0);
