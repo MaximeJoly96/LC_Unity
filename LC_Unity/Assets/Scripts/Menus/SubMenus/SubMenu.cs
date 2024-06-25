@@ -17,7 +17,7 @@ namespace Menus.SubMenus
         public abstract void Open();
         public abstract void Close();
 
-        private void Start()
+        protected virtual void Start()
         {
             FindObjectOfType<InputController>().ButtonClicked.AddListener(HandleInputs);
         }
@@ -61,7 +61,7 @@ namespace Menus.SubMenus
             FinishedClosing();
         }
 
-        protected void HandleInputs(InputAction input)
+        protected virtual void HandleInputs(InputAction input)
         {
             if(!_busy)
             {

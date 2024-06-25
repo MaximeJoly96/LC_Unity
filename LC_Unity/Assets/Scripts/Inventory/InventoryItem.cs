@@ -3,6 +3,16 @@ using Logging;
 
 namespace Inventory
 {
+    public enum ItemCategory
+    {
+        Consumable,
+        Resource,
+        Weapon,
+        Armour,
+        Accessory,
+        KeyItem
+    }
+
     public class InventoryItem
     {
         public int Id { get; set; }
