@@ -1,0 +1,35 @@
+﻿using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using Inventory;
+
+namespace Menus.SubMenus.Items
+{
+    public class SelectableItem : MonoBehaviour
+    {
+        [SerializeField]
+        private Image _icon;
+        [SerializeField]
+        private TMP_Text _name;
+        [SerializeField]
+        private TMP_Text _quantity;
+        [SerializeField]
+        private Transform _cursor;
+
+        public InventoryItem Item { get; private set; }
+
+        public void Feed(InventoryItem item)
+        {
+            Item = item;
+
+            _icon.sprite = item.Icon;
+            _name.text = item.Name;
+            _quantity.text = "x" + item.InPossession;
+        }
+
+        public void ShowCursor(bool show)
+        {
+            _cursor.gameObject.SetActive(show);
+        }
+    }
+}

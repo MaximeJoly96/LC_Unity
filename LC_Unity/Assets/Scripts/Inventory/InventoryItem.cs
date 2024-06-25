@@ -17,11 +17,22 @@ namespace Inventory
     {
         public int Id { get; set; }
         public int InPossession { get; private set; }
-
+        public ItemCategory Category { get; private set; }
+        public string Name { get; private set; }
+        public Sprite Icon { get; private set; }
+        public string Description { get; private set; }
         public InventoryItem(int id)
         {
             Id = id;
             InPossession = 0;
+        }
+
+        public InventoryItem(int id, string name, ItemCategory category, Sprite icon, string description) : this(id)
+        {
+            Name = name;
+            Category = category;
+            Icon = icon;
+            Description = description;
         }
 
         public void ChangeAmount(int amount)

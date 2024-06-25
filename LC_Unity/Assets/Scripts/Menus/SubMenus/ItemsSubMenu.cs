@@ -2,6 +2,7 @@
 using UnityEngine;
 using Menus.SubMenus.Items;
 using Inputs;
+using TMPro;
 
 namespace Menus.SubMenus
 {
@@ -11,6 +12,10 @@ namespace Menus.SubMenus
 
         [SerializeField]
         private ItemsCategoryMenu[] _categories;
+        [SerializeField]
+        private SelectableItemsList _itemsList;
+        [SerializeField]
+        private TMP_Text _currentItemDescription;
 
         private int _cursorPosition;
         private float _delay;
@@ -19,6 +24,9 @@ namespace Menus.SubMenus
         {
             _cursorPosition = 0;
             _delay = 0.0f;
+
+            _itemsList.ItemHovered.RemoveAllListeners();
+            _itemsList.ItemHovered.AddListener(UpdateItemDescription);
 
             PlaceCursor();
             StartCoroutine(DoOpen());
@@ -42,6 +50,8 @@ namespace Menus.SubMenus
             {
                 _categories[i].ShowCursor(_cursorPosition == i);
             }
+
+            _itemsList.Init(_categories[_cursorPosition].Category);
         }
 
         protected override void HandleInputs(InputAction input)
@@ -57,10 +67,13 @@ namespace Menus.SubMenus
                         MoveCursorRight();
                         break;
                     case InputAction.MoveDown:
+                        MoveCursorDown();
                         break;
                     case InputAction.MoveUp:
+                        MoveCursorUp();
                         break;
                     case InputAction.Select:
+                        Select();
                         break;
                     case InputAction.Cancel:
                         Close();
@@ -81,6 +94,26 @@ namespace Menus.SubMenus
         {
             _cursorPosition = _cursorPosition == _categories.Length - 1 ? 0 : ++_cursorPosition;
             PlaceCursor();
+        }
+
+        private void MoveCursorDown()
+        {
+            _itemsList.MoveCursorDown();
+        }
+
+        private void MoveCursorUp()
+        {
+            _itemsList.MoveCursorUp();
+        }
+
+        private void Select()
+        {
+            _itemsList.Select();
+        }
+
+        private void UpdateItemDescription(SelectableItem item)
+        {
+            _currentItemDescription.text = item.Item.Description;
         }
 
         private void Update()
