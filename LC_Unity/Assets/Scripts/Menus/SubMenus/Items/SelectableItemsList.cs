@@ -27,7 +27,6 @@ namespace Menus.SubMenus.Items
             }
         }
 
-
         public void Init(ItemCategory category)
         {
             Clear();

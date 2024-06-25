@@ -15,6 +15,8 @@ namespace Menus
         protected CharacterSelector _characterSelector;
         [SerializeField]
         private HorizontalMainMenuController _horizontalMainMenu;
+        [SerializeField]
+        private SpecificCharacterSelectionMenu _characterSelectionMenu;
 
         protected InputController _inputController;
 
