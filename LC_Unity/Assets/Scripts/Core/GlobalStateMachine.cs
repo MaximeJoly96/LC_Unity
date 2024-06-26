@@ -17,7 +17,9 @@ namespace Core
             InMenuAbilitiesTab,
             InMenuStatusTab,
             InMenuQuestsTab,
-            InMenuSystemTab
+            InMenuSystemTab,
+            TransitionCharacterTarget,
+            InCharacterTargetMenu
         }
 
         private static GlobalStateMachine _instance;

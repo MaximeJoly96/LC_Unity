@@ -4,6 +4,7 @@ using System.Collections;
 using Core;
 using Party;
 using Actors;
+using Menus.SubMenus.Items;
 
 namespace Menus
 {
@@ -87,6 +88,12 @@ namespace Menus
         private void OpenCharacterTab(Character character)
         {
             _horizontalMainMenu.OpenCharacterTabWithSelectedCharacter(character);
+        }
+
+        public void OpenCharacterTargetingWithItem(SelectableItem item)
+        {
+            _characterSelectionMenu.FeedItem(item);
+            _characterSelectionMenu.Open();
         }
     }
 }

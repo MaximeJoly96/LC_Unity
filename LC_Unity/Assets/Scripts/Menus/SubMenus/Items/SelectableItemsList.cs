@@ -14,6 +14,7 @@ namespace Menus.SubMenus.Items
 
         private int _cursorPosition;
         private List<SelectableItem> _items;
+
         private UnityEvent<SelectableItem> _itemHovered;
 
         public UnityEvent<SelectableItem> ItemHovered
@@ -66,7 +67,10 @@ namespace Menus.SubMenus.Items
 
         public void Select()
         {
-
+            // I could have made it with a stack of events, which would have been cleaner. BUT I assumed that stack would
+            // contain 12 calls and thought a simple Find would be faster and more optimized.
+            // If I can prove the clean way is faster, then I will refactor this.
+            FindObjectOfType<MainMenuController>().OpenCharacterTargetingWithItem(_items[_cursorPosition]);
         }
 
         private void PlaceCursor()
