@@ -22,7 +22,7 @@ namespace TitleScreen
         private IEnumerator LoadNextScene()
         {
             yield return new WaitForSeconds(LOAD_DELAY);
-            SceneManager.LoadScene("Field");
+            SceneManager.LoadScene("Battle");
         }
     }
 }
