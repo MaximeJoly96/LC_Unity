@@ -3,6 +3,7 @@ using Utils;
 using UnityEngine;
 using System.Collections.Generic;
 using Actors.Equipment;
+using Abilities;
 
 namespace Actors
 {
@@ -19,6 +20,7 @@ namespace Actors
         public EquipmentSlot Body { get; private set; }
         public EquipmentSlot Accessory { get; private set; }
         public EssenceAffinity EssenceAffinity { get; set; }
+        public List<Ability> Abilities { get; private set; }
 
         #region Stats
         public int Level
@@ -118,6 +120,7 @@ namespace Actors
 
         public Character()
         {
+            Abilities = new List<Ability>();
             ElementalAffinities = new List<ElementalAffinity>();
             ActiveEffects = new List<ActiveEffect>();
             ActiveEffects.Add(new ActiveEffect { Effect = EffectType.Poison });

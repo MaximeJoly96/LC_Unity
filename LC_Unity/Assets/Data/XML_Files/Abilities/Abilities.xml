@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Abilities>
+	<Ability>
+		<Id>0</Id>
+		<Name>Attack</Name>
+		<Description>Attack with equipped weapon.</Description>
+		<Usability>BattleOnly</Usability>
+		<Cost Health="0" Mana="0" Essence="0" />
+		<Priority>0</Priority>
+	</Ability>
+  <Ability>
+    <Id>1</Id>
+    <Name>Leap</Name>
+    <Description>Jumps to a target enemy, then performs the Attack command. Ability Duration is based on jump distance.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>0</Priority>
+  </Ability>
+  <Ability>
+    <Id>2</Id>
+    <Name>Flee</Name>
+    <Description>Leave the battlefield.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>-100</Priority>
+  </Ability>
+</Abilities>
