@@ -37,6 +37,7 @@
         // Character
         ShowAnimation,
         ShowBalloonIcon,
+        ShowAgentAnimation,
 
         // ScreenEffects
         FadeScreen,

@@ -26,5 +26,15 @@ namespace Engine.Character
 
             return show;
         }
+
+        public static ShowAgentAnimation ParseShowAgentAnimation(XmlNode data)
+        {
+            ShowAgentAnimation show = new ShowAgentAnimation();
+
+            show.AnimationName = data.Attributes["AnimationName"].InnerText;
+            show.WaitForCompletion = bool.Parse(data.Attributes["WaitForCompletion"].InnerText);
+
+            return show;
+        }
     }
 }

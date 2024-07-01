@@ -52,7 +52,7 @@ namespace Field
             _sequence = sequence;
         }
 
-        public void RunSequence()
+        public virtual void RunSequence()
         {
             if (_sequence == null)
             {

@@ -100,6 +100,9 @@ namespace Engine.Events
                         case EventType.ShowBalloonIcon:
                             sequence.Add(XmlCharacterParser.ParseShowBalloonIcon(evt));
                             break;
+                        case EventType.ShowAgentAnimation:
+                            sequence.Add(XmlCharacterParser.ParseShowAgentAnimation(evt));
+                            break;
                         case EventType.TintScreen:
                             sequence.Add(XmlScreenEffectsParser.ParseTintScreen(evt));
                             break;
