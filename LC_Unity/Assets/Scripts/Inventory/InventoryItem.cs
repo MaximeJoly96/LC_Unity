@@ -15,31 +15,21 @@ namespace Inventory
 
     public class InventoryItem
     {
-        public int Id { get; set; }
+        public BaseItem ItemData { get; set; }
         public int InPossession { get; private set; }
         public ItemCategory Category { get; private set; }
-        public string Name { get; private set; }
-        public Sprite Icon { get; private set; }
-        public string Description { get; private set; }
-        public InventoryItem(int id)
-        {
-            Id = id;
-            InPossession = 0;
-        }
 
-        public InventoryItem(int id, string name, ItemCategory category, Sprite icon, string description) : this(id)
+        public InventoryItem(BaseItem itemData)
         {
-            Name = name;
-            Category = category;
-            Icon = icon;
-            Description = description;
+            ItemData = itemData;
+            InPossession = 0;
         }
 
         public void ChangeAmount(int amount)
         {
             if (InPossession + amount < 0)
             {
-                LogsHandler.Instance.LogError("Cannot change amount of item " + Id + " because it would be lower than 0.");
+                LogsHandler.Instance.LogError("Cannot change amount of item " + ItemData.Id + " because it would be lower than 0.");
                 return;
             }
 

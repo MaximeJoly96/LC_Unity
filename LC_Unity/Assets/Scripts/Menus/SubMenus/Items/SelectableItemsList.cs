@@ -75,12 +75,15 @@ namespace Menus.SubMenus.Items
 
         private void PlaceCursor()
         {
-            for(int i = 0; i < _items.Count; i++)
+            if(_items.Count > 0)
             {
-                _items[i].ShowCursor(_cursorPosition == i);
-            }
+                for (int i = 0; i < _items.Count; i++)
+                {
+                    _items[i].ShowCursor(_cursorPosition == i);
+                }
 
-            ItemHovered.Invoke(_items[_cursorPosition]);
+                ItemHovered.Invoke(_items[_cursorPosition]);
+            }
         }
     }
 }

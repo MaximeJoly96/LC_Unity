@@ -22,8 +22,8 @@ namespace Menus.SubMenus.Items
         {
             Item = item;
 
-            _icon.sprite = item.Icon;
-            _name.text = item.Name;
+            _icon.sprite = null;//item.ItemData.Icon;
+            _name.text = item.ItemData.Name;
             _quantity.text = "x" + item.InPossession;
         }
 

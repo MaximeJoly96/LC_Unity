@@ -113,7 +113,7 @@ namespace Menus.SubMenus
 
         private void UpdateItemDescription(SelectableItem item)
         {
-            _currentItemDescription.text = item.Item.Description;
+            _currentItemDescription.text = item.Item.ItemData.Description;
         }
 
         private void Update()
