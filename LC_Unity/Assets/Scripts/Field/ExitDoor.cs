@@ -30,6 +30,7 @@ namespace Field
 
             pc.GetComponent<SpriteRenderer>().sortingLayerName = "Player";
             pc.transform.Translate(new Vector3(0.0f, -0.25f));
+            pc.transform.localScale = Vector3.one;
 
             FinishedSequence.Invoke();
             DoorStatusChanged.Invoke(false);

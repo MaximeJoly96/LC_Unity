@@ -43,6 +43,7 @@ namespace Field
 
             pc.GetComponent<SpriteRenderer>().sortingLayerName = "InteriorPlayer";
             pc.transform.Translate(new Vector3(0.0f, 0.25f));
+            pc.transform.localScale = new Vector3(0.8f, 0.8f);
 
             FinishedSequence.Invoke();
             DoorStatusChanged.Invoke(true);
