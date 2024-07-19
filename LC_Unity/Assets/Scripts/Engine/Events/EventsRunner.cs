@@ -31,6 +31,8 @@ namespace Engine.Events
                 sequence.Events[i].Run();
 
                 yield return new WaitUntil(() => sequence.Events[i].IsFinished);
+
+                sequence.Events[i].IsFinished = false;
             }
 
             sequence.Finished.Invoke();

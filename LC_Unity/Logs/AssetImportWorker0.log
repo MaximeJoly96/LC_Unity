@@ -15,7 +15,7 @@ E:/Unity_Projects/LC_Unity/LC_Unity
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63022
+61640
 Successfully changed project path to: E:/Unity_Projects/LC_Unity/LC_Unity
 E:/Unity_Projects/LC_Unity/LC_Unity
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ E:/Unity_Projects/LC_Unity/LC_Unity
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 41.63 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 39.96 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.13f1 (90b6766da538)
 [Subsystems] Discovering subsystems at path E:/Unity/2021.2.13f1/Editor/Data/Resources/UnitySubsystems
@@ -63,90 +63,308 @@ Initialize mono
 Mono path[0] = 'E:/Unity/2021.2.13f1/Editor/Data/Managed'
 Mono path[1] = 'E:/Unity/2021.2.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'E:/Unity/2021.2.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56656
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56684
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/Unity/2021.2.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: E:/Unity/2021.2.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004405 seconds.
+Registered in 0.005059 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 41.97 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 38.81 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.829 seconds
+- Completed reload, in  0.770 seconds
 Domain Reload Profiling:
-	ReloadAssembly (830ms)
-		BeginReloadAssembly (87ms)
+	ReloadAssembly (771ms)
+		BeginReloadAssembly (89ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (595ms)
-			LoadAssemblies (87ms)
+		EndReloadAssembly (551ms)
+			LoadAssemblies (89ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (132ms)
+			SetupTypeCache (133ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (42ms)
-			SetupLoadedEditorAssemblies (329ms)
+			RebuildScriptCaches (38ms)
+			SetupLoadedEditorAssemblies (315ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (57ms)
+				InitializePlatformSupportModulesInManaged (56ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (42ms)
+				RefreshPlugins (39ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (168ms)
-				ProcessInitializeOnLoadMethodAttributes (59ms)
+				ProcessInitializeOnLoadAttributes (155ms)
+				ProcessInitializeOnLoadMethodAttributes (63ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002690 seconds.
+Registered in 0.002641 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.125 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1127ms)
+		BeginReloadAssembly (148ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (826ms)
+			LoadAssemblies (94ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (223ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (68ms)
+			SetupLoadedEditorAssemblies (401ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (18ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (275ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.17 seconds
+Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1861 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (29.7 MB). Loaded Objects now: 2333.
+Memory consumption went from 78.9 MB to 49.2 MB.
+Total: 4.439500 ms (FindLiveObjects: 0.227100 ms CreateObjectMapping: 0.054200 ms MarkObjects: 4.064600 ms  DeleteObjects: 0.091600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 98853.546028 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5efa614ba1b1c4cbe359fd6edbcabe54') in 0.188839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.413541 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7148e28edadc7a46c84528ad68b46990') in 0.038728 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.441970 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c5d094d76239b2d62b7b8e5da64b517') in 0.033699 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.149590 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9379038ceeb61c34d0eab267d4445228') in 0.029346 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.261313 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d3f0e107afe551c9fcad295e85a68c3') in 0.037176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.241228 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd80447008fcd663b2ff9cf31b374b3ba') in 0.034894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.113020 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd243f1486531898048fb454e17060d42') in 0.034025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.796933 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e8d7184d5ec9e3fad519e204f568a81') in 0.033126 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.977456 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5783901840747e6ab09eebd65572aa81') in 0.034486 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.737197 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '349f87caa5dd10f1c451750f41a7e8b0') in 0.032983 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.870300 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64789eb52f1e18b45a591b10ead92a4b') in 0.036454 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.247374 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0c6161d575f7aad6844ec9cbccb5993') in 0.032079 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.550675 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46c5b56e81f6b012ce16f175c16e5a5c') in 0.037809 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.871927 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef7f35b6cd12b3d2ab0f42fb80a4fa39') in 0.031704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.581262 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc313015976488e2e4ba65154510bfb7') in 0.032107 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.620580 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bf233c38ff4b2eda2f79d8e0f2ea765') in 0.032636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.810554 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efbf5dbd410986156d9e2d90c8b925a8') in 0.031661 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.749078 seconds.
+  path: Assets/Data/XML_Files/Haalmikah
+  artifactKey: Guid(cde416dedd4ecac4496e99579e2f4625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/XML_Files/Haalmikah using Guid(cde416dedd4ecac4496e99579e2f4625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53c458743a4970fd97db90929ebda67f') in 0.002989 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003316 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.377 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1378ms)
+		BeginReloadAssembly (212ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (16ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (57ms)
+		EndReloadAssembly (1008ms)
+			LoadAssemblies (125ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (230ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (87ms)
+			SetupLoadedEditorAssemblies (515ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (34ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (77ms)
+				ProcessInitializeOnLoadAttributes (347ms)
+				ProcessInitializeOnLoadMethodAttributes (49ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2341.
+Memory consumption went from 82.4 MB to 82.3 MB.
+Total: 3.402500 ms (FindLiveObjects: 0.176900 ms CreateObjectMapping: 0.042100 ms MarkObjects: 3.164700 ms  DeleteObjects: 0.016900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005831 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Refreshing native plugins compatible for Editor in 0.54 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.072 seconds
+- Completed reload, in  1.540 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1073ms)
-		BeginReloadAssembly (142ms)
+	ReloadAssembly (1541ms)
+		BeginReloadAssembly (221ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
+			DisableScriptedObjects (29ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (27ms)
-		EndReloadAssembly (800ms)
-			LoadAssemblies (84ms)
+			CreateAndSetChildDomain (47ms)
+		EndReloadAssembly (1185ms)
+			LoadAssemblies (123ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (209ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (63ms)
-			SetupLoadedEditorAssemblies (399ms)
+			SetupTypeCache (371ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (114ms)
+			SetupLoadedEditorAssemblies (496ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (17ms)
+				InitializePlatformSupportModulesInManaged (44ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (57ms)
-				ProcessInitializeOnLoadAttributes (268ms)
-				ProcessInitializeOnLoadMethodAttributes (51ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				BeforeProcessingInitializeOnLoad (97ms)
+				ProcessInitializeOnLoadAttributes (305ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
 Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 2.67 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1861 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 20 unused Assets / (29.7 MB). Loaded Objects now: 2333.
-Memory consumption went from 78.9 MB to 49.2 MB.
-Total: 4.533700 ms (FindLiveObjects: 0.267400 ms CreateObjectMapping: 0.066900 ms MarkObjects: 4.102600 ms  DeleteObjects: 0.095000 ms)
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2343.
+Memory consumption went from 82.4 MB to 82.4 MB.
+Total: 3.182800 ms (FindLiveObjects: 0.178600 ms CreateObjectMapping: 0.042800 ms MarkObjects: 2.941200 ms  DeleteObjects: 0.018700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -159,667 +377,379 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 82675.161005 seconds.
-  path: Assets/Data/Maps/Barracks_Basement_Upper.png
-  artifactKey: Guid(5ed608f2dcd0f1040a5d068ac27dfd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Barracks_Basement_Upper.png using Guid(5ed608f2dcd0f1040a5d068ac27dfd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c3b429d1c071e345229700d49789931') in 0.146366 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Data/Maps/Barracks_Basement_Lower.png
-  artifactKey: Guid(46817a7b3a84c164ea8a6f7857dba61b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Barracks_Basement_Lower.png using Guid(46817a7b3a84c164ea8a6f7857dba61b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d3f5b335008448e25571aab1f262d54') in 0.011913 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.250284 seconds.
-  path: Assets/Data/Maps/Barracks_Basement_Lower.png
-  artifactKey: Guid(46817a7b3a84c164ea8a6f7857dba61b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Barracks_Basement_Lower.png using Guid(46817a7b3a84c164ea8a6f7857dba61b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ed72ac373cabf4360e79ec4ff420c30') in 0.011773 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Data/Maps/Barracks_Basement_Upper.png
-  artifactKey: Guid(5ed608f2dcd0f1040a5d068ac27dfd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Barracks_Basement_Upper.png using Guid(5ed608f2dcd0f1040a5d068ac27dfd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e576d69595ced2e3d128f33666607e2') in 0.010188 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.321968 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf176edbacc347452f10993012a581fd') in 0.096760 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.171204 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbe2150f805cf0056f79307209205884') in 0.032078 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.290826 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62ce97cad2ac196218218bd2e9c84c36') in 0.028456 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.203488 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '007b39d3059e8318327b73e552b9a1d9') in 0.028183 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.845562 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '704aa810aa14d18290406717f6ce5515') in 0.028672 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.989353 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5000c83fcb68f71411bd1113889fcbfb') in 0.031773 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.850843 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c1a04e9fd43576d8e4e2022eddd44b6') in 0.028851 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.993418 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e140d36d73cbd3deb786f4aa24163635') in 0.028719 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.252165 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd42bec9406e0c5b0d5d546595c8dc28c') in 0.031792 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.411544 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '343e658060c5f6af471e1ca07fa9c135') in 0.032902 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.948712 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fffedfc1a4dececddb0988a1a094372e') in 0.027888 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.024177 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1742ade5df336d1b6dde03536e22d085') in 0.034801 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.250134 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc63cca9f5c9d982326859370bc1c941') in 0.032945 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.201775 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77ec4ce7e2b0aef61079d990357c97a9') in 0.037328 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.201081 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4c91b0acf7f885570da483842991bbd') in 0.032738 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 22.958027 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe70f11e0dafc2bbc432d88b69573fe5') in 0.030430 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.250796 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bba2769e0ab2740a67c307c453e4d73d') in 0.038195 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 43.435511 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd968e3d8bb636a7d380ad6cf326fdb4') in 0.043245 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 43.451444 seconds.
-  path: Assets/Data/Maps/Barracks_Basement_Upper.png
-  artifactKey: Guid(5ed608f2dcd0f1040a5d068ac27dfd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Barracks_Basement_Upper.png using Guid(5ed608f2dcd0f1040a5d068ac27dfd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3a057a4cadf58dd54696698226cc5bd') in 0.016513 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.496736 seconds.
-  path: Assets/Data/Maps/Barracks_Basement_Upper.png
-  artifactKey: Guid(5ed608f2dcd0f1040a5d068ac27dfd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Barracks_Basement_Upper.png using Guid(5ed608f2dcd0f1040a5d068ac27dfd8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f4199c363d2892a5ae75b8cdc02543d') in 0.010992 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.908478 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2828366f1f9cbb46de95769f46a217c') in 0.061000 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.806162 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18f1d43abd489eb01749bafc061f712e') in 0.040101 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.470531 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca161e50b98300af14dfc9e70e1e41c5') in 0.035109 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.470971 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59801f8ac480fe482b8ccad388cac6fd') in 0.034267 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.993616 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3396373730929e3987dfa06a3fded8c9') in 0.041077 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.816948 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f8cde9653030465767ca9ec5611f117') in 0.033562 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.623625 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f638cf064b16c30527e5cbd7f5299fd') in 0.031626 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.645365 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbdea9c2476db3ef8c962358a78caaf6') in 0.042550 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.608728 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44400f84853fa02e48864e642d77c9c0') in 0.037896 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.488634 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e69453e6a14f4b158bfa34e12f6ec89a') in 0.044779 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.430132 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e098df84ad54e1ac3f2db06df48b0cfa') in 0.035055 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.231901 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c1c5e50e99b03fa4903b10123ee56ae') in 0.040990 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.918223 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '316aac422662da5cc3b5a69cf5d03d85') in 0.048949 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.851841 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a38bb64f722a066702e0c2348cff4a67') in 0.031418 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.896497 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73c261b3797dfeee1dd46d7b328faa24') in 0.046229 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.448947 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '918001ecd58eaa5972d530e2e64cd5ae') in 0.040818 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.713495 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4846d006157c0bd9a97a98503df8d46') in 0.033057 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.974666 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fa24ac35addaebce7efafabbcdec148') in 0.032250 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.704532 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ab3f85a49b451433e9de44e8c2c03d3') in 0.031468 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.843789 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96e27de3fbaba25bbda24ff4405d3f44') in 0.041408 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.072517 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2140bc3f0a2bf53c60a8722b6daf879') in 0.045689 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.031873 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b60230d726a049d1de6bd5a932f70f7') in 0.035488 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.692996 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4af49fd8bffee3eaf79105f97348d204') in 0.035774 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.804842 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24cbd6b40ef7c53e1f2fc0347f878e01') in 0.043631 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.385299 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b8c895050dd3924314efb398d017845') in 0.044536 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.117506 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0623a7b9ae9df34b3141a10a0a14d12d') in 0.127993 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.269417 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbb2763bb8603727c0c055466b8a0485') in 0.047672 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.182914 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53b5ca29812af9dc45740ec06b240a7d') in 0.032975 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.289283 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02f13890f22434c3b3e2a9d1deb3e522') in 0.032302 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.738688 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e9e5956051de7aec00ab54ab5162259') in 0.049254 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.547663 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '725e913057a4dc7f0249cc0860a1c8c7') in 0.033667 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.286910 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '602ec4e0f5ee7553d366662eacd84486') in 0.046016 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.756830 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5deb08067a18261230d31cc55d8fd21b') in 0.037248 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.370934 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c3c118ade0f823642643ea4384286fc') in 0.046378 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.513250 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa2f144cf1d3357ccf6cafc769634f91') in 0.035173 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.062830 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29c40e601985ccbc121523bdf7fb2723') in 0.040413 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.105625 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06a8a6e517e3cde9ec2abd3356c3e648') in 0.043257 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.307583 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bba25cbb324888564e09a8d96e7198e1') in 0.042365 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.537622 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b6a7a460c32f2beaea2ce0086c61078') in 0.043271 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.599493 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1cc40d7128f68803191c2d6350c636f') in 0.040831 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.976141 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbaae124b6aa3cff7d47f08cada529e7') in 0.036218 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.253571 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcd169606c6cab45d8f44450da15ae5f') in 0.044336 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.088811 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e557f9996532d14285872db530772b36') in 0.034760 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.998288 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7bf39c9a41e6a366b0f59bf1e9f42e7') in 0.033726 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.395257 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75fae732f00b63e6e49a17131b0a9149') in 0.037428 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.170304 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5c2fb1bfdfd75e82ae9c880c68bd0ae') in 0.043034 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.025752 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '382a6b0a999e4e742aaf5bf8eb7504e4') in 0.039683 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.990343 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '179052bb79a4fba79cdf69bbc9d7f4c8') in 0.046707 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.367055 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c0f5bc83b8af3f63cd11ba23f394af2') in 0.035562 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.604848 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd71a66b424c30fb4a458053aeacef3c4') in 0.037567 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.320090 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5256323fd76faac70703812eb80127f') in 0.030594 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.000169 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cb93af57d7ca0e6d06a1a2d84be0880') in 0.033250 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.140397 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bb843ef1ebcc51e4cfe96d36e50c107') in 0.049856 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.435729 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f954ca58b9324a7fc047bfb24df8cba6') in 0.033480 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.291921 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5256457ede48f35b467b0cc388f765a1') in 0.057161 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.390115 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad989769c6d67002377cec373a281184') in 0.036159 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.430251 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a51fa6717c0164599192bfe5e6db524') in 0.032824 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.476429 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68d7adecf51ccfd092c95db7363af61c') in 0.041141 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.144547 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77c70834c57feabb4f3824413bfbefb2') in 0.032374 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.199734 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36c960853f965ca1f585e11b5fe9d33c') in 0.038398 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.388227 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f392f6f93841685574188adce06548d') in 0.080756 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.545007 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fe0a8b74934ae2392912f758073537c') in 0.032393 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.862197 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcbb618637554773a3f16ae4bbcfe662') in 0.045166 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.056763 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e53988688f8d6a8dc5b6dfb0736bf75d') in 0.049175 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.545212 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a072fca049e5e479730349ab0d54cb8') in 0.043903 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.610062 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f45e8c2c8c91afc6a1dcb0ada4651bb0') in 0.037310 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.513857 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca559cdfd5f9733aa88fba3fa6e37ba5') in 0.031604 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.816820 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '478cc703df00af2503820d9984be7826') in 0.040577 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.008266 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c675be479f69851170323c8fa42a2fe') in 0.038845 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.572553 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb330ded345ab01597584d90ffc9bc40') in 0.048713 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.852230 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a48e274f86234a0f6fb7dae0f2dd5e69') in 0.038877 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.072494 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '105c5e92d2a7124bbd0d8a61de84ea25') in 0.105825 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.832757 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ed107b67e2603541e9df73772ac2a10') in 0.054120 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.554633 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf45092ccc5e43a298c30b75875ba305') in 0.041646 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.439764 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb1cfb19c3eaa10f6e68f3b57cc49822') in 0.048471 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.342710 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63310727e404dd0a0c6f7ac371b8e2d4') in 0.051506 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.169457 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2898d3f1697379bcefdd9d02fdcba4e') in 0.045815 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.697212 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efd86baac517a9c3d1e9e7958e64410e') in 0.049710 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.167220 seconds.
-  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
-  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32f0f95d749e39e982907f2a7b0df3ef') in 0.062753 seconds 
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002643 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.361 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1362ms)
+		BeginReloadAssembly (197ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (59ms)
+		EndReloadAssembly (1043ms)
+			LoadAssemblies (103ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (240ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (101ms)
+			SetupLoadedEditorAssemblies (514ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (34ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (77ms)
+				ProcessInitializeOnLoadAttributes (354ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2345.
+Memory consumption went from 82.4 MB to 82.4 MB.
+Total: 3.551900 ms (FindLiveObjects: 0.169200 ms CreateObjectMapping: 0.042300 ms MarkObjects: 3.319900 ms  DeleteObjects: 0.019000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002368 seconds.
+Registered in 0.003137 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.305 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1306ms)
+		BeginReloadAssembly (151ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (1037ms)
+			LoadAssemblies (100ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (271ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (102ms)
+			SetupLoadedEditorAssemblies (456ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (37ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (79ms)
+				ProcessInitializeOnLoadAttributes (296ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.92 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.7 KB). Loaded Objects now: 2347.
+Memory consumption went from 82.4 MB to 82.4 MB.
+Total: 5.607600 ms (FindLiveObjects: 0.218100 ms CreateObjectMapping: 0.168400 ms MarkObjects: 5.200300 ms  DeleteObjects: 0.019300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011854 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.292 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1293ms)
+		BeginReloadAssembly (194ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (27ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (44ms)
+		EndReloadAssembly (951ms)
+			LoadAssemblies (109ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (259ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (79ms)
+			SetupLoadedEditorAssemblies (464ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (32ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (306ms)
+				ProcessInitializeOnLoadMethodAttributes (53ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2349.
+Memory consumption went from 82.3 MB to 82.3 MB.
+Total: 3.850900 ms (FindLiveObjects: 0.178400 ms CreateObjectMapping: 0.043200 ms MarkObjects: 3.608700 ms  DeleteObjects: 0.018300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002848 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.315 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1316ms)
+		BeginReloadAssembly (191ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (873ms)
+			LoadAssemblies (131ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (230ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (76ms)
+			SetupLoadedEditorAssemblies (420ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (28ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (281ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.86 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.7 KB). Loaded Objects now: 2351.
+Memory consumption went from 82.3 MB to 82.3 MB.
+Total: 4.082200 ms (FindLiveObjects: 0.181800 ms CreateObjectMapping: 0.043100 ms MarkObjects: 3.835300 ms  DeleteObjects: 0.020200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002645 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.459 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1460ms)
+		BeginReloadAssembly (176ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (34ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (1159ms)
+			LoadAssemblies (96ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (391ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (86ms)
+			SetupLoadedEditorAssemblies (515ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (35ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (78ms)
+				ProcessInitializeOnLoadAttributes (343ms)
+				ProcessInitializeOnLoadMethodAttributes (51ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.23 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2353.
+Memory consumption went from 82.3 MB to 82.3 MB.
+Total: 4.107000 ms (FindLiveObjects: 0.174300 ms CreateObjectMapping: 0.042100 ms MarkObjects: 3.870300 ms  DeleteObjects: 0.018400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002430 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.269 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1270ms)
+		BeginReloadAssembly (163ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (992ms)
+			LoadAssemblies (88ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (222ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (89ms)
+			SetupLoadedEditorAssemblies (510ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (35ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (78ms)
+				ProcessInitializeOnLoadAttributes (342ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2355.
+Memory consumption went from 82.4 MB to 82.4 MB.
+Total: 3.824700 ms (FindLiveObjects: 0.173300 ms CreateObjectMapping: 0.041800 ms MarkObjects: 3.589000 ms  DeleteObjects: 0.019200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002464 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Refreshing native plugins compatible for Editor in 0.68 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.797 seconds
+- Completed reload, in  1.342 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1798ms)
-		BeginReloadAssembly (224ms)
+	ReloadAssembly (1343ms)
+		BeginReloadAssembly (150ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (12ms)
+			DisableScriptedObjects (10ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (52ms)
-		EndReloadAssembly (1368ms)
-			LoadAssemblies (129ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (1079ms)
+			LoadAssemblies (126ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (382ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (318ms)
-			SetupLoadedEditorAssemblies (477ms)
+			SetupTypeCache (276ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (87ms)
+			SetupLoadedEditorAssemblies (514ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (31ms)
-				SetLoadedEditorAssemblies (2ms)
+				InitializePlatformSupportModulesInManaged (35ms)
+				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (74ms)
-				ProcessInitializeOnLoadAttributes (317ms)
-				ProcessInitializeOnLoadMethodAttributes (47ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (2ms)
+				BeforeProcessingInitializeOnLoad (83ms)
+				ProcessInitializeOnLoadAttributes (340ms)
+				ProcessInitializeOnLoadMethodAttributes (49ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 9 unused Assets / (31.7 KB). Loaded Objects now: 2344.
-Memory consumption went from 86.0 MB to 86.0 MB.
-Total: 5.179500 ms (FindLiveObjects: 0.187300 ms CreateObjectMapping: 0.050300 ms MarkObjects: 4.920900 ms  DeleteObjects: 0.018900 ms)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2357.
+Memory consumption went from 82.4 MB to 82.4 MB.
+Total: 3.539200 ms (FindLiveObjects: 0.174900 ms CreateObjectMapping: 0.042300 ms MarkObjects: 3.302500 ms  DeleteObjects: 0.018000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -831,3 +761,241 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002339 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.283 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1284ms)
+		BeginReloadAssembly (148ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (1019ms)
+			LoadAssemblies (89ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (218ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (92ms)
+			SetupLoadedEditorAssemblies (541ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (35ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (85ms)
+				ProcessInitializeOnLoadAttributes (366ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2359.
+Memory consumption went from 82.4 MB to 82.4 MB.
+Total: 3.377700 ms (FindLiveObjects: 0.187500 ms CreateObjectMapping: 0.050500 ms MarkObjects: 3.120100 ms  DeleteObjects: 0.017900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002653 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.254 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1256ms)
+		BeginReloadAssembly (147ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (992ms)
+			LoadAssemblies (89ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (215ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (90ms)
+			SetupLoadedEditorAssemblies (500ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (34ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (74ms)
+				ProcessInitializeOnLoadAttributes (337ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2361.
+Memory consumption went from 82.5 MB to 82.4 MB.
+Total: 3.547400 ms (FindLiveObjects: 0.176700 ms CreateObjectMapping: 0.043100 ms MarkObjects: 3.307600 ms  DeleteObjects: 0.018600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002817 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.427 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1428ms)
+		BeginReloadAssembly (149ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (993ms)
+			LoadAssemblies (95ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (263ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (89ms)
+			SetupLoadedEditorAssemblies (456ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (35ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (75ms)
+				ProcessInitializeOnLoadAttributes (300ms)
+				ProcessInitializeOnLoadMethodAttributes (40ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.9 KB). Loaded Objects now: 2363.
+Memory consumption went from 82.4 MB to 82.3 MB.
+Total: 4.962500 ms (FindLiveObjects: 0.181900 ms CreateObjectMapping: 0.042300 ms MarkObjects: 4.695700 ms  DeleteObjects: 0.040900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002808 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.515 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1517ms)
+		BeginReloadAssembly (151ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (1215ms)
+			LoadAssemblies (90ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (233ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (106ms)
+			SetupLoadedEditorAssemblies (715ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (36ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (78ms)
+				ProcessInitializeOnLoadAttributes (546ms)
+				ProcessInitializeOnLoadMethodAttributes (49ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1843 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2365.
+Memory consumption went from 82.5 MB to 82.4 MB.
+Total: 3.920500 ms (FindLiveObjects: 0.187000 ms CreateObjectMapping: 0.042900 ms MarkObjects: 3.668100 ms  DeleteObjects: 0.020500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2201.438398 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '101a9604f4ac4c679de2ab9e1f5fff3d') in 0.127477 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000105 seconds.
+  path: Assets/Data/Maps/TestField.prefab
+  artifactKey: Guid(a00630b257ff0ac48b66abc8c0a713ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/TestField.prefab using Guid(a00630b257ff0ac48b66abc8c0a713ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f06d08c44d328b0539ecd452ffd0a47') in 0.050769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.022081 seconds.
+  path: Assets/Data/Maps/Haalmikah_Fortress 1.prefab
+  artifactKey: Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah_Fortress 1.prefab using Guid(f85d60cfeb0a50c44b83f5d6ff6505db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0eed6edb248d28ccfbe11c4a9f826d75') in 0.047000 seconds 
