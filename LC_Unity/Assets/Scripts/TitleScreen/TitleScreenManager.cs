@@ -2,35 +2,29 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using Party;
-using Inputs;
 
 namespace TitleScreen
 {
     public class TitleScreenManager : MonoBehaviour
     {
-        internal enum Options { NewGame, LoadGame, ChangeOptions, Quit }
-
-        private const float SELECTION_DELAY = 0.2f; // seconds
         private const float LOAD_DELAY = 1.0f;
 
         [SerializeField]
         private TextAsset _charactersData;
+        
         [SerializeField]
-        private TitleScreenOption[] _options;
-
-        private int _cursorPosition;
-        private float _selectionDelay;
-        private bool _delayOn;
-        private bool _lockedChoice;
+        private MainMenuPanel _mainPanel;
+        [SerializeField]
+        private OptionsMenuPanel _optionsMenu;
 
         private void Start()
         {
-            _selectionDelay = 0.0f;
-            _delayOn = false;
-            UpdateCursor();
-
             PartyManager.Instance.LoadPartyFromBaseFile(_charactersData);
-            FindObjectOfType<InputController>().ButtonClicked.AddListener(ReceiveInput);
+
+            _mainPanel.OptionSelected.AddListener(HandleOptionSelection);
+            _optionsMenu.BackButtonEvent.AddListener(ShowMainPanel);
+
+            ShowMainPanel();
         }
 
         private IEnumerator LoadNextScene()
@@ -45,76 +39,37 @@ namespace TitleScreen
             Application.Quit();
         }
 
-        private void ReceiveInput(InputAction input)
+        private void ShowMainPanel()
         {
-            if(!_delayOn)
+            _mainPanel.Show(true);
+            _optionsMenu.Show(false);
+
+            _mainPanel.Unlock();
+        }
+
+        private void ShowOptions()
+        {
+            _mainPanel.Show(false);
+            _optionsMenu.Show(true);
+
+            _optionsMenu.Unlock();
+        }
+
+        private void HandleOptionSelection(MainMenuPanel.MainMenuOptions option)
+        {
+            switch(option)
             {
-                switch (input)
-                {
-                    case InputAction.MoveDown:
-                        MoveCursorDown();
-                        break;
-                    case InputAction.MoveUp:
-                        MoveCursorUp();
-                        break;
-                    case InputAction.Select:
-                        SelectOption();
-                        break;
-                }
-
-                _delayOn = true;
-            }
-        }
-
-        private void Update()
-        {
-            if(_delayOn && !_lockedChoice)
-            {
-                _selectionDelay += Time.deltaTime;
-                if(_selectionDelay > SELECTION_DELAY)
-                {
-                    _selectionDelay = 0.0f;
-                    _delayOn = false;
-                }
-            }
-        }
-
-        private void MoveCursorDown()
-        {
-            _cursorPosition = _cursorPosition == _options.Length - 1 ? 0 : ++_cursorPosition;
-            UpdateCursor();
-        }
-
-        private void MoveCursorUp()
-        {
-            _cursorPosition = _cursorPosition == 0 ? _options.Length - 1 : --_cursorPosition;
-            UpdateCursor();
-        }
-
-        private void SelectOption()
-        {
-            _lockedChoice = true;
-
-            switch(_options[_cursorPosition].Option)
-            {
-                case Options.NewGame:
+                case MainMenuPanel.MainMenuOptions.NewGame:
                     StartCoroutine(LoadNextScene());
                     break;
-                case Options.LoadGame:
+                case MainMenuPanel.MainMenuOptions.LoadGame:
                     break;
-                case Options.ChangeOptions:
+                case MainMenuPanel.MainMenuOptions.ChangeOptions:
+                    ShowOptions();
                     break;
-                case Options.Quit:
+                case MainMenuPanel.MainMenuOptions.Quit:
                     StartCoroutine(Quit());
                     break;
-            }
-        }
-
-        private void UpdateCursor()
-        {
-            for(int i = 0; i < _options.Length; i++)
-            {
-                _options[i].ShowCursor(_cursorPosition == i);
             }
         }
     }
