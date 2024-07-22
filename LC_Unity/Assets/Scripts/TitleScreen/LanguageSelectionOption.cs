@@ -8,14 +8,14 @@ namespace TitleScreen
     public class LanguageSelectionOption : SpecificTitleScreenOption
     {
         private Language[] _availableLanguages;
-        private int _cursor;
+        private int _cursorPosition;
 
         [SerializeField]
         private TMP_Text _currentLanguage;
 
         private void Start()
         {
-            _cursor = 0;
+            _cursorPosition = 0;
             _availableLanguages = (Language[])Enum.GetValues(typeof(Language));
 
             UpdateSelectedLanguage();
@@ -23,18 +23,18 @@ namespace TitleScreen
 
         private void UpdateSelectedLanguage()
         {
-            _currentLanguage.text = _availableLanguages[_cursor].ToString();
+            _currentLanguage.text = _availableLanguages[_cursorPosition].ToString();
         }
 
         public override void MoveCursorLeft()
         {
-            _cursor = _cursor == 0 ? _availableLanguages.Length - 1 : --_cursor;
+            _cursorPosition = _cursorPosition == 0 ? _availableLanguages.Length - 1 : --_cursorPosition;
             UpdateSelectedLanguage();
         }
 
         public override void MoveCursorRight()
         {
-            _cursor = _cursor == _availableLanguages.Length - 1 ? 0 : ++_cursor;
+            _cursorPosition = _cursorPosition == _availableLanguages.Length - 1 ? 0 : ++_cursorPosition;
             UpdateSelectedLanguage();
         }
     }
