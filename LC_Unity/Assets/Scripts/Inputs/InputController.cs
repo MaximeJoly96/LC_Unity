@@ -27,6 +27,8 @@ namespace Inputs
             ButtonClicked = new UnityEvent<InputAction>();
             LeftClick = new UnityEvent<Vector2>();
             RightClick = new UnityEvent<Vector2>();
+
+            DontDestroyOnLoad(gameObject);
         }
 
         private void FixedUpdate()
