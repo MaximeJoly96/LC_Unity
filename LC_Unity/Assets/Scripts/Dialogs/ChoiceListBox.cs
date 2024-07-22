@@ -4,6 +4,7 @@ using TMPro;
 using System.Collections;
 using System.Text;
 using System.Collections.Generic;
+using Language;
 
 namespace Dialogs
 {
@@ -33,7 +34,7 @@ namespace Dialogs
             for (int i = 0; i < _element.Choices.Count; i++)
             {
                 SelectableDialogItem choice = Instantiate(_selectableItemPrefab, _wrapper);
-                choice.SetText(_element.Choices[i].Text);
+                choice.SetText(Localizer.Instance.GetString(_element.Choices[i].Text.Trim()));
 
                 _selectableItems.Add(choice);
             }
@@ -47,7 +48,7 @@ namespace Dialogs
 
         public void SetMessage()
         {
-            StartCoroutine(AnimateText(_message, _element.Message));
+            StartCoroutine(AnimateText(_message, Localizer.Instance.GetString(_element.Message.Trim())));
         }
 
         private void SetPosition()

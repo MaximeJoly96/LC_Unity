@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using Engine.Message;
+using Language;
 
 namespace Dialogs
 {
@@ -75,7 +76,7 @@ namespace Dialogs
 
         public void SetMessage()
         {
-            StartCoroutine(AnimateText(_text, _element.Message));
+            StartCoroutine(AnimateText(_text, Localizer.Instance.GetString(_element.Message.Trim())));
         }
 
         public void SetLocutor()
@@ -86,7 +87,7 @@ namespace Dialogs
                 return;
             }
 
-            _locutorBox.SetName(_element.Locutor);
+            _locutorBox.SetName(Localizer.Instance.GetString(_element.Locutor.Trim()));
         }
 
         public void SetBackground(Color color)
