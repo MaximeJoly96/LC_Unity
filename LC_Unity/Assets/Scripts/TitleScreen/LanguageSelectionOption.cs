@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Utils;
+using Language;
 using System;
 using TMPro;
 
@@ -7,7 +7,7 @@ namespace TitleScreen
 {
     public class LanguageSelectionOption : SpecificTitleScreenOption
     {
-        private Language[] _availableLanguages;
+        private Language.Language[] _availableLanguages;
         private int _cursorPosition;
 
         [SerializeField]
@@ -16,14 +16,15 @@ namespace TitleScreen
         private void Start()
         {
             _cursorPosition = 0;
-            _availableLanguages = (Language[])Enum.GetValues(typeof(Language));
+            _availableLanguages = (Language.Language[])Enum.GetValues(typeof(Language.Language));
 
             UpdateSelectedLanguage();
         }
 
         private void UpdateSelectedLanguage()
         {
-            _currentLanguage.text = _availableLanguages[_cursorPosition].ToString();
+            _currentLanguage.text = LanguageUtility.TranslateLanguageLabel(_availableLanguages[_cursorPosition]);
+            Localizer.Instance.LoadLanguage(_availableLanguages[_cursorPosition]);
         }
 
         public override void MoveCursorLeft()

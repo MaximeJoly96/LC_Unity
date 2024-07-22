@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TitleScreen
 {
@@ -7,8 +6,6 @@ namespace TitleScreen
     {
         [SerializeField]
         private MainMenuPanel.MainMenuOptions _option;
-        [SerializeField]
-        private TMP_Text _text;
         [SerializeField]
         private Transform _cursor;
 

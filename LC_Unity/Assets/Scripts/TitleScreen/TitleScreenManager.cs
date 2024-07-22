@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using Party;
+using Language;
 
 namespace TitleScreen
 {
@@ -16,6 +17,11 @@ namespace TitleScreen
         private MainMenuPanel _mainPanel;
         [SerializeField]
         private OptionsMenuPanel _optionsMenu;
+
+        private void Awake()
+        {
+            FindObjectOfType<Localizer>().LoadLanguage(Language.Language.English);
+        }
 
         private void Start()
         {

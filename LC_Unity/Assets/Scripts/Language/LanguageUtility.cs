@@ -1,4 +1,4 @@
-﻿namespace Utils
+﻿namespace Language
 {
     public enum Language { English, French }
 
@@ -6,7 +6,7 @@
     {
         public static string TranslateLanguageLabel(Language language)
         {
-            switch(language)
+            switch (language)
             {
                 case Language.English:
                     return "English";
