@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using Language;
 
 namespace Menus
 {
@@ -14,7 +15,7 @@ namespace Menus
 
             _filledGauge.fillAmount = ratio;
             _value.text = (ratio * 100.0f).ToString("0") + "%";
-            _level.text = "Lv. " + (currentLevel + 1);
+            _level.text = Localizer.Instance.GetString("levelShort") + " " + (currentLevel + 1);
         }
     }
 }

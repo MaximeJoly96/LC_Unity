@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Actors;
+using Language;
 
 namespace Menus.SubMenus.Status
 {
@@ -17,7 +18,7 @@ namespace Menus.SubMenus.Status
             for(int i = 0; i < character.ActiveEffects.Count; i++)
             {
                 EffectDisplay effect = Instantiate(_effectDisplayPrefab, _wrapper);
-                effect.Feed(null, character.ActiveEffects[i].Effect.ToString());
+                effect.Feed(null, Localizer.Instance.GetString(character.ActiveEffects[i].Effect.ToString().ToLower()));
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Utils;
 using Actors;
+using Language;
 
 namespace Menus.SubMenus.Status
 {
@@ -21,7 +22,7 @@ namespace Menus.SubMenus.Status
                 AffinityDisplay affinity = Instantiate(_affinityDisplayPrefab, _wrapper);
                 Element element = character.ElementalAffinities[i].Element;
                 affinity.Feed(wrapper.GetSpriteFromElement(element),
-                              element.ToString(),
+                              Localizer.Instance.GetString(element.ToString().ToLower()),
                               character.ElementalAffinities[i].Multiplier);
             }
         }

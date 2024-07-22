@@ -59,7 +59,7 @@ namespace Language
             {
                 string[] splitLine = lines[i].Split(';');
 
-                _keyValuePairs.Add(splitLine[0], splitLine[1]);
+                _keyValuePairs.Add(splitLine[0].Trim(), splitLine[1].Trim());
             }
         }
 
