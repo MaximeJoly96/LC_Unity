@@ -21,8 +21,11 @@ namespace Save
 
             for(int i = 0; i < splitContent.Length; i++)
             {
-                string[] splitLine = splitContent[i].Split('=');
-                data.Add(splitLine[0], splitLine[1]);
+                if(splitContent[i] != string.Empty)
+                {
+                    string[] splitLine = splitContent[i].Split('=');
+                    data.Add(splitLine[0], splitLine[1]);
+                }
             }
 
             return data;

@@ -1,21 +1,37 @@
 ﻿using UnityEngine;
 using System.IO;
-using Party;
 using System.Collections.Generic;
-using Actors;
+using Movement;
+using System.Globalization;
 
 namespace Save
 {
     public class SaveCreator
     {
-        public void CreateSaveFile(int slotId)
+        public Dictionary<string, string> CreateSaveFile(int slotId)
         {
-            string path = Application.persistentDataPath + "/save" + slotId + ".data"; 
-            
-            using(StreamWriter sw = new StreamWriter(path))
+            string path = Application.persistentDataPath + "/save" + slotId + ".data";
+            Dictionary<string, string> data = new Dictionary<string, string>();
+
+            PlayerController pc = Object.FindObjectOfType<PlayerController>();
+            Vector2 playerPos = new Vector2();
+
+            if(pc)
+                playerPos = pc.transform.position;
+
+            data.Add("positionX", playerPos.x.ToString(CultureInfo.InvariantCulture));
+            data.Add("positionY", playerPos.y.ToString(CultureInfo.InvariantCulture));
+
+            using (StreamWriter sw = new StreamWriter(path))
             {
-                
+                foreach(KeyValuePair<string, string> kvp in data)
+                {
+                    string line = kvp.Key + "=" + kvp.Value;
+                    sw.WriteLine(line);
+                }
             }
+
+            return data;
         }
     }
 }

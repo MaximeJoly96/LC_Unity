@@ -78,7 +78,6 @@ namespace Save
 
             SaveCanvasCache.UpdateTooltip(Localizer.Instance.GetString("createSaveTooltip"));
             SaveCanvasCache.Open();
-            _creator.CreateSaveFile(0);
         }
 
         public void InitSaveCreation()
@@ -117,9 +116,19 @@ namespace Save
                 PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture), 
                                              float.Parse(saveData["positionY"], CultureInfo.InvariantCulture))
             };
+        }
+
+        public void CreateSaveFile(int slotId)
+        {
+            Dictionary<string, string> saveData = _creator.CreateSaveFile(slotId);
+
+            Data = new SavedData
+            {
+                PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture),
+                                             float.Parse(saveData["positionY"], CultureInfo.InvariantCulture))
+            };
 
             CloseSaveWindow();
-            SceneManager.LoadScene("Field");
         }
 
         public void SlotSelected(int slotId)
@@ -127,11 +136,15 @@ namespace Save
             switch(CurrentSaveState)
             {
                 case SaveState.CreateSave:
+                    CreateSaveFile(slotId);
                     break;
                 case SaveState.LoadSave:
                     LoadSaveFile(slotId);
                     break;
             }
+
+            CloseSaveWindow();
+            SceneManager.LoadScene("Field");
         }
     }
 }

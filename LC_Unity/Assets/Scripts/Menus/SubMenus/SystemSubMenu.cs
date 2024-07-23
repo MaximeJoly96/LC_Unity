@@ -1,4 +1,5 @@
 ﻿using Core;
+using Save;
 
 namespace Menus.SubMenus
 {
@@ -8,6 +9,7 @@ namespace Menus.SubMenus
         {
             StartCoroutine(DoOpen());
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuSystemTab);
+            SaveManager.Instance.CreateSaveFile(0);
         }
 
         public override void Close()
