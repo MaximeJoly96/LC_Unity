@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+using Save;
 using System.Collections;
 using Party;
 using Language;
@@ -26,6 +26,7 @@ namespace TitleScreen
         private void Start()
         {
             PartyManager.Instance.LoadPartyFromBaseFile(_charactersData);
+            SaveManager.Instance.SaveCancelledEvent.AddListener(() => ShowMainPanel());
 
             _mainPanel.OptionSelected.AddListener(HandleOptionSelection);
             _optionsMenu.BackButtonEvent.AddListener(ShowMainPanel);
@@ -33,10 +34,18 @@ namespace TitleScreen
             ShowMainPanel();
         }
 
-        private IEnumerator LoadNextScene()
+        private void ShowSaveCreationScreen()
         {
-            yield return new WaitForSeconds(LOAD_DELAY);
-            SceneManager.LoadScene("Field");
+            _mainPanel.Show(false);
+
+            SaveManager.Instance.InitSaveCreation(true);
+        }
+
+        private void ShowSaveLoadScreen()
+        {
+            _mainPanel.Show(false);
+
+            SaveManager.Instance.InitSaveLoad(true);
         }
 
         private IEnumerator Quit()
@@ -66,9 +75,10 @@ namespace TitleScreen
             switch(option)
             {
                 case MainMenuPanel.MainMenuOptions.NewGame:
-                    StartCoroutine(LoadNextScene());
+                    ShowSaveCreationScreen();
                     break;
                 case MainMenuPanel.MainMenuOptions.LoadGame:
+                    ShowSaveLoadScreen();
                     break;
                 case MainMenuPanel.MainMenuOptions.ChangeOptions:
                     ShowOptions();
