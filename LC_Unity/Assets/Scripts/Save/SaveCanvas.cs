@@ -70,6 +70,9 @@ namespace Save
                     case InputAction.Cancel:
                         Close();
                         break;
+                    case InputAction.Select:
+                        SaveManager.Instance.SlotSelected(0);
+                        break;
                 }
             }
         }

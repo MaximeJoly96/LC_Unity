@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using Logging;
+using Save;
+using Movement;
 
 namespace Field
 {
@@ -19,6 +21,8 @@ namespace Field
             BuildField(_field);
             ScanForAgents();
             ScanForDoors();
+
+            PositionPlayer();
         }
 
         public void BuildField(PlayableField field)
@@ -56,6 +60,11 @@ namespace Field
         {
             _interiorMask.SetActive(switchOn);
             _instField.DisableCollisions(switchOn);
+        }
+
+        private void PositionPlayer()
+        {
+            FindObjectOfType<PlayerController>().transform.position = SaveManager.Instance.Data.PlayerPosition;
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using Language;
 using UnityEngine.Events;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using System.Globalization;
 
 namespace Save
 {
@@ -24,6 +27,8 @@ namespace Save
         private SaveCanvas _saveCanvasCache;
         private bool _fromTitleScreen;
         private UnityEvent _saveCancelledEvent;
+        private readonly SaveCreator _creator;
+        private readonly SaveLoader _loader;
         
         public SaveCanvas SaveCanvasCache
         {
@@ -48,8 +53,13 @@ namespace Save
         }
 
         public SaveState CurrentSaveState { get; private set; }
+        public SavedData Data { get; private set; }
 
-        private SaveManager() { }
+        private SaveManager() 
+        {
+            _creator = new SaveCreator();
+            _loader = new SaveLoader();
+        }
 
         public void OpenSaveWindow()
         {
@@ -68,6 +78,7 @@ namespace Save
 
             SaveCanvasCache.UpdateTooltip(Localizer.Instance.GetString("createSaveTooltip"));
             SaveCanvasCache.Open();
+            _creator.CreateSaveFile(0);
         }
 
         public void InitSaveCreation()
@@ -94,6 +105,32 @@ namespace Save
             if(_fromTitleScreen)
             {
                 SaveCancelledEvent.Invoke();
+            }
+        }
+
+        public void LoadSaveFile(int slotId)
+        {
+            Dictionary<string, string> saveData = _loader.LoadSaveFile(slotId);
+
+            Data = new SavedData
+            {
+                PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture), 
+                                             float.Parse(saveData["positionY"], CultureInfo.InvariantCulture))
+            };
+
+            CloseSaveWindow();
+            SceneManager.LoadScene("Field");
+        }
+
+        public void SlotSelected(int slotId)
+        {
+            switch(CurrentSaveState)
+            {
+                case SaveState.CreateSave:
+                    break;
+                case SaveState.LoadSave:
+                    LoadSaveFile(slotId);
+                    break;
             }
         }
     }
