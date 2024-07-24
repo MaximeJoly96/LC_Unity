@@ -6,6 +6,7 @@ using BattleSystem.Model;
 using Engine.SceneControl;
 using System.Collections.Generic;
 using Actors;
+using BattleSystem.UI;
 
 namespace BattleSystem
 {
@@ -18,6 +19,7 @@ namespace BattleSystem
     public class BattleManager : MonoBehaviour
     {
         private UnityEvent<BattleState> _stateChangedEvent;
+        private List<BattlerBehaviour> _battlersInCombat;
 
         [SerializeField]
         private BattleUiManager _uiManager;
@@ -46,11 +48,14 @@ namespace BattleSystem
         {
             UpdateState(BattleState.Loading);
             LoadPartyData();
-            LoadActionMenu();
-            OpenHelpWindow();
+
+            _battlersInCombat = new List<BattlerBehaviour>();
 
             LoadBattlers();
             LoadCharacters();
+
+            InitTimeline();
+            ShowInstructions();
         }
 
         public void UpdateState(BattleState state)
@@ -89,7 +94,7 @@ namespace BattleSystem
 
             for(int i = 0; i < battlers.Count; i++)
             {
-                _battlersHolder.InstantiateBattler(battlers[i]);
+                _battlersInCombat.Add(_battlersHolder.InstantiateBattler(battlers[i]));
             }
         }
 
@@ -99,8 +104,18 @@ namespace BattleSystem
 
             for(int i = 0; i < characters.Count; i++)
             {
-                _charactersHolder.InstantiateBattler(new Battler(characters[i]));
+                _battlersInCombat.Add(_charactersHolder.InstantiateBattler(new Battler(characters[i])));
             }
+        }
+
+        private void InitTimeline()
+        {
+            _uiManager.InitTimeline(_battlersInCombat);
+        }
+
+        private void ShowInstructions()
+        {
+            _uiManager.ShowInstructionsWindow();
         }
     }
 }

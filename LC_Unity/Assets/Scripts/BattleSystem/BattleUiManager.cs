@@ -17,6 +17,10 @@ namespace BattleSystem
         private SimpleTextWindow _helpWindow;
         [SerializeField]
         private SimpleTextWindow _attackLabelWindow;
+        [SerializeField]
+        private TimelineUiController _timelineUiController;
+        [SerializeField]
+        private BattleInitInstructionsWindow _battleInitInstructionsWindow;
 
         private List<PlayerUiPreview> _playerUiPreviews;
 
@@ -50,6 +54,16 @@ namespace BattleSystem
         {
             _helpWindow.Show();
             _attackLabelWindow.gameObject.SetActive(false);
+        }
+
+        public void InitTimeline(List<BattlerBehaviour> battlers)
+        {
+            _timelineUiController.Feed(battlers);
+        }
+
+        public void ShowInstructionsWindow()
+        {
+            _battleInitInstructionsWindow.ShowWindow();
         }
     }
 }
