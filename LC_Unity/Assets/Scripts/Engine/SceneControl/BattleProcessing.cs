@@ -1,5 +1,6 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using BattleSystem;
 
 namespace Engine.SceneControl
 {
@@ -19,7 +20,11 @@ namespace Engine.SceneControl
 
         public void Run()
         {
+            BattleLoader loader = new BattleLoader();
+            loader.LoadBattle(this);
 
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }
