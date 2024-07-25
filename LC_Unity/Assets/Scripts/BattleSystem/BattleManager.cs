@@ -7,19 +7,34 @@ using Engine.SceneControl;
 using System.Collections.Generic;
 using Actors;
 using BattleSystem.UI;
+using Inputs;
+using System;
 
 namespace BattleSystem
 {
     public enum BattleState
     {
         Loading,
-        Loaded
+        Loaded,
+        PlacingCharacters,
+        SwappingCharacters
     }
 
     public class BattleManager : MonoBehaviour
     {
+        private const float SELECTION_DELAY = 0.2f; // seconds
+
         private UnityEvent<BattleState> _stateChangedEvent;
-        private List<BattlerBehaviour> _battlersInCombat;
+        private List<BattlerBehaviour> _enemiesInCombat;
+        private List<BattlerBehaviour> _charactersInCombat;
+
+        private bool _delayOn;
+        private float _selectionDelay;
+
+        private int _characterPlacementCursorPosition;
+        private PlacementCursor _firstPlacementCursor;
+        private PlacementCursor _secondPlacementCursor;
+        private BattlerBehaviour _selectedCharacterForSwap;
 
         [SerializeField]
         private BattleUiManager _uiManager;
@@ -27,6 +42,8 @@ namespace BattleSystem
         private BattlersHolder _battlersHolder;
         [SerializeField]
         private BattlersHolder _charactersHolder;
+        [SerializeField]
+        private PlacementCursor _characterSelectionCursor;
         [SerializeField]
         private TextAsset _troops;
         [SerializeField]
@@ -46,17 +63,159 @@ namespace BattleSystem
 
         private void Awake()
         {
+            FindObjectOfType<InputController>().ButtonClicked.AddListener(ReceiveInput);
+            _selectionDelay = 0.0f;
+            _delayOn = false;
+
             UpdateState(BattleState.Loading);
             LoadPartyData();
 
-            _battlersInCombat = new List<BattlerBehaviour>();
+            _enemiesInCombat = new List<BattlerBehaviour>();
+            _charactersInCombat = new List<BattlerBehaviour>();
 
             LoadBattlers();
             LoadCharacters();
 
+            UpdateState(BattleState.Loaded);
+            
             InitTimeline();
+
+            _uiManager.ShowTimeline(false);
+            _uiManager.ShowAttackLabel(false);
+            _uiManager.ShowHelpDialog(false);
+            _uiManager.ShowMoveSelection(false);
+
             ShowInstructions();
+            CreateFirstPlacementCursor();
+
+            UpdateState(BattleState.PlacingCharacters);
         }
+
+        #region Inputs
+        private void ReceiveInput(InputAction input)
+        {
+            if(!_delayOn)
+            {
+                switch (input)
+                {
+                    case InputAction.Cancel:
+                        CancelButtonPressed();
+                        break;
+                    case InputAction.Select:
+                        SelectButtonPressed();
+                        break;
+                    case InputAction.MoveLeft:
+                        MoveLeftPressed();
+                        break;
+                    case InputAction.MoveRight:
+                        MoveRightPressed();
+                        break;
+                    case InputAction.MoveUp:
+                        MoveUpPressed();
+                        break;
+                    case InputAction.MoveDown:
+                        MoveDownPressed();
+                        break;
+                }
+
+                _delayOn = true;
+            }
+            
+        }
+
+        protected void Update()
+        {
+            if (_delayOn)
+            {
+                _selectionDelay += Time.deltaTime;
+                if (_selectionDelay > SELECTION_DELAY)
+                {
+                    _selectionDelay = 0.0f;
+                    _delayOn = false;
+                }
+            }
+        }
+
+        private void SelectButtonPressed()
+        {
+            switch (CurrentState)
+            {
+                case BattleState.PlacingCharacters:
+                    _firstPlacementCursor.StopAnimation();
+                    _selectedCharacterForSwap = _charactersInCombat[_characterPlacementCursorPosition];
+                    CreateSecondPlacementCursor();
+                    UpdateState(BattleState.SwappingCharacters);
+                    UpdateInstructions();
+                    break;
+                case BattleState.SwappingCharacters:
+                    _secondPlacementCursor.StopAnimation();
+                    ClearPlacementCursors();
+                    SwapCharacters();
+                    CreateFirstPlacementCursor();
+                    UpdateState(BattleState.PlacingCharacters);
+                    UpdateInstructions();
+                    break;
+            }
+        }
+
+        private void CancelButtonPressed()
+        {
+            switch(CurrentState)
+            {
+                case BattleState.SwappingCharacters:
+                    _secondPlacementCursor.StopAnimation();
+                    ClearPlacementCursors();
+                    CreateFirstPlacementCursor();
+                    UpdateState(BattleState.PlacingCharacters);
+                    UpdateInstructions();
+                    break;
+            }
+        }
+
+        private void MoveLeftPressed()
+        {
+            switch(CurrentState)
+            {
+                case BattleState.PlacingCharacters:
+                    _characterPlacementCursorPosition = _characterPlacementCursorPosition == 0 ?
+                                                        _charactersInCombat.Count - 1 : --_characterPlacementCursorPosition;
+                    UpdatePlacementCursor(_firstPlacementCursor);
+                    break;
+                case BattleState.SwappingCharacters:
+                    _characterPlacementCursorPosition = _characterPlacementCursorPosition == 0 ?
+                                                        _charactersInCombat.Count - 1 : --_characterPlacementCursorPosition;
+                    UpdatePlacementCursor(_secondPlacementCursor);
+                    break;
+            }
+        }
+
+        private void MoveRightPressed()
+        {
+            switch (CurrentState)
+            {
+                case BattleState.PlacingCharacters:
+                    _characterPlacementCursorPosition = _characterPlacementCursorPosition == _charactersInCombat.Count - 1 ?
+                                                        0 : ++_characterPlacementCursorPosition;
+                    UpdatePlacementCursor(_firstPlacementCursor);
+                    break;
+                case BattleState.SwappingCharacters:
+                    _characterPlacementCursorPosition = _characterPlacementCursorPosition == _charactersInCombat.Count - 1 ?
+                                                        0 : ++_characterPlacementCursorPosition;
+                    UpdatePlacementCursor(_secondPlacementCursor);
+                    break;
+            }
+        }
+
+        private void MoveUpPressed()
+        {
+
+        }
+
+        private void MoveDownPressed()
+        {
+
+        }
+        #endregion
 
         public void UpdateState(BattleState state)
         {
@@ -70,7 +229,7 @@ namespace BattleSystem
 
         private void LoadActionMenu()
         {
-            _uiManager.ShowMoveSelection();
+            _uiManager.OpenMoveSelection();
         }
 
         private void OpenHelpWindow()
@@ -94,7 +253,7 @@ namespace BattleSystem
 
             for(int i = 0; i < battlers.Count; i++)
             {
-                _battlersInCombat.Add(_battlersHolder.InstantiateBattler(battlers[i]));
+                _enemiesInCombat.Add(_battlersHolder.InstantiateBattler(battlers[i]));
             }
         }
 
@@ -104,18 +263,57 @@ namespace BattleSystem
 
             for(int i = 0; i < characters.Count; i++)
             {
-                _battlersInCombat.Add(_charactersHolder.InstantiateBattler(new Battler(characters[i])));
+                _charactersInCombat.Add(_charactersHolder.InstantiateBattler(new Battler(characters[i])));
             }
         }
 
         private void InitTimeline()
         {
-            _uiManager.InitTimeline(_battlersInCombat);
+            List<BattlerBehaviour> allBattlers = new List<BattlerBehaviour>();
+            allBattlers.AddRange(_charactersInCombat);
+            allBattlers.AddRange(_enemiesInCombat);
+            _uiManager.InitTimeline(allBattlers);
         }
 
         private void ShowInstructions()
         {
             _uiManager.ShowInstructionsWindow();
+        }
+
+        private void UpdateInstructions()
+        {
+            _uiManager.UpdateInstructions(CurrentState);
+        }
+
+        private void CreateFirstPlacementCursor()
+        {
+            _characterPlacementCursorPosition = 0;
+            _firstPlacementCursor = Instantiate(_characterSelectionCursor);
+            UpdatePlacementCursor(_firstPlacementCursor);
+        }
+
+        private void UpdatePlacementCursor(PlacementCursor cursor)
+        {
+            cursor.transform.position = _charactersInCombat[_characterPlacementCursorPosition].transform.position;
+        }
+
+        private void CreateSecondPlacementCursor()
+        {
+            _secondPlacementCursor = Instantiate(_characterSelectionCursor);
+            UpdatePlacementCursor(_secondPlacementCursor);
+        }
+
+        private void ClearPlacementCursors()
+        {
+            Destroy(_firstPlacementCursor.gameObject);
+            Destroy(_secondPlacementCursor.gameObject);
+        }
+
+        private void SwapCharacters()
+        {
+            Vector2 tempPosition = _charactersInCombat[_characterPlacementCursorPosition].transform.position;
+            _charactersInCombat[_characterPlacementCursorPosition].transform.position = _selectedCharacterForSwap.transform.position;
+            _selectedCharacterForSwap.transform.position = tempPosition;
         }
     }
 }

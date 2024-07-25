@@ -44,10 +44,20 @@ namespace BattleSystem
                 Destroy(child.gameObject);
         }
 
-        public void ShowMoveSelection()
+        public void OpenMoveSelection()
         {
             _moveSelectionWindow.UpdateInstructions(_playerUiPreviews[0].PlayerName);
             _moveSelectionWindow.Show();
+        }
+
+        public void ShowMoveSelection(bool show)
+        {
+            _moveSelectionWindow.gameObject.SetActive(show);
+        }
+
+        public void ShowHelpDialog(bool show)
+        {
+            _helpWindow.gameObject.SetActive(show);
         }
 
         public void OpenHelpWindow()
@@ -64,6 +74,35 @@ namespace BattleSystem
         public void ShowInstructionsWindow()
         {
             _battleInitInstructionsWindow.ShowWindow();
+        }
+
+        public void UpdateInstructions(BattleState state)
+        {
+            string key = "";
+
+            switch(state)
+            {
+                case BattleState.PlacingCharacters:
+                    key = "battleInitInstructionsSelectionPhase";
+                    break;
+                case BattleState.SwappingCharacters:
+                    key = "battleInitInstructionsConfirmPositionChange";
+                    break;
+                default:
+                    return;
+            }
+
+            _battleInitInstructionsWindow.UpdateText(key);
+        }
+
+        public void ShowAttackLabel(bool show)
+        {
+            _attackLabelWindow.gameObject.SetActive(show);
+        }
+
+        public void ShowTimeline(bool show)
+        {
+            _timelineUiController.gameObject.SetActive(show);
         }
     }
 }
