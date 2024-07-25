@@ -17,7 +17,8 @@ namespace BattleSystem
         Loading,
         Loaded,
         PlacingCharacters,
-        SwappingCharacters
+        SwappingCharacters,
+        BattleStart
     }
 
     public class BattleManager : MonoBehaviour
@@ -64,14 +65,14 @@ namespace BattleSystem
         private void Awake()
         {
             FindObjectOfType<InputController>().ButtonClicked.AddListener(ReceiveInput);
+
             _selectionDelay = 0.0f;
             _delayOn = false;
+            _enemiesInCombat = new List<BattlerBehaviour>();
+            _charactersInCombat = new List<BattlerBehaviour>();
 
             UpdateState(BattleState.Loading);
             LoadPartyData();
-
-            _enemiesInCombat = new List<BattlerBehaviour>();
-            _charactersInCombat = new List<BattlerBehaviour>();
 
             LoadBattlers();
             LoadCharacters();
@@ -80,10 +81,7 @@ namespace BattleSystem
             
             InitTimeline();
 
-            _uiManager.ShowTimeline(false);
-            _uiManager.ShowAttackLabel(false);
-            _uiManager.ShowHelpDialog(false);
-            _uiManager.ShowMoveSelection(false);
+            _uiManager.HideAllWindows();
 
             ShowInstructions();
             CreateFirstPlacementCursor();
@@ -115,6 +113,9 @@ namespace BattleSystem
                         break;
                     case InputAction.MoveDown:
                         MoveDownPressed();
+                        break;
+                    case InputAction.OpenMenu:
+                        StartButtonPressed();
                         break;
                 }
 
@@ -215,6 +216,15 @@ namespace BattleSystem
         {
 
         }
+
+        private void StartButtonPressed()
+        {
+            ClearPlacementCursors();
+            UpdateState(BattleState.BattleStart);
+            _uiManager.HideInstructionsWindow();
+            _uiManager.BattleStartTagClosed.RemoveAllListeners();
+            _uiManager.BattleStartTagClosed.AddListener(OpenAllCombatWindows);
+        }
         #endregion
 
         public void UpdateState(BattleState state)
@@ -225,11 +235,6 @@ namespace BattleSystem
         private void LoadPartyData()
         {
             _uiManager.FeedParty(PartyManager.Instance.GetParty());
-        }
-
-        private void LoadActionMenu()
-        {
-            _uiManager.OpenMoveSelection();
         }
 
         private void OpenHelpWindow()
@@ -305,8 +310,11 @@ namespace BattleSystem
 
         private void ClearPlacementCursors()
         {
-            Destroy(_firstPlacementCursor.gameObject);
-            Destroy(_secondPlacementCursor.gameObject);
+            if(_firstPlacementCursor)
+                Destroy(_firstPlacementCursor.gameObject);
+
+            if(_secondPlacementCursor)
+                Destroy(_secondPlacementCursor.gameObject);
         }
 
         private void SwapCharacters()
@@ -314,6 +322,13 @@ namespace BattleSystem
             Vector2 tempPosition = _charactersInCombat[_characterPlacementCursorPosition].transform.position;
             _charactersInCombat[_characterPlacementCursorPosition].transform.position = _selectedCharacterForSwap.transform.position;
             _selectedCharacterForSwap.transform.position = tempPosition;
+        }
+
+        private void OpenAllCombatWindows()
+        {
+            _uiManager.OpenPlayerGlobalUi();
+            _uiManager.OpenHelpWindow();
+            _uiManager.OpenTimeline();
         }
     }
 }

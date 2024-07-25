@@ -3,6 +3,7 @@ using TMPro;
 using Language;
 using System.Collections;
 using System.Text;
+using UnityEngine.Events;
 
 namespace BattleSystem.UI
 {
@@ -10,6 +11,18 @@ namespace BattleSystem.UI
     {
         [SerializeField]
         private TMP_Text _instructionsText;
+
+        private UnityEvent _instructionsWindowClosed;
+        public UnityEvent InstructionsWindowClosed
+        {
+            get
+            {
+                if (_instructionsWindowClosed == null)
+                    _instructionsWindowClosed = new UnityEvent();
+
+                return _instructionsWindowClosed;
+            }
+        }
 
         public Animator Animator { get { return GetComponent<Animator>(); } }
 
@@ -20,6 +33,7 @@ namespace BattleSystem.UI
 
         public void HideWindow()
         {
+            _instructionsText.text = "";
             Animator.Play("InstructionsWindowClose");
         }
 
@@ -30,7 +44,8 @@ namespace BattleSystem.UI
 
         public void FinishedClosing()
         {
-
+            InstructionsWindowClosed.Invoke();
+            gameObject.SetActive(false);
         }
 
         public void UpdateText(string key)

@@ -19,5 +19,16 @@ namespace BattleSystem.UI
                 timeline.Feed(battlers[i]);
             }
         }
+
+        public void Show()
+        {
+            _characters.gameObject.SetActive(false);
+            GetComponent<Animator>().Play("ShowTimeline");
+        }
+
+        public void FinishedOpening()
+        {
+            _characters.gameObject.SetActive(true);
+        }
     }
 }

@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using Actors;
 using BattleSystem.UI;
+using UnityEngine.Events;
 
 namespace BattleSystem
 {
     public class BattleUiManager : MonoBehaviour
     {
-        [SerializeField]
-        private PlayerUiPreview _playerUiPreviewPrefab;
-        [SerializeField]
-        private Transform _playerPreviewsWrapper;
-        [SerializeField]
-        private MoveSelectionWindow _moveSelectionWindow;
         [SerializeField]
         private SimpleTextWindow _helpWindow;
         [SerializeField]
@@ -21,38 +16,39 @@ namespace BattleSystem
         private TimelineUiController _timelineUiController;
         [SerializeField]
         private BattleInitInstructionsWindow _battleInitInstructionsWindow;
+        [SerializeField]
+        private BattleStartTag _battleStartTag;
+        [SerializeField]
+        private PlayerGlobalUi _playerGlobalUi;
 
         private List<PlayerUiPreview> _playerUiPreviews;
 
-        public void FeedParty(List<Character> characters)
+        private UnityEvent _battleStartTagClosed;
+        public UnityEvent BattleStartTagClosed
         {
-            Clear();
-
-            _playerUiPreviews = new List<PlayerUiPreview>();
-
-            for (int i = 0; i < characters.Count && i < 3; i++)
+            get
             {
-                PlayerUiPreview preview = Instantiate(_playerUiPreviewPrefab, _playerPreviewsWrapper);
+                if (_battleStartTagClosed == null)
+                    _battleStartTagClosed = new UnityEvent();
 
-                _playerUiPreviews.Add(preview);
+                return _battleStartTagClosed;
             }
         }
 
-        private void Clear()
+        public void FeedParty(List<Character> characters)
         {
-            foreach (Transform child in _playerPreviewsWrapper)
-                Destroy(child.gameObject);
+            _playerGlobalUi.FeedParty(characters);
         }
 
-        public void OpenMoveSelection()
+        public void ShowPlayerGlobalUi(bool show)
         {
-            _moveSelectionWindow.UpdateInstructions(_playerUiPreviews[0].PlayerName);
-            _moveSelectionWindow.Show();
+            _playerGlobalUi.gameObject.SetActive(show);
         }
 
-        public void ShowMoveSelection(bool show)
+        public void OpenPlayerGlobalUi()
         {
-            _moveSelectionWindow.gameObject.SetActive(show);
+            ShowPlayerGlobalUi(true);
+            _playerGlobalUi.OpenMoveSelectionWindow();
         }
 
         public void ShowHelpDialog(bool show)
@@ -62,8 +58,8 @@ namespace BattleSystem
 
         public void OpenHelpWindow()
         {
+            ShowHelpDialog(true);
             _helpWindow.Show();
-            _attackLabelWindow.gameObject.SetActive(false);
         }
 
         public void InitTimeline(List<BattlerBehaviour> battlers)
@@ -74,6 +70,13 @@ namespace BattleSystem
         public void ShowInstructionsWindow()
         {
             _battleInitInstructionsWindow.ShowWindow();
+            _battleInitInstructionsWindow.InstructionsWindowClosed.RemoveAllListeners();
+            _battleInitInstructionsWindow.InstructionsWindowClosed.AddListener(ShowBattleStartTag);
+        }
+
+        public void HideInstructionsWindow()
+        {
+            _battleInitInstructionsWindow.HideWindow();
         }
 
         public void UpdateInstructions(BattleState state)
@@ -103,6 +106,32 @@ namespace BattleSystem
         public void ShowTimeline(bool show)
         {
             _timelineUiController.gameObject.SetActive(show);
+        }
+
+        public void OpenTimeline()
+        {
+            ShowTimeline(true);
+            _timelineUiController.Show();
+        }
+
+        private void ShowBattleStartTag()
+        {
+            _battleStartTag.Show();
+            _battleStartTag.FinishedHidingEvent.RemoveAllListeners();
+            _battleStartTag.FinishedHidingEvent.AddListener(BattleStartClosed);
+        }
+
+        public void BattleStartClosed()
+        {
+            BattleStartTagClosed.Invoke();
+        }
+
+        public void HideAllWindows()
+        {
+            ShowTimeline(false);
+            ShowAttackLabel(false);
+            ShowHelpDialog(false);
+            ShowPlayerGlobalUi(false);
         }
     }
 }
