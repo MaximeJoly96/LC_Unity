@@ -45,8 +45,9 @@ namespace Abilities
             AbilityCost cost = new AbilityCost(int.Parse(costNode.Attributes["Health"].InnerText),
                                                 int.Parse(costNode.Attributes["Mana"].InnerText),
                                                 int.Parse(costNode.Attributes["Essence"].InnerText));
+            TargetEligibility eligibility = (TargetEligibility)Enum.Parse(typeof(TargetEligibility), node.SelectSingleNode("TargetEligibility").InnerText);
 
-            return new Ability(id, name, description, cost, usability, priority);
+            return new Ability(id, name, description, cost, usability, priority, eligibility);
         }
     }
 }

@@ -133,5 +133,10 @@ namespace BattleSystem
             ShowHelpDialog(false);
             ShowPlayerGlobalUi(false);
         }
+
+        public void UpdateTimeline()
+        {
+            _timelineUiController.UpdateTimeline();
+        }
     }
 }

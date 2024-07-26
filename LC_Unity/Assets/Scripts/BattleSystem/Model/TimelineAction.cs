@@ -1,8 +1,27 @@
-﻿namespace BattleSystem
+﻿using UnityEngine;
+
+namespace BattleSystem.Model
 {
-    public class TimelineController
+    public class TimelineAction
     {
-        public float ComputeActionStartPoint(float casterAgility, int actionPriority)
+        public float Length { get; private set; }
+        public float StartPoint { get; private set; }
+        public int Priority { get; set; }
+
+        public TimelineAction(BattlerBehaviour battler)
+        {
+            Length = ComputeActionLength(battler);
+            StartPoint = ComputeActionStartPoint(battler);
+        }
+
+        public TimelineAction(float length, float startPoint, int priority)
+        {
+            Length = length;
+            StartPoint = startPoint;
+            Priority = priority;
+        }
+
+        public float ComputeActionStartPoint(BattlerBehaviour battler)
         {
             // Within a certain actionPriority, we resolve actions from the highest agility to the lowest
             // the timing within this priority is determined by the proportion of the casterAgility based on
@@ -18,8 +37,19 @@
             return 0.0f;
         }
 
-        public float ComputeActionLength(float actionBaseLength, float distanceToTravel, float movementSpeed)
+        public float ComputeActionLength(BattlerBehaviour battler)
         {
+            float maxDistance = 0.0f;
+
+            for (int i = 0; i < battler.LockedInAbility.Targets.Count; i++)
+            {
+                float distance = Vector2.Distance(battler.transform.position,
+                                                  battler.LockedInAbility.Targets[i].transform.position);
+
+                if (distance > maxDistance)
+                    maxDistance = distance;
+            }
+
             // Each action has a baseLength, which is tied to the length of the animation.
             // Then, we need to compute the travel time, which is based on the distance and the movement speed
             // the movement speed can either be from the projectile itself OR the caster who has to move
@@ -28,7 +58,7 @@
             // NOTE TO MY FUTURE SELF :
             // If I want to implement non-linear movement speed, I should create a sequence of timestamp+movespeed objects
 
-            return actionBaseLength + (distanceToTravel / movementSpeed);
+            return 0.0f + (maxDistance / 1.0f);
         }
     }
 }

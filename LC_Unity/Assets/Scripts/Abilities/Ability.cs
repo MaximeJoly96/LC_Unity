@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BattleSystem;
 
 namespace Abilities
 {
@@ -7,6 +8,16 @@ namespace Abilities
         Always,
         BattleOnly,
         MenuOnly
+    }
+
+    public enum TargetEligibility
+    {
+        Self,
+        Enemy,
+        Ally,
+        All,
+        AllAllies,
+        AllEnemies
     }
 
     public class Ability
@@ -18,8 +29,10 @@ namespace Abilities
         public AbilityUsability Usability { get; private set; }
         public int Priority { get; private set; }
         public List<AbilityStep> Steps { get; private set; }
+        public List<BattlerBehaviour> Targets { get; set; }
+        public TargetEligibility TargetEligibility { get; set; }
 
-        public Ability(int id, string name, string description, AbilityCost cost, AbilityUsability usability, int priority)
+        public Ability(int id, string name, string description, AbilityCost cost, AbilityUsability usability, int priority, TargetEligibility targetEligibility)
         {
             Id = id;
             Name = name;
@@ -28,6 +41,7 @@ namespace Abilities
             Usability = usability;
             Priority = priority;
             Steps = new List<AbilityStep>();
+            TargetEligibility = targetEligibility;
         }
     }
 }

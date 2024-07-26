@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Abilities
@@ -25,6 +26,11 @@ namespace Abilities
         public void Init(TextAsset data)
         {
             Abilities = AbilityParser.ParseAllAbilities(data);
+        }
+
+        public Ability GetAbility(int id)
+        {
+            return Abilities.FirstOrDefault(a => a.Id == id);
         }
     }
 }

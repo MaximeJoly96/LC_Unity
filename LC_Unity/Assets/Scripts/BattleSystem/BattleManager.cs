@@ -18,7 +18,9 @@ namespace BattleSystem
         Loaded,
         PlacingCharacters,
         SwappingCharacters,
-        BattleStart
+        BattleStart,
+        ComputingEnemyTurn,
+        PlayerMoveSelection
     }
 
     public class BattleManager : MonoBehaviour
@@ -36,6 +38,8 @@ namespace BattleSystem
         private PlacementCursor _firstPlacementCursor;
         private PlacementCursor _secondPlacementCursor;
         private BattlerBehaviour _selectedCharacterForSwap;
+        private EnemiesManager _enemiesManager;
+        private List<BattlerBehaviour> _allBattlers;
 
         [SerializeField]
         private BattleUiManager _uiManager;
@@ -59,6 +63,21 @@ namespace BattleSystem
                     _stateChangedEvent = new UnityEvent<BattleState>();
 
                 return _stateChangedEvent;
+            }
+        }
+
+        public List<BattlerBehaviour> AllBattlers
+        {
+            get
+            {
+                if(_allBattlers == null)
+                {
+                    _allBattlers = new List<BattlerBehaviour>();
+                    _allBattlers.AddRange(_charactersInCombat);
+                    _allBattlers.AddRange(_enemiesInCombat);
+                }
+
+                return _allBattlers;
             }
         }
 
@@ -224,6 +243,9 @@ namespace BattleSystem
             _uiManager.HideInstructionsWindow();
             _uiManager.BattleStartTagClosed.RemoveAllListeners();
             _uiManager.BattleStartTagClosed.AddListener(OpenAllCombatWindows);
+
+            UpdateState(BattleState.ComputingEnemyTurn);
+            ComputeEnemyTurn();
         }
         #endregion
 
@@ -258,7 +280,9 @@ namespace BattleSystem
 
             for(int i = 0; i < battlers.Count; i++)
             {
-                _enemiesInCombat.Add(_battlersHolder.InstantiateBattler(battlers[i]));
+                BattlerBehaviour behaviour = _battlersHolder.InstantiateBattler(battlers[i]);
+                behaviour.IsEnemy = true;
+                _enemiesInCombat.Add(behaviour);
             }
         }
 
@@ -268,16 +292,15 @@ namespace BattleSystem
 
             for(int i = 0; i < characters.Count; i++)
             {
-                _charactersInCombat.Add(_charactersHolder.InstantiateBattler(new Battler(characters[i])));
+                BattlerBehaviour behaviour = _charactersHolder.InstantiateBattler(new Battler(characters[i]));
+                behaviour.IsEnemy = false;
+                _charactersInCombat.Add(behaviour);
             }
         }
 
         private void InitTimeline()
         {
-            List<BattlerBehaviour> allBattlers = new List<BattlerBehaviour>();
-            allBattlers.AddRange(_charactersInCombat);
-            allBattlers.AddRange(_enemiesInCombat);
-            _uiManager.InitTimeline(allBattlers);
+            _uiManager.InitTimeline(AllBattlers);
         }
 
         private void ShowInstructions()
@@ -329,6 +352,15 @@ namespace BattleSystem
             _uiManager.OpenPlayerGlobalUi();
             _uiManager.OpenHelpWindow();
             _uiManager.OpenTimeline();
+        }
+
+        private void ComputeEnemyTurn()
+        {
+            if (_enemiesManager == null)
+                _enemiesManager = new EnemiesManager(_enemiesInCombat);
+
+            _enemiesManager.LockAbilities(AllBattlers);
+            _uiManager.UpdateTimeline();
         }
     }
 }
