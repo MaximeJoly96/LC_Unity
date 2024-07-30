@@ -102,15 +102,6 @@ namespace BattleSystem.Model
         public StatScalingFunction MaxEssenceFunction { get; set; }
         #endregion
 
-        public Battler()
-        {
-            Abilities = new List<Ability>();
-            ElementalAffinities = new List<ElementalAffinity>();
-            ActiveEffects = new List<ActiveEffect>();
-
-            InitBasicAffinities();
-        }
-
         public Battler(int id, string name, int level,
                        StatScalingFunction health,
                        StatScalingFunction mana,
@@ -120,7 +111,10 @@ namespace BattleSystem.Model
                        StatScalingFunction magic,
                        StatScalingFunction magicDefense,
                        StatScalingFunction agility,
-                       StatScalingFunction luck) : this()
+                       StatScalingFunction luck,
+                       List<Ability> abilities,
+                       List<ActiveEffect> effects,
+                       List<ElementalAffinity> elementalAffinities)
         {
             Id = id;
             Name = name;
@@ -135,6 +129,9 @@ namespace BattleSystem.Model
             MagicDefenseFunction = magicDefense;
             AgilityFunction = agility;
             LuckFunction = luck;
+            Abilities = abilities;
+            ActiveEffects = effects;
+            ElementalAffinities = elementalAffinities;
         }
 
         public Battler(Character character) : this(character.Id, character.Name, character.Level,
@@ -146,23 +143,12 @@ namespace BattleSystem.Model
                                                    character.MagicFunction,
                                                    character.MagicDefenseFunction,
                                                    character.AgilityFunction,
-                                                   character.LuckFunction)
+                                                   character.LuckFunction,
+                                                   character.Abilities,
+                                                   character.ActiveEffects,
+                                                   character.ElementalAffinities)
         {
 
-        }
-
-        private void InitBasicAffinities()
-        {
-            ElementalAffinities.Add(new ElementalAffinity(Element.Neutral, 1.0f));
-            ElementalAffinities.Add(new ElementalAffinity(Element.Fire, 1.0f));
-            ElementalAffinities.Add(new ElementalAffinity(Element.Ice, 1.0f));
-            ElementalAffinities.Add(new ElementalAffinity(Element.Thunder, 1.0f));
-            ElementalAffinities.Add(new ElementalAffinity(Element.Water, 1.0f));
-            ElementalAffinities.Add(new ElementalAffinity(Element.Earth, 1.0f));
-            ElementalAffinities.Add(new ElementalAffinity(Element.Wind, 1.0f));
-            ElementalAffinities.Add(new ElementalAffinity(Element.Holy, 1.0f));
-            ElementalAffinities.Add(new ElementalAffinity(Element.Darkness, 1.0f));
-            ElementalAffinities.Add(new ElementalAffinity(Element.Healing, 1.0f));
         }
     }
 }

@@ -16,6 +16,8 @@ namespace BattleSystem.UI
         private List<BattlerBehaviour> _battlers;
         private List<BattlerTimeline> _battlersTimelines;
 
+        public List<BattlerTimeline> Timelines { get { return _battlersTimelines; } }
+
         public void Feed(List<BattlerBehaviour> battlers)
         {
             _battlers = battlers;

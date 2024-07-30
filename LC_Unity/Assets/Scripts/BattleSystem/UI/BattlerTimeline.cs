@@ -13,9 +13,11 @@ namespace BattleSystem.UI
         private Image _timeline;
 
         public TimelineAction Action { get; set; }
+        public BattlerBehaviour Battler { get; set; }
 
         public void Feed(BattlerBehaviour battler)
         {
+            Battler = battler;
             _battlerName.text = battler.BattlerData.Name;
         }
 

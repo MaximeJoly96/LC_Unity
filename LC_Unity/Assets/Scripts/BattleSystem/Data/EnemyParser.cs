@@ -5,6 +5,9 @@ using System;
 using Logging;
 using Utils;
 using System.Globalization;
+using System.Collections.Generic;
+using Abilities;
+using Actors;
 
 namespace BattleSystem.Data
 {
@@ -41,7 +44,10 @@ namespace BattleSystem.Data
                                             ParseStatScalingFunction(enemies[i - 1], "BaseMagic"),
                                             ParseStatScalingFunction(enemies[i - 1], "BaseMagicDefense"),
                                             ParseStatScalingFunction(enemies[i - 1], "BaseAgility"),
-                                            ParseStatScalingFunction(enemies[i - 1], "BaseLuck"));
+                                            ParseStatScalingFunction(enemies[i - 1], "BaseLuck"),
+                                            new List<Ability>(),
+                                            new List<ActiveEffect>(),
+                                            new List<ElementalAffinity>());
 
                     return b;
                 }

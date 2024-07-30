@@ -9,6 +9,9 @@ using Actors;
 using BattleSystem.UI;
 using Inputs;
 using System;
+using Abilities;
+using UnityEditorInternal;
+using System.Linq;
 
 namespace BattleSystem
 {
@@ -20,7 +23,8 @@ namespace BattleSystem
         SwappingCharacters,
         BattleStart,
         ComputingEnemyTurn,
-        PlayerMoveSelection
+        PlayerMoveSelection,
+        TargetSelection
     }
 
     public class BattleManager : MonoBehaviour
@@ -40,6 +44,7 @@ namespace BattleSystem
         private BattlerBehaviour _selectedCharacterForSwap;
         private EnemiesManager _enemiesManager;
         private List<BattlerBehaviour> _allBattlers;
+        private TurnManager _turnManager;
 
         [SerializeField]
         private BattleUiManager _uiManager;
@@ -53,6 +58,10 @@ namespace BattleSystem
         private TextAsset _troops;
         [SerializeField]
         private TextAsset _enemies;
+        [SerializeField]
+        private TargetManager _targetManager;
+        [SerializeField]
+        private BattleProcessor _battleProcessor;
 
         public BattleState CurrentState { get; private set; }
         public UnityEvent<BattleState> StateChangedEvent
@@ -89,6 +98,8 @@ namespace BattleSystem
             _delayOn = false;
             _enemiesInCombat = new List<BattlerBehaviour>();
             _charactersInCombat = new List<BattlerBehaviour>();
+
+            StateChangedEvent.AddListener(FollowStateChange);
 
             UpdateState(BattleState.Loading);
             LoadPartyData();
@@ -175,6 +186,16 @@ namespace BattleSystem
                     UpdateState(BattleState.PlacingCharacters);
                     UpdateInstructions();
                     break;
+                case BattleState.PlayerMoveSelection:
+                    _uiManager.SelectMove();
+                    break;
+                case BattleState.TargetSelection:
+                    _targetManager.ConfirmTarget(_turnManager.CurrentCharacter);
+                    _targetManager.Clear();
+                    _uiManager.UpdateTimeline();
+                    _turnManager.SwitchToNextCharacter();
+                    UpdateState(BattleState.PlayerMoveSelection);
+                    break;
             }
         }
 
@@ -188,6 +209,10 @@ namespace BattleSystem
                     CreateFirstPlacementCursor();
                     UpdateState(BattleState.PlacingCharacters);
                     UpdateInstructions();
+                    break;
+                case BattleState.TargetSelection:
+                    _targetManager.Clear();
+                    UpdateState(BattleState.PlayerMoveSelection);
                     break;
             }
         }
@@ -228,12 +253,22 @@ namespace BattleSystem
 
         private void MoveUpPressed()
         {
-
+            switch(CurrentState)
+            {
+                case BattleState.PlayerMoveSelection:
+                    _uiManager.UpPressedOnMoveSelection();
+                    break;
+            }
         }
 
         private void MoveDownPressed()
         {
-
+            switch (CurrentState)
+            {
+                case BattleState.PlayerMoveSelection:
+                    _uiManager.DownPressedOnMoveSelection();
+                    break;
+            }
         }
 
         private void StartButtonPressed()
@@ -244,14 +279,18 @@ namespace BattleSystem
             _uiManager.BattleStartTagClosed.RemoveAllListeners();
             _uiManager.BattleStartTagClosed.AddListener(OpenAllCombatWindows);
 
+            _turnManager = new TurnManager(_charactersInCombat);
+
             UpdateState(BattleState.ComputingEnemyTurn);
             ComputeEnemyTurn();
+            UpdateState(BattleState.PlayerMoveSelection);
         }
         #endregion
 
         public void UpdateState(BattleState state)
         {
             CurrentState = state;
+            StateChangedEvent.Invoke(state);
         }
 
         private void LoadPartyData()
@@ -361,6 +400,46 @@ namespace BattleSystem
 
             _enemiesManager.LockAbilities(AllBattlers);
             _uiManager.UpdateTimeline();
+        }
+
+        private void FollowStateChange(BattleState state)
+        {
+            switch(state)
+            {
+                case BattleState.PlayerMoveSelection:
+                    if (_charactersInCombat.All(c => c.LockedInAbility != null))
+                        ProcessBattle();
+                    else
+                        _uiManager.FeedMoveSelectionWindow(_turnManager.CurrentCharacter);
+                    break;
+            }
+        }
+
+        public void SelectTargetWithAbility(Ability ability)
+        {
+            UpdateState(BattleState.TargetSelection);
+
+            List<BattlerBehaviour> targets = new List<BattlerBehaviour>();
+
+            switch(ability.TargetEligibility)
+            {
+                case TargetEligibility.Ally:
+                    targets.AddRange(_charactersInCombat);
+                    break;
+                case TargetEligibility.Enemy:
+                    targets.AddRange(_enemiesInCombat);
+                    break;
+                default:
+                    targets.AddRange(_enemiesInCombat);
+                    break;
+            }
+
+            _targetManager.LoadTargets(targets, ability);
+        }
+
+        private void ProcessBattle()
+        {
+            _battleProcessor.ProcessBattle(_uiManager.GetTimelines());
         }
     }
 }

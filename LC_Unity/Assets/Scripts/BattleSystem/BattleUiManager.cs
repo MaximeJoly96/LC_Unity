@@ -138,5 +138,30 @@ namespace BattleSystem
         {
             _timelineUiController.UpdateTimeline();
         }
+
+        public void FeedMoveSelectionWindow(BattlerBehaviour character)
+        {
+            _playerGlobalUi.FeedMoveSelectionWindow(character);
+        }
+
+        public void UpPressedOnMoveSelection()
+        {
+            _playerGlobalUi.UpPressedOnMoveSelection();
+        }
+
+        public void DownPressedOnMoveSelection()
+        {
+            _playerGlobalUi.DownPressedOnMoveSelection();
+        }
+
+        public void SelectMove()
+        {
+            _playerGlobalUi.SelectMove();
+        }
+
+        public List<BattlerTimeline> GetTimelines()
+        {
+            return _timelineUiController.Timelines;
+        }
     }
 }

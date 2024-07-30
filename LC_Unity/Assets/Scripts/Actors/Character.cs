@@ -129,6 +129,9 @@ namespace Actors
 
             InitBasicAffinities();
             InitEquipmentSlots();
+
+            LearnSkill(0);
+            LearnSkill(1);
         }
 
         public Character(int id, string name, 
@@ -181,7 +184,7 @@ namespace Actors
 
         public void LearnSkill(int skillId)
         {
-            LogsHandler.Instance.LogWarning("LearnSkill has not been implemented yet.");
+            Abilities.Add(AbilitiesManager.Instance.GetAbility(skillId));
         }
 
         public void ForgetSkill(int skillId)

@@ -36,7 +36,26 @@ namespace BattleSystem.UI
         public void OpenMoveSelectionWindow()
         {
             _moveSelectionWindow.Show();
-            _moveSelectionWindow.UpdateInstructions(_playerUiPreviews[0].PlayerName);
+        }
+
+        public void FeedMoveSelectionWindow(BattlerBehaviour character)
+        {
+            _moveSelectionWindow.Feed(character);
+        }
+
+        public void UpPressedOnMoveSelection()
+        {
+            _moveSelectionWindow.UpPressed();
+        }
+
+        public void DownPressedOnMoveSelection()
+        {
+            _moveSelectionWindow.DownPressed();
+        }
+
+        public void SelectMove()
+        {
+            _moveSelectionWindow.SelectMove();
         }
     }
 }
