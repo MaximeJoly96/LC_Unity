@@ -20,6 +20,13 @@ namespace Abilities
         AllEnemies
     }
 
+    public enum AbilityCategory
+    {
+        AttackCommand,
+        Skill,
+        FleeCommand
+    }
+
     public class Ability
     {
         public int Id { get; private set; }
@@ -31,8 +38,9 @@ namespace Abilities
         public List<AbilityStep> Steps { get; private set; }
         public List<BattlerBehaviour> Targets { get; set; }
         public TargetEligibility TargetEligibility { get; set; }
+        public AbilityCategory Category { get; set; }
 
-        public Ability(int id, string name, string description, AbilityCost cost, AbilityUsability usability, int priority, TargetEligibility targetEligibility)
+        public Ability(int id, string name, string description, AbilityCost cost, AbilityUsability usability, int priority, TargetEligibility targetEligibility, AbilityCategory category)
         {
             Id = id;
             Name = name;
@@ -42,6 +50,7 @@ namespace Abilities
             Priority = priority;
             Steps = new List<AbilityStep>();
             TargetEligibility = targetEligibility;
+            Category = category;
         }
     }
 }
