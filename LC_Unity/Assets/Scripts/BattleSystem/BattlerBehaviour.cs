@@ -33,5 +33,21 @@ namespace BattleSystem
                 LockedInAbility = ai.Behave(allBattlers);
             }
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            BattlerBehaviour collidedWith = other.GetComponent<BattlerBehaviour>();
+            if(collidedWith != null && LockedInAbility != null)
+            {
+                switch (LockedInAbility.TargetEligibility)
+                {
+                    case TargetEligibility.Enemy:
+                    case TargetEligibility.All:
+                        if (collidedWith.IsEnemy != IsEnemy)
+                            Debug.Log(gameObject.name + " strikes " + collidedWith.name);
+                        break;
+                }
+            }
+        }
     }
 }

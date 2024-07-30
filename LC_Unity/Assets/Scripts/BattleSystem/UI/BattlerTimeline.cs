@@ -14,6 +14,7 @@ namespace BattleSystem.UI
 
         public TimelineAction Action { get; set; }
         public BattlerBehaviour Battler { get; set; }
+        public bool Processed { get; set; }
 
         public void Feed(BattlerBehaviour battler)
         {
