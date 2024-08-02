@@ -11,7 +11,10 @@
         Scepter,
         Staff,
         Grimoire,
-        Scythe
+        Scythe,
+        Fist,
+        Gun,
+        Arbalest
     }
 
     public class Weapon : EquipmentItem
