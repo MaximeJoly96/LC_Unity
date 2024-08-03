@@ -14,7 +14,8 @@
         Scythe,
         Fist,
         Gun,
-        Arbalest
+        Arbalest,
+        Mace
     }
 
     public class Weapon : EquipmentItem
