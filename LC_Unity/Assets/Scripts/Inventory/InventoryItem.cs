@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Logging;
+using System.Text;
 
 namespace Inventory
 {
@@ -17,12 +18,16 @@ namespace Inventory
     {
         public BaseItem ItemData { get; set; }
         public int InPossession { get; private set; }
-        public ItemCategory Category { get; private set; }
 
         public InventoryItem(BaseItem itemData)
         {
             ItemData = itemData;
             InPossession = 0;
+        }
+
+        public InventoryItem(int id, int inPossession)
+        {
+            InPossession = inPossession;
         }
 
         public void ChangeAmount(int amount)
@@ -35,6 +40,24 @@ namespace Inventory
 
             InPossession += amount;
             InPossession = Mathf.Clamp(InPossession, 0, 99);
+        }
+
+        public string Serialize()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(InPossession);
+
+            return sb.ToString();
+        }
+
+        public static InventoryItem Deserialize(int id, string serializedInventoryItem)
+        {
+            string[] split = serializedInventoryItem.Split(',');
+
+            InventoryItem item = new InventoryItem(id, int.Parse(split[0]));
+
+            return item;
         }
     }
 }

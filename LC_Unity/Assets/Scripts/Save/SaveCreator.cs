@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Movement;
 using System.Globalization;
 using Timing;
+using Actors;
+using Party;
+using Inventory;
 
 namespace Save
 {
@@ -24,6 +27,15 @@ namespace Save
             data.Add("positionY", playerPos.y.ToString(CultureInfo.InvariantCulture));
             data.Add("mapId", 0.ToString(CultureInfo.InvariantCulture));
             data.Add("inGameTime", Object.FindObjectOfType<GlobalTimer>().InGameTimeSeconds.ToString(CultureInfo.InvariantCulture));
+
+            List<Character> party = PartyManager.Instance.GetParty();
+            List<InventoryItem> inventory = PartyManager.Instance.Inventory;
+
+            foreach (Character c in party)
+                data.Add("character" + c.Id, c.Serialize());
+
+            foreach(InventoryItem i in inventory)
+                data.Add("item" + i.ItemData.Id, i.Serialize());
 
             using (StreamWriter sw = new StreamWriter(path))
             {

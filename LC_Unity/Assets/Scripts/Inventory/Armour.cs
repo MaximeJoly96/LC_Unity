@@ -11,8 +11,8 @@
     {
         public ArmourType Type { get; protected set; }
 
-        public Armour(int id, string name, string description, int icon, int price, int enchantmentSlots, ArmourType type) : 
-            base(id, name, description, icon, price, enchantmentSlots)
+        public Armour(int id, string name, string description, int icon, int price, ItemCategory category, int enchantmentSlots, ArmourType type) : 
+            base(id, name, description, icon, price, category, enchantmentSlots)
         {
             Type = type;
         }

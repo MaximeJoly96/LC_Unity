@@ -34,7 +34,7 @@ namespace Menus.SubMenus.Items
             _cursorPosition = 0;
             _items = new List<SelectableItem>();
 
-            IEnumerable<InventoryItem> inventory = PartyManager.Instance.Inventory.Where(i => i.Category == category);
+            IEnumerable<InventoryItem> inventory = PartyManager.Instance.Inventory.Where(i => i.ItemData.Category == category);
 
             for(int i = 0; i < inventory.Count(); i++)
             {

@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Actors.Equipment;
 using Abilities;
+using System.Text;
 
 namespace Actors
 {
@@ -232,6 +233,47 @@ namespace Actors
             RightHand = new EquipmentSlot(EquipmentPosition.RightHand, 0);
             Body = new EquipmentSlot(EquipmentPosition.Body, 0);
             Accessory = new EquipmentSlot(EquipmentPosition.Accessory, 0);
+        }
+
+        public string Serialize()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            // First the Exp value. Stats are based off level and equipment, so we only need to store these to get the stats
+            sb.Append(Exp);
+            sb.Append(',');
+
+            // Now we get the equipment block.
+            sb.Append(Head.ItemId);
+            sb.Append(',');
+            sb.Append(LeftHand.ItemId);
+            sb.Append(',');
+            sb.Append(RightHand.ItemId);
+            sb.Append(',');
+            sb.Append(Body.ItemId);
+            sb.Append(',');
+            sb.Append(Accessory.ItemId);
+            // Enf of the equipment block
+
+            return sb.ToString();
+        }
+
+        public static Character Deserialize(int id, string serializedCharacter)
+        {
+            string[] split = serializedCharacter.Split(',');
+
+            Character character = new Character
+            {
+                Id = id,
+                Exp = int.Parse(split[0]),
+                Head = new EquipmentSlot(EquipmentPosition.Helmet, int.Parse(split[1])),
+                LeftHand = new EquipmentSlot(EquipmentPosition.LeftHand, int.Parse(split[2])),
+                RightHand = new EquipmentSlot(EquipmentPosition.RightHand, int.Parse(split[3])),
+                Body = new EquipmentSlot(EquipmentPosition.Body, int.Parse(split[4])),
+                Accessory = new EquipmentSlot(EquipmentPosition.Accessory, int.Parse(split[5]))
+            };
+
+            return character;
         }
     }
 }
