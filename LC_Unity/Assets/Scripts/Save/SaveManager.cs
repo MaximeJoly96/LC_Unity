@@ -8,6 +8,8 @@ using Timing;
 using Actors;
 using Inventory;
 using System.Linq;
+using System;
+using Logging;
 
 namespace Save
 {
@@ -39,7 +41,7 @@ namespace Save
             get
             {
                 if (!_saveCanvasCache)
-                    _saveCanvasCache = Object.FindObjectOfType<SaveCanvas>();
+                    _saveCanvasCache = GameObject.FindObjectOfType<SaveCanvas>();
 
                 return _saveCanvasCache;
             }
@@ -58,7 +60,7 @@ namespace Save
 
         public SaveState CurrentSaveState { get; private set; }
         public SavedData Data { get; private set; }
-        public int SavesCount { get { return _loader.GetSavesCount(); } }
+        public List<int> SavesId { get { return _loader.GetSavesId(); } }
 
         private SaveManager() 
         {
@@ -114,30 +116,47 @@ namespace Save
 
         public void LoadSaveFile(int slotId)
         {
-            Dictionary<string, string> saveData = _loader.LoadSaveFile(slotId);
-
-            Data = new SavedData
+            try
             {
-                PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture), 
+                Dictionary<string, string> saveData = _loader.LoadSaveFile(slotId);
+
+                Data = new SavedData
+                {
+                    PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture),
                                              float.Parse(saveData["positionY"], CultureInfo.InvariantCulture)),
-                MapID = int.Parse(saveData["mapId"]),
-                InGameTimeSeconds = float.Parse("inGameTime", CultureInfo.InvariantCulture)
-            };
+                    MapID = int.Parse(saveData["mapId"], CultureInfo.InvariantCulture),
+                    //InGameTimeSeconds = float.Parse("inGameTime", CultureInfo.InvariantCulture),
+                    Party = RetrievePartyData(saveData),
+                    Inventory = RetrieveInventoryData(saveData)
+                };
+            }
+            catch(Exception e)
+            {
+                LogsHandler.Instance.LogError("Could not load save file. Reason: " + e.Message);
+            }
+            
         }
 
         public void CreateSaveFile(int slotId)
         {
-            Dictionary<string, string> saveData = _creator.CreateSaveFile(slotId);
-
-            Data = new SavedData
+            try
             {
-                PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture),
-                                             float.Parse(saveData["positionY"], CultureInfo.InvariantCulture)),
-                MapID = int.Parse(saveData["mapId"]),
-                InGameTimeSeconds = float.Parse(saveData["inGameTime"], CultureInfo.InvariantCulture),
-                Party = RetrievePartyData(saveData),
-                Inventory = RetrieveInventoryData(saveData)
-            };
+                Dictionary<string, string> saveData = _creator.CreateSaveFile(slotId);
+
+                Data = new SavedData
+                {
+                    PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture),
+                                                 float.Parse(saveData["positionY"], CultureInfo.InvariantCulture)),
+                    MapID = int.Parse(saveData["mapId"], CultureInfo.InvariantCulture),
+                    InGameTimeSeconds = float.Parse(saveData["inGameTime"], CultureInfo.InvariantCulture),
+                    Party = RetrievePartyData(saveData),
+                    Inventory = RetrieveInventoryData(saveData)
+                };
+            }
+            catch (Exception e)
+            {
+                LogsHandler.Instance.LogError("Could not create save file. Reason: " + e.Message);
+            }
 
             CloseSaveWindow();
         }
