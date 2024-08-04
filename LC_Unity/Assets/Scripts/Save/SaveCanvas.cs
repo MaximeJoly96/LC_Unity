@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using TMPro;
 using Inputs;
+using System.Collections.Generic;
 
 namespace Save
 {
     public class SaveCanvas : MonoBehaviour
     {
         private const float SELECTION_DELAY = 0.2f; // seconds
+        private const int MAX_SAVES = 15;
 
         [SerializeField]
         private TMP_Text _tooltip;
@@ -18,6 +20,8 @@ namespace Save
         private float _selectionDelay;
         private bool _delayOn;
         private bool _isOpen;
+
+        private List<SaveSlot> _instSaveSlots;
 
         public CanvasGroup CanvasGroup { get { return GetComponent<CanvasGroup>(); } }
         public Animator Animator { get { return GetComponent<Animator>(); } }
@@ -49,6 +53,7 @@ namespace Save
         public void Open()
         {
             Animator.Play("OpenSaveWindow");
+            LoadSaveSlots();
         }
 
         public void FinishedOpening()
@@ -87,6 +92,35 @@ namespace Save
                     _selectionDelay = 0.0f;
                     _delayOn = false;
                 }
+            }
+        }
+
+        private void LoadSaveSlots()
+        {
+            ClearSlots();
+
+            for(int i = 0; i < MAX_SAVES;  i++)
+            {
+                SaveSlot slot = Instantiate(_saveSlotPrefab, _savesWrapper);
+                _instSaveSlots.Add(slot);
+            }
+
+            for(int i = 0; i < SaveManager.Instance.SavesCount; i++)
+            {
+                _instSaveSlots[i].Init();
+            }
+        }
+
+        private void ClearSlots()
+        {
+            if (_instSaveSlots == null)
+                _instSaveSlots = new List<SaveSlot>();
+            else
+                _instSaveSlots.Clear();
+
+            foreach(Transform child in _savesWrapper)
+            {
+                Destroy(child.gameObject);
             }
         }
     }

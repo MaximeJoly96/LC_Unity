@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System.Globalization;
+using Timing;
 
 namespace Save
 {
@@ -54,6 +55,7 @@ namespace Save
 
         public SaveState CurrentSaveState { get; private set; }
         public SavedData Data { get; private set; }
+        public int SavesCount { get { return _loader.GetSavesCount(); } }
 
         private SaveManager() 
         {
@@ -114,7 +116,9 @@ namespace Save
             Data = new SavedData
             {
                 PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture), 
-                                             float.Parse(saveData["positionY"], CultureInfo.InvariantCulture))
+                                             float.Parse(saveData["positionY"], CultureInfo.InvariantCulture)),
+                MapID = int.Parse(saveData["mapId"]),
+                InGameTimeSeconds = float.Parse("inGameTime", CultureInfo.InvariantCulture)
             };
         }
 
@@ -125,7 +129,9 @@ namespace Save
             Data = new SavedData
             {
                 PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture),
-                                             float.Parse(saveData["positionY"], CultureInfo.InvariantCulture))
+                                             float.Parse(saveData["positionY"], CultureInfo.InvariantCulture)),
+                MapID = int.Parse(saveData["mapId"]),
+                InGameTimeSeconds = float.Parse(saveData["inGameTime"], CultureInfo.InvariantCulture)
             };
 
             CloseSaveWindow();
@@ -144,6 +150,7 @@ namespace Save
             }
 
             CloseSaveWindow();
+            GameObject.FindObjectOfType<GlobalTimer>().InitInGameTimer(Data.InGameTimeSeconds);
             SceneManager.LoadScene("Field");
         }
     }

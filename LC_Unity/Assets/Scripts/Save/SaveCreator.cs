@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using Movement;
 using System.Globalization;
+using Timing;
 
 namespace Save
 {
@@ -21,6 +22,8 @@ namespace Save
 
             data.Add("positionX", playerPos.x.ToString(CultureInfo.InvariantCulture));
             data.Add("positionY", playerPos.y.ToString(CultureInfo.InvariantCulture));
+            data.Add("mapId", 0.ToString(CultureInfo.InvariantCulture));
+            data.Add("inGameTime", Object.FindObjectOfType<GlobalTimer>().InGameTimeSeconds.ToString(CultureInfo.InvariantCulture));
 
             using (StreamWriter sw = new StreamWriter(path))
             {

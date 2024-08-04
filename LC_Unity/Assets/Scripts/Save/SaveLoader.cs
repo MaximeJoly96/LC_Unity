@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Save
 {
     public class SaveLoader
     {
+        private static readonly string SAVE_BASE_PATH = Application.persistentDataPath;
+
         public Dictionary<string, string> LoadSaveFile(int slotId)
         {
-            string path = Application.persistentDataPath + "/save" + slotId + ".data";
+            string path = SAVE_BASE_PATH + "/save" + slotId + ".data";
             Dictionary<string, string> data = new Dictionary<string, string>();
             string content = "";
 
@@ -29,6 +32,11 @@ namespace Save
             }
 
             return data;
+        }
+
+        public int GetSavesCount()
+        {
+            return Directory.GetFiles(SAVE_BASE_PATH).Where(f => f.EndsWith(".data")).Count();
         }
     }
 }

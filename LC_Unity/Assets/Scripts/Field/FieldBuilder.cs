@@ -2,6 +2,7 @@
 using Logging;
 using Save;
 using Movement;
+using Timing;
 
 namespace Field
 {
@@ -18,6 +19,8 @@ namespace Field
 
         private void Awake()
         {
+            FindObjectOfType<GlobalTimer>().Running = true;
+
             BuildField(_field);
             ScanForAgents();
             ScanForDoors();
