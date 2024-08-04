@@ -84,7 +84,7 @@ namespace Save
                         Close();
                         break;
                     case InputAction.Select:
-                        SaveManager.Instance.SlotSelected(0);
+                        SelectSlot();
                         break;
                     case InputAction.MoveDown:
                         MoveDown();
@@ -162,7 +162,29 @@ namespace Save
                     _instSaveSlots[i].Unselect();
             }
 
-            _scrollView.verticalNormalizedPosition = 1 - Mathf.Clamp01(_cursorPosition * SLOT_MOVE_DELTA);
+            if (_cursorPosition == MAX_SAVES - 1)
+                _scrollView.verticalNormalizedPosition = 0.0f;
+            else if (_cursorPosition >= 4)   
+                _scrollView.verticalNormalizedPosition -= SLOT_MOVE_DELTA;
+            else
+                _scrollView.verticalNormalizedPosition = 1.0f;
+        }
+
+        private void SelectSlot()
+        {
+            switch(SaveManager.Instance.CurrentSaveState)
+            {
+                case SaveManager.SaveState.LoadSave:
+                    if (!_instSaveSlots[_cursorPosition].HasData)
+                        return;
+                    break;
+                case SaveManager.SaveState.CreateSave:
+                    if(!_instSaveSlots[_cursorPosition].HasData)
+                        SaveManager.Instance.CreateSaveFile(_cursorPosition);
+                    break;
+            }
+
+            SaveManager.Instance.LoadSaveFile(_cursorPosition);
         }
     }
 }
