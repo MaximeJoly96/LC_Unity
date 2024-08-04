@@ -51,11 +51,12 @@ namespace Inventory
             return sb.ToString();
         }
 
-        public static InventoryItem Deserialize(int id, string serializedInventoryItem)
+        public static InventoryItem Deserialize(string id, string serializedInventoryItem)
         {
             string[] split = serializedInventoryItem.Split(',');
+            int trueId = int.Parse(id.Replace("item", ""));
 
-            InventoryItem item = new InventoryItem(id, int.Parse(split[0]));
+            InventoryItem item = new InventoryItem(trueId, int.Parse(split[0]));
 
             return item;
         }

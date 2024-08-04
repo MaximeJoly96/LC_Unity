@@ -166,7 +166,7 @@ namespace Save
             IEnumerable<KeyValuePair<string, string>> charactersData = saveData.Where(s => s.Key.Contains("character"));
             foreach (KeyValuePair<string, string> character in charactersData)
             {
-                characters.Add(Character.Deserialize(int.Parse(character.Key), character.Value));
+                characters.Add(Character.Deserialize(character.Key, character.Value));
             }
 
             return characters;
@@ -179,7 +179,7 @@ namespace Save
             IEnumerable<KeyValuePair<string, string>> itemsData = saveData.Where(s => s.Key.Contains("item"));
             foreach(KeyValuePair<string, string> item in itemsData)
             {
-                items.Add(InventoryItem.Deserialize(int.Parse(item.Key), item.Value));
+                items.Add(InventoryItem.Deserialize(item.Key, item.Value));
             }
 
             return items;

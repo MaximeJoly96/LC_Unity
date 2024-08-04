@@ -258,13 +258,14 @@ namespace Actors
             return sb.ToString();
         }
 
-        public static Character Deserialize(int id, string serializedCharacter)
+        public static Character Deserialize(string id, string serializedCharacter)
         {
             string[] split = serializedCharacter.Split(',');
+            int trueId = int.Parse(id.Replace("character", ""));
 
             Character character = new Character
             {
-                Id = id,
+                Id = trueId,
                 Exp = int.Parse(split[0]),
                 Head = new EquipmentSlot(EquipmentPosition.Helmet, int.Parse(split[1])),
                 LeftHand = new EquipmentSlot(EquipmentPosition.LeftHand, int.Parse(split[2])),
