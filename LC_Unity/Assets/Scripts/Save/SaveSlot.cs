@@ -14,5 +14,15 @@ namespace Save
             _blankSave.gameObject.SetActive(false);
             _saveWithData.gameObject.SetActive(true);
         }
+
+        public void Select()
+        {
+            GetComponent<Animator>().Play("SaveSlotSelected");
+        }
+
+        public void Unselect()
+        {
+            GetComponent<Animator>().Play("SaveSlotIdle");
+        }
     }
 }

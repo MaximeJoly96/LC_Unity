@@ -2,6 +2,8 @@
 using TMPro;
 using Inputs;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.UI;
 
 namespace Save
 {
@@ -9,6 +11,7 @@ namespace Save
     {
         private const float SELECTION_DELAY = 0.2f; // seconds
         private const int MAX_SAVES = 15;
+        private const float SLOT_MOVE_DELTA = 0.095f;
 
         [SerializeField]
         private TMP_Text _tooltip;
@@ -16,10 +19,13 @@ namespace Save
         private Transform _savesWrapper;
         [SerializeField]
         private SaveSlot _saveSlotPrefab;
+        [SerializeField]
+        private ScrollRect _scrollView;
 
         private float _selectionDelay;
         private bool _delayOn;
         private bool _isOpen;
+        private int _cursorPosition;
 
         private List<SaveSlot> _instSaveSlots;
 
@@ -54,6 +60,8 @@ namespace Save
         {
             Animator.Play("OpenSaveWindow");
             LoadSaveSlots();
+            UpdateCursor();
+            _scrollView.verticalNormalizedPosition = 0.0f;
         }
 
         public void FinishedOpening()
@@ -78,7 +86,15 @@ namespace Save
                     case InputAction.Select:
                         SaveManager.Instance.SlotSelected(0);
                         break;
+                    case InputAction.MoveDown:
+                        MoveDown();
+                        break;
+                    case InputAction.MoveUp:
+                        MoveUp();
+                        break;
                 }
+
+                _delayOn = true;
             }
         }
 
@@ -122,6 +138,31 @@ namespace Save
             {
                 Destroy(child.gameObject);
             }
+        }
+
+        private void MoveDown()
+        {
+            _cursorPosition = _cursorPosition == MAX_SAVES - 1 ? 0 : ++_cursorPosition;
+            UpdateCursor();
+        }
+
+        private void MoveUp()
+        {
+            _cursorPosition = _cursorPosition == 0 ? MAX_SAVES - 1 : --_cursorPosition;
+            UpdateCursor();
+        }
+
+        private void UpdateCursor()
+        {
+            for(int i = 0; i < _instSaveSlots.Count; i++)
+            {
+                if (i == _cursorPosition)
+                    _instSaveSlots[i].Select();
+                else
+                    _instSaveSlots[i].Unselect();
+            }
+
+            _scrollView.verticalNormalizedPosition = 1 - Mathf.Clamp01(_cursorPosition * SLOT_MOVE_DELTA);
         }
     }
 }
