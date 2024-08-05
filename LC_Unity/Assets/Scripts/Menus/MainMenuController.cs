@@ -18,6 +18,8 @@ namespace Menus
         private HorizontalMainMenuController _horizontalMainMenu;
         [SerializeField]
         private SpecificCharacterSelectionMenu _characterSelectionMenu;
+        [SerializeField]
+        private MiscellaneousData _miscData;
 
         protected InputController _inputController;
 
@@ -33,6 +35,7 @@ namespace Menus
             _characterSelector.Clear();
             _characterSelector.Feed(PartyManager.Instance.GetParty());
             _characterSelector.CharacterSelected.AddListener(OpenCharacterTab);
+            _miscData.Open();
         }
 
         private void HandleInputs(InputAction input)

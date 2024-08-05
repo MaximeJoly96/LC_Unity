@@ -37,6 +37,7 @@ namespace Core
 
         public State CurrentState { get; private set; }
         public UnityEvent<State> StateChanged { get; private set; }
+        public int CurrentMapId { get; set; }
 
         private GlobalStateMachine() 
         {

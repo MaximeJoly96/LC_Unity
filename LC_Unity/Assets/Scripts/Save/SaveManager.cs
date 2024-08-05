@@ -10,6 +10,7 @@ using Inventory;
 using System.Linq;
 using System;
 using Logging;
+using Core;
 
 namespace Save
 {
@@ -119,6 +120,7 @@ namespace Save
             try
             {
                 Data = GetSavedDataFromSlot(slotId);
+                GlobalStateMachine.Instance.CurrentMapId = Data.MapID;
             }
             catch(Exception e)
             {
