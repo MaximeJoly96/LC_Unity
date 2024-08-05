@@ -62,7 +62,7 @@ namespace Save
             Animator.Play("OpenSaveWindow");
             LoadSaveSlots();
             UpdateCursor();
-            _scrollView.verticalNormalizedPosition = 0.0f;
+            _scrollView.verticalNormalizedPosition = 1.0f;
         }
 
         public void FinishedOpening()
@@ -124,7 +124,8 @@ namespace Save
 
             for(int i = 0; i < SaveManager.Instance.SavesId.Count; i++)
             {
-                _instSaveSlots[SaveManager.Instance.SavesId[i]].Init();
+                int slotId = SaveManager.Instance.SavesId[i];
+                _instSaveSlots[slotId].Init(SaveManager.Instance.GetSavedDataFromSlot(slotId));
             }
         }
 
@@ -176,15 +177,14 @@ namespace Save
             switch(SaveManager.Instance.CurrentSaveState)
             {
                 case SaveManager.SaveState.LoadSave:
-                    if (_instSaveSlots[_cursorPosition].HasData)
+                    if (_instSaveSlots[_cursorPosition].Data != null)
                         SaveManager.Instance.SlotSelected(_cursorPosition);
                     break;
                 case SaveManager.SaveState.CreateSave:
-                    if (!_instSaveSlots[_cursorPosition].HasData)
+                    if (_instSaveSlots[_cursorPosition].Data == null)
                         SaveManager.Instance.SlotSelected(_cursorPosition);
                     break;
             }
-            
         }
     }
 }

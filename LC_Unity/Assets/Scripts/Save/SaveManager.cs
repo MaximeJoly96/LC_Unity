@@ -118,17 +118,7 @@ namespace Save
         {
             try
             {
-                Dictionary<string, string> saveData = _loader.LoadSaveFile(slotId);
-
-                Data = new SavedData
-                {
-                    PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture),
-                                             float.Parse(saveData["positionY"], CultureInfo.InvariantCulture)),
-                    MapID = int.Parse(saveData["mapId"], CultureInfo.InvariantCulture),
-                    //InGameTimeSeconds = float.Parse("inGameTime", CultureInfo.InvariantCulture),
-                    Party = RetrievePartyData(saveData),
-                    Inventory = RetrieveInventoryData(saveData)
-                };
+                Data = GetSavedDataFromSlot(slotId);
             }
             catch(Exception e)
             {
@@ -202,6 +192,21 @@ namespace Save
             }
 
             return items;
+        }
+
+        public SavedData GetSavedDataFromSlot(int slotId)
+        {
+            Dictionary<string, string> saveData = _loader.LoadSaveFile(slotId);
+
+            return new SavedData
+            {
+                PlayerPosition = new Vector2(float.Parse(saveData["positionX"], CultureInfo.InvariantCulture),
+                                                 float.Parse(saveData["positionY"], CultureInfo.InvariantCulture)),
+                MapID = int.Parse(saveData["mapId"], CultureInfo.InvariantCulture),
+                InGameTimeSeconds = float.Parse(saveData["inGameTime"], CultureInfo.InvariantCulture),
+                Party = RetrievePartyData(saveData),
+                Inventory = RetrieveInventoryData(saveData)
+            };
         }
     }
 }

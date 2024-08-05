@@ -1,4 +1,9 @@
 ﻿using UnityEngine;
+using TMPro;
+using Field;
+using Language;
+using Utils;
+using UnityEngine.UI;
 
 namespace Save
 {
@@ -8,15 +13,34 @@ namespace Save
         private Transform _blankSave;
         [SerializeField]
         private Transform _saveWithData;
+        [SerializeField]
+        private TMP_Text _inGameTime;
+        [SerializeField]
+        private TMP_Text _location;
+        [SerializeField]
+        private Image[] _characters;
 
-        public bool HasData { get; private set; }
+        public SavedData Data { get; private set; }
 
-        public void Init()
+        public void Init(SavedData data)
         {
             _blankSave.gameObject.SetActive(false);
             _saveWithData.gameObject.SetActive(true);
 
-            HasData = true;
+            Data = data;
+
+            _location.text = Localizer.Instance.GetString(FieldNames.MAP_NAMES[Data.MapID]);
+            _inGameTime.text = TimeConverter.FormatTimeFromSeconds(data.InGameTimeSeconds);
+
+            for(int i = 0;  i < _characters.Length; i++)
+            {
+                _characters[i].gameObject.SetActive(false);
+            }
+
+            for(int i = 0; i < Data.Party.Count; i++)
+            {
+                _characters[i].gameObject.SetActive(true);
+            }
         }
 
         public void Select()
