@@ -21,7 +21,7 @@ namespace TitleScreen
 
         private void Awake()
         {
-            FindObjectOfType<Localizer>().LoadLanguage(Language.Language.English);
+            FindObjectOfType<Localizer>().LoadLanguage((Language.Language)PlayerPrefs.GetInt("language"));
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.TitleScreen);
         }
 

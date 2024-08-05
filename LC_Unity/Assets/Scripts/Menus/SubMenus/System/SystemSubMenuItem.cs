@@ -17,5 +17,15 @@ namespace Menus.SubMenus.System
         {
 
         }
+
+        public virtual void MoveCursorLeft()
+        {
+
+        }
+
+        public virtual void MoveCursorRight()
+        {
+
+        }
     }
 }

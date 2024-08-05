@@ -15,7 +15,7 @@ namespace TitleScreen
 
         private void Start()
         {
-            _cursorPosition = 0;
+            _cursorPosition = PlayerPrefs.GetInt("language");
             _availableLanguages = (Language.Language[])Enum.GetValues(typeof(Language.Language));
 
             UpdateSelectedLanguage();
@@ -25,6 +25,7 @@ namespace TitleScreen
         {
             _currentLanguage.text = LanguageUtility.TranslateLanguageLabel(_availableLanguages[_cursorPosition]);
             Localizer.Instance.LoadLanguage(_availableLanguages[_cursorPosition]);
+            PlayerPrefs.SetInt("language", (int)_availableLanguages[_cursorPosition]);
         }
 
         public override void MoveCursorLeft()

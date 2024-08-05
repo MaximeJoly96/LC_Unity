@@ -50,6 +50,12 @@ namespace Menus.SubMenus
                     case InputAction.Select:
                         SelectItem();
                         break;
+                    case InputAction.MoveLeft:
+                        MoveCursorLeft();
+                        break;
+                    case InputAction.MoveRight:
+                        MoveCursorRight();
+                        break;
                 }
 
                 _busy = true;
@@ -92,6 +98,20 @@ namespace Menus.SubMenus
         private void SelectItem()
         {
             _subMenuItems[_cursorPosition].Select();
+        }
+
+        private void MoveCursorLeft()
+        {
+            if (_subMenuItems[_cursorPosition] is SystemSubMenuVolumeEditor ||
+                _subMenuItems[_cursorPosition] is SystemSubMenuSelectLanguage)
+                _subMenuItems[_cursorPosition].MoveCursorLeft();
+        }
+
+        private void MoveCursorRight()
+        {
+            if (_subMenuItems[_cursorPosition] is SystemSubMenuVolumeEditor ||
+                _subMenuItems[_cursorPosition] is SystemSubMenuSelectLanguage)
+                _subMenuItems[_cursorPosition].MoveCursorRight();
         }
     }
 }

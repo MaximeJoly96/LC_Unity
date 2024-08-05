@@ -97,6 +97,7 @@ namespace Save
 
         public void InitSaveLoad(bool fromTitleScreen)
         {
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);
             CurrentSaveState = SaveState.LoadSave;
             _fromTitleScreen = fromTitleScreen;
 
