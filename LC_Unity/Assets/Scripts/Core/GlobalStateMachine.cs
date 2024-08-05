@@ -19,7 +19,10 @@ namespace Core
             InMenuQuestsTab,
             InMenuSystemTab,
             TransitionCharacterTarget,
-            InCharacterTargetMenu
+            InCharacterTargetMenu,
+            OpeningMessageBox,
+            InMessageBox,
+            ClosingMessageBox
         }
 
         private static GlobalStateMachine _instance;
