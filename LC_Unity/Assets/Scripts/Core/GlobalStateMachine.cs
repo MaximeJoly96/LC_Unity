@@ -6,6 +6,7 @@ namespace Core
     {
         public enum State
         {
+            TitleScreen,
             OnField,
             InMenu,
             Interacting,

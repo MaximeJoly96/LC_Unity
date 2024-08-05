@@ -12,6 +12,7 @@ namespace Language
         private Localization[] _localizations;
 
         private Dictionary<string, string> _keyValuePairs;
+        private Language _currentLanguage;
 
         private UnityEvent _languageUpdated;
         public UnityEvent LanguageUpdated
@@ -36,6 +37,7 @@ namespace Language
         public void LoadLanguage(Language language)
         {
             Localization localization = _localizations.FirstOrDefault(l => l.language == language);
+            _currentLanguage = language;
 
             if(localization != null)
             {
@@ -66,6 +68,9 @@ namespace Language
 
         public string GetString(string key)
         {
+            if (_keyValuePairs == null)
+                LoadLanguage(_currentLanguage);
+
             return _keyValuePairs[key];
         }
     }

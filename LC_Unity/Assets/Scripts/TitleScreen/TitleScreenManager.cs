@@ -3,6 +3,7 @@ using Save;
 using System.Collections;
 using Party;
 using Language;
+using Core;
 
 namespace TitleScreen
 {
@@ -21,6 +22,7 @@ namespace TitleScreen
         private void Awake()
         {
             FindObjectOfType<Localizer>().LoadLanguage(Language.Language.English);
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.TitleScreen);
         }
 
         private void Start()

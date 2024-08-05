@@ -5,7 +5,7 @@ namespace Field
 {
     public class AgentsManager
     {
-        private readonly Dictionary<string, Agent> _registeredAgents;
+        private Dictionary<string, Agent> _registeredAgents;
 
         private static AgentsManager _instance;
 
@@ -22,7 +22,7 @@ namespace Field
 
         private AgentsManager()
         {
-            _registeredAgents = new Dictionary<string, Agent>();
+            Reset();
         }
 
         public void RegisterAgent(Agent agent)
@@ -33,6 +33,11 @@ namespace Field
         public Agent GetAgent(string id)
         {
             return _registeredAgents[id];
+        }
+
+        public void Reset()
+        {
+            _registeredAgents = new Dictionary<string, Agent>();
         }
     }
 }

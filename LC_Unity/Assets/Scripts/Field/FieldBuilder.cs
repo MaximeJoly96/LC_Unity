@@ -3,6 +3,7 @@ using Logging;
 using Save;
 using Movement;
 using Timing;
+using Core;
 
 namespace Field
 {
@@ -26,6 +27,7 @@ namespace Field
             ScanForDoors();
 
             PositionPlayer();
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
         }
 
         public void BuildField(PlayableField field)
@@ -42,6 +44,8 @@ namespace Field
             }
 
             Agent[] agents = _instField.transform.GetComponentsInChildren<Agent>(true);
+
+            AgentsManager.Instance.Reset();
 
             for(int i = 0; i < agents.Length; i++)
             {
