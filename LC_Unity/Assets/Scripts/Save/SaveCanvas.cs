@@ -4,6 +4,9 @@ using Inputs;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
+using MsgBox;
+using Language;
+using Core;
 
 namespace Save
 {
@@ -67,7 +70,7 @@ namespace Save
 
         public void FinishedOpening()
         {
-            _isOpen = true;
+             _isOpen = true;
         }
 
         public void UpdateTooltip(string text)
@@ -77,7 +80,7 @@ namespace Save
 
         private void ReceiveInput(InputAction input)
         {
-            if(!_delayOn && _isOpen)
+            if(!_delayOn && _isOpen && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SaveMenu)
             {
                 switch (input)
                 {
@@ -183,8 +186,22 @@ namespace Save
                 case SaveManager.SaveState.CreateSave:
                     if (_instSaveSlots[_cursorPosition].Data == null)
                         SaveManager.Instance.SlotSelected(_cursorPosition);
+                    else
+                    {
+                        MessageBoxService.Instance.MessageBoxClosedWithResult.RemoveAllListeners();
+                        MessageBoxService.Instance.MessageBoxClosedWithResult.AddListener(ProceedWithSaveCreation);
+                        MessageBoxService.Instance.ShowYesNoMessage(Localizer.Instance.GetString("saveDataAlreadyExists"), MessageBoxType.Warning);
+                    }
                     break;
             }
+        }
+
+        private void ProceedWithSaveCreation(MessageBoxAnswer result)
+        {
+            if (result == MessageBoxAnswer.Yes)
+                SaveManager.Instance.SlotSelected(_cursorPosition);
+            else
+                GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);
         }
     }
 }

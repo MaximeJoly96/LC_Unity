@@ -72,6 +72,7 @@ namespace Save
         public void OpenSaveWindow()
         {
             SaveCanvasCache.Open();
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);
         }
 
         public void CloseSaveWindow()
@@ -81,6 +82,7 @@ namespace Save
 
         public void InitSaveCreation(bool fromTitleScreen)
         {
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);
             CurrentSaveState = SaveState.CreateSave;
             _fromTitleScreen = fromTitleScreen;
 

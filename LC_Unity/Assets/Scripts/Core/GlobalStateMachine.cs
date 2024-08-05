@@ -23,7 +23,8 @@ namespace Core
             InCharacterTargetMenu,
             OpeningMessageBox,
             InMessageBox,
-            ClosingMessageBox
+            ClosingMessageBox,
+            SaveMenu
         }
 
         private static GlobalStateMachine _instance;
