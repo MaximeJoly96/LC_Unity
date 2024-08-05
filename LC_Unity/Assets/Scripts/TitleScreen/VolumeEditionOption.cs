@@ -49,7 +49,11 @@ namespace TitleScreen
 
         private void RestoreVolumeData()
         {
-            _slider.value = PlayerPrefs.GetFloat(_audioGroup.audioMixer.name + "Volume");
+            if(PlayerPrefs.HasKey(_audioGroup.audioMixer.name + "Volume"))
+            {
+                _slider.value = PlayerPrefs.GetFloat(_audioGroup.audioMixer.name + "Volume");
+            }
+            
             UpdateAudioMixerVolume();
         }
     }
