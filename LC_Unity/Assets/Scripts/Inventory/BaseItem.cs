@@ -16,6 +16,7 @@
         public int Icon { get; protected set; }
         public int Price { get; protected set; }
         public ItemCategory Category { get; protected set; }
+        public ItemRecipe Recipe { get; set; }
 
         public BaseItem(int id, string name, string description, int icon, int price, ItemCategory category)
         {

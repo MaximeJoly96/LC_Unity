@@ -1,0 +1,25 @@
+﻿namespace Effects
+{
+    public enum Stat
+    {
+        MaxHP,
+        MaxMP,
+        MaxEP,
+        Strength,
+        Defense,
+        Magic,
+        MagicDefense,
+        Agility,
+        Luck,
+        Accuracy,
+        CritChance,
+        CritDmg,
+        Evasion
+    }
+
+    public class StatBoost : IEffect
+    {
+        public Stat Stat { get; set; }
+        public float Value { get; set; }
+    }
+}

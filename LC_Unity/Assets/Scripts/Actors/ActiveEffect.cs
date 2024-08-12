@@ -2,7 +2,17 @@
 {
     public enum EffectType
     {
-        Poison
+        Poison,
+        BleedI,
+        BleedII,
+        BleedIII,
+        HemoI,
+        BreakI,
+        MagicBreakI,
+        SlowI,
+        Blind,
+        Shell,
+        Protect
     }
 
     public class ActiveEffect
