@@ -7,7 +7,7 @@
 		<Usability>BattleOnly</Usability>
 		<Cost Health="0" Mana="0" Essence="0" />
 		<Priority>0</Priority>
-    <TargetEligibility>All</TargetEligibility>
+    <TargetEligibility>Any</TargetEligibility>
     <Category>AttackCommand</Category>
 	</Ability>
   <Ability>
@@ -24,6 +24,96 @@
     <Id>2</Id>
     <Name>Claws</Name>
     <Description>Strike a target and deal physical damage.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Any</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>3</Id>
+    <Name>Drain Slash</Name>
+    <Description>Strike a target and deal physical damage. 40% of damage dealt is restored as HP.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Any</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>4</Id>
+    <Name>Weak Point</Name>
+    <Description>Strike a target and deal physical damage. The target then takes additional damage until the beginning of the next turn.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Any</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>5</Id>
+    <Name>Knight's Vow</Name>
+    <Description>Chose another target. When this target is dealt damage, redirects 40% of the pre-mitigation damage to you. Lasts 3 turns or until you or the ally dies.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>1</Priority>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>6</Id>
+    <Name>Magical Impact</Name>
+    <Description>Strike a target and deal magic damage. Damage is based off caster's Strength and Magic, as well as target's Magic.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Any</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>7</Id>
+    <Name>Abode of Souls</Name>
+    <Description>Depletes a target from some EP and imbues your weapon based on the Essence Affinity of the target. Currently stored (max 3):</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Any</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>8</Id>
+    <Name>Trance</Name>
+    <Description>Chose an ally. Their next ability deals extra damage based on resources spent.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>1</Priority>
+    <TargetEligibility>Ally</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>9</Id>
+    <Name>Crystal Guard</Name>
+    <Description>Reduces incoming damage by 50% for 3 turns. Blocking enough damage under this effect creates a healing wave, restoring HP to nearby allies.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>1</Priority>
+    <TargetEligibility>Self</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>10</Id>
+    <Name>Evasive Dance</Name>
+    <Description>Increases Evasion for 3 turns. Automatically counterattacks if the attacker is in range after a succesful evasion.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>1</Priority>
+    <TargetEligibility>Self</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>11</Id>
+    <Name>Holy Wrath</Name>
+    <Description>Deals Holy physical damage to an enemy. Nearby enemies take 50% damage. Nearby allies gain Bravery and Faith.</Description>
     <Usability>BattleOnly</Usability>
     <Cost Health="0" Mana="0" Essence="0" />
     <Priority>0</Priority>

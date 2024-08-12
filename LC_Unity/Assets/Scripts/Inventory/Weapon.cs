@@ -13,7 +13,7 @@
         Grimoire,
         Scythe,
         Fist,
-        Gun,
+        Firearm,
         Arbalest,
         Mace
     }

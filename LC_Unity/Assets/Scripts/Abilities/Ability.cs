@@ -17,7 +17,9 @@ namespace Abilities
         Ally,
         All,
         AllAllies,
-        AllEnemies
+        AllEnemies,
+        Any,
+        AnyExceptSelf
     }
 
     public enum AbilityCategory

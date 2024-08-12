@@ -1,12 +1,540 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <Items>
 	<Item>
-		<Id>0</Id>
-		<Name>Dagger</Name>
-		<Description>A short blade, somewhat effective in close combat.</Description>
+		<Id>1000</Id>
+		<Name>Broadsword</Name>
+		<Description>BroadswordDescription</Description>
 		<Icon>0</Icon>
 		<Price>10</Price>
-		<Type>Dagger</Type>
+		<Type>Sword</Type>
 		<Animation>0</Animation>
+    <Rank>1</Rank>
 	</Item>
+  <Item>
+    <Id>1001</Id>
+    <Name>Slicer</Name>
+    <Description>SlicerDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1002</Id>
+    <Name>Steel Sword</Name>
+    <Description>SteelSwordDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <Recipe>
+      <Item Id="1000" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1003</Id>
+    <Name>Longsword</Name>
+    <Description>LongswordDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <Recipe>
+      <Item Id="1002" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1004</Id>
+    <Name>Sanguine Blade</Name>
+    <Description>SanguineBladeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1001" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1005</Id>
+    <Name>Bastard Sword</Name>
+    <Description>BastardSwordDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <Recipe>
+      <Item Id="1003" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1006</Id>
+    <Name>Executioner's Blade</Name>
+    <Description>ExecutionersBladeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1007</Id>
+    <Name>Rapier</Name>
+    <Description>RapierDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1008</Id>
+    <Name>Bloodthirster</Name>
+    <Description>BloodthirsterDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1004" Quantity="1" />
+      <Item Id="1006" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1009</Id>
+    <Name>Claymore</Name>
+    <Description>ClaymoreDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <Recipe>
+      <Item Id="1005" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1010</Id>
+    <Name>Whistling Blade</Name>
+    <Description>WhistilingBladeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+      <BoundAbility Id="4" />
+    </Effects>
+    <Recipe>
+      <Item Id="1007" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1011</Id>
+    <Name>Sharp Fang</Name>
+    <Description>SharpFangDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1008" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1012</Id>
+    <Name>Magiblade</Name>
+    <Description>MagibladeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <Effects>
+      <InflictStatus Value="MagicBreakI" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1013</Id>
+    <Name>Paralyzing Blade</Name>
+    <Description>ParalyzingBladeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="SlowI" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1008" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1014</Id>
+    <Name>Knight Sword</Name>
+    <Description>KnightSwordDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <Effects>
+      <BoundAbility Id="5" />
+    </Effects>
+    <Recipe>
+      <Item Id="1009" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1015</Id>
+    <Name>Refined Blade</Name>
+    <Description>RefinedBladeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+      <BoundAbility Id="4" />
+    </Effects>
+    <Recipe>
+      <Item Id="1010" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1016</Id>
+    <Name>Calamity</Name>
+    <Description>CalamityDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1013" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1017</Id>
+    <Name>Wizard's Edge</Name>
+    <Description>WizardsEdgeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <Effects>
+      <InflictStatus Value="MagicBreakI" />
+      <BoundAbility Id="6" />
+    </Effects>
+    <Recipe>
+      <Item Id="1012" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1018</Id>
+    <Name>Bound Blade Axium</Name>
+    <Description>BoundBladeAxiumDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <Effects>
+      <CostReduction Stat="MP" Value="40" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1019</Id>
+    <Name>Bound Blade Sanctum</Name>
+    <Description>BoundBladeSanctumDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <Effects>
+      <StatusImmunity Value="Blind" />
+      <StatusImmunity Value="Silence" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1020</Id>
+    <Name>Durandal</Name>
+    <Description>DurandalDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <Effects>
+      <BoundAbility Id="5" />
+    </Effects>
+    <Recipe>
+      <Item Id="1014" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1021</Id>
+    <Name>Cursed Razor</Name>
+    <Description>CursedRazorDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <InflictStatus Value="BreakI" />
+      <InflictStatus Value="MagicBreakI" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1016" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1022</Id>
+    <Name>Rampage</Name>
+    <Description>RampageDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <Dispel Value="Shell" />
+      <Dispel Value="Protect" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1016" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1023</Id>
+    <Name>Zweihander</Name>
+    <Description>ZweihanderDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <Effects>
+      <BoundAbility Id="5" />
+    </Effects>
+    <Recipe>
+      <Item Id="1020" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1024</Id>
+    <Name>Duelist's Edge</Name>
+    <Description>DuelistsEdgeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+      <StatBoost Stat="Evasion" Value="0" />
+      <BoundAbility Id="4" />
+    </Effects>
+    <Recipe>
+      <Item Id="1015" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1025</Id>
+    <Name>Alankhrem</Name>
+    <Description>AlankhremDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <Effects>
+      <StatusImmunity Value="Blind" />
+      <StatusImmunity Value="Silence" />
+      <CostReduction Stat="MP" Value="40" />
+      <BoundAbility Id="7" />
+    </Effects>
+    <Recipe>
+      <Item Id="1018" Quantity="1" />
+      <Item Id="1019" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1026</Id>
+    <Name>Soul Sword</Name>
+    <Description>SoulSwordDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <Effects>
+      <InflictStatus Value="MagicBreakI" />
+      <BoundAbility Id="6" />
+      <BoundAbility Id="8" />
+    </Effects>
+    <Recipe>
+      <Item Id="1017" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1027</Id>
+    <Name>Crystal Blade</Name>
+    <Description>CrystalBladeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <Effects>
+      <BoundAbility Id="5" />
+      <BoundAbility Id="9" />
+    </Effects>
+    <Recipe>
+      <Item Id="1020" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1028</Id>
+    <Name>Ascalon</Name>
+    <Description>AscalonDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+      <StatBoost Stat="Evasion" Value="0" />
+      <BoundAbility Id="4" />
+      <BoundAbility Id="10" />
+    </Effects>
+    <Recipe>
+      <Item Id="1024" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1029</Id>
+    <Name>Catastrophe</Name>
+    <Description>CatastropheDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>122</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <StatBoost Stat="Strength" Value="50" />
+      <SelfStatus Value="BleedIII" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1016" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1030</Id>
+    <Name>Excalibur</Name>
+    <Description>ExcaliburDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <Effects>
+      <InflictStatus Value="MagicBreakI" />
+      <BoundAbility Id="6" />
+      <BoundAbility Id="8" />
+      <BoundAbility Id="11" />
+    </Effects>
+    <Recipe>
+      <Item Id="1026" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1031</Id>
+    <Name>Ragnarok</Name>
+    <Description>RagnarokDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+  </Item>
 </Items>
