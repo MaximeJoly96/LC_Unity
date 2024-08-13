@@ -11,6 +11,7 @@
         MagicBreakI,
         SlowI,
         Blind,
+        Silence,
         Shell,
         Protect
     }

@@ -19,10 +19,11 @@ namespace Inventory
                 XmlDocument xmlDocument = new XmlDocument();
                 xmlDocument.LoadXml(file.text);
 
-                XmlNodeList itemNodes = xmlDocument.SelectNodes("Item");
+                XmlNodeList itemNodes = xmlDocument.SelectSingleNode("Items").SelectNodes("Item");
                 foreach (XmlNode itemNode in itemNodes)
                 {
                     Weapon weapon = ParseNodeIntoWeapon(itemNode);
+                    weapons.Add(weapon);
                 }
             }
             catch(Exception e)
@@ -47,8 +48,13 @@ namespace Inventory
             Weapon weapon = new Weapon(id, name, description, icon, price, ItemCategory.Weapon, animation, enchantSlots, type);
 
             weapon.Rank = int.Parse(itemNode.SelectSingleNode("Rank").InnerText);
-            weapon.Recipe = ParseRecipeFromNode(itemNode);
-            weapon.AddEffects(ParseEffectsFromNode(itemNode));
+            XmlNode recipeNode = itemNode.SelectSingleNode("Recipe");
+            if(recipeNode != null)
+                weapon.Recipe = ParseRecipeFromNode(recipeNode);
+
+            XmlNode effectsNode = itemNode.SelectSingleNode("Effects");
+            if(effectsNode != null)
+                weapon.AddEffects(ParseEffectsFromNode(effectsNode));
 
             return weapon;            
         }

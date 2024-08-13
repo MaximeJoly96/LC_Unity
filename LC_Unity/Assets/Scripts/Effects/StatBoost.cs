@@ -2,9 +2,9 @@
 {
     public enum Stat
     {
-        MaxHP,
-        MaxMP,
-        MaxEP,
+        HP,
+        MP,
+        EP,
         Strength,
         Defense,
         Magic,
