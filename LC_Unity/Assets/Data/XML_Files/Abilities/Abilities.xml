@@ -120,4 +120,54 @@
     <TargetEligibility>Enemy</TargetEligibility>
     <Category>Skill</Category>
   </Ability>
+  <Ability>
+    <Id>12</Id>
+    <Name>Sinister Strike</Name>
+    <Description>Deals physical damage to a target. Deals additional damage against targets under negative status ailments.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Any</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>13</Id>
+    <Name>First Aid</Name>
+    <Description>Restores 25% of a target's missing HP. Removes Hemorrhage and Bleed.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Any</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>14</Id>
+    <Name>Camouflage</Name>
+    <Description>Caster cannot be directly targeted by abilities for 2 turns. Damaging a target removes this effect.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>1</Priority>
+    <TargetEligibility>Self</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>15</Id>
+    <Name>Bloody Murder</Name>
+    <Description>Strike a target. Deals bonus damage against targets below 20% HP. If the target dies, restores HP based on damage dealt.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Any</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
+  <Ability>
+    <Id>16</Id>
+    <Name>Curative Fog</Name>
+    <Description>Removes Poison, Blind, Silence, Slow, Hemorrhage and Bleed from the party.</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost Health="0" Mana="0" Essence="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>AllAllies</TargetEligibility>
+    <Category>Skill</Category>
+  </Ability>
 </Abilities>

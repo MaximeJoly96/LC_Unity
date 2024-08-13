@@ -569,4 +569,366 @@
     <Rank>12</Rank>
     <EnchantmentSlots>3</EnchantmentSlots>
   </Item>
+  <Item>
+    <Id>1032</Id>
+    <Name>Blunt Knife</Name>
+    <Description>BluntKnifeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>1</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+  </Item>
+  <Item>
+    <Id>1033</Id>
+    <Name>Dirk</Name>
+    <Description>DirkDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1032" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1034</Id>
+    <Name>Herbalist's Billhook</Name>
+    <Description>HerbalistsBillhookDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <HealingItemsEfficiency Value="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1035</Id>
+    <Name>Poisoned Blade</Name>
+    <Description>PoisonedBladeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="Poison" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1036</Id>
+    <Name>Sneaky Steel</Name>
+    <Description>SneakySteelDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Provocation" Value="-10" />
+    </Effects>
+    <Recipe>
+      <Item Id="1033" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1037</Id>
+    <Name>Venomous Blade</Name>
+    <Description>VenomousBladeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="Poison" />
+      <BoundAbility Id="12" />
+    </Effects>
+    <Recipe>
+      <Item Id="1035" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1038</Id>
+    <Name>Silver Dagger</Name>
+    <Description>SilverDaggerDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Provocation" Value="-10" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1036" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1039</Id>
+    <Name>Alchemist Knife</Name>
+    <Description>AlchemistKnifeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <HealingItemsEfficiency Value="0" />
+      <BoundAbility Id="13" />
+    </Effects>
+    <Recipe>
+      <Item Id="1034" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1040</Id>
+    <Name>Anelace</Name>
+    <Description>AnelaceDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Provocation" Value="-10" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1038" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1041</Id>
+    <Name>Baselard</Name>
+    <Description>BaselardDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Provocation" Value="-30" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1040" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1042</Id>
+    <Name>Badik</Name>
+    <Description>BadikDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <BoundAbility Id="12" />
+      <StatBoost Stat="CritChance" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1037" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1043</Id>
+    <Name>Scholar Steel</Name>
+    <Description>ScholarSteelDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <HealingItemsEfficiency Value="0" />
+      <BoundAbility Id="13" />
+      <StatBoost Stat="Magic" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1039" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1044</Id>
+    <Name>Kris</Name>
+    <Description>KrisDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="HemoI" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1045</Id>
+    <Name>Khanjali</Name>
+    <Description>KhanjaliDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <TargetEffectiveness Type="Undead" Value="30" />
+      <BoundAbility Id="14" />
+    </Effects>
+    <Recipe>
+      <Item Id="1041" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1046</Id>
+    <Name>Spectral Cutlass</Name>
+    <Description>SpectralCutlassDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="HemoI" />
+      <ElementalAffinityModifier Value="-50" />
+    </Effects>
+    <Recipe>
+      <Item Id="1044" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1047</Id>
+    <Name>Cinquedea</Name>
+    <Description>CinquedeaDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <TargetEffectiveness Type="Undead" Value="30" />
+      <BoundAbility Id="14" />
+      <StatBoost Stat="CritDmg" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1045" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1048</Id>
+    <Name>Kalis</Name>
+    <Description>KalisDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="HemoI" />
+      <NegativeStatusBonusDamage Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1044" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1049</Id>
+    <Name>Bad Omens</Name>
+    <Description>BadOmensDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <InflictStatus Value="Silence" />
+      <BoundAbility Id="12" />
+      <BoundAbility Id="15" />
+      <StatBoost Stat="CritChance" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1042" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1050</Id>
+    <Name>Kila</Name>
+    <Description>KilaDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <HealingItemsEfficiency Value="0" />
+      <BoundAbility Id="13" />
+      <BoundAbility Id="16" />
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1043" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1051</Id>
+    <Name>Yoroi Doshi</Name>
+    <Description>YoroiDoshiDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <TargetEffectiveness Type="Undead" Value="30" />
+      <BoundAbility Id="14" />
+      <StatBoost Stat="CritDmg" Value="40" />
+    </Effects>
+    <Recipe>
+      <Item Id="1045" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1052</Id>
+    <Name>KillingDoll</Name>
+    <Description>KillingDollDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+  </Item>
 </Items>

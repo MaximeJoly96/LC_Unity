@@ -85,6 +85,35 @@ namespace Inventory
                         Value = (Actors.EffectType)Enum.Parse(typeof(Actors.EffectType), effectNode.Attributes["Value"].InnerText)
                     };
                 }
+                else if(name.Equals(typeof(HealingItemsEfficiency).Name))
+                {
+                    effect = new HealingItemsEfficiency
+                    {
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
+                else if (name.Equals(typeof(TargetEffectiveness).Name))
+                {
+                    effect = new TargetEffectiveness
+                    {
+                        Type = (TargetTribe)Enum.Parse(typeof(TargetTribe), effectNode.Attributes["Type"].InnerText),
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
+                else if (name.Equals(typeof(ElementalAffinityModifier).Name))
+                {
+                    effect = new ElementalAffinityModifier
+                    {
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
+                else if (name.Equals(typeof(NegativeStatusBonusDamage).Name))
+                {
+                    effect = new NegativeStatusBonusDamage
+                    {
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
 
                 if (effect != null)
                     effects.Add(effect);
