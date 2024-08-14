@@ -814,7 +814,7 @@
     <Effects>
       <InflictStatus Value="BleedI" />
       <InflictStatus Value="HemoI" />
-      <ElementalAffinityModifier Value="-50" />
+      <ElementalAffinityModifier Value="-50" Element="Darkness" />
     </Effects>
     <Recipe>
       <Item Id="1044" Quantity="1" />
@@ -1495,6 +1495,446 @@
     </Effects>
     <Recipe>
       <Item Id="1081" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1085</Id>
+    <Name>Rod of Wisdom</Name>
+    <Description>RodOfWisdomDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="10" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1086</Id>
+    <Name>Cleric's Scepter</Name>
+    <Description>ClercisScepterDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="Healing" Value="25" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1087</Id>
+    <Name>Apprentice Gift</Name>
+    <Description>ApprenticeGiftDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1088</Id>
+    <Name>Elemental Rod</Name>
+    <Description>ElementalRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="15" />
+      <ElementalAbilitiesCostReduction Element="All" Value="20" />
+    </Effects>
+    <Recipe>
+      <Item Id="1088" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1089</Id>
+    <Name>Protective Scepter</Name>
+    <Description>ProtectiveScepterDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="Healing" Value="25" />
+      <ElementalAbilitiesCostReduction Element="Healing" Value="20" />
+    </Effects>
+    <Recipe>
+      <Item Id="1086" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1090</Id>
+    <Name>Essence Rod</Name>
+    <Description>EssenceRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <BoundAbility Id="26" />
+    </Effects>
+    <Recipe>
+      <Item Id="1087" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1091</Id>
+    <Name>Ice Stick</Name>
+    <Description>IceStickDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="20" />
+      <ElementalAbilitiesCostReduction Element="All" Value="25" />
+      <ElementalAffinityExploitManaRefund Element="Ice" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1088" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1092</Id>
+    <Name>Flame Stick</Name>
+    <Description>FlameStickDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="20" />
+      <ElementalAbilitiesCostReduction Element="All" Value="25" />
+      <ElementalAffinityExploitManaRefund Element="Fire" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1088" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1093</Id>
+    <Name>Thunderstruck Rod</Name>
+    <Description>ThunderstruckRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="20" />
+      <ElementalAbilitiesCostReduction Element="All" Value="25" />
+      <ElementalAffinityExploitManaRefund Element="Thunder" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1088" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1094</Id>
+    <Name>Tidal Rod</Name>
+    <Description>TidalRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="20" />
+      <ElementalAbilitiesCostReduction Element="All" Value="25" />
+      <ElementalAffinityExploitManaRefund Element="Water" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1088" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1095</Id>
+    <Name>Glass Scepter</Name>
+    <Description>GlassScepterDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="Healing" Value="25" />
+      <ElementalAbilitiesCostReduction Element="Healing" Value="20" />
+      <BoundAbility Id="27" />
+    </Effects>
+    <Recipe>
+      <Item Id="1089" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1096</Id>
+    <Name>Darkbark Rod</Name>
+    <Description>DarkbarkRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <SelfStatus Value="ManaRegen" />
+      <BoundAbility Id="26" />
+    </Effects>
+    <Recipe>
+      <Item Id="1090" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1097</Id>
+    <Name>Gust Cane</Name>
+    <Description>GustCaneDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="30" />
+      <ElementalAbilitiesCostReduction Element="All" Value="35" />
+      <ElementalAffinityExploitManaRefund Element="Wind" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1088" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1098</Id>
+    <Name>Boulder Rod</Name>
+    <Description>BoulderRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="30" />
+      <ElementalAbilitiesCostReduction Element="All" Value="35" />
+      <ElementalAffinityExploitManaRefund Element="Earth" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1088" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1099</Id>
+    <Name>Lumina</Name>
+    <Description>LuminaDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="30" />
+      <ElementalAbilitiesCostReduction Element="All" Value="35" />
+      <ElementalAffinityExploitManaRefund Element="Holy" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1088" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1100</Id>
+    <Name>Obscuro</Name>
+    <Description>ObscuroDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="30" />
+      <ElementalAbilitiesCostReduction Element="All" Value="35" />
+      <ElementalAffinityExploitManaRefund Element="Darkness" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1088" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1101</Id>
+    <Name>Guardian Scepter</Name>
+    <Description>GuardianScepterDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="Healing" Value="35" />
+      <ElementalAbilitiesCostReduction Element="Healing" Value="40" />
+      <BoundAbility Id="27" />
+      <StatusImmunity Value="Silence" />
+    </Effects>
+    <Recipe>
+      <Item Id="1095" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1102</Id>
+    <Name>Imbued Rod</Name>
+    <Description>ImbuedRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <SelfStatus Value="ManaRegen" />
+      <BoundAbility Id="26" />
+    </Effects>
+    <Recipe>
+      <Item Id="1095" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1103</Id>
+    <Name>The Lifestream</Name>
+    <Description>TheLifestreamDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <SelfStatus Value="ManaRegen" />
+      <BoundAbility Id="26" />
+      <BoundAbility Id="28" />
+    </Effects>
+    <Recipe>
+      <Item Id="1102" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1104</Id>
+    <Name>Ivory Cane</Name>
+    <Description>IvoryCaneDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="Healing" Value="50" />
+      <ElementalAbilitiesCostReduction Element="Healing" Value="40" />
+      <BoundAbility Id="27" />
+      <StatusImmunity Value="Silence" />
+      <BoundAbility Id="29" />
+    </Effects>
+    <Recipe>
+      <Item Id="1101" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1105</Id>
+    <Name>Scepter of the Archmage</Name>
+    <Description>ScepterOfTheArchmageDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="Healing" Value="50" />
+      <ElementalAbilitiesCostReduction Element="Healing" Value="50" />
+      <BoundAbility Id="27" />
+      <StatusImmunity Value="Silence" />
+      <StatusImmunity Value="SlowI" />
+      <BoundAbility Id="29" />
+    </Effects>
+    <Recipe>
+      <Item Id="1104" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1106</Id>
+    <Name>Ganymede's Embrace</Name>
+    <Description>GanymedesEmbraceDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <SelfStatus Value="ManaRegen" />
+      <BoundAbility Id="26" />
+      <BoundAbility Id="28" />
+      <ElementalAffinityModifier Value="-100" Element="Earth" />
+      <ElementalAffinityModifier Value="-100" Element="Wind" />
+    </Effects>
+    <Recipe>
+      <Item Id="1103" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1107</Id>
+    <Name>Gaia's Specter</Name>
+    <Description>GaiasSpecterDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scepter</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="All" Value="50" />
+      <ElementalAbilitiesCostReduction Element="All" Value="50" />
+      <ElementalAffinityExploitManaRefund Element="All" Value="0" />
+      <ElementalAffinityExploitSelfStatus Element="All" Value="Faith" />
+    </Effects>
+    <Recipe>
+      <Item Id="1091" Quantity="1" />
+      <Item Id="1092" Quantity="1" />
+      <Item Id="1093" Quantity="1" />
+      <Item Id="1094" Quantity="1" />
+      <Item Id="1097" Quantity="1" />
+      <Item Id="1098" Quantity="1" />
+      <Item Id="1099" Quantity="1" />
+      <Item Id="1100" Quantity="1" />
     </Recipe>
   </Item>
 </Items>

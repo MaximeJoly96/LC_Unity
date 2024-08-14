@@ -14,6 +14,10 @@
         Silence,
         Shell,
         Protect,
+        Regen,
+        ManaRegen,
+        Bravery,
+        Faith,
         Grounded
     }
 

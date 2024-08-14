@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Globalization;
 using Effects;
+using Actors;
 
 namespace Inventory
 {
@@ -34,14 +35,14 @@ namespace Inventory
                 string name = effectNode.Name;
                 IEffect effect = null;
 
-                if(name.Equals(typeof(BoundAbility).Name))
+                if (name.Equals(typeof(BoundAbility).Name))
                 {
                     effect = new BoundAbility
                     {
                         AbilityId = int.Parse(effectNode.Attributes["Id"].InnerText)
                     };
                 }
-                else if(name.Equals(typeof(CostReduction).Name))
+                else if (name.Equals(typeof(CostReduction).Name))
                 {
                     effect = new CostReduction
                     {
@@ -49,28 +50,28 @@ namespace Inventory
                         Value = int.Parse(effectNode.Attributes["Value"].InnerText)
                     };
                 }
-                else if(name.Equals(typeof(Dispel).Name))
+                else if (name.Equals(typeof(Dispel).Name))
                 {
                     effect = new Dispel
                     {
                         Value = (Actors.EffectType)Enum.Parse(typeof(Actors.EffectType), effectNode.Attributes["Value"].InnerText)
                     };
                 }
-                else if(name.Equals(typeof(InflictStatus).Name))
+                else if (name.Equals(typeof(InflictStatus).Name))
                 {
                     effect = new InflictStatus
                     {
                         Value = (Actors.EffectType)Enum.Parse(typeof(Actors.EffectType), effectNode.Attributes["Value"].InnerText)
                     };
                 }
-                else if(name.Equals(typeof(SelfStatus).Name))
+                else if (name.Equals(typeof(SelfStatus).Name))
                 {
                     effect = new SelfStatus
                     {
                         Value = (Actors.EffectType)Enum.Parse(typeof(Actors.EffectType), effectNode.Attributes["Value"].InnerText)
                     };
                 }
-                else if(name.Equals(typeof(StatBoost).Name))
+                else if (name.Equals(typeof(StatBoost).Name))
                 {
                     effect = new StatBoost
                     {
@@ -78,14 +79,14 @@ namespace Inventory
                         Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
                     };
                 }
-                else if(name.Equals(typeof(StatusImmunity).Name))
+                else if (name.Equals(typeof(StatusImmunity).Name))
                 {
                     effect = new StatusImmunity
                     {
                         Value = (Actors.EffectType)Enum.Parse(typeof(Actors.EffectType), effectNode.Attributes["Value"].InnerText)
                     };
                 }
-                else if(name.Equals(typeof(HealingItemsEfficiency).Name))
+                else if (name.Equals(typeof(HealingItemsEfficiency).Name))
                 {
                     effect = new HealingItemsEfficiency
                     {
@@ -104,7 +105,8 @@ namespace Inventory
                 {
                     effect = new ElementalAffinityModifier
                     {
-                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture),
+                        Element = (Element)Enum.Parse(typeof(Element), effectNode.Attributes["Element"].InnerText)
                     };
                 }
                 else if (name.Equals(typeof(NegativeStatusBonusDamage).Name))
@@ -128,6 +130,44 @@ namespace Inventory
                     {
                         Threshold = float.Parse(effectNode.Attributes["Threshold"].InnerText, CultureInfo.InvariantCulture)
                     };
+                }
+                else if (name.Equals(typeof(BonusElementalDamage).Name))
+                {
+                    effect = new BonusElementalDamage();
+                    string elementValue = effectNode.Attributes["Element"].InnerText;
+                    if (elementValue == "All")
+                        (effect as BonusElementalDamage).AddAll();
+                    else
+                        (effect as BonusElementalDamage).AddElement((Element)Enum.Parse(typeof(Element), elementValue));
+                }
+                else if (name.Equals(typeof(ElementalAbilitiesCostReduction).Name))
+                {
+                    effect = new ElementalAbilitiesCostReduction();
+                    string elementValue = effectNode.Attributes["Element"].InnerText;
+                    if (elementValue == "All")
+                        (effect as ElementalAbilitiesCostReduction).AddAll();
+                    else
+                        (effect as ElementalAbilitiesCostReduction).AddElement((Element)Enum.Parse(typeof(Element), elementValue));
+                }
+                else if (name.Equals(typeof(ElementalAffinityExploitManaRefund).Name))
+                {
+                    effect = new ElementalAffinityExploitManaRefund();
+                    string elementValue = effectNode.Attributes["Element"].InnerText;
+                    if (elementValue == "All")
+                        (effect as ElementalAffinityExploitManaRefund).AddAll();
+                    else
+                        (effect as ElementalAffinityExploitManaRefund).AddElement((Element)Enum.Parse(typeof(Element), elementValue));
+                }
+                else if (name.Equals(typeof(ElementalAffinityExploitSelfStatus).Name))
+                {
+                    effect = new ElementalAffinityExploitSelfStatus();
+                    string elementValue = effectNode.Attributes["Element"].InnerText;
+                    if (elementValue == "All")
+                        (effect as ElementalAffinityExploitSelfStatus).AddAll();
+                    else
+                        (effect as ElementalAffinityExploitSelfStatus).AddElement((Element)Enum.Parse(typeof(Element), elementValue));
+
+                    (effect as ElementalAffinityExploitSelfStatus).Value = (EffectType)Enum.Parse(typeof(EffectType), effectNode.Attributes["Value"].InnerXml);
                 }
 
                 if (effect != null)
