@@ -10,6 +10,8 @@
         BreakI,
         MagicBreakI,
         SlowI,
+        SlowII,
+        SlowIII,
         Blind,
         Silence,
         Shell,

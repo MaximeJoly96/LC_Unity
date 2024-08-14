@@ -169,6 +169,37 @@ namespace Inventory
 
                     (effect as ElementalAffinityExploitSelfStatus).Value = (EffectType)Enum.Parse(typeof(EffectType), effectNode.Attributes["Value"].InnerXml);
                 }
+                else if (name.Equals(typeof(CastPositiveStatusDurationExtension).Name))
+                {
+                    effect = new CastPositiveStatusDurationExtension
+                    {
+                        Turns = int.Parse(effectNode.Attributes["Turns"].InnerText)
+                    };
+                }
+                else if (name.Equals(typeof(MagicIgnoresDefenseStat).Name))
+                {
+                    effect = new MagicIgnoresDefenseStat
+                    {
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture),
+                        Stat = (Stat)Enum.Parse(typeof(Stat), effectNode.Attributes["Stat"].InnerText)
+                    };
+                }
+                else if (name.Equals(typeof(RefillOnParry).Name))
+                {
+                    effect = new RefillOnParry
+                    {
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture),
+                        Stat = (Stat)Enum.Parse(typeof(Stat), effectNode.Attributes["Stat"].InnerText)
+                    };
+                }
+                else if (name.Equals(typeof(RefundsOnKill).Name))
+                {
+                    effect = new RefundsOnKill
+                    {
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture),
+                        Stat = (Stat)Enum.Parse(typeof(Stat), effectNode.Attributes["Stat"].InnerText)
+                    };
+                }
 
                 if (effect != null)
                     effects.Add(effect);

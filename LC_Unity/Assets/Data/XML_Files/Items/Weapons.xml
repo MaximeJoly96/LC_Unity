@@ -1937,4 +1937,272 @@
       <Item Id="1100" Quantity="1" />
     </Recipe>
   </Item>
+  <Item>
+    <Id>1108</Id>
+    <Name>Cypress Rod</Name>
+    <Description>CypressRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+  </Item>
+  <Item>
+    <Id>1109</Id>
+    <Name>Wizard's Staff</Name>
+    <Description>WizardsStaffDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+  </Item>
+  <Item>
+    <Id>1110</Id>
+    <Name>Cleric's Cane</Name>
+    <Description>ClericsCaneDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+  </Item>
+  <Item>
+    <Id>1111</Id>
+    <Name>Stick of Truth</Name>
+    <Description>StickOfTruthDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatusImmunity Value="Silence" />
+    </Effects>
+    <Recipe>
+      <Item Id="1109" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1112</Id>
+    <Name>Enchanter's Rod</Name>
+    <Description>EnchantersRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <CastPositiveStatusDurationExtension Turns="2" />
+    </Effects>
+    <Recipe>
+      <Item Id="1110" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1113</Id>
+    <Name>Cedar Rod</Name>
+    <Description>CedarRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <StatBoost Stat="Parry" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1108" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1114</Id>
+    <Name>Limbo Stick</Name>
+    <Description>LimboStickDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <CostReduction Stat="MP" Value="10" />
+      <BoundAbility Id="30" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1115</Id>
+    <Name>Void Staff</Name>
+    <Description>VoidStaffDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <CostReduction Stat="MP" Value="15" />
+      <BoundAbility Id="30" />
+      <BoundAbility Id="31" />
+    </Effects>
+    <Recipe>
+      <Item Id="1114" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1116</Id>
+    <Name>Taxus Rod</Name>
+    <Description>TaxusRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <StatBoost Stat="Parry" Value="0" />
+      <RefillOnParry Stat="MP" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1113" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1117</Id>
+    <Name>Rod of Ages</Name>
+    <Description>RodOfAgesDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="HP" Value="0" />
+      <StatBoost Stat="MP" Value="0" />
+      <StatusImmunity Value="Silence" />
+      <InflictStatus Value="SlowIII" />
+    </Effects>
+    <Recipe>
+      <Item Id="1111" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1118</Id>
+    <Name>Staff of the Magi</Name>
+    <Description>StaffOfTheMagiDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatusImmunity Value="Silence" />
+      <MagicIgnoresDefenseStat Stat="MagicDefense" Value="40" />
+    </Effects>
+    <Recipe>
+      <Item Id="1111" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1119</Id>
+    <Name>Prunus Rod</Name>
+    <Description>PrunusRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="32" />
+      <RefillOnParry Stat="MP" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1116" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1120</Id>
+    <Name>Princess Guard</Name>
+    <Description>PrincessGuardDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="HP" Value="0" />
+      <StatBoost Stat="MP" Value="0" />
+      <StatusImmunity Value="Silence" />
+      <InflictStatus Value="SlowIII" />
+      <CastPositiveStatusDurationExtension Turns="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1112" Quantity="1" />
+      <Item Id="1117" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1121</Id>
+    <Name>Aether Staff</Name>
+    <Description>AetherStaffDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatusImmunity Value="Silence" />
+      <MagicIgnoresDefenseStat Stat="MagicDefense" Value="40" />
+      <RefundsOnKill Stat="MP" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1118" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1122</Id>
+    <Name>Old Oak Rod</Name>
+    <Description>OldOakRodDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <StatBoost Stat="Defense" Value="0" />
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="32" />
+      <RefillOnParry Stat="MP" Value="0" />
+      <BoundAbility Id="33" />
+    </Effects>
+    <Recipe>
+      <Item Id="1119" Quantity="1" />
+    </Recipe>
+  </Item>
 </Items>
