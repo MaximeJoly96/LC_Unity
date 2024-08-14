@@ -200,6 +200,28 @@ namespace Inventory
                         Stat = (Stat)Enum.Parse(typeof(Stat), effectNode.Attributes["Stat"].InnerText)
                     };
                 }
+                else if (name.Equals(typeof(DegressiveRangeDamage).Name))
+                {
+                    effect = new DegressiveRangeDamage()
+                    {
+                        MinDamage = float.Parse(effectNode.Attributes["MinDamage"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
+                else if (name.Equals(typeof(UndamagedTargetBonusDamage).Name))
+                {
+                    effect = new UndamagedTargetBonusDamage()
+                    {
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
+                else if (name.Equals(typeof(AttacksIgnoreDefenseStat).Name))
+                {
+                    effect = new AttacksIgnoreDefenseStat()
+                    {
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture),
+                        Stat = (Stat)Enum.Parse(typeof(Stat), effectNode.Attributes["Stat"].InnerText)
+                    };
+                }
 
                 if (effect != null)
                     effects.Add(effect);

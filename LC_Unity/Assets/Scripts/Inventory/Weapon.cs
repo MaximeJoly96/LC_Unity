@@ -23,6 +23,8 @@
         public int Animation { get; protected set; }
         public WeaponType Type { get; protected set; }
         public int Rank { get; set; }
+        public float ProjectileSpeed { get; set; }
+        public int Range { get; set; }
 
         public Weapon(int id, string name, string description, int icon, int price, ItemCategory category, int animation, int enchantmentSlots, WeaponType type) : 
             base(id, name, description, icon, price, category, enchantmentSlots)

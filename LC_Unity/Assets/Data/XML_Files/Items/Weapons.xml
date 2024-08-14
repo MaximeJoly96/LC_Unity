@@ -2407,4 +2407,472 @@
       <Item Id="1133" Quantity="1" />
     </Recipe>
   </Item>
+  <Item>
+    <Id>1135</Id>
+    <Name>Recurve Bow</Name>
+    <Description>RecurveBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>1</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1000</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1136</Id>
+    <Name>Longbow</Name>
+    <Description>LongbowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>1</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>2000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1137</Id>
+    <Name>Training Bow</Name>
+    <Description>TrainingBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>1</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1138</Id>
+    <Name>Composite Bow</Name>
+    <Description>CompositeBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1137" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="CritDmg" Value="0" />
+    </Effects>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1139</Id>
+    <Name>Hunter's Bow</Name>
+    <Description>HuntersBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1135" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="50" />
+    </Effects>
+    <Range>1000</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1140</Id>
+    <Name>Trueaim Crescent</Name>
+    <Description>TrueaimCrescentDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+    </Effects>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1141</Id>
+    <Name>Bow of the Battleborns</Name>
+    <Description>BowOfTheBattlebornsDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1136" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="50" />
+    </Effects>
+    <Range>2000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1142</Id>
+    <Name>Compound Bow</Name>
+    <Description>CompoundBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1139" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="50" />
+      <DegressiveRangeDamage MinDamage="50" />
+    </Effects>
+    <Range>1000</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1143</Id>
+    <Name>Artemis's Bow</Name>
+    <Description>ArtemissBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1140" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1144</Id>
+    <Name>Scorched Bow</Name>
+    <Description>ScorchedBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <ElementalAffinityModifier Element="Fire" Value="-40" />
+      <ElementalAffinityModifier Element="Ice" Value="25" />
+    </Effects>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1145</Id>
+    <Name>Silver Bow</Name>
+    <Description>SilverBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1138" Quantity="1" />
+      <Item Id="1143" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1146</Id>
+    <Name>Bow of the Steppes</Name>
+    <Description>BowOfTheSteppesDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="50" />
+      <DegressiveRangeDamage MinDamage="50" />
+    </Effects>
+    <Recipe>
+      <Item Id="1142" Quantity="1" />
+      <Item Id="1141" Quantity="1" />
+    </Recipe>
+    <Range>2000</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1147</Id>
+    <Name>Gakgung</Name>
+    <Description>GakgungDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+    </Effects>
+    <Recipe>
+      <Item Id="1135" Quantity="1" />
+      <Item Id="1140" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>14</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1148</Id>
+    <Name>The Heart Piercer</Name>
+    <Description>TheHeartPiercerDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <ElementalAffinityModifier Element="Fire" Value="-40" />
+      <ElementalAffinityModifier Element="Ice" Value="25" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1144" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1149</Id>
+    <Name>Ivory Bow</Name>
+    <Description>IvoryBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1145" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1150</Id>
+    <Name>Pandarus Bow</Name>
+    <Description>PandarusBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+      <SelfStatus Value="Bravery" />
+    </Effects>
+    <Recipe>
+      <Item Id="1143" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1151</Id>
+    <Name>Gallileic Bow</Name>
+    <Description>GallileicBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="HemoI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1147" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>14</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1152</Id>
+    <Name>The Sunrise</Name>
+    <Description>TheSunriseDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <DegressiveRangeDamage MinDamage="60" />
+      <ElementalAffinityModifier Element="Fire" Value="-50" />
+      <ElementalAffinityModifier Element="Ice" Value="20" />
+      <UndamagedTargetBonusDamage Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1146" Quantity="1" />
+      <Item Id="1148" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1153</Id>
+    <Name>The Cloud Piercer</Name>
+    <Description>TheCloudPiercerDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+      <SelfStatus Value="Bravery" />
+      <StatusImmunity Value="Blind" />
+    </Effects>
+    <Recipe>
+      <Item Id="1150" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1154</Id>
+    <Name>The Silent Arrow</Name>
+    <Description>TheSilentArrowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <DegressiveRangeDamage MinDamage="60" />
+      <StatBoost Stat="Accuracy" Value="100" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1146" Quantity="1" />
+      <Item Id="1149" Quantity="1" />
+    </Recipe>
+    <Range>2000</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1155</Id>
+    <Name>Epirus Bow</Name>
+    <Description>EpirusBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="HemoI" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+      <SelfStatus Value="Bravery" />
+    </Effects>
+    <Recipe>
+      <Item Id="1150" Quantity="1" />
+      <Item Id="1151" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1156</Id>
+    <Name>Crystal Bow</Name>
+    <Description>CrystalBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+      <AttacksIgnoreDefenseStat Stat="Defense" Value="40" />
+    </Effects>
+    <Recipe>
+      <Item Id="1149" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1157</Id>
+    <Name>Dark Angel Bow</Name>
+    <Description>DarkAngelBowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <DegressiveRangeDamage MinDamage="60" />
+      <ElementalAffinityModifier Element="Fire" Value="-50" />
+      <ElementalAffinityModifier Element="Holy" Value="-30" />
+      <UndamagedTargetBonusDamage Value="100" />
+    </Effects>
+    <Recipe>
+      <Item Id="1152" Quantity="1" />
+    </Recipe>
+    <Range>1000</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1158</Id>
+    <Name>Sagittarius</Name>
+    <Description>SagittariusDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Bow</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>2000</Range>
+    <ProjectileSpeed>14</ProjectileSpeed>
+  </Item>
 </Items>

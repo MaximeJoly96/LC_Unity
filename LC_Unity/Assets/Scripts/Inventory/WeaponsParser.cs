@@ -56,6 +56,14 @@ namespace Inventory
             if(effectsNode != null)
                 weapon.AddEffects(ParseEffectsFromNode(effectsNode));
 
+            XmlNode projSpeedNode = itemNode.SelectSingleNode("ProjectileSpeed");
+            if(projSpeedNode != null)
+                weapon.ProjectileSpeed = float.Parse(projSpeedNode.InnerText, CultureInfo.InvariantCulture);
+
+            XmlNode rangeNode = itemNode.SelectSingleNode("Range");
+            if (rangeNode != null)
+                weapon.Range = int.Parse(rangeNode.InnerText);
+
             return weapon;            
         }
     }
