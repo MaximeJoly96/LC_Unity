@@ -922,11 +922,318 @@
   </Item>
   <Item>
     <Id>1052</Id>
-    <Name>KillingDoll</Name>
+    <Name>Killing Doll</Name>
     <Description>KillingDollDescription</Description>
     <Icon>0</Icon>
     <Price>10</Price>
     <Type>Dagger</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+  </Item>
+  <Item>
+    <Id>1053</Id>
+    <Name>Iron Axe</Name>
+    <Description>IronAxeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>1</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+  </Item>
+  <Item>
+    <Id>1054</Id>
+    <Name>Steel Axe</Name>
+    <Description>SteelAxeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1053" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1055</Id>
+    <Name>Splitting Axe</Name>
+    <Description>SplittingAxeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1054" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1056</Id>
+    <Name>Sagaris</Name>
+    <Description>SagarisDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatis Value="BleedI" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1057</Id>
+    <Name>Tomahawk</Name>
+    <Description>TomahawkDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="SlowI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1055" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1058</Id>
+    <Name>Battle Axe</Name>
+    <Description>BattleAxeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="10" />
+    </Effects>
+    <Recipe>
+      <Item Id="1055" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1059</Id>
+    <Name>Lumberjack's Dream</Name>
+    <Description>LumberjacksDreamDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatis Value="BleedI" />
+      <StatBoost Stat="CritChance" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1056" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1060</Id>
+    <Name>Ono</Name>
+    <Description>OnoDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="HemoI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1057" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1061</Id>
+    <Name>Francisca</Name>
+    <Description>FranciscaDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="17" />
+    </Effects>
+    <Recipe>
+      <Item Id="1056" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1062</Id>
+    <Name>The Cleaver</Name>
+    <Description>TheCleaverDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <BoundAbility Id="18" />
+    </Effects>
+    <Recipe>
+      <Item Id="1059" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1063</Id>
+    <Name>The Crusher</Name>
+    <Description>TheCrusherDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="19" />
+    </Effects>
+    <Recipe>
+      <Item Id="1058" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1064</Id>
+    <Name>The Sanguine</Name>
+    <Description>TheSanguineDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <DrainFromDamage Stat="HP" Value="20" />
+      <BoundAbility Id="20" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1065</Id>
+    <Name>Parashu</Name>
+    <Description>ParashuDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="17" />
+      <StatBoost Stat="Agility" Value="0" />
+      <StatBoost Stat="Precision" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1061" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1066</Id>
+    <Name>Yue</Name>
+    <Description>YueDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="HemoI" />
+      <BoundAbility Id="21" />
+    </Effects>
+    <Recipe>
+      <Item Id="1060" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1067</Id>
+    <Name>Golden Axe</Name>
+    <Description>GoldenAxeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="17" />
+      <BoundAbility Id="22" />
+      <StatBoost Stat="Agility" Value="0" />
+      <StatBoost Stat="Precision" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1065" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1068</Id>
+    <Name>Warchief's Axe</Name>
+    <Description>WarchiefsAxeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <BoundAbility Id="18" />
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="19" />
+    </Effects>
+    <Recipe>
+      <Item Id="1062" Quantity="1" />
+      <Item Id="1063" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1069</Id>
+    <Name>Warlord's Steel</Name>
+    <Description>WarlordsSteelDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="19" />
+      <DrainFromDamage Stat="HP" Value="20" />
+      <BoundAbility Id="20" />
+    </Effects>
+    <Recipe>
+      <Item Id="1063" Quantity="1" />
+      <Item Id="1064" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1070</Id>
+    <Name>Blood Angel</Name>
+    <Description>BloodAngelDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
     <Animation>0</Animation>
     <Rank>12</Rank>
     <EnchantmentSlots>3</EnchantmentSlots>

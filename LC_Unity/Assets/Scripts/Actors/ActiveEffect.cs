@@ -13,7 +13,8 @@
         Blind,
         Silence,
         Shell,
-        Protect
+        Protect,
+        Grounded
     }
 
     public class ActiveEffect

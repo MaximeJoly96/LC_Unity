@@ -114,6 +114,14 @@ namespace Inventory
                         Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
                     };
                 }
+                else if (name.Equals(typeof(DrainFromDamage).Name))
+                {
+                    effect = new DrainFromDamage
+                    {
+                        Stat = (Stat)Enum.Parse(typeof(Stat), effectNode.Attributes["Stat"].InnerText),
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
 
                 if (effect != null)
                     effects.Add(effect);

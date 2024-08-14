@@ -15,7 +15,8 @@
         CritChance,
         CritDmg,
         Evasion,
-        Provocation
+        Provocation,
+        Parry
     }
 
     public class StatBoost : IEffect
