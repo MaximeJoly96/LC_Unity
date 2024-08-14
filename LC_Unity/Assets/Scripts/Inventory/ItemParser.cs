@@ -122,6 +122,13 @@ namespace Inventory
                         Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
                     };
                 }
+                else if (name.Equals(typeof(HpThresholdBonusDamage).Name))
+                {
+                    effect = new HpThresholdBonusDamage
+                    {
+                        Threshold = float.Parse(effectNode.Attributes["Threshold"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
 
                 if (effect != null)
                     effects.Add(effect);

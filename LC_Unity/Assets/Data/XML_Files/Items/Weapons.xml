@@ -1238,4 +1238,263 @@
     <Rank>12</Rank>
     <EnchantmentSlots>3</EnchantmentSlots>
   </Item>
+  <Item>
+    <Id>1071</Id>
+    <Name>Steel Claws</Name>
+    <Description>SteelClawsDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+  </Item>
+  <Item>
+    <Id>1072</Id>
+    <Name>Tiger's Fury</Name>
+    <Description>TigersFuryDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1071" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1073</Id>
+    <Name>Soul of the Wolf</Name>
+    <Description>SoulOfTheWolfDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BoundAbility Id="23" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1074</Id>
+    <Name>Deadly Paws</Name>
+    <Description>DeadlyPawsDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="CritChance" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1072" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1075</Id>
+    <Name>Silver Fangs</Name>
+    <Description>SilverFangsDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Strength" Value="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1076</Id>
+    <Name>Torments</Name>
+    <Description>TormentsDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="Silence" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1077</Id>
+    <Name>The Gloves</Name>
+    <Description>TheGlovesDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Strength" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1074" Quantity="1" />
+      <Item Id="1075" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1078</Id>
+    <Name>Night Prawler</Name>
+    <Description>NightPrawlerDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BoundAbility Id="23" />
+      <StatBoost Stat="CritChance" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1074" Quantity="1" />
+      <Item Id="1073" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1078</Id>
+    <Name>Night Prawler</Name>
+    <Description>NightPrawlerDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BoundAbility Id="23" />
+      <StatBoost Stat="CritChance" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1074" Quantity="1" />
+      <Item Id="1073" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1079</Id>
+    <Name>Snake Bite</Name>
+    <Description>SnakeBiteDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Silence" />
+    </Effects>
+    <Recipe>
+      <Item Id="1076" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1080</Id>
+    <Name>Feline Wrath</Name>
+    <Description>FelineWrathDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Strength" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <BoundAbility Id="24" />
+    </Effects>
+    <Recipe>
+      <Item Id="1077" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1081</Id>
+    <Name>Moonfang</Name>
+    <Description>MoonfangDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="CritChance" Value="0" />
+      <BoundAbility Id="23" />
+      <HpThresholdBonusDamage Threshold="40" />
+    </Effects>
+    <Recipe>
+      <Item Id="1078" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1082</Id>
+    <Name>Hands of Doom</Name>
+    <Description>HandsOfDoomDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Silence" />
+      <NegativeStatusBonusDamage Value="30" />
+    </Effects>
+    <Recipe>
+      <Item Id="1079" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1083</Id>
+    <Name>Crystal Claws</Name>
+    <Description>CrystalClawsDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Strength" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <BoundAbility Id="24" />
+      <BoundAbility Id="25" />
+    </Effects>
+    <Recipe>
+      <Item Id="1080" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1084</Id>
+    <Name>Astral Fangs</Name>
+    <Description>AstralFangsDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Claws</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="CritChance" Value="0" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <BoundAbility Id="23" />
+      <HpThresholdBonusDamage Threshold="40" />
+    </Effects>
+    <Recipe>
+      <Item Id="1081" Quantity="1" />
+    </Recipe>
+  </Item>
 </Items>

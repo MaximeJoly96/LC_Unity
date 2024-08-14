@@ -7,7 +7,7 @@
         Spear,
         Axe,
         Bow,
-        Claw,
+        Claws,
         Scepter,
         Staff,
         Grimoire,
