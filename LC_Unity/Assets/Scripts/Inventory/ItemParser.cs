@@ -263,6 +263,23 @@ namespace Inventory
                         Value = int.Parse(effectNode.Attributes["Value"].InnerText)
                     };
                 }
+                else if (name.Equals(typeof(ConeAttackWithBullets).Name))
+                {
+                    effect = new ConeAttackWithBullets()
+                    {
+                        Angle = float.Parse(effectNode.Attributes["Angle"].InnerText, CultureInfo.InvariantCulture),
+                        Bullets = int.Parse(effectNode.Attributes["Bullets"].InnerText),
+                        DamageReduction = float.Parse(effectNode.Attributes["DamageReduction"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
+                else if (name.Equals(typeof(PiercingProjectile).Name))
+                {
+                    effect = new PiercingProjectile()
+                    {
+                        DamageReduction = float.Parse(effectNode.Attributes["DamageReduction"].InnerText, CultureInfo.InvariantCulture),
+                        MinDamage = float.Parse(effectNode.Attributes["MinDamage"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
 
                 if (effect != null)
                     effects.Add(effect);

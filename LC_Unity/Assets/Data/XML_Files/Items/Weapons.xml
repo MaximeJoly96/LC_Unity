@@ -3727,4 +3727,184 @@
       <Item Id="1203" Quantity="1" />
     </Recipe>
   </Item>
+  <Item>
+    <Id>1206</Id>
+    <Name>Arquebus</Name>
+    <Description>ArquebusDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Firearm</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1200</Range>
+    <ProjectileSpeed>2500</ProjectileSpeed>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="-20" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1207</Id>
+    <Name>Blunderbluss</Name>
+    <Description>BlunderblussDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Firearm</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>700</Range>
+    <ProjectileSpeed>2500</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1208</Id>
+    <Name>Musket</Name>
+    <Description>MusketDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Firearm</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1200</Range>
+    <ProjectileSpeed>2500</ProjectileSpeed>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="-20" />
+      <InflictStatus Value="BreakI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1206" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1209</Id>
+    <Name>Huochong</Name>
+    <Description>HuochongDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Firearm</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1200</Range>
+    <ProjectileSpeed>2500</ProjectileSpeed>
+    <Effects>
+      <AreaOfEffectAsSecondaryDamage Element="Neutral" BaseDamage="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1210</Id>
+    <Name>Tanegashima</Name>
+    <Description>TanegashimaDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Firearm</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>800</Range>
+    <ProjectileSpeed>2000</ProjectileSpeed>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1207" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1211</Id>
+    <Name>Lancaster</Name>
+    <Description>LancasterDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Firearm</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1000</Range>
+    <ProjectileSpeed>2600</ProjectileSpeed>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="50" />
+      <AdditionalStrike Amount="1" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1212</Id>
+    <Name>Ribauldequin</Name>
+    <Description>RibauldequinDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Firearm</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1500</Range>
+    <ProjectileSpeed>2200</ProjectileSpeed>
+    <Effects>
+      <ConeAttackWithBullets Angle="130" Bullets="7" DamageReduction="30" />
+    </Effects>
+    <Recipe>
+      <Item Id="1209" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1213</Id>
+    <Name>San Yan Chong</Name>
+    <Description>SanYanChongDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Firearm</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1500</Range>
+    <ProjectileSpeed>2200</ProjectileSpeed>
+    <Effects>
+      <ConeAttackWithBullets Angle="90" Bullets="3" DamageReduction="60" />
+    </Effects>
+    <Recipe>
+      <Item Id="1209" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1214</Id>
+    <Name>Xun Lei Chong</Name>
+    <Description>XunLeiChongDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Firearm</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1200</Range>
+    <ProjectileSpeed>2200</ProjectileSpeed>
+    <Effects>
+      <InflictStatus Value="BreakII" />
+      <InflictStatus Value="MagicBreakII" />
+    </Effects>
+    <Recipe>
+      <Item Id="1208" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1215</Id>
+    <Name>Fomalhaut</Name>
+    <Description>FomalhautDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Firearm</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1200</Range>
+    <ProjectileSpeed>2200</ProjectileSpeed>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="60" />
+      <InflictStatus Value="BleedII" />
+      <PiercingProjectile DamageReduction="10" MinDamage="60" />
+    </Effects>
+    <Recipe>
+      <Item Id="1210" Quantity="1" />
+    </Recipe>
+  </Item>
 </Items>
