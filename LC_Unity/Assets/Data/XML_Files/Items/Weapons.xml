@@ -2875,4 +2875,198 @@
     <Range>2000</Range>
     <ProjectileSpeed>14</ProjectileSpeed>
   </Item>
+  <Item>
+    <Id>1159</Id>
+    <Name>Crossbow</Name>
+    <Description>CrossbowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>800</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1160</Id>
+    <Name>Recurve Crossbow</Name>
+    <Description>RecurveCrossbowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>800</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1161</Id>
+    <Name>Compound Crossbow</Name>
+    <Description>CompoundCrossbowDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>800</Range>
+    <ProjectileSpeed>14</ProjectileSpeed>
+  </Item>
+  <Item>
+    <Id>1162</Id>
+    <Name>Chuguo nu</Name>
+    <Description>ChuguoNuDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>800</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+    <Recipe>
+      <Item Id="1159" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <AdditionalStrike Amount="1" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1163</Id>
+    <Name>Gastraphetes</Name>
+    <Description>GastraphetesDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>800</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+    <Recipe>
+      <Item Id="1159" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="Strength" Value="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1164</Id>
+    <Name>Sauterelle</Name>
+    <Description>SauterelleDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1000</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+    <Recipe>
+      <Item Id="1161" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <AreaOfEffectAsSecondaryDamage Element="Fire" BaseDamage="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1165</Id>
+    <Name>Cranequin</Name>
+    <Description>CranequinDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>800</Range>
+    <ProjectileSpeed>14</ProjectileSpeed>
+    <Recipe>
+      <Item Id="1160" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="50" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1166</Id>
+    <Name>Arcubalista</Name>
+    <Description>ArcubalistaDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>800</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+    <Recipe>
+      <Item Id="1163" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="Strength" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1167</Id>
+    <Name>Wallarmbrust</Name>
+    <Description>WallarmbrustDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1500</Range>
+    <ProjectileSpeed>6</ProjectileSpeed>
+    <Recipe>
+      <Item Id="1161" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <AttacksIgnoreDefenseStat Stat="Defense" Value="50" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1168</Id>
+    <Name>Cheiroballistra</Name>
+    <Description>CheiroballistraDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1000</Range>
+    <ProjectileSpeed>10</ProjectileSpeed>
+    <Recipe>
+      <Item Id="1165" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <HpThresholdBonusDamage Threshold="50" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1169</Id>
+    <Name>The Art of War</Name>
+    <Description>TheArtOfWarDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Arbalest</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>1000</Range>
+    <ProjectileSpeed>18</ProjectileSpeed>
+    <Recipe>
+      <Item Id="1162" Quantity="1" />
+      <Item Id="1166" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="Agility" Value="0" />
+      <AdditionalStrike Amount="1" />
+    </Effects>
+  </Item>
 </Items>

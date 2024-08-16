@@ -222,6 +222,21 @@ namespace Inventory
                         Stat = (Stat)Enum.Parse(typeof(Stat), effectNode.Attributes["Stat"].InnerText)
                     };
                 }
+                else if (name.Equals(typeof(AdditionalStrike).Name))
+                {
+                    effect = new AdditionalStrike()
+                    {
+                        Amount = int.Parse(effectNode.Attributes["Amount"].InnerText)
+                    };
+                }
+                else if (name.Equals(typeof(AreaOfEffectAsSecondaryDamage).Name))
+                {
+                    effect = new AreaOfEffectAsSecondaryDamage()
+                    {
+                        Element = (Element)Enum.Parse(typeof(Element), effectNode.Attributes["Element"].InnerText),
+                        BaseDamage = int.Parse(effectNode.Attributes["BaseDamage"].InnerText)
+                    };
+                }
 
                 if (effect != null)
                     effects.Add(effect);
