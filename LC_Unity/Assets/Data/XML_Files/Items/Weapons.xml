@@ -1362,25 +1362,6 @@
     </Recipe>
   </Item>
   <Item>
-    <Id>1078</Id>
-    <Name>Night Prawler</Name>
-    <Description>NightPrawlerDescription</Description>
-    <Icon>0</Icon>
-    <Price>10</Price>
-    <Type>Claws</Type>
-    <Animation>0</Animation>
-    <Rank>8</Rank>
-    <EnchantmentSlots>3</EnchantmentSlots>
-    <Effects>
-      <BoundAbility Id="23" />
-      <StatBoost Stat="CritChance" Value="0" />
-    </Effects>
-    <Recipe>
-      <Item Id="1074" Quantity="1" />
-      <Item Id="1073" Quantity="1" />
-    </Recipe>
-  </Item>
-  <Item>
     <Id>1079</Id>
     <Name>Snake Bite</Name>
     <Description>SnakeBiteDescription</Description>
@@ -3906,5 +3887,152 @@
     <Recipe>
       <Item Id="1210" Quantity="1" />
     </Recipe>
+  </Item>
+  <Item>
+    <Id>1216</Id>
+    <Name>Sickle</Name>
+    <Description>SickleDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+  </Item>
+  <Item>
+    <Id>1217</Id>
+    <Name>Khopesh</Name>
+    <Description>KhopeshDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BoundAbility Id="44" />
+    </Effects>
+    <Recipe>
+      <Item Id="1216" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1218</Id>
+    <Name>Kama</Name>
+    <Description>KamaDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Agility" Value="0" />
+      <HealingItemsEfficiency Value="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1219</Id>
+    <Name>Billhook</Name>
+    <Description>BillhookDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <HealingItemsEfficiency Value="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1220</Id>
+    <Name>War Scythe</Name>
+    <Description>WarScytheDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="44" />
+      <AutoAttackAfterAbility />
+    </Effects>
+    <Recipe>
+      <Item Id="1217" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1221</Id>
+    <Name>Harpe</Name>
+    <Description>HarpeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+      <HealingItemsEfficiency Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1218" Quantity="1" />
+      <Item Id="1219" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1222</Id>
+    <Name>Omen of Death</Name>
+    <Description>OmenOfDeathDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="Darkness" Value="30" />
+      <StatBoost Stat="Magic" Value="0" />
+      <DrainFromDamage Stat="HP" Value="10" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1223</Id>
+    <Name>Omen of Hope</Name>
+    <Description>OmenOfHopeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="Holy" Value="30" />
+      <StatBoost Stat="Magic" Value="0" />
+      <SelfStatus Value="Faith" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1224</Id>
+    <Name>Post Mortem</Name>
+    <Description>PostMortemDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BonusElementalDamage Element="Holy" Value="30" />
+      <BonusElementalDamage Element="Darkness" Value="30" />
+      <StatBoost Stat="Magic" Value="0" />
+      <SelfStatus Value="Faith" />
+      <DrainFromDamage Stat="HP" Value="10" />
+    </Effects>
   </Item>
 </Items>

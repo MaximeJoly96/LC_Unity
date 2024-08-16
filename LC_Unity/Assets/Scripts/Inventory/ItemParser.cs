@@ -280,6 +280,10 @@ namespace Inventory
                         MinDamage = float.Parse(effectNode.Attributes["MinDamage"].InnerText, CultureInfo.InvariantCulture)
                     };
                 }
+                else if (name.Equals(typeof(AutoAttackAfterAbility).Name))
+                {
+                    effect = new AutoAttackAfterAbility();
+                }
 
                 if (effect != null)
                     effects.Add(effect);
