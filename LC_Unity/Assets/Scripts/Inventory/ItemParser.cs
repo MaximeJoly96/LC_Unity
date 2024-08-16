@@ -237,6 +237,32 @@ namespace Inventory
                         BaseDamage = int.Parse(effectNode.Attributes["BaseDamage"].InnerText)
                     };
                 }
+                else if (name.Equals(typeof(BonusDamageToShields).Name))
+                {
+                    effect = new BonusDamageToShields()
+                    {
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
+                else if (name.Equals(typeof(CounterattackAfterParry).Name))
+                {
+                    effect = new CounterattackAfterParry();
+                }
+                else if (name.Equals(typeof(MeleeDistanceScalingDamage).Name))
+                {
+                    effect = new MeleeDistanceScalingDamage()
+                    {
+                        DistanceCap = int.Parse(effectNode.Attributes["DistanceCap"].InnerText),
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
+                else if (name.Equals(typeof(AttackPriorityModifier).Name))
+                {
+                    effect = new AttackPriorityModifier()
+                    {
+                        Value = int.Parse(effectNode.Attributes["Value"].InnerText)
+                    };
+                }
 
                 if (effect != null)
                     effects.Add(effect);

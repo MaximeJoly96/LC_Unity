@@ -3069,4 +3069,413 @@
       <AdditionalStrike Amount="1" />
     </Effects>
   </Item>
+  <Item>
+    <Id>1170</Id>
+    <Name>Pike</Name>
+    <Description>PikeDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>1</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BonusDamageToShields Value="0" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1171</Id>
+    <Name>Qiang</Name>
+    <Description>QiangDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>1</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <CounterattackAfterParry />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1172</Id>
+    <Name>Glaive</Name>
+    <Description>GlaiveDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1170" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BonusDamageToShields Value="0" />
+      <BoundAbility Id="40" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1173</Id>
+    <Name>Arbir</Name>
+    <Description>ArbirDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Recipe>
+      <Item Id="1171" Quantity="1" />
+    </Recipe>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <CounterattackAfterParry />
+      <InflictStats Value="BleedI" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1174</Id>
+    <Name>Halberd</Name>
+    <Description>HalberdDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BoundAbility Id="41" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1175</Id>
+    <Name>Trident</Name>
+    <Description>TridentDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <ElementalAffinityModifier Element="Water" Value="-40" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1176</Id>
+    <Name>Goedendag</Name>
+    <Description>GoedendagDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BonusDamageToShields Value="0" />
+      <BoundAbility Id="40" />
+      <MeleeDistanceScalingDamage DistanceCap="1000" Value="100" />
+    </Effects>
+    <Recipe>
+      <Item Id="1172" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1177</Id>
+    <Name>Xyston</Name>
+    <Description>XystonDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <CounterattackAfterParry />
+      <InflictStats Value="BleedI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1173" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1178</Id>
+    <Name>Boar Spear</Name>
+    <Description>BoarSpearDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <InflictStats Value="SlowI" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1179</Id>
+    <Name>Fauchard</Name>
+    <Description>FauchardDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BonusDamageToShields Value="0" />
+      <BoundAbility Id="40" />
+      <InflictStats Value="HemoI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1172" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1180</Id>
+    <Name>Partisan</Name>
+    <Description>PartisanDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <InflictStats Value="SlowI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1178" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1181</Id>
+    <Name>Brandistock</Name>
+    <Description>BrandistockDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <ElementalAffinityModifier Element="Water" Value="-40" />
+      <InflictStatus Value="BleedI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1175" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1182</Id>
+    <Name>Ox Tongue</Name>
+    <Description>OxTongueDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <InflictStats Value="SlowI" />
+      <InflictStatus Value="BleedI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1180" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1183</Id>
+    <Name>Sibat</Name>
+    <Description>SibatDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <CounterattackAfterParry />
+      <InflictStats Value="BleedI" />
+      <BoundAbility Id="42" />
+    </Effects>
+    <Recipe>
+      <Item Id="1177" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1184</Id>
+    <Name>Hoeroa</Name>
+    <Description>HoeroaDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BoundAbility Id="41" />
+      <InflictStats Value="HemoI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1174" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1185</Id>
+    <Name>Ahlspiess</Name>
+    <Description>AhlspiessDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Agility" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <AttackPriorityModifier Value="1" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>1186</Id>
+    <Name>Naginata</Name>
+    <Description>NaginataDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BonusDamageToShields Value="0" />
+      <BoundAbility Id="40" />
+      <InflictStats Value="HemoI" />
+      <BoundAbility Id="43" />
+    </Effects>
+    <Recipe>
+      <Item Id="1179" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1187</Id>
+    <Name>Fork</Name>
+    <Description>ForkDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <ElementalAffinityModifier Element="Water" Value="-40" />
+      <InflictStatus Value="BleedI" />
+      <BonusDamageToShields Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1181" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1188</Id>
+    <Name>Tepoztopilli</Name>
+    <Description>TepoztopilliDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <BoundAbility Id="41" />
+      <InflictStats Value="HemoI" />
+      <StatBoost Stat="Agility" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1184" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1189</Id>
+    <Name>Trishula</Name>
+    <Description>TrishulaDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <ElementalAffinityModifier Element="Water" Value="-40" />
+      <InflictStatus Value="BleedI" />
+      <StatBoost Stat="Magic" Value="30" />
+      <StatBoost Stat="MagicDefense" Value="30" />
+    </Effects>
+    <Recipe>
+      <Item Id="1189" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1190</Id>
+    <Name>Spetum</Name>
+    <Description>SpetumDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="SlowI" />
+      <BoundAbility Id="40" />
+      <BonusDamageToShields Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1179" Quantity="1" />
+      <Item Id="1182" Quantity="1" />
+    </Recipe>
+  </Item>
+  <Item>
+    <Id>1191</Id>
+    <Name>Yari</Name>
+    <Description>YariDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Spear</Type>
+    <Animation>0</Animation>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Effects>
+      <StatBoost Stat="Agility" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <AttackPriorityModifier Value="1" />
+      <BonusDamageToShields Value="0" />
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="40" />
+      <InflictStats Value="HemoI" />
+      <BoundAbility Id="43" />
+    </Effects>
+    <Recipe>
+      <Item Id="1185" Quantity="1" />
+      <Item Id="1186" Quantity="1" />
+    </Recipe>
+  </Item>
 </Items>
