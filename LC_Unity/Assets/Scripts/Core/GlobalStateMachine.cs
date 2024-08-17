@@ -24,7 +24,10 @@ namespace Core
             OpeningMessageBox,
             InMessageBox,
             ClosingMessageBox,
-            SaveMenu
+            SaveMenu,
+            OpeningShop,
+            InShop,
+            ClosingShop
         }
 
         private static GlobalStateMachine _instance;

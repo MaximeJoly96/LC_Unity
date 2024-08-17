@@ -1,5 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using UnityEngine;
+using Shop;
 
 namespace Engine.SceneControl
 {
@@ -16,7 +18,15 @@ namespace Engine.SceneControl
 
         public void Run()
         {
+            ShopLoader loader = Object.FindObjectOfType<ShopLoader>();
+            loader.FinishedClosingShop.AddListener(Conclude);
+            loader.LoadShop(this);
+        }
 
+        private void Conclude()
+        {
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }
