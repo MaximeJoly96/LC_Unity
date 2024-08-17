@@ -45,7 +45,7 @@ namespace Shop
 
         public void FinishedOpening()
         {
-            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShop);
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopOptions);
         }
 
         public void FinishedClosing()

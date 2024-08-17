@@ -26,7 +26,9 @@ namespace Core
             ClosingMessageBox,
             SaveMenu,
             OpeningShop,
-            InShop,
+            InShopOptions,
+            InShopBuyList,
+            InShopSellList,
             ClosingShop
         }
 

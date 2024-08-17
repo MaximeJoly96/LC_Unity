@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Inventory;
 
 namespace Shop
 {
@@ -17,5 +18,23 @@ namespace Shop
 
         [SerializeField]
         private TMP_Text _itemDescription;
+
+        public void Feed(BaseItem item)
+        {
+            _itemName.text = item.Name;
+
+            if (item.Category == ItemCategory.Weapon)
+            {
+                Weapon weapon = item as Weapon;
+                _itemType.text = weapon.Type.ToString();
+            }
+            else if (item.Category == ItemCategory.Armour)
+            {
+                Armour armour = item as Armour;
+                _itemType.text = armour.Type.ToString();
+            }
+            else
+                _itemType.text = item.Category.ToString();
+        }
     }
 }

@@ -27,14 +27,29 @@ namespace Shop
 
         private void HandleInputs(InputAction input)
         {
-            if(!_delayOn && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShop)
+            if(!_delayOn && (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions ||
+                             GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList ||
+                             GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopSellList))
             {
                 switch(input)
                 {
                     case InputAction.Select:
+                        _shopWindow.Select();
                         break;
                     case InputAction.Cancel:
-                        GetComponent<ShopLoader>().CloseShop();
+                        _shopWindow.Cancel();
+                        break;
+                    case InputAction.MoveLeft:
+                        _shopWindow.MoveLeft();
+                        break;
+                    case InputAction.MoveRight:
+                        _shopWindow.MoveRight();
+                        break;
+                    case InputAction.MoveUp:
+                        _shopWindow.MoveUp();
+                        break;
+                    case InputAction.MoveDown:
+                        _shopWindow.MoveDown();
                         break;
                 }
 
