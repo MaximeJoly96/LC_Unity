@@ -42,6 +42,8 @@ namespace Shop
 
             _options[_optionsCursorPosition].Hover(true);
             _instItems = new List<SelectableItem>();
+
+            _itemDetails.Show(false);
         }
 
         public void MoveLeft()
@@ -64,14 +66,22 @@ namespace Shop
 
         public void MoveUp()
         {
-            _itemsListCursorPosition = _itemsListCursorPosition == 0 ? _instItems.Count - 1 : --_itemsListCursorPosition;
-            UpdateCursors();
+            if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList ||
+               GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopSellList)
+            {
+                _itemsListCursorPosition = _itemsListCursorPosition == 0 ? _instItems.Count - 1 : --_itemsListCursorPosition;
+                UpdateCursors();
+            }
         }
 
         public void MoveDown()
         {
-            _itemsListCursorPosition = _itemsListCursorPosition == _instItems.Count - 1 ? 0 : ++_itemsListCursorPosition;
-            UpdateCursors();
+            if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList ||
+                GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopSellList)
+            {
+                _itemsListCursorPosition = _itemsListCursorPosition == _instItems.Count - 1 ? 0 : ++_itemsListCursorPosition;
+                UpdateCursors();
+            }  
         }
 
         public void Select()
@@ -84,6 +94,7 @@ namespace Shop
                         GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopBuyList);
                         _options[_optionsCursorPosition].Select();
                         ShowItemsToBuy();
+                        UpdateCursors();
                         break;
                     case ShopOption.Sell:
                         GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopSellList);
@@ -113,17 +124,37 @@ namespace Shop
 
         private void UpdateCursors()
         {
-            for(int i = 0; i < _options.Length; i++)
+            if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions)
             {
-                _options[i].Hover(i == _optionsCursorPosition);
-            }
+                for (int i = 0; i < _options.Length; i++)
+                {
+                    _options[i].Hover(i == _optionsCursorPosition);
+                }
 
-            if (_instItems.Count > 0)
-                _instItems[0].Hover(true);
+                if (_instItems.Count > 0)
+                {
+                    _instItems[0].Hover(true);
+                    _itemDetails.Feed(_instItems[0].Item);
+                }
+
+                _itemDetails.Show(false);
+            }
+            else if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList ||
+                    GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopSellList)
+            {
+                for(int i = 0; i < _instItems.Count; i++)
+                {
+                    _instItems[i].Hover(i == _itemsListCursorPosition);
+                }
+
+                _itemDetails.Feed(_instItems[_itemsListCursorPosition].Item);
+                _itemDetails.Show(true);
+            }
         }
 
         private void ShowItemsToBuy()
         {
+            _itemsListCursorPosition = 0;
             ClearItemsList();
 
             foreach (var item in _merchant.Items)
@@ -142,6 +173,7 @@ namespace Shop
 
         private void ShowItemsToSell()
         {
+            _itemsListCursorPosition = 0;
             ClearItemsList();
 
             foreach(var item in PartyManager.Instance.Inventory)

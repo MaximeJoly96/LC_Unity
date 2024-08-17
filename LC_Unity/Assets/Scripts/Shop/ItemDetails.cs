@@ -2,6 +2,8 @@
 using TMPro;
 using UnityEngine.UI;
 using Inventory;
+using Party;
+using System.Linq;
 
 namespace Shop
 {
@@ -15,6 +17,8 @@ namespace Shop
         private TMP_Text _itemType;
         [SerializeField]
         private TMP_Text _inStock;
+        [SerializeField]
+        private CanvasGroup _canvasGroup;
 
         [SerializeField]
         private TMP_Text _itemDescription;
@@ -35,6 +39,17 @@ namespace Shop
             }
             else
                 _itemType.text = item.Category.ToString();
+
+            InventoryItem inventoryItem = PartyManager.Instance.Inventory.FirstOrDefault(i => i.ItemData.Id == item.Id);
+            if (inventoryItem != null)
+                _inStock.text = "Possessed: " + inventoryItem.InPossession.ToString();
+            else
+                _inStock.text = "Possessed: 0";
+        }
+
+        public void Show(bool show)
+        {
+            _canvasGroup.alpha = show ? 1.0f : 0.0f;
         }
     }
 }
