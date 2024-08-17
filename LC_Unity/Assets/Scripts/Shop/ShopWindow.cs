@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Language;
 
 namespace Shop
 {
@@ -16,5 +17,10 @@ namespace Shop
         private ItemDetails _itemDetails;
         [SerializeField]
         private PartyPreview _partyPreview;
+
+        public void SetupMerchant(Merchant merchant)
+        {
+            _shopName.text = merchant.Name;
+        }
     }
 }

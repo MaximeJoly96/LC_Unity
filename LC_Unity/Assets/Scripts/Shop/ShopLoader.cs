@@ -33,6 +33,7 @@ namespace Shop
         public void LoadShop(ShopProcessing shop)
         {
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OpeningShop);
+            GetComponent<ShopManager>().SetupShop(shop);
             _animator.Play("OpenShop");
         }
 

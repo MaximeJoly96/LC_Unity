@@ -4,6 +4,7 @@ using Save;
 using Movement;
 using Timing;
 using Core;
+using Shop;
 
 namespace Field
 {
@@ -33,6 +34,7 @@ namespace Field
         public void BuildField(PlayableField field)
         {
             _instField = Instantiate(field);
+            FindObjectOfType<ShopManager>().LoadMerchants(_instField.Merchants);
         }
 
         public void ScanForAgents()

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using Inputs;
 using Core;
+using Engine.SceneControl;
+using System.Linq;
 
 namespace Shop
 {
@@ -10,6 +12,10 @@ namespace Shop
 
         private float _selectionDelay;
         private bool _delayOn;
+        private TextAsset _currentMerchants;
+
+        [SerializeField]
+        private ShopWindow _shopWindow;
 
         private void Start()
         {
@@ -47,6 +53,19 @@ namespace Shop
                     _delayOn = false;
                 }
             }
+        }
+
+        public void SetupShop(ShopProcessing shop)
+        {
+            MerchantParser parser = new MerchantParser();
+            Merchant merchant = parser.ParseMerchants(_currentMerchants).FirstOrDefault(m => m.Id == shop.MerchantId);
+
+            _shopWindow.SetupMerchant(merchant);
+        }
+
+        public void LoadMerchants(TextAsset merchants)
+        {
+            _currentMerchants = merchants;
         }
     }
 }
