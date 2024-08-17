@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using Inventory;
+using Language;
 
 namespace Shop
 {
@@ -19,7 +20,7 @@ namespace Shop
 
         public void Feed(BaseItem item)
         {
-            _itemName.text = item.Name;
+            _itemName.text = Localizer.Instance.GetString(item.Name);
             _price.text = item.Price.ToString();
 
             Item = item;

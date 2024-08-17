@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using Inventory;
 using Party;
 using System.Linq;
+using Language;
 
 namespace Shop
 {
@@ -25,7 +26,8 @@ namespace Shop
 
         public void Feed(BaseItem item)
         {
-            _itemName.text = item.Name;
+            _itemName.text = Localizer.Instance.GetString(item.Name);
+            _itemDescription.text = Localizer.Instance.GetString(item.Description);
 
             if (item.Category == ItemCategory.Weapon)
             {
