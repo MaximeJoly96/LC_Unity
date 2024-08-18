@@ -32,21 +32,21 @@ namespace Shop
             if (item.Category == ItemCategory.Weapon)
             {
                 Weapon weapon = item as Weapon;
-                _itemType.text = weapon.Type.ToString();
+                _itemType.text = Localizer.Instance.GetString(weapon.Type.ToString().ToLower());
             }
             else if (item.Category == ItemCategory.Armour)
             {
                 Armour armour = item as Armour;
-                _itemType.text = armour.Type.ToString();
+                _itemType.text = Localizer.Instance.GetString(armour.Type.ToString().ToLower());
             }
             else
-                _itemType.text = item.Category.ToString();
+                _itemType.text = Localizer.Instance.GetString(item.Category.ToString().ToLower());
 
             InventoryItem inventoryItem = PartyManager.Instance.Inventory.FirstOrDefault(i => i.ItemData.Id == item.Id);
             if (inventoryItem != null)
-                _inStock.text = "Possessed: " + inventoryItem.InPossession.ToString();
+                _inStock.text = Localizer.Instance.GetString("inStock") + " " + inventoryItem.InPossession.ToString();
             else
-                _inStock.text = "Possessed: 0";
+                _inStock.text = Localizer.Instance.GetString("inStock") + " " + 0;
         }
 
         public void Show(bool show)
