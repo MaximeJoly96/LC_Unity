@@ -10,7 +10,7 @@ namespace Party
     public class PartyManager
     {
         private readonly List<Character> _party;
-        private readonly List<InventoryItem> _inventory;
+        private List<InventoryItem> _inventory;
 
         private static PartyManager _instance;
 
@@ -91,6 +91,12 @@ namespace Party
         private void LoadPartyFromSave(List<Character> characters)
         {
             _party.AddRange(characters);
+        }
+
+        public void SetInventory(List<InventoryItem> inventory)
+        {
+            _inventory = new List<InventoryItem>();
+            _inventory.AddRange(inventory);
         }
     }
 }

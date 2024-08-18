@@ -5,6 +5,8 @@ using Language;
 using System.Collections.Generic;
 using Core;
 using Party;
+using Inventory;
+using System.Linq;
 
 namespace Shop
 {
@@ -105,6 +107,13 @@ namespace Shop
                         break;
                 }
             }
+            else if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList)
+            {
+                if (PartyManager.Instance.Gold < _instItems[_itemsListCursorPosition].Item.Price)
+                    return;
+
+                Buy(_instItems[_itemsListCursorPosition].Item);
+            }
         }
 
         public void Cancel()
@@ -195,6 +204,23 @@ namespace Shop
             {
                 Destroy(child.gameObject);
             }
+        }
+
+        private void Buy(BaseItem item)
+        {
+            InventoryItem inventoryItem = PartyManager.Instance.Inventory.FirstOrDefault(i => i.ItemData.Id == item.Id);
+            if(inventoryItem != null)
+            {
+                inventoryItem.ChangeAmount(1);
+            }
+            else
+            {
+                inventoryItem = new InventoryItem(item);
+                inventoryItem.ChangeAmount(1);
+                PartyManager.Instance.Inventory.Add(inventoryItem);
+            }
+
+            PartyManager.Instance.ChangeGold(new Engine.Party.ChangeGold { Value = -item.Price });
         }
     }
 }

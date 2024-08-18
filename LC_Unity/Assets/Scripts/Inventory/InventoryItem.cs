@@ -27,6 +27,7 @@ namespace Inventory
 
         public InventoryItem(int id, int inPossession)
         {
+            ItemData = ItemsWrapper.Instance.GetItemFromId(id);
             InPossession = inPossession;
         }
 

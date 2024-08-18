@@ -11,6 +11,7 @@ using System.Linq;
 using System;
 using Logging;
 using Core;
+using Party;
 
 namespace Save
 {
@@ -124,6 +125,7 @@ namespace Save
             {
                 Data = GetSavedDataFromSlot(slotId);
                 GlobalStateMachine.Instance.CurrentMapId = Data.MapID;
+                PartyManager.Instance.SetInventory(Data.Inventory);
             }
             catch(Exception e)
             {
