@@ -139,6 +139,8 @@ namespace Inventory
                         (effect as BonusElementalDamage).AddAll();
                     else
                         (effect as BonusElementalDamage).AddElement((Element)Enum.Parse(typeof(Element), elementValue));
+
+                    (effect as BonusElementalDamage).Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture);
                 }
                 else if (name.Equals(typeof(ElementalAbilitiesCostReduction).Name))
                 {
@@ -148,6 +150,8 @@ namespace Inventory
                         (effect as ElementalAbilitiesCostReduction).AddAll();
                     else
                         (effect as ElementalAbilitiesCostReduction).AddElement((Element)Enum.Parse(typeof(Element), elementValue));
+
+                    (effect as ElementalAbilitiesCostReduction).Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture);
                 }
                 else if (name.Equals(typeof(ElementalAffinityExploitManaRefund).Name))
                 {
@@ -157,6 +161,8 @@ namespace Inventory
                         (effect as ElementalAffinityExploitManaRefund).AddAll();
                     else
                         (effect as ElementalAffinityExploitManaRefund).AddElement((Element)Enum.Parse(typeof(Element), elementValue));
+
+                    (effect as ElementalAffinityExploitManaRefund).Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture);
                 }
                 else if (name.Equals(typeof(ElementalAffinityExploitSelfStatus).Name))
                 {

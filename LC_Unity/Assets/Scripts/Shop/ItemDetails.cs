@@ -27,7 +27,7 @@ namespace Shop
         public void Feed(BaseItem item)
         {
             _itemName.text = Localizer.Instance.GetString(item.Name);
-            _itemDescription.text = Localizer.Instance.GetString(item.Description);
+            _itemDescription.text = item.DetailedDescription();
 
             if (item.Category == ItemCategory.Weapon)
             {

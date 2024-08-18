@@ -1,4 +1,5 @@
 ﻿using Actors;
+using Language;
 using System.Collections.Generic;
 
 namespace Effects
@@ -6,6 +7,7 @@ namespace Effects
     public class ElementalAbilitiesCostReduction : IEffect
     {
         public List<Element> Elements { get; private set; }
+        public float Value { get; set; }
 
         public ElementalAbilitiesCostReduction()
         {
@@ -28,6 +30,18 @@ namespace Effects
         public void AddElement(Element element)
         {
             Elements.Add(element);
+        }
+
+        public string GetDescription()
+        {
+            string label = Localizer.Instance.GetString("elementalAbilitiesCostReductionDescription") + "\n";
+
+            foreach (Element element in Elements)
+            {
+                label += Localizer.Instance.GetString(element.ToString().ToLower()) + " (" + Value.ToString() + ")\n";
+            }
+
+            return label;
         }
     }
 }

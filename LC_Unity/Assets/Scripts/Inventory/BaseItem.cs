@@ -1,4 +1,6 @@
-﻿namespace Inventory
+﻿using Language;
+
+namespace Inventory
 {
     public enum ItemUsability
     {
@@ -26,6 +28,11 @@
             Icon = icon;
             Price = price;
             Category = category;
+        }
+
+        public virtual string DetailedDescription()
+        {
+            return Localizer.Instance.GetString(Description);
         }
     }
 }

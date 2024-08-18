@@ -1,5 +1,6 @@
 ﻿using Effects;
 using System.Collections.Generic;
+using Language;
 
 namespace Inventory
 {
@@ -23,6 +24,20 @@ namespace Inventory
         public void AddEffects(IEnumerable<IEffect> effects)
         {
             Effects.AddRange(effects);
+        }
+
+        public override string DetailedDescription()
+        {
+            string description = base.DetailedDescription() + "\n";
+
+            description += Localizer.Instance.GetString("enchantmentSlots") + " " + EnchantmentSlots.ToString() + "\n";
+
+            foreach(IEffect effect in Effects)
+            {
+                description += effect.GetDescription() + "\n";
+            }
+
+            return description;
         }
     }
 }

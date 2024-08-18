@@ -1,4 +1,5 @@
 ﻿using Actors;
+using Language;
 
 namespace Effects
 {
@@ -6,5 +7,11 @@ namespace Effects
     {
         public Element Element { get; set; }
         public int BaseDamage { get; set; }
+
+        public string GetDescription()
+        {
+            return Localizer.Instance.GetString("areaOfEffectAsSecondaryDamageDescription") + " " +
+                   Localizer.Instance.GetString(Element.ToString().ToLower()); 
+        }
     }
 }

@@ -4,5 +4,10 @@
     {
         public float DamageReduction { get; set; }
         public float MinDamage { get; set; }
+
+        public string GetDescription()
+        {
+            return "";
+        }
     }
 }
