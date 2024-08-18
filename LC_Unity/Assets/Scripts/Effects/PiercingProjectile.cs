@@ -1,4 +1,6 @@
-﻿namespace Effects
+﻿using Language;
+
+namespace Effects
 {
     public class PiercingProjectile : IEffect
     {
@@ -7,7 +9,7 @@
 
         public string GetDescription()
         {
-            return "";
+            return Localizer.Instance.GetString("piercingProjectileDescription");
         }
     }
 }

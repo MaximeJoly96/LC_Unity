@@ -1,4 +1,6 @@
-﻿namespace Effects
+﻿using Language;
+
+namespace Effects
 {
     public enum Stat
     {
@@ -26,7 +28,8 @@
 
         public string GetDescription()
         {
-            return "";
+            return Value + "% " + Localizer.Instance.GetString("statBoost") + " " + 
+                   Localizer.Instance.GetString(LanguageUtility.GetStatLanguageKey(Stat));
         }
     }
 }

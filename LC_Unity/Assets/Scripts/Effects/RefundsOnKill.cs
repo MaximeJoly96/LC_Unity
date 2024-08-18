@@ -1,4 +1,6 @@
-﻿namespace Effects
+﻿using Language;
+
+namespace Effects
 {
     public class RefundsOnKill : IEffect
     {
@@ -7,7 +9,8 @@
 
         public string GetDescription()
         {
-            return "";
+            return Localizer.Instance.GetString("refundsOnKill") + " " + Value +
+                   "%(" + Localizer.Instance.GetString(LanguageUtility.GetStatLanguageKey(Stat)) + ")";
         }
     }
 }

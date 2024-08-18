@@ -43,11 +43,15 @@ namespace Language
                 case Stat.CritChance:
                     return "critChance";
                 case Stat.Evasion:
-                    return "evasion ";
+                    return "evasion";
                 case Stat.Parry:
                     return "parry";
                 case Stat.Provocation:
                     return "provocation";
+                case Stat.Accuracy:
+                    return "accuracy";
+                case Stat.CritDmg:
+                    return "critDmg";
                 default:
                     return "";
             }
@@ -103,6 +107,19 @@ namespace Language
                     return "faith";
                 case EffectType.Grounded:
                     return "grounded";
+                default:
+                    return "";
+            }
+        }
+
+        public static string GetTribeLanguageKey(TargetTribe tribe)
+        {
+            switch (tribe)
+            {
+                case TargetTribe.Human:
+                    return "human";
+                case TargetTribe.Undead:
+                    return "undead";
                 default:
                     return "";
             }

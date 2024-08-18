@@ -1,4 +1,5 @@
 ﻿using Actors;
+using Language;
 
 namespace Effects
 {
@@ -8,7 +9,8 @@ namespace Effects
 
         public string GetDescription()
         {
-            return "";
+            return Localizer.Instance.GetString("selfStatusDescription") + " " + 
+                   Localizer.Instance.GetString(LanguageUtility.GetEffectTypeLanguageKey(Value));
         }
     }
 }

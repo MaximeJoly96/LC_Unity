@@ -1,4 +1,6 @@
-﻿namespace Effects
+﻿using Language;
+
+namespace Effects
 {
     public enum TargetTribe
     {
@@ -13,7 +15,8 @@
 
         public string GetDescription()
         {
-            return "";
+            return Localizer.Instance.GetString("targetEffectiveness") + " " + 
+                   Localizer.Instance.GetString(LanguageUtility.GetTribeLanguageKey(Type)) + "(" + Value + "%)";
         }
     }
 }

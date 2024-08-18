@@ -1,4 +1,6 @@
-﻿namespace Effects
+﻿using Language;
+
+namespace Effects
 {
     public class UndamagedTargetBonusDamage : IEffect
     {
@@ -6,7 +8,7 @@
 
         public string GetDescription()
         {
-            return "";
+            return Localizer.Instance.GetString("undamagedTargetBonusDamage") + " " + Value + "%";
         }
     }
 }
