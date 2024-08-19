@@ -27,9 +27,7 @@ namespace Shop
 
         private void HandleInputs(InputAction input)
         {
-            if(!_delayOn && (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions ||
-                             GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList ||
-                             GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopSellList))
+            if(!_delayOn && InShopState())
             {
                 switch(input)
                 {
@@ -81,6 +79,15 @@ namespace Shop
         public void LoadMerchants(TextAsset merchants)
         {
             _currentMerchants = merchants;
+        }
+
+        private bool InShopState()
+        {
+            return GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions ||
+                   GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList ||
+                   GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopSellList ||
+                   GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems ||
+                   GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SellingItems;
         }
     }
 }

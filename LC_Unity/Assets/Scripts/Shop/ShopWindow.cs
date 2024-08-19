@@ -25,6 +25,8 @@ namespace Shop
 
         [SerializeField]
         private SelectableItem _selectableItemPreview;
+        [SerializeField]
+        private ShopConfirmationWindow _confirmationWindow;
 
         private int _optionsCursorPosition;
         private int _itemsListCursorPosition;
@@ -46,6 +48,11 @@ namespace Shop
             _instItems = new List<SelectableItem>();
 
             _itemDetails.Show(false);
+
+            _confirmationWindow.PurchaseCompleted.RemoveAllListeners();
+            _confirmationWindow.PurchaseCompleted.AddListener(DoBuy);
+            _confirmationWindow.PurchaseCancelled.RemoveAllListeners();
+            _confirmationWindow.PurchaseCancelled.AddListener(CancelOrder);
         }
 
         public void MoveLeft()
@@ -55,6 +62,10 @@ namespace Shop
                 _optionsCursorPosition = _optionsCursorPosition == 0 ? _options.Length - 1 : --_optionsCursorPosition;
                 UpdateCursors();
             }
+            else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems)
+            {
+                _confirmationWindow.MoveCursorLeft();
+            }
         }
 
         public void MoveRight()
@@ -63,7 +74,11 @@ namespace Shop
             {
                 _optionsCursorPosition = _optionsCursorPosition == _options.Length - 1 ? 0 : ++_optionsCursorPosition;
                 UpdateCursors();
-            } 
+            }
+            else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems)
+            {
+                _confirmationWindow.MoveCursorRight();
+            }
         }
 
         public void MoveUp()
@@ -74,6 +89,10 @@ namespace Shop
                 _itemsListCursorPosition = _itemsListCursorPosition == 0 ? _instItems.Count - 1 : --_itemsListCursorPosition;
                 UpdateCursors();
             }
+            else if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems)
+            {
+                _confirmationWindow.MoveCursorUp();
+            }
         }
 
         public void MoveDown()
@@ -83,7 +102,11 @@ namespace Shop
             {
                 _itemsListCursorPosition = _itemsListCursorPosition == _instItems.Count - 1 ? 0 : ++_itemsListCursorPosition;
                 UpdateCursors();
-            }  
+            }
+            else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems)
+            {
+                _confirmationWindow.MoveCursorDown();
+            }
         }
 
         public void Select()
@@ -114,6 +137,10 @@ namespace Shop
 
                 Buy(_instItems[_itemsListCursorPosition].Item);
             }
+            else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems)
+            {
+                _confirmationWindow.Confirm();
+            }
         }
 
         public void Cancel()
@@ -128,6 +155,10 @@ namespace Shop
                 _options[_optionsCursorPosition].Hover(true);
                 ClearItemsList();
                 GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopOptions);
+            }
+            else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems)
+            {
+                _confirmationWindow.Cancel();
             }
         }
 
@@ -208,19 +239,32 @@ namespace Shop
 
         private void Buy(BaseItem item)
         {
+            _confirmationWindow.Open(item, true);
+        }
+
+        private void DoBuy(BaseItem item, int quantity)
+        {
             InventoryItem inventoryItem = PartyManager.Instance.Inventory.FirstOrDefault(i => i.ItemData.Id == item.Id);
-            if(inventoryItem != null)
+            if (inventoryItem != null)
             {
-                inventoryItem.ChangeAmount(1);
+                inventoryItem.ChangeAmount(quantity);
             }
             else
             {
                 inventoryItem = new InventoryItem(item);
-                inventoryItem.ChangeAmount(1);
+                inventoryItem.ChangeAmount(quantity);
                 PartyManager.Instance.Inventory.Add(inventoryItem);
             }
 
-            PartyManager.Instance.ChangeGold(new Engine.Party.ChangeGold { Value = -item.Price });
+            PartyManager.Instance.ChangeGold(new Engine.Party.ChangeGold { Value = -item.Price * quantity });
+            _itemDetails.Feed(_instItems[_itemsListCursorPosition].Item);
+
+            _confirmationWindow.Close();
+        }
+
+        private void CancelOrder()
+        {
+            _confirmationWindow.Close();
         }
     }
 }

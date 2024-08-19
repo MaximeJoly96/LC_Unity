@@ -29,6 +29,8 @@ namespace Core
             InShopOptions,
             InShopBuyList,
             InShopSellList,
+            BuyingItems,
+            SellingItems,
             ClosingShop
         }
 
