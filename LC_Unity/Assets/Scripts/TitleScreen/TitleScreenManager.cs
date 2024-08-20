@@ -22,7 +22,6 @@ namespace TitleScreen
         private void Awake()
         {
             FindObjectOfType<Localizer>().LoadLanguage((Language.Language)PlayerPrefs.GetInt("language"));
-            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.TitleScreen);
         }
 
         private void Start()
@@ -40,14 +39,14 @@ namespace TitleScreen
         {
             _mainPanel.Show(false);
 
-            SaveManager.Instance.InitSaveCreation(true);
+            SaveManager.Instance.InitSaveCreation();
         }
 
         private void ShowSaveLoadScreen()
         {
             _mainPanel.Show(false);
 
-            SaveManager.Instance.InitSaveLoad(true);
+            SaveManager.Instance.InitSaveLoad();
         }
 
         private IEnumerator Quit()
@@ -58,6 +57,7 @@ namespace TitleScreen
 
         private void ShowMainPanel()
         {
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.TitleScreen);
             _mainPanel.Show(true);
             _optionsMenu.Show(false);
 
@@ -66,6 +66,7 @@ namespace TitleScreen
 
         private void ShowOptions()
         {
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.TitleScreenOptions);
             _mainPanel.Show(false);
             _optionsMenu.Show(true);
 

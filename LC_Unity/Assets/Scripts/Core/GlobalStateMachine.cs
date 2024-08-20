@@ -7,6 +7,7 @@ namespace Core
         public enum State
         {
             TitleScreen,
+            TitleScreenOptions,
             OnField,
             InMenu,
             Interacting,
@@ -59,6 +60,14 @@ namespace Core
 
         public void UpdateState(State state)
         {
+            // There is a weird situation caused by Unity's script execution order
+            // Basically, when we load a save through the menu (by saving or loading), the state will
+            // be updated to OnField because we load the map, but then the save window finishes closing
+            // (it has DontDestroyOnLoad) so its closing event is fired right after.
+            // So we are cancelling this specific transition to prevent getting stuck on the map.
+            if (CurrentState == State.OnField && state == State.InMenuSystemTab)
+                return;
+
             CurrentState = state;
             StateChanged.Invoke(CurrentState);
         }

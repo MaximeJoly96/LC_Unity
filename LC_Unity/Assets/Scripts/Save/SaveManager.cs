@@ -33,7 +33,6 @@ namespace Save
         }
 
         private SaveCanvas _saveCanvasCache;
-        private bool _fromTitleScreen;
         private UnityEvent _saveCancelledEvent;
         private readonly SaveCreator _creator;
         private readonly SaveLoader _loader;
@@ -81,42 +80,27 @@ namespace Save
             SaveCanvasCache.Close();
         }
 
-        public void InitSaveCreation(bool fromTitleScreen)
+        public void InitSaveCreation()
         {
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);
             CurrentSaveState = SaveState.CreateSave;
-            _fromTitleScreen = fromTitleScreen;
 
             SaveCanvasCache.UpdateTooltip(Localizer.Instance.GetString("createSaveTooltip"));
             SaveCanvasCache.Open();
         }
 
-        public void InitSaveCreation()
-        {
-            InitSaveCreation(false);
-        }
-
-        public void InitSaveLoad(bool fromTitleScreen)
+        public void InitSaveLoad()
         {
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);
             CurrentSaveState = SaveState.LoadSave;
-            _fromTitleScreen = fromTitleScreen;
 
             SaveCanvasCache.UpdateTooltip(Localizer.Instance.GetString("loadSaveTooltip"));
             SaveCanvasCache.Open();
         }
 
-        public void InitSaveLoad()
-        {
-            InitSaveLoad(false);
-        }
-
         public void LoadPreviousState()
         {
-            if(_fromTitleScreen)
-            {
-                SaveCancelledEvent.Invoke();
-            }
+            SaveCancelledEvent.Invoke();
         }
 
         public void LoadSaveFile(int slotId)

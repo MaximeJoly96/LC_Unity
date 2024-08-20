@@ -64,7 +64,7 @@ namespace Save
             _cursorPosition = 0;
             Animator.Play("OpenSaveWindow");
             LoadSaveSlots();
-            UpdateCursor();
+            UpdateCursor(false);
             _scrollView.verticalNormalizedPosition = 1.0f;
         }
 
@@ -148,16 +148,16 @@ namespace Save
         private void MoveDown()
         {
             _cursorPosition = _cursorPosition == MAX_SAVES - 1 ? 0 : ++_cursorPosition;
-            UpdateCursor();
+            UpdateCursor(false);
         }
 
         private void MoveUp()
         {
             _cursorPosition = _cursorPosition == 0 ? MAX_SAVES - 1 : --_cursorPosition;
-            UpdateCursor();
+            UpdateCursor(true);
         }
 
-        private void UpdateCursor()
+        private void UpdateCursor(bool goingUp)
         {
             for(int i = 0; i < _instSaveSlots.Count; i++)
             {
@@ -170,7 +170,7 @@ namespace Save
             if (_cursorPosition == MAX_SAVES - 1)
                 _scrollView.verticalNormalizedPosition = 0.0f;
             else if (_cursorPosition >= 4)   
-                _scrollView.verticalNormalizedPosition -= SLOT_MOVE_DELTA;
+                _scrollView.verticalNormalizedPosition -= goingUp ? -1.0f * SLOT_MOVE_DELTA : SLOT_MOVE_DELTA;
             else
                 _scrollView.verticalNormalizedPosition = 1.0f;
         }

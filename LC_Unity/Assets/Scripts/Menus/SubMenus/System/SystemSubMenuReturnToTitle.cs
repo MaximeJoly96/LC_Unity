@@ -9,6 +9,7 @@ namespace Menus.SubMenus.System
     {
         public override void Select()
         {
+            MessageBoxService.Instance.MessageBoxClosedWithResult.RemoveAllListeners();
             MessageBoxService.Instance.MessageBoxClosedWithResult.AddListener(ConfirmSelect);
             MessageBoxService.Instance.ShowYesNoMessage(Localizer.Instance.GetString("returnToTitleConfirmation"), MessageBoxType.Warning);
         }

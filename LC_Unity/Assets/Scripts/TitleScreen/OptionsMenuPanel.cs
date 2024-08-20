@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using Core;
 
 namespace TitleScreen
 {
@@ -33,7 +34,7 @@ namespace TitleScreen
 
         protected override void ReceiveInput(InputAction input)
         {
-            if(!_delayOn)
+            if(!_delayOn && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.TitleScreenOptions)
             {
                 switch (input)
                 {
