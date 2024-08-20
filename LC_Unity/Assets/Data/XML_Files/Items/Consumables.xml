@@ -2,22 +2,166 @@
 <Items>
 	<Item>
 		<Id>0</Id>
-		<Name>Potion</Name>
-		<Description>Restores 40% of the target's maximum Health.</Description>
+		<Name>potion</Name>
+		<Description>potionDescription</Description>
 		<Icon>0</Icon>
 		<Price>10</Price>
 		<Usability>Always</Usability>
 		<Priority>0</Priority>
 		<Animation>0</Animation>
+    <Effects>
+      <RestoresResourceScaling Stat="HP" Value="40" />
+    </Effects>
 	</Item>
   <Item>
     <Id>1</Id>
-    <Name>Phoenix Ashes</Name>
-    <Description>Revives a fallen character and restores 25% of its maximum Health.</Description>
+    <Name>maxPotion</Name>
+    <Description>maxPotionDescription</Description>
     <Icon>1</Icon>
     <Price>500</Price>
     <Usability>Always</Usability>
     <Priority>1</Priority>
     <Animation>1</Animation>
+    <Effects>
+      <RestoresResourceScaling Stat="HP" Value="100" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>2</Id>
+    <Name>manaPotion</Name>
+    <Description>manaPotionDescription</Description>
+    <Icon>1</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>1</Animation>
+    <Effects>
+      <RestoresResourceScaling Stat="MP" Value="40" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>3</Id>
+    <Name>manaInfusion</Name>
+    <Description>manaInfusionDescription</Description>
+    <Icon>1</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>1</Animation>
+    <Effects>
+      <RestoresResourceScaling Stat="MP" Value="100" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>4</Id>
+    <Name>phoenixAshes</Name>
+    <Description>phoenixAshesDescription</Description>
+    <Icon>1</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>1</Animation>
+    <Effects>
+      <Revives />
+      <RestoresResourceScaling Stat="HP" Value="40" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>5</Id>
+    <Name>phoenixTears</Name>
+    <Description>phoenixTearsDescription</Description>
+    <Icon>1</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>1</Animation>
+    <Effects>
+      <RevivesAndHeals />
+      <RestoresResourceScaling Stat="HP" Value="100" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>6</Id>
+    <Name>antidote</Name>
+    <Description>antidoteDescription</Description>
+    <Icon>1</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>1</Animation>
+    <Effects>
+      <Dispel Value="Poison" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>7</Id>
+    <Name>echoHerbs</Name>
+    <Description>echoHerbsDescription</Description>
+    <Icon>1</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>1</Animation>
+    <Effects>
+      <Dispel Value="Silence" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>8</Id>
+    <Name>eyeDrops</Name>
+    <Description>eyeDropsDescription</Description>
+    <Icon>1</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>1</Animation>
+    <Effects>
+      <Dispel Value="Blind" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>9</Id>
+    <Name>bandage</Name>
+    <Description>bandageDescription</Description>
+    <Icon>1</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>1</Animation>
+    <Effects>
+      <Dispel Value="BleedI" />
+      <Dispel Value="BleedII" />
+      <Dispel Value="BleedIII" />
+      <Dispel Value="HemoI" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>10</Id>
+    <Name>remedy</Name>
+    <Description>remedyDescription</Description>
+    <Icon>1</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>1</Animation>
+    <Effects>
+      <Dispel Value="Poison" />
+      <Dispel Value="BreakI" />
+      <Dispel Value="BreakII" />
+      <Dispel Value="BreakIII" />
+      <Dispel Value="BleedI" />
+      <Dispel Value="BleedII" />
+      <Dispel Value="BleedIII" />
+      <Dispel Value="HemoI" />
+      <Dispel Value="MagicBreakI" />
+      <Dispel Value="MagicBreakII" />
+      <Dispel Value="MagicBreakIII" />
+      <Dispel Value="SlowI" />
+      <Dispel Value="SlowII" />
+      <Dispel Value="SlowIII" />
+      <Dispel Value="Blind" />
+      <Dispel Value="Silence" />
+      <Dispel Value="Grounded" />
+    </Effects>
   </Item>
 </Items>

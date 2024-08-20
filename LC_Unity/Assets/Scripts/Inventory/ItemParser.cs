@@ -290,6 +290,18 @@ namespace Inventory
                 {
                     effect = new AutoAttackAfterAbility();
                 }
+                else if (name.Equals(typeof(RestoresResourceScaling).Name))
+                {
+                    effect = new RestoresResourceScaling()
+                    {
+                        Stat = (Stat)Enum.Parse(typeof(Stat), effectNode.Attributes["Stat"].InnerText),
+                        Value = float.Parse(effectNode.Attributes["Value"].InnerText, CultureInfo.InvariantCulture)
+                    };
+                }
+                else if (name.Equals(typeof(Revives).Name))
+                {
+                    effect = new Revives();
+                }
 
                 if (effect != null)
                     effects.Add(effect);
