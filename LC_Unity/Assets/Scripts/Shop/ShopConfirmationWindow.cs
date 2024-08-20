@@ -5,6 +5,8 @@ using Core;
 using Inventory;
 using Language;
 using UnityEngine.Events;
+using Party;
+using System.Linq;
 
 namespace Shop
 {
@@ -18,6 +20,10 @@ namespace Shop
         private TMP_Text _itemPrice;
         [SerializeField]
         private TMP_Text _totalPrice;
+        [SerializeField]
+        private LocalizedText _selectItemQuantity;
+        [SerializeField]
+        private TMP_Text _inStock;
 
         [SerializeField]
         private QuantitySelector _firstDigit;
@@ -30,6 +36,7 @@ namespace Shop
 
         private UnityEvent<BaseItem, int> _purchaseCompleted;
         private UnityEvent _purchaseCancelled;
+        private UnityEvent<BaseItem, int> _sellCompleted;
 
         public UnityEvent<BaseItem, int> PurchaseCompleted
         {
@@ -53,6 +60,17 @@ namespace Shop
             }
         }
 
+        public UnityEvent<BaseItem, int> SellCompleted
+        {
+            get
+            {
+                if (_sellCompleted == null)
+                    _sellCompleted = new UnityEvent<BaseItem, int>();
+
+                return _sellCompleted;
+            }
+        }
+
         private Animator _animator
         {
             get { return GetComponent<Animator>(); }
@@ -70,6 +88,7 @@ namespace Shop
             UpdateTotalPrice();
 
             _buying = buying;
+            _selectItemQuantity.UpdateKey(_buying ? "wishToBuy" : "wishToSell");
             GlobalStateMachine.Instance.UpdateState(_buying ? GlobalStateMachine.State.BuyingItems : GlobalStateMachine.State.SellingItems);
             _animator.Play("OpenConfirmationWindow");
         }
@@ -121,9 +140,14 @@ namespace Shop
             UpdateTotalPrice();
         }
 
-        public void Confirm()
+        public void ConfirmPurchase()
         {
             PurchaseCompleted.Invoke(_currentItem, _firstDigit.Value * 10 + _secondDigit.Value);
+        }
+
+        public void ConfirmSell()
+        {
+            SellCompleted.Invoke(_currentItem, _firstDigit.Value * 10 + _secondDigit.Value);
         }
 
         public void Cancel()
@@ -138,6 +162,13 @@ namespace Shop
             _itemName.text = Localizer.Instance.GetString(item.Name);
             _itemPrice.text = item.Price + " " + (item.Price > 1 ? Localizer.Instance.GetString("moneyLabelPlural") :
                                                                    Localizer.Instance.GetString("moneyLabel"));
+
+            InventoryItem inventoryItem = PartyManager.Instance.Inventory.FirstOrDefault(i => i.ItemData.Id == item.Id);
+
+            if (inventoryItem != null)
+                _inStock.text = Localizer.Instance.GetString("inStock") + " " + inventoryItem.InPossession;
+            else
+                _inStock.text = Localizer.Instance.GetString("inStock") + " 0";
 
             UpdateTotalPrice();
         }

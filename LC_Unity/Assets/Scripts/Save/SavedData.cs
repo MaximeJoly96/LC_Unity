@@ -12,5 +12,6 @@ namespace Save
         public float InGameTimeSeconds { get; internal set; }
         public List<Character> Party { get; internal set; }
         public List<InventoryItem> Inventory { get; internal set; }
+        public int Gold { get; internal set; }
     }
 }

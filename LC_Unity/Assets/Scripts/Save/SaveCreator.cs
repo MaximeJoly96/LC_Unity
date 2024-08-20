@@ -37,6 +37,8 @@ namespace Save
             foreach(InventoryItem i in inventory)
                 data.Add("item" + i.ItemData.Id, i.Serialize());
 
+            data.Add("gold", PartyManager.Instance.Gold.ToString());
+
             using (StreamWriter sw = new StreamWriter(path))
             {
                 foreach(KeyValuePair<string, string> kvp in data)

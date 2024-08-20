@@ -18,5 +18,11 @@ namespace Language
         {
             GetComponent<TMP_Text>().text = Localizer.Instance.GetString(_key);
         }
+
+        public void UpdateKey(string key)
+        {
+            _key = key;
+            UpdateText();
+        }
     }
 }

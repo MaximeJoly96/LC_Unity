@@ -126,12 +126,12 @@ namespace Save
                 Data = GetSavedDataFromSlot(slotId);
                 GlobalStateMachine.Instance.CurrentMapId = Data.MapID;
                 PartyManager.Instance.SetInventory(Data.Inventory);
+                PartyManager.Instance.ChangeGold(new Engine.Party.ChangeGold { Value = Data.Gold });
             }
             catch(Exception e)
             {
                 LogsHandler.Instance.LogError("Could not load save file. Reason: " + e.Message);
             }
-            
         }
 
         public void CreateSaveFile(int slotId)
@@ -147,7 +147,8 @@ namespace Save
                     MapID = int.Parse(saveData["mapId"], CultureInfo.InvariantCulture),
                     InGameTimeSeconds = float.Parse(saveData["inGameTime"], CultureInfo.InvariantCulture),
                     Party = RetrievePartyData(saveData),
-                    Inventory = RetrieveInventoryData(saveData)
+                    Inventory = RetrieveInventoryData(saveData),
+                    Gold = int.Parse(saveData["gold"])
                 };
             }
             catch (Exception e)
@@ -212,7 +213,8 @@ namespace Save
                 MapID = int.Parse(saveData["mapId"], CultureInfo.InvariantCulture),
                 InGameTimeSeconds = float.Parse(saveData["inGameTime"], CultureInfo.InvariantCulture),
                 Party = RetrievePartyData(saveData),
-                Inventory = RetrieveInventoryData(saveData)
+                Inventory = RetrieveInventoryData(saveData),
+                Gold = int.Parse(saveData["gold"])
             };
         }
     }
