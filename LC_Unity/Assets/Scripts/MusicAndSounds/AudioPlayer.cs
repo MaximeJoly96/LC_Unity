@@ -94,6 +94,8 @@ namespace MusicAndSounds
         {
             _runningAudios = new List<RunningAudio>();
             _pausedAudios = new List<RunningAudio>();
+
+            DontDestroyOnLoad(this.gameObject);
         }
 
         private void Update()

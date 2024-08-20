@@ -3305,6 +3305,60 @@ MonoBehaviour:
   _buttons:
   - {fileID: 925189492}
   - {fileID: 1335665309}
+--- !u!1 &890424425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 890424427}
+  - component: {fileID: 890424426}
+  m_Layer: 0
+  m_Name: AudioPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &890424426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890424425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abcd9b2c80fb6243b8971c0f5515edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgmBank: {fileID: 1516669803}
+  _bgsBank: {fileID: 2041864626}
+  _musicalEffectsBank: {fileID: 1517334242}
+  _soundEffectsBank: {fileID: 1338884172}
+  _musicMixer: {fileID: 24300002, guid: 66a98e65949d31545975e596934e7119, type: 2}
+  _soundMixer: {fileID: 24300002, guid: f59e2080227b7144b9ced219ad67802f, type: 2}
+--- !u!4 &890424427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890424425}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0116535, y: -0.36551085, z: 0.1327422}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1516669804}
+  - {fileID: 2041864627}
+  - {fileID: 1517334243}
+  - {fileID: 1338884173}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907164906
 GameObject:
   m_ObjectHideFlags: 0
@@ -5208,6 +5262,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _key: msgBoxNo
+--- !u!1 &1338884171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1338884173}
+  - component: {fileID: 1338884172}
+  m_Layer: 0
+  m_Name: SE_Soundbank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1338884172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338884171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7a73dc40560ec4e9b5a19960b7c22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - key: mining
+    audio: {fileID: 8300000, guid: a4bc7462fa60c894f929537be09c51bb, type: 3}
+  - key: OpenWoodenDoor
+    audio: {fileID: 8300000, guid: 1ee448942ac1a1241a2f26a2c1dcc08b, type: 3}
+  - key: CloseWoodenDoor
+    audio: {fileID: 8300000, guid: 3c133ca05dae066499c658fd75d4afa3, type: 3}
+  - key: Error1
+    audio: {fileID: 8300000, guid: 2ddef56190c17a843bc5d735e46e416a, type: 3}
+--- !u!4 &1338884173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338884171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 890424427}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1349292035
 GameObject:
   m_ObjectHideFlags: 0
@@ -5722,6 +5829,100 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485291043}
   m_CullTransparentMesh: 1
+--- !u!1 &1516669802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1516669804}
+  - component: {fileID: 1516669803}
+  m_Layer: 0
+  m_Name: BGM_Soundbank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1516669803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516669802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7a73dc40560ec4e9b5a19960b7c22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - key: town
+    audio: {fileID: 8300000, guid: 0df73d1445c6dc447b8ceeded34448d4, type: 3}
+--- !u!4 &1516669804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516669802}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 890424427}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1517334241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517334243}
+  - component: {fileID: 1517334242}
+  m_Layer: 0
+  m_Name: ME_Soundbank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1517334242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517334241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7a73dc40560ec4e9b5a19960b7c22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - key: goodnight
+    audio: {fileID: 8300000, guid: cc435582deae3b148bedb597b4ff1620, type: 3}
+--- !u!4 &1517334243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517334241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 890424427}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1564673912
 GameObject:
   m_ObjectHideFlags: 0
@@ -7218,6 +7419,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974222335}
   m_CullTransparentMesh: 1
+--- !u!1 &2041864625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2041864627}
+  - component: {fileID: 2041864626}
+  m_Layer: 0
+  m_Name: BGS_Soundbank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2041864626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041864625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7a73dc40560ec4e9b5a19960b7c22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - key: forest
+    audio: {fileID: 8300000, guid: 813812b79eb4027478ea3c69ed090747, type: 3}
+--- !u!4 &2041864627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041864625}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 890424427}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2077978092
 GameObject:
   m_ObjectHideFlags: 0

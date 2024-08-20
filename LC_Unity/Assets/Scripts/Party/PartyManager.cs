@@ -32,7 +32,7 @@ namespace Party
         {
             _party = new List<Character>();
             _inventory = new List<InventoryItem>();
-            Gold = 0;
+            Gold = 100;
         }
 
         public void ChangeGold(ChangeGold change)

@@ -67,6 +67,7 @@ namespace Shop
 
             _firstDigit.SetValue(0);
             _secondDigit.SetValue(1);
+            UpdateTotalPrice();
 
             _buying = buying;
             GlobalStateMachine.Instance.UpdateState(_buying ? GlobalStateMachine.State.BuyingItems : GlobalStateMachine.State.SellingItems);

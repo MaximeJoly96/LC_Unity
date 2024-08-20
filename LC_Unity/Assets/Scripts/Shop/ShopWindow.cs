@@ -7,6 +7,8 @@ using Core;
 using Party;
 using Inventory;
 using System.Linq;
+using Engine.MusicAndSounds;
+using MusicAndSounds;
 
 namespace Shop
 {
@@ -22,6 +24,8 @@ namespace Shop
         private ItemDetails _itemDetails;
         [SerializeField]
         private PartyPreview _partyPreview;
+        [SerializeField]
+        private TMP_Text _currentGold;
 
         [SerializeField]
         private SelectableItem _selectableItemPreview;
@@ -37,6 +41,8 @@ namespace Shop
         {
             _merchant = merchant;
             _shopName.text = merchant.Name;
+
+            UpdateGoldText();
 
             _optionsCursorPosition = 0;
             _itemsListCursorPosition = 0;
@@ -133,7 +139,10 @@ namespace Shop
             else if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList)
             {
                 if (PartyManager.Instance.Gold < _instItems[_itemsListCursorPosition].Item.Price)
+                {
+                    PlayErrorSound();
                     return;
+                }   
 
                 Buy(_instItems[_itemsListCursorPosition].Item);
             }
@@ -244,6 +253,12 @@ namespace Shop
 
         private void DoBuy(BaseItem item, int quantity)
         {
+            if(PartyManager.Instance.Gold < item.Price * quantity)
+            {
+                PlayErrorSound();
+                return;
+            }
+
             InventoryItem inventoryItem = PartyManager.Instance.Inventory.FirstOrDefault(i => i.ItemData.Id == item.Id);
             if (inventoryItem != null)
             {
@@ -260,11 +275,28 @@ namespace Shop
             _itemDetails.Feed(_instItems[_itemsListCursorPosition].Item);
 
             _confirmationWindow.Close();
+            UpdateGoldText();
         }
 
         private void CancelOrder()
         {
             _confirmationWindow.Close();
+        }
+
+        private void PlayErrorSound()
+        {
+            FindObjectOfType<AudioPlayer>().PlaySoundEffect(new PlaySoundEffect
+            {
+                Name = "Error1",
+                Volume = 0.25f,
+                Pitch = 1.0f
+            });
+        }
+
+        private void UpdateGoldText()
+        {
+            _currentGold.text = PartyManager.Instance.Gold + " " + (PartyManager.Instance.Gold > 1 ? Localizer.Instance.GetString("moneyLabelPlural") :
+                                                                                                     Localizer.Instance.GetString("moneyLabel"));
         }
     }
 }
