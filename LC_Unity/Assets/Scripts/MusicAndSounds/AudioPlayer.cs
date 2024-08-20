@@ -3,6 +3,7 @@ using Engine.MusicAndSounds;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
+using UnityEngine.Audio;
 
 namespace MusicAndSounds
 {
@@ -33,6 +34,10 @@ namespace MusicAndSounds
         private Soundbank _musicalEffectsBank;
         [SerializeField]
         private Soundbank _soundEffectsBank;
+        [SerializeField]
+        private AudioMixerGroup _musicMixer;
+        [SerializeField]
+        private AudioMixerGroup _soundMixer;
 
         private List<RunningAudio> _runningAudios;
         private List<RunningAudio> _pausedAudios;
@@ -111,6 +116,8 @@ namespace MusicAndSounds
             source.volume = audio.Volume;
             source.pitch = audio.Pitch;
             source.loop = loop;
+
+            source.outputAudioMixerGroup = type == AudioType.BGM || type == AudioType.ME ? _musicMixer : _soundMixer;
 
             if (type == AudioType.ME)
                 PauseAllRunningAudios();
