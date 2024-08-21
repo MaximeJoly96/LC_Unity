@@ -13,7 +13,7 @@ namespace Utils
         public Sprite Icon;
     }
 
-    public class ElementsWrapper : MonoBehaviour
+    public class ElementsWrapper : IconsWrapper
     {
         [SerializeField]
         private List<ElementDisplay> _elements;

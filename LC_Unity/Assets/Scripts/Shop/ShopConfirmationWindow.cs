@@ -7,6 +7,7 @@ using Language;
 using UnityEngine.Events;
 using Party;
 using System.Linq;
+using Utils;
 
 namespace Shop
 {
@@ -162,6 +163,13 @@ namespace Shop
             _itemName.text = Localizer.Instance.GetString(item.Name);
             _itemPrice.text = item.Price + " " + (item.Price > 1 ? Localizer.Instance.GetString("moneyLabelPlural") :
                                                                    Localizer.Instance.GetString("moneyLabel"));
+
+            switch (item.Category)
+            {
+                case ItemCategory.Consumable:
+                    _itemIcon.sprite = FindObjectOfType<ConsumablesWrapper>().GetSpriteForConsumable(item.Icon);
+                    break;
+            }
 
             InventoryItem inventoryItem = PartyManager.Instance.Inventory.FirstOrDefault(i => i.ItemData.Id == item.Id);
 

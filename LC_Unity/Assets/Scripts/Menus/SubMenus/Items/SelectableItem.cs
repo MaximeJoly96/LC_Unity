@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using Inventory;
 using Language;
+using Utils;
 
 namespace Menus.SubMenus.Items
 {
@@ -23,9 +24,15 @@ namespace Menus.SubMenus.Items
         {
             Item = item;
 
-            _icon.sprite = null;//item.ItemData.Icon;
             _name.text = Localizer.Instance.GetString(item.ItemData.Name);
             _quantity.text = "x" + item.InPossession;
+
+            switch(item.ItemData.Category)
+            {
+                case ItemCategory.Consumable:
+                    _icon.sprite = FindObjectOfType<ConsumablesWrapper>().GetSpriteForConsumable(item.ItemData.Icon);
+                    break;
+            }
         }
 
         public void ShowCursor(bool show)

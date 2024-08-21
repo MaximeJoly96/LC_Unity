@@ -2,6 +2,8 @@
 using TMPro;
 using Inventory;
 using Language;
+using UnityEngine.UI;
+using Utils;
 
 namespace Shop
 {
@@ -13,6 +15,8 @@ namespace Shop
         private TMP_Text _itemName;
         [SerializeField]
         private TMP_Text _price;
+        [SerializeField]
+        private Image _icon;
 
         public BaseItem Item { get; private set; }
 
@@ -24,6 +28,13 @@ namespace Shop
             _price.text = item.Price.ToString();
 
             Item = item;
+
+            switch (item.Category)
+            {
+                case ItemCategory.Consumable:
+                    _icon.sprite = FindObjectOfType<ConsumablesWrapper>().GetSpriteForConsumable(item.Icon);
+                    break;
+            }
         }
 
         public void Hover(bool hover)

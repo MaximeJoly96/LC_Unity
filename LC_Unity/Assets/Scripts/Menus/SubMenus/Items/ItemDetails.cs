@@ -3,6 +3,7 @@ using TMPro;
 using Inventory;
 using UnityEngine.UI;
 using Language;
+using Utils;
 
 namespace Menus.SubMenus.Items
 {
@@ -26,7 +27,13 @@ namespace Menus.SubMenus.Items
             _inStock.text = Localizer.Instance.GetString("inStock") + " " + item.InPossession;
 
             _description.text = item.ItemData.DetailedDescription();
-            _icon.sprite = null;
+
+            switch(item.ItemData.Category)
+            {
+                case ItemCategory.Consumable:
+                    _icon.sprite = FindObjectOfType<ConsumablesWrapper>().GetSpriteForConsumable(item.ItemData.Icon);
+                    break;
+            }
         }
 
         public void Clear()

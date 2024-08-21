@@ -5,6 +5,7 @@ using Inventory;
 using Party;
 using System.Linq;
 using Language;
+using Utils;
 
 namespace Shop
 {
@@ -47,6 +48,13 @@ namespace Shop
                 _inStock.text = Localizer.Instance.GetString("inStock") + " " + inventoryItem.InPossession.ToString();
             else
                 _inStock.text = Localizer.Instance.GetString("inStock") + " " + 0;
+
+            switch(item.Category)
+            {
+                case ItemCategory.Consumable:
+                    _icon.sprite = FindObjectOfType<ConsumablesWrapper>().GetSpriteForConsumable(item.Icon);
+                    break;
+            }
         }
 
         public void Show(bool show)
