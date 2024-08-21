@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine.UI;
 using Inventory;
+using Language;
 
 namespace Menus.SubMenus.Items
 {
@@ -23,7 +24,7 @@ namespace Menus.SubMenus.Items
             Item = item;
 
             _icon.sprite = null;//item.ItemData.Icon;
-            _name.text = item.ItemData.Name;
+            _name.text = Localizer.Instance.GetString(item.ItemData.Name);
             _quantity.text = "x" + item.InPossession;
         }
 

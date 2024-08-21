@@ -42,6 +42,10 @@ namespace Shop
             _merchant = merchant;
             _shopName.text = merchant.Name;
 
+            _partyPreview.gameObject.SetActive(_merchant.SoldItemsTypes.Contains(ItemCategory.Armour) ||
+                                               _merchant.SoldItemsTypes.Contains(ItemCategory.Accessory) ||
+                                               _merchant.SoldItemsTypes.Contains(ItemCategory.Weapon));
+
             UpdateGoldText();
 
             _optionsCursorPosition = 0;

@@ -15,7 +15,7 @@ namespace Menus.SubMenus
         [SerializeField]
         private SelectableItemsList _itemsList;
         [SerializeField]
-        private TMP_Text _currentItemDescription;
+        private ItemDetails _itemDetails;
 
         private int _cursorPosition;
         private float _delay;
@@ -51,6 +51,7 @@ namespace Menus.SubMenus
                 _categories[i].ShowCursor(_cursorPosition == i);
             }
 
+            _itemDetails.Clear();
             _itemsList.Init(_categories[_cursorPosition].Category);
         }
 
@@ -113,7 +114,7 @@ namespace Menus.SubMenus
 
         private void UpdateItemDescription(SelectableItem item)
         {
-            _currentItemDescription.text = item.Item.ItemData.Description;
+            _itemDetails.Feed(item.Item);
         }
 
         private void Update()
