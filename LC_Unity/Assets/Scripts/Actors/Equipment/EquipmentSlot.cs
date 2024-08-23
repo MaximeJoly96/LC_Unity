@@ -1,4 +1,8 @@
-﻿namespace Actors.Equipment
+﻿using Language;
+using Inventory;
+using UnityEngine;
+
+namespace Actors.Equipment
 {
     public enum EquipmentPosition
     {
@@ -13,7 +17,14 @@
     {
         public EquipmentPosition Position { get; private set; }
         public int ItemId { get; set; }
-        public string Name { get { return "NODATA"; } }
+        public string Name 
+        { 
+            get 
+            {
+                BaseItem item = GameObject.FindObjectOfType<ItemsWrapper>().GetItemFromId(ItemId);
+                return item == null ? "" : Localizer.Instance.GetString(item.Name);
+            } 
+        }
         
         public EquipmentSlot(EquipmentPosition position, int id)
         {
