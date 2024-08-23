@@ -228,11 +228,11 @@ namespace Actors
 
         private void InitEquipmentSlots()
         {
-            Head = new EquipmentSlot(EquipmentPosition.Helmet, 0);
-            LeftHand = new EquipmentSlot(EquipmentPosition.LeftHand, 0);
-            RightHand = new EquipmentSlot(EquipmentPosition.RightHand, 0);
-            Body = new EquipmentSlot(EquipmentPosition.Body, 0);
-            Accessory = new EquipmentSlot(EquipmentPosition.Accessory, 0);
+            Head = new EquipmentSlot(EquipmentPosition.Helmet, -1);
+            LeftHand = new EquipmentSlot(EquipmentPosition.LeftHand, -1);
+            RightHand = new EquipmentSlot(EquipmentPosition.RightHand, -1);
+            Body = new EquipmentSlot(EquipmentPosition.Body, -1);
+            Accessory = new EquipmentSlot(EquipmentPosition.Accessory, -1);
         }
 
         public string Serialize()
