@@ -1,6 +1,7 @@
 ﻿using Actors;
 using UnityEngine;
 using TMPro;
+using Language;
 
 namespace Menus.SubMenus.Status
 {
@@ -13,8 +14,8 @@ namespace Menus.SubMenus.Status
 
         public override void Feed(Character character)
         {
-            _affinityName.text = character.EssenceAffinity.Name;
-            _description.text = character.EssenceAffinity.Description;
+            _affinityName.text = Localizer.Instance.GetString(character.EssenceAffinity.Name);
+            _description.text = Localizer.Instance.GetString(character.EssenceAffinity.Description);
         }
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using Utils;
 using System.Globalization;
+using Essence;
+using System.Linq;
 
 namespace Actors
 {
@@ -21,8 +23,9 @@ namespace Actors
                 document.LoadXml(file.text);
 
                 XmlNodeList charactersNodes = document.SelectSingleNode("Characters").SelectNodes("Character");
+                EssencesWrapper essencesWrapper = GameObject.FindObjectOfType<EssencesWrapper>();
 
-                for(int i = 0; i < charactersNodes.Count; i++)
+                for (int i = 0; i < charactersNodes.Count; i++)
                 {
                     Character c = new Character(ParseIntValue(charactersNodes[i], "Id"),
                                                 ParseStringValue(charactersNodes[i], "Name"),
@@ -36,6 +39,9 @@ namespace Actors
                                                 ParseStatScalingFunction(charactersNodes[i], "BaseMagicDefense"),
                                                 ParseStatScalingFunction(charactersNodes[i], "BaseAgility"),
                                                 ParseStatScalingFunction(charactersNodes[i], "BaseLuck"));
+
+                    c.EssenceAffinity = essencesWrapper.EssentialAffinities.FirstOrDefault(e => e.Id == ParseIntValue(charactersNodes[i], 
+                                                                                                                      "EssentialAffinity"));
 
                     characters.Add(c);
                 }

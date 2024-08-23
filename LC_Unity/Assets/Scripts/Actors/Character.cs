@@ -124,9 +124,6 @@ namespace Actors
             Abilities = new List<Ability>();
             ElementalAffinities = new List<ElementalAffinity>();
             ActiveEffects = new List<ActiveEffect>();
-            ActiveEffects.Add(new ActiveEffect { Effect = EffectType.Poison });
-
-            EssenceAffinity = new EssenceAffinity("Avenge", "Gathers Essence when damage is dealt to an ally.");
 
             InitBasicAffinities();
             InitEquipmentSlots();
