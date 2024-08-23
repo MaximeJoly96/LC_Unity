@@ -3,11 +3,15 @@ using TMPro;
 using UnityEngine;
 using Menus.SubMenus.Items;
 using Menus.SubMenus.Status;
+using Inputs;
+using log4net.Util;
 
 namespace Menus.SubMenus
 {
     public class EquipmentSubMenu : SubMenu
     {
+        private const float SELECTION_DELAY = 0.2f;
+
         private int _cursorPosition;
         private float _delay;
 
@@ -36,6 +40,8 @@ namespace Menus.SubMenus
 
             StartCoroutine(DoOpen());
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuEquipmentTab);
+
+            UpdateCursor();
         }
 
         public override void Close()
@@ -61,6 +67,65 @@ namespace Menus.SubMenus
                 _stats.Feed(_fedCharacter);
                 _equipment.Feed(_fedCharacter);
             }
+        }
+
+        private void Update()
+        {
+            if (_busy)
+            {
+                _delay += Time.deltaTime;
+
+                if (_delay >= SELECTION_DELAY)
+                {
+                    _delay = 0.0f;
+                    _busy = false;
+                }
+            }
+        }
+
+        protected override void HandleInputs(InputAction input)
+        {
+            if(!_busy)
+            {
+                switch(input)
+                {
+                    case InputAction.Select:
+                        Select();
+                        break;
+                    case InputAction.Cancel:
+                        Close();
+                        break;
+                    case InputAction.MoveUp:
+                        MoveUp();
+                        break;
+                    case InputAction.MoveDown:MoveDown();
+                        break;
+                }
+
+                _busy = true;
+            }
+        }
+
+        private void UpdateCursor()
+        {
+            _equipment.UpdateCursor(_cursorPosition);
+        }
+
+        private void MoveUp()
+        {
+            _cursorPosition = _cursorPosition == 0 ? 4 : --_cursorPosition;
+            UpdateCursor();
+        }
+
+        private void MoveDown()
+        {
+            _cursorPosition = _cursorPosition >= 4 ? 0 : ++_cursorPosition;
+            UpdateCursor();
+        }
+
+        private void Select()
+        {
+
         }
     }
 }

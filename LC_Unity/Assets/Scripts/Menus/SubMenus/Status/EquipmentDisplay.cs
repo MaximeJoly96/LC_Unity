@@ -17,6 +17,15 @@ namespace Menus.SubMenus.Status
             _icon.color = new Color(_icon.color.r, _icon.color.g, _icon.color.b, icon != null ? 1.0f : 0.0f);
             _icon.sprite = icon;
             _name.text = name == "" ? Localizer.Instance.GetString("noEquipment") : name;
+
+            ShowCursor(false);
+        }
+
+        public void ShowCursor(bool show)
+        {
+            Transform cursor = transform.Find("Cursor");
+            if (cursor)
+                cursor.gameObject.SetActive(show);
         }
     }
 }

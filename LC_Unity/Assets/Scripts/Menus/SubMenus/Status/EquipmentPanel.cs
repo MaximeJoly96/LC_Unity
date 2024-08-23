@@ -27,5 +27,14 @@ namespace Menus.SubMenus.Status
             _bodyDisplay.Feed(null, character.Body.Name);
             _accessoryDisplay.Feed(null, character.Accessory.Name);
         }
+
+        public void UpdateCursor(int cursorPosition)
+        {
+            _rightHandDisplay.ShowCursor(cursorPosition == 0);
+            _leftHandDisplay.ShowCursor(cursorPosition == 1);
+            _headDisplay.ShowCursor(cursorPosition == 2);
+            _bodyDisplay.ShowCursor(cursorPosition == 3);
+            _accessoryDisplay.ShowCursor(cursorPosition == 4);
+        }
     }
 }
