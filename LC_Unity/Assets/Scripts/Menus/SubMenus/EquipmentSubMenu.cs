@@ -85,7 +85,7 @@ namespace Menus.SubMenus
 
         protected override void HandleInputs(InputAction input)
         {
-            if(!_busy)
+            if(!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuEquipmentTab)
             {
                 switch(input)
                 {

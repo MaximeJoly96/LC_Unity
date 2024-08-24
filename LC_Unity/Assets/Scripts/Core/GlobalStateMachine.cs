@@ -1,4 +1,5 @@
-﻿using UnityEngine.Events;
+﻿using Logging;
+using UnityEngine.Events;
 
 namespace Core
 {
