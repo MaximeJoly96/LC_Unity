@@ -32,6 +32,9 @@ namespace Menus.SubMenus.Items
                 case ItemCategory.Consumable:
                     _icon.sprite = FindObjectOfType<ConsumablesWrapper>().GetSpriteForConsumable(item.ItemData.Icon);
                     break;
+                case ItemCategory.Weapon:
+                    _icon.sprite = FindObjectOfType<WeaponsWrapper>().GetSpriteForWeapon(item.ItemData.Icon);
+                    break;
             }
         }
 

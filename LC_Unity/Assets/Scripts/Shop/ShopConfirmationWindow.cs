@@ -169,6 +169,9 @@ namespace Shop
                 case ItemCategory.Consumable:
                     _itemIcon.sprite = FindObjectOfType<ConsumablesWrapper>().GetSpriteForConsumable(item.Icon);
                     break;
+                case ItemCategory.Weapon:
+                    _itemIcon.sprite = FindObjectOfType<WeaponsWrapper>().GetSpriteForWeapon(item.Icon);
+                    break;
             }
 
             InventoryItem inventoryItem = PartyManager.Instance.Inventory.FirstOrDefault(i => i.ItemData.Id == item.Id);

@@ -54,6 +54,9 @@ namespace Shop
                 case ItemCategory.Consumable:
                     _icon.sprite = FindObjectOfType<ConsumablesWrapper>().GetSpriteForConsumable(item.Icon);
                     break;
+                case ItemCategory.Weapon:
+                    _icon.sprite = FindObjectOfType<WeaponsWrapper>().GetSpriteForWeapon(item.Icon);
+                    break;
             }
         }
 
