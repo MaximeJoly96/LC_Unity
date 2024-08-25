@@ -30,16 +30,19 @@ namespace Menus.SubMenus.Items
 
         public void Init(ItemCategory category)
         {
+            Init(PartyManager.Instance.Inventory.Where(i => i.ItemData.Category == category));
+        }
+
+        public void Init(IEnumerable<InventoryItem> items)
+        {
             Clear();
             _cursorPosition = 0;
             _items = new List<SelectableItem>();
 
-            IEnumerable<InventoryItem> inventory = PartyManager.Instance.Inventory.Where(i => i.ItemData.Category == category);
-
-            for(int i = 0; i < inventory.Count(); i++)
+            for (int i = 0; i < items.Count(); i++)
             {
                 SelectableItem item = Instantiate(_selectableItemPrefab, transform);
-                item.Feed(inventory.ElementAt(i));
+                item.Feed(items.ElementAt(i));
 
                 _items.Add(item);
             }
