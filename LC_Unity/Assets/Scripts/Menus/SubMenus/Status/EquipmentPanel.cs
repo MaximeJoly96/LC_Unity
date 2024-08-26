@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Actors;
 using Utils;
+using Inventory;
 
 namespace Menus.SubMenus.Status
 {
@@ -20,8 +21,15 @@ namespace Menus.SubMenus.Status
         public override void Feed(Character character)
         {
             WeaponsWrapper wrapper = FindObjectOfType<WeaponsWrapper>();
+            ItemsWrapper itemsWrapper = FindObjectOfType<ItemsWrapper>();
 
-            _rightHandDisplay.Feed(wrapper.GetSpriteForWeapon(character.RightHand.ItemId), character.RightHand.Name);
+            BaseItem rightHandItem = itemsWrapper.GetItemFromId(character.RightHand.ItemId);
+            BaseItem leftHandItem = itemsWrapper.GetItemFromId(character.LeftHand.ItemId);
+            BaseItem headItem = itemsWrapper.GetItemFromId(character.Head.ItemId);
+            BaseItem bodyItem = itemsWrapper.GetItemFromId(character.Body.ItemId);
+            BaseItem accessoryItem = itemsWrapper.GetItemFromId(character.Accessory.ItemId);
+
+            _rightHandDisplay.Feed(rightHandItem != null ? wrapper.GetSpriteForWeapon(rightHandItem.Icon) : null, character.RightHand.Name);
             _leftHandDisplay.Feed(null, character.LeftHand.Name);
             _headDisplay.Feed(null, character.Head.Name);
             _bodyDisplay.Feed(null, character.Body.Name);

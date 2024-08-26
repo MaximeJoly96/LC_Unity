@@ -11,6 +11,7 @@ using Inventory;
 using System.Collections.Generic;
 using Party;
 using System.Linq;
+using Actors;
 
 namespace Menus.SubMenus
 {
@@ -20,6 +21,8 @@ namespace Menus.SubMenus
 
         private int _cursorPosition;
         private float _delay;
+        private SelectableItem _hoveredItem;
+        private BaseItem _currentItem;
 
         [SerializeField]
         private TMP_Text _characterName;
@@ -72,11 +75,11 @@ namespace Menus.SubMenus
             {
                 _hoveredItemName.text = Localizer.Instance.GetString(item.Item.ItemData.Name);
                 _hoveredItemDescription.text = item.Item.ItemData.DetailedDescription();
+                _hoveredItem = item;
             }
             else
             {
-                _hoveredItemName.text = "";
-                _hoveredItemDescription.text = "";
+                ClearHoveredItem();
             }
         }
 
@@ -198,7 +201,17 @@ namespace Menus.SubMenus
                     _itemsList.Init(itemsToList);
             }
             else
+            {
+                ModifyEquipment(_fedCharacter, _hoveredItem.Item.ItemData, _cursorPosition);
+                _itemsList.Clear();
+                ClearHoveredItem();
+
+                UpdateCursor();
+                UpdateCurrentItemDetails();
+                UpdateItemDescription(null);
                 GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuEquipmentTab);
+            }
+                
         }
 
         private void Cancel()
@@ -218,37 +231,37 @@ namespace Menus.SubMenus
 
         private void UpdateCurrentItemDetails()
         {
-            BaseItem currentItem = null;
             ItemsWrapper wrapper = GameObject.FindObjectOfType<ItemsWrapper>();
 
             switch (_cursorPosition)
             {
                 case 0:
-                    currentItem = wrapper.GetItemFromId(_fedCharacter.RightHand.ItemId);
+                    _currentItem = wrapper.GetItemFromId(_fedCharacter.RightHand.ItemId);
                     break;
                 case 1:
-                    currentItem = wrapper.GetItemFromId(_fedCharacter.LeftHand.ItemId);
+                    _currentItem = wrapper.GetItemFromId(_fedCharacter.LeftHand.ItemId);
                     break;
                 case 2:
-                    currentItem = wrapper.GetItemFromId(_fedCharacter.Head.ItemId);
+                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Head.ItemId);
                     break;
                 case 3:
-                    currentItem = wrapper.GetItemFromId(_fedCharacter.Body.ItemId);
+                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Body.ItemId);
                     break;
                 case 4:
-                    currentItem = wrapper.GetItemFromId(_fedCharacter.Accessory.ItemId);
+                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Accessory.ItemId);
                     break;
             }
 
-            if(currentItem != null)
+            if(_currentItem != null)
             {
-                _currentItemName.text = Localizer.Instance.GetString(currentItem.Name);
-                _currentItemDescription.text = currentItem.DetailedDescription();
+                _currentItemName.text = Localizer.Instance.GetString(_currentItem.Name);
+                _currentItemDescription.text = _currentItem.DetailedDescription();
             }
             else
             {
                 _currentItemName.text = "";
                 _currentItemDescription.text = "";
+                _currentItem = null;
             }
         }
 
@@ -256,6 +269,31 @@ namespace Menus.SubMenus
         {
             _hoveredItemName.text = "";
             _hoveredItemDescription.text = "";
+            _hoveredItem = null;
+        }
+
+        private void ModifyEquipment(Character character, BaseItem newItem, int cursorPosition)
+        {
+            switch(cursorPosition)
+            {
+                case 0:
+                    character.RightHand.ItemId = newItem.Id;
+                    break;
+                case 1:
+                    character.LeftHand.ItemId = newItem.Id;
+                    break;
+                case 2:
+                    character.Head.ItemId = newItem.Id;
+                    break;
+                case 3:
+                    character.Body.ItemId = newItem.Id;
+                    break;
+                case 4:
+                    character.Accessory.ItemId = newItem.Id;
+                    break;
+            }
+
+            Init();
         }
     }
 }
