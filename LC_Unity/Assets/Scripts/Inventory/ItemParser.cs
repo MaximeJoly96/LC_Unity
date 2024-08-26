@@ -317,5 +317,24 @@ namespace Inventory
 
             return new ItemRecipeComponent(id, quantity);
         }
+
+        public static ItemStats ParseItemStats(XmlNode node)
+        {
+            return new ItemStats(ParseIntStat("Health", node),
+                                 ParseIntStat("Mana", node),
+                                 ParseIntStat("Essence", node),
+                                 ParseIntStat("Strength", node),
+                                 ParseIntStat("Defense", node),
+                                 ParseIntStat("Magic", node),
+                                 ParseIntStat("MagicDefense", node),
+                                 ParseIntStat("Agility", node),
+                                 ParseIntStat("Luck", node));
+        }
+
+        private static int ParseIntStat(string key, XmlNode node)
+        {
+            XmlNode subNode = node.SelectSingleNode(key);
+            return subNode != null ? int.Parse(subNode.InnerText) : 0;
+        }
     }
 }

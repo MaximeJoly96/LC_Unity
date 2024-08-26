@@ -64,6 +64,10 @@ namespace Inventory
             if (rangeNode != null)
                 weapon.Range = int.Parse(rangeNode.InnerText);
 
+            XmlNode statsNode = itemNode.SelectSingleNode("Stats");
+            if (statsNode != null)
+                weapon.Stats = ParseItemStats(statsNode);
+
             return weapon;            
         }
     }

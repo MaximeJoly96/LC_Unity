@@ -48,6 +48,10 @@ namespace Inventory
             if (effectsNode != null)
                 armour.AddEffects(ParseEffectsFromNode(effectsNode));
 
+            XmlNode statsNode = node.SelectSingleNode("Stats");
+            if (statsNode != null)
+                armour.Stats = ParseItemStats(statsNode);
+
             return armour;
         }
     }
