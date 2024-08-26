@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Menus.SubMenus.Status;
+using Inputs;
 
 namespace Menus.SubMenus
 {
@@ -73,6 +74,19 @@ namespace Menus.SubMenus
                 _equipmentPanel.Feed(_fedCharacter);
                 _effectsPanel.Feed(_fedCharacter);
                 _essenceAffinityPanel.Feed(_fedCharacter);
+            }
+        }
+
+        protected override void HandleInputs(InputAction input)
+        {
+            if (!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuStatusTab)
+            {
+                switch (input)
+                {
+                    case InputAction.Cancel:
+                        Close();
+                        break;
+                }
             }
         }
     }

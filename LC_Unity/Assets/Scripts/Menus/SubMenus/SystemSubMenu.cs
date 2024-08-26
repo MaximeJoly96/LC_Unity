@@ -35,8 +35,6 @@ namespace Menus.SubMenus
 
         protected override void HandleInputs(InputAction input)
         {
-            base.HandleInputs(input);
-
             if(!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuSystemTab)
             {
                 switch(input)
@@ -55,6 +53,9 @@ namespace Menus.SubMenus
                         break;
                     case InputAction.MoveRight:
                         MoveCursorRight();
+                        break;
+                    case InputAction.Cancel:
+                        Close();
                         break;
                 }
 

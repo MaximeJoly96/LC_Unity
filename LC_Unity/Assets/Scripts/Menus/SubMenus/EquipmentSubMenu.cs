@@ -106,7 +106,8 @@ namespace Menus.SubMenus
 
         protected override void HandleInputs(InputAction input)
         {
-            if(!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuEquipmentTab)
+            if(!_busy && (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuEquipmentTab ||
+                          GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.ChangingEquipment))
             {
                 switch(input)
                 {
@@ -114,7 +115,7 @@ namespace Menus.SubMenus
                         Select();
                         break;
                     case InputAction.Cancel:
-                        Close();
+                        Cancel();
                         break;
                     case InputAction.MoveUp:
                         MoveUp();
@@ -135,16 +136,32 @@ namespace Menus.SubMenus
 
         private void MoveUp()
         {
-            _cursorPosition = _cursorPosition == 0 ? 4 : --_cursorPosition;
-            UpdateCursor();
-            UpdateCurrentItemDetails();
+            switch(GlobalStateMachine.Instance.CurrentState)
+            {
+                case GlobalStateMachine.State.InMenuEquipmentTab:
+                    _cursorPosition = _cursorPosition == 0 ? 4 : --_cursorPosition;
+                    UpdateCursor();
+                    UpdateCurrentItemDetails();
+                    break;
+                case GlobalStateMachine.State.ChangingEquipment:
+                    _itemsList.MoveCursorUp();
+                    break;
+            }
         }
 
         private void MoveDown()
         {
-            _cursorPosition = _cursorPosition >= 4 ? 0 : ++_cursorPosition;
-            UpdateCursor();
-            UpdateCurrentItemDetails();
+            switch (GlobalStateMachine.Instance.CurrentState)
+            {
+                case GlobalStateMachine.State.InMenuEquipmentTab:
+                    _cursorPosition = _cursorPosition >= 4 ? 0 : ++_cursorPosition;
+                    UpdateCursor();
+                    UpdateCurrentItemDetails();
+                    break;
+                case GlobalStateMachine.State.ChangingEquipment:
+                    _itemsList.MoveCursorDown();
+                    break;
+            }
         }
 
         private void Select()
@@ -184,6 +201,21 @@ namespace Menus.SubMenus
                 GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuEquipmentTab);
         }
 
+        private void Cancel()
+        {
+            switch(GlobalStateMachine.Instance.CurrentState)
+            {
+                case GlobalStateMachine.State.InMenuEquipmentTab:
+                    Close();
+                    break;
+                case GlobalStateMachine.State.ChangingEquipment:
+                    _itemsList.Clear();
+                    ClearHoveredItem();
+                    GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuEquipmentTab);
+                    break;
+            }
+        }
+
         private void UpdateCurrentItemDetails()
         {
             BaseItem currentItem = null;
@@ -218,6 +250,12 @@ namespace Menus.SubMenus
                 _currentItemName.text = "";
                 _currentItemDescription.text = "";
             }
+        }
+
+        private void ClearHoveredItem()
+        {
+            _hoveredItemName.text = "";
+            _hoveredItemDescription.text = "";
         }
     }
 }

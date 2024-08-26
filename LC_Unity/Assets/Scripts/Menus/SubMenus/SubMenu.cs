@@ -61,24 +61,7 @@ namespace Menus.SubMenus
             FinishedClosing();
         }
 
-        protected virtual void HandleInputs(InputAction input)
-        {
-            if(!_busy)
-            {
-                switch (GlobalStateMachine.Instance.CurrentState)
-                {
-                    case GlobalStateMachine.State.InMenuAbilitiesTab:
-                    case GlobalStateMachine.State.InMenuItemsTab:
-                    case GlobalStateMachine.State.InMenuEquipmentTab:
-                    case GlobalStateMachine.State.InMenuStatusTab:
-                    case GlobalStateMachine.State.InMenuSystemTab:
-                    case GlobalStateMachine.State.InMenuQuestsTab:
-                        if (input == InputAction.Cancel)
-                            Close();
-                        break;
-                }
-            }
-        }
+        protected abstract void HandleInputs(InputAction input);
 
         protected abstract void FinishedClosing();
 

@@ -50,7 +50,7 @@ namespace Menus.SubMenus.Items
             PlaceCursor();
         }
 
-        private void Clear()
+        public void Clear()
         {
             foreach (Transform child in transform)
                 Destroy(child.gameObject);
