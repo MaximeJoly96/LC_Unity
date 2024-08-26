@@ -88,9 +88,21 @@ namespace Party
             _party.AddRange(XmlCharacterParser.ParseCharacters(dataFile));
         }
 
-        private void LoadPartyFromSave(List<Character> characters)
+        public void LoadPartyFromSave(List<Character> characters)
         {
-            _party.AddRange(characters);
+            for(int i = 0; i < characters.Count; i++)
+            {
+                Character inParty = _party.FirstOrDefault(p => p.Id == characters[i].Id);
+
+                if (inParty != null)
+                {
+                    inParty.ChangeEquipment(characters[i].RightHand.ItemId);
+                    inParty.ChangeEquipment(characters[i].LeftHand.ItemId);
+                    inParty.ChangeEquipment(characters[i].Head.ItemId);
+                    inParty.ChangeEquipment(characters[i].Body.ItemId);
+                    inParty.ChangeEquipment(characters[i].Accessory.ItemId);
+                }  
+            }
         }
 
         public void SetInventory(List<InventoryItem> inventory)

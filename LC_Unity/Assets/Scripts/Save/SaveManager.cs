@@ -109,8 +109,10 @@ namespace Save
             {
                 Data = GetSavedDataFromSlot(slotId);
                 GlobalStateMachine.Instance.CurrentMapId = Data.MapID;
+
                 PartyManager.Instance.SetInventory(Data.Inventory);
                 PartyManager.Instance.ChangeGold(new Engine.Party.ChangeGold { Value = Data.Gold });
+                PartyManager.Instance.LoadPartyFromSave(Data.Party);
             }
             catch(Exception e)
             {

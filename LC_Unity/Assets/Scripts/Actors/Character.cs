@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Actors.Equipment;
 using Abilities;
 using System.Text;
+using Inventory;
 
 namespace Actors
 {
@@ -177,7 +178,35 @@ namespace Actors
 
         public void ChangeEquipment(int itemId)
         {
-            LogsHandler.Instance.LogWarning("ChangeEquipment has not been implemented yet.");
+            ItemsWrapper wrapper = GameObject.FindObjectOfType<ItemsWrapper>();
+            BaseItem item = wrapper.GetItemFromId(itemId);
+
+            if(item == null)
+                return;
+            
+            switch(item.Category)
+            {
+                case ItemCategory.Weapon:
+                    RightHand = new EquipmentSlot(EquipmentPosition.RightHand, item.Id);
+                    break;
+                case ItemCategory.Armour:
+                    switch((item as Armour).Type)
+                    {
+                        case ArmourType.Head:
+                            Head = new EquipmentSlot(EquipmentPosition.Helmet, item.Id);
+                            break;
+                        case ArmourType.Body:
+                            Body = new EquipmentSlot(EquipmentPosition.Body, item.Id);
+                            break;
+                        case ArmourType.Shield:
+                            LeftHand = new EquipmentSlot(EquipmentPosition.LeftHand, item.Id);
+                            break;
+                    }
+                    break;
+                case ItemCategory.Accessory:
+                    Accessory = new EquipmentSlot(EquipmentPosition.Accessory, item.Id);
+                    break;
+            }
         }
 
         public void LearnSkill(int skillId)
@@ -264,12 +293,10 @@ namespace Actors
             {
                 Id = trueId,
                 Exp = int.Parse(split[0]),
-                Head = new EquipmentSlot(EquipmentPosition.Helmet, int.Parse(split[1])),
-                LeftHand = new EquipmentSlot(EquipmentPosition.LeftHand, int.Parse(split[2])),
-                RightHand = new EquipmentSlot(EquipmentPosition.RightHand, int.Parse(split[3])),
-                Body = new EquipmentSlot(EquipmentPosition.Body, int.Parse(split[4])),
-                Accessory = new EquipmentSlot(EquipmentPosition.Accessory, int.Parse(split[5]))
             };
+
+            for (int i = 1; i < split.Length; i++)
+                character.ChangeEquipment(int.Parse(split[i]));
 
             return character;
         }
