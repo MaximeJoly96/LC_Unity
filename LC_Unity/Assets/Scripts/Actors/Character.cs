@@ -8,6 +8,7 @@ using System.Text;
 using Inventory;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Effects;
+using System.Linq;
 
 namespace Actors
 {
@@ -381,6 +382,23 @@ namespace Actors
             ElementalAffinities.Add(new ElementalAffinity(Element.Holy, 1.0f));
             ElementalAffinities.Add(new ElementalAffinity(Element.Darkness, 1.0f));
             ElementalAffinities.Add(new ElementalAffinity(Element.Healing, 1.0f));
+        }
+
+        public ElementalAffinity GetElementalAffinity(Element element)
+        {
+            ElementalAffinity affinity = ElementalAffinities.FirstOrDefault(e => e.Element == element);
+            float multiplier = affinity.Multiplier;
+
+            List<IEffect> effects = GetAllItemEffects();
+            for(int i = 0; i < effects.Count; i++)
+            {
+                if (effects[i] is ElementalAffinityModifier && (effects[i] as ElementalAffinityModifier).Element == element)
+                {
+                    multiplier += ((effects[i] as ElementalAffinityModifier).Value / 100.0f);
+                }
+            }
+
+            return new ElementalAffinity(element, multiplier);
         }
 
         private void InitEquipmentSlots()

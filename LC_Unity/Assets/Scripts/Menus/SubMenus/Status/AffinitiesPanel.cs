@@ -23,7 +23,7 @@ namespace Menus.SubMenus.Status
                 Element element = character.ElementalAffinities[i].Element;
                 affinity.Feed(wrapper.GetSpriteFromElement(element),
                               Localizer.Instance.GetString(element.ToString().ToLower()),
-                              character.ElementalAffinities[i].Multiplier);
+                              character.GetElementalAffinity(element).Multiplier);
             }
         }
 
