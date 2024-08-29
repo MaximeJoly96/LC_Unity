@@ -26,6 +26,7 @@ namespace Inputs
         public UnityEvent<Vector2> LeftClick { get; set; }
         public UnityEvent<Vector2> RightClick { get; set; }
         public UnityEvent<List<Touch>> TouchesOnScreen { get; set; }
+        public UnityEvent NoTouchOnScreen { get; set; }
         #endregion
 
         private void Awake()
@@ -34,6 +35,7 @@ namespace Inputs
             LeftClick = new UnityEvent<Vector2>();
             RightClick = new UnityEvent<Vector2>();
             TouchesOnScreen = new UnityEvent<List<Touch>>();
+            NoTouchOnScreen = new UnityEvent();
 
             _touches = new List<Touch>();
 
@@ -112,12 +114,14 @@ namespace Inputs
 
                 for(int i = 0; i < Input.touchCount; i++)
                 {
-                    if (Input.touches[i].phase == TouchPhase.Began)
-                        _touches.Add(Input.touches[i]);
+                    _touches.Add(Input.touches[i]);
                 }
 
                 TouchesOnScreen.Invoke(_touches);
             }
+
+            if(_touches.Count == 0)
+                NoTouchOnScreen.Invoke();
         }
     }
 }

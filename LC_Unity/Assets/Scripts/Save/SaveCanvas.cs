@@ -45,7 +45,9 @@ namespace Save
 
         private void Start()
         {
-            FindObjectOfType<InputController>().ButtonClicked.AddListener(ReceiveInput);
+            InputController inputCtrl = FindObjectOfType<InputController>();
+            inputCtrl.ButtonClicked.AddListener(ReceiveInput);
+            inputCtrl.TouchesOnScreen.AddListener(HandleTouches);
         }
 
         public void Close()
@@ -99,6 +101,23 @@ namespace Save
                 }
 
                 _delayOn = true;
+            }
+        }
+
+        private void HandleTouches(List<Touch> touches)
+        {
+            if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SaveMenu)
+            {
+                for (int i = 0; i < touches.Count; i++)
+                {
+                    for (int j = 0; j < _instSaveSlots.Count; j++)
+                    {
+                        if (touches[i].phase == TouchPhase.Began && _instSaveSlots[j].IsInsideRect(touches[i].position))
+                        {
+                            SelectSlot(_instSaveSlots[j]);
+                        }
+                    }
+                }
             }
         }
 
@@ -177,15 +196,20 @@ namespace Save
 
         private void SelectSlot()
         {
-            switch(SaveManager.Instance.CurrentSaveState)
+            SelectSlot(_instSaveSlots[_cursorPosition]);
+        }
+
+        private void SelectSlot(SaveSlot slot)
+        {
+            switch (SaveManager.Instance.CurrentSaveState)
             {
                 case SaveManager.SaveState.LoadSave:
-                    if (_instSaveSlots[_cursorPosition].Data != null)
-                        SaveManager.Instance.SlotSelected(_cursorPosition);
+                    if (slot.Data != null)
+                        SaveManager.Instance.SlotSelected(_instSaveSlots.IndexOf(slot));
                     break;
                 case SaveManager.SaveState.CreateSave:
-                    if (_instSaveSlots[_cursorPosition].Data == null)
-                        SaveManager.Instance.SlotSelected(_cursorPosition);
+                    if (slot.Data == null)
+                        SaveManager.Instance.SlotSelected(_instSaveSlots.IndexOf(slot));
                     else
                     {
                         MessageBoxService.Instance.MessageBoxClosedWithResult.RemoveAllListeners();

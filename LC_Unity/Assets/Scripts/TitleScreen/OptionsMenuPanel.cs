@@ -77,7 +77,7 @@ namespace TitleScreen
 
                         if (_options[j] is BackButton)
                             BackButtonEvent.Invoke();
-                        else if (_options[j] is LanguageSelectionOption)
+                        else if (_options[j] is LanguageSelectionOption && touches[i].phase == TouchPhase.Began)
                             (_options[j] as LanguageSelectionOption).ChangeLanguage(touches[i].position);
                     }
                 }

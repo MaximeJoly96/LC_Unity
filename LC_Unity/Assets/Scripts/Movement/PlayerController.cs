@@ -4,6 +4,7 @@ using Engine.Events;
 using Inputs;
 using Field;
 using Core;
+using System.Collections.Generic;
 
 namespace Movement
 {
@@ -36,6 +37,8 @@ namespace Movement
             _inputController = FindObjectOfType<InputController>();
 
             _inputController.ButtonClicked.AddListener(HandleInput);
+            _inputController.TouchesOnScreen.AddListener(HandleTouches);
+            _inputController.NoTouchOnScreen.AddListener(NoTouchOnScreen);
         }
 
         private void Update()
@@ -60,6 +63,26 @@ namespace Movement
                         break;
                 }
             }
+        }
+
+        private void HandleTouches(List<Touch> touches)
+        {
+            if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
+            {
+                Vector2 towards = (Camera.main.ScreenToWorldPoint(touches[0].position) - transform.position).normalized;
+
+                _change = towards;
+
+                UpdatePlayerOnScreen();
+            }
+        }
+
+        private void NoTouchOnScreen()
+        {
+            if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+                return;
+
+            _change = Vector3.zero;
         }
 
         private void UpdatePlayerOnScreen()
