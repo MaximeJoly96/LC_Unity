@@ -39,5 +39,15 @@ namespace TitleScreen
             _cursorPosition = _cursorPosition == _availableLanguages.Length - 1 ? 0 : ++_cursorPosition;
             UpdateSelectedLanguage();
         }
+
+        public void ChangeLanguage(Vector2 position)
+        {
+            RectTransform rt = GetComponent<RectTransform>();
+
+            if (position.x < rt.position.x)
+                MoveCursorLeft();
+            else
+                MoveCursorRight();
+        }
     }
 }

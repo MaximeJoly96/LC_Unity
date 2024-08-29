@@ -1,5 +1,6 @@
 ﻿using UnityEngine.Events;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace Inputs
 {
@@ -16,10 +17,15 @@ namespace Inputs
 
     public class InputController : MonoBehaviour
     {
+        #region Fields
+        private List<Touch> _touches;
+        #endregion
+
         #region Events
         public UnityEvent<InputAction> ButtonClicked { get; set; }
         public UnityEvent<Vector2> LeftClick { get; set; }
         public UnityEvent<Vector2> RightClick { get; set; }
+        public UnityEvent<List<Touch>> TouchesOnScreen { get; set; }
         #endregion
 
         private void Awake()
@@ -27,6 +33,9 @@ namespace Inputs
             ButtonClicked = new UnityEvent<InputAction>();
             LeftClick = new UnityEvent<Vector2>();
             RightClick = new UnityEvent<Vector2>();
+            TouchesOnScreen = new UnityEvent<List<Touch>>();
+
+            _touches = new List<Touch>();
 
             DontDestroyOnLoad(gameObject);
         }
@@ -40,6 +49,7 @@ namespace Inputs
         {
             HandleButtons();
             HandleClicks();
+            HandleTouches();
         }
 
         private void HandleAxes()
@@ -91,6 +101,22 @@ namespace Inputs
             if(Input.GetButtonDown("Fire2"))
             {
                 RightClick.Invoke(Input.mousePosition);
+            }
+        }
+
+        private void HandleTouches()
+        {
+            if(Input.touchCount > 0)
+            {
+                _touches.Clear();
+
+                for(int i = 0; i < Input.touchCount; i++)
+                {
+                    if (Input.touches[i].phase == TouchPhase.Began)
+                        _touches.Add(Input.touches[i]);
+                }
+
+                TouchesOnScreen.Invoke(_touches);
             }
         }
     }

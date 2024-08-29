@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Inputs;
+using System.Collections.Generic;
 
 namespace TitleScreen
 {
@@ -18,7 +19,9 @@ namespace TitleScreen
             _delayOn = false;
             UpdateCursor();
 
-            FindObjectOfType<InputController>().ButtonClicked.AddListener(ReceiveInput);
+            InputController inputCtrl = FindObjectOfType<InputController>();
+            inputCtrl.ButtonClicked.AddListener(ReceiveInput);
+            inputCtrl.TouchesOnScreen.AddListener(ReceiveTouches);
         }
 
         protected void Update()
@@ -35,6 +38,7 @@ namespace TitleScreen
         }
 
         protected abstract void ReceiveInput(InputAction input);
+        protected abstract void ReceiveTouches(List<Touch> touches);
 
         protected abstract void UpdateCursor();
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Inputs;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 namespace TitleScreen
 {
@@ -41,6 +42,23 @@ namespace TitleScreen
                 }
 
                 _delayOn = true;
+            }
+        }
+
+        protected override void ReceiveTouches(List<Touch> touches)
+        {
+            bool foundObjectToTouch = false;
+
+            for(int i = 0; i < touches.Count && !foundObjectToTouch; i++)
+            {
+                for(int j = 0; j < _options.Length; j++)
+                {
+                    if (_options[j].gameObject.activeInHierarchy && _options[j].IsInsideRect(touches[i].position))
+                    {
+                        foundObjectToTouch = true;
+                        OptionSelected.Invoke(_options[j].Option);
+                    }
+                }
             }
         }
 
