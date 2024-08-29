@@ -46,8 +46,6 @@ namespace Movement
             _inputController = FindObjectOfType<InputController>();
 
             _inputController.ButtonClicked.AddListener(HandleInput);
-            _inputController.TouchesOnScreen.AddListener(HandleTouches);
-            _inputController.NoTouchOnScreen.AddListener(NoTouchOnScreen);
         }
 
         private void Update()
@@ -74,29 +72,14 @@ namespace Movement
             }
         }
 
-        private void HandleTouches(List<Touch> touches)
-        {
-            if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
-            {
-                Vector2 towards = (Camera.main.ScreenToWorldPoint(touches[0].position) - transform.position);
-                _change = new Vector2(towards.x * 100.0f, towards.y * 100.0f).normalized;
-
-                UpdatePlayerOnScreen();
-            }
-        }
-
-        private void NoTouchOnScreen()
-        {
-            if (Input.GetAxisRaw("Horizontal") != 0.0f || Input.GetAxisRaw("Vertical") != 0.0f)
-                return;
-
-            _change = Vector3.zero;
-            _rb.velocity = Vector3.zero;
-        }
-
         private void UpdatePlayerOnScreen()
         {
             _rb.MovePosition(transform.position + SPEED * Time.deltaTime * _change);
+        }
+
+        public void MovePlayer(Vector2 movementVector)
+        {
+            _change = movementVector;
         }
 
         private void GetInput()

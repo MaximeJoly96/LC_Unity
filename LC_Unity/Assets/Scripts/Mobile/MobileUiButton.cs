@@ -14,10 +14,11 @@ namespace Mobile
             for(int i = 0; i < touches.Count && !found; i++)
             {
                 Vector2 touchPosition = touches[i].position;
-                if (touchPosition.x >= rectTransform.position.x - rectTransform.rect.width / 2 &&
-                    touchPosition.x <= rectTransform.position.x + rectTransform.rect.width / 2 &&
-                    touchPosition.y >= rectTransform.position.y - rectTransform.rect.height / 2 &&
-                    touchPosition.y <= rectTransform.position.y + rectTransform.rect.height / 2)
+
+                if (touchPosition.x >= rectTransform.position.x - rectTransform.rect.width &&
+                    touchPosition.x <= rectTransform.position.x &&
+                    touchPosition.y >= rectTransform.position.y &&
+                    touchPosition.y <= rectTransform.position.y + rectTransform.rect.height)
                 {
                     found = true;
                     Execute();
