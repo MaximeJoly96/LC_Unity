@@ -31,5 +31,11 @@ namespace Actors.Equipment
             Position = position;
             ItemId = id;
         }
+
+        public EquipmentItem GetItem()
+        {
+            ItemsWrapper wrapper = GameObject.FindObjectOfType<ItemsWrapper>();
+            return wrapper.GetItemFromId(ItemId) as EquipmentItem;
+        }
     }
 }

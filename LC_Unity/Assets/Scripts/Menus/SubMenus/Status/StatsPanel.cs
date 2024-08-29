@@ -35,15 +35,15 @@ namespace Menus.SubMenus.Status
 
         public override void Feed(Character character)
         {
-            _health.text = FormatAbsoluteStat(character.BaseHealth.MaxValue, 0);
-            _mana.text = FormatAbsoluteStat(character.BaseMana.MaxValue, 0);
-            _essence.text = FormatAbsoluteStat(character.BaseEssence.MaxValue, 0);
-            _strength.text = FormatAbsoluteStat(character.BaseStrength, 0);
-            _defense.text = FormatAbsoluteStat(character.BaseDefense, 0);
-            _magic.text = FormatAbsoluteStat(character.BaseMagic, 0);
-            _magicDefense.text = FormatAbsoluteStat(character.BaseMagicDefense, 0);
-            _agility.text = FormatAbsoluteStat(character.BaseAgility, 0);
-            _luck.text = FormatAbsoluteStat(character.BaseLuck, 0);
+            _health.text = FormatAbsoluteStat(character.BaseHealth.MaxValue, character.BonusHealth.MaxValue);
+            _mana.text = FormatAbsoluteStat(character.BaseMana.MaxValue, character.BonusMana.MaxValue);
+            _essence.text = FormatAbsoluteStat(character.BaseEssence.MaxValue, character.BonusEssence.MaxValue);
+            _strength.text = FormatAbsoluteStat(character.BaseStrength, character.BonusStrength);
+            _defense.text = FormatAbsoluteStat(character.BaseDefense, character.BonusDefense);
+            _magic.text = FormatAbsoluteStat(character.BaseMagic, character.BonusMagic);
+            _magicDefense.text = FormatAbsoluteStat(character.BaseMagicDefense, character.BonusMagicDefense);
+            _agility.text = FormatAbsoluteStat(character.BaseAgility, character.BonusAgility);
+            _luck.text = FormatAbsoluteStat(character.BaseLuck, character.BonusLuck);
 
             _critChance.text = FormatRelativeStat(0, 0);
             _evasion.text = FormatRelativeStat(0, 0);
@@ -82,7 +82,7 @@ namespace Menus.SubMenus.Status
             }
 
 
-            return " (" + baseValue + " " + sign + "<color=\"" + color + "\">" + bonus + ")";
+            return " (" + baseValue + sign + "<color=\"" + color + "\">" + bonus + ")";
         }
     }
 }

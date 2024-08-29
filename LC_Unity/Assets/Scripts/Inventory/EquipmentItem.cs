@@ -19,6 +19,9 @@ namespace Inventory
         {
             string description = Localizer.Instance.GetString(Description) + "\n";
 
+            if(Stats != null)
+                description += Stats.ToString();
+
             description += Localizer.Instance.GetString("enchantmentSlots") + " " + EnchantmentSlots.ToString() + "\n";
 
             foreach(IEffect effect in Effects)

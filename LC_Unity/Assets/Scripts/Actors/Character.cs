@@ -6,6 +6,7 @@ using Actors.Equipment;
 using Abilities;
 using System.Text;
 using Inventory;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Actors
 {
@@ -42,11 +43,27 @@ namespace Actors
             }
         }
 
+        public int BonusStrength
+        {
+            get
+            {
+                return GetStatFromItems("Strength");
+            }
+        }
+
         public int BaseDefense
         {
             get
             {
                 return Mathf.RoundToInt(DefenseFunction.Compute(Level));
+            }
+        }
+
+        public int BonusDefense
+        {
+            get
+            {
+                return GetStatFromItems("Defense");
             }
         }
 
@@ -58,11 +75,27 @@ namespace Actors
             }
         }
 
+        public int BonusMagic
+        {
+            get
+            {
+                return GetStatFromItems("Magic");
+            }
+        }
+
         public int BaseMagicDefense
         {
             get
             {
                 return Mathf.RoundToInt(MagicDefenseFunction.Compute(Level));
+            }
+        }
+
+        public int BonusMagicDefense
+        {
+            get
+            {
+                return GetStatFromItems("MagicDefense");
             }
         }
 
@@ -74,11 +107,27 @@ namespace Actors
             }
         }
 
+        public int BonusAgility
+        {
+            get
+            {
+                return GetStatFromItems("Agility");
+            }
+        }
+
         public int BaseLuck
         {
             get
             {
                 return Mathf.RoundToInt(LuckFunction.Compute(Level));
+            }
+        }
+
+        public int BonusLuck
+        {
+            get
+            {
+                return GetStatFromItems("Luck");
             }
         }
 
@@ -90,6 +139,14 @@ namespace Actors
             }
         }
 
+        public Resource BonusHealth
+        {
+            get
+            {
+                return new Resource(GetStatFromItems("Health"));
+            }
+        }
+
         public Resource BaseMana
         {
             get
@@ -98,11 +155,27 @@ namespace Actors
             }
         }
 
+        public Resource BonusMana
+        {
+            get
+            {
+                return new Resource(GetStatFromItems("Mana"));
+            }
+        }
+
         public Resource BaseEssence
         {
             get
             {
                 return new Resource(Mathf.RoundToInt(MaxEssenceFunction.Compute(Level)));
+            }
+        }
+
+        public Resource BonusEssence
+        {
+            get
+            {
+                return new Resource(GetStatFromItems("Essence"));
             }
         }
         #endregion
@@ -259,6 +332,33 @@ namespace Actors
             RightHand = new EquipmentSlot(EquipmentPosition.RightHand, -1);
             Body = new EquipmentSlot(EquipmentPosition.Body, -1);
             Accessory = new EquipmentSlot(EquipmentPosition.Accessory, -1);
+        }
+
+        private int GetStatFromItems(string propertyName)
+        {
+            int stat = 0;
+
+            EquipmentItem rightHand = RightHand.GetItem();
+            if (rightHand != null && rightHand.Stats != null)
+                stat += (int)rightHand.Stats.GetType().GetProperty(propertyName).GetValue(rightHand.Stats, null);
+
+            EquipmentItem leftHand = LeftHand.GetItem();
+            if (leftHand != null && leftHand.Stats != null)
+                stat += (int)leftHand.Stats.GetType().GetProperty(propertyName).GetValue(leftHand.Stats, null);
+
+            EquipmentItem head = Head.GetItem();
+            if (head != null && head.Stats != null)
+                stat += (int)head.Stats.GetType().GetProperty(propertyName).GetValue(head.Stats, null);
+
+            EquipmentItem body = Body.GetItem();
+            if (body != null && body.Stats != null)
+                stat += (int)body.Stats.GetType().GetProperty(propertyName).GetValue(body.Stats, null);
+
+            EquipmentItem accessory = Accessory.GetItem();
+            if (accessory != null && accessory.Stats != null)
+                stat += (int)accessory.Stats.GetType().GetProperty(propertyName).GetValue(accessory.Stats, null);
+
+            return stat;
         }
 
         public string Serialize()

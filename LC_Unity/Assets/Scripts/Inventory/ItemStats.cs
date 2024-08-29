@@ -1,4 +1,6 @@
-﻿namespace Inventory
+﻿using Language;
+
+namespace Inventory
 {
     public class ItemStats
     {
@@ -23,6 +25,27 @@
             MagicDefense = magicDefense;
             Agility = agility;
             Luck = luck;
+        }
+
+        public override string ToString()
+        {
+            string stats = "";
+            stats += PrintStat(Health, "health");
+            stats += PrintStat(Mana, "mana");
+            stats += PrintStat(Essence, "essence");
+            stats += PrintStat(Strength, "strength");
+            stats += PrintStat(Defense, "defense");
+            stats += PrintStat(Health, "magic");
+            stats += PrintStat(Magic, "magicDefense");
+            stats += PrintStat(Agility, "agility");
+            stats += PrintStat(Luck, "luck");
+
+            return stats;
+        }
+
+        private string PrintStat(int statValue, string key)
+        {
+            return statValue != 0 ? Localizer.Instance.GetString(key) + " " + statValue + "\n" : "";
         }
     }
 }
