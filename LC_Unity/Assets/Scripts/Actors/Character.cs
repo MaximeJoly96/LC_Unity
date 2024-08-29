@@ -7,6 +7,7 @@ using Abilities;
 using System.Text;
 using Inventory;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Effects;
 
 namespace Actors
 {
@@ -47,7 +48,8 @@ namespace Actors
         {
             get
             {
-                return GetStatFromItems("Strength");
+                return GetStatFromItems("Strength") + 
+                       Mathf.RoundToInt((BaseStrength + GetStatFromItems("Strength")) * GetStatMultiplierFromItemEffects(Stat.Strength));
             }
         }
 
@@ -63,7 +65,8 @@ namespace Actors
         {
             get
             {
-                return GetStatFromItems("Defense");
+                return GetStatFromItems("Defense") +
+                       Mathf.RoundToInt((BaseDefense + GetStatFromItems("Defense")) * GetStatMultiplierFromItemEffects(Stat.Defense));
             }
         }
 
@@ -79,7 +82,8 @@ namespace Actors
         {
             get
             {
-                return GetStatFromItems("Magic");
+                return GetStatFromItems("Magic") +
+                       Mathf.RoundToInt((BaseMagic + GetStatFromItems("Magic")) * GetStatMultiplierFromItemEffects(Stat.Magic));
             }
         }
 
@@ -95,7 +99,8 @@ namespace Actors
         {
             get
             {
-                return GetStatFromItems("MagicDefense");
+                return GetStatFromItems("MagicDefense") +
+                       Mathf.RoundToInt((BaseMagicDefense + GetStatFromItems("MagicDefense")) * GetStatMultiplierFromItemEffects(Stat.MagicDefense));
             }
         }
 
@@ -111,7 +116,8 @@ namespace Actors
         {
             get
             {
-                return GetStatFromItems("Agility");
+                return GetStatFromItems("Agility") +
+                       Mathf.RoundToInt((BaseAgility + GetStatFromItems("Agility")) * GetStatMultiplierFromItemEffects(Stat.Agility)); ;
             }
         }
 
@@ -127,7 +133,8 @@ namespace Actors
         {
             get
             {
-                return GetStatFromItems("Luck");
+                return GetStatFromItems("Luck") +
+                       Mathf.RoundToInt((BaseLuck + GetStatFromItems("Luck")) * GetStatMultiplierFromItemEffects(Stat.Luck)); ;
             }
         }
 
@@ -143,7 +150,8 @@ namespace Actors
         {
             get
             {
-                return new Resource(GetStatFromItems("Health"));
+                return new Resource(GetStatFromItems("Health") +
+                                    Mathf.RoundToInt((BaseHealth.MaxValue + GetStatFromItems("Health")) * GetStatMultiplierFromItemEffects(Stat.HP)));
             }
         }
 
@@ -159,7 +167,8 @@ namespace Actors
         {
             get
             {
-                return new Resource(GetStatFromItems("Mana"));
+                return new Resource(GetStatFromItems("Mana") +
+                                    Mathf.RoundToInt((BaseMana.MaxValue + GetStatFromItems("Mana")) * GetStatMultiplierFromItemEffects(Stat.MP)));
             }
         }
 
@@ -175,7 +184,56 @@ namespace Actors
         {
             get
             {
-                return new Resource(GetStatFromItems("Essence"));
+                return new Resource(GetStatFromItems("Essence") +
+                                    Mathf.RoundToInt((BaseEssence.MaxValue + GetStatFromItems("Essence")) * GetStatMultiplierFromItemEffects(Stat.EP)));
+            }
+        }
+
+        public int CritChance
+        {
+            get
+            {
+                return Mathf.Clamp(5 + Mathf.RoundToInt(GetStatMultiplierFromItemEffects(Stat.CritChance) * 100), 0, 100);
+            }
+        }
+
+        public int CritDamage
+        {
+            get
+            {
+                return 100 + Mathf.RoundToInt(GetStatMultiplierFromItemEffects(Stat.CritDmg) * 100); ;
+            }
+        }
+
+        public int Parry
+        {
+            get
+            {
+                return Mathf.Clamp(10 + Mathf.RoundToInt(GetStatMultiplierFromItemEffects(Stat.Parry) * 100), 0, 100);
+            }
+        }
+
+        public int Evasion
+        {
+            get
+            {
+                return Mathf.Clamp(5 + Mathf.RoundToInt(GetStatMultiplierFromItemEffects(Stat.Evasion) * 100), 0, 100); 
+            }
+        }
+
+        public int Provocation
+        {
+            get
+            {
+                return Mathf.Clamp(100 + Mathf.RoundToInt(GetStatMultiplierFromItemEffects(Stat.Provocation) * 100), 0, 100);
+            }
+        }
+
+        public int Accuracy
+        {
+            get
+            {
+                return Mathf.Clamp(90 + Mathf.RoundToInt(GetStatMultiplierFromItemEffects(Stat.Accuracy) * 100), 0, 100);
             }
         }
         #endregion
@@ -359,6 +417,47 @@ namespace Actors
                 stat += (int)accessory.Stats.GetType().GetProperty(propertyName).GetValue(accessory.Stats, null);
 
             return stat;
+        }
+
+        private float GetStatMultiplierFromItemEffects(Stat stat)
+        {
+            float multiplier = 0.0f;
+            List<IEffect> allEffects = GetAllItemEffects();
+
+            for (int i = 0; i < allEffects.Count; i++)
+            {
+                if (allEffects[i] is StatBoost && (allEffects[i] as StatBoost).Stat == stat)
+                    multiplier += (allEffects[i] as StatBoost).Value;
+            }
+
+            return multiplier / 100.0f;
+        }
+
+        private List<IEffect> GetAllItemEffects()
+        {
+            List<IEffect> effects = new List<IEffect>();
+
+            effects.AddRange(GetEffectsFromEquipmentSlot(RightHand));
+            effects.AddRange(GetEffectsFromEquipmentSlot(LeftHand));
+            effects.AddRange(GetEffectsFromEquipmentSlot(Head));
+            effects.AddRange(GetEffectsFromEquipmentSlot(Body));
+            effects.AddRange(GetEffectsFromEquipmentSlot(Accessory));
+
+            return effects;
+        }
+
+        private List<IEffect> GetEffectsFromEquipmentSlot(EquipmentSlot slot)
+        {
+            List<IEffect> effects = new List<IEffect>();
+
+            BaseItem item = slot.GetItem();
+            if (item != null)
+            {
+                foreach (IEffect e in item.Effects)
+                    effects.Add(e);
+            }
+
+            return effects;
         }
 
         public string Serialize()

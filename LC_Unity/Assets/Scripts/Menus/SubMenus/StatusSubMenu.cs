@@ -86,6 +86,9 @@ namespace Menus.SubMenus
                     case InputAction.Cancel:
                         Close();
                         break;
+                    case InputAction.Select:
+                        (_statsPanel as StatsPanel).ChangePage();
+                        break;
                 }
             }
         }
