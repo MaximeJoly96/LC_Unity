@@ -108,10 +108,10 @@ namespace Inputs
 
         private void HandleTouches()
         {
-            if(Input.touchCount > 0)
-            {
-                _touches.Clear();
+            _touches.Clear();
 
+            if (Input.touchCount > 0)
+            {
                 for(int i = 0; i < Input.touchCount; i++)
                 {
                     _touches.Add(Input.touches[i]);

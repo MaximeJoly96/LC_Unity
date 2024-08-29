@@ -44,13 +44,23 @@ namespace Menus
             {
                 case InputAction.OpenMenu:
                     if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
-                        StartCoroutine(OpenMenu());
+                        Open();
                     break;
                 case InputAction.Cancel:
                     if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenu)
-                        StartCoroutine(CloseMenu());
+                        Close();
                     break;
             }
+        }
+
+        public void Open()
+        {
+            StartCoroutine(OpenMenu());
+        }
+
+        public void Close()
+        {
+            StopCoroutine(CloseMenu());
         }
 
         protected IEnumerator OpenMenu()

@@ -10,7 +10,16 @@ namespace Movement
 {
     public class PlayerController : MonoBehaviour
     {
-        private const float SPEED = 4.0f;
+        private static float SPEED
+        {
+            get
+            {
+#if UNITY_ANDROID
+                return 2.0f;
+#endif
+                return 4.0f;
+            }
+        }
 
         private Rigidbody2D _rb;
         private Vector3 _change;
@@ -69,9 +78,8 @@ namespace Movement
         {
             if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
             {
-                Vector2 towards = (Camera.main.ScreenToWorldPoint(touches[0].position) - transform.position).normalized;
-
-                _change = towards;
+                Vector2 towards = (Camera.main.ScreenToWorldPoint(touches[0].position) - transform.position);
+                _change = new Vector2(towards.x * 100.0f, towards.y * 100.0f).normalized;
 
                 UpdatePlayerOnScreen();
             }
@@ -79,15 +87,16 @@ namespace Movement
 
         private void NoTouchOnScreen()
         {
-            if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+            if (Input.GetAxisRaw("Horizontal") != 0.0f || Input.GetAxisRaw("Vertical") != 0.0f)
                 return;
 
             _change = Vector3.zero;
+            _rb.velocity = Vector3.zero;
         }
 
         private void UpdatePlayerOnScreen()
         {
-            _rb.MovePosition(transform.position + _change * SPEED * Time.deltaTime);
+            _rb.MovePosition(transform.position + SPEED * Time.deltaTime * _change);
         }
 
         private void GetInput()
@@ -121,7 +130,7 @@ namespace Movement
             }
         }
 
-        private void CheckForInteraction()
+        public void CheckForInteraction()
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(_collider.bounds.center, 0.2f);
 
