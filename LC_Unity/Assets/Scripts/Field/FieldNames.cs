@@ -6,7 +6,11 @@ namespace Field
     {
         public static List<string> MAP_NAMES = new List<string>
         {
-            "haalmikahFortress"
+            "haalmikahFortress",
+            "haalmikahRegionEast",
+            "haalmikahRegionWest",
+            "haalmikahRegionGrove",
+            "gornichBayWesternShore"
         };
     }
 }

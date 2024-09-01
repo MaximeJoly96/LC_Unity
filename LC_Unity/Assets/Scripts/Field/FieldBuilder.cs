@@ -5,17 +5,20 @@ using Movement;
 using Timing;
 using Core;
 using Shop;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Field
 {
     public class FieldBuilder : MonoBehaviour
     {
         [SerializeField]
-        private PlayableField _field;
+        private PlayableField[] _allFields;
         [SerializeField]
         private GameObject _interiorMask;
 
-        private PlayableField _instField;
+        private List<PlayableField> _instFields;
+        private PlayableField _currentField;
 
         protected Door[] _doors;
 
@@ -23,9 +26,12 @@ namespace Field
         {
             FindObjectOfType<GlobalTimer>().Running = true;
 
-            BuildField(_field);
+            _instFields = new List<PlayableField>();
+            BuildField(_allFields.FirstOrDefault(f => f.MapId == GlobalStateMachine.Instance.CurrentMapId));
+
             ScanForAgents();
             ScanForDoors();
+            ScanForTransitions();
 
             PositionPlayer();
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
@@ -33,19 +39,27 @@ namespace Field
 
         public void BuildField(PlayableField field)
         {
-            _instField = Instantiate(field);
-            FindObjectOfType<ShopManager>().LoadMerchants(_instField.Merchants);
+            PlayableField mainField = Instantiate(field);
+            _currentField = mainField;
+            _instFields.Add(mainField);
+
+            FindObjectOfType<ShopManager>().LoadMerchants(mainField.Merchants);
+
+            for(int i = 0; i < field.NeighbourFields.Length; i++)
+            {
+                _instFields.Add(Instantiate(field.NeighbourFields[i]));
+            }
         }
 
         public void ScanForAgents()
         {
-            if(!_instField)
+            if(!_currentField)
             {
                 LogsHandler.Instance.LogError("Cannot scan for agents if no playable field has been created.");
                 return;
             }
 
-            Agent[] agents = _instField.transform.GetComponentsInChildren<Agent>(true);
+            Agent[] agents = _currentField.transform.GetComponentsInChildren<Agent>(true);
 
             AgentsManager.Instance.Reset();
 
@@ -68,12 +82,59 @@ namespace Field
         public virtual void SwitchToInteriorMode(bool switchOn)
         {
             _interiorMask.SetActive(switchOn);
-            _instField.DisableCollisions(switchOn);
+            _currentField.DisableCollisions(switchOn);
         }
 
         private void PositionPlayer()
         {
             FindObjectOfType<PlayerController>().transform.position = SaveManager.Instance.Data.PlayerPosition;
+        }
+
+        private void ScanForTransitions()
+        {
+            for(int i = 0; i < _instFields.Count; i++)
+            {
+                for (int j = 0; j < _instFields[i].Transitions.Count; j++)
+                {
+                    _instFields[i].Transitions[j].TransitionnedToMap.AddListener(TransitionOccured);
+                }
+            }
+        }
+
+        private void TransitionOccured(int mapId)
+        {
+            if(_currentField.MapId != mapId)
+            { 
+                PlayableField newField = _instFields.FirstOrDefault(f => f.MapId == mapId);
+                _currentField = newField;
+
+                for(int i = 0; i < _currentField.NeighbourFields.Length; i++)
+                {
+                    if(_instFields.FirstOrDefault(f => _currentField.NeighbourFields[i].MapId == f.MapId) == null)
+                    {
+                        _instFields.Add(Instantiate(_currentField.NeighbourFields[i]));
+                    }
+                }
+
+                ScanForTransitions();
+                DestroyUnnecessaryFields();
+            }
+        }
+
+        private void DestroyUnnecessaryFields()
+        {
+            _instFields = _instFields.Where(f => f != null).ToList();
+            List<PlayableField> toDestroy = new List<PlayableField>();
+
+            for(int i = 0; i < _instFields.Count; i++)
+            {
+                if (_instFields[i].MapId != _currentField.MapId && 
+                    !_currentField.NeighbourFields.FirstOrDefault(f => f.MapId == _instFields[i].MapId))
+                    toDestroy.Add(_instFields[i]);
+            }
+
+            for (int i = 0; i < toDestroy.Count; i++)
+                Destroy(toDestroy[i].gameObject);
         }
     }
 }
