@@ -27,6 +27,7 @@ namespace Inputs
         public UnityEvent<Vector2> RightClick { get; set; }
         public UnityEvent<List<Touch>> TouchesOnScreen { get; set; }
         public UnityEvent NoTouchOnScreen { get; set; }
+        public UnityEvent NoMovement { get; set; }
         #endregion
 
         private void Awake()
@@ -36,6 +37,7 @@ namespace Inputs
             RightClick = new UnityEvent<Vector2>();
             TouchesOnScreen = new UnityEvent<List<Touch>>();
             NoTouchOnScreen = new UnityEvent();
+            NoMovement = new UnityEvent();
 
             _touches = new List<Touch>();
 
@@ -122,6 +124,55 @@ namespace Inputs
 
             if(_touches.Count == 0)
                 NoTouchOnScreen.Invoke();
+        }
+
+        public void SendDirection(Vector2Int direction)
+        {
+            if (direction.x == 1)
+            {
+                ButtonClicked.Invoke(InputAction.MoveRight);
+                if (direction.y == 1)
+                {
+                    ButtonClicked.Invoke(InputAction.MoveUp);
+                }
+                else if (direction.y == -1)
+                {
+                    ButtonClicked.Invoke(InputAction.MoveDown);
+                }
+            }
+            else if (direction.x == 0)
+            {
+                if (direction.y == 1)
+                {
+                    ButtonClicked.Invoke(InputAction.MoveUp);
+                }
+                else if (direction.y == -1)
+                {
+                    ButtonClicked.Invoke(InputAction.MoveDown);
+                }
+            }
+            else if (direction.x == -1)
+            {
+                ButtonClicked.Invoke(InputAction.MoveLeft);
+                if (direction.y == 1)
+                {
+                    ButtonClicked.Invoke(InputAction.MoveUp);
+                }
+                else if (direction.y == -1)
+                {
+                    ButtonClicked.Invoke(InputAction.MoveDown);
+                }
+            }
+            else
+            {
+                NoMovement.Invoke();
+            }
+                
+        }
+
+        public void SendButtonInput(InputAction action)
+        {
+            ButtonClicked.Invoke(action);
         }
     }
 }

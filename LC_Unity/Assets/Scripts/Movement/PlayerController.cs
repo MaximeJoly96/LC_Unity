@@ -5,6 +5,7 @@ using Inputs;
 using Field;
 using Core;
 using System.Collections.Generic;
+using Mobile;
 
 namespace Movement
 {
@@ -46,6 +47,9 @@ namespace Movement
             _inputController = FindObjectOfType<InputController>();
 
             _inputController.ButtonClicked.AddListener(HandleInput);
+#if UNITY_ANDROID
+            _inputController.NoMovement.AddListener(StopMovement);
+#endif
         }
 
         private void Update()
@@ -77,16 +81,16 @@ namespace Movement
             _rb.MovePosition(transform.position + SPEED * Time.deltaTime * _change);
         }
 
-        public void MovePlayer(Vector2 movementVector)
-        {
-            _change = movementVector;
-        }
-
         private void GetInput()
         {
             _change = Vector3.zero;
+#if UNITY_ANDROID
+            Vector2 currentDirection = FindObjectOfType<MobileDPad>().CurrentDirection;
+            _change = currentDirection;
+#else
             _change.x = Input.GetAxisRaw("Horizontal");
             _change.y = Input.GetAxisRaw("Vertical");
+#endif
         }
 
         private void HandleAnimationAndMovement()
@@ -131,6 +135,11 @@ namespace Movement
                 agent.FinishedSequence.AddListener(() => GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField));
                 agent.RunSequence();
             }
+        }
+
+        private void StopMovement()
+        {
+            _change = Vector3.zero;
         }
     }
 }

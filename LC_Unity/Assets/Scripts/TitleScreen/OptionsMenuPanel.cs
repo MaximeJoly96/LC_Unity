@@ -63,27 +63,6 @@ namespace TitleScreen
             }
         }
 
-        protected override void ReceiveTouches(List<Touch> touches)
-        {
-            bool foundObjectToTouch = false;
-
-            for (int i = 0; i < touches.Count && !foundObjectToTouch; i++)
-            {
-                for (int j = 0; j < _options.Length; j++)
-                {
-                    if (_options[j].gameObject.activeInHierarchy && _options[j].IsInsideRect(touches[i].position))
-                    {
-                        foundObjectToTouch = true;
-
-                        if (_options[j] is BackButton)
-                            BackButtonEvent.Invoke();
-                        else if (_options[j] is LanguageSelectionOption && touches[i].phase == TouchPhase.Began)
-                            (_options[j] as LanguageSelectionOption).ChangeLanguage(touches[i].position);
-                    }
-                }
-            }
-        }
-
         private void MoveCursorLeft()
         {
             _options[_cursorPosition].MoveCursorLeft();

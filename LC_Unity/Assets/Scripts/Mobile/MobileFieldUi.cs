@@ -7,13 +7,17 @@ namespace Mobile
     public class MobileFieldUi : MonoBehaviour
     {
         [SerializeField]
-        private UiJoystick _joystick;
+        private MobileDPad _dPad;
         [SerializeField]
-        private MobileUiButton _actionButton;
+        private MobileUiButton _buttonA;
         [SerializeField]
-        private MobileUiButton _menuButton;
+        private MobileUiButton _buttonB;
+        [SerializeField]
+        private MobileUiButton _buttonC;
 
-        private void Awake()
+        private InputController _inputController;
+
+        private void Start()
         {
             if (!Application.isMobilePlatform)
             {
@@ -21,22 +25,28 @@ namespace Mobile
             }
             else
             {
-                InputController inputController = FindObjectOfType<InputController>();
-                inputController.TouchesOnScreen.AddListener(HandleTouches);
-                inputController.NoTouchOnScreen.AddListener(NoTouchesOnScreen);
+                DontDestroyOnLoad(gameObject);
+
+                _inputController = FindObjectOfType<InputController>();
+                _inputController.TouchesOnScreen.AddListener(HandleTouches);
+                _inputController.NoTouchOnScreen.AddListener(NoTouchesOnScreen);
             }
         }
 
         private void HandleTouches(List<Touch> touches)
         {
-            _joystick.ReceiveTouches(touches);
-            _actionButton.ReceiveTouches(touches);
-            _menuButton.ReceiveTouches(touches);
+            _dPad.ReceiveTouches(touches);
+            _buttonA.ReceiveTouches(touches);
+            _buttonB.ReceiveTouches(touches);
+            _buttonC.ReceiveTouches(touches);
         }
 
         private void NoTouchesOnScreen()
         {
-            _joystick.Clear();
+            _dPad.Clear();
+            _buttonA.Clear();
+            _buttonB.Clear();
+            _buttonC.Clear();
         }
     }
 }

@@ -47,7 +47,6 @@ namespace Save
         {
             InputController inputCtrl = FindObjectOfType<InputController>();
             inputCtrl.ButtonClicked.AddListener(ReceiveInput);
-            inputCtrl.TouchesOnScreen.AddListener(HandleTouches);
         }
 
         public void Close()
@@ -101,23 +100,6 @@ namespace Save
                 }
 
                 _delayOn = true;
-            }
-        }
-
-        private void HandleTouches(List<Touch> touches)
-        {
-            if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SaveMenu)
-            {
-                for (int i = 0; i < touches.Count; i++)
-                {
-                    for (int j = 0; j < _instSaveSlots.Count; j++)
-                    {
-                        if (touches[i].phase == TouchPhase.Began && _instSaveSlots[j].IsInsideRect(touches[i].position))
-                        {
-                            SelectSlot(_instSaveSlots[j]);
-                        }
-                    }
-                }
             }
         }
 

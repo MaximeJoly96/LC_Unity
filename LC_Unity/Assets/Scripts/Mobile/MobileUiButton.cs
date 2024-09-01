@@ -1,36 +1,66 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using Inputs;
 
 namespace Mobile
 {
     public class MobileUiButton : MobileUiElement
     {
-        public override void ReceiveTouches(List<Touch> touches)
+        public enum AssociatedButton { A, B, C }
+
+        [SerializeField]
+        private AssociatedButton _button;
+        [SerializeField]
+        private Sprite _pressedSprite;
+        [SerializeField]
+        private Sprite _notPressedSprite;
+        [SerializeField]
+        private TMP_Text _text;
+
+        public override bool Pressed
         {
-            RectTransform rectTransform = GetComponent<RectTransform>();
-            bool found = false;
-
-            for(int i = 0; i < touches.Count && !found; i++)
+            get { return _pressed; }
+            set
             {
-                Vector2 touchPosition = touches[i].position;
+                _pressed = value;
+                Image img = GetComponent<Image>();
 
-                if (touchPosition.x >= rectTransform.position.x - rectTransform.rect.width &&
-                    touchPosition.x <= rectTransform.position.x &&
-                    touchPosition.y >= rectTransform.position.y &&
-                    touchPosition.y <= rectTransform.position.y + rectTransform.rect.height)
+                if(_pressed)
                 {
-                    found = true;
-                    Execute();
+                    img.sprite = _pressedSprite;
+                    _text.color = Color.black;
+                }
+                else
+                {
+                    img.sprite = _notPressedSprite;
+                    _text.color = Color.white;
                 }
             }
         }
 
-        public override void Clear()
+        protected override void ProcessValidTouches(List<Touch> validTouches)
         {
-            
-        }
+            base.ProcessValidTouches(validTouches);
 
-        public virtual void Execute() { }
+            if(validTouches.Count > 0 )
+            {
+                InputController ctrl = FindObjectOfType<InputController>();
+
+                switch (_button)
+                {
+                    case AssociatedButton.A:
+                        ctrl.SendButtonInput(InputAction.Select);
+                        break;
+                    case AssociatedButton.B:
+                        ctrl.SendButtonInput(InputAction.Cancel);
+                        break;
+                    case AssociatedButton.C:
+                        ctrl.SendButtonInput(InputAction.OpenMenu);
+                        break;
+                }
+            }
+        }
     }
 }

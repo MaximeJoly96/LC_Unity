@@ -60,7 +60,7 @@ namespace Menus
 
         public void Close()
         {
-            StopCoroutine(CloseMenu());
+            StartCoroutine(CloseMenu());
         }
 
         protected IEnumerator OpenMenu()
