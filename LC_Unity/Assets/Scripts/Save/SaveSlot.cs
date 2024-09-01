@@ -41,6 +41,8 @@ namespace Save
             {
                 _characters[i].gameObject.SetActive(true);
             }
+
+            SetSize();
         }
 
         public void Select()
@@ -59,6 +61,13 @@ namespace Save
 
             return position.x >= rt.position.x - rt.rect.width / 2 && position.x <= rt.position.x + rt.rect.width / 2 &&
                    position.y >= rt.position.y - rt.rect.height / 2 && position.y <= rt.position.y + rt.rect.height / 2;
+        }
+
+        private void SetSize()
+        {
+            RectTransform rt = GetComponent<RectTransform>();
+
+            rt.sizeDelta = new Vector2(rt.sizeDelta.x, rt.sizeDelta.y * Screen.currentResolution.height / 1080.0f);
         }
     }
 }

@@ -11,12 +11,6 @@ namespace Dialogs
         [SerializeField]
         private DialogBox _dialogBoxPrefab;
 
-        protected override void Start()
-        {
-            base.Start();
-            _inputController.LeftClick.AddListener(TryToCloseDialog);
-        }
-
         public void CreateDialog(DisplayDialog dialog)
         {
             _currentDialogBox = Instantiate(_dialogBoxPrefab, _canvas.transform);
