@@ -3,6 +3,7 @@ using UnityEngine;
 using Menus.SubMenus.Items;
 using Inputs;
 using TMPro;
+using Utils;
 
 namespace Menus.SubMenus
 {
@@ -62,21 +63,27 @@ namespace Menus.SubMenus
                 switch(input)
                 {
                     case InputAction.MoveLeft:
+                        CommonSounds.CursorMoved();
                         MoveCursorLeft();
                         break;
                     case InputAction.MoveRight:
+                        CommonSounds.CursorMoved();
                         MoveCursorRight();
                         break;
                     case InputAction.MoveDown:
+                        CommonSounds.CursorMoved();
                         MoveCursorDown();
                         break;
                     case InputAction.MoveUp:
+                        CommonSounds.CursorMoved();
                         MoveCursorUp();
                         break;
                     case InputAction.Select:
+                        CommonSounds.OptionSelected();
                         Select();
                         break;
                     case InputAction.Cancel:
+                        CommonSounds.ActionCancelled();
                         Close();
                         break;
                 }

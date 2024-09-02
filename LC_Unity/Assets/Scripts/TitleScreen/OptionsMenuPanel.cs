@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using System.Linq;
 using Core;
 using System.Collections.Generic;
+using Utils;
 
 namespace TitleScreen
 {
@@ -40,21 +41,27 @@ namespace TitleScreen
                 switch (input)
                 {
                     case InputAction.MoveDown:
+                        CommonSounds.CursorMoved();
                         MoveCursorDown();
                         break;
                     case InputAction.MoveUp:
+                        CommonSounds.CursorMoved();
                         MoveCursorUp();
                         break;
                     case InputAction.MoveLeft:
+                        CommonSounds.CursorMoved();
                         MoveCursorLeft();
                         break;
                     case InputAction.MoveRight:
+                        CommonSounds.CursorMoved();
                         MoveCursorRight();
                         break;
                     case InputAction.Select:
+                        CommonSounds.OptionSelected();
                         SelectOption();
                         break;
                     case InputAction.Cancel:
+                        CommonSounds.ActionCancelled();
                         BackButtonEvent.Invoke();
                         break;
                 }

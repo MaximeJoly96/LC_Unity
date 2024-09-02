@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using MsgBox;
 using Language;
 using Core;
+using Utils;
 
 namespace Save
 {
@@ -86,15 +87,19 @@ namespace Save
                 switch (input)
                 {
                     case InputAction.Cancel:
+                        CommonSounds.ActionCancelled();
                         Close();
                         break;
                     case InputAction.Select:
+                        CommonSounds.OptionSelected();
                         SelectSlot();
                         break;
                     case InputAction.MoveDown:
+                        CommonSounds.CursorMoved();
                         MoveDown();
                         break;
                     case InputAction.MoveUp:
+                        CommonSounds.CursorMoved();
                         MoveUp();
                         break;
                 }

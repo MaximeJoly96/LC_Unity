@@ -6,6 +6,7 @@ using Menus.SubMenus.Items;
 using Party;
 using System.Collections.Generic;
 using Actors;
+using Utils;
 
 namespace Menus
 {
@@ -91,8 +92,10 @@ namespace Menus
                 switch(input)
                 {
                     case InputAction.Select:
+                        CommonSounds.OptionSelected();
                         break;
                     case InputAction.Cancel:
+                        CommonSounds.ActionCancelled();
                         Close();
                         break;
                 }

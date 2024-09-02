@@ -6,6 +6,7 @@ using Core;
 using Inputs;
 using System.Linq;
 using UnityEngine.Events;
+using Utils;
 
 namespace MsgBox
 {
@@ -125,12 +126,15 @@ namespace MsgBox
                 switch(input)
                 {
                     case InputAction.MoveLeft:
+                        CommonSounds.CursorMoved();
                         MoveLeft();
                         break;
                     case InputAction.MoveRight:
+                        CommonSounds.CursorMoved();
                         MoveRight();
                         break;
                     case InputAction.Select:
+                        CommonSounds.OptionSelected();
                         SelectAnswer();
                         break;
                 }

@@ -7,6 +7,8 @@ using Core;
 using Shop;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.Audio;
+using MusicAndSounds;
 
 namespace Field
 {
@@ -34,6 +36,7 @@ namespace Field
             ScanForTransitions();
 
             PositionPlayer();
+            PlayFieldBgm(_currentField);
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
         }
 
@@ -106,6 +109,13 @@ namespace Field
             if(_currentField.MapId != mapId)
             { 
                 PlayableField newField = _instFields.FirstOrDefault(f => f.MapId == mapId);
+
+                if (newField.BgmKey != _currentField.BgmKey)
+                {
+                    StopCurrentBgm(_currentField);
+                    PlayFieldBgm(newField);
+                }
+
                 _currentField = newField;
 
                 for(int i = 0; i < _currentField.NeighbourFields.Length; i++)
@@ -118,6 +128,7 @@ namespace Field
 
                 ScanForTransitions();
                 DestroyUnnecessaryFields();
+                
             }
         }
 
@@ -135,6 +146,27 @@ namespace Field
 
             for (int i = 0; i < toDestroy.Count; i++)
                 Destroy(toDestroy[i].gameObject);
+        }
+
+        private void PlayFieldBgm(PlayableField field)
+        {
+            Engine.MusicAndSounds.PlayBgm play = new Engine.MusicAndSounds.PlayBgm
+            {
+                Name = field.BgmKey,
+                Volume = 1.0f,
+                Pitch = 1.0f
+            };
+            FindObjectOfType<AudioPlayer>().PlayBgm(play);
+        }
+
+        private void StopCurrentBgm(PlayableField field)
+        {
+            Engine.MusicAndSounds.FadeOutBgm fade = new Engine.MusicAndSounds.FadeOutBgm
+            {
+                Name = field.BgmKey,
+                TransitionDuration = 0.2f,
+            };
+            FindObjectOfType<AudioPlayer>().FadeOutBgm(fade);
         }
     }
 }

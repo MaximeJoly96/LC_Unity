@@ -15,6 +15,8 @@ namespace Field
         private int _mapId;
         [SerializeField]
         private Transform _transitionsWrapper;
+        [SerializeField]
+        private string _bgmKey;
 
         private List<MapTransition> _transitions;
 
@@ -37,6 +39,8 @@ namespace Field
                 return _transitions;
             }
         }
+
+        public string BgmKey { get { return _bgmKey; } }
 
         public void DisableCollisions(bool disable)
         {

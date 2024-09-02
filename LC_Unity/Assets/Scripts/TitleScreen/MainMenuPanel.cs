@@ -2,6 +2,9 @@
 using Inputs;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using Engine.MusicAndSounds;
+using MusicAndSounds;
+using Utils;
 
 namespace TitleScreen
 {
@@ -31,12 +34,15 @@ namespace TitleScreen
                 switch (input)
                 {
                     case InputAction.MoveDown:
+                        CommonSounds.CursorMoved();
                         MoveCursorDown();
                         break;
                     case InputAction.MoveUp:
+                        CommonSounds.CursorMoved();
                         MoveCursorUp();
                         break;
                     case InputAction.Select:
+                        CommonSounds.OptionSelected();
                         SelectOption();
                         break;
                 }

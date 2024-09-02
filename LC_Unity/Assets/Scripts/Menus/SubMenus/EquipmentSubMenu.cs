@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using Party;
 using System.Linq;
 using Actors;
+using Utils;
 
 namespace Menus.SubMenus
 {
@@ -113,15 +114,19 @@ namespace Menus.SubMenus
                 switch(input)
                 {
                     case InputAction.Select:
+                        CommonSounds.OptionSelected();
                         Select();
                         break;
                     case InputAction.Cancel:
+                        CommonSounds.ActionCancelled();
                         Cancel();
                         break;
                     case InputAction.MoveUp:
+                        CommonSounds.CursorMoved();
                         MoveUp();
                         break;
                     case InputAction.MoveDown:
+                        CommonSounds.CursorMoved();
                         MoveDown();
                         break;
                 }

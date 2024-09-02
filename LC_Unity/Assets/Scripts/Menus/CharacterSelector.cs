@@ -5,6 +5,7 @@ using Inputs;
 using Core;
 using System.Collections;
 using UnityEngine.Events;
+using Utils;
 
 namespace Menus
 {
@@ -77,21 +78,27 @@ namespace Menus
                 switch(input)
                 {
                     case InputAction.MoveDown:
+                        CommonSounds.CursorMoved();
                         MoveCursorDown();
                         break;
                     case InputAction.MoveUp:
+                        CommonSounds.CursorMoved();
                         MoveCursorUp();
                         break;
                     case InputAction.MoveLeft:
+                        CommonSounds.CursorMoved();
                         MoveCursorLeft();
                         break;
                     case InputAction.MoveRight:
+                        CommonSounds.CursorMoved();
                         MoveCursorRight();
                         break;
                     case InputAction.Cancel:
+                        CommonSounds.ActionCancelled();
                         StartCoroutine(ReturnToMainMenu());
                         break;
                     case InputAction.Select:
+                        CommonSounds.OptionSelected();
                         SelectCharacter();
                         break;
                 }

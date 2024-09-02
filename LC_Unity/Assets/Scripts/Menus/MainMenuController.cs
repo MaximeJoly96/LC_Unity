@@ -5,6 +5,7 @@ using Core;
 using Party;
 using Actors;
 using Menus.SubMenus.Items;
+using Utils;
 
 namespace Menus
 {
@@ -44,11 +45,17 @@ namespace Menus
             {
                 case InputAction.OpenMenu:
                     if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
+                    {
+                        CommonSounds.OptionSelected();
                         Open();
+                    }
                     break;
                 case InputAction.Cancel:
                     if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenu)
+                    {
+                        CommonSounds.ActionCancelled();
                         Close();
+                    }
                     break;
             }
         }

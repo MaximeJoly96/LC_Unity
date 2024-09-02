@@ -2,6 +2,7 @@
 using Core;
 using Inputs;
 using Actors;
+using Utils;
 
 namespace Menus
 {
@@ -41,12 +42,15 @@ namespace Menus
                 switch(input)
                 {
                     case InputAction.MoveLeft:
+                        CommonSounds.CursorMoved();
                         MoveCursorLeft();
                         break;
                     case InputAction.MoveRight:
+                        CommonSounds.CursorMoved();
                         MoveCursorRight();
                         break;
                     case InputAction.Select:
+                        CommonSounds.OptionSelected();
                         SelectSubMenu();
                         break;
                 }

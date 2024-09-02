@@ -1,5 +1,6 @@
 ﻿using Core;
 using Inputs;
+using Utils;
 
 namespace Menus.SubMenus
 {
@@ -28,6 +29,7 @@ namespace Menus.SubMenus
                 switch(input)
                 {
                     case InputAction.Cancel:
+                        CommonSounds.ActionCancelled();
                         Close();
                         break;
                 }

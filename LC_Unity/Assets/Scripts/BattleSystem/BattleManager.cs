@@ -11,6 +11,7 @@ using Inputs;
 using System;
 using Abilities;
 using System.Linq;
+using Utils;
 
 namespace BattleSystem
 {
@@ -126,21 +127,27 @@ namespace BattleSystem
                 switch (input)
                 {
                     case InputAction.Cancel:
+                        CommonSounds.ActionCancelled();
                         CancelButtonPressed();
                         break;
                     case InputAction.Select:
+                        CommonSounds.OptionSelected();
                         SelectButtonPressed();
                         break;
                     case InputAction.MoveLeft:
+                        CommonSounds.CursorMoved();
                         MoveLeftPressed();
                         break;
                     case InputAction.MoveRight:
+                        CommonSounds.CursorMoved();
                         MoveRightPressed();
                         break;
                     case InputAction.MoveUp:
+                        CommonSounds.CursorMoved();
                         MoveUpPressed();
                         break;
                     case InputAction.MoveDown:
+                        CommonSounds.CursorMoved();
                         MoveDownPressed();
                         break;
                     case InputAction.OpenMenu:

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using Menus.SubMenus.Status;
 using Inputs;
+using Utils;
 
 namespace Menus.SubMenus
 {
@@ -84,9 +85,11 @@ namespace Menus.SubMenus
                 switch (input)
                 {
                     case InputAction.Cancel:
+                        CommonSounds.ActionCancelled();
                         Close();
                         break;
                     case InputAction.Select:
+                        CommonSounds.CursorMoved();
                         (_statsPanel as StatsPanel).ChangePage();
                         break;
                 }
