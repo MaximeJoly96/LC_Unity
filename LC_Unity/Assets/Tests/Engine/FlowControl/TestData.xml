@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <ConditionalBranch Type="SwitchCondition" Condition="NotEqual" FirstMember="var1" SecondMember="false" />
+  <ConditionalBranch Type="VariableCondition" Condition="GreaterThan" FirstMember="var1" SecondMember="2" />
+  <ConditionalBranch Type="TimerCondition" Condition="Before" FirstMember="var1" SecondMember="30" />
+</EventsSequence>

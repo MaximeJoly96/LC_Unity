@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <ControlSwitch Key="switch1" Source="switch2" />
+  <ControlSwitch Key="switch1" Value="false" />
+  <ControlVariable Key="var1">
+    <Operation>Add</Operation>
+    <Operand Type="Constant">5</Operand>
+  </ControlVariable>
+  <ControlVariable Key="var1">
+    <Operation>Sub</Operation>
+    <Operand Type="Random">2,6</Operand>
+  </ControlVariable>
+  <ControlVariable Key="var1">
+    <Operation>Mod</Operation>
+    <Operand Type="Variable">var2</Operand>
+  </ControlVariable>
+  <ControlTimer Key="timer1">
+    <Action>Start</Action>
+    <Duration>10</Duration>
+  </ControlTimer>
+  <ControlTimer Key="timer1" Source="timer2">
+    <Action>Start</Action>
+  </ControlTimer>
+  <ControlTimer Key="timer1">
+    <Action>Stop</Action>
+  </ControlTimer>
+</EventsSequence>

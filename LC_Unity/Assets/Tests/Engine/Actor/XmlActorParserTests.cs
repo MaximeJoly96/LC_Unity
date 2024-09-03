@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.TestTools;
 using Engine.Actor;
-using System.Xml;
-using UnityEditor;
-using Engine.Events;
 using static Engine.Actor.ChangeSkills;
 
 namespace Testing.Engine.Actor
 {
-    public class XmlActorParserTests
+    public class XmlActorParserTests : XmlBaseParser
     {
+        protected override string TestFilePath { get { return "Assets/Tests/Engine/Actor/TestData.xml"; } }
+
         [Test]
         public void ParseChangeEquipmentTest()
         {
@@ -65,15 +60,6 @@ namespace Testing.Engine.Actor
             RecoverAll recover = XmlActorParser.ParseRecoverAll(GetDataToParse("RecoverAll"));
 
             Assert.NotNull(recover);
-        }
-
-        private XmlNode GetDataToParse(string type)
-        {
-            XmlDocument document = new XmlDocument();
-            document.LoadXml(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Actor/TestData.xml").text);
-
-            XmlNode sequence = document.SelectSingleNode("EventsSequence");
-            return sequence.SelectSingleNode(type);
         }
     }
 }
