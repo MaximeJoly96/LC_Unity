@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <GetOnOffVehicle />
+  <ScrollMap X="3" Y="-2" Speed="5" />
+  <TransferObject>
+    <Direction>Retain</Direction>
+    <Fade>White</Fade>
+    <Destination X="5" Y="3" MapId="5" />
+  </TransferObject>
+  <SetMoveRoute RepeatAction="true" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="3">
+    <MoveRelative DeltaX="3" DeltaY="-1" />
+    <MoveTowards Target="target" Distance="0.5" />
+    <MoveAway Target="target" Distance="0.8" />
+    <StepForward />
+    <StepBackward />
+    <JumpRelative DeltaX="5" DeltaY="6" />
+    <Wait Duration="6" />
+    <Turn Direction="Left" />
+    <TurnRelative Angle="45" />
+    <TurnTowards Target="target" />
+    <TurnAway Target="target" />
+    <ChangeSpeed Speed="5" />
+    <WalkingAnimation Status="true" />
+    <DirectionFix Status ="false" />
+    <Through Status="false" />
+    <Transparent Status="true" />
+    <ChangeOpacity Alpha="0.5" />
+  </SetMoveRoute>
+</EventsSequence>
