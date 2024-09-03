@@ -37,11 +37,16 @@ namespace Language
         public void LoadLanguage(Language language)
         {
             Localization localization = _localizations.FirstOrDefault(l => l.language == language);
+            LoadLanguage(language, localization.languageFile);
+        }
+
+        public void LoadLanguage(Language language, TextAsset file)
+        {
             _currentLanguage = language;
 
-            if(localization != null)
+            if(file != null)
             {
-                ParseLanguageFile(localization.languageFile);
+                ParseLanguageFile(file);
                 LanguageUpdated.Invoke();
             }
             else

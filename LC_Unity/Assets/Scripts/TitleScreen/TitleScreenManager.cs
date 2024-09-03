@@ -21,7 +21,10 @@ namespace TitleScreen
 
         private void Awake()
         {
-            FindObjectOfType<Localizer>().LoadLanguage((Language.Language)PlayerPrefs.GetInt("language"));
+            Localizer localizer = FindObjectOfType<Localizer>();
+
+            if(localizer != null)
+                localizer.LoadLanguage((Language.Language)PlayerPrefs.GetInt("language"));
         }
 
         private void Start()
