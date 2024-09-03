@@ -13,14 +13,14 @@ namespace Testing.Languages
             GameObject localizer = new GameObject("Localizer");
             Localizer component = localizer.AddComponent<Localizer>();
 
-            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Resources/Languages/french.csv");
+            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/french.csv");
             component.LoadLanguage(Language.Language.French, file);
 
             Assert.AreEqual("Valeur", component.GetString("key1"));
             Assert.AreEqual("Autre valeur", component.GetString("key2"));
             Assert.AreEqual("Dernière valeur", component.GetString("key3"));
 
-            file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Resources/Languages/english.csv");
+            file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/english.csv");
             component.LoadLanguage(Language.Language.English, file);
 
             Assert.AreEqual("Value", component.GetString("key1"));

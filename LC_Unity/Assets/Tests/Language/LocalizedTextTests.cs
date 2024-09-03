@@ -33,7 +33,7 @@ namespace Testing.Languages
             GameObject go = new GameObject("Localizer");
             Localizer localzier = go.AddComponent<Localizer>();
 
-            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Resources/Languages/french.csv");
+            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/french.csv");
             localzier.LoadLanguage(Language.Language.French, file);
         }
     }
