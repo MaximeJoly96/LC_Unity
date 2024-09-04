@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <ChangeEquipment CharacterId="0" ItemId="3" />
+  <ChangeExp Target="1" Amount="100" />
+  <ChangeLevel Target="2" Amount="-1" />
+  <ChangeName CharacterId="0" Value="NewName" />
+  <ChangeSkills CharacterId="2" SkillId="5" Action="Learn" />
+  <RecoverAll />
+  <ShowAgentAnimation AnimationName="animation" WaitForCompletion="false" />
+  <ShowAnimation Target="target" AnimationId="3" WaitForCompletion="false" />
+  <ShowBalloonIcon Target="target" BalloonIconId="5" WaitForCompletion="true" />
+  <ConditionalBranch Type="SwitchCondition" Condition="NotEqual" FirstMember="var1" SecondMember="false" />
+  <ConditionalBranch Type="VariableCondition" Condition="GreaterThan" FirstMember="var1" SecondMember="2" />
+  <ConditionalBranch Type="TimerCondition" Condition="Before" FirstMember="var1" SecondMember="30" />
+  <ControlSwitch Key="switch1" Source="switch2" />
+  <ControlVariable Key="var1">
+    <Operation>Add</Operation>
+    <Operand Type="Constant">5</Operand>
+  </ControlVariable>
+  <ControlTimer Key="timer1">
+    <Action>Stop</Action>
+  </ControlTimer>
+  <ChangeMapNameDisplay Enabled="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Locutor>Locutor</Locutor>
+    <Message>This is my message</Message>
+    <FaceGraphics>graphics</FaceGraphics>
+  </DisplayDialog>
+  <DisplayChoice>
+    <Message>Choice message</Message>
+    <Choices>
+      <Choice Id="0">Choice 0</Choice>
+    </Choices>
+  </DisplayChoice>
+  <InputNumber DigitsCount="4" />
+  <GetOnOffVehicle />
+  <ScrollMap X="3" Y="-2" Speed="5" />
+  <TransferObject>
+    <Direction>Retain</Direction>
+    <Fade>White</Fade>
+    <Destination X="5" Y="3" MapId="5" />
+  </TransferObject>
+  <SetMoveRoute RepeatAction="true" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="3">
+    <MoveRelative DeltaX="3" DeltaY="-1" />
+  </SetMoveRoute>
+  <PlayBgm Name="music" Volume="0.5" Pitch="0.52" />
+  <PlayBgs Name="bgs" Volume="0.5" Pitch="0.52" />
+  <PlayMusicalEffect Name="me" Volume="0.5" Pitch="0.52" />
+  <PlaySoundEffect Name="se" Volume="0.5" Pitch="0.52" />
+  <FadeOutBgm Name="music" TransitionDuration="3" />
+  <FadeOutBgs Name="bgs" TransitionDuration="4.5" />
+  <ChangeGold Value="500" />
+  <ChangeItems Id="3" Quantity="2" />
+  <ChangePartyMember Id="0" Action="Remove" />
+  <MovePicture Id="0" X="200" Y="150" Alpha="1" Duration="7" WaitForCompletion="false" />
+  <RotatePicture Id="1" Angle="45" Duration="2" />
+  <SetWeatherEffects Weather="Snow" Power="5" TransitionDuration="0" WaitForCompletion="true" />
+  <ShowPicture Id="1" Show="false" />
+  <TintPicture Id="3" Duration="7" WaitForCompletion="true">
+    <TargetColor R="0.4" G="0.3" B="0.75" />
+  </TintPicture>
+  <BattleProcessing FromRandomEncounter="true" CanEscape="true" DefeatAllowed="true" />
+  <ShopProcessing MerchantId="2" />
+  <NameInputProcessing CharacterId="0" MaxCharacters="16" />
+  <OpenMenu />
+  <OpenSave />
+  <GameOver />
+  <ReturnToTitle />
+  <FadeScreen FadeIn="true" />
+  <TintScreen Duration="3.5" WaitForCompletion="true">
+    <TargetColor R="0.5" G="0.35" B="0.83" A="1"/>
+  </TintScreen>
+  <FlashScreen WaitForCompletion="false">
+    <TargetColor R="0.92" G="0.25" B="0.18" A="0.5" />
+  </FlashScreen>
+  <ChangeBattleBgm Name="battleMusic" Volume="50" Pitch="100" />
+  <ChangeBattleEndMusicalEffect Name="battleEnd" Volume="75" Pitch="75" />
+  <ChangeSaveAccess Enabled="false" />
+  <ChangeMenuAccess Enabled="true" />
+  <ChangeEncounterAccess Enabled="false" />
+  <ChangeFormationAccess Enabled="true" />
+  <ChangeWindowColor R="0.5" G="0.2" B="0.8" />
+  <ChangeActorGraphic CharacterId="0" Charset ="charset" Faceset="faceset" />
+  <Wait Duration="32.5" />
+</EventsSequence>
