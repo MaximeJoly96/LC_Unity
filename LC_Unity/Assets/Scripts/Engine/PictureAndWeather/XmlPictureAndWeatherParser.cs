@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Xml;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace Engine.PictureAndWeather
             move.Id = int.Parse(data.Attributes["Id"].InnerText);
             move.X = int.Parse(data.Attributes["X"].InnerText);
             move.Y = int.Parse(data.Attributes["Y"].InnerText);
-            move.Alpha = float.Parse(data.Attributes["Alpha"].InnerText);
+            move.Alpha = float.Parse(data.Attributes["Alpha"].InnerText, CultureInfo.InvariantCulture);
             move.Duration = int.Parse(data.Attributes["Duration"].InnerText);
             move.WaitForCompletion = bool.Parse(data.Attributes["WaitForCompletion"].InnerText);
 
@@ -55,7 +56,7 @@ namespace Engine.PictureAndWeather
                 show.Graphic = data.Attributes["Graphic"].InnerText;
                 show.X = int.Parse(data.Attributes["X"].InnerText);
                 show.Y = int.Parse(data.Attributes["Y"].InnerText);
-                show.Alpha = float.Parse(data.Attributes["Alpha"].InnerText);
+                show.Alpha = float.Parse(data.Attributes["Alpha"].InnerText, CultureInfo.InvariantCulture);
             }
 
             return show;
@@ -70,9 +71,9 @@ namespace Engine.PictureAndWeather
             tint.WaitForCompletion = bool.Parse(data.Attributes["WaitForCompletion"].InnerText);
 
             XmlNode colorNode = data.SelectSingleNode("TargetColor");
-            tint.TargetColor = new Color(float.Parse(colorNode.Attributes["R"].InnerText),
-                                         float.Parse(colorNode.Attributes["G"].InnerText),
-                                         float.Parse(colorNode.Attributes["B"].InnerText));
+            tint.TargetColor = new Color(float.Parse(colorNode.Attributes["R"].InnerText, CultureInfo.InvariantCulture),
+                                         float.Parse(colorNode.Attributes["G"].InnerText, CultureInfo.InvariantCulture),
+                                         float.Parse(colorNode.Attributes["B"].InnerText, CultureInfo.InvariantCulture));
 
             return tint;
         }

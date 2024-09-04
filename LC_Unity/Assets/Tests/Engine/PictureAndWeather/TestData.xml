@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <MovePicture Id="0" X="200" Y="150" Alpha="1" Duration="7" WaitForCompletion="false" />
+  <RotatePicture Id="1" Angle="45" Duration="2" />
+  <SetWeatherEffects Weather="Snow" Power="5" TransitionDuration="0" WaitForCompletion="true" />
+  <ShowPicture Id="1" Show="false" />
+  <ShowPicture Id="2" Show ="true" Graphic="graphic" X="-150" Y="-200" Alpha="0.65" />
+  <TintPicture Id="3" Duration="7" WaitForCompletion="true">
+    <TargetColor R="0.4" G="0.3" B="0.75" />
+  </TintPicture>
+</EventsSequence>
