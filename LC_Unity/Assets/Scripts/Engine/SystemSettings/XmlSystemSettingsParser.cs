@@ -1,5 +1,5 @@
 ﻿using System.Xml;
-using System;
+using System.Globalization;
 using UnityEngine;
 
 namespace Engine.SystemSettings
@@ -68,9 +68,9 @@ namespace Engine.SystemSettings
         {
             ChangeWindowColor change = new ChangeWindowColor();
 
-            change.TargetColor = new Color(float.Parse(data.Attributes["R"].InnerText),
-                                           float.Parse(data.Attributes["G"].InnerText),
-                                           float.Parse(data.Attributes["B"].InnerText));
+            change.TargetColor = new Color(float.Parse(data.Attributes["R"].InnerText, CultureInfo.InvariantCulture),
+                                           float.Parse(data.Attributes["G"].InnerText, CultureInfo.InvariantCulture),
+                                           float.Parse(data.Attributes["B"].InnerText, CultureInfo.InvariantCulture));
 
             return change;
         }
