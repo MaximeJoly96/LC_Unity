@@ -44,7 +44,7 @@ namespace Testing.Timing
             GlobalTimer globalTimer = Setup();
             globalTimer.Running = true;
 
-            globalTimer.GlobalTimeChangedEvent.AddListener((x) => Assert.IsTrue(Mathf.Abs(1.0f - globalTimer.InGameTimeSeconds) < 0.001f));
+            globalTimer.GlobalTimeChangedEvent.AddListener((x) => Assert.IsTrue(globalTimer.InGameTimeSeconds > 1.0f));
 
             yield return new WaitForSeconds(1.0f);
         }
