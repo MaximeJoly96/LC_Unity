@@ -14,15 +14,43 @@ namespace Field
 
         private bool _shown;
         private float _displayTimer;
+        private Animator _animator;
 
         public bool DisplayEnabled { get; set; } = true;
+        public Animator Animator
+        {
+            get
+            {
+                if(!_animator)
+                    _animator = GetComponent<Animator>();
+
+                return _animator;
+            }
+        }
+        private TMP_Text MapName
+        {
+            get
+            {
+                if(!_mapName)
+                {
+                    _mapName = GetComponent<TMP_Text>();
+
+                    if(!_mapName)
+                        _mapName = GetComponentInChildren<TMP_Text>();
+                }
+
+                return _mapName;
+            }
+        }
 
         public void Show()
         {
             if(DisplayEnabled)
             {
                 UpdateMapName();
-                GetComponent<Animator>().Play("ShowMapName");
+
+                if(Animator)
+                    Animator.Play("ShowMapName");
             }
         }
 
@@ -34,7 +62,7 @@ namespace Field
 
         private void UpdateMapName()
         {
-            _mapName.text = Localizer.Instance.GetString(FieldNames.MAP_NAMES[GlobalStateMachine.Instance.CurrentMapId]);
+            MapName.text = Localizer.Instance.GetString(FieldNames.MAP_NAMES[GlobalStateMachine.Instance.CurrentMapId]);
         }
 
         private void Update()
@@ -47,7 +75,9 @@ namespace Field
                 {
                     _shown = false;
                     _displayTimer = 0.0f;
-                    GetComponent<Animator>().Play("HideMapName");
+
+                    if(Animator)
+                        Animator.Play("HideMapName");
                 }
             }
         }
