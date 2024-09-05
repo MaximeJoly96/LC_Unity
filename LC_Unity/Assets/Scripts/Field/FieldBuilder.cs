@@ -21,8 +21,21 @@ namespace Field
 
         private List<PlayableField> _instFields;
         private PlayableField _currentField;
-
         protected Door[] _doors;
+
+        public PlayableField CurrentField
+        {
+            get { return _currentField; }
+            private set
+            {
+                _currentField = value;
+                GlobalStateMachine.Instance.CurrentMapId = _currentField.MapId;
+                MapNameDisplay display = FindObjectOfType<MapNameDisplay>();
+
+                if (display)
+                    display.Show();
+            }
+        }
 
         private void Awake()
         {
@@ -36,14 +49,14 @@ namespace Field
             ScanForTransitions();
 
             PositionPlayer();
-            PlayFieldBgm(_currentField);
+            PlayFieldBgm(CurrentField);
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
         }
 
         public void BuildField(PlayableField field)
         {
             PlayableField mainField = Instantiate(field);
-            _currentField = mainField;
+            CurrentField = mainField;
             _instFields.Add(mainField);
 
             FindObjectOfType<ShopManager>().LoadMerchants(mainField.Merchants);
@@ -56,13 +69,13 @@ namespace Field
 
         public void ScanForAgents()
         {
-            if(!_currentField)
+            if(!CurrentField)
             {
                 LogsHandler.Instance.LogError("Cannot scan for agents if no playable field has been created.");
                 return;
             }
 
-            Agent[] agents = _currentField.transform.GetComponentsInChildren<Agent>(true);
+            Agent[] agents = CurrentField.transform.GetComponentsInChildren<Agent>(true);
 
             AgentsManager.Instance.Reset();
 
@@ -85,7 +98,7 @@ namespace Field
         public virtual void SwitchToInteriorMode(bool switchOn)
         {
             _interiorMask.SetActive(switchOn);
-            _currentField.DisableCollisions(switchOn);
+            CurrentField.DisableCollisions(switchOn);
         }
 
         private void PositionPlayer()
@@ -106,29 +119,28 @@ namespace Field
 
         private void TransitionOccured(int mapId)
         {
-            if(_currentField.MapId != mapId)
+            if(CurrentField.MapId != mapId)
             { 
                 PlayableField newField = _instFields.FirstOrDefault(f => f.MapId == mapId);
 
-                if (newField.BgmKey != _currentField.BgmKey)
+                if (newField.BgmKey != CurrentField.BgmKey)
                 {
-                    StopCurrentBgm(_currentField);
+                    StopCurrentBgm(CurrentField);
                     PlayFieldBgm(newField);
                 }
 
-                _currentField = newField;
+                CurrentField = newField;
 
-                for(int i = 0; i < _currentField.NeighbourFields.Length; i++)
+                for(int i = 0; i < CurrentField.NeighbourFields.Length; i++)
                 {
-                    if(_instFields.FirstOrDefault(f => _currentField.NeighbourFields[i].MapId == f.MapId) == null)
+                    if(_instFields.FirstOrDefault(f => CurrentField.NeighbourFields[i].MapId == f.MapId) == null)
                     {
-                        _instFields.Add(Instantiate(_currentField.NeighbourFields[i]));
+                        _instFields.Add(Instantiate(CurrentField.NeighbourFields[i]));
                     }
                 }
 
                 ScanForTransitions();
                 DestroyUnnecessaryFields();
-                
             }
         }
 
@@ -139,8 +151,8 @@ namespace Field
 
             for(int i = 0; i < _instFields.Count; i++)
             {
-                if (_instFields[i].MapId != _currentField.MapId && 
-                    !_currentField.NeighbourFields.FirstOrDefault(f => f.MapId == _instFields[i].MapId))
+                if (_instFields[i].MapId != CurrentField.MapId && 
+                    !CurrentField.NeighbourFields.FirstOrDefault(f => f.MapId == _instFields[i].MapId))
                     toDestroy.Add(_instFields[i]);
             }
 

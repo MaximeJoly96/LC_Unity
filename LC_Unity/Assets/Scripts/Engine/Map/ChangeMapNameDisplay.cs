@@ -1,5 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using UnityEngine;
+using Field;
 
 namespace Engine.Map
 {
@@ -16,7 +18,12 @@ namespace Engine.Map
 
         public void Run()
         {
+            MapNameDisplay mapNameDisplay = Object.FindObjectOfType<MapNameDisplay>();
+            if (mapNameDisplay)
+                mapNameDisplay.DisplayEnabled = Enabled;
 
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }
