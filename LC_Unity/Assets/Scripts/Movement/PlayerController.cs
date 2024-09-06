@@ -98,23 +98,13 @@ namespace Movement
             if (Vector3.Distance(_change, Vector3.zero) > 0.01f)
             {
                 UpdatePlayerOnScreen();
-                if (_change.x > 0.01f && _change.y > 0.01f)
-                    _animator.Play("IdleUpRight");
-                else if(_change.x > 0.01f && _change.y < 0.0f)
-                    _animator.Play("IdleDownRight");
-                else if (_change.x < 0.0f && _change.y > 0.01f)
-                    _animator.Play("IdleUpLeft");
-                else if (_change.x < 0.0f && _change.y < 0.0f)
-                    _animator.Play("IdleDownLeft");
-                else if(_change.x > 0.01f)
-                    _animator.Play("IdleRight");
-                else if (_change.x < 0.0f)
-                    _animator.Play("IdleLeft");
-                else if (_change.y > 0.01f)
-                    _animator.Play("IdleUp");
-                else if (_change.y < 0.0f)
-                    _animator.Play("IdleDown");
+                _animator.SetFloat("X", _change.x);
+                _animator.SetFloat("Y", _change.y);
+
+                _animator.SetBool("Moving", true);
             }
+            else
+                _animator.SetBool("Moving", false);
         }
 
         public void CheckForInteraction()
@@ -140,6 +130,7 @@ namespace Movement
         private void StopMovement()
         {
             _change = Vector3.zero;
+            _animator.SetBool("Moving", false);
         }
     }
 }
