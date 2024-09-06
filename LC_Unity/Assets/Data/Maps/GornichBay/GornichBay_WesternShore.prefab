@@ -1,5 +1,98 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1739758304017067282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5125618340504434556}
+  - component: {fileID: 5173429691663321617}
+  m_Layer: 0
+  m_Name: Collisions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5125618340504434556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739758304017067282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2902163363849860011}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &5173429691663321617
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739758304017067282}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 13.366936, y: 9.985937}
+      - {x: -11.046189, y: 9.591896}
+      - {x: -11.035727, y: 8.0812}
+      - {x: -10.773375, y: 7.0837574}
+      - {x: -10.4073, y: 6.086134}
+      - {x: -9.550845, y: 4.3839226}
+      - {x: -8.882247, y: 3.0291653}
+      - {x: -8.19208, y: 2.1903477}
+      - {x: -7.5208273, y: 0.85232925}
+      - {x: -7.1800776, y: 0.02089119}
+      - {x: -6.6019974, y: -1.0205879}
+      - {x: -5.867486, y: -1.7893753}
+      - {x: -5.0652103, y: -3.0284472}
+      - {x: -4.6068096, y: -3.9668636}
+      - {x: -3.8565333, y: -4.8525114}
+      - {x: -3.542639, y: -5.1506166}
+      - {x: -2.358475, y: -6.0508633}
+      - {x: -1.2632978, y: -6.4984846}
+      - {x: -0.956053, y: -6.622635}
+      - {x: -0.027868032, y: -6.801813}
+      - {x: 1.1085658, y: -6.9753637}
+      - {x: 3.7414904, y: -7.098461}
+      - {x: 5.861751, y: -7.564541}
+      - {x: 8.154158, y: -8.3588}
+      - {x: 8.6220255, y: -8.507968}
+      - {x: 9.820714, y: -8.708973}
+      - {x: 10.224894, y: -8.960373}
+      - {x: 10.575763, y: -9.073625}
+      - {x: 11.087198, y: -9.113164}
+      - {x: 11.777022, y: -9.106458}
+      - {x: 12.278461, y: -9.081352}
+      - {x: 12.78987, y: -9.109304}
+      - {x: 12.796077, y: -7.693451}
+      - {x: 13.167236, y: 0.28782856}
+      - {x: 13.216318, y: 1.5625384}
+      - {x: 13.2535, y: 3.8070621}
 --- !u!1 &1939884610219547241
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +280,7 @@ Transform:
   m_Children:
   - {fileID: 4521652847183897835}
   - {fileID: 3160541349685440530}
+  - {fileID: 5125618340504434556}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -202,7 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7adde2f56004c744bbafb4cd0c76c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collisions: []
+  _collisions:
+  - {fileID: 5125618340504434556}
   _merchants: {fileID: 0}
   _neighbourFields:
   - {fileID: 7305577325980308867, guid: 9d4a6aa3aad1ba546bfddf02ca81e2a9, type: 3}
