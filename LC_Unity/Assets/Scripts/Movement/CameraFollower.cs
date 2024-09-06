@@ -13,7 +13,13 @@ namespace Movement
         private void Awake()
         {
             if (!_playerController)
-                LogsHandler.Instance.LogError("No PlayerController attached to CameraFollower. Camera will not follow the player.");
+            {
+                _playerController = FindObjectOfType<PlayerController>();
+
+                if(!_playerController)
+                    LogsHandler.Instance.LogError("No PlayerController attached to CameraFollower. Camera will not follow the player.");
+            }
+                
 
             if(!_camera)
                 LogsHandler.Instance.LogError("No Camera attached to CameraFollower. Camera will not follow the player.");
