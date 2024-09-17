@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="joachim">
+    <Turn Direction="Right" />
+    <Transparent Status="true" />
+  </SetMoveRoute>
+  <Wait Duration="1.5" />
+  <TintScreen Duration="2.5" WaitForCompletion="true">
+    <TargetColor R="0" G="0" B="0" A="0.15" />
+  </TintScreen>
+  <Wait Duration="1" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText22</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="2" />
+  <ShowBalloonIcon AgentId="sleepy" WaitForCompletion="true" BalloonIcon="Sleep" />
+  <Wait Duration="0.75" />
+  <FlashScreen WaitForCompletion="true">
+    <TargetColor R="1" G="1" B="1" A="1" />
+  </FlashScreen>
+  <Wait Duration="0.75" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="joachim">
+    <Transparent Status="false" />
+  </SetMoveRoute>
+  <FlashScreen WaitForCompletion="true">
+    <TargetColor R="1" G="1" B="1" A="1" />
+  </FlashScreen>
+  <Wait Duration="1" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText23</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.75" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="joachim">
+    <MoveTowards Target="dagner" Distance="0.5" />
+  </SetMoveRoute>
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Middle</DialogBoxPosition>
+    <Message>introText24</Message>
+    <Locutor></Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.5" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Middle</DialogBoxPosition>
+    <Message>introText25</Message>
+    <Locutor></Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="1.5" />
+  <TintScreen Duration="2.5" WaitForCompletion="true">
+    <TargetColor R="1" G="1" B="1" A="1" />
+  </TintScreen>
+  <DisplayDialog>
+    <DialogBoxStyle>Transparent</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText26</Message>
+    <Locutor></Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.75" />
+  <DisplayDialog>
+    <DialogBoxStyle>Transparent</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText27</Message>
+    <Locutor></Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.5" />
+  <DisplayDialog>
+    <DialogBoxStyle>Transparent</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText28</Message>
+    <Locutor></Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="1.5" />
+  <FadeOutBgm Name="prologue" TransitionDuration="5" />
+  <Wait Duration="3.3" />
+  <PlaySoundEffect Name="Water1" Volume="0.75" Pitch="1.35" />
+  <Wait Duration="0.75" />
+  <PlaySoundEffect Name="Stepgrass" Volume="0.8" Pitch="0.85" />
+  <Wait Duration="0.8" />
+  <PlaySoundEffect Name="Stepgrass" Volume="0.8" Pitch="1.05" />
+  <Wait Duration="0.8" />
+  <PlaySoundEffect Name="Stepgrass" Volume="0.55" Pitch="0.85" />
+  <Wait Duration="0.8" />
+  <PlaySoundEffect Name="Stepgrass" Volume="0.55" Pitch="1.05" />
+  <Wait Duration="0.8" />
+  <PlaySoundEffect Name="Stepgrass" Volume="0.20" Pitch="0.85" />
+  <Wait Duration="0.8" />
+  <PlaySoundEffect Name="Stepgrass" Volume="0.20" Pitch="1.05" />
+  <Wait Duration="0.8" />
+  <Wait Duration="1.5" />
+</EventsSequence>

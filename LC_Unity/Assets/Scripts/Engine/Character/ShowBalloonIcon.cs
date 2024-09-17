@@ -10,7 +10,8 @@ namespace Engine.Character
         public enum BalloonType
         {
             Silence,
-            Sweat
+            Sweat,
+            Sleep
         }
 
         public string AgentId { get; set; }

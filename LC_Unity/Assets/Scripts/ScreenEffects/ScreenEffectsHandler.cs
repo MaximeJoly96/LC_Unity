@@ -74,12 +74,16 @@ namespace ScreenEffects
             }
 
             WaitForFixedUpdate wait = new WaitForFixedUpdate();
+            int step = 0;
 
-            while(!ColorsAreSimilar(previousColor, CanvasBackground.color))
+            while(step < 10 && !ColorsAreSimilar(previousColor, CanvasBackground.color))
             {
-                CanvasBackground.color -= Color.Lerp(previousColor, flash.TargetColor, 0.05f);
+                CanvasBackground.color -= Color.Lerp(previousColor, flash.TargetColor, step / 10.0f);
+                step++;
                 yield return wait;
             }
+
+            CanvasBackground.color = previousColor;
 
             if(flash.WaitForCompletion)
             {
