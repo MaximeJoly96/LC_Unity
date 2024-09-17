@@ -9,6 +9,8 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 using MusicAndSounds;
+using Engine.Movement;
+using UnityEngine.UIElements;
 
 namespace Field
 {
@@ -85,6 +87,39 @@ namespace Field
             }
         }
 
+        public void TransferObject(TransferObject transferObject)
+        {
+            if(transferObject.MapId != CurrentField.MapId)
+            {
+                PlayableField newField = _allFields.FirstOrDefault(f => f.MapId == transferObject.MapId);
+
+                if (newField != null)
+                {
+                    Destroy(CurrentField.gameObject);
+                    BuildField(newField);
+
+                    ScanForAgents();
+                    ScanForDoors();
+                    ScanForTransitions();
+                }
+            }
+
+            if (transferObject.Target.ToLower() == "player")
+            {
+                PositionPlayer(new Vector2(transferObject.X, transferObject.Y));
+                ChangePlayerDirection(transferObject.Direction);
+            }
+            else
+            {
+                Agent agent = AgentsManager.Instance.GetAgent(transferObject.Target);
+                if (agent != null)
+                {
+                    agent.transform.position = new Vector3(transferObject.X, transferObject.Y);
+                    agent.UpdateDirection(transferObject.Direction);
+                }
+            }
+        }
+
         protected virtual void ScanForDoors()
         {
             _doors = FindObjectsOfType<Door>();
@@ -103,9 +138,21 @@ namespace Field
 
         private void PositionPlayer()
         {
+            PositionPlayer(SaveManager.Instance.Data.PlayerPosition);
+        }
+
+        private void PositionPlayer(Vector2 position)
+        {
             PlayerController pc = FindObjectOfType<PlayerController>();
-            if(pc)
-                pc.transform.position = SaveManager.Instance.Data.PlayerPosition;
+            if (pc)
+                pc.transform.position = position;
+        }
+
+        private void ChangePlayerDirection(TransferObject.PossibleDirection direction)
+        {
+            PlayerController pc = FindObjectOfType<PlayerController>();
+            if (pc)
+                pc.ForceDirection(direction);
         }
 
         private void ScanForTransitions()

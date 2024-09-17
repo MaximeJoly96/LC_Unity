@@ -31,7 +31,7 @@ namespace Engine.Movement
             TransferObject transfer = new TransferObject();
 
             transfer.Direction = (TransferObject.PossibleDirection)Enum.Parse(typeof(TransferObject.PossibleDirection), data.SelectSingleNode("Direction").InnerText);
-            transfer.Fade = (TransferObject.FadeType)Enum.Parse(typeof(TransferObject.FadeType), data.SelectSingleNode("Fade").InnerText);
+            transfer.Target = data.Attributes["Target"].InnerText;
 
             XmlNode destination = data.SelectSingleNode("Destination");
 

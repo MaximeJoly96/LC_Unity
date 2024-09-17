@@ -33,7 +33,6 @@ namespace Testing.Engine.Movement
             TransferObject transfer = XmlMovementParser.ParseTransferObject(GetDataToParse("TransferObject"));
 
             Assert.AreEqual(TransferObject.PossibleDirection.Retain, transfer.Direction);
-            Assert.AreEqual(TransferObject.FadeType.White, transfer.Fade);
             Assert.AreEqual(5, transfer.X);
             Assert.AreEqual(3, transfer.Y);
             Assert.AreEqual(5, transfer.MapId);

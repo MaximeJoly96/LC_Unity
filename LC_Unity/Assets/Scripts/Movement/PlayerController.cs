@@ -6,6 +6,7 @@ using Field;
 using Core;
 using System.Collections.Generic;
 using Mobile;
+using Engine.Movement;
 
 namespace Movement
 {
@@ -127,10 +128,32 @@ namespace Movement
             }
         }
 
-        private void StopMovement()
+        public void ForceDirection(TransferObject.PossibleDirection direction)
         {
             _change = Vector3.zero;
+
+            _animator.SetFloat("X", _change.x);
+            _animator.SetFloat("Y", _change.y);
             _animator.SetBool("Moving", false);
+            _animator.Play("Idle");
+
+            switch(direction)
+            {
+                case TransferObject.PossibleDirection.Top:
+                    _animator.SetFloat("Y", 1.0f);
+                    break;
+                case TransferObject.PossibleDirection.Bottom:
+                    _animator.SetFloat("Y", -1.0f);
+                    break;
+                case TransferObject.PossibleDirection.Left:
+                    _animator.SetFloat("X", -1.0f);
+                    break;
+                case TransferObject.PossibleDirection.Right:
+                    _animator.SetFloat("X", 1.0f);
+                    break;
+                case TransferObject.PossibleDirection.Retain:
+                    break;
+            }
         }
     }
 }

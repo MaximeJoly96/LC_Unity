@@ -11,7 +11,8 @@ namespace Field
             { 2, "haalmikahRegionWest" },
             { 3, "haalmikahRegionGrove" },
             { 4, "gornichBayWesternShore" },
-            { 1000, "introMapName" }
+            { 1000, "introMapName" },
+            { 1001, "introMapName" }
         };
     }
 }

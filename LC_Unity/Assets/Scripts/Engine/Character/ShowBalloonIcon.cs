@@ -13,7 +13,7 @@ namespace Engine.Character
             Sweat
         }
 
-        public int AgentId { get; set; }
+        public string AgentId { get; set; }
         public BalloonType BalloonIcon { get; set; }
         public bool WaitForCompletion { get; set; }
         public UnityEvent Finished { get; set; }

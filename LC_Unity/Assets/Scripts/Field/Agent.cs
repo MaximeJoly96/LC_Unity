@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Movement;
+using Engine.Movement;
 
 namespace Field
 {
@@ -56,6 +57,27 @@ namespace Field
                         break;
                 }
             }  
+        }
+
+        public void UpdateDirection(TransferObject.PossibleDirection direction)
+        {
+            switch(direction)
+            {
+                case TransferObject.PossibleDirection.Left:
+                    UpdateDirection(Direction.Left);
+                    break;
+                case TransferObject.PossibleDirection.Right:
+                    UpdateDirection(Direction.Right);
+                    break;
+                case TransferObject.PossibleDirection.Top:
+                    UpdateDirection(Direction.Up);
+                    break;
+                case TransferObject.PossibleDirection.Bottom:
+                    UpdateDirection(Direction.Down);
+                    break;
+                case TransferObject.PossibleDirection.Retain:
+                    break;
+            }
         }
     }
 }
