@@ -8,10 +8,21 @@ namespace Movement
     {
         protected Vector3 _destination;
         protected Vector3 _delta;
+        protected Animator _animator;
 
         public float Speed { get { return GetComponent<Agent>().Speed; } }
         public bool Moving { get; protected set; }
         public UnityEvent DestinationReached { get; protected set; }
+        protected Animator Animator
+        {
+            get
+            {
+                if(!_animator)
+                    _animator = GetComponent<Animator>();
+
+                return _animator;
+            }
+        }
 
         public void StartMoving(float deltaX, float deltaY)
         {
@@ -22,7 +33,6 @@ namespace Movement
         {
             _delta = delta;
             _destination = transform.position + _delta;
-            UpdateAgentDirection();
 
             DestinationReached = new UnityEvent();
 
@@ -41,17 +51,25 @@ namespace Movement
         {
             transform.Translate(_delta * Time.deltaTime * Speed);
 
+            Animator.SetFloat("X", _delta.x);
+            Animator.SetFloat("Y", _delta.y);
+
             if (Vector3.Distance(transform.position, _destination) < 0.05f)
             {
                 DestinationReached.Invoke();
                 Moving = false;
+                Stop();
+               
                 Destroy(this);
             }
+            else
+                Animator.SetBool("Moving", true);
         }
 
-        protected void UpdateAgentDirection()
+        protected void Stop()
         {
-            GetComponent<Agent>().UpdateDirection(DirectionUtils.VectorToDirection(_delta));
+            Animator.SetBool("Moving", false);
+            Animator.Play("Idle");
         }
     }
 }

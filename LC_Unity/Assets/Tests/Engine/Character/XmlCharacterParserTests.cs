@@ -31,8 +31,8 @@ namespace Testing.Engine.Character
         {
             ShowBalloonIcon show = XmlCharacterParser.ParseShowBalloonIcon(GetDataToParse("ShowBalloonIcon"));
 
-            Assert.AreEqual("target", show.Target);
-            Assert.AreEqual(5, show.BalloonIconId);
+            Assert.AreEqual(ShowBalloonIcon.BalloonType.Silence, show.BalloonIcon);
+            Assert.AreEqual(5, show.AgentId);
             Assert.AreEqual(true, show.WaitForCompletion);
         }
     }

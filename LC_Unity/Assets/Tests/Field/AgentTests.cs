@@ -36,6 +36,7 @@ namespace Testing.Field
         private Agent Setup()
         {
             GameObject go = new GameObject("Agent");
+            go.AddComponent<Animator>();
             return go.AddComponent<Agent>();
         }
     }

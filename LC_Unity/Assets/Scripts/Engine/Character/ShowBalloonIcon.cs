@@ -1,12 +1,20 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using Actors;
+using UnityEngine;
 
 namespace Engine.Character
 {
     public class ShowBalloonIcon : IRunnable
     {
-        public string Target { get; set; }
-        public int BalloonIconId { get; set; }
+        public enum BalloonType
+        {
+            Silence,
+            Sweat
+        }
+
+        public int AgentId { get; set; }
+        public BalloonType BalloonIcon { get; set; }
         public bool WaitForCompletion { get; set; }
         public UnityEvent Finished { get; set; }
         public bool IsFinished { get; set; }
@@ -18,7 +26,7 @@ namespace Engine.Character
 
         public void Run()
         {
-
+            Object.FindObjectOfType<BalloonIconsManager>().ShowBalloonIcon(this);
         }
     }
 }

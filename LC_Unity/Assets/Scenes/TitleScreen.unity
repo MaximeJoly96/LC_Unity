@@ -5507,7 +5507,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 72
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6690,6 +6690,8 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 55d32aa8c4f847b4eb041e608a189bd6, type: 3}
   - key: haalmikahRegion
     audio: {fileID: 8300000, guid: 27f8c01e35b5d914e93ce4beb2cec4ed, type: 3}
+  - key: prologue
+    audio: {fileID: 8300000, guid: 3a52f645d54e7354dbfe9f402a306028, type: 3}
 --- !u!4 &1516669804
 Transform:
   m_ObjectHideFlags: 0
@@ -7727,6 +7729,7 @@ GameObject:
   - component: {fileID: 1753880696}
   - component: {fileID: 1753880700}
   - component: {fileID: 1753880701}
+  - component: {fileID: 1753880702}
   m_Layer: 0
   m_Name: Utils
   m_TagString: Untagged
@@ -8349,6 +8352,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _essentialAffinities: {fileID: 4900000, guid: 202c221d76ff0774a83c6c83d85dd8d6,
     type: 3}
+--- !u!114 &1753880702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753880695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54978aa7be3a214c8b6ead5c2089508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icons:
+  - Type: 0
+    BalloonIcon: {fileID: 4858795311119779429, guid: e1217f50beac0e14d9e72c69c253b913,
+      type: 3}
+  - Type: 1
+    BalloonIcon: {fileID: 6047278348168367793, guid: e6cb8b4e777726a4a9caf265d1536010,
+      type: 3}
 --- !u!1 &1762236037
 GameObject:
   m_ObjectHideFlags: 0
@@ -9010,6 +9032,8 @@ MonoBehaviour:
   _sounds:
   - key: forest
     audio: {fileID: 8300000, guid: 813812b79eb4027478ea3c69ed090747, type: 3}
+  - key: wind
+    audio: {fileID: 8300000, guid: 076e67e16579d9e4e80d020ceef167a3, type: 3}
 --- !u!4 &2041864627
 Transform:
   m_ObjectHideFlags: 0

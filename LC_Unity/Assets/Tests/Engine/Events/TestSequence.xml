@@ -8,7 +8,7 @@
   <RecoverAll />
   <ShowAgentAnimation AnimationName="animation" WaitForCompletion="false" />
   <ShowAnimation Target="target" AnimationId="3" WaitForCompletion="false" />
-  <ShowBalloonIcon Target="target" BalloonIconId="5" WaitForCompletion="true" />
+  <ShowBalloonIcon AgentId="3" BalloonIcon="Silence" WaitForCompletion="true" />
   <ConditionalBranch Type="SwitchCondition" Condition="NotEqual" FirstMember="var1" SecondMember="false" />
   <ConditionalBranch Type="VariableCondition" Condition="GreaterThan" FirstMember="var1" SecondMember="2" />
   <ConditionalBranch Type="TimerCondition" Condition="Before" FirstMember="var1" SecondMember="30" />

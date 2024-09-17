@@ -19,8 +19,6 @@ namespace Movement
             if(distance < 0.0f)
                 _delta *= -1.0f;
 
-            UpdateAgentDirection();
-
             _distanceToTravel = Math.Abs(distance);
             _travelledDistance = 0.0f;
 
@@ -34,12 +32,19 @@ namespace Movement
 
             _travelledDistance += move.magnitude;
 
-            if(_travelledDistance >= _distanceToTravel)
+            Animator.SetFloat("X", _delta.x);
+            Animator.SetFloat("Y", _delta.y);
+
+            if (_travelledDistance >= _distanceToTravel)
             {
                 DestinationReached.Invoke();
                 Moving = false;
+                Stop();
+
                 Destroy(this);
             }
+            else
+                Animator.SetBool("Moving", true);
         }
     }
 }

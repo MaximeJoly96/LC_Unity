@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <TintScreen Duration="3" WaitForCompletion="true">
+  <PlayBgs Name="wind" Volume="0.5" Pitch="1" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1006">
+    <Turn Direction="Up" />
+  </SetMoveRoute>
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1007">
+    <Turn Direction="Up" />
+  </SetMoveRoute>
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1008">
+    <Turn Direction="Up" />
+  </SetMoveRoute>
+  <TintScreen Duration="1.5" WaitForCompletion="true">
     <TargetColor R="0" G="0" B="0" A="0.5" />
   </TintScreen>
   <DisplayDialog>
@@ -27,4 +37,66 @@
 		<FaceGraphics></FaceGraphics>
 	</DisplayDialog>
 	<Wait Duration="1" />
+	<SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1003">
+    <MoveRelative DeltaX="0" DeltaY="5" />
+  </SetMoveRoute>
+	<SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1004">
+    <MoveRelative DeltaX="0" DeltaY="5" />
+  </SetMoveRoute>
+	<SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1005">
+    <MoveRelative DeltaX="0" DeltaY="5" />
+  </SetMoveRoute>
+  <Wait Duration="0.25" />
+	<SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1000">
+    <MoveRelative DeltaX="0" DeltaY="5" />
+  </SetMoveRoute>
+	<SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1001">
+    <MoveRelative DeltaX="0" DeltaY="5" />
+  </SetMoveRoute>
+	<SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="1002">
+    <MoveRelative DeltaX="0" DeltaY="5" />
+  </SetMoveRoute>
+  <ShowBalloonIcon AgentId="1006" WaitForCompletion="true" BalloonIcon="Silence" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText4</Message>
+    <Locutor>pernambulisSoldier</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText5</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.5" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1008">
+    <Turn Direction="Right" />
+  </SetMoveRoute>
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="True" AgentId="1006">
+    <MoveTowards Target="1008" Distance="0.5" />
+  </SetMoveRoute>
+  <Wait Duration="2" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="True" AgentId="1006">
+    <Turn Direction="Down" />
+  </SetMoveRoute>
+  <ShowBalloonIcon AgentId="1007" WaitForCompletion="true" BalloonIcon="Sweat" />
+  <Wait Duration="0.75" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText6</Message>
+    <Locutor>pernambulisSoldier</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.2" />
+  <FadeOutBgs Name="wind" TransitionDuration="4.5" />
+  <TintScreen Duration="4.5" WaitForCompletion="false">
+    <TargetColor R="0" G="0" B="0" A="1" />
+  </TintScreen>
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="True" AgentId="1006">
+    <MoveTowards Target="1007" Distance="1.1" />
+  </SetMoveRoute>
 </EventsSequence>

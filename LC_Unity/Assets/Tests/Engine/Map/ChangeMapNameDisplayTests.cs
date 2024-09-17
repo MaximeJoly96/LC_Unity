@@ -20,7 +20,7 @@ namespace Testing.Engine.Map
             GameObject go = new GameObject("MapNameDisplay");
             MapNameDisplay display = go.AddComponent<MapNameDisplay>();
 
-            Assert.IsTrue(display.DisplayEnabled);
+            Assert.IsFalse(display.DisplayEnabled);
 
             changeDisabled.Run();
 
@@ -46,6 +46,7 @@ namespace Testing.Engine.Map
             MapNameDisplay display = go.AddComponent<MapNameDisplay>();
             TextMeshProUGUI text = go.AddComponent<TextMeshProUGUI>();
 
+            display.DisplayEnabled = true;
             display.Show();
 
             Assert.AreEqual("Bastion de Haalmikah", text.text);

@@ -9,7 +9,6 @@ namespace Movement
         {
             _delta = new Vector3(deltaX, deltaY);
             _destination = transform.position + _delta;
-            UpdateAgentDirection();
 
             DestinationReached = new UnityEvent();
 

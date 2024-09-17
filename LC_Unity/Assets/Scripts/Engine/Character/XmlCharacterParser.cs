@@ -20,8 +20,9 @@ namespace Engine.Character
         {
             ShowBalloonIcon show = new ShowBalloonIcon();
 
-            show.Target = data.Attributes["Target"].InnerText;
-            show.BalloonIconId = int.Parse(data.Attributes["BalloonIconId"].InnerText);
+            show.AgentId = int.Parse(data.Attributes["AgentId"].InnerText);
+            show.BalloonIcon = (ShowBalloonIcon.BalloonType)Enum.Parse(typeof(ShowBalloonIcon.BalloonType), 
+                                                                       data.Attributes["BalloonIcon"].InnerText);
             show.WaitForCompletion = bool.Parse(data.Attributes["WaitForCompletion"].InnerText);
 
             return show;

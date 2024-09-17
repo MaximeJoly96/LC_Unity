@@ -16,6 +16,12 @@ namespace Movement
 
         private IEnumerator StartMoveAgent(Agent agent, SetMoveRoute route)
         {
+            if(!route.WaitForCompletion)
+            {
+                route.Finished.Invoke();
+                route.IsFinished = true;
+            }
+
             for (int i = 0; i < route.Moves.Count; i++)
             {
                 route.Moves[i].Run(agent);
@@ -23,8 +29,11 @@ namespace Movement
                 yield return new WaitUntil(() => route.Moves[i].IsFinished);
             }
 
-            route.Finished.Invoke();
-            route.IsFinished = true;
+            if(route.WaitForCompletion)
+            {
+                route.Finished.Invoke();
+                route.IsFinished = true;
+            }
         }
     }
 }
