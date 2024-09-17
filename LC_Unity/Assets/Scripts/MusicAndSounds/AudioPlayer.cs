@@ -113,20 +113,23 @@ namespace MusicAndSounds
 
         private void CreateAudioSource(SoundMetadata sound, PlayAudio audio, bool loop, AudioType type)
         {
-            AudioSource source = gameObject.AddComponent<AudioSource>();
-            source.clip = sound.audio;
-            source.volume = audio.Volume;
-            source.pitch = audio.Pitch;
-            source.loop = loop;
+            if(sound != null)
+            {
+                AudioSource source = gameObject.AddComponent<AudioSource>();
+                source.clip = sound.audio;
+                source.volume = audio.Volume;
+                source.pitch = audio.Pitch;
+                source.loop = loop;
 
-            source.outputAudioMixerGroup = type == AudioType.BGM || type == AudioType.ME ? _musicMixer : _soundMixer;
+                source.outputAudioMixerGroup = type == AudioType.BGM || type == AudioType.ME ? _musicMixer : _soundMixer;
 
-            if (type == AudioType.ME)
-                PauseAllRunningAudios();
+                if (type == AudioType.ME)
+                    PauseAllRunningAudios();
 
-            source.Play();
+                source.Play();
 
-            _runningAudios.Add(new RunningAudio(sound, source, type));
+                _runningAudios.Add(new RunningAudio(sound, source, type));
+            }
         }
 
         private void CleanRunningAudios()

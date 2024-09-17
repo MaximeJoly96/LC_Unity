@@ -7,6 +7,7 @@ using Timing;
 using Actors;
 using Party;
 using Inventory;
+using Utils;
 
 namespace Save
 {
@@ -25,7 +26,7 @@ namespace Save
 
             data.Add("positionX", playerPos.x.ToString(CultureInfo.InvariantCulture));
             data.Add("positionY", playerPos.y.ToString(CultureInfo.InvariantCulture));
-            data.Add("mapId", 0.ToString(CultureInfo.InvariantCulture));
+            data.Add("mapId", CommonLocations.INITIAL_MAP_ID.ToString(CultureInfo.InvariantCulture));
             data.Add("inGameTime", Object.FindObjectOfType<GlobalTimer>().InGameTimeSeconds.ToString(CultureInfo.InvariantCulture));
 
             List<Character> party = PartyManager.Instance.GetParty();

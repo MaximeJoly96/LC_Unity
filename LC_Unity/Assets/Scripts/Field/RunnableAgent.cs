@@ -70,5 +70,11 @@ namespace Field
             Runner.Finished.AddListener(() => FinishedSequence.Invoke());
             Runner.RunEvents(_sequence); 
         }
+
+        private void Start()
+        {
+            if (_trigger == AgentTrigger.Foreground)
+                RunSequence();
+        }
     }
 }

@@ -108,7 +108,6 @@ namespace Save
             try
             {
                 Data = GetSavedDataFromSlot(slotId);
-                GlobalStateMachine.Instance.CurrentMapId = Data.MapID;
 
                 PartyManager.Instance.SetInventory(Data.Inventory);
                 PartyManager.Instance.ChangeGold(new Engine.Party.ChangeGold { Value = Data.Gold });
@@ -158,6 +157,8 @@ namespace Save
             }
 
             CloseSaveWindow();
+
+            GlobalStateMachine.Instance.CurrentMapId = Data.MapID;
             GameObject.FindObjectOfType<GlobalTimer>().InitInGameTimer(Data.InGameTimeSeconds);
             SceneManager.LoadScene("Field");
         }

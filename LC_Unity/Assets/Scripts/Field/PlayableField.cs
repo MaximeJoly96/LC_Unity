@@ -30,9 +30,13 @@ namespace Field
                 if(_transitions == null)
                 {
                     _transitions = new List<MapTransition>();
-                    foreach(Transform mt in _transitionsWrapper)
+
+                    if(_transitionsWrapper != null)
                     {
-                        _transitions.Add(mt.GetComponent<MapTransition>());
+                        foreach (Transform mt in _transitionsWrapper)
+                        {
+                            _transitions.Add(mt.GetComponent<MapTransition>());
+                        }
                     }
                 }
 

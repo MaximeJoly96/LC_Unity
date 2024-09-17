@@ -103,7 +103,9 @@ namespace Field
 
         private void PositionPlayer()
         {
-            FindObjectOfType<PlayerController>().transform.position = SaveManager.Instance.Data.PlayerPosition;
+            PlayerController pc = FindObjectOfType<PlayerController>();
+            if(pc)
+                pc.transform.position = SaveManager.Instance.Data.PlayerPosition;
         }
 
         private void ScanForTransitions()

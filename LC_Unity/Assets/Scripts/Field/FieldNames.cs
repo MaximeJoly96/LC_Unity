@@ -4,13 +4,14 @@ namespace Field
 {
     public static class FieldNames
     {
-        public static List<string> MAP_NAMES = new List<string>
+        public static Dictionary<int, string> MAP_NAMES = new Dictionary<int, string>
         {
-            "haalmikahFortress",
-            "haalmikahRegionEast",
-            "haalmikahRegionWest",
-            "haalmikahRegionGrove",
-            "gornichBayWesternShore"
+            { 0, "haalmikahFortress" },
+            { 1, "haalmikahRegionEast" },
+            { 2, "haalmikahRegionWest" },
+            { 3, "haalmikahRegionGrove" },
+            { 4, "gornichBayWesternShore" },
+            { 1000, "introMapName" }
         };
     }
 }
