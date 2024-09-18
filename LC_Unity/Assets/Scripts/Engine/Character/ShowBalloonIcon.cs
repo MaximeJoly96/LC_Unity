@@ -11,7 +11,10 @@ namespace Engine.Character
         {
             Silence,
             Sweat,
-            Sleep
+            Sleep,
+            Exclamation,
+            Interrogation,
+            Anger
         }
 
         public string AgentId { get; set; }

@@ -27,7 +27,7 @@ namespace Movement
 
         protected override void Move()
         {
-            Vector3 move = _delta * Time.deltaTime * Speed;
+            Vector3 move = _delta.normalized * Time.deltaTime * Speed;
             transform.Translate(move);
 
             _travelledDistance += move.magnitude;

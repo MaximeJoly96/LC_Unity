@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <PlayBgm Name="joachimTheme" Volume="0.6" Pitch="0.7" />
+  <PlayBgs Name="drips" Volume="0.8" Pitch="1" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="dagner">
+    <Turn Direction="Up" />
+  </SetMoveRoute>
+  <TintScreen Duration="3" WaitForCompletion="true">
+    <TargetColor R="1" G="1" B="1" A="0" />
+  </TintScreen>
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="gamera">
+    <MoveTowards Target="dagner" Distance="4.5" />
+  </SetMoveRoute>
+  <Wait Duration="0.75" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText29</Message>
+    <Locutor>gamera</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="1" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText30</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="1.25" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText31</Message>
+    <Locutor>gamera</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="1" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText32</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="1" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText33</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="1" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText34</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.75" />
+  <ShowBalloonIcon AgentId="gamera" BalloonIcon="Exclamation" WaitForCompletion="true" />
+  <Wait Duration="0.5" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText35</Message>
+    <Locutor>gamera</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.75" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText36</Message>
+    <Locutor>gamera</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.2" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="dagner">
+    <Turn Direction="Down" />
+  </SetMoveRoute>
+  <Wait Duration="1" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText37</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.75" />
+  <ShowBalloonIcon AgentId="dagner" BalloonIcon="Silence" WaitForCompletion="true" />
+  <Wait Duration="0.75" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText38</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.5" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText39</Message>
+    <Locutor>gamera</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.75" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="dagner">
+    <Turn Direction="Up" />
+  </SetMoveRoute>
+  <Wait Duration="0.75" />
+  <ShowBalloonIcon AgentId="dagner" BalloonIcon="Anger" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText40</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.5" />
+  <Wait Duration="0.5" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText41</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.75" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText42</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.3" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="gamera">
+    <ChangeOpacity Alpha="0.5" />
+    <Wait Duration="0.15" />
+    <ChangeOpacity Alpha="0" />
+  </SetMoveRoute>
+  <FadeOutBgs Name="drips" TransitionDuration="3" />
+  <Wait Duration="0.5" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>introText43</Message>
+    <Locutor>dagner</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.75" />
+  <TintScreen Duration="0.1" WaitForCompletion="true">
+    <TargetColor R="0" G="0" B="0" A="0" />
+  </TintScreen>
+  <TintScreen Duration="2.5" WaitForCompletion="true">
+    <TargetColor R="0" G="0" B="0" A="1" />
+  </TintScreen>
+  <Wait Duration="1.5" />
+</EventsSequence>

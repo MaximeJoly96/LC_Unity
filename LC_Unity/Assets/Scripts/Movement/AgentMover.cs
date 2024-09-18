@@ -49,7 +49,7 @@ namespace Movement
 
         protected virtual void Move()
         {
-            transform.Translate(_delta * Time.deltaTime * Speed);
+            transform.Translate(_delta.normalized * Time.deltaTime * Speed);
 
             Animator.SetFloat("X", _delta.x);
             Animator.SetFloat("Y", _delta.y);

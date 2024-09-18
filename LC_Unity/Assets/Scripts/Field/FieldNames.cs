@@ -13,7 +13,8 @@ namespace Field
             { 4, "gornichBayWesternShore" },
             { 1000, "introMapName" },
             { 1001, "introMapName" },
-            { 1002, "introMapName" }
+            { 1002, "introMapName" },
+            { 1003, "introMapName" }
         };
     }
 }
