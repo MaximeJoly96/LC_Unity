@@ -34,7 +34,8 @@ namespace Core
             InShopSellList,
             BuyingItems,
             SellingItems,
-            ClosingShop
+            ClosingShop,
+            PromptedToSkipScene
         }
 
         private static GlobalStateMachine _instance;

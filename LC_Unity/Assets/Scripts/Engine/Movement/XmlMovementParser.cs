@@ -35,9 +35,14 @@ namespace Engine.Movement
 
             XmlNode destination = data.SelectSingleNode("Destination");
 
-            transfer.X = int.Parse(destination.Attributes["X"].InnerText);
-            transfer.Y = int.Parse(destination.Attributes["Y"].InnerText);
+            transfer.X = float.Parse(destination.Attributes["X"].InnerText, CultureInfo.InvariantCulture);
+            transfer.Y = float.Parse(destination.Attributes["Y"].InnerText, CultureInfo.InvariantCulture);
             transfer.MapId = int.Parse(destination.Attributes["MapId"].InnerText);
+
+            XmlAttribute insideAttribute = destination.Attributes["Inside"];
+
+            if( insideAttribute != null)
+                transfer.Inside = bool.Parse(destination.Attributes["Inside"].InnerText);
 
             return transfer;
         }
@@ -179,6 +184,24 @@ namespace Engine.Movement
             }
 
             return route;
+        }
+
+        public static CameraFollowPlayer ParseCameraFollowPlayer(XmlNode node)
+        {
+            CameraFollowPlayer follow = new CameraFollowPlayer();
+
+            follow.Follow = bool.Parse(node.Attributes["Follow"].InnerText);
+
+            return follow;
+        }
+
+        public static EnterBuilding ParseEnterBuilding(XmlNode node)
+        {
+            EnterBuilding enterBuilding = new EnterBuilding();
+
+            enterBuilding.AgentId = node.Attributes["AgentId"].InnerText;
+
+            return enterBuilding;
         }
     }
 }

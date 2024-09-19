@@ -36,6 +36,7 @@ namespace Testing.Engine.Movement
             Assert.AreEqual(5, transfer.X);
             Assert.AreEqual(3, transfer.Y);
             Assert.AreEqual(5, transfer.MapId);
+            Assert.IsFalse(transfer.Inside);
         }
 
         [Test]
@@ -102,6 +103,22 @@ namespace Testing.Engine.Movement
 
             ChangeOpacity changeOpacity = route.Moves[16] as ChangeOpacity;
             Assert.AreEqual(0.5f, changeOpacity.Alpha);
+        }
+
+        [Test]
+        public void ParseCameraFollowPlayerTest()
+        {
+            CameraFollowPlayer follow = XmlMovementParser.ParseCameraFollowPlayer(GetDataToParse("CameraFollowPlayer"));
+
+            Assert.IsTrue(follow.Follow);
+        }
+
+        [Test]
+        public void ParseEnterBuildingTest()
+        {
+            EnterBuilding enter = XmlMovementParser.ParseEnterBuilding(GetDataToParse("EnterBuilding"));
+
+            Assert.AreEqual("door", enter.AgentId);
         }
     }
 }

@@ -58,7 +58,6 @@ namespace Field
             }
 
             StartCoroutine(Exit());
-            
         }
 
         public virtual void FinishedOpening()

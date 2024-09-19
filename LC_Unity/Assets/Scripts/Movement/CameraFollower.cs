@@ -58,5 +58,10 @@ namespace Movement
                 yield return null;
             }
         }
+
+        public void FollowPlayer(bool follow)
+        {
+            _followingPlayer = follow;
+        }
     }
 }

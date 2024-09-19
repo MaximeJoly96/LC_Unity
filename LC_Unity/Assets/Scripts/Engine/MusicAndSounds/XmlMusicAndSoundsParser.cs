@@ -69,5 +69,12 @@ namespace Engine.MusicAndSounds
 
             return play;
         }
+
+        public static StopAllAudio ParseStopAllAudio(XmlNode data)
+        {
+            StopAllAudio stop = new StopAllAudio();
+
+            return stop;
+        }
     }
 }

@@ -33,6 +33,8 @@
         ScrollMap,
         SetMoveRoute,
         TransferObject,
+        CameraFollowPlayer,
+        EnterBuilding,
 
         // Character
         ShowAnimation,
@@ -61,6 +63,7 @@
         FadeOutBgs,
         PlayMusicalEffect,
         PlaySoundEffect,
+        StopAllAudio,
 
         // SceneControl
         BattleProcessing,
@@ -80,6 +83,7 @@
         ChangeFormationAccess,
         ChangeWindowColor,
         ChangeActorGraphic,
+        AllowCutsceneSkip,
 
         // Map
         ChangeMapNameDisplay,

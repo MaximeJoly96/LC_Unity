@@ -24,6 +24,8 @@ namespace Menus
 
         protected InputController _inputController;
 
+        public bool CanOpen { get; private set; }
+
         private void Start()
         {
             _inputController = FindObjectOfType<InputController>();
@@ -44,7 +46,7 @@ namespace Menus
             switch (input)
             {
                 case InputAction.OpenMenu:
-                    if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
+                    if (CanOpen && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
                     {
                         CommonSounds.OptionSelected();
                         Open();
@@ -114,6 +116,11 @@ namespace Menus
         {
             _characterSelectionMenu.FeedItem(item);
             _characterSelectionMenu.Open();
+        }
+
+        public void ToggleAccess(bool canAccess)
+        {
+            CanOpen = canAccess;
         }
     }
 }

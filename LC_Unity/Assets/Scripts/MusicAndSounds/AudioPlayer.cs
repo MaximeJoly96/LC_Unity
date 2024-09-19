@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
 using UnityEngine.Audio;
+using log4net.Util;
 
 namespace MusicAndSounds
 {
@@ -87,6 +88,14 @@ namespace MusicAndSounds
             if (audio != null)
             {
                 StartCoroutine(FadeOutAudio(audio.Source, bgs.TransitionDuration));
+            }
+        }
+
+        public void StopAllAudio()
+        {
+            for(int i = 0; i < _runningAudios.Count; i++)
+            {
+                StartCoroutine(FadeOutAudio(_runningAudios[i].Source, 0.1f));
             }
         }
 

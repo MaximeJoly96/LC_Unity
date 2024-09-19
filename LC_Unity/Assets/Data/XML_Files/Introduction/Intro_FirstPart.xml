@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
+  <AllowCutsceneSkip Allow="true">
+    <Actions>
+      <StopAllAudio />
+      <TintScreen Duration="0.2" WaitForCompletion="true">
+        <TargetColor R="0" G="0" B="0" A="1" />
+      </TintScreen>
+      <TransferObject Target="player">
+        <Direction>Retain</Direction>
+        <Destination X="0.32" Y="1.35" MapId="0" Inside="true" />
+      </TransferObject>
+    </Actions>
+  </AllowCutsceneSkip>
+  <CameraFollowPlayer Follow="false" />
+  <ChangeMenuAccess Enabled="false" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="louga">
+    <Transparent Status="true" />
+  </SetMoveRoute>
   <PlayBgs Name="wind" Volume="0.5" Pitch="1" />
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1006">
     <Turn Direction="Up" />

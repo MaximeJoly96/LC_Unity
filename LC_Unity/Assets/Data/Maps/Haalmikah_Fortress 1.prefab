@@ -102,6 +102,7 @@ MonoBehaviour:
   _id: 41
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 9d1041d61c3b82d4ebda8a1429e3ce98, type: 3}
   _trigger: 0
 --- !u!114 &7345598670829452200
@@ -599,6 +600,7 @@ MonoBehaviour:
   _id: 35
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 1586f906ca5053241bea21ee39e9895e, type: 3}
   _trigger: 0
 --- !u!114 &9136387254011713932
@@ -779,6 +781,7 @@ MonoBehaviour:
   _id: 22
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: dc36cb4fdbbcaf24cad12de0438be6cf, type: 3}
   _trigger: 0
 --- !u!1 &259040606807499870
@@ -921,6 +924,7 @@ MonoBehaviour:
   _id: 30
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 8f197d33b9df7f840a3a6353f68c1031, type: 3}
   _trigger: 0
 --- !u!1 &260172710393525854
@@ -1045,6 +1049,7 @@ MonoBehaviour:
   _id: 3
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 4838809420032471262}
@@ -1302,6 +1307,7 @@ MonoBehaviour:
   _id: 21
   _speed: 0
   _currentDirection: 5
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 5c12c3c465e9a834eaa38501dbccbfec, type: 3}
   _trigger: 0
 --- !u!1 &530720727978699219
@@ -1444,6 +1450,7 @@ MonoBehaviour:
   _id: 20
   _speed: 0
   _currentDirection: 2
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: f0fab8eca39a4174bb9e2676b7c90c84, type: 3}
   _trigger: 0
 --- !u!1 &699293871150282311
@@ -1548,6 +1555,7 @@ MonoBehaviour:
   _id: 38
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: d426b4af544b7c94e944f8a730e902fc, type: 3}
   _trigger: 0
 --- !u!114 &856984416873272921
@@ -1588,6 +1596,69 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!1 &724928549200607420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4352504405509519211}
+  - component: {fileID: 2226293374570773987}
+  - component: {fileID: 5312198410174339923}
+  m_Layer: 0
+  m_Name: Intro_Cafe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4352504405509519211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724928549200607420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3037848193908006407}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2226293374570773987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724928549200607420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ee6a4bb37250c438b32733acf53077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: introCafe
+  _speed: 0
+  _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
+  _sequenceFile: {fileID: 4900000, guid: 2f5119f6c9ddd8543a6540540c179586, type: 3}
+  _trigger: 1
+--- !u!114 &5312198410174339923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724928549200607420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86090872329d9ef4490feee3865dec92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1007058386019353003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1775,7 @@ MonoBehaviour:
   _id: 8
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 0}
@@ -2162,6 +2234,7 @@ MonoBehaviour:
   _id: 15
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 7473615176400871531}
@@ -2551,6 +2624,7 @@ MonoBehaviour:
   _id: 16
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 6084684495090228940}
@@ -4628,6 +4702,7 @@ MonoBehaviour:
   _id: 5
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 6084684495090228940}
@@ -4940,6 +5015,7 @@ MonoBehaviour:
   _id: 11
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 0}
@@ -4997,6 +5073,7 @@ MonoBehaviour:
   _id: 32
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 2846ecc5ff6bd234c85d910e0e5377a9, type: 3}
   _trigger: 0
 --- !u!114 &7921530295146228252
@@ -5691,6 +5768,7 @@ Transform:
   - {fileID: 8848669755209123579}
   - {fileID: 1796375222307446756}
   - {fileID: 7889321379052447534}
+  - {fileID: 3037848193908006407}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6322,6 +6400,7 @@ MonoBehaviour:
   _id: 18
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: a9411b81179e4e34a9f80952c58c9d33, type: 3}
   _trigger: 0
 --- !u!114 &2355083044856925332
@@ -6777,6 +6856,7 @@ MonoBehaviour:
   _id: 9
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 0}
@@ -6946,6 +7026,7 @@ MonoBehaviour:
   _id: 14
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 4838809420032471262}
@@ -7087,6 +7168,7 @@ MonoBehaviour:
   _id: 27
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: d721fbaf16c592549891a380307538f0, type: 3}
   _trigger: 0
 --- !u!114 &6762440245785356480
@@ -7319,6 +7401,7 @@ MonoBehaviour:
   _id: 23
   _speed: 0
   _currentDirection: 7
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 0364776589508e646862b05a3c5cd915, type: 3}
   _trigger: 0
 --- !u!1 &3640296370640846681
@@ -7679,6 +7762,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3907431440091557225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3037848193908006407}
+  m_Layer: 0
+  m_Name: AutoSequences
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3037848193908006407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3907431440091557225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4352504405509519211}
+  m_Father: {fileID: 5661390826331712200}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3941702901873491436
 GameObject:
   m_ObjectHideFlags: 0
@@ -7798,9 +7913,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e247d3fffd74b4448cb4798d045c044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 2
+  _id: barDoor
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 3348506461076157633}
@@ -7974,6 +8090,7 @@ MonoBehaviour:
   _id: 19
   _speed: 0
   _currentDirection: 2
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 6fa98293195f32a4c8a6457dade51b1d, type: 3}
   _trigger: 0
 --- !u!1 &4470175007649411649
@@ -8078,6 +8195,7 @@ MonoBehaviour:
   _id: 36
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: cbe353253ff7e7c43855fc1d5280f0d5, type: 3}
   _trigger: 0
 --- !u!114 &4973986289320998672
@@ -8499,6 +8617,7 @@ MonoBehaviour:
   _id: 28
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 1ba717259f183c648a67695f657fa623, type: 3}
   _trigger: 0
 --- !u!114 &5820595031382484812
@@ -8745,6 +8864,7 @@ MonoBehaviour:
   _id: 4
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 2802677560994742530}
@@ -8858,6 +8978,7 @@ MonoBehaviour:
   _id: 13
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 0}
@@ -9064,6 +9185,7 @@ MonoBehaviour:
   _id: 10
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 0}
@@ -9583,6 +9705,7 @@ MonoBehaviour:
   _id: 37
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: c287a68ecb669854ca678b7956b96f8a, type: 3}
   _trigger: 0
 --- !u!114 &7225603914558024373
@@ -10140,6 +10263,7 @@ MonoBehaviour:
   _id: 42
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: a513bdab7e0350746966a76212b4791b, type: 3}
   _trigger: 0
 --- !u!114 &2953106479986336190
@@ -10512,6 +10636,7 @@ MonoBehaviour:
   _id: 12
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 0}
@@ -10569,6 +10694,7 @@ MonoBehaviour:
   _id: 25
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: bce6726d5cea67744be8deb3bb0156d4, type: 3}
   _trigger: 0
 --- !u!114 &5550585045751295594
@@ -10783,6 +10909,7 @@ MonoBehaviour:
   _id: 6
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 1889122596720326099}
@@ -10918,6 +11045,7 @@ MonoBehaviour:
   _id: 40
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 75cf7025192e1cd4ea91ee55b852a2a6, type: 3}
   _trigger: 0
 --- !u!114 &3719214403188703237
@@ -11060,6 +11188,7 @@ MonoBehaviour:
   _id: 34
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: ee8ead0a41cd9ef4e99ac939e9a7a868, type: 3}
   _trigger: 0
 --- !u!114 &313958577092805840
@@ -11202,6 +11331,7 @@ MonoBehaviour:
   _id: 39
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: bbc4431ec72296143930ecbd9eaacfa0, type: 3}
   _trigger: 0
 --- !u!114 &8083051632559663015
@@ -11292,6 +11422,7 @@ MonoBehaviour:
   _id: 29
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 0e5f2e8c9c9d08e4593baf54dd48850b, type: 3}
   _trigger: 0
 --- !u!114 &3172768626699979304
@@ -11608,6 +11739,7 @@ MonoBehaviour:
   _id: 24
   _speed: 0
   _currentDirection: 6
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 376c65c82954c134c82b708887e13879, type: 3}
   _trigger: 0
 --- !u!1 &7911436749597053524
@@ -11944,6 +12076,7 @@ MonoBehaviour:
   _id: 17
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 8848669755209123579}
@@ -12111,6 +12244,7 @@ MonoBehaviour:
   _id: 26
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 313fec07888aad2448f9f34268175b59, type: 3}
   _trigger: 0
 --- !u!114 &6189957706536530604
@@ -12253,6 +12387,7 @@ MonoBehaviour:
   _id: 33
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 6519ed46eacbf134e936e041e4db7179, type: 3}
   _trigger: 0
 --- !u!114 &3269598195016300050
@@ -12395,6 +12530,7 @@ MonoBehaviour:
   _id: 31
   _speed: 0
   _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 7220ef2b813661b4fb1ee71edb3df31c, type: 3}
   _trigger: 0
 --- !u!114 &1657561405588016986
@@ -13183,6 +13319,7 @@ MonoBehaviour:
   _id: 7
   _speed: 0
   _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
   _interiorToShow: {fileID: 337978978597975786}

@@ -11,8 +11,9 @@ namespace Engine.Movement
 
         public string Target { get; set; }
         public int MapId { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
+        public float X { get; set; }
+        public float Y { get; set; }
+        public bool Inside { get; set; }
         public PossibleDirection Direction { get; set; }
         public UnityEvent Finished { get; set; }
         public bool IsFinished { get; set; }

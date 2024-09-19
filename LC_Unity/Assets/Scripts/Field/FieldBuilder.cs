@@ -85,6 +85,8 @@ namespace Field
             {
                 AgentsManager.Instance.RegisterAgent(agents[i]);
             }
+
+            AgentsManager.Instance.RegisterAgent(FindObjectOfType<PlayerController>().GetComponent<Agent>());
         }
 
         public void TransferObject(TransferObject transferObject)
@@ -106,6 +108,8 @@ namespace Field
 
             if (transferObject.Target.ToLower() == "player")
             {
+                SwitchToInteriorMode(transferObject.Inside);
+
                 PositionPlayer(new Vector2(transferObject.X, transferObject.Y));
                 ChangePlayerDirection(transferObject.Direction);
             }

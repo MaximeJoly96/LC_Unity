@@ -4,7 +4,7 @@
   <ScrollMap X="3" Y="-2" Speed="5" />
   <TransferObject Target="player">
     <Direction>Retain</Direction>
-    <Destination X="5" Y="3" MapId="5" />
+    <Destination X="5" Y="3" MapId="5" Inside="false" />
   </TransferObject>
   <SetMoveRoute RepeatAction="true" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="3">
     <MoveRelative DeltaX="3" DeltaY="-1" />
@@ -25,4 +25,6 @@
     <Transparent Status="true" />
     <ChangeOpacity Alpha="0.5" />
   </SetMoveRoute>
+  <CameraFollowPlayer Follow="true" />
+  <EnterBuilding AgentId="door" />
 </EventsSequence>

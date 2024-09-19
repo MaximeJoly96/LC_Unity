@@ -79,5 +79,14 @@ namespace Testing.Engine.SystemSettings
             Assert.AreEqual("charset", change.Charset);
             Assert.AreEqual("faceset", change.Faceset);
         }
+
+        [Test]
+        public void ParseAllowCutsceneSkipTest()
+        {
+            AllowCutsceneSkip allow = XmlSystemSettingsParser.ParseAllowCutsceneSkip(GetDataToParse("AllowCutsceneSkip"));
+
+            Assert.IsTrue(allow.Allow);
+            Assert.AreEqual(1, allow.ActionsWhenSkipping.Events.Count);
+        }
     }
 }

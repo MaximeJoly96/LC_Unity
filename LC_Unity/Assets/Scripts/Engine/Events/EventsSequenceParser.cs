@@ -94,6 +94,12 @@ namespace Engine.Events
                         case EventType.TransferObject:
                             sequence.Add(XmlMovementParser.ParseTransferObject(evt));
                             break;
+                        case EventType.CameraFollowPlayer:
+                            sequence.Add(XmlMovementParser.ParseCameraFollowPlayer(evt));
+                            break;
+                        case EventType.EnterBuilding:
+                            sequence.Add(XmlMovementParser.ParseEnterBuilding(evt));
+                            break;
                         case EventType.ShowAnimation:
                             sequence.Add(XmlCharacterParser.ParseShowAnimation(evt));
                             break;
@@ -148,6 +154,9 @@ namespace Engine.Events
                         case EventType.FadeOutBgs:
                             sequence.Add(XmlMusicAndSoundsParser.ParseFadeOutBgs(evt));
                             break;
+                        case EventType.StopAllAudio:
+                            sequence.Add(XmlMusicAndSoundsParser.ParseStopAllAudio(evt));
+                            break;
                         case EventType.BattleProcessing:
                             sequence.Add(XmlSceneControlParser.ParseBattleProcessing(evt));
                             break;
@@ -195,6 +204,9 @@ namespace Engine.Events
                             break;
                         case EventType.ChangeMapNameDisplay:
                             sequence.Add(XmlMapParser.ParseChangeMapNameDisplay(evt));
+                            break;
+                        case EventType.AllowCutsceneSkip:
+                            sequence.Add(XmlSystemSettingsParser.ParseAllowCutsceneSkip(evt));
                             break;
                         default:
                             throw new ArgumentException("Cannot resolve EventType " + eventType + ".");

@@ -64,5 +64,13 @@ namespace Testing.Engine.MusicAndSounds
             Assert.AreEqual(0.5f, play.Volume);
             Assert.AreEqual(0.52f, play.Pitch);
         }
+
+        [Test]
+        public void ParseStopAllAudioTest()
+        {
+            StopAllAudio stop = XmlMusicAndSoundsParser.ParseStopAllAudio(GetDataToParse("StopAllAudio"));
+
+            Assert.NotNull(stop);
+        }
     }
 }

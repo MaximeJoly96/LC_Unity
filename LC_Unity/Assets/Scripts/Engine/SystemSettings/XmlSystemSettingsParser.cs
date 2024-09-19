@@ -1,6 +1,8 @@
 ﻿using System.Xml;
 using System.Globalization;
 using UnityEngine;
+using Codice.Client.Common.TreeGrouper;
+using Engine.Events;
 
 namespace Engine.SystemSettings
 {
@@ -84,6 +86,21 @@ namespace Engine.SystemSettings
             change.Faceset = data.Attributes["Faceset"].InnerText;
 
             return change;
+        }
+
+        public static AllowCutsceneSkip ParseAllowCutsceneSkip(XmlNode data)
+        {
+            AllowCutsceneSkip allow = new AllowCutsceneSkip();
+
+            allow.Allow = bool.Parse(data.Attributes["Allow"].InnerText);
+
+            XmlNode actionsNode = data.SelectSingleNode("Actions");
+            if (actionsNode != null)
+            {
+                allow.ActionsWhenSkipping = EventsSequenceParser.ParseEventsSequence(actionsNode);
+            }
+
+            return allow;
         }
     }
 }
