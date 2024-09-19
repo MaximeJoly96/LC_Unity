@@ -12,7 +12,7 @@ namespace Field
     {
         private AllowCutsceneSkip _currentSkip;
 
-        public bool CanSkipScene { get { return _currentSkip.Allow; } }
+        public bool CanSkipScene { get { return _currentSkip != null ? _currentSkip.Allow : false; } }
 
         private void Start()
         {

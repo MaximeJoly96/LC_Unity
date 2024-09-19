@@ -36,5 +36,10 @@
         {
             CurrentTime = 0.0f;
         }
+
+        public override string ToString()
+        {
+            return CurrentTime + "/" + MaxDuration;
+        }
     }
 }

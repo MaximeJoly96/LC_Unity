@@ -9,7 +9,7 @@ namespace GameProgression
     {
         private List<Timer> _timers;
 
-        protected List<Timer> Timers
+        public List<Timer> Timers
         {
             get
             {

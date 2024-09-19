@@ -2,6 +2,7 @@
 <EventsSequence>
   <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="introCompleted" SecondMember="false">
     <true>
+      <AllowCutsceneSkip Allow="false" />
       <PlayBgm Name="haalmikah" Volume="0.75" Pitch="1" />
       <EnterBuilding AgentId="barDoor" />
       <CameraFollowPlayer Follow="true" />
@@ -93,6 +94,7 @@
         <TargetColor R="0" G="0" B="0" A="0" />
       </TintScreen>
       <ChangeGameState State="OnField" />
+      <ChangeMenuAccess Enabled="true" />
     </true>
   </ConditionalBranch>
 </EventsSequence>

@@ -49,6 +49,18 @@ namespace GameProgression
         {
             return _data.ContainsKey(key);
         }
+
+        public Dictionary<string, object> GetCompleteData()
+        {
+            Dictionary<string, object> deepCopy = new Dictionary<string, object>();
+
+            foreach(KeyValuePair<string, object> kvp in _data)
+            {
+                deepCopy.Add(kvp.Key, kvp.Value);
+            }
+
+            return deepCopy;
+        }
     }
 }
 
