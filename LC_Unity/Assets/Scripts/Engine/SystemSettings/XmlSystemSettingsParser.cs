@@ -102,5 +102,14 @@ namespace Engine.SystemSettings
 
             return allow;
         }
+
+        public static ChangeGameState ParseChangeGameState(XmlNode data)
+        {
+            ChangeGameState change = new ChangeGameState();
+
+            change.State = data.Attributes["State"].InnerText;
+
+            return change;
+        }
     }
 }

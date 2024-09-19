@@ -11,6 +11,8 @@ namespace Movement
         {
             GlobalStateMachine.Instance.CurrentMapId = transferObject.MapId;
             FindObjectOfType<FieldBuilder>().TransferObject(transferObject);
+            transferObject.Finished.Invoke();
+            transferObject.IsFinished = true;
         }
     }
 }

@@ -84,6 +84,7 @@
         ChangeWindowColor,
         ChangeActorGraphic,
         AllowCutsceneSkip,
+        ChangeGameState,
 
         // Map
         ChangeMapNameDisplay,

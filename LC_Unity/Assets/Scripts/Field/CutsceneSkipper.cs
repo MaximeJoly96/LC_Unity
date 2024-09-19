@@ -53,9 +53,10 @@ namespace Field
                 case MessageBoxAnswer.Yes:
                     GetComponent<EventsRunner>().RunEvents(_currentSkip.ActionsWhenSkipping);
                     break;
+                case MessageBoxAnswer.No:
+                    GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
+                    break;
             }
-
-            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
         }
     }
 }

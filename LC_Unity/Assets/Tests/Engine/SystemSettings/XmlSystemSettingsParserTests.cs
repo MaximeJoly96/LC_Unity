@@ -88,5 +88,13 @@ namespace Testing.Engine.SystemSettings
             Assert.IsTrue(allow.Allow);
             Assert.AreEqual(1, allow.ActionsWhenSkipping.Events.Count);
         }
+
+        [Test]
+        public void ParseChangeGameStateTest()
+        {
+            ChangeGameState change = XmlSystemSettingsParser.ParseChangeGameState(GetDataToParse("ChangeGameState"));
+
+            Assert.AreEqual("OnField", change.State);
+        }
     }
 }

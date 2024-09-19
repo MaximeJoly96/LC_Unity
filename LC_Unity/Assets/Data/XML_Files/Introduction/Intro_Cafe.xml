@@ -1,12 +1,98 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <PlayBgs Name="haalmikah" Volume="0.75" Pitch="1" />
-  <EnterBuilding AgentId="barDoor" />
-  <CameraFollowPlayer Follow="true" />
-  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
-    <Transparent Status="false" />
-  </SetMoveRoute>
-  <TintScreen Duration="2.5" WaitForCompletion="true">
-    <TargetColor R="0" G="0" B="0" A="0" />
-  </TintScreen>
+  <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="introCompleted" SecondMember="false">
+    <true>
+      <PlayBgm Name="haalmikah" Volume="0.75" Pitch="1" />
+      <EnterBuilding AgentId="barDoor" />
+      <CameraFollowPlayer Follow="true" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
+        <Transparent Status="false" />
+      </SetMoveRoute>
+      <TintScreen Duration="2.5" WaitForCompletion="true">
+        <TargetColor R="0" G="0" B="0" A="0" />
+      </TintScreen>
+      <Wait Duration="3" />
+      <ShowBalloonIcon AgentId="warlok" BalloonIcon="Silence" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>introText60</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.75" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>introText61</Message>
+        <Locutor>louga</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.5" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>introText62</Message>
+        <Locutor>louga</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.75" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>introText63</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.75" />
+      <ShowBalloonIcon AgentId="warlok" BalloonIcon="Silence" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>introText64</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.3" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>introText65</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.8" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>introText66</Message>
+        <Locutor>louga</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.8" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>introText67</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="2" />
+      <TintScreen Duration="1" WaitForCompletion="true">
+        <TargetColor R="0" G="0" B="0" A="1" />
+      </TintScreen>
+      <Wait Duration="2" />
+      <ControlSwitch Key="introCompleted" Value="true" />
+      <EnterBuilding AgentId="barExit" />
+      <TransferObject Target="player">
+        <Direction>Bottom</Direction>
+        <Destination X="0" Y="0.8" MapId="0" Inside="false" />
+      </TransferObject>
+      <Wait Duration="0.2" />
+      <TintScreen Duration="1" WaitForCompletion="true">
+        <TargetColor R="0" G="0" B="0" A="0" />
+      </TintScreen>
+      <ChangeGameState State="OnField" />
+    </true>
+  </ConditionalBranch>
 </EventsSequence>

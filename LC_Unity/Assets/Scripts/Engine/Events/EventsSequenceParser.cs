@@ -208,6 +208,9 @@ namespace Engine.Events
                         case EventType.AllowCutsceneSkip:
                             sequence.Add(XmlSystemSettingsParser.ParseAllowCutsceneSkip(evt));
                             break;
+                        case EventType.ChangeGameState:
+                            sequence.Add(XmlSystemSettingsParser.ParseChangeGameState(evt));
+                            break;
                         default:
                             throw new ArgumentException("Cannot resolve EventType " + eventType + ".");
                     }
