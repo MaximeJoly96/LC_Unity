@@ -14,7 +14,8 @@ namespace Field
             { 1000, "introMapName" },
             { 1001, "introMapName" },
             { 1002, "introMapName" },
-            { 1003, "introMapName" }
+            { 1003, "introMapName" },
+            { 1004, "introMapName" }
         };
     }
 }

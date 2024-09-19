@@ -19,9 +19,9 @@ namespace Engine.Movement
         {
             ScrollMap scrollMap = new ScrollMap();
 
-            scrollMap.X = int.Parse(data.Attributes["X"].InnerText);
-            scrollMap.Y = int.Parse(data.Attributes["Y"].InnerText);
-            scrollMap.Speed = int.Parse(data.Attributes["Speed"].InnerText);
+            scrollMap.X = float.Parse(data.Attributes["X"].InnerText, CultureInfo.InvariantCulture);
+            scrollMap.Y = float.Parse(data.Attributes["Y"].InnerText, CultureInfo.InvariantCulture);
+            scrollMap.Speed = float.Parse(data.Attributes["Speed"].InnerText, CultureInfo.InvariantCulture);
 
             return scrollMap;
         }

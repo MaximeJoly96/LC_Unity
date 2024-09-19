@@ -1,13 +1,15 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using UnityEngine;
+using Movement;
 
 namespace Engine.Movement
 {
     public class ScrollMap : IRunnable
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Speed { get; set; }
+        public float X { get; set; }
+        public float Y { get; set; }
+        public float Speed { get; set; }
         public UnityEvent Finished { get; set; }
         public bool IsFinished { get; set; }
 
@@ -18,7 +20,7 @@ namespace Engine.Movement
 
         public void Run()
         {
-
+            Object.FindObjectOfType<CameraFollower>().Move(this);
         }
     }
 }
