@@ -24,7 +24,7 @@ namespace Menus
 
         protected InputController _inputController;
 
-        public bool CanOpen { get; private set; }
+        public bool CanOpen { get; private set; } = true;
 
         private void Start()
         {

@@ -12,6 +12,7 @@ using System;
 using Logging;
 using Core;
 using Party;
+using GameProgression;
 
 namespace Save
 {
@@ -107,6 +108,7 @@ namespace Save
         {
             try
             {
+                PersistentDataHolder.Instance.Reset();
                 Data = GetSavedDataFromSlot(slotId);
 
                 PartyManager.Instance.SetInventory(Data.Inventory);
@@ -192,6 +194,25 @@ namespace Save
         public SavedData GetSavedDataFromSlot(int slotId)
         {
             Dictionary<string, string> saveData = _loader.LoadSaveFile(slotId);
+
+            foreach(KeyValuePair<string, string> kvp in saveData)
+            {
+                if(kvp.Key.StartsWith("persistData-b-"))
+                {
+                    string key = kvp.Key.Replace("persistData-b-", "");
+                    PersistentDataHolder.Instance.StoreData(key, bool.Parse(kvp.Value));
+                }
+                else if(kvp.Key.StartsWith("persistData-i-"))
+                {
+                    string key = kvp.Key.Replace("persistData-i-", "");
+                    PersistentDataHolder.Instance.StoreData(key, int.Parse(kvp.Value));
+                }
+                else if(kvp.Key.StartsWith("persistData-f-"))
+                {
+                    string key = kvp.Key.Replace("persistData-f-", "");
+                    PersistentDataHolder.Instance.StoreData(key, float.Parse(kvp.Value, CultureInfo.InvariantCulture));
+                }
+            }
 
             return new SavedData
             {

@@ -61,6 +61,11 @@ namespace GameProgression
 
             return deepCopy;
         }
+
+        public void Reset()
+        {
+            _data.Clear();
+        }
     }
 }
 

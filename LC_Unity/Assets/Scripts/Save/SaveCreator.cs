@@ -47,7 +47,19 @@ namespace Save
             data.Add("gold", PartyManager.Instance.Gold.ToString());
 
             foreach(KeyValuePair<string, object> kvp in persistentData)
-                data.Add("persistData-" +  kvp.Key, kvp.Value.ToString());
+            {
+                string prefix = "persistData-";
+
+                if (kvp.Value.GetType() == typeof(bool))
+                    prefix += "b-";
+                else if (kvp.Value.GetType() == typeof(float))
+                    prefix += "f-";
+                else if (kvp.Value.GetType() == typeof(int))
+                    prefix += "i-";
+
+                data.Add(prefix + kvp.Key, kvp.Value.ToString());
+            }
+                
 
             if(timersManager)
             {
