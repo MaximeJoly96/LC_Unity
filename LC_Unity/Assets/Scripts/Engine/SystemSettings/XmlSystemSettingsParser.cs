@@ -1,7 +1,6 @@
 ﻿using System.Xml;
 using System.Globalization;
 using UnityEngine;
-using Codice.Client.Common.TreeGrouper;
 using Engine.Events;
 
 namespace Engine.SystemSettings

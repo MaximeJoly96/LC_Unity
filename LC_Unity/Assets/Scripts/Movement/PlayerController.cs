@@ -155,5 +155,11 @@ namespace Movement
                     break;
             }
         }
+
+        private void StopMovement()
+        {
+            _change = Vector3.zero;
+            _animator.SetBool("Moving", false);
+        }
     }
 }
