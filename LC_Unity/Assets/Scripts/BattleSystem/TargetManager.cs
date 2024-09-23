@@ -11,6 +11,7 @@ namespace BattleSystem
         private PointAndClickSingleTargetCursor _pointAndClickSingleTargetCursorPrefab;
 
         private TargetCursor _instTargetCursor;
+        private int _cursorPosition;
 
         private List<BattlerBehaviour> _availableTargets;
         
@@ -20,15 +21,16 @@ namespace BattleSystem
         {
             _availableTargets = new List<BattlerBehaviour>();
             _availableTargets.AddRange(targets);
+            _cursorPosition = 0;
 
-            _instTargetCursor = Instantiate(_pointAndClickSingleTargetCursorPrefab, targets[0].transform.position, Quaternion.identity);
+            _instTargetCursor = Instantiate(_pointAndClickSingleTargetCursorPrefab, targets[_cursorPosition].transform.position, Quaternion.identity);
             CurrentAbility = ability;
         }
 
         public void ConfirmTarget(BattlerBehaviour currentBattler)
         {
-            currentBattler.LockedInAbility = CurrentAbility;
-            CurrentAbility.Targets = new List<BattlerBehaviour> { _availableTargets[0] };
+            currentBattler.LockedInAbility = new Ability(CurrentAbility);
+            currentBattler.LockedInAbility.Targets = new List<BattlerBehaviour> { _availableTargets[_cursorPosition] };
         }
 
         public void Clear()
@@ -37,6 +39,23 @@ namespace BattleSystem
                 Destroy(_instTargetCursor.gameObject);
 
             _availableTargets.Clear();
+        }
+
+        public void NextTarget()
+        {
+            _cursorPosition = _cursorPosition == _availableTargets.Count - 1 ? 0 : ++_cursorPosition;
+            UpdateCursor();
+        }
+
+        public void PreviousTarget()
+        {
+            _cursorPosition = _cursorPosition == 0 ? _availableTargets.Count - 1 : --_cursorPosition;
+            UpdateCursor();
+        }
+
+        private void UpdateCursor()
+        {
+            _instTargetCursor.transform.position = _availableTargets[_cursorPosition].transform.position;
         }
     }
 }

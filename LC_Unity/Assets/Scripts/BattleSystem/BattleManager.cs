@@ -109,8 +109,12 @@ namespace BattleSystem
             UpdateState(BattleState.Loading);
             LoadPartyData();
 
-            LoadBattlers();
-            LoadCharacters();
+            TroopParser troopParser = new TroopParser();
+            BattleProcessing battle = BattleDataHolder.Instance.BattleData;
+            Troop troop = troopParser.ParseTroop(_troops, battle.TroopId);
+
+            LoadBattlers(troop);
+            LoadCharacters(troop);
 
             UpdateState(BattleState.Loaded);
             
@@ -191,7 +195,6 @@ namespace BattleSystem
                     _cursorsManager.StopCurrentCursor();
                     _cursorsManager.ClearCursors();
                     SwapCharacters();
-                    _cursorsManager.CreateCursor(_charactersInCombat[0].transform.position);
                     UpdateState(BattleState.PlacingCharacters);
                     UpdateInstructions();
                     break;
@@ -236,6 +239,9 @@ namespace BattleSystem
                                                         _charactersInCombat.Count - 1 : --_characterPlacementCursorPosition;
                     _cursorsManager.UpdateCurrentCursor(_charactersInCombat[_characterPlacementCursorPosition].transform.position);
                     break;
+                case BattleState.TargetSelection:
+                    _targetManager.PreviousTarget();
+                    break;
             }
         }
 
@@ -248,6 +254,9 @@ namespace BattleSystem
                     _characterPlacementCursorPosition = _characterPlacementCursorPosition == _charactersInCombat.Count - 1 ?
                                                         0 : ++_characterPlacementCursorPosition;
                     _cursorsManager.UpdateCurrentCursor(_charactersInCombat[_characterPlacementCursorPosition].transform.position);
+                    break;
+                case BattleState.TargetSelection:
+                    _targetManager.NextTarget();
                     break;
             }
         }
@@ -295,18 +304,17 @@ namespace BattleSystem
             _uiManager.OpenHelpWindow();
         }
 
-        private void LoadBattlers()
+        private void LoadBattlers(Troop troopData)
         {
-            BattleProcessing battle = BattleDataHolder.Instance.BattleData;
-
-            TroopParser troopParser = new TroopParser();
             EnemyParser enemyParser = new EnemyParser();
-            Troop troop = troopParser.ParseTroop(_troops, battle.TroopId);
+            
             List<Battler> battlers = new List<Battler>();
 
-            for(int i = 0; i < troop.Members.Count; i++)
+            for(int i = 0; i < troopData.Members.Count; i++)
             {
-                battlers.Add(enemyParser.ParseEnemy(_enemies, troop.Members[i]));
+                Battler b = enemyParser.ParseEnemy(_enemies, troopData.Members[i].Id);
+                b.InitialPosition = new Vector3(troopData.Members[i].X, troopData.Members[i].Y);
+                battlers.Add(b);
             }
 
             for(int i = 0; i < battlers.Count; i++)
@@ -317,13 +325,16 @@ namespace BattleSystem
             }
         }
 
-        private void LoadCharacters()
+        private void LoadCharacters(Troop troopData)
         {
+            BattleProcessing battle = BattleDataHolder.Instance.BattleData;
             List<Character> characters = PartyManager.Instance.GetParty();
 
             for(int i = 0; i < characters.Count; i++)
             {
-                BattlerBehaviour behaviour = _charactersHolder.InstantiateBattler(new Battler(characters[i]));
+                Battler b = new Battler(characters[i]);
+                b.InitialPosition = new Vector3(troopData.PlayerSpots[i].X, troopData.PlayerSpots[i].Y);
+                BattlerBehaviour behaviour = _charactersHolder.InstantiateBattler(b);
                 behaviour.IsEnemy = false;
                 _charactersInCombat.Add(behaviour);
             }
@@ -349,6 +360,7 @@ namespace BattleSystem
             Vector2 tempPosition = _charactersInCombat[_characterPlacementCursorPosition].transform.position;
             _charactersInCombat[_characterPlacementCursorPosition].transform.position = _selectedCharacterForSwap.transform.position;
             _selectedCharacterForSwap.transform.position = tempPosition;
+            _characterPlacementCursorPosition = 0;
         }
 
         private void OpenAllCombatWindows()
@@ -373,11 +385,10 @@ namespace BattleSystem
             {
                 case BattleState.PlayerMoveSelection:
                     OpenAllCombatWindows();
-                    _uiManager.FeedMoveSelectionWindow(_turnManager.CurrentCharacter);
-                    /*if (_charactersInCombat.All(c => c.LockedInAbility != null))
+                    if (_charactersInCombat.All(c => c.LockedInAbility != null))
                         ProcessBattle();
                     else
-                        _uiManager.FeedMoveSelectionWindow(_turnManager.CurrentCharacter);*/
+                        _uiManager.FeedMoveSelectionWindow(_turnManager.CurrentCharacter);
                     break;
                 case BattleState.PlacingCharacters:
                     _cursorsManager.CreateCursor(_charactersInCombat[0].transform.position);

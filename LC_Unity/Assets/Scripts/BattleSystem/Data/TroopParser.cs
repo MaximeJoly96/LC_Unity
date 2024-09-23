@@ -4,6 +4,7 @@ using BattleSystem.Model;
 using UnityEngine;
 using Logging;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace BattleSystem.Data
 {
@@ -30,7 +31,8 @@ namespace BattleSystem.Data
                 if(found)
                 {
                     Troop t = new Troop(matchingId,
-                                        ParseMembers(troops[i - 1]));
+                                        ParseMembers(troops[i - 1]),
+                                        ParsePlayerSpots(troops[i - 1]));
 
                     return t;
                 }
@@ -43,18 +45,38 @@ namespace BattleSystem.Data
             return null;
         }
 
-        private List<int> ParseMembers(XmlNode troop)
+        private List<TroopMember> ParseMembers(XmlNode troop)
         {
-            List<int> members = new List<int>();
+            List<TroopMember> members = new List<TroopMember>();
 
             XmlNodeList membersXml = troop.SelectNodes("Member");
 
             for(int i = 0; i < membersXml.Count; i++)
             {
-                members.Add(int.Parse(membersXml[i].Attributes["Id"].InnerText));
+                TroopMember member = new TroopMember(int.Parse(membersXml[i].Attributes["Id"].InnerText),
+                                                     float.Parse(membersXml[i].Attributes["X"].InnerText, CultureInfo.InvariantCulture),
+                                                     float.Parse(membersXml[i].Attributes["Y"].InnerText, CultureInfo.InvariantCulture));
+                members.Add(member);
             }
 
             return members;
+        }
+
+        private List<PlayerSpot> ParsePlayerSpots(XmlNode troop)
+        {
+            List<PlayerSpot> spots = new List<PlayerSpot>();
+
+            XmlNode spotsList = troop.SelectSingleNode("PlayerSpots");
+
+            foreach(XmlNode node in spotsList.ChildNodes)
+            {
+                PlayerSpot spot = new PlayerSpot(int.Parse(node.Attributes["Id"].InnerText),
+                                                 float.Parse(node.Attributes["X"].InnerText, CultureInfo.InvariantCulture),
+                                                 float.Parse(node.Attributes["Y"].InnerText, CultureInfo.InvariantCulture));
+                spots.Add(spot);
+            }
+
+            return spots;
         }
     }
 }

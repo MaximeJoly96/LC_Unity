@@ -12,7 +12,8 @@ namespace BattleSystem
 
         public BattlerBehaviour InstantiateBattler(Battler battler)
         {
-            BattlerBehaviour instBattler = Instantiate(_battlers.FirstOrDefault(b => b.BattlerId == battler.Character.Id));
+            BattlerBehaviour toInst = _battlers.FirstOrDefault(b => b.BattlerId == battler.Character.Id);
+            BattlerBehaviour instBattler = Instantiate(toInst, battler.InitialPosition, Quaternion.identity);
             instBattler.Feed(battler);
 
             return instBattler;

@@ -41,13 +41,13 @@ namespace BattleSystem
 
             if(timeline.Battler.LockedInAbility.Id == 0)
             {
-                StartCoroutine(MoveToTarget(timeline.Battler.gameObject, 
-                                            timeline.Battler.LockedInAbility.Targets[0].gameObject,
+                StartCoroutine(MoveToTarget(timeline.Battler, 
+                                            timeline.Battler.LockedInAbility.Targets[0],
                                             timeline.Battler.LockedInAbility.Range));
             }
         }
 
-        private IEnumerator MoveToTarget(GameObject source, GameObject target, int range)
+        private IEnumerator MoveToTarget(BattlerBehaviour source, BattlerBehaviour target, int range)
         {
             Animator animator = source.GetComponent<Animator>();
             animator.SetBool("Moving", true);
@@ -63,6 +63,7 @@ namespace BattleSystem
             }
 
             animator.SetBool("Moving", false);
+            source.FinishedAbilityMovement(target);
         }
     }
 }

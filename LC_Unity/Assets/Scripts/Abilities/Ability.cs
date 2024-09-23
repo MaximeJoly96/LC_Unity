@@ -56,5 +56,17 @@ namespace Abilities
             TargetEligibility = targetEligibility;
             Category = category;
         }
+
+        public Ability(Ability ability) : this(ability.Id, 
+                                               ability.Name, 
+                                               ability.Description, 
+                                               ability.Cost, 
+                                               ability.Usability, 
+                                               ability.Priority, 
+                                               ability.TargetEligibility, 
+                                               ability.Category)
+        {
+
+        }
     }
 }

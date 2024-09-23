@@ -37,7 +37,7 @@ namespace BattleSystem
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            BattlerBehaviour collidedWith = other.GetComponent<BattlerBehaviour>();
+            /*BattlerBehaviour collidedWith = other.GetComponent<BattlerBehaviour>();
             if(collidedWith != null && LockedInAbility != null)
             {
                 switch (LockedInAbility.TargetEligibility)
@@ -61,7 +61,19 @@ namespace BattleSystem
                             Debug.Log(gameObject.name + " strikes " + collidedWith.name);
                         break;
                 }
+            }*/
+        }
+
+        public void FinishedAbilityMovement(BattlerBehaviour target)
+        {
+            if (LockedInAbility.Category == AbilityCategory.AttackCommand)
+            {
+                Weapon weapon = BattlerData.Character.RightHand.GetItem() as Weapon;
+                LockedInAbility.AnimationId = weapon != null ? weapon.Animation : 0;
             }
+
+            GameObject hitAnimation = Instantiate(FindObjectOfType<AttackAnimationsWrapper>().GetAttackAnimation(LockedInAbility.AnimationId));
+            hitAnimation.transform.position = target.transform.position;
         }
     }
 }
