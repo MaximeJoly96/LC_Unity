@@ -45,8 +45,8 @@ namespace BattleSystem.UI
             _currentCharacter = character;
             _currentSelectionState = SelectionState.Category;
 
-            UpdateInstructions(_currentCharacter.BattlerData.Name);
-            CreateMoveCategories(_currentCharacter.BattlerData.Abilities);
+            UpdateInstructions(_currentCharacter.BattlerData.Character.Name);
+            CreateMoveCategories(_currentCharacter.BattlerData.Character.Abilities);
         }
 
         private void CreateMoveCategories(List<Ability> abilities)

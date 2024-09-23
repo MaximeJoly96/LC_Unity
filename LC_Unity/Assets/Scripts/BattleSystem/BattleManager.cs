@@ -53,8 +53,6 @@ namespace BattleSystem
         [SerializeField]
         private BattlersHolder _charactersHolder;
         [SerializeField]
-        private PlacementCursor _characterSelectionCursor;
-        [SerializeField]
         private TextAsset _troops;
         [SerializeField]
         private TextAsset _enemies;
@@ -62,6 +60,8 @@ namespace BattleSystem
         private TargetManager _targetManager;
         [SerializeField]
         private BattleProcessor _battleProcessor;
+        [SerializeField]
+        private CursorsManager _cursorsManager;
 
         public BattleState CurrentState { get; private set; }
         public UnityEvent<BattleState> StateChangedEvent
@@ -73,6 +73,11 @@ namespace BattleSystem
 
                 return _stateChangedEvent;
             }
+        }
+
+        public List<BattlerBehaviour> CharactersInCombat
+        {
+            get { return _charactersInCombat; }
         }
 
         public List<BattlerBehaviour> AllBattlers
@@ -114,8 +119,6 @@ namespace BattleSystem
             _uiManager.HideAllWindows();
 
             ShowInstructions();
-            CreateFirstPlacementCursor();
-
             UpdateState(BattleState.PlacingCharacters);
         }
 
@@ -178,17 +181,17 @@ namespace BattleSystem
             switch (CurrentState)
             {
                 case BattleState.PlacingCharacters:
-                    _firstPlacementCursor.StopAnimation();
+                    _cursorsManager.StopCurrentCursor();
                     _selectedCharacterForSwap = _charactersInCombat[_characterPlacementCursorPosition];
-                    CreateSecondPlacementCursor();
+                    _cursorsManager.CreateCursor(_selectedCharacterForSwap.transform.position);
                     UpdateState(BattleState.SwappingCharacters);
                     UpdateInstructions();
                     break;
                 case BattleState.SwappingCharacters:
-                    _secondPlacementCursor.StopAnimation();
-                    ClearPlacementCursors();
+                    _cursorsManager.StopCurrentCursor();
+                    _cursorsManager.ClearCursors();
                     SwapCharacters();
-                    CreateFirstPlacementCursor();
+                    _cursorsManager.CreateCursor(_charactersInCombat[0].transform.position);
                     UpdateState(BattleState.PlacingCharacters);
                     UpdateInstructions();
                     break;
@@ -210,9 +213,9 @@ namespace BattleSystem
             switch(CurrentState)
             {
                 case BattleState.SwappingCharacters:
-                    _secondPlacementCursor.StopAnimation();
-                    ClearPlacementCursors();
-                    CreateFirstPlacementCursor();
+                    _cursorsManager.StopCurrentCursor();
+                    _cursorsManager.ClearCursors();
+                    _cursorsManager.CreateCursor(_charactersInCombat[0].transform.position);
                     UpdateState(BattleState.PlacingCharacters);
                     UpdateInstructions();
                     break;
@@ -228,14 +231,10 @@ namespace BattleSystem
             switch(CurrentState)
             {
                 case BattleState.PlacingCharacters:
-                    _characterPlacementCursorPosition = _characterPlacementCursorPosition == 0 ?
-                                                        _charactersInCombat.Count - 1 : --_characterPlacementCursorPosition;
-                    UpdatePlacementCursor(_firstPlacementCursor);
-                    break;
                 case BattleState.SwappingCharacters:
                     _characterPlacementCursorPosition = _characterPlacementCursorPosition == 0 ?
                                                         _charactersInCombat.Count - 1 : --_characterPlacementCursorPosition;
-                    UpdatePlacementCursor(_secondPlacementCursor);
+                    _cursorsManager.UpdateCurrentCursor(_charactersInCombat[_characterPlacementCursorPosition].transform.position);
                     break;
             }
         }
@@ -245,14 +244,10 @@ namespace BattleSystem
             switch (CurrentState)
             {
                 case BattleState.PlacingCharacters:
-                    _characterPlacementCursorPosition = _characterPlacementCursorPosition == _charactersInCombat.Count - 1 ?
-                                                        0 : ++_characterPlacementCursorPosition;
-                    UpdatePlacementCursor(_firstPlacementCursor);
-                    break;
                 case BattleState.SwappingCharacters:
                     _characterPlacementCursorPosition = _characterPlacementCursorPosition == _charactersInCombat.Count - 1 ?
                                                         0 : ++_characterPlacementCursorPosition;
-                    UpdatePlacementCursor(_secondPlacementCursor);
+                    _cursorsManager.UpdateCurrentCursor(_charactersInCombat[_characterPlacementCursorPosition].transform.position);
                     break;
             }
         }
@@ -279,17 +274,8 @@ namespace BattleSystem
 
         private void StartButtonPressed()
         {
-            ClearPlacementCursors();
+            _cursorsManager.ClearCursors();
             UpdateState(BattleState.BattleStart);
-            _uiManager.HideInstructionsWindow();
-            _uiManager.BattleStartTagClosed.RemoveAllListeners();
-            _uiManager.BattleStartTagClosed.AddListener(OpenAllCombatWindows);
-
-            _turnManager = new TurnManager(_charactersInCombat);
-
-            UpdateState(BattleState.ComputingEnemyTurn);
-            ComputeEnemyTurn();
-            UpdateState(BattleState.PlayerMoveSelection);
         }
         #endregion
 
@@ -358,33 +344,6 @@ namespace BattleSystem
             _uiManager.UpdateInstructions(CurrentState);
         }
 
-        private void CreateFirstPlacementCursor()
-        {
-            _characterPlacementCursorPosition = 0;
-            _firstPlacementCursor = Instantiate(_characterSelectionCursor);
-            UpdatePlacementCursor(_firstPlacementCursor);
-        }
-
-        private void UpdatePlacementCursor(PlacementCursor cursor)
-        {
-            cursor.transform.position = _charactersInCombat[_characterPlacementCursorPosition].transform.position;
-        }
-
-        private void CreateSecondPlacementCursor()
-        {
-            _secondPlacementCursor = Instantiate(_characterSelectionCursor);
-            UpdatePlacementCursor(_secondPlacementCursor);
-        }
-
-        private void ClearPlacementCursors()
-        {
-            if(_firstPlacementCursor)
-                Destroy(_firstPlacementCursor.gameObject);
-
-            if(_secondPlacementCursor)
-                Destroy(_secondPlacementCursor.gameObject);
-        }
-
         private void SwapCharacters()
         {
             Vector2 tempPosition = _charactersInCombat[_characterPlacementCursorPosition].transform.position;
@@ -413,12 +372,33 @@ namespace BattleSystem
             switch(state)
             {
                 case BattleState.PlayerMoveSelection:
-                    if (_charactersInCombat.All(c => c.LockedInAbility != null))
+                    OpenAllCombatWindows();
+                    _uiManager.FeedMoveSelectionWindow(_turnManager.CurrentCharacter);
+                    /*if (_charactersInCombat.All(c => c.LockedInAbility != null))
                         ProcessBattle();
                     else
-                        _uiManager.FeedMoveSelectionWindow(_turnManager.CurrentCharacter);
+                        _uiManager.FeedMoveSelectionWindow(_turnManager.CurrentCharacter);*/
+                    break;
+                case BattleState.PlacingCharacters:
+                    _cursorsManager.CreateCursor(_charactersInCombat[0].transform.position);
+                    break;
+                case BattleState.BattleStart:
+                    _uiManager.HideInstructionsWindow();
+                    _uiManager.ShowBattleStartTag();
+                    _uiManager.BattleStartTagClosed.RemoveAllListeners();
+                    _uiManager.BattleStartTagClosed.AddListener(BattleStartTagClosed);
+                    break;
+                case BattleState.ComputingEnemyTurn:
+                    _turnManager = new TurnManager(_charactersInCombat);
+                    ComputeEnemyTurn();
+                    UpdateState(BattleState.PlayerMoveSelection);
                     break;
             }
+        }
+
+        private void BattleStartTagClosed()
+        {
+            UpdateState(BattleState.ComputingEnemyTurn);
         }
 
         public void SelectTargetWithAbility(Ability ability)

@@ -70,8 +70,6 @@ namespace BattleSystem
         public void ShowInstructionsWindow()
         {
             _battleInitInstructionsWindow.ShowWindow();
-            _battleInitInstructionsWindow.InstructionsWindowClosed.RemoveAllListeners();
-            _battleInitInstructionsWindow.InstructionsWindowClosed.AddListener(ShowBattleStartTag);
         }
 
         public void HideInstructionsWindow()
@@ -114,7 +112,7 @@ namespace BattleSystem
             _timelineUiController.Show();
         }
 
-        private void ShowBattleStartTag()
+        public void ShowBattleStartTag()
         {
             _battleStartTag.Show();
             _battleStartTag.FinishedHidingEvent.RemoveAllListeners();

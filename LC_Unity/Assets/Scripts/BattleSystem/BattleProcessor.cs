@@ -41,17 +41,28 @@ namespace BattleSystem
 
             if(timeline.Battler.LockedInAbility.Id == 0)
             {
-                StartCoroutine(MoveToTarget(timeline.Battler.gameObject, timeline.Battler.LockedInAbility.Targets[0].gameObject));
+                StartCoroutine(MoveToTarget(timeline.Battler.gameObject, 
+                                            timeline.Battler.LockedInAbility.Targets[0].gameObject,
+                                            timeline.Battler.LockedInAbility.Range));
             }
         }
 
-        private IEnumerator MoveToTarget(GameObject source, GameObject target)
+        private IEnumerator MoveToTarget(GameObject source, GameObject target, int range)
         {
-            while(Vector2.Distance(source.transform.position, target.transform.position) > 0.05f)
+            Animator animator = source.GetComponent<Animator>();
+            animator.SetBool("Moving", true);
+
+            while(Vector2.Distance(source.transform.position, target.transform.position) > range / 500.0f)
             {
-                source.transform.Translate((target.transform.position - source.transform.position).normalized * Time.deltaTime);
+                Vector2 direction = (target.transform.position - source.transform.position).normalized;
+                animator.SetFloat("X", direction.x);
+                animator.SetFloat("Y", direction.y);
+
+                source.transform.Translate(direction * Time.deltaTime);
                 yield return null;
             }
+
+            animator.SetBool("Moving", false);
         }
     }
 }

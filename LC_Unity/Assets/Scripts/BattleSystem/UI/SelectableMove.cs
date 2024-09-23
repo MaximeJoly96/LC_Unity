@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using Abilities;
+using Language;
 
 namespace BattleSystem.UI
 {
@@ -11,7 +12,7 @@ namespace BattleSystem.UI
 
         public void Feed(Ability ability)
         {
-            _label.text = ability.Name;
+            _label.text = Localizer.Instance.GetString(ability.Name);
         }
     }
 }

@@ -3,6 +3,7 @@ using BattleSystem.Model;
 using BattleSystem.Behaviours;
 using Abilities;
 using System.Collections.Generic;
+using Inventory;
 
 namespace BattleSystem
 {
@@ -22,7 +23,7 @@ namespace BattleSystem
         public void Feed(Battler battler)
         {
             BattlerData = battler;
-            _battlerId = BattlerData.Id;
+            _battlerId = BattlerData.Character.Id;
         }
 
         public void Behave(List<BattlerBehaviour> allBattlers)
@@ -41,6 +42,19 @@ namespace BattleSystem
             {
                 switch (LockedInAbility.TargetEligibility)
                 {
+                    case TargetEligibility.Any:
+                        if (collidedWith.IsEnemy != IsEnemy)
+                        {
+                            if (LockedInAbility.Category == AbilityCategory.AttackCommand)
+                            {
+                                Weapon weapon = BattlerData.Character.RightHand.GetItem() as Weapon;
+                                LockedInAbility.AnimationId = weapon.Animation;
+                            }
+
+                            GameObject hitAnimation = Instantiate(FindObjectOfType<AttackAnimationsWrapper>().GetAttackAnimation(LockedInAbility.AnimationId));
+                            hitAnimation.transform.position = collidedWith.transform.position;
+                        }
+                        break;
                     case TargetEligibility.Enemy:
                     case TargetEligibility.All:
                         if (collidedWith.IsEnemy != IsEnemy)

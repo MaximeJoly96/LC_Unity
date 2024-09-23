@@ -41,6 +41,8 @@ namespace Abilities
         public List<BattlerBehaviour> Targets { get; set; }
         public TargetEligibility TargetEligibility { get; set; }
         public AbilityCategory Category { get; set; }
+        public int Range { get; set; } = 100;
+        public int AnimationId { get; set; }
 
         public Ability(int id, string name, string description, AbilityCost cost, AbilityUsability usability, int priority, TargetEligibility targetEligibility, AbilityCategory category)
         {

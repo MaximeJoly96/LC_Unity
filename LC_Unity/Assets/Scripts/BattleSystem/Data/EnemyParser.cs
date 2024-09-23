@@ -33,21 +33,20 @@ namespace BattleSystem.Data
 
                 if(found)
                 {
-                    Battler b = new Battler(matchingId,
-                                            ParseStringValue(enemies[i - 1], "Name"),
-                                            ParseIntValue(enemies[i - 1], "Level"),
-                                            ParseStatScalingFunction(enemies[i - 1], "BaseHealth"),
-                                            ParseStatScalingFunction(enemies[i - 1], "BaseMana"),
-                                            ParseStatScalingFunction(enemies[i - 1], "BaseEssence"),
-                                            ParseStatScalingFunction(enemies[i - 1], "BaseStrength"),
-                                            ParseStatScalingFunction(enemies[i - 1], "BaseDefense"),
-                                            ParseStatScalingFunction(enemies[i - 1], "BaseMagic"),
-                                            ParseStatScalingFunction(enemies[i - 1], "BaseMagicDefense"),
-                                            ParseStatScalingFunction(enemies[i - 1], "BaseAgility"),
-                                            ParseStatScalingFunction(enemies[i - 1], "BaseLuck"),
-                                            new List<Ability>(),
-                                            new List<ActiveEffect>(),
-                                            new List<ElementalAffinity>());
+                    Character c = new Character(matchingId,
+                                                ParseStringValue(enemies[i - 1], "Name"),
+                                                new QuadraticFunction(1, 0, 0),
+                                                ParseStatScalingFunction(enemies[i - 1], "BaseHealth"),
+                                                ParseStatScalingFunction(enemies[i - 1], "BaseMana"),
+                                                ParseStatScalingFunction(enemies[i - 1], "BaseEssence"),
+                                                ParseStatScalingFunction(enemies[i - 1], "BaseStrength"),
+                                                ParseStatScalingFunction(enemies[i - 1], "BaseDefense"),
+                                                ParseStatScalingFunction(enemies[i - 1], "BaseMagic"),
+                                                ParseStatScalingFunction(enemies[i - 1], "BaseMagicDefense"),
+                                                ParseStatScalingFunction(enemies[i - 1], "BaseAgility"),
+                                                ParseStatScalingFunction(enemies[i - 1], "BaseLuck"));
+
+                    Battler b = new Battler(c);
 
                     return b;
                 }

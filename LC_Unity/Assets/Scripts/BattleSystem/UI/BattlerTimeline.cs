@@ -19,7 +19,7 @@ namespace BattleSystem.UI
         public void Feed(BattlerBehaviour battler)
         {
             Battler = battler;
-            _battlerName.text = battler.BattlerData.Name;
+            _battlerName.text = battler.BattlerData.Character.Name;
         }
 
         public TimelineAction ComputeAction(BattlerBehaviour battler)
