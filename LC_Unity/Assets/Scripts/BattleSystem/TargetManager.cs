@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Abilities;
+using Inventory;
 
 namespace BattleSystem
 {
@@ -35,6 +36,12 @@ namespace BattleSystem
         {
             currentBattler.LockedInAbility = new Ability(CurrentAbility);
             currentBattler.LockedInAbility.Targets = new List<BattlerBehaviour> { _availableTargets[_cursorPosition] };
+
+            if(currentBattler.LockedInAbility.Category == AbilityCategory.AttackCommand)
+            {
+                Weapon weapon = currentBattler.BattlerData.Character.RightHand.GetItem() as Weapon;
+                currentBattler.LockedInAbility.Range = weapon != null ? weapon.Range : 100;
+            }
         }
 
         public void Clear()

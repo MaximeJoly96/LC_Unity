@@ -41,6 +41,9 @@ namespace BattleSystem
 
         public void FinishedAbilityMovement(BattlerBehaviour target)
         {
+            if (IsDead)
+                return;
+
             if (LockedInAbility.Category == AbilityCategory.AttackCommand)
             {
                 Weapon weapon = BattlerData.Character.RightHand.GetItem() as Weapon;
