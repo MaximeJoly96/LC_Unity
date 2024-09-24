@@ -4,6 +4,8 @@ using BattleSystem.Behaviours;
 using Abilities;
 using System.Collections.Generic;
 using Inventory;
+using UnityEngine.Audio;
+using MusicAndSounds;
 
 namespace BattleSystem
 {
@@ -90,6 +92,16 @@ namespace BattleSystem
         {
             IsDead = true;
             GetComponent<Animator>().Play("Die");
+        }
+
+        public void PlaySound(string key)
+        {
+            FindObjectOfType<AudioPlayer>().PlaySoundEffect(new Engine.MusicAndSounds.PlaySoundEffect
+            {
+                Name = key,
+                Volume = 0.75f,
+                Pitch = 1.0f
+            });
         }
     }
 }

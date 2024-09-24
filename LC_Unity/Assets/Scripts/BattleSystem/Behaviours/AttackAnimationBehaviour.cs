@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using MusicAndSounds;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace BattleSystem.Behaviours
@@ -28,6 +29,16 @@ namespace BattleSystem.Behaviours
 
                 return _animationEndedEvent;
             }
+        }
+
+        public void PlaySoundEffect(string key)
+        {
+            FindObjectOfType<AudioPlayer>().PlaySoundEffect(new Engine.MusicAndSounds.PlaySoundEffect
+            {
+                Name = key,
+                Volume = 1.0f,
+                Pitch = 1.0f
+            });
         }
 
         public void Hit()

@@ -66,7 +66,7 @@ namespace Abilities
                                                ability.TargetEligibility, 
                                                ability.Category)
         {
-
+            AnimationId = ability.AnimationId;
         }
     }
 }
