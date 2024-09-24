@@ -20,7 +20,7 @@ namespace BattleSystem.Behaviours
                 _aiScript = parser.ParseBehaviour(_behaviourScript);
             }
 
-            Ability ability = AbilitiesManager.Instance.GetAbility(_aiScript.PickAction());
+            Ability ability = new Ability(AbilitiesManager.Instance.GetAbility(_aiScript.PickAction()));
             ability.Targets = ChoseTargets(allBattlers, ability);
 
             return ability;

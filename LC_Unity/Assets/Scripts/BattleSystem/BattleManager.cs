@@ -13,6 +13,8 @@ using Abilities;
 using System.Linq;
 using Utils;
 using UnityEngine.SceneManagement;
+using MusicAndSounds;
+using System.Collections;
 
 namespace BattleSystem
 {
@@ -102,6 +104,8 @@ namespace BattleSystem
         private void Awake()
         {
             FindObjectOfType<InputController>().ButtonClicked.AddListener(ReceiveInput);
+            StopAllAudio();
+            StartCombatBgm();
 
             _selectionDelay = 0.0f;
             _delayOn = false;
@@ -440,12 +444,16 @@ namespace BattleSystem
                     ProcessBattle();
                     break;
                 case BattleState.BattleVictory:
+                    StopAllAudio();
                     CloseAllCombatWindows();
                     _uiManager.ShowVictoryTag();
+                    CommonSounds.Victory();
                     break;
                 case BattleState.BattleDefeat:
+                    StopAllAudio();
                     CloseAllCombatWindows();
                     _uiManager.ShowDefeatTag();
+                    CommonSounds.Defeat();
                     break;
             }
         }
@@ -507,7 +515,28 @@ namespace BattleSystem
 
         public void Defeat()
         {
+            StartCoroutine(DoDefeat());
+        }
+
+        private IEnumerator DoDefeat()
+        {
+            yield return new WaitForSeconds(10.0f);
             SceneManager.LoadScene("TitleScreen");
+        }
+
+        private void StopAllAudio()
+        {
+            FindObjectOfType<AudioPlayer>().StopAllAudio();
+        }
+
+        private void StartCombatBgm()
+        {
+            FindObjectOfType<AudioPlayer>().PlayBgm(new Engine.MusicAndSounds.PlayBgm
+            {
+                Name = "battleTheme1",
+                Volume = 0.75f,
+                Pitch = 1.0f
+            });
         }
     }
 }

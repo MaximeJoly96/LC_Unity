@@ -21,12 +21,32 @@ namespace Utils
             PlaySound("Cancel");
         }
 
+        public static void Victory()
+        {
+            PlayMusicalEffect("victory");
+        }
+
+        public static void Defeat()
+        {
+            PlayMusicalEffect("defeat");
+        }
+
         private static void PlaySound(string key)
         {
             GameObject.FindObjectOfType<AudioPlayer>().PlaySoundEffect(new PlaySoundEffect
             {
                 Name = key,
                 Volume = 0.25f,
+                Pitch = 1.0f
+            });
+        }
+
+        private static void PlayMusicalEffect(string key)
+        {
+            GameObject.FindObjectOfType<AudioPlayer>().PlayMusicalEffect(new PlayMusicalEffect
+            {
+                Name = key,
+                Volume = 1.0f,
                 Pitch = 1.0f
             });
         }
