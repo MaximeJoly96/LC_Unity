@@ -196,7 +196,7 @@ namespace Actors
             get { return _currentHealth; }
             set
             {
-                _currentHealth = Mathf.Max(0, value, MaxHealth);
+                _currentHealth = Mathf.Min(Mathf.Max(0, value), MaxHealth);
             }
         }
 
@@ -224,7 +224,7 @@ namespace Actors
             get { return _currentMana; }
             set
             {
-                _currentMana = Mathf.Max(0, value, MaxMana);
+                _currentMana = Mathf.Min(Mathf.Max(0, value), MaxMana);
             }
         }
 
@@ -252,7 +252,7 @@ namespace Actors
             get { return _currentEssence; }
             set
             {
-                _currentEssence = Mathf.Max(0, value, MaxEssence);
+                _currentEssence = Mathf.Min(Mathf.Max(0, value), MaxEssence);
             }
         }
 
@@ -413,7 +413,7 @@ namespace Actors
 
         public void ChangeHealth(int change)
         {
-            CurrentHealth += change;
+            CurrentHealth -= change;
         }
 
         private void InitBasicAffinities()

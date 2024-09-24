@@ -16,6 +16,10 @@ namespace BattleSystem
         private List<BattlerBehaviour> _availableTargets;
         
         public Ability CurrentAbility { get; private set; }
+        public BattlerBehaviour CurrentlySelectedTarget
+        {
+            get { return _availableTargets[_cursorPosition]; }
+        }
 
         public void LoadTargets(List<BattlerBehaviour> targets, Ability ability)
         {

@@ -16,7 +16,7 @@ namespace BattleSystem.UI
         private List<BattlerBehaviour> _battlers;
         private List<BattlerTimeline> _battlersTimelines;
 
-        public List<BattlerTimeline> Timelines { get { return _battlersTimelines; } }
+        public List<BattlerTimeline> Timelines { get { return _battlersTimelines.Where(t => !t.Battler.IsDead).ToList(); } }
 
         public void Feed(List<BattlerBehaviour> battlers)
         {

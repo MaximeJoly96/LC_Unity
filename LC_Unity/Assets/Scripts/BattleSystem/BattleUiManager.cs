@@ -22,6 +22,8 @@ namespace BattleSystem
         private PlayerGlobalUi _playerGlobalUi;
         [SerializeField]
         private DamageDisplay _damageDisplay;
+        [SerializeField]
+        private TargetInfoCanvas _targetInfoCanvas;
 
         private List<PlayerUiPreview> _playerUiPreviews;
 
@@ -34,6 +36,30 @@ namespace BattleSystem
                     _battleStartTagClosed = new UnityEvent();
 
                 return _battleStartTagClosed;
+            }
+        }
+
+        private UnityEvent _victoryConcluded;
+        public UnityEvent VictoryConcluded
+        {
+            get
+            {
+                if(_victoryConcluded == null)
+                    _victoryConcluded = new UnityEvent();
+
+                return _victoryConcluded;
+            }
+        }
+
+        private UnityEvent _defeatConcluded;
+        public UnityEvent DefeatConcluded
+        {
+            get
+            {
+                if (_defeatConcluded == null)
+                    _defeatConcluded = new UnityEvent();
+
+                return _defeatConcluded;
             }
         }
 
@@ -56,6 +82,11 @@ namespace BattleSystem
         {
             ShowPlayerGlobalUi(true);
             _playerGlobalUi.OpenMoveSelectionWindow();
+        }
+
+        public void ClosePlayerGlobalUi()
+        {
+            ShowPlayerGlobalUi(false);
         }
 
         public void ShowHelpDialog(bool show)
@@ -124,11 +155,40 @@ namespace BattleSystem
             _timelineUiController.Show();
         }
 
+        public void CloseTimeline()
+        {
+            ShowTimeline(false);
+        }
+
         public void ShowBattleStartTag()
         {
             _battleStartTag.Show();
             _battleStartTag.FinishedHidingEvent.RemoveAllListeners();
             _battleStartTag.FinishedHidingEvent.AddListener(BattleStartClosed);
+        }
+
+        public void ShowVictoryTag()
+        {
+            _battleStartTag.UpdateForVictory();
+            _battleStartTag.FinishedHidingEvent.RemoveAllListeners();
+            _battleStartTag.FinishedHidingEvent.AddListener(ConcludeVictory);
+        }
+
+        private void ConcludeVictory()
+        {
+            VictoryConcluded.Invoke();
+        }
+
+        public void ShowDefeatTag()
+        {
+            _battleStartTag.UpdateForDefeat();
+            _battleStartTag.FinishedHidingEvent.RemoveAllListeners();
+            _battleStartTag.FinishedHidingEvent.AddListener(ConcludeDefeat);
+        }
+
+        private void ConcludeDefeat()
+        {
+            DefeatConcluded.Invoke();
         }
 
         public void BattleStartClosed()
@@ -177,6 +237,21 @@ namespace BattleSystem
         public void DisplayDamage(Vector3 worldPosition, int damage)
         {
             _damageDisplay.DisplayDamage(worldPosition, damage);
+        }
+
+        public void UpdatePlayerGui(Character character)
+        {
+            _playerGlobalUi.UpdateCharacter(character);
+        }
+
+        public void ShowTargetInfo(BattlerBehaviour target)
+        {
+            _targetInfoCanvas.ShowTargetInfo(target);
+        }
+
+        public void CloseTargetInfo()
+        {
+            _targetInfoCanvas.Clear();
         }
     }
 }

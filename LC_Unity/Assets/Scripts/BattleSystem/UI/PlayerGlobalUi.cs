@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using Actors;
+using System.Linq;
 
 namespace BattleSystem.UI
 {
@@ -61,6 +62,14 @@ namespace BattleSystem.UI
         public void SelectMove()
         {
             _moveSelectionWindow.SelectMove();
+        }
+
+        public void UpdateCharacter(Character character)
+        {
+            PlayerUiPreview preview = _playerUiPreviews.FirstOrDefault(p => p.PlayerName == character.Name);
+
+            if (preview)
+                preview.Feed(character);
         }
     }
 }

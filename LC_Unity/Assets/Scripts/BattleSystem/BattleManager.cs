@@ -12,6 +12,7 @@ using System;
 using Abilities;
 using System.Linq;
 using Utils;
+using UnityEngine.SceneManagement;
 
 namespace BattleSystem
 {
@@ -26,6 +27,8 @@ namespace BattleSystem
         PlayerMoveSelection,
         TargetSelection,
         BattleProcess,
+        BattleVictory,
+        BattleDefeat,
     }
 
     public class BattleManager : MonoBehaviour
@@ -104,6 +107,9 @@ namespace BattleSystem
             _delayOn = false;
             _enemiesInCombat = new List<BattlerBehaviour>();
             _charactersInCombat = new List<BattlerBehaviour>();
+
+            _uiManager.VictoryConcluded.AddListener(Victory);
+            _uiManager.DefeatConcluded.AddListener(Defeat);
 
             StateChangedEvent.AddListener(FollowStateChange);
 
@@ -188,6 +194,8 @@ namespace BattleSystem
                     _enemiesInCombat.ForEach(e => e.ResetTurn());
                     UpdateState(BattleState.ComputingEnemyTurn);
                 }
+
+                CheckForDeadParticipants();
             }
         }
 
@@ -215,6 +223,7 @@ namespace BattleSystem
                 case BattleState.TargetSelection:
                     _targetManager.ConfirmTarget(_turnManager.CurrentCharacter);
                     _targetManager.Clear();
+                    _uiManager.CloseTargetInfo();
                     _uiManager.UpdateTimeline();
                     _turnManager.SwitchToNextCharacter();
                     UpdateState(BattleState.PlayerMoveSelection);
@@ -235,6 +244,7 @@ namespace BattleSystem
                     break;
                 case BattleState.TargetSelection:
                     _targetManager.Clear();
+                    _uiManager.CloseTargetInfo();
                     UpdateState(BattleState.PlayerMoveSelection);
                     break;
             }
@@ -252,6 +262,7 @@ namespace BattleSystem
                     break;
                 case BattleState.TargetSelection:
                     _targetManager.PreviousTarget();
+                    _uiManager.ShowTargetInfo(_targetManager.CurrentlySelectedTarget);
                     break;
             }
         }
@@ -268,6 +279,7 @@ namespace BattleSystem
                     break;
                 case BattleState.TargetSelection:
                     _targetManager.NextTarget();
+                    _uiManager.ShowTargetInfo(_targetManager.CurrentlySelectedTarget);
                     break;
             }
         }
@@ -381,6 +393,13 @@ namespace BattleSystem
             _uiManager.OpenTimeline();
         }
 
+        private void CloseAllCombatWindows()
+        {
+            _uiManager.CloseHelpWindow();
+            _uiManager.ClosePlayerGlobalUi();
+            _uiManager.CloseTimeline();
+        }
+
         private void ComputeEnemyTurn()
         {
             if (_enemiesManager == null)
@@ -420,6 +439,14 @@ namespace BattleSystem
                     _uiManager.CloseHelpWindow();
                     ProcessBattle();
                     break;
+                case BattleState.BattleVictory:
+                    CloseAllCombatWindows();
+                    _uiManager.ShowVictoryTag();
+                    break;
+                case BattleState.BattleDefeat:
+                    CloseAllCombatWindows();
+                    _uiManager.ShowDefeatTag();
+                    break;
             }
         }
 
@@ -448,11 +475,39 @@ namespace BattleSystem
             }
 
             _targetManager.LoadTargets(targets, ability);
+            _uiManager.ShowTargetInfo(_targetManager.CurrentlySelectedTarget);
         }
 
         private void ProcessBattle()
         {
             _battleProcessor.ProcessBattle(_uiManager.GetTimelines());
+        }
+
+        private void CheckForDeadParticipants()
+        {
+            List<BattlerBehaviour> deadEnemies = _enemiesInCombat.Where(x => x.IsDead).ToList();
+            List<BattlerBehaviour> deadAllies = _charactersInCombat.Where(x => x.IsDead).ToList();
+
+            for(int i = 0; i < deadEnemies.Count; i++)
+                _enemiesInCombat.Remove(deadEnemies[i]);
+
+            for(int i = 0; i < deadAllies.Count; i++)
+                _charactersInCombat.Remove(deadAllies[i]);
+
+            if (_charactersInCombat.Count == 0)
+                UpdateState(BattleState.BattleDefeat);
+            else if (_enemiesInCombat.Count == 0)
+                UpdateState(BattleState.BattleVictory);
+        }
+
+        public void Victory()
+        {
+            SceneManager.LoadScene("Field");
+        }
+
+        public void Defeat()
+        {
+            SceneManager.LoadScene("TitleScreen");
         }
     }
 }

@@ -16,6 +16,7 @@ namespace BattleSystem
 
         public int BattlerId { get { return _battlerId; } }
         public bool IsEnemy { get { return _isEnemy; } set { _isEnemy = value; } }
+        public bool IsDead { get; private set; }
 
         public Battler BattlerData { get; private set; }
         public Ability LockedInAbility { get; set; }
@@ -62,7 +63,9 @@ namespace BattleSystem
 
             LockedInAbility.Targets[0].BattlerData.ChangeHealth(result);
 
-            FindObjectOfType<BattleUiManager>().DisplayDamage(LockedInAbility.Targets[0].transform.position, result);
+            BattleUiManager uiManager = FindObjectOfType<BattleUiManager>();
+            uiManager.DisplayDamage(LockedInAbility.Targets[0].transform.position, result);
+            uiManager.UpdatePlayerGui(LockedInAbility.Targets[0].BattlerData.Character);
         }
 
         public void FinishedTurn()
@@ -75,6 +78,18 @@ namespace BattleSystem
         {
             LockedInAbility = null;
             FinishedAction = false;
+        }
+
+        private void Update()
+        {
+            if (!IsDead && BattlerData.Character != null && BattlerData.Character.CurrentHealth <= 0)
+                Die();
+        }
+
+        public void Die()
+        {
+            IsDead = true;
+            GetComponent<Animator>().Play("Die");
         }
     }
 }

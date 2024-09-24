@@ -12,6 +12,8 @@ namespace Abilities
             {
                 case 0:
                     return AttackCommandFormula(source, target);
+                case 2:
+                    return ClawsCommandFormula(source, target);
             }
 
             return 0;
@@ -21,6 +23,11 @@ namespace Abilities
         {
             return Mathf.Max(0, Mathf.RoundToInt(((source.BaseStrength + source.BonusStrength) * 2.0f - target.BaseDefense + target.BonusDefense) 
                                 * (1 + source.Level * 0.025f)));
+        }
+
+        private static int ClawsCommandFormula(Character source, Character target)
+        {
+            return Mathf.Max(0, Mathf.RoundToInt((source.BaseStrength + source.BonusStrength) * 2.0f - target.BaseDefense + target.BonusDefense));
         }
     }
 }

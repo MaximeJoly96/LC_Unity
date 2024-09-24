@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace BattleSystem
 {
@@ -11,7 +12,7 @@ namespace BattleSystem
 
         public TurnManager(List<BattlerBehaviour> characters)
         {
-            _characters = characters;
+            _characters = characters.Where(c => !c.IsDead).ToList();
         }
 
         public BattlerBehaviour SwitchToNextCharacter()
