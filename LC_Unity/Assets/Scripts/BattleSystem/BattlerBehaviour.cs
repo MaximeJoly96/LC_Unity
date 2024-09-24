@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Inventory;
 using UnityEngine.Audio;
 using MusicAndSounds;
+using Effects;
 
 namespace BattleSystem
 {
@@ -56,12 +57,14 @@ namespace BattleSystem
             AttackAnimationBehaviour aab = hitAnimation.GetComponent<AttackAnimationBehaviour>();
             aab.AbilityHitEvent.RemoveAllListeners();
             aab.AnimationEndedEvent.RemoveAllListeners();
-            aab.AbilityHitEvent.AddListener(ComputeDamage);
+            aab.AbilityHitEvent.AddListener(Strike);
             aab.AnimationEndedEvent.AddListener(FinishedTurn);
         }
 
-        private void ComputeDamage()
+        private void Strike()
         {
+            ApplyAbilityEffects(LockedInAbility);
+
             int result = DamageFormula.ComputeResult(LockedInAbility.Id,
                                                      BattlerData.Character,
                                                      LockedInAbility.Targets[0].BattlerData.Character);
@@ -71,6 +74,19 @@ namespace BattleSystem
             BattleUiManager uiManager = FindObjectOfType<BattleUiManager>();
             uiManager.DisplayDamage(LockedInAbility.Targets[0].transform.position, result);
             uiManager.UpdatePlayerGui(LockedInAbility.Targets[0].BattlerData.Character);
+        }
+
+        private void ApplyAbilityEffects(Ability ability)
+        {
+            for(int i = 0; i < ability.Effects.Count; i++)
+            {
+                if (ability.Effects[i] is InflictStatus)
+                {
+                    InflictStatus inflictStatus = ability.Effects[i] as InflictStatus;
+                    inflictStatus.Apply(ability.Targets[0].BattlerData.Character);
+                    FindObjectOfType<BattleUiManager>().DisplayStatus(ability.Targets[0].transform.position, inflictStatus.Value);
+                }   
+            }
         }
 
         public void FinishedTurn()

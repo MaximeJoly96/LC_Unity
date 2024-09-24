@@ -41,6 +41,7 @@ namespace BattleSystem
             {
                 Weapon weapon = currentBattler.BattlerData.Character.RightHand.GetItem() as Weapon;
                 currentBattler.LockedInAbility.Range = weapon != null ? weapon.Range : 100;
+                currentBattler.LockedInAbility.Effects = new List<Effects.IEffect>(weapon.Effects);
             }
         }
 

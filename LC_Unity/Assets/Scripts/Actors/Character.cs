@@ -245,7 +245,7 @@ namespace Actors
             }
         }
 
-        public int MaxMana { get { return BaseMana + BonusHealth; } }
+        public int MaxMana { get { return BaseMana + BonusMana; } }
 
         public int CurrentEssence
         {

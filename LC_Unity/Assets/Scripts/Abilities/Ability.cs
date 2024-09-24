@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using BattleSystem;
+using Effects;
 
 namespace Abilities
 {
@@ -37,12 +38,12 @@ namespace Abilities
         public AbilityCost Cost { get; private set; }
         public AbilityUsability Usability { get; private set; }
         public int Priority { get; private set; }
-        public List<AbilityStep> Steps { get; private set; }
         public List<BattlerBehaviour> Targets { get; set; }
         public TargetEligibility TargetEligibility { get; set; }
         public AbilityCategory Category { get; set; }
         public int Range { get; set; } = 100;
         public int AnimationId { get; set; }
+        public List<IEffect> Effects { get; set; }
 
         public Ability(int id, string name, string description, AbilityCost cost, AbilityUsability usability, int priority, TargetEligibility targetEligibility, AbilityCategory category)
         {
@@ -52,9 +53,9 @@ namespace Abilities
             Cost = cost;
             Usability = usability;
             Priority = priority;
-            Steps = new List<AbilityStep>();
             TargetEligibility = targetEligibility;
             Category = category;
+            Effects = new List<IEffect>();
         }
 
         public Ability(Ability ability) : this(ability.Id, 
@@ -67,6 +68,7 @@ namespace Abilities
                                                ability.Category)
         {
             AnimationId = ability.AnimationId;
+            Effects = ability.Effects;
         }
     }
 }

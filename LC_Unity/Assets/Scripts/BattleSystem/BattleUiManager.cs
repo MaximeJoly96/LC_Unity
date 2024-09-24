@@ -239,6 +239,11 @@ namespace BattleSystem
             _damageDisplay.DisplayDamage(worldPosition, damage);
         }
 
+        public void DisplayStatus(Vector3 worldPosition, EffectType effect)
+        {
+            _damageDisplay.DisplayStatusChange(worldPosition, effect);
+        }
+
         public void UpdatePlayerGui(Character character)
         {
             _playerGlobalUi.UpdateCharacter(character);

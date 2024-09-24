@@ -1,5 +1,6 @@
 ﻿using Actors;
 using Language;
+using System.Linq;
 
 namespace Effects
 {
@@ -11,6 +12,12 @@ namespace Effects
         {
             return Localizer.Instance.GetString("inflictStatusDescription") + " " + 
                    Localizer.Instance.GetString(LanguageUtility.GetEffectTypeLanguageKey(Value));
+        }
+
+        public void Apply(Character target)
+        {
+            if(!target.ActiveEffects.Any(e => e.Effect == Value))
+                target.ActiveEffects.Add(new ActiveEffect { Effect = Value });
         }
     }
 }
