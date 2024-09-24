@@ -43,9 +43,9 @@ namespace Menus.SubMenus.Status
 
         public override void Feed(Character character)
         {
-            _health.text = FormatAbsoluteStat(character.BaseHealth.MaxValue, character.BonusHealth.MaxValue);
-            _mana.text = FormatAbsoluteStat(character.BaseMana.MaxValue, character.BonusMana.MaxValue);
-            _essence.text = FormatAbsoluteStat(character.BaseEssence.MaxValue, character.BonusEssence.MaxValue);
+            _health.text = FormatAbsoluteStat(character.BaseHealth, character.BonusHealth);
+            _mana.text = FormatAbsoluteStat(character.BaseMana, character.BonusMana);
+            _essence.text = FormatAbsoluteStat(character.BaseEssence, character.BonusEssence);
             _strength.text = FormatAbsoluteStat(character.BaseStrength, character.BonusStrength);
             _defense.text = FormatAbsoluteStat(character.BaseDefense, character.BonusDefense);
             _magic.text = FormatAbsoluteStat(character.BaseMagic, character.BonusMagic);

@@ -14,6 +14,10 @@ namespace Actors
 {
     public class Character
     {
+        private int _currentHealth;
+        private int _currentMana;
+        private int _currentEssence;
+
         public int Id { get; set; }
         public string Name { get; set; }
         public int Exp { get; private set; }
@@ -139,57 +143,6 @@ namespace Actors
             }
         }
 
-        public Resource BaseHealth
-        {
-            get
-            {
-                return new Resource(Mathf.RoundToInt(MaxHealthFunction.Compute(Level)));
-            }
-        }
-
-        public Resource BonusHealth
-        {
-            get
-            {
-                return new Resource(GetStatFromItems("Health") +
-                                    Mathf.RoundToInt((BaseHealth.MaxValue + GetStatFromItems("Health")) * GetStatMultiplierFromItemEffects(Stat.HP)));
-            }
-        }
-
-        public Resource BaseMana
-        {
-            get
-            {
-                return new Resource(Mathf.RoundToInt(MaxManaFunction.Compute(Level)));
-            }
-        }
-
-        public Resource BonusMana
-        {
-            get
-            {
-                return new Resource(GetStatFromItems("Mana") +
-                                    Mathf.RoundToInt((BaseMana.MaxValue + GetStatFromItems("Mana")) * GetStatMultiplierFromItemEffects(Stat.MP)));
-            }
-        }
-
-        public Resource BaseEssence
-        {
-            get
-            {
-                return new Resource(Mathf.RoundToInt(MaxEssenceFunction.Compute(Level)));
-            }
-        }
-
-        public Resource BonusEssence
-        {
-            get
-            {
-                return new Resource(GetStatFromItems("Essence") +
-                                    Mathf.RoundToInt((BaseEssence.MaxValue + GetStatFromItems("Essence")) * GetStatMultiplierFromItemEffects(Stat.EP)));
-            }
-        }
-
         public int CritChance
         {
             get
@@ -237,6 +190,90 @@ namespace Actors
                 return Mathf.Clamp(90 + Mathf.RoundToInt(GetStatMultiplierFromItemEffects(Stat.Accuracy) * 100), 0, 100);
             }
         }
+
+        public int CurrentHealth
+        {
+            get { return _currentHealth; }
+            set
+            {
+                _currentHealth = Mathf.Max(0, value, MaxHealth);
+            }
+        }
+
+        public int BaseHealth
+        {
+            get
+            {
+                return Mathf.RoundToInt(MaxHealthFunction.Compute(Level));
+            }
+        }
+
+        public int BonusHealth
+        {
+            get
+            {
+                return GetStatFromItems("Health") +
+                       Mathf.RoundToInt((BaseHealth + GetStatFromItems("Health")) * GetStatMultiplierFromItemEffects(Stat.HP));
+            }
+        }
+
+        public int MaxHealth { get { return BaseHealth + BonusHealth; } }
+
+        public int CurrentMana
+        {
+            get { return _currentMana; }
+            set
+            {
+                _currentMana = Mathf.Max(0, value, MaxMana);
+            }
+        }
+
+        public int BaseMana
+        {
+            get
+            {
+                return Mathf.RoundToInt(MaxManaFunction.Compute(Level));
+            }
+        }
+
+        public int BonusMana
+        {
+            get
+            {
+                return GetStatFromItems("Mana") +
+                       Mathf.RoundToInt((BaseMana + GetStatFromItems("Mana")) * GetStatMultiplierFromItemEffects(Stat.MP));
+            }
+        }
+
+        public int MaxMana { get { return BaseMana + BonusHealth; } }
+
+        public int CurrentEssence
+        {
+            get { return _currentEssence; }
+            set
+            {
+                _currentEssence = Mathf.Max(0, value, MaxEssence);
+            }
+        }
+
+        public int BaseEssence
+        {
+            get
+            {
+                return Mathf.RoundToInt(MaxEssenceFunction.Compute(Level));
+            }
+        }
+
+        public int BonusEssence
+        {
+            get
+            {
+                return GetStatFromItems("Essence") +
+                       Mathf.RoundToInt((BaseEssence + GetStatFromItems("Essence")) * GetStatMultiplierFromItemEffects(Stat.EP));
+            }
+        }
+
+        public int MaxEssence { get { return BaseEssence + BonusEssence; } }
         #endregion
 
         #region Scaling Functions
@@ -291,6 +328,10 @@ namespace Actors
             MagicDefenseFunction = magicDefense;
             AgilityFunction = agility;
             LuckFunction = luck;
+
+            CurrentHealth = MaxHealth;
+            CurrentMana = MaxMana;
+            CurrentEssence = MaxEssence;
         }
 
         public void ChangeLevel(int amount)
@@ -368,6 +409,11 @@ namespace Actors
             int requiredNext = GetTotalRequiredXpForLevel(level + 1);
 
             return requiredNext - required;
+        }
+
+        public void ChangeHealth(int change)
+        {
+            CurrentHealth += change;
         }
 
         private void InitBasicAffinities()

@@ -20,6 +20,8 @@ namespace BattleSystem
         private BattleStartTag _battleStartTag;
         [SerializeField]
         private PlayerGlobalUi _playerGlobalUi;
+        [SerializeField]
+        private DamageDisplay _damageDisplay;
 
         private List<PlayerUiPreview> _playerUiPreviews;
 
@@ -45,6 +47,11 @@ namespace BattleSystem
             _playerGlobalUi.gameObject.SetActive(show);
         }
 
+        public void HideMoveSelection()
+        {
+            _playerGlobalUi.CloseMoveSelectionWindow();
+        }
+
         public void OpenPlayerGlobalUi()
         {
             ShowPlayerGlobalUi(true);
@@ -60,6 +67,11 @@ namespace BattleSystem
         {
             ShowHelpDialog(true);
             _helpWindow.Show();
+        }
+
+        public void CloseHelpWindow()
+        {
+            _helpWindow.Hide();
         }
 
         public void InitTimeline(List<BattlerBehaviour> battlers)
@@ -160,6 +172,11 @@ namespace BattleSystem
         public List<BattlerTimeline> GetTimelines()
         {
             return _timelineUiController.Timelines;
+        }
+
+        public void DisplayDamage(Vector3 worldPosition, int damage)
+        {
+            _damageDisplay.DisplayDamage(worldPosition, damage);
         }
     }
 }

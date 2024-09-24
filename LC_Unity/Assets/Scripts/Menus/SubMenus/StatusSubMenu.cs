@@ -58,9 +58,9 @@ namespace Menus.SubMenus
             if(_fedCharacter != null)
             {
                 _characterName.text = _fedCharacter.Name;
-                _health.SetGauge(_fedCharacter.BaseHealth.CurrentValue, _fedCharacter.BaseHealth.MaxValue);
-                _mana.SetGauge(_fedCharacter.BaseMana.CurrentValue, _fedCharacter.BaseMana.MaxValue);
-                _essence.SetGauge(_fedCharacter.BaseEssence.CurrentValue, _fedCharacter.BaseEssence.MaxValue);
+                _health.SetGauge(_fedCharacter.CurrentHealth, _fedCharacter.MaxHealth);
+                _mana.SetGauge(_fedCharacter.CurrentMana, _fedCharacter.MaxMana);
+                _essence.SetGauge(_fedCharacter.CurrentEssence, _fedCharacter.MaxEssence);
 
                 _level.text = (_fedCharacter.Level + 1).ToString();
 

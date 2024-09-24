@@ -40,6 +40,11 @@ namespace BattleSystem.UI
             Animator.Play("Show");
         }
 
+        public void Hide()
+        {
+            Animator.Play("Hide");
+        }
+
         public void Feed(BattlerBehaviour character)
         {
             _currentCharacter = character;

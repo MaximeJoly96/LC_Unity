@@ -28,9 +28,9 @@ namespace Menus
             _character = character;
 
             _name.text = character.Name;
-            _hpGauge.SetGauge(character.BaseHealth.CurrentValue, character.BaseHealth.MaxValue);
-            _manaGauge.SetGauge(character.BaseMana.CurrentValue, character.BaseMana.MaxValue);
-            _essenceGauge.SetGauge(character.BaseEssence.CurrentValue, character.BaseEssence.MaxValue);
+            _hpGauge.SetGauge(character.CurrentHealth, character.MaxHealth);
+            _manaGauge.SetGauge(character.CurrentMana, character.MaxMana);
+            _essenceGauge.SetGauge(character.CurrentEssence, character.MaxEssence);
 
             _xpGauge.SetLevel(character.GetXpForCurrentLevel(), character.GetXpRequiredForLevel(character.Level), character.Level);
         }

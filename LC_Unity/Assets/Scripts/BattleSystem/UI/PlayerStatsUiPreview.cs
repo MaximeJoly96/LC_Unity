@@ -18,9 +18,9 @@ namespace BattleSystem.UI
 
         public void Feed(Character character)
         {
-            _health.text = character.BaseHealth.CurrentValue + "/" + character.BaseHealth.MaxValue + " HP";
-            _mana.text = character.BaseMana.CurrentValue + "/" + character.BaseMana.MaxValue + " MP";
-            _essence.text = character.BaseEssence.CurrentValue + "/" + character.BaseEssence.MaxValue + " EP";
+            _health.text = character.CurrentHealth + "/" + character.MaxHealth + " HP";
+            _mana.text = character.CurrentMana + "/" + character.MaxMana + " MP";
+            _essence.text = character.CurrentEssence + "/" + character.MaxEssence + " EP";
 
             for(int i = 0; i < _status.Length && i < character.ActiveEffects.Count; i++)
             {

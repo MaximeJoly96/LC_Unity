@@ -48,7 +48,13 @@ namespace Abilities
             TargetEligibility eligibility = (TargetEligibility)Enum.Parse(typeof(TargetEligibility), node.SelectSingleNode("TargetEligibility").InnerText);
             AbilityCategory category = (AbilityCategory)Enum.Parse(typeof(AbilityCategory), node.SelectSingleNode("Category").InnerText);
 
-            return new Ability(id, name, description, cost, usability, priority, eligibility, category);
+            Ability ability = new Ability(id, name, description, cost, usability, priority, eligibility, category);
+
+            XmlNode animationNode = node.SelectSingleNode("AnimationId");
+            if (animationNode != null)
+                ability.AnimationId = int.Parse(animationNode.InnerText);
+
+            return ability;
         }
     }
 }

@@ -24,7 +24,8 @@ namespace BattleSystem
         BattleStart,
         ComputingEnemyTurn,
         PlayerMoveSelection,
-        TargetSelection
+        TargetSelection,
+        BattleProcess,
     }
 
     public class BattleManager : MonoBehaviour
@@ -176,6 +177,16 @@ namespace BattleSystem
                 {
                     _selectionDelay = 0.0f;
                     _delayOn = false;
+                }
+            }
+
+            if(CurrentState == BattleState.BattleProcess)
+            {
+                if(_charactersInCombat.All(c => c.FinishedAction) && _enemiesInCombat.All(c => c.FinishedAction))
+                {
+                    _charactersInCombat.ForEach(c => c.ResetTurn());
+                    _enemiesInCombat.ForEach(e => e.ResetTurn());
+                    UpdateState(BattleState.ComputingEnemyTurn);
                 }
             }
         }
@@ -386,7 +397,7 @@ namespace BattleSystem
                 case BattleState.PlayerMoveSelection:
                     OpenAllCombatWindows();
                     if (_charactersInCombat.All(c => c.LockedInAbility != null))
-                        ProcessBattle();
+                        UpdateState(BattleState.BattleProcess);
                     else
                         _uiManager.FeedMoveSelectionWindow(_turnManager.CurrentCharacter);
                     break;
@@ -403,6 +414,11 @@ namespace BattleSystem
                     _turnManager = new TurnManager(_charactersInCombat);
                     ComputeEnemyTurn();
                     UpdateState(BattleState.PlayerMoveSelection);
+                    break;
+                case BattleState.BattleProcess:
+                    _uiManager.HideMoveSelection();
+                    _uiManager.CloseHelpWindow();
+                    ProcessBattle();
                     break;
             }
         }

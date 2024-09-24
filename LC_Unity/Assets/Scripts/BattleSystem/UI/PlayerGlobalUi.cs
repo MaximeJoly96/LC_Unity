@@ -38,6 +38,11 @@ namespace BattleSystem.UI
             _moveSelectionWindow.Show();
         }
 
+        public void CloseMoveSelectionWindow()
+        {
+            _moveSelectionWindow.Hide();
+        }
+
         public void FeedMoveSelectionWindow(BattlerBehaviour character)
         {
             _moveSelectionWindow.Feed(character);

@@ -15,6 +15,7 @@ namespace BattleSystem
         public void ProcessBattle(List<BattlerTimeline> timelines)
         {
             _timelines = timelines;
+            _timelines.ForEach(t => t.Processed = false);
             _battleOn = true;
             _battleTimer = 0.0f;
         }
@@ -39,12 +40,14 @@ namespace BattleSystem
         {
             timeline.Processed = true;
 
-            if(timeline.Battler.LockedInAbility.Id == 0)
+            if (timeline.Battler.LockedInAbility.Targets.Count > 0)
             {
-                StartCoroutine(MoveToTarget(timeline.Battler, 
+                StartCoroutine(MoveToTarget(timeline.Battler,
                                             timeline.Battler.LockedInAbility.Targets[0],
                                             timeline.Battler.LockedInAbility.Range));
             }
+            else
+                timeline.Battler.FinishedTurn();
         }
 
         private IEnumerator MoveToTarget(BattlerBehaviour source, BattlerBehaviour target, int range)

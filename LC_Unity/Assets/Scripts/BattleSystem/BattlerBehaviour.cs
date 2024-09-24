@@ -19,6 +19,7 @@ namespace BattleSystem
 
         public Battler BattlerData { get; private set; }
         public Ability LockedInAbility { get; set; }
+        public bool FinishedAction { get; private set; }
 
         public void Feed(Battler battler)
         {
@@ -35,35 +36,6 @@ namespace BattleSystem
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            /*BattlerBehaviour collidedWith = other.GetComponent<BattlerBehaviour>();
-            if(collidedWith != null && LockedInAbility != null)
-            {
-                switch (LockedInAbility.TargetEligibility)
-                {
-                    case TargetEligibility.Any:
-                        if (collidedWith.IsEnemy != IsEnemy)
-                        {
-                            if (LockedInAbility.Category == AbilityCategory.AttackCommand)
-                            {
-                                Weapon weapon = BattlerData.Character.RightHand.GetItem() as Weapon;
-                                LockedInAbility.AnimationId = weapon.Animation;
-                            }
-
-                            GameObject hitAnimation = Instantiate(FindObjectOfType<AttackAnimationsWrapper>().GetAttackAnimation(LockedInAbility.AnimationId));
-                            hitAnimation.transform.position = collidedWith.transform.position;
-                        }
-                        break;
-                    case TargetEligibility.Enemy:
-                    case TargetEligibility.All:
-                        if (collidedWith.IsEnemy != IsEnemy)
-                            Debug.Log(gameObject.name + " strikes " + collidedWith.name);
-                        break;
-                }
-            }*/
-        }
-
         public void FinishedAbilityMovement(BattlerBehaviour target)
         {
             if (LockedInAbility.Category == AbilityCategory.AttackCommand)
@@ -74,6 +46,35 @@ namespace BattleSystem
 
             GameObject hitAnimation = Instantiate(FindObjectOfType<AttackAnimationsWrapper>().GetAttackAnimation(LockedInAbility.AnimationId));
             hitAnimation.transform.position = target.transform.position;
+
+            AttackAnimationBehaviour aab = hitAnimation.GetComponent<AttackAnimationBehaviour>();
+            aab.AbilityHitEvent.RemoveAllListeners();
+            aab.AnimationEndedEvent.RemoveAllListeners();
+            aab.AbilityHitEvent.AddListener(ComputeDamage);
+            aab.AnimationEndedEvent.AddListener(FinishedTurn);
+        }
+
+        private void ComputeDamage()
+        {
+            int result = DamageFormula.ComputeResult(LockedInAbility.Id,
+                                                     BattlerData.Character,
+                                                     LockedInAbility.Targets[0].BattlerData.Character);
+
+            LockedInAbility.Targets[0].BattlerData.ChangeHealth(result);
+
+            FindObjectOfType<BattleUiManager>().DisplayDamage(LockedInAbility.Targets[0].transform.position, result);
+        }
+
+        public void FinishedTurn()
+        {
+            LockedInAbility = null;
+            FinishedAction = true;
+        }
+
+        public void ResetTurn()
+        {
+            LockedInAbility = null;
+            FinishedAction = false;
         }
     }
 }

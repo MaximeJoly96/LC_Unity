@@ -12,5 +12,10 @@ namespace BattleSystem.Model
         {
             Character = character;
         }
+
+        public void ChangeHealth(int change)
+        {
+            Character.ChangeHealth(change);
+        }
     }
 }
