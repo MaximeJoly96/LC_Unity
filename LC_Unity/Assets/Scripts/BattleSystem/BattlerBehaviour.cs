@@ -11,6 +11,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using Actions;
+using System.Xml.Serialization;
 
 namespace BattleSystem
 {
@@ -115,14 +116,20 @@ namespace BattleSystem
                 else if(ability.Effects[i] is Dispel)
                 {
                     Dispel dispel = ability.Effects[i] as Dispel;
-                    dispel.Apply(ability.Targets[0].BattlerData.Character);
-                    UiManager.RemoveStatus(ability.Targets[0].transform.position, dispel.Value);
+                    if (ability.Targets[0].BattlerData.Character.ActiveEffects.Any(e => e.Effect == dispel.Value))
+                    {
+                        dispel.Apply(ability.Targets[0].BattlerData.Character);
+                        UiManager.RemoveStatus(ability.Targets[0].transform.position, dispel.Value);
+                    }
                 }
                 else if (ability.Effects[i] is Effects.InflictStatus)
                 {
                     Effects.InflictStatus inflictStatus = ability.Effects[i] as Effects.InflictStatus;
-                    inflictStatus.Apply(ability.Targets[0].BattlerData.Character);
-                    UiManager.DisplayStatus(ability.Targets[0].transform.position, inflictStatus.Value);
+                    if (!ability.Targets[0].BattlerData.Character.ActiveEffects.Any(e => e.Effect == inflictStatus.Value))
+                    {
+                        inflictStatus.Apply(ability.Targets[0].BattlerData.Character);
+                        UiManager.DisplayStatus(ability.Targets[0].transform.position, inflictStatus.Value);
+                    }
                 }   
             }
         }
