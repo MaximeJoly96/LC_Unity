@@ -14,9 +14,9 @@ namespace BattleSystem.UI
         [SerializeField]
         private Image _statusIcon;
 
-        public void Feed(EffectType effect)
+        public void Feed(EffectType effect, bool add)
         {
-            _statusLabel.text = Localizer.Instance.GetString(LanguageUtility.GetEffectTypeLanguageKey(effect));
+            _statusLabel.text = (add ? "+" : "-") + Localizer.Instance.GetString(LanguageUtility.GetEffectTypeLanguageKey(effect));
             _statusIcon.sprite = FindObjectOfType<EffectTypesWrapper>().GetSpriteFromEffectType(effect);
         }
 

@@ -25,7 +25,7 @@ namespace BattleSystem.UI
             instDmgText.Show(damage);
         }
 
-        public void DisplayStatusChange(Vector3 worldPosition, EffectType effect)
+        public void DisplayStatusChange(Vector3 worldPosition, EffectType effect, bool add)
         {
             if (!_instStatusWrapper)
                 _instStatusWrapper = Instantiate(_displayedStatusWrapper, _damageAndEffectsCanvas.transform);
@@ -33,7 +33,7 @@ namespace BattleSystem.UI
             _instStatusWrapper.transform.position = Camera.main.WorldToScreenPoint(worldPosition);
 
             DisplayedStatusChange status = Instantiate(_displayedStatusChangePrefab, _instStatusWrapper);
-            status.Feed(effect);
+            status.Feed(effect, add);
             status.Show();
         }
     }
