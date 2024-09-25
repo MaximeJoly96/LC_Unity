@@ -14,6 +14,10 @@ namespace Engine.Movement.Moves
             color.a = On ? 0.0f : 1.0f;
             sr.color = color;
 
+            Animator animator = agent.GetComponent<Animator>();
+            if (animator)
+                animator.Play(On ? "Hidden" : "Idle");
+
             IsFinished = true;
         }
     }

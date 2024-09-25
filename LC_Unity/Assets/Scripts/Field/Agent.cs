@@ -34,6 +34,12 @@ namespace Field
             _speed = speed;
         }
 
+        // For unit testing purposes
+        public void SetId(string id)
+        {
+            _id = id;
+        }
+
         public void UpdateDirection(Direction direction)
         {
             if(!FixedDirection)

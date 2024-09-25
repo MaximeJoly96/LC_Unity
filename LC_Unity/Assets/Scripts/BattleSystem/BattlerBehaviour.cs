@@ -122,6 +122,22 @@ namespace BattleSystem
                         UiManager.RemoveStatus(ability.Targets[0].transform.position, dispel.Value);
                     }
                 }
+                else if (ability.Effects[i] is DrainFromDamage)
+                {
+                    // TODO
+                }
+                else if (ability.Effects[i] is ElementalAffinityExploitManaRefund)
+                {
+                    // TODO
+                }
+                else if (ability.Effects[i] is ElementalAffinityExploitSelfStatus)
+                {
+                    // TODO
+                }
+                else if (ability.Effects[i] is HpThresholdBonusDamage)
+                {
+                    // TODO
+                }
                 else if (ability.Effects[i] is Effects.InflictStatus)
                 {
                     Effects.InflictStatus inflictStatus = ability.Effects[i] as Effects.InflictStatus;
@@ -131,6 +147,11 @@ namespace BattleSystem
                         UiManager.DisplayStatus(ability.Targets[0].transform.position, inflictStatus.Value);
                     }
                 }   
+                else if (ability.Effects[i] is NegativeStatusBonusDamage)
+                {
+                    // TODO
+                }
+
             }
         }
 
