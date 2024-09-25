@@ -7,6 +7,9 @@ using Inventory;
 using UnityEngine.Audio;
 using MusicAndSounds;
 using Effects;
+using System;
+using System.Collections;
+using System.Linq;
 
 namespace BattleSystem
 {
@@ -16,6 +19,7 @@ namespace BattleSystem
         private int _battlerId;
         [SerializeField]
         private bool _isEnemy;
+        private BattleUiManager _uiManager;
 
         public int BattlerId { get { return _battlerId; } }
         public bool IsEnemy { get { return _isEnemy; } set { _isEnemy = value; } }
@@ -24,6 +28,16 @@ namespace BattleSystem
         public Battler BattlerData { get; private set; }
         public Ability LockedInAbility { get; set; }
         public bool FinishedAction { get; private set; }
+        public BattleUiManager UiManager
+        {
+            get
+            {
+                if (!_uiManager)
+                    _uiManager = FindObjectOfType<BattleUiManager>();
+
+                return _uiManager;
+            }
+        }
 
         public void Feed(Battler battler)
         {
@@ -63,7 +77,12 @@ namespace BattleSystem
 
         private void Strike()
         {
-            ApplyAbilityEffects(LockedInAbility);
+            Strike(false);
+        }
+
+        private void Strike(bool secondaryHit)
+        {
+            ApplyAbilityEffects(LockedInAbility, secondaryHit);
 
             int result = DamageFormula.ComputeResult(LockedInAbility.Id,
                                                      BattlerData.Character,
@@ -71,20 +90,24 @@ namespace BattleSystem
 
             LockedInAbility.Targets[0].BattlerData.ChangeHealth(result);
 
-            BattleUiManager uiManager = FindObjectOfType<BattleUiManager>();
-            uiManager.DisplayDamage(LockedInAbility.Targets[0].transform.position, result);
-            uiManager.UpdatePlayerGui(LockedInAbility.Targets[0].BattlerData.Character);
+            UiManager.DisplayDamage(LockedInAbility.Targets[0].transform.position, result);
+            UiManager.UpdatePlayerGui(LockedInAbility.Targets[0].BattlerData.Character);
         }
 
-        private void ApplyAbilityEffects(Ability ability)
+        private void ApplyAbilityEffects(Ability ability, bool secondaryHit)
         {
             for(int i = 0; i < ability.Effects.Count; i++)
             {
-                if (ability.Effects[i] is InflictStatus)
+                if (!secondaryHit && ability.Effects[i] is AdditionalStrike)
+                {
+                    if (ability.Category == AbilityCategory.AttackCommand)
+                        Strike(true);
+                }
+                else if (ability.Effects[i] is InflictStatus)
                 {
                     InflictStatus inflictStatus = ability.Effects[i] as InflictStatus;
                     inflictStatus.Apply(ability.Targets[0].BattlerData.Character);
-                    FindObjectOfType<BattleUiManager>().DisplayStatus(ability.Targets[0].transform.position, inflictStatus.Value);
+                    UiManager.DisplayStatus(ability.Targets[0].transform.position, inflictStatus.Value);
                 }   
             }
         }
