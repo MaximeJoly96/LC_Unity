@@ -192,6 +192,8 @@ namespace Field
                     }
                 }
 
+                ScanForAgents();
+                ScanForDoors();
                 ScanForTransitions();
                 DestroyUnnecessaryFields();
             }

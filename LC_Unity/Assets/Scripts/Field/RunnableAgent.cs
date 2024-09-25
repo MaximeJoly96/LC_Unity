@@ -71,7 +71,7 @@ namespace Field
             Runner.RunEvents(_sequence); 
         }
 
-        private void Start()
+        private void OnEnable()
         {
             if (_trigger == AgentTrigger.Foreground)
                 RunSequence();

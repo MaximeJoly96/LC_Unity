@@ -9,16 +9,19 @@ namespace Engine.Movement.Moves
 
         public override void Run(Agent agent)
         {
-            SpriteRenderer sr = agent.GetComponent<SpriteRenderer>();
-            Color color = sr.color;
-            color.a = On ? 0.0f : 1.0f;
-            sr.color = color;
+            if(agent != null)
+            {
+                SpriteRenderer sr = agent.GetComponent<SpriteRenderer>();
+                Color color = sr.color;
+                color.a = On ? 0.0f : 1.0f;
+                sr.color = color;
 
-            Animator animator = agent.GetComponent<Animator>();
-            if (animator)
-                animator.Play(On ? "Hidden" : "Idle");
+                Animator animator = agent.GetComponent<Animator>();
+                if (agent.gameObject.activeInHierarchy && animator)
+                    animator.Play(On ? "Hidden" : "Idle");
 
-            IsFinished = true;
+                IsFinished = true;
+            }
         }
     }
 }
