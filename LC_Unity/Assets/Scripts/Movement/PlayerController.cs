@@ -115,7 +115,7 @@ namespace Movement
             Collider2D interactible = colliders.FirstOrDefault(c => c.gameObject.GetComponent<RunnableAgent>());
             if(interactible != null)
             {
-                _change = interactible.transform.position - _collider.bounds.center;
+                _change = interactible.transform.position - transform.position;
                 HandleAnimationAndMovement();
                 _rb.velocity = Vector3.zero;
                 _change = Vector3.zero;

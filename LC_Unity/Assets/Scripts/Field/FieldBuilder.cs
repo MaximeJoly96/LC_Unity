@@ -77,11 +77,14 @@ namespace Field
                 return;
             }
 
-            Agent[] agents = CurrentField.transform.GetComponentsInChildren<Agent>(true);
+            List<Agent> agents = CurrentField.transform.GetComponentsInChildren<Agent>(true).ToList();
+
+            foreach (PlayableField neighbour in CurrentField.NeighbourFields)
+                agents.AddRange(neighbour.transform.GetComponentsInChildren<Agent>(true));
 
             AgentsManager.Instance.Reset();
 
-            for(int i = 0; i < agents.Length; i++)
+            for(int i = 0; i < agents.Count; i++)
             {
                 AgentsManager.Instance.RegisterAgent(agents[i]);
             }

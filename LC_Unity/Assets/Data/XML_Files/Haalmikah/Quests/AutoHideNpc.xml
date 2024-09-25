@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <Wait Duration="1" />
+  <ConditionalBranch Type="VariableCondition" Condition="GreaterThan" FirstMember="quest0Progress" SecondMember="0">
+    <true>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokOutside">
+        <Transparent Status="true" />
+      </SetMoveRoute>
+    </true>
+  </ConditionalBranch>
+</EventsSequence>

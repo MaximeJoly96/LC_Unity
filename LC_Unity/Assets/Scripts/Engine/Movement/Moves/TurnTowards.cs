@@ -1,5 +1,6 @@
 ﻿using Field;
 using Movement;
+using UnityEngine;
 
 namespace Engine.Movement.Moves
 {
@@ -10,8 +11,9 @@ namespace Engine.Movement.Moves
         public override void Run(Agent agent)
         {
             Agent target = AgentsManager.Instance.GetAgent(Target);
-            Direction oppositeDirection = DirectionUtils.GetOppositeDirection(target.CurrentDirection);
-            agent.UpdateDirection(oppositeDirection);
+
+            Vector3 difference = (target.transform.position - agent.transform.position).normalized;
+            agent.UpdateDirection(DirectionUtils.VectorToDirection(difference));
             IsFinished = true;
         }
     }

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="quest0Progress" SecondMember="0">
+    <true>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokOutside">
+        <TurnTowards Target="louga" />
+      </SetMoveRoute>
+      <Wait Duration="0.25" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest0Dialog0</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.5" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokOutside">
+        <Through Status="true" />
+        <MoveRelative DeltaX="0" DeltaY="-0.5" />
+        <MoveRelative DeltaX="-5" DeltaY="0" />
+        <Transparent Status="true" />
+      </SetMoveRoute>
+      <ControlVariable Key="quest0Progress">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+  </ConditionalBranch>
+</EventsSequence>

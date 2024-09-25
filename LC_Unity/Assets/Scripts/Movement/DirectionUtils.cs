@@ -14,31 +14,12 @@ namespace Movement
         {
             vector.Normalize();
 
-            if(vector.x < 0.0f)
+            if(Mathf.Abs(vector.x) > Mathf.Abs(vector.y))
             {
-                if (Mathf.Abs(vector.y - 0.0f) < 0.01f)
-                    return Direction.Left;
-                else if (vector.y > 0.0f)
-                    return Direction.UpLeft;
-                else
-                    return Direction.DownLeft;
+                return vector.x <= 0.0f ? Direction.Left : Direction.Right;
             }
-            else if(vector.x > 0.0f)
-            {
-                if (Mathf.Abs(vector.y - 0.0f) < 0.01f)
-                    return Direction.Right;
-                else if (vector.y > 0.0f)
-                    return Direction.UpRight;
-                else
-                    return Direction.DownRight;
-            }
-            else if(Mathf.Abs(vector.x - 0.0f) < 0.01f)
-            {
-                return vector.y < 0.0f ? Direction.Down : Direction.Up;
-            }
-
-            LogsHandler.Instance.LogError("Could not compute direction from vector.");
-            return Direction.Down;
+            else
+                return vector.y <= 0.0f ? Direction.Down : Direction.Up;
         }
 
         public static Direction GetOppositeDirection(Direction direction)

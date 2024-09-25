@@ -226,7 +226,7 @@ namespace FlowControl
                 try
                 {
                     int value = (int)dataHolder.GetData(member);
-                    return ProcessVariableCondition(targetValue, value, condition);
+                    return ProcessVariableCondition(value, targetValue, condition);
                 }
                 catch (InvalidCastException)
                 {
