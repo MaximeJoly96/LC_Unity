@@ -35,5 +35,21 @@ namespace Testing.Engine.Character
             Assert.AreEqual("5", show.AgentId);
             Assert.AreEqual(true, show.WaitForCompletion);
         }
+
+        [Test]
+        public void ParseDisableAgentTest()
+        {
+            DisableAgent disable = XmlCharacterParser.ParseDisableAgent(GetDataToParse("DisableAgent"));
+
+            Assert.AreEqual("test", disable.Target);
+        }
+
+        [Test]
+        public void ParseEnableAgentTest()
+        {
+            EnableAgent enable = XmlCharacterParser.ParseEnableAgent(GetDataToParse("EnableAgent"));
+
+            Assert.AreEqual("test2", enable.Target);
+        }
     }
 }

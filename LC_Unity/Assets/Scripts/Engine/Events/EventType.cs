@@ -40,6 +40,8 @@
         ShowAnimation,
         ShowBalloonIcon,
         ShowAgentAnimation,
+        DisableAgent,
+        EnableAgent,
 
         // ScreenEffects
         FadeScreen,

@@ -109,6 +109,12 @@ namespace Engine.Events
                         case EventType.ShowAgentAnimation:
                             sequence.Add(XmlCharacterParser.ParseShowAgentAnimation(evt));
                             break;
+                        case EventType.DisableAgent:
+                            sequence.Add(XmlCharacterParser.ParseDisableAgent(evt));
+                            break;
+                        case EventType.EnableAgent:
+                            sequence.Add(XmlCharacterParser.ParseEnableAgent(evt));
+                            break;
                         case EventType.TintScreen:
                             sequence.Add(XmlScreenEffectsParser.ParseTintScreen(evt));
                             break;

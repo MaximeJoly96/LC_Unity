@@ -17,8 +17,8 @@ namespace Engine.Movement.Moves
                 sr.color = color;
 
                 Animator animator = agent.GetComponent<Animator>();
-                if (agent.gameObject.activeInHierarchy && animator)
-                    animator.Play(On ? "Hidden" : "Idle");
+                if (animator)
+                    animator.enabled = !On;
 
                 IsFinished = true;
             }

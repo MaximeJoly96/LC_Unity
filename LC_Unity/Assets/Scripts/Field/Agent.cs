@@ -15,6 +15,28 @@ namespace Field
         [SerializeField]
         private Transform _balloonIconSpot;
 
+        private bool _disabled;
+
+        public bool Disabled
+        {
+            get { return _disabled; }
+            private set
+            {
+                _disabled = value;
+
+                Renderer renderer = GetComponent<Renderer>();
+                if (renderer)
+                    renderer.enabled = !value;
+
+                Animator animator = GetComponent<Animator>();
+                if(animator)
+                    animator.enabled = !value;
+
+                Collider2D collider2D = GetComponent<Collider2D>();
+                if (collider2D)
+                    collider2D.enabled = !value;
+            }
+        }
         public string Id { get { return _id; } }
         public float Speed { get { return _speed; } }
         public Direction CurrentDirection { get { return _currentDirection; } }
@@ -84,6 +106,16 @@ namespace Field
                 case TransferObject.PossibleDirection.Retain:
                     break;
             }
+        }
+
+        public void DisableAgent()
+        {
+            Disabled = true;
+        }
+
+        public void EnableAgent()
+        {
+            Disabled = false;
         }
     }
 }

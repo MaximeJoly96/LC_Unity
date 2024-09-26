@@ -37,5 +37,23 @@ namespace Engine.Character
 
             return show;
         }
+
+        public static DisableAgent ParseDisableAgent(XmlNode data)
+        {
+            DisableAgent disable = new DisableAgent();
+
+            disable.Target = data.Attributes["Target"].InnerText;
+
+            return disable;
+        }
+
+        public static EnableAgent ParseEnableAgent(XmlNode data)
+        {
+            EnableAgent enable = new EnableAgent();
+
+            enable.Target = data.Attributes["Target"].InnerText;
+
+            return enable;
+        }
     }
 }
