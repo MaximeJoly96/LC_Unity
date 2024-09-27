@@ -40,8 +40,16 @@ namespace BattleSystem
             if(currentBattler.LockedInAbility.Category == AbilityCategory.AttackCommand)
             {
                 Weapon weapon = currentBattler.BattlerData.Character.RightHand.GetItem() as Weapon;
-                currentBattler.LockedInAbility.Range = weapon != null ? weapon.Range : 100;
-                currentBattler.LockedInAbility.Effects = new List<Effects.IEffect>(weapon.Effects);
+                if(weapon != null)
+                {
+                    currentBattler.LockedInAbility.Range = weapon.Range;
+                    currentBattler.LockedInAbility.Effects = new List<Effects.IEffect>(weapon.Effects);
+                }
+                else
+                {
+                    currentBattler.LockedInAbility.Range = 100;
+                }
+                
             }
         }
 
