@@ -49,5 +49,28 @@ namespace Testing.Engine.FlowControl
             Assert.NotNull(condition.SequenceWhenFalse);
             Assert.NotNull(condition.SequenceWhenTrue);
         }
+
+        [Test]
+        public void ParseItemPossessedConditionTest()
+        {
+            ItemPossessed possessed = XmlFlowControlParser.ParseInventoryCondition(GetDataToParse("InventoryCondition", 0)) as ItemPossessed;
+
+            Assert.AreEqual(0, possessed.ItemId);
+            Assert.AreEqual(1, possessed.MinQuantity);
+
+            Assert.NotNull(possessed.SequenceWhenFalse);
+            Assert.NotNull(possessed.SequenceWhenTrue);
+        }
+
+        [Test]
+        public void ParseItemEquippedConditionTest()
+        {
+            ItemEquipped equipped = XmlFlowControlParser.ParseInventoryCondition(GetDataToParse("InventoryCondition", 1)) as ItemEquipped;
+
+            Assert.AreEqual(0, equipped.ItemId);
+
+            Assert.NotNull(equipped.SequenceWhenFalse);
+            Assert.NotNull(equipped.SequenceWhenTrue);
+        }
     }
 }

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <InventoryCondition Type="ItemPossessed" ItemId="0" MinQuantity="1">
+    <true>
+      <ControlVariable Key="testItemPossessedCondition">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testItemPossessedCondition">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </InventoryCondition>
+  <InventoryCondition Type="ItemEquipped" ItemId="0">
+    <true>
+      <ControlVariable Key="testItemEquippedCondition">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testItemEquippedCondition">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </InventoryCondition>
+</EventsSequence>

@@ -76,6 +76,16 @@ namespace Party
 
             if(item != null)
                 item.ChangeAmount(change.Quantity);
+            else
+            {
+                ItemsWrapper wrapper = Object.FindObjectOfType<ItemsWrapper>();
+                if(wrapper)
+                {
+                    InventoryItem inventoryItem = new InventoryItem(wrapper.GetItemFromId(change.Id));
+                    inventoryItem.ChangeAmount(change.Quantity);
+                    _inventory.Add(inventoryItem);
+                }
+            }
         }
 
         public List<Character> GetParty()

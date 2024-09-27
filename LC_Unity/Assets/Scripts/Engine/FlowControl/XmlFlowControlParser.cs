@@ -70,6 +70,46 @@ namespace Engine.FlowControl
             }
         }
 
+        public static InventoryCondition ParseInventoryCondition(XmlNode data)
+        {
+            try
+            {
+                string type = data.Attributes["Type"].InnerText;
+                int itemId = int.Parse(data.Attributes["ItemId"].InnerText);
+
+                if (type == typeof(ItemPossessed).Name)
+                {
+                    ItemPossessed itemPossessed = new ItemPossessed
+                    {
+                        ItemId = itemId,
+                        MinQuantity = int.Parse(data.Attributes["MinQuantity"].InnerText),
+
+                        SequenceWhenTrue = ParseConditionResults(true, data),
+                        SequenceWhenFalse = ParseConditionResults(false, data)
+                    };
+                    return itemPossessed;
+                }
+                else if (type == typeof(ItemEquipped).Name)
+                {
+                    ItemEquipped itemEquipped = new ItemEquipped 
+                    { 
+                        ItemId = itemId,
+
+                        SequenceWhenTrue = ParseConditionResults(true, data),
+                        SequenceWhenFalse = ParseConditionResults(false, data)
+                    };
+                    return itemEquipped;
+                }
+                else
+                    throw new InvalidOperationException("Unsupported Inventory condition type");
+            }
+            catch(Exception e)
+            {
+                LogsHandler.Instance.LogFatalError("XmlFlowControlParser cannot parse InventoryCondition. Exception: " + e.Message);
+                return null;
+            }
+        }
+
         private static EventsSequence ParseConditionResults(bool conditionSuccess, XmlNode node)
         {
             var child = node.SelectSingleNode(conditionSuccess.ToString().ToLower());

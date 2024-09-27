@@ -14,7 +14,7 @@ namespace Testing.Engine.Events
             EventsSequence sequence = EventsSequenceParser.ParseEventsSequence(file);
 
             Assert.IsNotNull(sequence);
-            Assert.AreEqual(56, sequence.Events.Count);
+            Assert.AreEqual(58, sequence.Events.Count);
         }
     }
 }

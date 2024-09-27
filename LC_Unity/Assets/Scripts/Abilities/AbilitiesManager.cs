@@ -30,7 +30,7 @@ namespace Abilities
 
         public Ability GetAbility(int id)
         {
-            return Abilities.FirstOrDefault(a => a.Id == id);
+            return Abilities != null ? Abilities.FirstOrDefault(a => a.Id == id) : null;
         }
     }
 }

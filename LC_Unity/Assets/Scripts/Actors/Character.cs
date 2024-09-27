@@ -354,16 +354,21 @@ namespace Actors
             ItemsWrapper wrapper = GameObject.FindObjectOfType<ItemsWrapper>();
             BaseItem item = wrapper.GetItemFromId(itemId);
 
-            if(item == null)
+            ChangeEquipment(item);
+        }
+
+        public void ChangeEquipment(BaseItem item)
+        {
+            if (item == null)
                 return;
-            
-            switch(item.Category)
+
+            switch (item.Category)
             {
                 case ItemCategory.Weapon:
                     RightHand = new EquipmentSlot(EquipmentPosition.RightHand, item.Id);
                     break;
                 case ItemCategory.Armour:
-                    switch((item as Armour).Type)
+                    switch ((item as Armour).Type)
                     {
                         case ArmourType.Head:
                             Head = new EquipmentSlot(EquipmentPosition.Helmet, item.Id);
@@ -522,6 +527,26 @@ namespace Actors
             }
 
             return effects;
+        }
+
+        public bool HasItemEquipped(int itemId)
+        {
+            if(LeftHand.ItemId == itemId)
+                return true;
+
+            if(RightHand.ItemId == itemId) 
+                return true;
+
+            if (Head.ItemId == itemId)
+                return true;
+
+            if (Body.ItemId == itemId)
+                return true;
+
+            if (Accessory.ItemId == itemId)
+                return true;
+
+            return false;
         }
 
         public string Serialize()
