@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="mySwitch" SecondMember="false">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="true" SecondMember="mySwitch">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="mySwitch1" SecondMember="mySwitch2">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="SwitchCondition" Condition="NotEqual" FirstMember="mySwitch" SecondMember="true">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="SwitchCondition" Condition="NotEqual" FirstMember="false" SecondMember="mySwitch">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="SwitchCondition" Condition="NotEqual" FirstMember="mySwitch1" SecondMember="mySwitch2">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+</EventsSequence>

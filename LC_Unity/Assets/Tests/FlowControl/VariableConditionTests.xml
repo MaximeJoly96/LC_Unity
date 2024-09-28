@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="myVar" SecondMember="5">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+        <ControlVariable Key="testValue">
+          <Operation>Set</Operation>
+          <Operand Type="Constant">0</Operand>
+        </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="7" SecondMember="myVar">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="myVar1" SecondMember="myVar2">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="GreaterThan" FirstMember="myVar" SecondMember="5">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="GreaterThan" FirstMember="9" SecondMember="myVar">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="GreaterThan" FirstMember="myVar1" SecondMember="myVar2">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="SmallerThan" FirstMember="myVar" SecondMember="-3">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="SmallerThan" FirstMember="18" SecondMember="myVar">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="SmallerThan" FirstMember="myVar1" SecondMember="myVar2">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="Different" FirstMember="myVar" SecondMember="1">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="Different" FirstMember="8" SecondMember="myVar">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="Different" FirstMember="myVar1" SecondMember="myVar2">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="EqualOrGreaterThan" FirstMember="myVar" SecondMember="1900">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="EqualOrGreaterThan" FirstMember="4567" SecondMember="myVar">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="EqualOrGreaterThan" FirstMember="myVar1" SecondMember="myVar2">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="EqualOrSmallerThan" FirstMember="myVar" SecondMember="4">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="EqualOrSmallerThan" FirstMember="89" SecondMember="myVar">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="EqualOrSmallerThan" FirstMember="myVar1" SecondMember="myVar2">
+    <true>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">1</Operand>
+      </ControlVariable>
+    </true>
+    <false>
+      <ControlVariable Key="testValue">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">0</Operand>
+      </ControlVariable>
+    </false>
+  </ConditionalBranch>
+</EventsSequence>
