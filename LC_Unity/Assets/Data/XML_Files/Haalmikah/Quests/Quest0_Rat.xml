@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="quest0Progress" SecondMember="3">
+    <true>
+      <SetMoveRoute SkipIfCannotMove="false" WaitForCompletion="true" RepeatAction="false" AgentId="tutorial_Rat">
+        <TurnTowards Target="louga" />
+      </SetMoveRoute>
+      <Wait Duration="0.25" />
+      <BattleProcessing TroopId="1" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
+      <Wait Duration="1" />
+      <SetMoveRoute SkipIfCannotMove="false" WaitForCompletion="true" RepeatAction="false" AgentId="tutorial_Rat">
+        <ChangeOpacity Alpha="0.6" />
+        <Wait Duration="0.1" />
+        <ChangeOpacity Alpha="0.3" />
+        <Wait Duration="0.1" />
+        <ChangeOpacity Alpha="0" />
+      </SetMoveRoute>
+      <ControlVariable Key="quest0Progress">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">4</Operand>
+      </ControlVariable>
+      <DisableAgent Target="tutorial_Rat" />
+    </true>
+  </ConditionalBranch>
+</EventsSequence>

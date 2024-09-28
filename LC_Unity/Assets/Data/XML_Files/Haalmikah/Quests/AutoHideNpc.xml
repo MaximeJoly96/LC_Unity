@@ -9,4 +9,12 @@
       <EnableAgent Target="warlokOutside" />
     </false>
   </ConditionalBranch>
+  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="quest0Progress" SecondMember="3">
+    <true>
+      <EnableAgent Target="tutorial_Rat" />
+    </true>
+    <false>
+      <DisableAgent Target="tutorial_Rat" />
+    </false>
+  </ConditionalBranch>
 </EventsSequence>
