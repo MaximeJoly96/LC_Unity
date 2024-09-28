@@ -36,54 +36,56 @@
         <Operand Type="Constant">2</Operand>
       </ControlVariable>
     </true>
-  </ConditionalBranch>
-  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="quest0Progress" SecondMember="2">
-    <true>
-      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokQuest0Step2">
-        <TurnTowards Target="louga" />
-      </SetMoveRoute>
-      <Wait Duration="0.25" />
-      <InventoryCondition Type="ItemPossessed" ItemId="1000" MinQuantity="1">
+    <false>
+      <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="quest0Progress" SecondMember="2">
         <true>
-          <InventoryCondition Type="ItemEquipped" ItemId="1000">
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokQuest0Step2">
+            <TurnTowards Target="louga" />
+          </SetMoveRoute>
+          <Wait Duration="0.25" />
+          <InventoryCondition Type="ItemPossessed" ItemId="1000" MinQuantity="1">
             <true>
-              <DisplayDialog>
-                <DialogBoxStyle>Classic</DialogBoxStyle>
-                <DialogBoxPosition>Bottom</DialogBoxPosition>
-                <Message>quest0Dialog4</Message>
-                <Locutor>warlok</Locutor>
-                <FaceGraphics></FaceGraphics>
-              </DisplayDialog>
-              <ControlVariable Key="quest0Progress">
-                <Operation>Set</Operation>
-                <Operand Type="Constant">3</Operand>
-              </ControlVariable>
-              <EnableAgent Target="tutorial_Rat" />
+              <InventoryCondition Type="ItemEquipped" ItemId="1000">
+                <true>
+                  <DisplayDialog>
+                    <DialogBoxStyle>Classic</DialogBoxStyle>
+                    <DialogBoxPosition>Bottom</DialogBoxPosition>
+                    <Message>quest0Dialog4</Message>
+                    <Locutor>warlok</Locutor>
+                    <FaceGraphics></FaceGraphics>
+                  </DisplayDialog>
+                  <ControlVariable Key="quest0Progress">
+                    <Operation>Set</Operation>
+                    <Operand Type="Constant">3</Operand>
+                  </ControlVariable>
+                  <EnableAgent Target="tutorial_Rat" />
+                </true>
+                <false>
+                  <DisplayDialog>
+                    <DialogBoxStyle>Classic</DialogBoxStyle>
+                    <DialogBoxPosition>Bottom</DialogBoxPosition>
+                    <Message>quest0DialogNoWeaponEquipped</Message>
+                    <Locutor>warlok</Locutor>
+                    <FaceGraphics></FaceGraphics>
+                  </DisplayDialog>
+                </false>
+              </InventoryCondition>
             </true>
             <false>
+              <ShowBalloonIcon AgentId="warlokQuest0Step2" BalloonIcon="Anger" WaitForCompletion="true"/>
               <DisplayDialog>
                 <DialogBoxStyle>Classic</DialogBoxStyle>
                 <DialogBoxPosition>Bottom</DialogBoxPosition>
-                <Message>quest0DialogNoWeaponEquipped</Message>
+                <Message>quest0DialogNoWeaponInInventory</Message>
                 <Locutor>warlok</Locutor>
                 <FaceGraphics></FaceGraphics>
               </DisplayDialog>
+              <ChangeItems Id="1000" Quantity="1" />
+              <PlaySoundEffect Name="gainItem" Volume="1" Pitch="1" />
             </false>
           </InventoryCondition>
         </true>
-        <false>
-          <ShowBalloonIcon AgentId="warlokQuest0Step2" BalloonIcon="Anger" WaitForCompletion="true"/>
-          <DisplayDialog>
-            <DialogBoxStyle>Classic</DialogBoxStyle>
-            <DialogBoxPosition>Bottom</DialogBoxPosition>
-            <Message>quest0DialogNoWeaponInInventory</Message>
-            <Locutor>warlok</Locutor>
-            <FaceGraphics></FaceGraphics>
-          </DisplayDialog>
-          <ChangeItems Id="1000" Quantity="1" />
-          <PlaySoundEffect Name="gainItem" Volume="1" Pitch="1" />
-        </false>
-      </InventoryCondition>
-    </true>
+      </ConditionalBranch>
+    </false>
   </ConditionalBranch>
 </EventsSequence>
