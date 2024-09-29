@@ -69,6 +69,7 @@ namespace Abilities
         {
             AnimationId = ability.AnimationId;
             Effects = ability.Effects;
+            Range = ability.Range;
         }
     }
 }

@@ -54,6 +54,10 @@ namespace Abilities
             if (animationNode != null)
                 ability.AnimationId = int.Parse(animationNode.InnerText);
 
+            XmlNode rangeNode = node.SelectSingleNode("Range");
+            if(rangeNode != null)
+                ability.Range = int.Parse(rangeNode.InnerText);
+
             return ability;
         }
     }
