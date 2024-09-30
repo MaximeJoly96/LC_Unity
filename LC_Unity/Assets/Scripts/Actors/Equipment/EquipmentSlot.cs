@@ -35,7 +35,7 @@ namespace Actors.Equipment
         public EquipmentItem GetItem()
         {
             ItemsWrapper wrapper = GameObject.FindObjectOfType<ItemsWrapper>();
-            return wrapper.GetItemFromId(ItemId) as EquipmentItem;
+            return wrapper ? wrapper.GetItemFromId(ItemId) as EquipmentItem : null;
         }
     }
 }

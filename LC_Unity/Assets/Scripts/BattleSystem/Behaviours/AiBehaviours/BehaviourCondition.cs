@@ -12,8 +12,6 @@
             SetActions(actionWhenTrue, actionWhenFalse);
         }
 
-        public abstract void Run();
-
         public void SetActions(BehaviourAction whenTrue, BehaviourAction whenFalse)
         {
             ActionWhenTrue = whenTrue;

@@ -170,8 +170,11 @@ namespace BattleSystem
 
         private void Update()
         {
-            if (!IsDead && BattlerData.Character != null && BattlerData.Character.CurrentHealth <= 0)
-                Die();
+            if(BattlerData != null)
+            {
+                if (!IsDead && BattlerData.Character != null && BattlerData.Character.CurrentHealth <= 0)
+                    Die();
+            }
         }
 
         public void Die()

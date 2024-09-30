@@ -21,7 +21,10 @@ namespace Abilities
 
         public List<Ability> Abilities { get; private set; }
 
-        private AbilitiesManager() { }
+        private AbilitiesManager() 
+        { 
+            Abilities = new List<Ability>();
+        }
 
         public void Init(TextAsset data)
         {
@@ -30,7 +33,12 @@ namespace Abilities
 
         public Ability GetAbility(int id)
         {
-            return Abilities != null ? Abilities.FirstOrDefault(a => a.Id == id) : null;
+            return Abilities.FirstOrDefault(a => a.Id == id);
+        }
+
+        public void AddAbility(Ability ability)
+        {
+            Abilities.Add(ability);
         }
     }
 }

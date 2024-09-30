@@ -3,6 +3,7 @@ using BattleSystem.UI;
 using System.Collections.Generic;
 using System.Collections;
 using Abilities;
+using Utils;
 
 namespace BattleSystem
 {
@@ -55,7 +56,7 @@ namespace BattleSystem
             Animator animator = source.GetComponent<Animator>();
             animator.SetBool("Moving", true);
 
-            while(Vector2.Distance(source.transform.position, target.transform.position) > range / 500.0f)
+            while(Vector2.Distance(source.transform.position, target.transform.position) > MeasuresConverter.RangeToWorldUnits(range))
             {
                 Vector2 direction = (target.transform.position - source.transform.position).normalized;
                 animator.SetFloat("X", direction.x);

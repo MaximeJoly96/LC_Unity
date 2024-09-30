@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
+using Utils;
 
 namespace BattleSystem.Behaviours.AiBehaviours
 {
@@ -45,10 +47,23 @@ namespace BattleSystem.Behaviours.AiBehaviours
             _maxTargets = maxTargetCount;
             _range = range;
         }
-        
-        public override void Run()
-        {
 
+        public bool Check(GameObject source)
+        {
+            BattlerBehaviour[] targets = Object.FindObjectsOfType<BattlerBehaviour>();
+
+            int targetsInRange = targets.Count(t => t != source.GetComponent<BattlerBehaviour>() &&
+                                                    Vector2.Distance(source.transform.position, t.transform.position) < MeasuresConverter.RangeToWorldUnits(Range));
+
+            bool isInRange = true;
+
+            if (MinTargetCount > 0)
+                isInRange = targetsInRange >= MinTargetCount;
+
+            if(MaxTargetCount > 0)
+                isInRange = targetsInRange <= MaxTargetCount;
+
+            return isInRange;
         }
     }
 }
