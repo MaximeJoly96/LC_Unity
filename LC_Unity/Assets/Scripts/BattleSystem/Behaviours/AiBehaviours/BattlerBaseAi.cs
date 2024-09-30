@@ -3,7 +3,7 @@ using Abilities;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BattleSystem.Behaviours
+namespace BattleSystem.Behaviours.AiBehaviours
 {
     public class BattlerBaseAi : MonoBehaviour
     {
