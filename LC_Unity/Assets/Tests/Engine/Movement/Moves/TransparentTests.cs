@@ -7,6 +7,7 @@ using Engine.Events;
 using System.Collections;
 using UnityEngine.TestTools;
 using Movement;
+using System.Collections.Generic;
 
 namespace Testing.Engine.Movement.Moves
 {
@@ -14,15 +15,34 @@ namespace Testing.Engine.Movement.Moves
     {
         protected override string TestFilePath { get { return "Assets/Tests/Engine/Movement/Moves/Transparent.xml"; } }
 
+        private List<GameObject> _usedGameObjects;
+
+        [TearDown]
+        public void TearDown()
+        {
+            for (int i = 0; i < _usedGameObjects.Count; i++)
+            {
+                GameObject.Destroy(_usedGameObjects[i]);
+            }
+        }
+
+        [OneTimeSetUp]
+        public void GlobalSetup()
+        {
+            _usedGameObjects = new List<GameObject>();
+        }
+
         [UnityTest]
         public IEnumerator TransparentAppliesTransparencyToSpriteRenderer()
         {
             SetMoveRoute route = XmlMovementParser.ParseSetMoveRoute(GetDataToParse("SetMoveRoute"));
 
             GameObject moveRouteRunner = new GameObject("MoveRouteRunner");
+            _usedGameObjects.Add(moveRouteRunner);
             moveRouteRunner.AddComponent<MoveRouteRunner>();
 
             GameObject agent = new GameObject("Agent");
+            _usedGameObjects.Add(agent);
             Agent agentComponent = agent.AddComponent<Agent>();
             agentComponent.SetId("testAgent");
 

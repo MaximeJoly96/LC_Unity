@@ -7,11 +7,29 @@ using Utils;
 using Actors;
 using BattleSystem.Model;
 using Abilities;
+using System.Collections.Generic;
 
 namespace Testing.BattleSystem.Behaviours.AiBehaviours
 {
     public class AiScriptTests
     {
+        private List<GameObject> _usedGameObjects;
+
+        [TearDown]
+        public void TearDown()
+        {
+            for (int i = 0; i < _usedGameObjects.Count; i++)
+            {
+                GameObject.Destroy(_usedGameObjects[i]);
+            }
+        }
+
+        [OneTimeSetUp]
+        public void GlobalSetup()
+        {
+            _usedGameObjects = new List<GameObject>();
+        }
+
         [Test]
         public void SetMainConditionTest()
         {
@@ -33,6 +51,7 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
                                                              AbilityUsability.BattleOnly, 0, TargetEligibility.Enemy, AbilityCategory.Skill));
 
             GameObject battler = new GameObject("Battler");
+            _usedGameObjects.Add(battler);
             BattlerBehaviour battlerComponent = battler.AddComponent<BattlerBehaviour>();
             battlerComponent.Feed(new Battler(CreateDummyCharacter()));
 
@@ -72,6 +91,7 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
         private GameObject CreateBattler(string name, Vector3 position)
         {
             GameObject battler = new GameObject(name);
+            _usedGameObjects.Add(battler);
             battler.AddComponent<BattlerBehaviour>();
             battler.AddComponent<BoxCollider2D>();
 

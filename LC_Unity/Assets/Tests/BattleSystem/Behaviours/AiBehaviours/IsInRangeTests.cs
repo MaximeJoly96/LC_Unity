@@ -2,6 +2,7 @@
 using BattleSystem.Behaviours.AiBehaviours;
 using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TestTools;
 
@@ -9,6 +10,23 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
 {
     public class IsInRangeTests
     {
+        private List<GameObject> _usedGameObjects;
+
+        [TearDown]
+        public void TearDown()
+        {
+            for (int i = 0; i < _usedGameObjects.Count; i++)
+            {
+                GameObject.Destroy(_usedGameObjects[i]);
+            }
+        }
+
+        [OneTimeSetUp]
+        public void GlobalSetup()
+        {
+            _usedGameObjects = new List<GameObject>();
+        }
+
         [Test]
         public void CreateBasicIsInRangeTest()
         {
@@ -35,6 +53,7 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
             IsInRange inRange = new IsInRange(3, 0, 500);
 
             GameObject source = new GameObject("Source");
+            _usedGameObjects.Add(source);
             source.transform.position = Vector3.zero;
 
             GameObject battler1 = CreateBattler("Battler1", new Vector3(0.1f, 0.1f));
@@ -66,6 +85,7 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
         private GameObject CreateBattler(string name, Vector3 position)
         {
             GameObject battler = new GameObject(name);
+            _usedGameObjects.Add(battler);
             battler.AddComponent<BattlerBehaviour>();
             battler.AddComponent<BoxCollider2D>();
 

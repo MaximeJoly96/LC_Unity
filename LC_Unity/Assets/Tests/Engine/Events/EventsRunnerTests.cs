@@ -12,10 +12,28 @@ namespace Testing.Engine.Events
 {
     public class EventsRunnerTests
     {
+        private List<GameObject> _usedGameObjects;
+
+        [TearDown]
+        public void TearDown()
+        {
+            for (int i = 0; i < _usedGameObjects.Count; i++)
+            {
+                GameObject.Destroy(_usedGameObjects[i]);
+            }
+        }
+
+        [OneTimeSetUp]
+        public void GlobalSetup()
+        {
+            _usedGameObjects = new List<GameObject>();
+        }
+
         [UnityTest]
         public IEnumerator RunBasicSequenceWithControlVariableAndWaitTest()
         {
             GameObject waiterGo = new GameObject("Waiter");
+            _usedGameObjects.Add(waiterGo);
             waiterGo.AddComponent<Waiter>();
 
             TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Events/EventsRunnerTestSequence.xml");
@@ -36,6 +54,7 @@ namespace Testing.Engine.Events
         private EventsRunner Setup()
         {
             GameObject go = new GameObject("Runner");
+            _usedGameObjects.Add(go);
             return go.AddComponent<EventsRunner>();
         }
     }

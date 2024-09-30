@@ -6,15 +6,32 @@ using UnityEngine;
 using Engine.Events;
 using Party;
 using Inventory;
-using Engine.Party;
-using System.Linq;
 using Actors;
+using System.Collections.Generic;
 
 namespace Testing.FlowControl
 {
     public class InventoryConditionTests : XmlBaseParser
     {
         protected override string TestFilePath { get { return "Assets/Tests/FlowControl/InventoryConditionTests.xml"; } }
+
+        private List<GameObject> _usedGameObjects;
+
+        [TearDown]
+        public void TearDown()
+        {
+            for (int i = 0; i < _usedGameObjects.Count; i++)
+            {
+                GameObject.Destroy(_usedGameObjects[i]);
+            }
+        }
+
+        [OneTimeSetUp]
+        public void GlobalSetup()
+        {
+            _usedGameObjects = new List<GameObject>();
+        }
+
 
         [Test]
         public void RunItemPossessedConditionTest()
@@ -58,6 +75,7 @@ namespace Testing.FlowControl
             PersistentDataHolder.Instance.Reset();
 
             GameObject runner = new GameObject("Runner");
+            _usedGameObjects.Add(runner);
             runner.AddComponent<EventsRunner>();
         }
     }

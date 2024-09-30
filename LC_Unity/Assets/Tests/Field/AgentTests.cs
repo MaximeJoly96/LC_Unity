@@ -1,11 +1,29 @@
 ﻿using NUnit.Framework;
 using UnityEngine;
 using Field;
+using System.Collections.Generic;
 
 namespace Testing.Field
 {
     public class AgentTests
     {
+        private List<GameObject> _usedGameObjects;
+
+        [TearDown]
+        public void TearDown()
+        {
+            for (int i = 0; i < _usedGameObjects.Count; i++)
+            {
+                GameObject.Destroy(_usedGameObjects[i]);
+            }
+        }
+
+        [OneTimeSetUp]
+        public void GlobalSetup()
+        {
+            _usedGameObjects = new List<GameObject>();
+        }
+
         [Test]
         public void UpdateAgentSpeedTest()
         {
@@ -36,6 +54,7 @@ namespace Testing.Field
         private Agent Setup()
         {
             GameObject go = new GameObject("Agent");
+            _usedGameObjects.Add(go);
             go.AddComponent<Animator>();
             return go.AddComponent<Agent>();
         }

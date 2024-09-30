@@ -2,6 +2,7 @@
 using Engine.FlowControl;
 using GameProgression;
 using NUnit.Framework;
+using System.Collections.Generic;
 using Testing.Engine;
 using UnityEngine;
 
@@ -11,10 +12,28 @@ namespace Testing.FlowControl
     {
         protected override string TestFilePath { get { return "Assets/Tests/FlowControl/VariableConditionTests.xml"; } }
 
+        private List<GameObject> _usedGameObjects;
+
+        [TearDown]
+        public void TearDown()
+        {
+            for (int i = 0; i < _usedGameObjects.Count; i++)
+            {
+                GameObject.Destroy(_usedGameObjects[i]);
+            }
+        }
+
+        [OneTimeSetUp]
+        public void GlobalSetup()
+        {
+            _usedGameObjects = new List<GameObject>();
+        }
+
         [SetUp]
         public void Setup()
         {
             GameObject runner = new GameObject("Runner");
+            _usedGameObjects.Add(runner);
             runner.AddComponent<EventsRunner>();
 
             PersistentDataHolder.Instance.Reset();

@@ -3,11 +3,14 @@ using NUnit.Framework;
 using UnityEngine.TestTools;
 using System.Collections;
 using Timing;
+using System.Collections.Generic;
 
 namespace Testing.Timing
 {
     public class GlobalTimerTests
     {
+        private List<GameObject> _usedGameObjects;
+
         [UnityTest]
         public IEnumerator TrackGlobalTimerTest()
         {
@@ -52,9 +55,25 @@ namespace Testing.Timing
         private GlobalTimer Setup()
         {
             GameObject timer = new GameObject("Timer");
+            _usedGameObjects.Add(timer);
             GlobalTimer globalTimer = timer.AddComponent<GlobalTimer>();
 
             return globalTimer;
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            for (int i = 0; i < _usedGameObjects.Count; i++)
+            {
+                GameObject.Destroy(_usedGameObjects[i]);
+            }
+        }
+
+        [OneTimeSetUp]
+        public void GlobalSetup()
+        {
+            _usedGameObjects = new List<GameObject>();
         }
     }
 }

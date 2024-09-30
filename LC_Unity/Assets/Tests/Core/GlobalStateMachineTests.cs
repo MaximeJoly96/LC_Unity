@@ -13,6 +13,7 @@ namespace Testing.Core
             Assert.AreEqual(GlobalStateMachine.State.InMenu, GlobalStateMachine.Instance.CurrentState);
         }
 
+        [Test]
         public void GlobalStateMachineSpecificTransitionsTest()
         {
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
