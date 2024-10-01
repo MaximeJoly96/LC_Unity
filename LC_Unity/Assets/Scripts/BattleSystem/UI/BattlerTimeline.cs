@@ -38,5 +38,15 @@ namespace BattleSystem.UI
             _timeline.GetComponent<RectTransform>().anchoredPosition = anchoredPosition;
             _timeline.fillAmount = actionLength;
         }
+
+        public void SetText(TextMeshProUGUI text)
+        {
+            _battlerName = text;
+        }
+
+        public void SetTimelineImage(Image image)
+        {
+            _timeline = image;
+        }
     }
 }

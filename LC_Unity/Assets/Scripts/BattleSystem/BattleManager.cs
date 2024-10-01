@@ -134,7 +134,10 @@ namespace BattleSystem
             _uiManager.HideAllWindows();
 
             ShowInstructions();
-            UpdateState(BattleState.PlacingCharacters);
+            if (_charactersInCombat.Count > 1)
+                UpdateState(BattleState.PlacingCharacters);
+            else
+                UpdateState(BattleState.BattleStart);
         }
 
         #region Inputs
@@ -441,6 +444,7 @@ namespace BattleSystem
                 case BattleState.BattleProcess:
                     _uiManager.HideMoveSelection();
                     _uiManager.CloseHelpWindow();
+                    _uiManager.UpdateTimeline();
                     ProcessBattle();
                     break;
                 case BattleState.BattleVictory:

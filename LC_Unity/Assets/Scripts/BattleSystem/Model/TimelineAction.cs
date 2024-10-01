@@ -12,6 +12,7 @@ namespace BattleSystem.Model
         {
             Length = ComputeActionLength(battler);
             StartPoint = ComputeActionStartPoint(battler);
+            Priority = battler.LockedInAbility != null ? battler.LockedInAbility.Priority : 0;
         }
 
         public TimelineAction(float length, float startPoint, int priority)
@@ -39,7 +40,13 @@ namespace BattleSystem.Model
 
         public float ComputeActionLength(BattlerBehaviour battler)
         {
+            if(battler.LockedInAbility == null)
+                return 0.0f;
+
             float maxDistance = 0.0f;
+            float baseLength = 0.0f;
+            float movementSpeed = 1.0f;
+            float projectileSpeed = 0.0f;
 
             for (int i = 0; i < battler.LockedInAbility.Targets.Count; i++)
             {
@@ -58,7 +65,7 @@ namespace BattleSystem.Model
             // NOTE TO MY FUTURE SELF :
             // If I want to implement non-linear movement speed, I should create a sequence of timestamp+movespeed objects
 
-            return 0.0f + (maxDistance / 1.0f);
+            return baseLength + (maxDistance / movementSpeed);
         }
     }
 }
