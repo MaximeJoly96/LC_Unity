@@ -44,6 +44,7 @@ namespace Abilities
         public AbilityCategory Category { get; set; }
         public int Range { get; set; } = 100;
         public int AnimationId { get; set; }
+        public AbilityAnimation Animation { get; set; }
         public List<IEffect> Effects { get; set; }
         public float AnimationLength
         {
@@ -53,7 +54,7 @@ namespace Abilities
                 if (!animationsWrapper)
                     return 0.0f;
 
-
+                return 0.0f; 
             }
         }
 

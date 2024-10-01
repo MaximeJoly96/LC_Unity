@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Abilities>
+  <Ability>
+    <Id>0</Id>
+    <Name>AttackCommand</Name>
+    <Description>AttackCommandDescription</Description>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>0</Priority>
+    <Range>-1</Range>
+    <TargetEligibility>Any</TargetEligibility>
+    <Usability>BattleOnly</Usability>
+    <Category>AttackCommand</Category>
+    <Animation>
+      <Channel>Channel</Channel>
+      <ChannelParticles>0</ChannelParticles>
+      <Strike>Strike</Strike>
+      <ImpactParticles>1</ImpactParticles>
+      <ProjectileId>2</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>1</Id>
+    <Name>Flee</Name>
+    <Description>FleeCommandDescription</Description>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>10</Priority>
+    <Range>0</Range>
+    <TargetEligibility>Self</TargetEligibility>
+    <Usability>BattleOnly</Usability>
+    <Category>FleeCommand</Category>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>2</Id>
+    <Name>Claws</Name>
+    <Description>ClawsDescription</Description>
+    <Cost HP="0" MP="5" EP="5" />
+    <Priority>0</Priority>
+    <Range>100</Range>
+    <TargetEligibility>Any</TargetEligibility>
+    <Usability>BattleOnly</Usability>
+    <Category>Skill</Category>
+    <Animation>
+      <Channel>Channel</Channel>
+      <ChannelParticles>0</ChannelParticles>
+      <Strike>Strike</Strike>
+      <ImpactParticles>1</ImpactParticles>
+      <ProjectileId>2</ProjectileId>
+    </Animation>
+  </Ability>
+</Abilities>

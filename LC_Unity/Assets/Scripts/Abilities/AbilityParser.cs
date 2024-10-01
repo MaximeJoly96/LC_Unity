@@ -40,25 +40,30 @@ namespace Abilities
             string description = node.SelectSingleNode("Description").InnerText;
             AbilityUsability usability = (AbilityUsability)Enum.Parse(typeof(AbilityUsability), node.SelectSingleNode("Usability").InnerText);
             int priority = int.Parse(node.SelectSingleNode("Priority").InnerText);
+            int range = int.Parse(node.SelectSingleNode("Range").InnerText);
 
             XmlNode costNode = node.SelectSingleNode("Cost");
-            AbilityCost cost = new AbilityCost(int.Parse(costNode.Attributes["Health"].InnerText),
-                                                int.Parse(costNode.Attributes["Mana"].InnerText),
-                                                int.Parse(costNode.Attributes["Essence"].InnerText));
+            AbilityCost cost = new AbilityCost(int.Parse(costNode.Attributes["HP"].InnerText),
+                                               int.Parse(costNode.Attributes["MP"].InnerText),
+                                               int.Parse(costNode.Attributes["EP"].InnerText));
+
             TargetEligibility eligibility = (TargetEligibility)Enum.Parse(typeof(TargetEligibility), node.SelectSingleNode("TargetEligibility").InnerText);
             AbilityCategory category = (AbilityCategory)Enum.Parse(typeof(AbilityCategory), node.SelectSingleNode("Category").InnerText);
 
+            AbilityAnimation animation = ParseAbilityAnimation(node.SelectSingleNode("Animation"));
+
             Ability ability = new Ability(id, name, description, cost, usability, priority, eligibility, category);
 
-            XmlNode animationNode = node.SelectSingleNode("AnimationId");
-            if (animationNode != null)
-                ability.AnimationId = int.Parse(animationNode.InnerText);
-
-            XmlNode rangeNode = node.SelectSingleNode("Range");
-            if(rangeNode != null)
-                ability.Range = int.Parse(rangeNode.InnerText);
-
             return ability;
+        }
+
+        private static AbilityAnimation ParseAbilityAnimation(XmlNode animationNode)
+        {
+            return new AbilityAnimation(animationNode.SelectSingleNode("Channel").InnerText,
+                                        animationNode.SelectSingleNode("Strike").InnerText,
+                                        int.Parse(animationNode.SelectSingleNode("ChannelParticles").InnerText),
+                                        int.Parse(animationNode.SelectSingleNode("ImpactParticles").InnerText),
+                                        int.Parse(animationNode.SelectSingleNode("ProjectileId").InnerText));
         }
     }
 }
