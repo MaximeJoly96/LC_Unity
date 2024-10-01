@@ -4,6 +4,9 @@ using UnityEngine;
 using BattleSystem;
 using System.Collections.Generic;
 using Abilities;
+using Utils;
+using Actors;
+using System.Linq;
 
 namespace Testing.BattleSystem.Model
 {
@@ -55,13 +58,51 @@ namespace Testing.BattleSystem.Model
             Assert.AreEqual(0, timeline.Priority);
         }
 
+        [Test]
+        public void ComputeActionStartPointTest()
+        {
+            BattlerBehaviour b1 = CreateBattlerBehaviour();
+            BattlerBehaviour b2 = CreateBattlerBehaviour();
+            BattlerBehaviour b3 = CreateBattlerBehaviour();
+
+            b1.BattlerData.Character.ChangeExp(10);
+            b2.BattlerData.Character.ChangeExp(300);
+            b3.BattlerData.Character.ChangeExp(1000);
+
+            List<BattlerBehaviour> battlers = new List<BattlerBehaviour>
+            {
+                b1, b2, b3
+            };
+
+            int maxAgility = battlers.Max(b => b.BattlerData.Character.BaseAgility + b.BattlerData.Character.BonusAgility);
+            Assert.IsTrue(Mathf.Abs(90.0f - TimelineAction.ComputeActionStartPoint(b1, maxAgility)) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(40.0f - TimelineAction.ComputeActionStartPoint(b2, maxAgility)) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(0.0f - TimelineAction.ComputeActionStartPoint(b3, maxAgility)) < 0.01f);
+        }
+
         private BattlerBehaviour CreateBattlerBehaviour()
         {
             GameObject go = new GameObject();
             _usedGameObjects.Add(go);
 
             BattlerBehaviour battler = go.AddComponent<BattlerBehaviour>();
+            battler.Feed(new Battler(CreateDummyCharacter()));
             return battler;
+        }
+
+        private Character CreateDummyCharacter()
+        {
+            return new Character(0, "name",
+                                 new QuadraticFunction(10.0f, 10.0f, 10.0f),
+                                 new StatScalingFunction(100.0f, 1.0f, 100.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f));
         }
     }
 }

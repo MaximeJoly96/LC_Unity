@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Utils;
 
 namespace BattleSystem.Model
 {
@@ -11,7 +12,6 @@ namespace BattleSystem.Model
         public TimelineAction(BattlerBehaviour battler)
         {
             Length = ComputeActionLength(battler);
-            StartPoint = ComputeActionStartPoint(battler);
             Priority = battler.LockedInAbility != null ? battler.LockedInAbility.Priority : 0;
         }
 
@@ -22,7 +22,7 @@ namespace BattleSystem.Model
             Priority = priority;
         }
 
-        public float ComputeActionStartPoint(BattlerBehaviour battler)
+        public static float ComputeActionStartPoint(BattlerBehaviour battler, int maxAgility)
         {
             // Within a certain actionPriority, we resolve actions from the highest agility to the lowest
             // the timing within this priority is determined by the proportion of the casterAgility based on
@@ -35,7 +35,7 @@ namespace BattleSystem.Model
             // |              |   |
             // --------------------      ---> for ref, there are 20 hyphens here
 
-            return 0.0f;
+            return maxAgility - (battler.BattlerData.Character.BaseAgility + battler.BattlerData.Character.BonusAgility);
         }
 
         public float ComputeActionLength(BattlerBehaviour battler)
@@ -43,18 +43,24 @@ namespace BattleSystem.Model
             if(battler.LockedInAbility == null)
                 return 0.0f;
 
-            float maxDistance = 0.0f;
-            float baseLength = 0.0f;
+            float maxMovementDistance = 0.0f;
+            float maxProjectileDistance = 0.0f;
+            float animationLength = 0.0f;
             float movementSpeed = 1.0f;
             float projectileSpeed = 0.0f;
 
             for (int i = 0; i < battler.LockedInAbility.Targets.Count; i++)
             {
-                float distance = Vector2.Distance(battler.transform.position,
-                                                  battler.LockedInAbility.Targets[i].transform.position);
+                float distance = Vector2.Distance(battler.transform.position, 
+                                                 battler.LockedInAbility.Targets[i].transform.position);
+                float movementDistance = Mathf.Max(0.0f, distance - MeasuresConverter.RangeToWorldUnits(battler.LockedInAbility.Range));
+                float projectileDistance = Mathf.Max(0.0f, distance - movementDistance);
 
-                if (distance > maxDistance)
-                    maxDistance = distance;
+                if (movementDistance > maxMovementDistance)
+                    maxMovementDistance = movementDistance;
+
+                if(projectileDistance > maxProjectileDistance)
+                    maxProjectileDistance = projectileDistance;
             }
 
             // Each action has a baseLength, which is tied to the length of the animation.
@@ -65,7 +71,9 @@ namespace BattleSystem.Model
             // NOTE TO MY FUTURE SELF :
             // If I want to implement non-linear movement speed, I should create a sequence of timestamp+movespeed objects
 
-            return baseLength + (maxDistance / movementSpeed);
+            float movementLength = Mathf.Abs(0.0f - maxMovementDistance) < 0.01f ? 0.0f : movementSpeed / maxMovementDistance;
+            float projectileMovementLength = Mathf.Abs(0.0f - maxProjectileDistance) < 0.01f ? 0.0f : projectileSpeed / maxProjectileDistance;
+            return movementLength + animationLength + projectileMovementLength;
         }
     }
 }

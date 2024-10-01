@@ -421,6 +421,11 @@ namespace Actors
             CurrentHealth -= change;
         }
 
+        public void ChangeExp(int change)
+        {
+            Exp += change;
+        }
+
         private void InitBasicAffinities()
         {
             ElementalAffinities.Add(new ElementalAffinity(Element.Neutral, 1.0f));
