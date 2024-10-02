@@ -12,17 +12,17 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
         [Test]
         public void CreateHasEnoughResourcesTest()
         {
-            HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.FromAbility, 35.0f, Effects.Stat.HP);
+            HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.FromAbility, 35.0f, global::Effects.Stat.HP);
 
             Assert.AreEqual(HasEnoughResources.AmountType.FromAbility, hasEnough.Amount);
             Assert.IsTrue(Mathf.Abs(35.0f - hasEnough.Value) < 0.01f);
-            Assert.AreEqual(Effects.Stat.HP, hasEnough.Resource);
+            Assert.AreEqual(global::Effects.Stat.HP, hasEnough.Resource);
         }
 
         [Test]
         public void CheckCharacterHasEnoughFlatResourcesTest()
         {
-            HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.Flat, 10.0f, Effects.Stat.MP);
+            HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.Flat, 10.0f, global::Effects.Stat.MP);
             Character character = CreateDummyCharacter();
 
             character.CurrentMana = 20;
@@ -37,7 +37,7 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
         [Test]
         public void CheckCharacterHasEnoughPercentageResourcesTest()
         {
-            HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.Percentage, 20.0f, Effects.Stat.HP);
+            HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.Percentage, 20.0f, global::Effects.Stat.HP);
             Character character = CreateDummyCharacter();
 
             character.CurrentHealth = 100;
@@ -52,7 +52,7 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
         [Test]
         public void CheckCharacterHasEnoughResourcesForAbilityTest()
         {
-            HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.FromAbility, 0, Effects.Stat.EP);
+            HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.FromAbility, 0, global::Effects.Stat.EP);
             Character character = CreateDummyCharacter();
             Ability ability = new Ability(0, "test", "testDescription", new AbilityCost(5, 5, 5), 
                                           AbilityUsability.Always, 0, TargetEligibility.Any, AbilityCategory.Skill);

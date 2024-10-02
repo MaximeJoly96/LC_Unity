@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Logging;
 using System.Xml;
+using Effects;
 
 namespace Inventory
 {
@@ -47,7 +48,7 @@ namespace Inventory
 
             XmlNode effectsNode = node.SelectSingleNode("Effects");
             if (effectsNode != null)
-                cons.AddEffects(ParseEffectsFromNode(effectsNode));
+                cons.AddEffects(EffectsParser.ParseEffectsFromNode(effectsNode));
 
             return cons;
         }

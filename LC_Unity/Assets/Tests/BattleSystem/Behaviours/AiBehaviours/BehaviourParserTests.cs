@@ -46,7 +46,7 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
 
             Assert.AreEqual(HasEnoughResources.AmountType.FromAbility, hasEnough.Amount);
             Assert.IsTrue(Mathf.Abs(45.0f - hasEnough.Value) < 0.01f);
-            Assert.AreEqual(Effects.Stat.MP, hasEnough.Resource);
+            Assert.AreEqual(global::Effects.Stat.MP, hasEnough.Resource);
         }
 
         [Test]
@@ -73,7 +73,7 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
 
             Assert.AreEqual(HasEnoughResources.AmountType.FromAbility, hasEnough.Amount);
             Assert.IsTrue(Mathf.Abs(45.0f - hasEnough.Value) < 0.01f);
-            Assert.AreEqual(Effects.Stat.MP, hasEnough.Resource);
+            Assert.AreEqual(global::Effects.Stat.MP, hasEnough.Resource);
 
             Assert.AreEqual(1, hasEnough.ActionWhenTrue.Abilities.Count);
             Assert.AreEqual(45, hasEnough.ActionWhenTrue.Abilities[0]);

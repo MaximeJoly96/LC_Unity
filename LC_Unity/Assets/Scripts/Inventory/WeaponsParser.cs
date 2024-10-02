@@ -5,6 +5,7 @@ using Logging;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Globalization;
+using Effects;
 
 namespace Inventory
 {
@@ -54,7 +55,7 @@ namespace Inventory
 
             XmlNode effectsNode = itemNode.SelectSingleNode("Effects");
             if(effectsNode != null)
-                weapon.AddEffects(ParseEffectsFromNode(effectsNode));
+                weapon.AddEffects(EffectsParser.ParseEffectsFromNode(effectsNode));
 
             XmlNode projSpeedNode = itemNode.SelectSingleNode("ProjectileSpeed");
             if(projSpeedNode != null)

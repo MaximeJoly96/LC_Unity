@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Logging;
 using System;
+using Core.Model;
+using Effects;
 
 namespace Abilities
 {
@@ -35,24 +37,26 @@ namespace Abilities
 
         private static Ability ParseAbility(XmlNode node)
         {
-            int id = int.Parse(node.SelectSingleNode("Id").InnerText);
-            string name = node.SelectSingleNode("Name").InnerText;
-            string description = node.SelectSingleNode("Description").InnerText;
+            ElementIdentifier identifier = ParseIdentifier(node);
             AbilityUsability usability = (AbilityUsability)Enum.Parse(typeof(AbilityUsability), node.SelectSingleNode("Usability").InnerText);
+            TargetEligibility eligibility = (TargetEligibility)Enum.Parse(typeof(TargetEligibility), node.SelectSingleNode("TargetEligibility").InnerText);
+            AbilityCategory category = (AbilityCategory)Enum.Parse(typeof(AbilityCategory), node.SelectSingleNode("Category").InnerText);
             int priority = int.Parse(node.SelectSingleNode("Priority").InnerText);
             int range = int.Parse(node.SelectSingleNode("Range").InnerText);
+
+            Ability ability = new Ability(identifier, priority, usability, eligibility, category, range);
 
             XmlNode costNode = node.SelectSingleNode("Cost");
             AbilityCost cost = new AbilityCost(int.Parse(costNode.Attributes["HP"].InnerText),
                                                int.Parse(costNode.Attributes["MP"].InnerText),
                                                int.Parse(costNode.Attributes["EP"].InnerText));
-
-            TargetEligibility eligibility = (TargetEligibility)Enum.Parse(typeof(TargetEligibility), node.SelectSingleNode("TargetEligibility").InnerText);
-            AbilityCategory category = (AbilityCategory)Enum.Parse(typeof(AbilityCategory), node.SelectSingleNode("Category").InnerText);
+            ability.SetCost(cost);
 
             AbilityAnimation animation = ParseAbilityAnimation(node.SelectSingleNode("Animation"));
+            ability.SetAnimation(animation);
 
-            Ability ability = new Ability(id, name, description, cost, usability, priority, eligibility, category);
+            List<IEffect> effects = ParseEffects(node.SelectSingleNode("Effects"));
+            ability.SetEffects(effects);
 
             return ability;
         }
@@ -64,6 +68,18 @@ namespace Abilities
                                         int.Parse(animationNode.SelectSingleNode("ChannelParticles").InnerText),
                                         int.Parse(animationNode.SelectSingleNode("ImpactParticles").InnerText),
                                         int.Parse(animationNode.SelectSingleNode("ProjectileId").InnerText));
+        }
+
+        private static ElementIdentifier ParseIdentifier(XmlNode node)
+        {
+            return new ElementIdentifier(int.Parse(node.SelectSingleNode("Id").InnerText),
+                                         node.SelectSingleNode("Name").InnerText,
+                                         node.SelectSingleNode("Description").InnerText);
+        }
+
+        private static List<IEffect> ParseEffects(XmlNode effectsNode)
+        {
+            return EffectsParser.ParseEffectsFromNode(effectsNode);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Logging;
 using System.Xml;
+using Effects;
 
 namespace Inventory
 {
@@ -46,7 +47,7 @@ namespace Inventory
 
             XmlNode effectsNode = node.SelectSingleNode("Effects");
             if (effectsNode != null)
-                armour.AddEffects(ParseEffectsFromNode(effectsNode));
+                armour.AddEffects(EffectsParser.ParseEffectsFromNode(effectsNode));
 
             XmlNode statsNode = node.SelectSingleNode("Stats");
             if (statsNode != null)
