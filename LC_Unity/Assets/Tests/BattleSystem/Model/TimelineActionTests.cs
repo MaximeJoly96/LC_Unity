@@ -7,6 +7,7 @@ using Abilities;
 using Utils;
 using Actors;
 using System.Linq;
+using Core.Model;
 
 namespace Testing.BattleSystem.Model
 {
@@ -43,8 +44,8 @@ namespace Testing.BattleSystem.Model
         public void TimelineActionCanBeCreatedFromBattlerBehaviourTest()
         {
             BattlerBehaviour battler = CreateBattlerBehaviour();
-            Ability ability = new Ability(0, "name", "desc", new AbilityCost(0, 0, 0), 
-                                          AbilityUsability.Always, 0, TargetEligibility.Self, AbilityCategory.Skill);
+            Ability ability = new Ability(new ElementIdentifier(0, "name", "desc"), 0,
+                                          AbilityUsability.Always, TargetEligibility.Self, AbilityCategory.Skill, 0);
             ability.Targets = new List<BattlerBehaviour>
             {
                 battler

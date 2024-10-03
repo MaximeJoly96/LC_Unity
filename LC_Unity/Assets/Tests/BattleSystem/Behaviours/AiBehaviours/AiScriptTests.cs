@@ -8,6 +8,7 @@ using Actors;
 using BattleSystem.Model;
 using Abilities;
 using System.Collections.Generic;
+using Core.Model;
 
 namespace Testing.BattleSystem.Behaviours.AiBehaviours
 {
@@ -45,10 +46,14 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
         [Test]
         public void AiShouldSelectCorrectAbilityWhenTargetInRangeTest()
         {
-            AbilitiesManager.Instance.AddAbility(new Ability(2, "Claws", "desc", new AbilityCost(0, 0, 0),
-                                                             AbilityUsability.BattleOnly, 0, TargetEligibility.Enemy, AbilityCategory.Skill));
-            AbilitiesManager.Instance.AddAbility(new Ability(45, "Magicka", "desc", new AbilityCost(0, 5, 0),
-                                                             AbilityUsability.BattleOnly, 0, TargetEligibility.Enemy, AbilityCategory.Skill));
+            Ability ability1 = new Ability(new ElementIdentifier(2, "Claws", "desc"), 0,
+                                           AbilityUsability.BattleOnly, TargetEligibility.Enemy, AbilityCategory.Skill, 0);
+            ability1.SetCost(0, 0, 0);
+            Ability ability2 = new Ability(new ElementIdentifier(45, "Magicka", "desc"), 0,
+                                           AbilityUsability.BattleOnly, TargetEligibility.Enemy, AbilityCategory.Skill, 0);
+            ability2.SetCost(0, 5, 0);
+            AbilitiesManager.Instance.AddAbility(ability1);
+            AbilitiesManager.Instance.AddAbility(ability2);
 
             GameObject battler = new GameObject("Battler");
             _usedGameObjects.Add(battler);

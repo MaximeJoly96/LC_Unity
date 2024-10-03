@@ -79,7 +79,7 @@ namespace Abilities
 
         private static List<IEffect> ParseEffects(XmlNode effectsNode)
         {
-            return EffectsParser.ParseEffectsFromNode(effectsNode);
+            return effectsNode != null ? EffectsParser.ParseEffectsFromNode(effectsNode) : new List<IEffect>();
         }
     }
 }

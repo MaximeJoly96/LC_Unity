@@ -4,6 +4,7 @@ using UnityEngine;
 using Actors;
 using Utils;
 using Abilities;
+using Core.Model;
 
 namespace Testing.BattleSystem.Behaviours.AiBehaviours
 {
@@ -54,8 +55,9 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
         {
             HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.FromAbility, 0, global::Effects.Stat.EP);
             Character character = CreateDummyCharacter();
-            Ability ability = new Ability(0, "test", "testDescription", new AbilityCost(5, 5, 5), 
-                                          AbilityUsability.Always, 0, TargetEligibility.Any, AbilityCategory.Skill);
+            Ability ability = new Ability(new ElementIdentifier(0, "test", "testDescription"), 0, 
+                                          AbilityUsability.Always, TargetEligibility.Any, AbilityCategory.Skill, 0);
+            ability.SetCost(0, 0, 10);
 
             character.CurrentEssence = 10;
             

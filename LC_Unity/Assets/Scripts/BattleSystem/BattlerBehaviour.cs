@@ -61,7 +61,7 @@ namespace BattleSystem
         {
             if (IsDead)
                 return;
-
+            /* FIXME
             if (LockedInAbility.Category == AbilityCategory.AttackCommand)
             {
                 Weapon weapon = BattlerData.Character.RightHand.GetItem() as Weapon;
@@ -75,7 +75,7 @@ namespace BattleSystem
             aab.AbilityHitEvent.RemoveAllListeners();
             aab.AnimationEndedEvent.RemoveAllListeners();
             aab.AbilityHitEvent.AddListener(Strike);
-            aab.AnimationEndedEvent.AddListener(FinishedTurn);
+            aab.AnimationEndedEvent.AddListener(FinishedTurn);*/
         }
 
         private void Strike()

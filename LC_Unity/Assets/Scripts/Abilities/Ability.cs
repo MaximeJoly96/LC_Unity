@@ -43,7 +43,6 @@ namespace Abilities
         public TargetEligibility TargetEligibility { get; set; }
         public AbilityCategory Category { get; set; }
         public int Range { get; set; }
-        public int AnimationId { get; set; }
         public AbilityAnimation Animation { get; set; }
         public List<IEffect> Effects { get; set; }
         public float AnimationLength
@@ -61,30 +60,6 @@ namespace Abilities
         public string Name { get { return _identifier.NameKey; } }
         public string Description { get { return _identifier.DescriptionKey; } }
 
-        public Ability(int id, string name, string description, AbilityCost cost, AbilityUsability usability, int priority, TargetEligibility targetEligibility, AbilityCategory category)
-        {
-            Cost = cost;
-            Usability = usability;
-            Priority = priority;
-            TargetEligibility = targetEligibility;
-            Category = category;
-            Effects = new List<IEffect>();
-        }
-
-        public Ability(Ability ability) : this(ability.Id, 
-                                               ability.Name, 
-                                               ability.Description, 
-                                               ability.Cost, 
-                                               ability.Usability, 
-                                               ability.Priority, 
-                                               ability.TargetEligibility, 
-                                               ability.Category)
-        {
-            AnimationId = ability.AnimationId;
-            Effects = ability.Effects;
-            Range = ability.Range;
-        }
-
         public Ability(ElementIdentifier identifier, int priority, AbilityUsability usability, 
                        TargetEligibility eligibility, AbilityCategory category, int range)
         {
@@ -96,6 +71,13 @@ namespace Abilities
             Range = range;
 
             Effects = new List<IEffect>();
+        }
+
+        public Ability(Ability ability) : this(ability._identifier, ability.Priority, 
+                                               ability.Usability, ability.TargetEligibility, 
+                                               ability.Category, ability.Range)
+        {
+
         }
 
         public void SetCost(int hp, int mp, int ep)

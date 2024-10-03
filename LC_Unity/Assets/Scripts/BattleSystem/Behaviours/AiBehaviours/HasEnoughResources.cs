@@ -2,6 +2,7 @@
 using Actors;
 using Effects;
 using System;
+using Core.Model;
 
 namespace BattleSystem.Behaviours.AiBehaviours
 {
@@ -41,7 +42,7 @@ namespace BattleSystem.Behaviours.AiBehaviours
             if (Amount == AmountType.FromAbility)
                 return Check(character, AbilitiesManager.Instance.GetAbility((int)Value));
 
-            return Check(character, new Ability(0, "", "", null, AbilityUsability.Always, 0, TargetEligibility.Any, AbilityCategory.Skill));
+            return Check(character, new Ability(new ElementIdentifier(0, "", ""), 0, AbilityUsability.Always, TargetEligibility.Any, AbilityCategory.Skill, 0));
         }
 
         private int GetCurrentStat(Stat stat, Character character)

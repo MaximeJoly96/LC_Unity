@@ -34,6 +34,7 @@ namespace BattleSystem
 
         public void ConfirmTarget(BattlerBehaviour currentBattler)
         {
+            /* FIXME
             currentBattler.LockedInAbility = new Ability(CurrentAbility);
             currentBattler.LockedInAbility.Targets = new List<BattlerBehaviour> { _availableTargets[_cursorPosition] };
 
@@ -50,7 +51,7 @@ namespace BattleSystem
                     currentBattler.LockedInAbility.Range = 100;
                 }
                 
-            }
+            }*/
         }
 
         public void Clear()
