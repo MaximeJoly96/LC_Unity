@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item>
+    <Id>1108</Id>
+    <Name>cypressRod</Name>
+    <Description>cypressRodDescription</Description>
+    <Icon>108</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Stats>
+      <Defense>4</Defense>
+      <Magic>13</Magic>
+      <MagicDefense>4</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1109</Id>
+    <Name>wizardsStaff</Name>
+    <Description>wizardsStaffDescription</Description>
+    <Icon>109</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Stats>
+      <Mana>20</Mana>
+      <Defense>2</Defense>
+      <Magic>13</Magic>
+      <MagicDefense>2</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1110</Id>
+    <Name>clericsCane</Name>
+    <Description>clericsCaneDescription</Description>
+    <Icon>110</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Stats>
+      <Mana>35</Mana>
+      <Defense>4</Defense>
+      <Magic>19</Magic>
+      <MagicDefense>4</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1111</Id>
+    <Name>stickOfTruth</Name>
+    <Description>stickOfTruthDescription</Description>
+    <Icon>111</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatusImmunity Value="Silence" />
+    </Effects>
+    <Recipe>
+      <Item Id="1109" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Mana>35</Mana>
+      <Defense>2</Defense>
+      <Magic>18</Magic>
+      <MagicDefense>2</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1112</Id>
+    <Name>enchantersRod</Name>
+    <Description>enchantersRodDescription</Description>
+    <Icon>112</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <CastPositiveStatusDurationExtension Turns="2" />
+    </Effects>
+    <Recipe>
+      <Item Id="1110" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Mana>235</Mana>
+      <Defense>6</Defense>
+      <Magic>23</Magic>
+      <MagicDefense>6</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1113</Id>
+    <Name>cedarRod</Name>
+    <Description>cedarRodDescription</Description>
+    <Icon>113</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <StatBoost Stat="Parry" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1108" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Defense>9</Defense>
+      <Magic>23</Magic>
+      <MagicDefense>9</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1114</Id>
+    <Name>limboStick</Name>
+    <Description>limboStickDescription</Description>
+    <Icon>114</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <CostReduction Stat="MP" Value="10" />
+      <BoundAbility Id="30" />
+    </Effects>
+    <Stats>
+      <Mana>45</Mana>
+      <Defense>3</Defense>
+      <Magic>37</Magic>
+      <MagicDefense>3</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1115</Id>
+    <Name>voidStaff</Name>
+    <Description>voidStaffDescription</Description>
+    <Icon>115</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <CostReduction Stat="MP" Value="15" />
+      <BoundAbility Id="30" />
+      <BoundAbility Id="31" />
+    </Effects>
+    <Recipe>
+      <Item Id="1114" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Mana>45</Mana>
+      <Defense>6</Defense>
+      <Magic>40</Magic>
+      <MagicDefense>6</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1116</Id>
+    <Name>taxusRod</Name>
+    <Description>taxusRodDescription</Description>
+    <Icon>116</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <StatBoost Stat="Parry" Value="0" />
+      <RefillOnParry Stat="MP" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1113" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Defense>11</Defense>
+      <Magic>34</Magic>
+      <MagicDefense>11</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1117</Id>
+    <Name>rodOfAges</Name>
+    <Description>rodOfAgesDescription</Description>
+    <Icon>117</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="HP" Value="0" />
+      <StatBoost Stat="MP" Value="0" />
+      <StatusImmunity Value="Silence" />
+      <InflictStatus Value="SlowIII" />
+    </Effects>
+    <Recipe>
+      <Item Id="1111" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Mana>35</Mana>
+      <Defense>9</Defense>
+      <Magic>30</Magic>
+      <MagicDefense>9</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1118</Id>
+    <Name>staffOfTheMagi</Name>
+    <Description>staffOfTheMagiDescription</Description>
+    <Icon>118</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatusImmunity Value="Silence" />
+      <MagicIgnoresDefenseStat Stat="MagicDefense" Value="40" />
+    </Effects>
+    <Recipe>
+      <Item Id="1111" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Mana>75</Mana>
+      <Defense>11</Defense>
+      <Magic>48</Magic>
+      <MagicDefense>11</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1119</Id>
+    <Name>prunusRod</Name>
+    <Description>prunusRodDescription</Description>
+    <Icon>119</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="32" />
+      <RefillOnParry Stat="MP" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1116" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Defense>24</Defense>
+      <Magic>70</Magic>
+      <MagicDefense>24</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1120</Id>
+    <Name>princessGuard</Name>
+    <Description>princessGuardDescription</Description>
+    <Icon>120</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="HP" Value="0" />
+      <StatBoost Stat="MP" Value="0" />
+      <StatusImmunity Value="Silence" />
+      <InflictStatus Value="SlowIII" />
+      <CastPositiveStatusDurationExtension Turns="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1112" Quantity="1" />
+      <Item Id="1117" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Mana>65</Mana>
+      <Defense>18</Defense>
+      <Magic>70</Magic>
+      <MagicDefense>18</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1121</Id>
+    <Name>aetherStaff</Name>
+    <Description>aetherStaffDescription</Description>
+    <Icon>121</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatusImmunity Value="Silence" />
+      <MagicIgnoresDefenseStat Stat="MagicDefense" Value="40" />
+      <RefundsOnKill Stat="MP" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1118" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Mana>75</Mana>
+      <Defense>26</Defense>
+      <Magic>104</Magic>
+      <MagicDefense>26</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1122</Id>
+    <Name>oldOakRod</Name>
+    <Description>oldOakRodDescription</Description>
+    <Icon>122</Icon>
+    <Price>10</Price>
+    <Type>Staff</Type>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+      <StatBoost Stat="Defense" Value="0" />
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="32" />
+      <RefillOnParry Stat="MP" Value="0" />
+      <BoundAbility Id="33" />
+    </Effects>
+    <Recipe>
+      <Item Id="1119" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Defense>32</Defense>
+      <Magic>110</Magic>
+      <MagicDefense>32</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>StaffStrike</Strike>
+      <ImpactParticles>12</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+</Items>

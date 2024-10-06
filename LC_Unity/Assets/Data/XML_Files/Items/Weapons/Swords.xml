@@ -1,0 +1,985 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item>
+    <Id>1000</Id>
+    <Name>broadsword</Name>
+    <Description>broadswordDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>1</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>5</Strength>
+      <Defense>2</Defense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1001</Id>
+    <Name>slicer</Name>
+    <Description>slicerDescription</Description>
+    <Icon>1</Icon>
+    <Price>0</Price>
+    <Type>Sword</Type>
+    <Rank>2</Rank>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+    </Effects>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>6</Strength>
+      <Defense>2</Defense>
+      <MagicDefense>2</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1002</Id>
+    <Name>steelSword</Name>
+    <Description>steelSwordDescription</Description>
+    <Icon>2</Icon>
+    <Price>0</Price>
+    <Type>Sword</Type>
+    <Rank>2</Rank>
+    <Recipe>
+      <Item Id="1000" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>9</Strength>
+      <Defense>3</Defense>
+      <MagicDefense>3</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1003</Id>
+    <Name>longsword</Name>
+    <Description>longswordDescription</Description>
+    <Icon>3</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>3</Rank>
+    <Recipe>
+      <Item Id="1002" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>13</Strength>
+      <Defense>6</Defense>
+      <MagicDefense>6</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1004</Id>
+    <Name>sanguineBlade</Name>
+    <Description>sanguineBladeDescription</Description>
+    <Icon>4</Icon>
+    <Price>0</Price>
+    <Type>Sword</Type>
+    <Rank>3</Rank>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1001" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>6</Strength>
+      <Defense>5</Defense>
+      <MagicDefense>2</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1005</Id>
+    <Name>bastardSword</Name>
+    <Description>bastardSwordDescription</Description>
+    <Icon>5</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>4</Rank>
+    <Recipe>
+      <Item Id="1003" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>18</Strength>
+      <Defense>9</Defense>
+      <MagicDefense>9</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1006</Id>
+    <Name>executionersBlade</Name>
+    <Description>executionersBladeDescription</Description>
+    <Icon>6</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>4</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+    </Effects>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>50</Health>
+      <Strength>14</Strength>
+      <Defense>6</Defense>
+      <MagicDefense>4</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1007</Id>
+    <Name>rapier</Name>
+    <Description>rapierDescription</Description>
+    <Icon>7</Icon>
+    <Price>0</Price>
+    <Type>Sword</Type>
+    <Rank>5</Rank>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="10" />
+      <StatBoost Stat="CritChance" Value="10" />
+      <StatBoost Stat="Agility" Value="20" />
+    </Effects>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>21</Strength>
+      <Defense>3</Defense>
+      <MagicDefense>3</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1008</Id>
+    <Name>bloodthirster</Name>
+    <Description>bloodthirsterDescription</Description>
+    <Icon>8</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>5</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1004" Quantity="1" />
+      <Item Id="1006" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>50</Health>
+      <Strength>18</Strength>
+      <Defense>6</Defense>
+      <MagicDefense>6</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1009</Id>
+    <Name>claymore</Name>
+    <Description>claymoreDescription</Description>
+    <Icon>9</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>5</Rank>
+    <Recipe>
+      <Item Id="1005" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>80</Health>
+      <Strength>25</Strength>
+      <Defense>10</Defense>
+      <MagicDefense>10</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1010</Id>
+    <Name>whistlingBlade</Name>
+    <Description>whistlingBladeDescription</Description>
+    <Icon>10</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>6</Rank>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+      <BoundAbility Id="4" />
+    </Effects>
+    <Recipe>
+      <Item Id="1007" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>24</Strength>
+      <Defense>7</Defense>
+      <MagicDefense>7</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1011</Id>
+    <Name>sharpFang</Name>
+    <Description>sharpFangDescription</Description>
+    <Icon>11</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>6</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1008" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>80</Health>
+      <Strength>28</Strength>
+      <Defense>9</Defense>
+      <MagicDefense>9</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1012</Id>
+    <Name>magiblade</Name>
+    <Description>magibladeDescription</Description>
+    <Icon>12</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>6</Rank>
+    <Effects>
+      <InflictStatus Value="MagicBreakI" />
+    </Effects>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Mana>20</Mana>
+      <Strength>18</Strength>
+      <Defense>10</Defense>
+      <Magic>21</Magic>
+      <MagicDefense>10</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1013</Id>
+    <Name>paralyzingBlade</Name>
+    <Description>paralyzingBladeDescription</Description>
+    <Icon>13</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>6</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="SlowI" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1008" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>50</Health>
+      <Strength>28</Strength>
+      <Defense>6</Defense>
+      <MagicDefense>6</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1014</Id>
+    <Name>knightSword</Name>
+    <Description>knightSwordDescription</Description>
+    <Icon>14</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>7</Rank>
+    <Effects>
+      <BoundAbility Id="5" />
+    </Effects>
+    <Recipe>
+      <Item Id="1009" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>120</Health>
+      <Strength>34</Strength>
+      <Defense>16</Defense>
+      <MagicDefense>16</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1015</Id>
+    <Name>refinedBlade</Name>
+    <Description>refinedBladeDescription</Description>
+    <Icon>15</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>7</Rank>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="0" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+      <BoundAbility Id="4" />
+    </Effects>
+    <Recipe>
+      <Item Id="1010" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>31</Strength>
+      <Defense>10</Defense>
+      <MagicDefense>9</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1016</Id>
+    <Name>calamity</Name>
+    <Description>calamityDescription</Description>
+    <Icon>16</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>8</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1013" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>80</Health>
+      <Strength>38</Strength>
+      <Defense>10</Defense>
+      <MagicDefense>10</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1017</Id>
+    <Name>wizardsEdge</Name>
+    <Description>wizardsEdgeDescription</Description>
+    <Icon>17</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>8</Rank>
+    <Effects>
+      <InflictStatus Value="MagicBreakI" />
+      <BoundAbility Id="6" />
+    </Effects>
+    <Recipe>
+      <Item Id="1012" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Mana>35</Mana>
+      <Strength>28</Strength>
+      <Defense>15</Defense>
+      <Magic>32</Magic>
+      <MagicDefense>15</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1018</Id>
+    <Name>boundBladeAxium</Name>
+    <Description>boundBladeAxiumDescription</Description>
+    <Icon>18</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>8</Rank>
+    <Effects>
+      <CostReduction Stat="MP" Value="40" />
+    </Effects>
+    <EnchantmentSlots>0</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>60</Health>
+      <Mana>20</Mana>
+      <Strength>32</Strength>
+      <Defense>14</Defense>
+      <Magic>12</Magic>
+      <MagicDefense>14</MagicDefense>
+      <Luck>7</Luck>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1019</Id>
+    <Name>boundBladeSanctum</Name>
+    <Description>boundBladeSanctumDescription</Description>
+    <Icon>19</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>8</Rank>
+    <Effects>
+      <StatusImmunity Value="Blind" />
+      <StatusImmunity Value="Silence" />
+    </Effects>
+    <EnchantmentSlots>0</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>20</Health>
+      <Mana>60</Mana>
+      <Strength>12</Strength>
+      <Defense>14</Defense>
+      <Magic>32</Magic>
+      <MagicDefense>14</MagicDefense>
+      <Luck>7</Luck>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1020</Id>
+    <Name>durandal</Name>
+    <Description>durandalDescription</Description>
+    <Icon>20</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>9</Rank>
+    <Effects>
+      <BoundAbility Id="5" />
+    </Effects>
+    <Recipe>
+      <Item Id="1014" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>200</Health>
+      <Strength>42</Strength>
+      <Defense>28</Defense>
+      <MagicDefense>28</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1021</Id>
+    <Name>cursedRazor</Name>
+    <Description>cursedRazorDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>21</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <InflictStatus Value="BreakI" />
+      <InflictStatus Value="MagicBreakI" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1016" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>100</Health>
+      <Strength>50</Strength>
+      <Defense>10</Defense>
+      <MagicDefense>10</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1022</Id>
+    <Name>rampage</Name>
+    <Description>rampageDescription</Description>
+    <Icon>13</Icon>
+    <Price>0</Price>
+    <Type>Sword</Type>
+    <Rank>22</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <Dispel Value="Shell" />
+      <Dispel Value="Protect" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1016" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>140</Health>
+      <Strength>41</Strength>
+      <Defense>13</Defense>
+      <MagicDefense>13</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1023</Id>
+    <Name>zweihander</Name>
+    <Description>zweihanderDescription</Description>
+    <Icon>23</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>10</Rank>
+    <Effects>
+      <BoundAbility Id="5" />
+    </Effects>
+    <Recipe>
+      <Item Id="1020" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>300</Health>
+      <Strength>54</Strength>
+      <Defense>42</Defense>
+      <MagicDefense>42</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1024</Id>
+    <Name>duelistsEdge</Name>
+    <Description>duelistsEdgeDescription</Description>
+    <Icon>24</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>10</Rank>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+      <StatBoost Stat="Evasion" Value="0" />
+      <BoundAbility Id="4" />
+    </Effects>
+    <Recipe>
+      <Item Id="1015" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>51</Strength>
+      <Defense>18</Defense>
+      <MagicDefense>18</MagicDefense>
+      <Agility>15</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1025</Id>
+    <Name>alankhrem</Name>
+    <Description>alankhremDescription</Description>
+    <Icon>25</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>10</Rank>
+    <Effects>
+      <StatusImmunity Value="Blind" />
+      <StatusImmunity Value="Silence" />
+      <CostReduction Stat="MP" Value="40" />
+      <BoundAbility Id="7" />
+    </Effects>
+    <Recipe>
+      <Item Id="1018" Quantity="1" />
+      <Item Id="1019" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>0</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>60</Health>
+      <Mana>20</Mana>
+      <Strength>25</Strength>
+      <Defense>14</Defense>
+      <Mana>25</Mana>
+      <MagicDefense>14</MagicDefense>
+      <Luck>7</Luck>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1026</Id>
+    <Name>soulSword</Name>
+    <Description>soulSwordDescription</Description>
+    <Icon>26</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>11</Rank>
+    <Effects>
+      <InflictStatus Value="MagicBreakI" />
+      <BoundAbility Id="6" />
+      <BoundAbility Id="8" />
+    </Effects>
+    <Recipe>
+      <Item Id="1017" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Mana>60</Mana>
+      <Strength>40</Strength>
+      <Defense>18</Defense>
+      <Magic>55</Magic>
+      <MagicDefense>26</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1027</Id>
+    <Name>crystalBlade</Name>
+    <Description>crystalBladeDescription</Description>
+    <Icon>27</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>11</Rank>
+    <Effects>
+      <BoundAbility Id="5" />
+      <BoundAbility Id="9" />
+    </Effects>
+    <Recipe>
+      <Item Id="1020" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>250</Health>
+      <Strength>42</Strength>
+      <Defense>40</Defense>
+      <MagicDefense>40</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1028</Id>
+    <Name>ascalon</Name>
+    <Description>ascalonDescription</Description>
+    <Icon>28</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>11</Rank>
+    <Effects>
+      <StatBoost Stat="Accuracy" Value="100" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <StatBoost Stat="CritDmg" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+      <StatBoost Stat="Evasion" Value="0" />
+      <BoundAbility Id="4" />
+      <BoundAbility Id="10" />
+    </Effects>
+    <Recipe>
+      <Item Id="1024" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>60</Strength>
+      <Defense>18</Defense>
+      <MagicDefense>18</MagicDefense>
+      <Agility>15</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1029</Id>
+    <Name>catastrophe</Name>
+    <Description>catastropheDescription</Description>
+    <Icon>29</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>12</Rank>
+    <Effects>
+      <InflictStatus Value="HemoI" />
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <StatBoost Stat="Strength" Value="50" />
+      <SelfStatus Value="BleedIII" />
+      <BoundAbility Id="3" />
+    </Effects>
+    <Recipe>
+      <Item Id="1016" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Health>150</Health>
+      <Strength>100</Strength>
+      <Defense>35</Defense>
+      <MagicDefense>35</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1030</Id>
+    <Name>excalibur</Name>
+    <Description>excaliburDescription</Description>
+    <Icon>30</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>12</Rank>
+    <Effects>
+      <InflictStatus Value="MagicBreakI" />
+      <BoundAbility Id="6" />
+      <BoundAbility Id="8" />
+      <BoundAbility Id="11" />
+    </Effects>
+    <Recipe>
+      <Item Id="1026" Quantity="1" />
+    </Recipe>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Mana>60</Mana>
+      <Strength>45</Strength>
+      <Defense>18</Defense>
+      <Magic>60</Magic>
+      <MagicDefense>26</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1031</Id>
+    <Name>ragnarok</Name>
+    <Description>ragnarokDescription</Description>
+    <Icon>31</Icon>
+    <Price>10</Price>
+    <Type>Sword</Type>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+</Items>

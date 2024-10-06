@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item>
+    <Id>1053</Id>
+    <Name>ironAxe</Name>
+    <Description>ironAxeDescription</Description>
+    <Icon>53</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>1</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>7</Strength>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1054</Id>
+    <Name>steelAxe</Name>
+    <Description>steelAxeDescription</Description>
+    <Icon>54</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Recipe>
+      <Item Id="1053" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>30</Health>
+      <Strength>12</Strength>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1055</Id>
+    <Name>splittingAxe</Name>
+    <Description>splittingAxeDescription</Description>
+    <Icon>55</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Recipe>
+      <Item Id="1054" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>70</Health>
+      <Strength>18</Strength>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1056</Id>
+    <Name>sagaris</Name>
+    <Description>sagarisDescription</Description>
+    <Icon>56</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatis Value="BleedI" />
+    </Effects>
+    <Stats>
+      <Health>80</Health>
+      <Strength>21</Strength>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1057</Id>
+    <Name>tomahawk</Name>
+    <Description>tomahawkDescription</Description>
+    <Icon>57</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="SlowI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1055" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>70</Health>
+      <Strength>18</Strength>
+      <Defense>1</Defense>
+      <MagicDefense>1</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1058</Id>
+    <Name>battleAxe</Name>
+    <Description>battleAxeDescription</Description>
+    <Icon>58</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <StatBoost Stat="Parry" Value="10" />
+    </Effects>
+    <Recipe>
+      <Item Id="1055" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>80</Health>
+      <Strength>26</Strength>
+      <Defense>4</Defense>
+      <MagicDefense>4</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1059</Id>
+    <Name>lumberjacksDream</Name>
+    <Description>lumberjacksDreamDescription</Description>
+    <Icon>59</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatis Value="BleedI" />
+      <StatBoost Stat="CritChance" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1056" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>90</Health>
+      <Strength>28</Strength>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1060</Id>
+    <Name>ono</Name>
+    <Description>onoDescription</Description>
+    <Icon>60</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="HemoI" />
+    </Effects>
+    <Recipe>
+      <Item Id="1057" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>110</Health>
+      <Strength>34</Strength>
+      <Defense>6</Defense>
+      <MagicDefense>6</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1061</Id>
+    <Name>francisca</Name>
+    <Description>franciscaDescription</Description>
+    <Icon>61</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="17" />
+    </Effects>
+    <Recipe>
+      <Item Id="1056" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>150</Health>
+      <Strength>43</Strength>
+      <MagicDefense>7</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1062</Id>
+    <Name>theCleaver</Name>
+    <Description>theCleaverDescription</Description>
+    <Icon>62</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <BoundAbility Id="18" />
+    </Effects>
+    <Recipe>
+      <Item Id="1059" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>240</Health>
+      <Strength>40</Strength>
+      <Defense>16</Defense>
+      <MagicDefense>16</MagicDefense>
+      <Agility>-10</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1063</Id>
+    <Name>theCrusher</Name>
+    <Description>theCrusherDescription</Description>
+    <Icon>63</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="19" />
+    </Effects>
+    <Recipe>
+      <Item Id="1058" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>80</Health>
+      <Strength>55</Strength>
+      <Defense>16</Defense>
+      <MagicDefense>16</MagicDefense>
+      <Agility>-10</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1064</Id>
+    <Name>theSanguine</Name>
+    <Description>theSanguineDescription</Description>
+    <Icon>64</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>8</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <DrainFromDamage Stat="HP" Value="20" />
+      <BoundAbility Id="20" />
+    </Effects>
+    <Stats>
+      <Health>200</Health>
+      <Strength>48</Strength>
+      <Defense>14</Defense>
+      <MagicDefense>14</MagicDefense>
+      <Agility>-10</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1065</Id>
+    <Name>parashu</Name>
+    <Description>parashuDescription</Description>
+    <Icon>65</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="17" />
+      <StatBoost Stat="Agility" Value="0" />
+      <StatBoost Stat="Accuracy" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1061" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>200</Health>
+      <Strength>49</Strength>
+      <MagicDefense>20</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1066</Id>
+    <Name>yue</Name>
+    <Description>yueDescription</Description>
+    <Icon>66</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="SlowI" />
+      <InflictStatus Value="HemoI" />
+      <BoundAbility Id="21" />
+    </Effects>
+    <Recipe>
+      <Item Id="1060" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>200</Health>
+      <Strength>55</Strength>
+      <Defense>15</Defense>
+      <MagicDefense>15</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1067</Id>
+    <Name>goldenAxe</Name>
+    <Description>goldenAxeDescription</Description>
+    <Icon>67</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <BoundAbility Id="17" />
+      <BoundAbility Id="22" />
+      <StatBoost Stat="Agility" Value="0" />
+      <StatBoost Stat="Accuracy" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1065" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>200</Health>
+      <Strength>49</Strength>
+      <MagicDefense>24</MagicDefense>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1068</Id>
+    <Name>warchiefsAxe</Name>
+    <Description>warchiefsAxeDescription</Description>
+    <Icon>68</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <StatBoost Stat="CritChance" Value="0" />
+      <BoundAbility Id="18" />
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="19" />
+    </Effects>
+    <Recipe>
+      <Item Id="1062" Quantity="1" />
+      <Item Id="1063" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>300</Health>
+      <Strength>65</Strength>
+      <Defense>20</Defense>
+      <MagicDefense>20</MagicDefense>
+      <Agility>-10</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1069</Id>
+    <Name>warlordsSteel</Name>
+    <Description>warlordsSteelDescription</Description>
+    <Icon>69</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="19" />
+      <DrainFromDamage Stat="HP" Value="20" />
+      <BoundAbility Id="20" />
+    </Effects>
+    <Recipe>
+      <Item Id="1063" Quantity="1" />
+      <Item Id="1064" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>200</Health>
+      <Strength>80</Strength>
+      <Defense>18</Defense>
+      <MagicDefense>18</MagicDefense>
+      <Agility>-10</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1070</Id>
+    <Name>bloodAngel</Name>
+    <Description>bloodAngelDescription</Description>
+    <Icon>70</Icon>
+    <Price>10</Price>
+    <Type>Axe</Type>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>AxeStrike</Strike>
+      <ImpactParticles>2</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+</Items>

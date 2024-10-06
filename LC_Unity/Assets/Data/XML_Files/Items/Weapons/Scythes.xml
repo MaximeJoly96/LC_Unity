@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item>
+    <Id>1216</Id>
+    <Name>sickle</Name>
+    <Description>sickleDescription</Description>
+    <Icon>216</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Stats>
+      <Health>20</Health>
+      <Mana>20</Mana>
+      <Strength>5</Strength>
+      <Magic>10</Magic>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ScytheStrike</Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1217</Id>
+    <Name>khopesh</Name>
+    <Description>khopeshDescription</Description>
+    <Icon>217</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <BoundAbility Id="44" />
+    </Effects>
+    <Recipe>
+      <Item Id="1216" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>20</Health>
+      <Mana>20</Mana>
+      <Strength>7</Strength>
+      <Magic>13</Magic>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ScytheStrike</Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1218</Id>
+    <Name>kama</Name>
+    <Description>kamaDescription</Description>
+    <Icon>218</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Agility" Value="0" />
+      <HealingItemsEfficiency Value="0" />
+    </Effects>
+    <Stats>
+      <Health>25</Health>
+      <Mana>30</Mana>
+      <Strength>5</Strength>
+      <Magic>8</Magic>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ScytheStrike</Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1219</Id>
+    <Name>billhook</Name>
+    <Description>billhookDescription</Description>
+    <Icon>219</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <HealingItemsEfficiency Value="0" />
+    </Effects>
+    <Stats>
+      <Health>20</Health>
+      <Mana>40</Mana>
+      <Strength>4</Strength>
+      <Magic>8</Magic>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ScytheStrike</Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1220</Id>
+    <Name>warScythe</Name>
+    <Description>warScytheDescription</Description>
+    <Icon>220</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Parry" Value="0" />
+      <BoundAbility Id="44" />
+      <AutoAttackAfterAbility />
+    </Effects>
+    <Recipe>
+      <Item Id="1217" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>50</Health>
+      <Mana>50</Mana>
+      <Strength>10</Strength>
+      <Magic>10</Magic>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ScytheStrike</Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1221</Id>
+    <Name>harpe</Name>
+    <Description>harpeDescription</Description>
+    <Icon>221</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="Agility" Value="0" />
+      <HealingItemsEfficiency Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1218" Quantity="1" />
+      <Item Id="1219" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Health>80</Health>
+      <Mana>80</Mana>
+      <Strength>18</Strength>
+      <Magic>48</Magic>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ScytheStrike</Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1222</Id>
+    <Name>omenOfDeath</Name>
+    <Description>omenOfDeathDescription</Description>
+    <Icon>222</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <BonusElementalDamage Element="Darkness" Value="30" />
+      <StatBoost Stat="Magic" Value="0" />
+      <DrainFromDamage Stat="HP" Value="10" />
+    </Effects>
+    <Stats>
+      <Health>120</Health>
+      <Mana>160</Mana>
+      <Strength>35</Strength>
+      <Magic>80</Magic>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ScytheStrike</Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1223</Id>
+    <Name>omenOfHope</Name>
+    <Description>omenOfHopeDescription</Description>
+    <Icon>223</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <BonusElementalDamage Element="Holy" Value="30" />
+      <StatBoost Stat="Magic" Value="0" />
+      <SelfStatus Value="Faith" />
+    </Effects>
+    <Stats>
+      <Health>80</Health>
+      <Mana>160</Mana>
+      <Strength>25</Strength>
+      <Magic>90</Magic>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ScytheStrike</Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1224</Id>
+    <Name>postMortem</Name>
+    <Description>postMortemDescription</Description>
+    <Icon>224</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Effects>
+      <BonusElementalDamage Element="Holy" Value="30" />
+      <BonusElementalDamage Element="Darkness" Value="30" />
+      <StatBoost Stat="Magic" Value="0" />
+      <SelfStatus Value="Faith" />
+      <DrainFromDamage Stat="HP" Value="10" />
+      <Stats>
+        <Health>120</Health>
+        <Mana>160</Mana>
+        <Strength>46</Strength>
+        <Magic>100</Magic>
+      </Stats>
+    </Effects>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ScytheStrike</Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+</Items>

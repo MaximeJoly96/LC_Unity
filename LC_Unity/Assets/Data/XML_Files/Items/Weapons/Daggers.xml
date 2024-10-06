@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item>
+    <Id>1032</Id>
+    <Name>bluntKnife</Name>
+    <Description>bluntKnifeDescription</Description>
+    <Icon>32</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>1</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Stats>
+      <Strength>2</Strength>
+      <Agility>5</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1033</Id>
+    <Name>dirk</Name>
+    <Description>dirkDescription</Description>
+    <Icon>33</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Recipe>
+      <Item Id="1032" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>7</Strength>
+      <Agility>8</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1034</Id>
+    <Name>herbalistsBillhook</Name>
+    <Description>herbalistsBillhookDescription</Description>
+    <Icon>34</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <HealingItemsEfficiency Value="0" />
+    </Effects>
+    <Stats>
+      <Strength>2</Strength>
+      <Agility>8</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1035</Id>
+    <Name>poisonedBlade</Name>
+    <Description>poisonedBladeDescription</Description>
+    <Icon>35</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="Poison" />
+    </Effects>
+    <Stats>
+      <Strength>5</Strength>
+      <Agility>6</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1036</Id>
+    <Name>sneakySteel</Name>
+    <Description>sneakySteelDescription</Description>
+    <Icon>36</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <StatBoost Stat="Provocation" Value="-10" />
+    </Effects>
+    <Recipe>
+      <Item Id="1033" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>9</Strength>
+      <Agility>8</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1037</Id>
+    <Name>venomousBlade</Name>
+    <Description>venomousBladeDescription</Description>
+    <Icon>37</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="Poison" />
+      <BoundAbility Id="12" />
+    </Effects>
+    <Recipe>
+      <Item Id="1035" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>7</Strength>
+      <Agility>7</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1038</Id>
+    <Name>silverDagger</Name>
+    <Description>silverDaggerDescription</Description>
+    <Icon>38</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <StatBoost Stat="Provocation" Value="-10" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1036" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>14</Strength>
+      <Agility>9</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1039</Id>
+    <Name>alchemistKnife</Name>
+    <Description>alchemistKnifeDescription</Description>
+    <Icon>39</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>4</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <HealingItemsEfficiency Value="0" />
+      <BoundAbility Id="13" />
+    </Effects>
+    <Recipe>
+      <Item Id="1034" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>6</Strength>
+      <Magic>5</Magic>
+      <Agility>13</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1040</Id>
+    <Name>anelace</Name>
+    <Description>anelaceDescription</Description>
+    <Icon>40</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>5</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <StatBoost Stat="Provocation" Value="-10" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1038" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>19</Strength>
+      <Agility>18</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1041</Id>
+    <Name>baselard</Name>
+    <Description>baselardDescription</Description>
+    <Icon>41</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <StatBoost Stat="Provocation" Value="-30" />
+      <TargetEffectiveness Type="Undead" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1040" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>26</Strength>
+      <Agility>26</Agility>
+      <Luck>6</Luck>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1042</Id>
+    <Name>badik</Name>
+    <Description>badikDescription</Description>
+    <Icon>42</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <BoundAbility Id="12" />
+      <StatBoost Stat="CritChance" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1037" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>19</Strength>
+      <Agility>26</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1043</Id>
+    <Name>scholarSteel</Name>
+    <Description>scholarSteelDescription</Description>
+    <Icon>43</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>6</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <HealingItemsEfficiency Value="0" />
+      <BoundAbility Id="13" />
+      <StatBoost Stat="Magic" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1039" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>11</Strength>
+      <Magic>14</Magic>
+      <Agility>28</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1044</Id>
+    <Name>kris</Name>
+    <Description>krisDescription</Description>
+    <Icon>44</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="HemoI" />
+    </Effects>
+    <Stats>
+      <Strength>28</Strength>
+      <Agility>52</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1045</Id>
+    <Name>khanjali</Name>
+    <Description>khanjaliDescription</Description>
+    <Icon>45</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>7</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <TargetEffectiveness Type="Undead" Value="30" />
+      <BoundAbility Id="14" />
+    </Effects>
+    <Recipe>
+      <Item Id="1041" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>32</Strength>
+      <Agility>32</Agility>
+      <Luck>12</Luck>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1046</Id>
+    <Name>spectralCutlass</Name>
+    <Description>spectralCutlassDescription</Description>
+    <Icon>46</Icon>
+    <Price>0</Price>
+    <Type>Dagger</Type>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="HemoI" />
+      <ElementalAffinityModifier Value="-50" Element="Darkness" />
+    </Effects>
+    <Recipe>
+      <Item Id="1044" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>44</Strength>
+      <Agility>70</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1047</Id>
+    <Name>cinquedea</Name>
+    <Description>cinquedeaDescription</Description>
+    <Icon>47</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>9</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <TargetEffectiveness Type="Undead" Value="30" />
+      <BoundAbility Id="14" />
+      <StatBoost Stat="CritDmg" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1045" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>44</Strength>
+      <Agility>48</Agility>
+      <Luck>15</Luck>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1048</Id>
+    <Name>kalis</Name>
+    <Description>kalisDescription</Description>
+    <Icon>48</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="HemoI" />
+      <NegativeStatusBonusDamage Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1044" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>50</Strength>
+      <Agility>85</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1049</Id>
+    <Name>badOmens</Name>
+    <Description>badOmensDescription</Description>
+    <Icon>49</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>10</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Blind" />
+      <InflictStatus Value="Silence" />
+      <BoundAbility Id="12" />
+      <BoundAbility Id="15" />
+      <StatBoost Stat="CritChance" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1042" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>40</Strength>
+      <Agility>70</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1050</Id>
+    <Name>kila</Name>
+    <Description>kilaDescription</Description>
+    <Icon>50</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>11</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <HealingItemsEfficiency Value="0" />
+      <BoundAbility Id="13" />
+      <BoundAbility Id="16" />
+      <StatBoost Stat="Magic" Value="0" />
+      <StatBoost Stat="MagicDefense" Value="0" />
+    </Effects>
+    <Recipe>
+      <Item Id="1043" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>23</Strength>
+      <Magic>55</Magic>
+      <Agility>60</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1051</Id>
+    <Name>yoroiDoshi</Name>
+    <Description>yoroiDoshiDescription</Description>
+    <Icon>51</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <TargetEffectiveness Type="Undead" Value="30" />
+      <BoundAbility Id="14" />
+      <StatBoost Stat="CritDmg" Value="40" />
+    </Effects>
+    <Recipe>
+      <Item Id="1045" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Strength>60</Strength>
+      <Agility>90</Agility>
+      <Luck>28</Luck>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1052</Id>
+    <Name>killingDoll</Name>
+    <Description>killingDollDescription</Description>
+    <Icon>52</Icon>
+    <Price>10</Price>
+    <Type>Dagger</Type>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+</Items>
