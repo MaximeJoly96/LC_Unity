@@ -7,7 +7,7 @@ namespace Inventory
     public class ItemsWrapper : MonoBehaviour
     {
         [SerializeField]
-        private TextAsset _weapons;
+        private List<TextAsset> _weapons;
         [SerializeField]
         private TextAsset _consumables;
         [SerializeField]
@@ -73,12 +73,17 @@ namespace Inventory
             FeedKeyItems(_keyItems);
         }
 
-        public void FeedWeapons(TextAsset weaponsFile)
+        public void FeedWeapons(List<TextAsset> weaponsFiles)
         {
-            if (!weaponsFile)
+            if (weaponsFiles == null)
                 return;
 
-            Weapons = WeaponsParser.ParseWeapons(weaponsFile);
+            List<Weapon> weapons = new List<Weapon>();
+
+            for (int i = 0; i < weaponsFiles.Count; i++)
+                weapons.AddRange(WeaponsParser.ParseWeapons(weaponsFiles[i]));
+
+            Weapons = weapons;
         }
 
         public void FeedConsumables(TextAsset consumablesFile)

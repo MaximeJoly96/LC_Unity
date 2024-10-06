@@ -40,7 +40,12 @@ namespace Testing.Inventory
             wrapper.FeedWeapons(null);
             Assert.IsNull(wrapper.Weapons);
 
-            wrapper.FeedWeapons(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestWeapons.xml"));
+            List<TextAsset> files = new List<TextAsset>()
+            {
+                AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestWeapons.xml")
+            };
+
+            wrapper.FeedWeapons(files);
             Assert.AreEqual(3, wrapper.Weapons.Count);
         }
 
@@ -109,7 +114,11 @@ namespace Testing.Inventory
         {
             ItemsWrapper wrapper = CreateEmptyWrapper();
 
-            wrapper.FeedWeapons(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestWeapons.xml"));
+            List<TextAsset> files = new List<TextAsset>()
+            {
+                AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestWeapons.xml")
+            };
+            wrapper.FeedWeapons(files);
             wrapper.FeedAccessories(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestAccessories.xml"));
             wrapper.FeedArmours(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestArmours.xml"));
             wrapper.FeedKeyItems(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestKeyItems.xml"));
