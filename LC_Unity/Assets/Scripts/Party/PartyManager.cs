@@ -106,11 +106,11 @@ namespace Party
 
                 if (inParty != null)
                 {
-                    inParty.ChangeEquipment(characters[i].RightHand.ItemId);
-                    inParty.ChangeEquipment(characters[i].LeftHand.ItemId);
-                    inParty.ChangeEquipment(characters[i].Head.ItemId);
-                    inParty.ChangeEquipment(characters[i].Body.ItemId);
-                    inParty.ChangeEquipment(characters[i].Accessory.ItemId);
+                    inParty.ChangeEquipment(characters[i].Equipment.RightHand.ItemId);
+                    inParty.ChangeEquipment(characters[i].Equipment.LeftHand.ItemId);
+                    inParty.ChangeEquipment(characters[i].Equipment.Head.ItemId);
+                    inParty.ChangeEquipment(characters[i].Equipment.Body.ItemId);
+                    inParty.ChangeEquipment(characters[i].Equipment.Accessory.ItemId);
                 }  
             }
         }

@@ -4,6 +4,7 @@ using System.Xml;
 using Logging;
 using Actors;
 using UnityEngine;
+using Core.Model;
 
 namespace Essence
 {
@@ -52,7 +53,7 @@ namespace Essence
             EssenceType essence = (EssenceType)Enum.Parse(typeof(EssenceType), node.SelectSingleNode("Essence").InnerText);
             EssentialAffinityEffect effect = ParseAffinityEffect(node.SelectSingleNode("Condition").InnerText);
 
-            return new EssenceAffinity(id, name, description, essence, effect);
+            return new EssenceAffinity(new ElementIdentifier(id, name, description), essence, effect);
         }
 
         private static EssentialAffinityEffect ParseAffinityEffect(string value)

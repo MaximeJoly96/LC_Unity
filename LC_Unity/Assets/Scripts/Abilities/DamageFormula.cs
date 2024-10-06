@@ -23,20 +23,20 @@ namespace Abilities
 
         private static int AttackCommandFormula(Character source, Character target)
         {
-            return Mathf.Max(0, Mathf.RoundToInt(((source.BaseStrength + source.BonusStrength) * 2.0f - (target.BaseDefense + target.BonusDefense)) 
-                                * (1 + source.Level * 0.025f)));
+            return Mathf.Max(0, Mathf.RoundToInt(((source.Stats.BaseStrength + source.Stats.BonusStrength) * 2.0f - (target.Stats.BaseDefense + target.Stats.BonusDefense)) 
+                                * (1 + source.Stats.Level * 0.025f)));
         }
 
         private static int ClawsCommandFormula(Character source, Character target)
         {
-            return Mathf.Max(0, Mathf.RoundToInt(((source.BaseStrength + source.BonusStrength) * 2.0f - (target.BaseDefense + target.BonusDefense))
-                                * (1 + source.Level * 0.025f)));
+            return Mathf.Max(0, Mathf.RoundToInt(((source.Stats.BaseStrength + source.Stats.BonusStrength) * 2.0f - (target.Stats.BaseDefense + target.Stats.BonusDefense))
+                                * (1 + source.Stats.Level * 0.025f)));
         }
 
         private static int MagickaFormula(Character source, Character target)
         {
-            return Mathf.Max(0, Mathf.RoundToInt(((source.BaseMagic + source.BonusMagic) * 2.2f - (target.BaseMagicDefense + target.BonusMagicDefense))
-                                * (1 + source.Level * 0.025f)));
+            return Mathf.Max(0, Mathf.RoundToInt(((source.Stats.BaseMagic + source.Stats.BonusMagic) * 2.2f - (target.Stats.BaseMagicDefense + target.Stats.BonusMagicDefense))
+                                * (1 + source.Stats.Level * 0.025f)));
         }
     }
 }

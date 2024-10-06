@@ -28,11 +28,11 @@ namespace Menus
             _character = character;
 
             _name.text = character.Name;
-            _hpGauge.SetGauge(character.CurrentHealth, character.MaxHealth);
-            _manaGauge.SetGauge(character.CurrentMana, character.MaxMana);
-            _essenceGauge.SetGauge(character.CurrentEssence, character.MaxEssence);
+            _hpGauge.SetGauge(character.Stats.CurrentHealth, character.Stats.MaxHealth);
+            _manaGauge.SetGauge(character.Stats.CurrentMana, character.Stats.MaxMana);
+            _essenceGauge.SetGauge(character.Stats.CurrentEssence, character.Stats.MaxEssence);
 
-            _xpGauge.SetLevel(character.GetXpForCurrentLevel(), character.GetXpRequiredForLevel(character.Level), character.Level);
+            _xpGauge.SetLevel(character.GetXpForCurrentLevel(), character.GetXpRequiredForLevel(character.Stats.Level), character.Stats.Level);
         }
 
         public void Hover()

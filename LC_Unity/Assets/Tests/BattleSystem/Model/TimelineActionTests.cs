@@ -66,16 +66,16 @@ namespace Testing.BattleSystem.Model
             BattlerBehaviour b2 = CreateBattlerBehaviour();
             BattlerBehaviour b3 = CreateBattlerBehaviour();
 
-            b1.BattlerData.Character.ChangeExp(10);
-            b2.BattlerData.Character.ChangeExp(300);
-            b3.BattlerData.Character.ChangeExp(1000);
+            b1.BattlerData.Character.GiveExp(10);
+            b2.BattlerData.Character.GiveExp(300);
+            b3.BattlerData.Character.GiveExp(1000);
 
             List<BattlerBehaviour> battlers = new List<BattlerBehaviour>
             {
                 b1, b2, b3
             };
 
-            int maxAgility = battlers.Max(b => b.BattlerData.Character.BaseAgility + b.BattlerData.Character.BonusAgility);
+            int maxAgility = battlers.Max(b => b.BattlerData.Character.Stats.BaseAgility + b.BattlerData.Character.Stats.BonusAgility);
             Assert.IsTrue(Mathf.Abs(90.0f - TimelineAction.ComputeActionStartPoint(b1, maxAgility)) < 0.01f);
             Assert.IsTrue(Mathf.Abs(40.0f - TimelineAction.ComputeActionStartPoint(b2, maxAgility)) < 0.01f);
             Assert.IsTrue(Mathf.Abs(0.0f - TimelineAction.ComputeActionStartPoint(b3, maxAgility)) < 0.01f);
@@ -93,7 +93,7 @@ namespace Testing.BattleSystem.Model
 
         private Character CreateDummyCharacter()
         {
-            return new Character(0, "name",
+            return new Character(new ElementIdentifier(0, "name", ""),
                                  new QuadraticFunction(10.0f, 10.0f, 10.0f),
                                  new StatScalingFunction(100.0f, 1.0f, 100.0f),
                                  new StatScalingFunction(10.0f, 1.0f, 10.0f),

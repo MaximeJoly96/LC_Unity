@@ -35,7 +35,7 @@ namespace BattleSystem.Model
             // |              |   |
             // --------------------      ---> for ref, there are 20 hyphens here
 
-            return maxAgility - (battler.BattlerData.Character.BaseAgility + battler.BattlerData.Character.BonusAgility);
+            return maxAgility - (battler.BattlerData.Character.Stats.BaseAgility + battler.BattlerData.Character.Stats.BonusAgility);
         }
 
         public float ComputeActionLength(BattlerBehaviour battler)

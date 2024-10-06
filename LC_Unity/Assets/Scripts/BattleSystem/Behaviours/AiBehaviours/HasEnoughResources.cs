@@ -50,11 +50,11 @@ namespace BattleSystem.Behaviours.AiBehaviours
             switch(stat)
             {
                 case Stat.HP:
-                    return character.CurrentHealth;
+                    return character.Stats.CurrentHealth;
                 case Stat.MP:
-                    return character.CurrentMana;
+                    return character.Stats.CurrentMana;
                 case Stat.EP:
-                    return character.CurrentEssence;
+                    return character.Stats.CurrentEssence;
                 default:
                     throw new InvalidOperationException("Invalid stat used as Resource (" + stat + "). You can only use HP, MP and EP.");
             }
@@ -65,11 +65,11 @@ namespace BattleSystem.Behaviours.AiBehaviours
             switch(stat)
             {
                 case Stat.HP:
-                    return character.MaxHealth;
+                    return character.Stats.MaxHealth;
                 case Stat.MP:
-                    return character.MaxMana;
+                    return character.Stats.MaxMana;
                 case Stat.EP:
-                    return character.MaxEssence;
+                    return character.Stats.MaxEssence;
                 default:
                     throw new InvalidOperationException("Invalid stat used as Resource (" + stat + "). You can only use HP, MP and EP.");
             }

@@ -26,11 +26,11 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
             HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.Flat, 10.0f, global::Effects.Stat.MP);
             Character character = CreateDummyCharacter();
 
-            character.CurrentMana = 20;
+            character.Stats.CurrentMana = 20;
 
             Assert.IsTrue(hasEnough.Check(character));
 
-            character.CurrentMana = 0;
+            character.Stats.CurrentMana = 0;
 
             Assert.IsFalse(hasEnough.Check(character));
         }
@@ -41,11 +41,11 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
             HasEnoughResources hasEnough = new HasEnoughResources(HasEnoughResources.AmountType.Percentage, 20.0f, global::Effects.Stat.HP);
             Character character = CreateDummyCharacter();
 
-            character.CurrentHealth = 100;
+            character.Stats.CurrentHealth = 100;
 
             Assert.IsTrue(hasEnough.Check(character));
 
-            character.CurrentHealth = 10;
+            character.Stats.CurrentHealth = 10;
 
             Assert.IsFalse(hasEnough.Check(character));
         }
@@ -59,18 +59,18 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
                                           AbilityUsability.Always, TargetEligibility.Any, AbilityCategory.Skill, 0);
             ability.SetCost(0, 0, 10);
 
-            character.CurrentEssence = 10;
+            character.Stats.CurrentEssence = 10;
             
             Assert.IsTrue(hasEnough.Check(character, ability));
 
-            character.CurrentEssence = 0;
+            character.Stats.CurrentEssence = 0;
 
             Assert.IsFalse(hasEnough.Check(character, ability));
         }
 
         private Character CreateDummyCharacter()
         {
-            return new Character(0, "name",
+            return new Character(new ElementIdentifier(0, "name", ""),
                                  new QuadraticFunction(10.0f, 10.0f, 10.0f),
                                  new StatScalingFunction(100.0f, 1.0f, 100.0f),
                                  new StatScalingFunction(10.0f, 1.0f, 10.0f),

@@ -8,6 +8,7 @@ using System.Globalization;
 using System.Collections.Generic;
 using Abilities;
 using Actors;
+using Core.Model;
 
 namespace BattleSystem.Data
 {
@@ -33,8 +34,8 @@ namespace BattleSystem.Data
 
                 if(found)
                 {
-                    Character c = new Character(matchingId,
-                                                ParseStringValue(enemies[i - 1], "Name"),
+                    ElementIdentifier identifier = new ElementIdentifier(matchingId, ParseStringValue(enemies[i - 1], "Name"), "");
+                    Character c = new Character(identifier,
                                                 new QuadraticFunction(1, 0, 0),
                                                 ParseStatScalingFunction(enemies[i - 1], "BaseHealth"),
                                                 ParseStatScalingFunction(enemies[i - 1], "BaseMana"),

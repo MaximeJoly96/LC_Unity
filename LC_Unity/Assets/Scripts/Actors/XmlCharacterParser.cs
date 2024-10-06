@@ -7,6 +7,7 @@ using Utils;
 using System.Globalization;
 using Essence;
 using System.Linq;
+using Core.Model;
 
 namespace Actors
 {
@@ -27,8 +28,11 @@ namespace Actors
 
                 for (int i = 0; i < charactersNodes.Count; i++)
                 {
-                    Character c = new Character(ParseIntValue(charactersNodes[i], "Id"),
-                                                ParseStringValue(charactersNodes[i], "Name"),
+                    ElementIdentifier identifier = new ElementIdentifier(ParseIntValue(charactersNodes[i], "Id"),
+                                                                         ParseStringValue(charactersNodes[i], "Name"),
+                                                                         "");
+
+                    Character c = new Character(identifier,
                                                 ParseQuadraticFunction(charactersNodes[i], "Exp"),
                                                 ParseStatScalingFunction(charactersNodes[i], "BaseHealth"),
                                                 ParseStatScalingFunction(charactersNodes[i], "BaseMana"),

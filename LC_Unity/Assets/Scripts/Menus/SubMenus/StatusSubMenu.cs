@@ -58,14 +58,14 @@ namespace Menus.SubMenus
             if(_fedCharacter != null)
             {
                 _characterName.text = _fedCharacter.Name;
-                _health.SetGauge(_fedCharacter.CurrentHealth, _fedCharacter.MaxHealth);
-                _mana.SetGauge(_fedCharacter.CurrentMana, _fedCharacter.MaxMana);
-                _essence.SetGauge(_fedCharacter.CurrentEssence, _fedCharacter.MaxEssence);
+                _health.SetGauge(_fedCharacter.Stats.CurrentHealth, _fedCharacter.Stats.MaxHealth);
+                _mana.SetGauge(_fedCharacter.Stats.CurrentMana, _fedCharacter.Stats.MaxMana);
+                _essence.SetGauge(_fedCharacter.Stats.CurrentEssence, _fedCharacter.Stats.MaxEssence);
 
-                _level.text = (_fedCharacter.Level + 1).ToString();
+                _level.text = (_fedCharacter.Stats.Level + 1).ToString();
 
                 float currentLvlXp = _fedCharacter.GetXpForCurrentLevel();
-                float requiredXp = _fedCharacter.GetXpRequiredForLevel(_fedCharacter.Level);
+                float requiredXp = _fedCharacter.GetXpRequiredForLevel(_fedCharacter.Stats.Level);
 
                 _xpGauge.fillAmount = currentLvlXp / requiredXp;
                 _xpValue.text = currentLvlXp + " / " + requiredXp;

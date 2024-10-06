@@ -239,19 +239,19 @@ namespace Menus.SubMenus
             switch (_cursorPosition)
             {
                 case 0:
-                    _currentItem = wrapper.GetItemFromId(_fedCharacter.RightHand.ItemId);
+                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Equipment.RightHand.ItemId);
                     break;
                 case 1:
-                    _currentItem = wrapper.GetItemFromId(_fedCharacter.LeftHand.ItemId);
+                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Equipment.LeftHand.ItemId);
                     break;
                 case 2:
-                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Head.ItemId);
+                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Equipment.Head.ItemId);
                     break;
                 case 3:
-                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Body.ItemId);
+                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Equipment.Body.ItemId);
                     break;
                 case 4:
-                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Accessory.ItemId);
+                    _currentItem = wrapper.GetItemFromId(_fedCharacter.Equipment.Accessory.ItemId);
                     break;
             }
 
@@ -280,19 +280,19 @@ namespace Menus.SubMenus
             switch(cursorPosition)
             {
                 case 0:
-                    character.RightHand.ItemId = newItem.Id;
+                    character.Equipment.RightHand.ItemId = newItem.Id;
                     break;
                 case 1:
-                    character.LeftHand.ItemId = newItem.Id;
+                    character.Equipment.LeftHand.ItemId = newItem.Id;
                     break;
                 case 2:
-                    character.Head.ItemId = newItem.Id;
+                    character.Equipment.Head.ItemId = newItem.Id;
                     break;
                 case 3:
-                    character.Body.ItemId = newItem.Id;
+                    character.Equipment.Body.ItemId = newItem.Id;
                     break;
                 case 4:
-                    character.Accessory.ItemId = newItem.Id;
+                    character.Equipment.Accessory.ItemId = newItem.Id;
                     break;
             }
 

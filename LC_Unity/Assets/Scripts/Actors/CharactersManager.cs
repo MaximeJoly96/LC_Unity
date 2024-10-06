@@ -31,7 +31,7 @@ namespace Actors
             Character character = GetCharacter(change.CharacterId);
 
             if (character != null)
-                character.Name = change.Value;
+                character.UpdateName(change.Value);
         }
 
         public void ChangeCharacterLevel(ChangeLevel change)

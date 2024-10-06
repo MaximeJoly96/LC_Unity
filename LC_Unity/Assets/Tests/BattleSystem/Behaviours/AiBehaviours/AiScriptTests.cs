@@ -73,14 +73,14 @@ namespace Testing.BattleSystem.Behaviours.AiBehaviours
 
             Assert.AreEqual(45, script.PickAction(battlerComponent));
 
-            battlerComponent.BattlerData.Character.CurrentMana = 0; // should not be able to cast its range ability
+            battlerComponent.BattlerData.Character.Stats.CurrentMana = 0; // should not be able to cast its range ability
 
             Assert.AreEqual(2, script.PickAction(battlerComponent));
         }
 
         private Character CreateDummyCharacter()
         {
-            return new Character(0, "name",
+            return new Character(new ElementIdentifier(0, "name", ""),
                                  new QuadraticFunction(10.0f, 10.0f, 10.0f),
                                  new StatScalingFunction(100.0f, 1.0f, 100.0f),
                                  new StatScalingFunction(10.0f, 1.0f, 10.0f),

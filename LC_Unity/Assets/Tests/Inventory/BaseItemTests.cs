@@ -47,7 +47,7 @@ namespace Testing.Inventory
         public void EffectsCanBeAddedToBaseItem()
         {
             BaseItem item = new BaseItem(new ElementIdentifier(3, "item", "description"), 12, 6, ItemCategory.Consumable);
-            item.AddEffect(new InflictStatus { Value = Actors.EffectType.BleedII });
+            item.AddEffect(new InflictStatus { Value = global::Actors.EffectType.BleedII });
 
             Assert.AreEqual(1, item.Effects.Count);
             Assert.IsTrue(item.Effects[0] is InflictStatus);
@@ -55,7 +55,7 @@ namespace Testing.Inventory
             List<IEffect> effects = new List<IEffect>
             {
                 new AdditionalStrike { Amount = 2},
-                new Dispel { Value = Actors.EffectType.Poison }
+                new Dispel { Value = global::Actors.EffectType.Poison }
             };
 
             item.AddEffects(effects);

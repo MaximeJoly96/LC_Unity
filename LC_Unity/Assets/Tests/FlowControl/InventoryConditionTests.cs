@@ -60,7 +60,7 @@ namespace Testing.FlowControl
             Assert.AreEqual(0, PersistentDataHolder.Instance.GetData("testItemEquippedCondition"));
 
             Weapon item = new Weapon(new ElementIdentifier(0, "weapon", "itemDesc"), 0, 0, ItemCategory.Weapon, null, 0, WeaponType.Bow);
-            Character character = new Character { Id = 0 };
+            Character character = new Character();
             character.ChangeEquipment(item);
 
             PartyManager.Instance.GetParty().Add(character);

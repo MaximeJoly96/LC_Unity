@@ -43,22 +43,22 @@ namespace Menus.SubMenus.Status
 
         public override void Feed(Character character)
         {
-            _health.text = FormatAbsoluteStat(character.BaseHealth, character.BonusHealth);
-            _mana.text = FormatAbsoluteStat(character.BaseMana, character.BonusMana);
-            _essence.text = FormatAbsoluteStat(character.BaseEssence, character.BonusEssence);
-            _strength.text = FormatAbsoluteStat(character.BaseStrength, character.BonusStrength);
-            _defense.text = FormatAbsoluteStat(character.BaseDefense, character.BonusDefense);
-            _magic.text = FormatAbsoluteStat(character.BaseMagic, character.BonusMagic);
-            _magicDefense.text = FormatAbsoluteStat(character.BaseMagicDefense, character.BonusMagicDefense);
-            _agility.text = FormatAbsoluteStat(character.BaseAgility, character.BonusAgility);
-            _luck.text = FormatAbsoluteStat(character.BaseLuck, character.BonusLuck);
+            _health.text = FormatAbsoluteStat(character.Stats.BaseHealth, character.Stats.BonusHealth);
+            _mana.text = FormatAbsoluteStat(character.Stats.BaseMana, character.Stats.BonusMana);
+            _essence.text = FormatAbsoluteStat(character.Stats.BaseEssence, character.Stats.BonusEssence);
+            _strength.text = FormatAbsoluteStat(character.Stats.BaseStrength, character.Stats.BonusStrength);
+            _defense.text = FormatAbsoluteStat(character.Stats.BaseDefense, character.Stats.BonusDefense);
+            _magic.text = FormatAbsoluteStat(character.Stats.BaseMagic, character.Stats.BonusMagic);
+            _magicDefense.text = FormatAbsoluteStat(character.Stats.BaseMagicDefense, character.Stats.BonusMagicDefense);
+            _agility.text = FormatAbsoluteStat(character.Stats.BaseAgility, character.Stats.BonusAgility);
+            _luck.text = FormatAbsoluteStat(character.Stats.BaseLuck, character.Stats.BonusLuck);
 
-            _critChance.text = FormatRelativeStat(character.CritChance, 0);
-            _evasion.text = FormatRelativeStat(character.Evasion, 0);
-            _parry.text = FormatRelativeStat(character.Parry, 0);
-            _provocation.text = FormatRelativeStat(character.Provocation, 0);
-            _critDamage.text = FormatRelativeStat(character.CritDamage, 0);
-            _accuracy.text = FormatRelativeStat(character.Accuracy, 0);
+            _critChance.text = FormatRelativeStat(character.Stats.CritChance, 0);
+            _evasion.text = FormatRelativeStat(character.Stats.Evasion, 0);
+            _parry.text = FormatRelativeStat(character.Stats.Parry, 0);
+            _provocation.text = FormatRelativeStat(character.Stats.Provocation, 0);
+            _critDamage.text = FormatRelativeStat(character.Stats.CritDamage, 0);
+            _accuracy.text = FormatRelativeStat(character.Stats.Accuracy, 0);
 
             if(_firstPage != null)
                 _firstPage.gameObject.SetActive(true);

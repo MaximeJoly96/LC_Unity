@@ -172,7 +172,7 @@ namespace BattleSystem
         {
             if(BattlerData != null)
             {
-                if (!IsDead && BattlerData.Character != null && BattlerData.Character.CurrentHealth <= 0)
+                if (!IsDead && BattlerData.Character != null && BattlerData.Character.Stats.CurrentHealth <= 0)
                     Die();
             }
         }

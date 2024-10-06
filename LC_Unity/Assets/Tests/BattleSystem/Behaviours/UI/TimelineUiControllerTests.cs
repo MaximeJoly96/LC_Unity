@@ -10,6 +10,7 @@ using BattleSystem.Model;
 using System.Collections;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
+using Core.Model;
 
 namespace Testing.BattleSystem.Behaviours.UI
 {
@@ -165,7 +166,7 @@ namespace Testing.BattleSystem.Behaviours.UI
 
         private Character CreateDummyCharacter()
         {
-            return new Character(0, "name",
+            return new Character(new ElementIdentifier(0, "name", ""),
                                  new QuadraticFunction(10.0f, 10.0f, 10.0f),
                                  new StatScalingFunction(100.0f, 1.0f, 100.0f),
                                  new StatScalingFunction(10.0f, 1.0f, 10.0f),
