@@ -8,6 +8,7 @@ using Party;
 using Inventory;
 using Actors;
 using System.Collections.Generic;
+using Core.Model;
 
 namespace Testing.FlowControl
 {
@@ -41,7 +42,7 @@ namespace Testing.FlowControl
 
             Assert.AreEqual(0, PersistentDataHolder.Instance.GetData("testItemPossessedCondition"));
 
-            InventoryItem item = new InventoryItem(new BaseItem(0, "item", "desc", 0, 0, ItemCategory.Consumable));
+            InventoryItem item = new InventoryItem(new BaseItem(new ElementIdentifier(0, "item", "desc"), 0, 0, ItemCategory.Consumable));
             item.ChangeAmount(1);
             PartyManager.Instance.Inventory.Add(item);
 
@@ -58,7 +59,7 @@ namespace Testing.FlowControl
 
             Assert.AreEqual(0, PersistentDataHolder.Instance.GetData("testItemEquippedCondition"));
 
-            Weapon item = new Weapon(0, "weapon", "itemDesc", 0, 0, ItemCategory.Weapon, 0, 0, WeaponType.Bow);
+            Weapon item = new Weapon(new ElementIdentifier(0, "weapon", "itemDesc"), 0, 0, ItemCategory.Weapon, null, 0, WeaponType.Bow);
             Character character = new Character { Id = 0 };
             character.ChangeEquipment(item);
 

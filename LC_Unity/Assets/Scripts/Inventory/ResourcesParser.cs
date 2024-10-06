@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Logging;
 using System.Xml;
+using Core.Model;
 
 namespace Inventory
 {
@@ -40,7 +41,7 @@ namespace Inventory
             int icon = int.Parse(node.SelectSingleNode("Icon").InnerText);
             int price = int.Parse(node.SelectSingleNode("Price").InnerText);
 
-            Resource resource = new Resource(id, name, description, icon, price, ItemCategory.Resource);
+            Resource resource = new Resource(new ElementIdentifier(id, name, description), icon, price, ItemCategory.Resource);
 
             return resource;
         }

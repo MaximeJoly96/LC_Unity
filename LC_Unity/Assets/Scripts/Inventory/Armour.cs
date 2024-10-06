@@ -1,4 +1,6 @@
-﻿namespace Inventory
+﻿using Core.Model;
+
+namespace Inventory
 {
     public enum ArmourType
     {
@@ -11,8 +13,8 @@
     {
         public ArmourType Type { get; protected set; }
 
-        public Armour(int id, string name, string description, int icon, int price, ItemCategory category, int enchantmentSlots, ArmourType type) : 
-            base(id, name, description, icon, price, category, enchantmentSlots)
+        public Armour(ElementIdentifier identifier, int icon, int price, ItemCategory category, int enchantmentSlots, ArmourType type) : 
+            base(identifier, icon, price, category, enchantmentSlots)
         {
             Type = type;
         }

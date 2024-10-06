@@ -35,8 +35,8 @@ namespace Inventory
             stats += PrintStat(Essence, "essence");
             stats += PrintStat(Strength, "strength");
             stats += PrintStat(Defense, "defense");
-            stats += PrintStat(Health, "magic");
-            stats += PrintStat(Magic, "magicDefense");
+            stats += PrintStat(Magic, "magic");
+            stats += PrintStat(MagicDefense, "magicDefense");
             stats += PrintStat(Agility, "agility");
             stats += PrintStat(Luck, "luck");
 

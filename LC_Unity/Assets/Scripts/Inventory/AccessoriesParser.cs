@@ -4,6 +4,7 @@ using UnityEngine;
 using Logging;
 using System.Xml;
 using Effects;
+using Core.Model;
 
 namespace Inventory
 {
@@ -42,7 +43,7 @@ namespace Inventory
             int price = int.Parse(node.SelectSingleNode("Price").InnerText);
             int enchantmentSlots = int.Parse(node.SelectSingleNode("EnchantmentSlots").InnerText);
 
-            Accessory accessory = new Accessory(id, name, description, icon, price, ItemCategory.Accessory, enchantmentSlots);
+            Accessory accessory = new Accessory(new ElementIdentifier(id, name, description), icon, price, ItemCategory.Accessory, enchantmentSlots);
 
             XmlNode effectsNode = node.SelectSingleNode("Effects");
             if (effectsNode != null)

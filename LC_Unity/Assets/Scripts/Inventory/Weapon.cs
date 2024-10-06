@@ -1,4 +1,7 @@
-﻿namespace Inventory
+﻿using Core.Model;
+using Abilities;
+
+namespace Inventory
 {
     public enum WeaponType
     {
@@ -20,14 +23,14 @@
 
     public class Weapon : EquipmentItem
     {
-        public int Animation { get; protected set; }
+        public AbilityAnimation Animation { get; protected set; }
         public WeaponType Type { get; protected set; }
         public int Rank { get; set; }
         public float ProjectileSpeed { get; set; }
         public int Range { get; set; } = 100;
 
-        public Weapon(int id, string name, string description, int icon, int price, ItemCategory category, int animation, int enchantmentSlots, WeaponType type) : 
-            base(id, name, description, icon, price, category, enchantmentSlots)
+        public Weapon(ElementIdentifier identifier, int icon, int price, ItemCategory category, AbilityAnimation animation, int enchantmentSlots, WeaponType type) : 
+            base(identifier, icon, price, category, enchantmentSlots)
         {
             Animation = animation;
             Type = type;

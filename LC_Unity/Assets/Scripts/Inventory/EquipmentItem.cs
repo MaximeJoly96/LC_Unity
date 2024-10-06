@@ -1,6 +1,6 @@
 ﻿using Effects;
-using System.Collections.Generic;
 using Language;
+using Core.Model;
 
 namespace Inventory
 {
@@ -9,8 +9,8 @@ namespace Inventory
         public int EnchantmentSlots { get; protected set; }
         public ItemStats Stats { get; set; }
 
-        public EquipmentItem(int id, string name, string description, int icon, int price, ItemCategory category, int enchantmentSlots) : 
-            base(id, name, description, icon, price, category)
+        public EquipmentItem(ElementIdentifier identifier, int icon, int price, ItemCategory category, int enchantmentSlots) : 
+            base(identifier, icon, price, category)
         {
             EnchantmentSlots = enchantmentSlots;
         }

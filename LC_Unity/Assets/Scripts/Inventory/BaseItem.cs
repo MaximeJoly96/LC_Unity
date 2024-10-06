@@ -1,6 +1,7 @@
 ﻿using Effects;
 using Language;
 using System.Collections.Generic;
+using Core.Model;
 
 namespace Inventory
 {
@@ -14,20 +15,19 @@ namespace Inventory
 
     public class BaseItem
     {
-        public int Id { get; protected set; }
-        public string Name { get; protected set; }
-        public string Description { get; protected set; }
+        protected ElementIdentifier _identifier;
+        public int Id { get { return _identifier.Id; } }
+        public string Name { get { return _identifier.NameKey; } }
+        public string Description { get { return _identifier.DescriptionKey; } }
         public int Icon { get; protected set; }
         public int Price { get; protected set; }
         public ItemCategory Category { get; protected set; }
         public ItemRecipe Recipe { get; set; }
         public List<IEffect> Effects { get; protected set; }
 
-        public BaseItem(int id, string name, string description, int icon, int price, ItemCategory category)
+        public BaseItem(ElementIdentifier identifier, int icon, int price, ItemCategory category)
         {
-            Id = id;
-            Name = name;
-            Description = description;
+            _identifier = identifier;
             Icon = icon;
             Price = price;
             Category = category;

@@ -37,12 +37,23 @@ namespace Inventory
                 {
                     _allItems = new List<BaseItem>();
 
-                    _allItems.AddRange(Consumables);
-                    _allItems.AddRange(Weapons);
-                    _allItems.AddRange(Armours);
-                    _allItems.AddRange(Resources);
-                    _allItems.AddRange(Accessories);
-                    _allItems.AddRange(KeyItems);
+                    if(Consumables != null)
+                        _allItems.AddRange(Consumables);
+
+                    if(Weapons != null)
+                        _allItems.AddRange(Weapons);
+
+                    if(Armours != null)
+                        _allItems.AddRange(Armours);
+
+                    if(Resources != null)
+                        _allItems.AddRange(Resources);
+
+                    if(Accessories != null)
+                        _allItems.AddRange(Accessories);
+
+                    if(KeyItems != null)
+                        _allItems.AddRange(KeyItems);
                 }
 
                 return _allItems;
@@ -55,7 +66,7 @@ namespace Inventory
             DontDestroyOnLoad(this.gameObject);
 
             FeedWeapons(_weapons);
-            FeedItems(_consumables);
+            FeedConsumables(_consumables);
             FeedArmours(_armours);
             FeedAccessories(_accessories);
             FeedResources(_resources);
@@ -64,31 +75,49 @@ namespace Inventory
 
         public void FeedWeapons(TextAsset weaponsFile)
         {
+            if (!weaponsFile)
+                return;
+
             Weapons = WeaponsParser.ParseWeapons(weaponsFile);
         }
 
-        public void FeedItems(TextAsset consumablesFile)
+        public void FeedConsumables(TextAsset consumablesFile)
         {
+            if (!consumablesFile)
+                return;
+
             Consumables = ConsumablesParser.ParseConsumables(consumablesFile);
         }
 
         public void FeedArmours(TextAsset armoursFile)
         {
+            if (!armoursFile)
+                return;
+
             Armours = ArmoursParser.ParseArmours(armoursFile);
         }
 
         public void FeedAccessories(TextAsset accessoriesFile)
         {
+            if (!accessoriesFile)
+                return;
+
             Accessories = AccessoriesParser.ParseAccessories(accessoriesFile);
         }
 
         public void FeedResources(TextAsset resourcesFile)
         {
+            if (!resourcesFile)
+                return;
+
             Resources = ResourcesParser.ParseResources(resourcesFile);
         }
 
         public void FeedKeyItems(TextAsset keyItemsFile)
         {
+            if (!keyItemsFile)
+                return;
+
             KeyItems = KeyItemsParser.ParseKeyItems(keyItemsFile);
         }
 

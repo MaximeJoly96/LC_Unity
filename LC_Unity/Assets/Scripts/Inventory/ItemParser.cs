@@ -7,6 +7,7 @@ using UnityEngine;
 using System.Globalization;
 using Effects;
 using Actors;
+using Abilities;
 
 namespace Inventory
 {
@@ -50,6 +51,15 @@ namespace Inventory
         {
             XmlNode subNode = node.SelectSingleNode(key);
             return subNode != null ? int.Parse(subNode.InnerText) : 0;
+        }
+
+        protected static AbilityAnimation ParseAbilityAnimation(XmlNode animationNode)
+        {
+            return new AbilityAnimation(animationNode.SelectSingleNode("Channel").InnerText,
+                                        animationNode.SelectSingleNode("Strike").InnerText,
+                                        int.Parse(animationNode.SelectSingleNode("ChannelParticles").InnerText),
+                                        int.Parse(animationNode.SelectSingleNode("ImpactParticles").InnerText),
+                                        int.Parse(animationNode.SelectSingleNode("ProjectileId").InnerText));
         }
     }
 }

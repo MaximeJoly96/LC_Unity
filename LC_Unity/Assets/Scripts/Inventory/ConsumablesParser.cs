@@ -4,6 +4,8 @@ using UnityEngine;
 using Logging;
 using System.Xml;
 using Effects;
+using Core.Model;
+using Abilities;
 
 namespace Inventory
 {
@@ -40,11 +42,11 @@ namespace Inventory
             string description = node.SelectSingleNode("Description").InnerText;
             int icon = int.Parse(node.SelectSingleNode("Icon").InnerText);
             int price = int.Parse(node.SelectSingleNode("Price").InnerText);
-            int animation = int.Parse(node.SelectSingleNode("Animation").InnerText);
             ItemUsability usability = (ItemUsability)Enum.Parse(typeof(ItemUsability), node.SelectSingleNode("Usability").InnerText);
             int priority = int.Parse(node.SelectSingleNode("Priority").InnerText);
+            AbilityAnimation animation = ParseAbilityAnimation(node.SelectSingleNode("Animation"));
 
-            Consumable cons = new Consumable(id, name, description, icon, price, ItemCategory.Consumable, usability, priority, animation);
+            Consumable cons = new Consumable(new ElementIdentifier(id, name, description), icon, price, ItemCategory.Consumable, usability, priority, animation);
 
             XmlNode effectsNode = node.SelectSingleNode("Effects");
             if (effectsNode != null)

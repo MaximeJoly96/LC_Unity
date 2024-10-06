@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Globalization;
 using Effects;
+using Core.Model;
+using Abilities;
 
 namespace Inventory
 {
@@ -42,11 +44,11 @@ namespace Inventory
             string description = itemNode.SelectSingleNode("Description").InnerText;
             int icon = int.Parse(itemNode.SelectSingleNode("Icon").InnerText);
             int price = int.Parse(itemNode.SelectSingleNode("Price").InnerText);
-            int animation = int.Parse(itemNode.SelectSingleNode("Animation").InnerText);
             int enchantSlots = int.Parse(itemNode.SelectSingleNode("EnchantmentSlots").InnerText);
             WeaponType type = (WeaponType)Enum.Parse(typeof(WeaponType), itemNode.SelectSingleNode("Type").InnerText);
+            AbilityAnimation animation = ParseAbilityAnimation(itemNode.SelectSingleNode("Animation"));
 
-            Weapon weapon = new Weapon(id, name, description, icon, price, ItemCategory.Weapon, animation, enchantSlots, type);
+            Weapon weapon = new Weapon(new ElementIdentifier(id, name, description), icon, price, ItemCategory.Weapon, animation, enchantSlots, type);
 
             weapon.Rank = int.Parse(itemNode.SelectSingleNode("Rank").InnerText);
             XmlNode recipeNode = itemNode.SelectSingleNode("Recipe");

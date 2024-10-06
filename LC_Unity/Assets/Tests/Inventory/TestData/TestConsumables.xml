@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item>
+    <Id>0</Id>
+    <Name>potion</Name>
+    <Description>potionDescription</Description>
+    <Icon>0</Icon>
+    <Price>10</Price>
+    <Usability>Always</Usability>
+    <Priority>0</Priority>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <RestoresResourceScaling Stat="HP" Value="40" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>4</Id>
+    <Name>phoenixAshes</Name>
+    <Description>phoenixAshesDescription</Description>
+    <Icon>4</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>
+      <Channel>throw</Channel>
+      <ChannelParticles>3</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>4</ImpactParticles>
+      <ProjectileId>6</ProjectileId>
+    </Animation>
+    <Effects>
+      <Revives />
+      <RestoresResourceScaling Stat="HP" Value="40" />
+    </Effects>
+  </Item>
+  <Item>
+    <Id>9</Id>
+    <Name>bandage</Name>
+    <Description>bandageDescription</Description>
+    <Icon>7</Icon>
+    <Price>500</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Animation>
+      <Channel>channel</Channel>
+      <ChannelParticles>6</ChannelParticles>
+      <Strike>strike</Strike>
+      <ImpactParticles>50</ImpactParticles>
+      <ProjectileId>3</ProjectileId>
+    </Animation>
+    <Effects>
+      <Dispel Value="BleedI" />
+      <Dispel Value="BleedII" />
+      <Dispel Value="BleedIII" />
+      <Dispel Value="HemoI" />
+    </Effects>
+  </Item>
+</Items>
