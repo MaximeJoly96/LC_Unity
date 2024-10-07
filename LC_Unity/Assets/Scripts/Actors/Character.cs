@@ -1,5 +1,4 @@
-﻿using Logging;
-using Utils;
+﻿using Utils;
 using UnityEngine;
 using System.Collections.Generic;
 using Actors.Equipment;
@@ -9,13 +8,11 @@ using Inventory;
 using Effects;
 using System.Linq;
 using Core.Model;
-using static UnityEngine.UI.CanvasScaler;
 
 namespace Actors
 {
     public class Character
     {
-        
         private ElementIdentifier _identifier;
         
         public int Id { get { return _identifier.Id; } }
@@ -59,7 +56,10 @@ namespace Actors
 
         public void ChangeLevel(int amount)
         {
-            LogsHandler.Instance.LogWarning("ChangeLevel has not been implemented yet.");
+            int targetLevel = Stats.Level + amount;
+            int targetTotalXp = GetTotalRequiredXpForLevel(targetLevel);
+
+            GiveExp(targetTotalXp - Stats.Exp);
         }
 
         public void GiveExp(int amount)
@@ -69,7 +69,8 @@ namespace Actors
 
         public void Recover()
         {
-            LogsHandler.Instance.LogWarning("Recover has not been implemented yet.");
+            Stats.CurrentHealth = Stats.MaxHealth;
+            Stats.CurrentMana = Stats.MaxMana;
         }
 
         public void ChangeEquipment(int itemId)
@@ -117,7 +118,10 @@ namespace Actors
 
         public void ForgetSkill(int skillId)
         {
-            LogsHandler.Instance.LogWarning("ForgetSkill has not been implemented yet.");
+            Ability abilityToForget = AbilitiesManager.Instance.GetAbility(skillId);
+
+            if(Abilities.Contains(abilityToForget))
+                Abilities.Remove(abilityToForget);
         }
 
         public int GetXpForCurrentLevel()
@@ -233,10 +237,7 @@ namespace Actors
             string[] split = serializedCharacter.Split(',');
             int trueId = int.Parse(id.Replace("character", ""));
 
-            Character character = new Character
-            {
-                _identifier = new ElementIdentifier(trueId, "", "")
-            };
+            Character character = CharactersManager.Instance.GetCharacter(trueId);
             character.Stats.SetExperience(int.Parse(split[0]));
 
             for (int i = 1; i < split.Length; i++)

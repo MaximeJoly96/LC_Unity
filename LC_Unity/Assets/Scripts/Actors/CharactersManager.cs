@@ -6,8 +6,6 @@ namespace Actors
 {
     public class CharactersManager
     {
-        private readonly List<Character> _characters;
-
         private static CharactersManager _instance;
 
         public static CharactersManager Instance
@@ -21,9 +19,11 @@ namespace Actors
             }
         }
 
+        public List<Character> Characters { get; private set; }
+
         private CharactersManager()
         {
-            _characters = new List<Character>();
+            Characters = new List<Character>();
         }
 
         public void ChangeCharacterName(ChangeName change)
@@ -52,9 +52,9 @@ namespace Actors
 
         public void RecoverAll(RecoverAll recoverAll)
         {
-            for(int i = 0; i < _characters.Count; i++)
+            for(int i = 0; i < Characters.Count; i++)
             {
-                _characters[i].Recover();
+                Characters[i].Recover();
             }
         }
 
@@ -86,7 +86,12 @@ namespace Actors
 
         public Character GetCharacter(int id)
         {
-            return _characters.FirstOrDefault(c => c.Id == id);
+            return Characters.FirstOrDefault(c => c.Id == id);
+        }
+
+        public void AddCharacter(Character character)
+        {
+            Characters.Add(character);
         }
     }
 }
