@@ -275,7 +275,7 @@ namespace Actors
         public CharacterStats(QuadraticFunction expFunction,
                               StatScalingFunction strengthFunction,
                               StatScalingFunction defenseFunction,
-                              StatScalingFunction magicDefense,
+                              StatScalingFunction magicFunction,
                               StatScalingFunction magicDefenseFunction,
                               StatScalingFunction agilityFunction,
                               StatScalingFunction luckFunction,
@@ -290,6 +290,7 @@ namespace Actors
             ExpFunction = expFunction;
             StrengthFunction = strengthFunction;
             DefenseFunction = defenseFunction;
+            MagicFunction = magicFunction;
             MagicDefenseFunction = magicDefenseFunction;
             AgilityFunction = agilityFunction;
             LuckFunction = luckFunction;
