@@ -13,7 +13,13 @@ namespace Essence
 
         private void Awake()
         {
-            EssentialAffinities = EssentialAffinitiesParser.GetEssentialAffinities(_essentialAffinities);
+            FeedAffinities(_essentialAffinities);
+        }
+
+        public void FeedAffinities(TextAsset file)
+        {
+            if(file != null)
+                EssentialAffinities = EssentialAffinitiesParser.GetEssentialAffinities(file);
         }
     }
 }

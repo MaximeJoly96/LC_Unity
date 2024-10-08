@@ -1,6 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
 using Actors;
+using Party;
 
 namespace Engine.Actor
 {
@@ -18,7 +19,7 @@ namespace Engine.Actor
 
         public void Run()
         {
-            CharactersManager.Instance.ChangeEquipment(this);
+            PartyManager.Instance.ChangeEquipment(this);
             Finished.Invoke();
             IsFinished = true;
         }

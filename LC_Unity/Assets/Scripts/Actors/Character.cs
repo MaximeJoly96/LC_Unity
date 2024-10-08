@@ -147,6 +147,16 @@ namespace Actors
             Stats.ChangeHealth(change);
         }
 
+        public void ChangeMana(int change)
+        {
+            Stats.ChangeMana(change);
+        }
+
+        public void ChangeEssence(int change)
+        {
+            Stats.ChangeEssence(change);
+        }
+
         private void InitBasicAffinities()
         {
             ElementalAffinities.Add(new ElementalAffinity(Element.Neutral, 1.0f));

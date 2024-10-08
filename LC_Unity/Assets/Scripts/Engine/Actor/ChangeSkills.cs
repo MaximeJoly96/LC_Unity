@@ -1,6 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
 using Actors;
+using Party;
 
 namespace Engine.Actor
 {
@@ -21,7 +22,7 @@ namespace Engine.Actor
 
         public void Run()
         {
-            CharactersManager.Instance.ChangeSkills(this);
+            PartyManager.Instance.ChangeSkills(this);
             Finished.Invoke();
             IsFinished = true;
         }

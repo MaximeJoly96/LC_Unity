@@ -96,6 +96,42 @@ namespace Testing.Actors
         }
 
         [Test]
+        public void CurrentManaCanBeChanged()
+        {
+            CharacterStats stats = CreateBaseStats();
+
+            stats.ChangeMana(15);
+            Assert.AreEqual(10, stats.CurrentMana);
+
+            stats.ChangeMana(-10);
+            Assert.AreEqual(20, stats.CurrentMana);
+
+            stats.ChangeMana(-50);
+            Assert.AreEqual(25, stats.CurrentMana);
+
+            stats.ChangeMana(500);
+            Assert.AreEqual(0, stats.CurrentMana);
+        }
+
+        [Test]
+        public void CurrentEssenceCanBeChanged()
+        {
+            CharacterStats stats = CreateBaseStats();
+
+            stats.ChangeEssence(15);
+            Assert.AreEqual(85, stats.CurrentEssence);
+
+            stats.ChangeEssence(-10);
+            Assert.AreEqual(95, stats.CurrentEssence);
+
+            stats.ChangeEssence(-50);
+            Assert.AreEqual(100, stats.CurrentEssence);
+
+            stats.ChangeEssence(500);
+            Assert.AreEqual(0, stats.CurrentEssence);
+        }
+
+        [Test]
         public void StatsCanBeComputedBasedOnLevel()
         {
             CharacterStats stats = CreateBaseStats();

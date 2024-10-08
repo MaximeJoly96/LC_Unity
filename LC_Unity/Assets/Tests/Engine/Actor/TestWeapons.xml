@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item>
+    <Id>1216</Id>
+    <Name>sickle</Name>
+    <Description>sickleDescription</Description>
+    <Icon>216</Icon>
+    <Price>10</Price>
+    <Type>Scythe</Type>
+    <Rank>2</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>200</Range>
+    <Stats>
+      <Health>20</Health>
+      <Mana>20</Mana>
+      <Strength>5</Strength>
+      <Magic>10</Magic>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ScytheStrike</Strike>
+      <ImpactParticles>10</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1071</Id>
+    <Name>steelClaws</Name>
+    <Description>steelClawsDescription</Description>
+    <Icon>71</Icon>
+    <Price>0</Price>
+    <Type>Claws</Type>
+    <Rank>3</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <AdditionalStrike Amount="1" />
+    </Effects>
+    <Stats>
+      <Strength>7</Strength>
+      <Agility>6</Agility>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>ClawStrike</Strike>
+      <ImpactParticles>4</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+  <Item>
+    <Id>1205</Id>
+    <Name>sharur</Name>
+    <Description>sharurDescription</Description>
+    <Icon>205</Icon>
+    <Price>10</Price>
+    <Type>Mace</Type>
+    <Rank>12</Rank>
+    <EnchantmentSlots>3</EnchantmentSlots>
+    <Range>100</Range>
+    <Effects>
+      <BonusElementalDamage Element="Healing" Value="80" />
+      <CostReduction Stat="MP" Value="30" />
+      <InflictStatus Value="BreakIII" />
+      <InflictStatus Value="MagicBreakIII" />
+    </Effects>
+    <Recipe>
+      <Item Id="1201" Quantity="1" />
+      <Item Id="1203" Quantity="1" />
+    </Recipe>
+    <Stats>
+      <Mana>130</Mana>
+      <Strength>35</Strength>
+      <Magic>72</Magic>
+    </Stats>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>MaceStrike</Strike>
+      <ImpactParticles>8</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Item>
+</Items>

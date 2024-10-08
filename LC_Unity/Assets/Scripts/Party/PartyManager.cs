@@ -4,6 +4,7 @@ using Actors;
 using UnityEngine;
 using Inventory;
 using Engine.Party;
+using Engine.Actor;
 
 namespace Party
 {
@@ -93,11 +94,6 @@ namespace Party
             return _party;
         }
 
-        public void LoadPartyFromBaseFile(TextAsset dataFile)
-        {
-            _party.AddRange(XmlCharacterParser.ParseCharacters(dataFile));
-        }
-
         public void LoadPartyFromSave(List<Character> characters)
         {
             for(int i = 0; i < characters.Count; i++)
@@ -119,6 +115,69 @@ namespace Party
         {
             _inventory = new List<InventoryItem>();
             _inventory.AddRange(inventory);
+        }
+
+        public void ChangeCharacterName(ChangeName change)
+        {
+            Character character = GetCharacter(change.CharacterId);
+
+            if (character != null)
+                character.UpdateName(change.Value);
+        }
+
+        public void ChangeCharacterLevel(ChangeLevel change)
+        {
+            Character character = GetCharacter(change.CharacterId);
+
+            if (character != null)
+                character.ChangeLevel(change.Amount);
+        }
+
+        public void ChangeCharacterExp(ChangeExp change)
+        {
+            Character character = GetCharacter(change.CharacterId);
+
+            if (character != null)
+                character.GiveExp(change.Amount);
+        }
+
+        public void RecoverAll(RecoverAll recoverAll)
+        {
+            for (int i = 0; i < _party.Count; i++)
+            {
+                _party[i].Recover();
+            }
+        }
+
+        public void ChangeEquipment(ChangeEquipment change)
+        {
+            Character character = GetCharacter(change.CharacterId);
+
+            if (character != null)
+                character.ChangeEquipment(change.ItemId);
+        }
+
+        public void ChangeSkills(ChangeSkills change)
+        {
+            Character character = GetCharacter(change.CharacterId);
+
+            if (character != null)
+            {
+                switch (change.Action)
+                {
+                    case Engine.Actor.ChangeSkills.ActionType.Forget:
+                        character.ForgetSkill(change.SkillId);
+                        break;
+                    case Engine.Actor.ChangeSkills.ActionType.Learn:
+                        character.LearnSkill(change.SkillId);
+                        break;
+                }
+            }
+        }
+
+        public Character GetCharacter(int id)
+        {
+            return _party.FirstOrDefault(c => c.Id == id);
         }
     }
 }

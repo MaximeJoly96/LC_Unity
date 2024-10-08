@@ -415,7 +415,7 @@ namespace Testing.Actors
                                                                   new QuadraticFunction(450, 250, 10),
                                                                   new StatScalingFunction(22, 1.2f, 256),
                                                                   new StatScalingFunction(6, 0.8f, 25),
-                                                                  new StatScalingFunction(0, 1.0f, 100),
+                                                                  new StatScalingFunction(0, 1.0f, 100),    
                                                                   new StatScalingFunction(1.5f, 1.2f, 8),
                                                                   new StatScalingFunction(1.4f, 1.1f, 7),
                                                                   new StatScalingFunction(0.9f, 1.2f, 3),

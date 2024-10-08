@@ -4,7 +4,7 @@
 		<Id>0</Id>
 		<Name>AttackCommand</Name>
 		<Description>attackCommandDescription</Description>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>-1</Range>
     <TargetEligibility>Any</TargetEligibility>
@@ -12,17 +12,17 @@
     <Category>AttackCommand</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
 	</Ability>
   <Ability>
     <Id>1</Id>
     <Name>FleeCommand</Name>
     <Description>fleeCommandDescription</Description>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>-100</Priority>
     <Range>0</Range>
     <TargetEligibility>Self</TargetEligibility>
@@ -30,17 +30,17 @@
     <Category>FleeCommand</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
     <Id>2</Id>
     <Name>Claws</Name>
     <Description>Strike a target and deal physical damage.</Description>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Enemy</TargetEligibility>
@@ -58,7 +58,7 @@
     <Id>3</Id>
     <Name>Drain Slash</Name>
     <Description>Strike a target and deal physical damage. 40% of damage dealt is restored as HP.</Description>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Any</TargetEligibility>
@@ -66,17 +66,17 @@
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
     <Id>4</Id>
     <Name>Weak Point</Name>
     <Description>Strike a target and deal physical damage. The target then takes additional damage until the beginning of the next turn.</Description>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Any</TargetEligibility>
@@ -84,17 +84,17 @@
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
     <Id>5</Id>
     <Name>Knight's Vow</Name>
     <Description>Chose another target. When this target is dealt damage, redirects 40% of the pre-mitigation damage to you. Lasts 3 turns or until you or the ally dies.</Description>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>1</Priority>
     <Range>1200</Range>
     <TargetEligibility>AnyExceptSelf</TargetEligibility>
@@ -102,17 +102,17 @@
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
     <Id>6</Id>
     <Name>Magical Impact</Name>
     <Description>Strike a target and deal magic damage. Damage is based off caster's Strength and Magic, as well as target's Magic.</Description>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Any</TargetEligibility>
@@ -120,17 +120,17 @@
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
     <Id>7</Id>
     <Name>Abode of Souls</Name>
     <Description>Depletes a target from some EP and imbues your weapon based on the Essence Affinity of the target. Currently stored (max 3):</Description>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1000</Range>
     <TargetEligibility>Any</TargetEligibility>
@@ -138,17 +138,17 @@
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
     <Id>8</Id>
     <Name>Trance</Name>
     <Description>Chose an ally. Their next ability deals extra damage based on resources spent.</Description>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>1</Priority>
     <Range>1500</Range>
     <Usability>BattleOnly</Usability>
@@ -156,17 +156,17 @@
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
     <Id>9</Id>
     <Name>Crystal Guard</Name>
     <Description>Reduces incoming damage by 50% for 3 turns. Blocking enough damage under this effect creates a healing wave, restoring HP to nearby allies.</Description>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>1</Priority>
     <Range>0</Range>
     <Usability>BattleOnly</Usability>
@@ -174,10 +174,10 @@
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -185,17 +185,17 @@
     <Name>Evasive Dance</Name>
     <Description>Increases Evasion for 3 turns. Automatically counterattacks if the attacker is in range after a succesful evasion.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>1</Priority>
     <Range>0</Range>
     <TargetEligibility>Self</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -203,17 +203,17 @@
     <Name>Holy Wrath</Name>
     <Description>Deals Holy physical damage to an enemy. Nearby enemies take 50% damage. Nearby allies gain Bravery and Faith.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1000</Range>
     <TargetEligibility>Enemy</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -221,17 +221,17 @@
     <Name>Sinister Strike</Name>
     <Description>Deals physical damage to a target. Deals additional damage against targets under negative status ailments.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -239,17 +239,17 @@
     <Name>First Aid</Name>
     <Description>Restores 25% of a target's missing HP. Removes Hemorrhage and Bleed.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>150</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -257,17 +257,17 @@
     <Name>Camouflage</Name>
     <Description>Caster cannot be directly targeted by abilities for 2 turns. Damaging a target removes this effect.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>1</Priority>
     <Range>0</Range>
     <TargetEligibility>Self</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -275,17 +275,17 @@
     <Name>Bloody Murder</Name>
     <Description>Strike a target. Deals bonus damage against targets below 20% HP. If the target dies, restores HP based on damage dealt.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -293,17 +293,17 @@
     <Name>Curative Fog</Name>
     <Description>Removes Poison, Blind, Silence, Slow, Hemorrhage and Bleed from the party.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>10000</Range>
     <TargetEligibility>AllAllies</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -311,17 +311,17 @@
     <Name>Axe Throw</Name>
     <Description>Throws an axe at a target, dealing damage and inflicting Bleed III.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1200</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -329,17 +329,17 @@
     <Name>Cleave</Name>
     <Description>Strikes a target and all other units in a small radius around it, dealing damage and inflicting Break I.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -347,17 +347,17 @@
     <Name>Crush</Name>
     <Description>Strikes a target, heavily damaging it. Also inflicts Grounded.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -365,17 +365,17 @@
     <Name>Bloodbath</Name>
     <Description>Swing your weapon around, dealing damage. Restores 25% of missing Health for each unit struck.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -383,17 +383,17 @@
     <Name>Execute</Name>
     <Description>Strike an enemy, dealing damage based on their missing HP. Finishes off any target below a certain threshold.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -401,17 +401,17 @@
     <Name>Endless Rampage</Name>
     <Description>Increases Strength, Critical Strike damage, Critical Strike chance and Agility for 2 turns. Extends for 1 extra turn after killing a unit.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>0</Range>
     <TargetEligibility>Self</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -419,17 +419,17 @@
     <Name>Howling Moon</Name>
     <Description>Increases Strength and Critical Strike chance for 3 turns. Decreases the Strength of nearby enemies for 3 turns.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>0</Range>
     <TargetEligibility>Self</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -437,17 +437,17 @@
     <Name>Claw Storm</Name>
     <Description>Strike an enemy up to 5 times. If the target dies, jump to the closest enemy within a certain range. Successive attacks against the same target deal 40% damage.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Enemy</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -455,17 +455,17 @@
     <Name>Crystal Breach</Name>
     <Description>Strike a target and inflicts Break II and Magic Break II for 3 turns.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>100</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -473,17 +473,17 @@
     <Name>Essence Boost</Name>
     <Description>Grants a target 50 EP.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1400</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -491,17 +491,17 @@
     <Name>Hand of Protection</Name>
     <Description>Grants a Protect, Shell and Regen.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1400</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -509,17 +509,17 @@
     <Name>Essence Flux</Name>
     <Description>Transfers all your EP to the target. Excessive EP is converted to HP healing instead.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1400</Range>
     <TargetEligibility>AnyExceptSelf</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -527,17 +527,17 @@
     <Name>Saving Light</Name>
     <Description>Grants Lifeguard to a target, making it survive at 1 HP upon taking lethal damage. Can only be used once per battle per target.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1400</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -545,17 +545,17 @@
     <Name>Negate</Name>
     <Description>Removes all positive status ailments from a target.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1400</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -563,17 +563,17 @@
     <Name>Void Beam</Name>
     <Description>Fires a beam to a target that passes through all units. Each enemy hit takes damage. After passing through a unit, the beam becomes stronger, dealing 25% more damage.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1400</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -581,17 +581,17 @@
     <Name>Magic Counter</Name>
     <Description>Enveils a target. Upon taking magic damage, the target counterattacks.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1400</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -599,17 +599,17 @@
     <Name>Jouvence</Name>
     <Description>Restores a target to full HP and removes all negative status ailments.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1000</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -617,17 +617,17 @@
     <Name>Wisdom</Name>
     <Description>Grants all allies 50% MP costs reduction for 3 turns.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>0</Range>
     <TargetEligibility>AllAllies</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -635,17 +635,17 @@
     <Name>Mana Well</Name>
     <Description>Reduces MP costs to 0 for the next 3 turns.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>0</Range>
     <TargetEligibility>Self</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -653,17 +653,17 @@
     <Name>Pain Blast</Name>
     <Description>Deals magic damage to a target. Critical strikes deal 50% more damage.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1000</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -671,17 +671,17 @@
     <Name>Purify</Name>
     <Description>Removes all negative status ailments from a target. For each ailment removed, grant a random positive status ailment.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1000</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -689,17 +689,17 @@
     <Name>Flare</Name>
     <Description>Deals heavy damage to a target and nearby enemies. For each enemy killed, refund 20% of this ability's cost.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1000</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -707,17 +707,17 @@
     <Name>Doom</Name>
     <Description>Selected target will die after a given number of turns. Delay depends on the target.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1000</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -725,17 +725,17 @@
     <Name>Deadly Spin</Name>
     <Description>Swings your weapon around yourself, damaging all enemies hit.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>200</Range>
     <TargetEligibility>Self</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -743,17 +743,17 @@
     <Name>Shatter</Name>
     <Description>Strike a target, dealing damage and inflicting Break III.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>200</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -761,17 +761,17 @@
     <Name>Impair</Name>
     <Description>Deal damage to a target and inflict Grounded. If the target is already Grounded, deal increased damage instead.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>200</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -779,17 +779,17 @@
     <Name>Swift Strike</Name>
     <Description>Slashes a target with your hidden blade in the blink of an eye.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>2</Priority>
     <Range>200</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -797,17 +797,17 @@
     <Name>Attraction</Name>
     <Description>Pulls the target towards you until it is in range of your weapon. Cancels any movement. Ineffective against certain targets.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="0" Essence="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <Range>1200</Range>
     <TargetEligibility>Any</TargetEligibility>
     <Category>Skill</Category>
     <Animation>
       <Channel></Channel>
-      <ChannelParticles></ChannelParticles>
+      <ChannelParticles>-1</ChannelParticles>
       <Strike></Strike>
-      <ImpactParticles></ImpactParticles>
-      <ProjectileId></ProjectileId>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
   <Ability>
@@ -815,7 +815,7 @@
     <Name>Magicka</Name>
     <Description>Throws a magical projectile at an enemy, dealing non-elemental magic damage.</Description>
     <Usability>BattleOnly</Usability>
-    <Cost Health="0" Mana="4" Essence="0" />
+    <Cost HP="0" MP="4" EP="0" />
     <Priority>0</Priority>
     <TargetEligibility>Enemy</TargetEligibility>
     <Category>Skill</Category>

@@ -4,6 +4,7 @@ using System.Collections;
 using Party;
 using Language;
 using Core;
+using Actors;
 
 namespace TitleScreen
 {
@@ -29,7 +30,7 @@ namespace TitleScreen
 
         private void Start()
         {
-            PartyManager.Instance.LoadPartyFromBaseFile(_charactersData);
+            CharactersManager.Instance.LoadCharactersFromFile(_charactersData);
             SaveManager.Instance.SaveCancelledEvent.AddListener(() => ShowMainPanel());
 
             _mainPanel.OptionSelected.AddListener(HandleOptionSelection);

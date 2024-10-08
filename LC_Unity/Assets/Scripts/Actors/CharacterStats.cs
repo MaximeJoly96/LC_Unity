@@ -330,6 +330,16 @@ namespace Actors
             CurrentHealth -= amount;
         }
 
+        public void ChangeMana(int amount)
+        {
+            CurrentMana -= amount;
+        }
+
+        public void ChangeEssence(int amount)
+        {
+            CurrentEssence -= amount;
+        }
+
         private int GetStatFromItems(string propertyName)
         {
             int stat = 0;
