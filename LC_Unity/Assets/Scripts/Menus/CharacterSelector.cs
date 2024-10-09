@@ -41,6 +41,8 @@ namespace Menus
         {
             _inputController = FindObjectOfType<InputController>();
             _inputController.ButtonClicked.AddListener(HandleInputs);
+
+            _previews = new List<CharacterPreview>();
             Init();
         }
 
@@ -51,8 +53,6 @@ namespace Menus
 
         public void Feed(List<Character> characters)
         {
-            _previews = new List<CharacterPreview>();
-
             for (int i = 0; i < characters.Count; i++)
             {
                 CharacterPreview preview = Instantiate(_characterPreviewPrefab, transform);
