@@ -52,7 +52,7 @@ namespace Testing.Actors.Equipment
             Localizer component = localizer.AddComponent<Localizer>();
 
             TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Actors/TestData/french.csv");
-            component.LoadLanguage(Language.Language.French, file);
+            component.LoadLanguage(global::Language.Language.French, file);
 
             EquipmentSlot headSlot = new EquipmentSlot(EquipmentPosition.Helmet, 2001);
             ItemsWrapper wrapper = CreateEmptyWrapper();

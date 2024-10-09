@@ -4,7 +4,7 @@ using Core.Model;
 using Effects;
 using System.Collections.Generic;
 
-namespace Testing.Abilitiess
+namespace Testing.Abilities
 {
     public class AbilityTests
     {

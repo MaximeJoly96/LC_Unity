@@ -76,7 +76,12 @@ namespace Party
             InventoryItem item = _inventory.FirstOrDefault(i => i.ItemData.Id == change.Id);
 
             if(item != null)
+            {
                 item.ChangeAmount(change.Quantity);
+
+                if(item.InPossession <= 0)
+                    _inventory.Remove(item);
+            } 
             else
             {
                 ItemsWrapper wrapper = Object.FindObjectOfType<ItemsWrapper>();
@@ -178,6 +183,13 @@ namespace Party
         public Character GetCharacter(int id)
         {
             return _party.FirstOrDefault(c => c.Id == id);
+        }
+
+        public void Clear()
+        {
+            _party.Clear();
+            _inventory.Clear();
+            Gold = 0;
         }
     }
 }

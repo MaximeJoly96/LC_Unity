@@ -50,7 +50,7 @@ namespace Testing.Inventory
             Localizer component = localizer.AddComponent<Localizer>();
 
             TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/french.csv");
-            component.LoadLanguage(Language.Language.French, file);
+            component.LoadLanguage(global::Language.Language.French, file);
 
             ItemStats stats = new ItemStats(50, 60, 20, -3, 5, 8, 0, 9, 6);
 

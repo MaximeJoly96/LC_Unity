@@ -61,14 +61,14 @@ namespace Testing.Actors.Equipment
 
             List<TextAsset> files = new List<TextAsset>()
             {
-                AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestWeapons.xml")
+                AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Actors/TestData/TestWeapons.xml")
             };
             wrapper.FeedWeapons(files);
-            wrapper.FeedAccessories(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestAccessories.xml"));
-            wrapper.FeedArmours(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestArmours.xml"));
-            wrapper.FeedKeyItems(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestKeyItems.xml"));
-            wrapper.FeedConsumables(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestConsumables.xml"));
-            wrapper.FeedResources(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/TestData/TestResources.xml"));
+            wrapper.FeedAccessories(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Actors/TestData/TestAccessories.xml"));
+            wrapper.FeedArmours(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Actors/TestData/TestArmours.xml"));
+            wrapper.FeedKeyItems(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Actors/TestData/TestKeyItems.xml"));
+            wrapper.FeedConsumables(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Actors/TestData/TestConsumables.xml"));
+            wrapper.FeedResources(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Actors/TestData/TestResources.xml"));
 
             List<IEffect> effects = equipment.GetAllItemEffects();
 

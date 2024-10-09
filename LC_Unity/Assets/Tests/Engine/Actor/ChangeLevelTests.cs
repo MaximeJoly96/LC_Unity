@@ -71,7 +71,7 @@ namespace Testing.Engine.Actor
             _usedGameObjects.Add(go);
 
             EssencesWrapper wrapper = go.AddComponent<EssencesWrapper>();
-            wrapper.FeedAffinities(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Actors/TestData/Essences.xml"));
+            wrapper.FeedAffinities(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Actor/Essences.xml"));
 
             return wrapper;
         }

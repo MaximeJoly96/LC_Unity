@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Abilities>
+  <Ability>
+    <Id>0</Id>
+    <Name>AttackCommand</Name>
+    <Description>attackCommandDescription</Description>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>0</Priority>
+    <Range>-1</Range>
+    <TargetEligibility>Any</TargetEligibility>
+    <Usability>BattleOnly</Usability>
+    <Category>AttackCommand</Category>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>1</Id>
+    <Name>FleeCommand</Name>
+    <Description>fleeCommandDescription</Description>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>-100</Priority>
+    <Range>0</Range>
+    <TargetEligibility>Self</TargetEligibility>
+    <Usability>BattleOnly</Usability>
+    <Category>FleeCommand</Category>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>2</Id>
+    <Name>Claws</Name>
+    <Description>Strike a target and deal physical damage.</Description>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>0</Priority>
+    <Range>100</Range>
+    <TargetEligibility>Enemy</TargetEligibility>
+    <Usability>BattleOnly</Usability>
+    <Category>Skill</Category>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Strike</Strike>
+      <ImpactParticles>4</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>3</Id>
+    <Name>Drain Slash</Name>
+    <Description>Strike a target and deal physical damage. 40% of damage dealt is restored as HP.</Description>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>0</Priority>
+    <Range>100</Range>
+    <TargetEligibility>Any</TargetEligibility>
+    <Usability>BattleOnly</Usability>
+    <Category>Skill</Category>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>4</Id>
+    <Name>Weak Point</Name>
+    <Description>Strike a target and deal physical damage. The target then takes additional damage until the beginning of the next turn.</Description>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>0</Priority>
+    <Range>100</Range>
+    <TargetEligibility>Any</TargetEligibility>
+    <Usability>BattleOnly</Usability>
+    <Category>Skill</Category>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>5</Id>
+    <Name>Knight's Vow</Name>
+    <Description>Chose another target. When this target is dealt damage, redirects 40% of the pre-mitigation damage to you. Lasts 3 turns or until you or the ally dies.</Description>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>1</Priority>
+    <Range>1200</Range>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
+    <Usability>BattleOnly</Usability>
+    <Category>Skill</Category>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Ability>
+</Abilities>

@@ -4,7 +4,7 @@ using Language;
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace Testing.Languages
+namespace Testing.Language
 {
     public class LocalizerTests
     {
@@ -33,14 +33,14 @@ namespace Testing.Languages
             Localizer component = localizer.AddComponent<Localizer>();
 
             TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/french.csv");
-            component.LoadLanguage(Language.Language.French, file);
+            component.LoadLanguage(global::Language.Language.French, file);
 
             Assert.AreEqual("Valeur", component.GetString("key1"));
             Assert.AreEqual("Autre valeur", component.GetString("key2"));
             Assert.AreEqual("Dernière valeur", component.GetString("key3"));
 
             file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/english.csv");
-            component.LoadLanguage(Language.Language.English, file);
+            component.LoadLanguage(global::Language.Language.English, file);
 
             Assert.AreEqual("Value", component.GetString("key1"));
             Assert.AreEqual("Other value", component.GetString("key2"));

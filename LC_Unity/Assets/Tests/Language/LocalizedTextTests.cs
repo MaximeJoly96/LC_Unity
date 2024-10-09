@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
@@ -6,7 +5,7 @@ using TMPro;
 using Language;
 using UnityEditor;
 
-namespace Testing.Languages
+namespace Testing.Language
 {
     public class LocalizedTextTests
     {
@@ -53,7 +52,7 @@ namespace Testing.Languages
             Localizer localzier = go.AddComponent<Localizer>();
 
             TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/french.csv");
-            localzier.LoadLanguage(Language.Language.French, file);
+            localzier.LoadLanguage(global::Language.Language.French, file);
         }
     }
 }

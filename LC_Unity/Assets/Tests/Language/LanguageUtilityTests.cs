@@ -3,15 +3,15 @@ using Effects;
 using Language;
 using NUnit.Framework;
 
-namespace Testing.Languages
+namespace Testing.Language
 {
     public class LanguageUtilityTests
     {
         [Test]
         public void TranslateLanguageLabelTest()
         {
-            Assert.AreEqual("English", LanguageUtility.TranslateLanguageLabel(Language.Language.English));
-            Assert.AreEqual("Français", LanguageUtility.TranslateLanguageLabel(Language.Language.French));
+            Assert.AreEqual("English", LanguageUtility.TranslateLanguageLabel(global::Language.Language.English));
+            Assert.AreEqual("Français", LanguageUtility.TranslateLanguageLabel(global::Language.Language.French));
         }
 
         [Test]
