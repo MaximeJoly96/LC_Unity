@@ -103,16 +103,7 @@ namespace Party
         {
             for(int i = 0; i < characters.Count; i++)
             {
-                Character inParty = _party.FirstOrDefault(p => p.Id == characters[i].Id);
-
-                if (inParty != null)
-                {
-                    inParty.ChangeEquipment(characters[i].Equipment.RightHand.ItemId);
-                    inParty.ChangeEquipment(characters[i].Equipment.LeftHand.ItemId);
-                    inParty.ChangeEquipment(characters[i].Equipment.Head.ItemId);
-                    inParty.ChangeEquipment(characters[i].Equipment.Body.ItemId);
-                    inParty.ChangeEquipment(characters[i].Equipment.Accessory.ItemId);
-                }  
+                _party.Add(characters[i]);
             }
         }
 

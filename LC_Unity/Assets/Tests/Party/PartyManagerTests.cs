@@ -324,6 +324,56 @@ namespace Testing.Party
             Assert.AreEqual(AbilityCategory.FleeCommand, manager.GetCharacter(0).Abilities[1].Category);
         }
 
+        [Test]
+        public void PartyCanBeLoadedFromSave()
+        {
+            PartyManager manager = PartyManager.Instance;
+            manager.Clear();
+            CharactersManager.Instance.Characters.Clear();
+
+            CharactersManager.Instance.LoadCharactersFromFile(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Party/TestCharacters.xml"));
+            ItemsWrapper wrapper = CreateEmptyWrapper();
+            wrapper.FeedWeapons(new List<TextAsset> { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Party/TestWeapons.xml") });
+            wrapper.FeedAccessories(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Party/TestAccessories.xml"));
+            wrapper.FeedArmours(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Party/TestArmours.xml"));
+
+            List<Character> fromSave = new List<Character>
+            {
+                CharactersManager.Instance.GetCharacter(0),
+                CharactersManager.Instance.GetCharacter(1),
+                CharactersManager.Instance.GetCharacter(2),
+            };
+
+            fromSave[0].ChangeEquipment(1216);
+            fromSave[0].ChangeEquipment(2000);
+            fromSave[0].ChangeEquipment(3000);
+            fromSave[0].GiveExp(15000);
+            fromSave[1].ChangeEquipment(1071);
+            fromSave[1].ChangeEquipment(2002);
+            fromSave[1].ChangeEquipment(3000);
+            fromSave[1].GiveExp(9000);
+            fromSave[2].ChangeEquipment(1205);
+            fromSave[2].ChangeEquipment(2001);
+            fromSave[2].GiveExp(23000);
+
+            manager.LoadPartyFromSave(fromSave);
+
+            Assert.AreEqual(5, manager.GetCharacter(0).Stats.Level);
+            Assert.AreEqual(4, manager.GetCharacter(1).Stats.Level);
+            Assert.AreEqual(6, manager.GetCharacter(2).Stats.Level);
+
+            Assert.IsTrue(manager.GetCharacter(0).HasItemEquipped(1216));
+            Assert.IsTrue(manager.GetCharacter(0).HasItemEquipped(2000));
+            Assert.IsTrue(manager.GetCharacter(0).HasItemEquipped(3000));
+
+            Assert.IsTrue(manager.GetCharacter(1).HasItemEquipped(1071));
+            Assert.IsTrue(manager.GetCharacter(1).HasItemEquipped(2002));
+            Assert.IsTrue(manager.GetCharacter(1).HasItemEquipped(3000));
+
+            Assert.IsTrue(manager.GetCharacter(2).HasItemEquipped(1205));
+            Assert.IsTrue(manager.GetCharacter(2).HasItemEquipped(2001));
+        }
+
         private EssencesWrapper CreateEssencesWrapper()
         {
             GameObject go = new GameObject();
