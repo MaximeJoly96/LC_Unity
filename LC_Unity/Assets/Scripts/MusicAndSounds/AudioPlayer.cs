@@ -44,30 +44,42 @@ namespace MusicAndSounds
 
         public void PlayBgm(PlayBgm bgm)
         {
-            SoundMetadata sound = _bgmBank.GetSound(bgm.Name);
+            if(_bgmBank)
+            {
+                SoundMetadata sound = _bgmBank.GetSound(bgm.Name);
 
-            CreateAudioSource(sound, bgm, true, AudioType.BGM);
+                CreateAudioSource(sound, bgm, true, AudioType.BGM);
+            }
         }
 
         public void PlayBgs(PlayBgs bgs)
         {
-            SoundMetadata sound = _bgsBank.GetSound(bgs.Name);
+            if(_bgsBank)
+            {
+                SoundMetadata sound = _bgsBank.GetSound(bgs.Name);
 
-            CreateAudioSource(sound, bgs, true, AudioType.BGS);
+                CreateAudioSource(sound, bgs, true, AudioType.BGS);
+            }
         }
 
         public void PlayMusicalEffect(PlayMusicalEffect musicalEffect)
         {
-            SoundMetadata sound = _musicalEffectsBank.GetSound(musicalEffect.Name);
+            if(_musicalEffectsBank)
+            {
+                SoundMetadata sound = _musicalEffectsBank.GetSound(musicalEffect.Name);
 
-            CreateAudioSource(sound, musicalEffect, false, AudioType.ME);
+                CreateAudioSource(sound, musicalEffect, false, AudioType.ME);
+            }
         }
 
         public void PlaySoundEffect(PlaySoundEffect soundEffect)
         {
-            SoundMetadata sound = _soundEffectsBank.GetSound(soundEffect.Name);
+            if(_soundEffectsBank)
+            {
+                SoundMetadata sound = _soundEffectsBank.GetSound(soundEffect.Name);
 
-            CreateAudioSource(sound, soundEffect, false, AudioType.SE);
+                CreateAudioSource(sound, soundEffect, false, AudioType.SE);
+            }
         }
 
         public void FadeOutBgm(FadeOutBgm bgm)

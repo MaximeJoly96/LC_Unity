@@ -34,6 +34,9 @@ namespace Menus
             }
         }
 
+        public List<CharacterPreview> Previews { get { return _previews; } }
+        public int CursorPosition { get { return _cursorPosition; } }
+
         private void Start()
         {
             _inputController = FindObjectOfType<InputController>();
@@ -50,7 +53,7 @@ namespace Menus
         {
             _previews = new List<CharacterPreview>();
 
-            for(int i = 0; i < characters.Count; i++)
+            for (int i = 0; i < characters.Count; i++)
             {
                 CharacterPreview preview = Instantiate(_characterPreviewPrefab, transform);
                 preview.Feed(characters[i]);
@@ -59,10 +62,17 @@ namespace Menus
             }
         }
 
+        public void SetPreviewPrefab(CharacterPreview prefab)
+        {
+            _characterPreviewPrefab = prefab;
+        }
+
         public void Clear()
         {
             foreach (Transform child in transform)
                 Destroy(child.gameObject);
+
+            _previews.Clear();
         }
 
         public void HoverCharacters()

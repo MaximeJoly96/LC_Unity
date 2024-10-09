@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
+  <Wait Duration="0.1" />
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="joachim">
     <Turn Direction="Right" />
     <Transparent Status="true" />
@@ -19,6 +20,7 @@
   <Wait Duration="2" />
   <ShowBalloonIcon AgentId="sleepy" WaitForCompletion="true" BalloonIcon="Sleep" />
   <Wait Duration="0.75" />
+  <PlaySoundEffect Name="Silence" Volume="1" Pitch="1.5" />
   <FlashScreen WaitForCompletion="true">
     <TargetColor R="1" G="1" B="1" A="1" />
   </FlashScreen>
@@ -26,6 +28,7 @@
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="joachim">
     <Transparent Status="false" />
   </SetMoveRoute>
+  <PlaySoundEffect Name="Silence" Volume="1" Pitch="1.5" />
   <FlashScreen WaitForCompletion="true">
     <TargetColor R="1" G="1" B="1" A="1" />
   </FlashScreen>
@@ -57,6 +60,7 @@
     <FaceGraphics></FaceGraphics>
   </DisplayDialog>
   <Wait Duration="1.5" />
+  <PlaySoundEffect Name="Magic4" Volume="0.8" Pitch="1" />
   <TintScreen Duration="2.5" WaitForCompletion="true">
     <TargetColor R="1" G="1" B="1" A="1" />
   </TintScreen>
