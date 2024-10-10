@@ -16,7 +16,7 @@ namespace Field
         private float _displayTimer;
         private Animator _animator;
 
-        public bool DisplayEnabled { get; set; } = false;
+        public bool DisplayEnabled { get; set; } = true;
         public Animator Animator
         {
             get

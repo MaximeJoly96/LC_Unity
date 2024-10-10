@@ -39,7 +39,7 @@ namespace Testing.Engine.Map
             _usedGameObjects.Add(go);
             MapNameDisplay display = go.AddComponent<MapNameDisplay>();
 
-            Assert.IsFalse(display.DisplayEnabled);
+            Assert.IsTrue(display.DisplayEnabled);
 
             changeDisabled.Run();
 

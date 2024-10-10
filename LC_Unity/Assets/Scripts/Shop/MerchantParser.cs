@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Logging;
 using Inventory;
+using Core.Model;
 
 namespace Shop
 {
@@ -37,8 +38,9 @@ namespace Shop
 
         private Merchant ParseMerchantFromNode(XmlNode node, ItemsWrapper itemsWrapper)
         {
-            Merchant merchant = new Merchant(int.Parse(node.Attributes["Id"].InnerText), 
-                                             node.SelectSingleNode("Name").InnerText);
+            Merchant merchant = new Merchant(new ElementIdentifier(int.Parse(node.Attributes["Id"].InnerText), 
+                                                                   node.SelectSingleNode("Name").InnerText,
+                                                                   node.SelectSingleNode("Description").InnerText));
 
             XmlNodeList itemsNodes = node.SelectSingleNode("Items").SelectNodes("Item");
             foreach(XmlNode item in itemsNodes)

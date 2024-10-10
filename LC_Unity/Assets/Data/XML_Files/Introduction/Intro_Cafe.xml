@@ -3,6 +3,7 @@
   <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="introCompleted" SecondMember="false">
     <true>
       <AllowCutsceneSkip Allow="false" />
+      <ChangeMapNameDisplay Enabled="true" />
       <PlayBgm Name="haalmikah" Volume="0.75" Pitch="1" />
       <EnterBuilding AgentId="barDoor" />
       <CameraFollowPlayer Follow="true" />

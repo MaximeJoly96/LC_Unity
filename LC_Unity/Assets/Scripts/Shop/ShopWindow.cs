@@ -9,6 +9,7 @@ using Inventory;
 using System.Linq;
 using Engine.MusicAndSounds;
 using MusicAndSounds;
+using Utils;
 
 namespace Shop
 {
@@ -40,7 +41,7 @@ namespace Shop
         public void SetupMerchant(Merchant merchant)
         {
             _merchant = merchant;
-            _shopName.text = merchant.Name;
+            _shopName.text = Localizer.Instance.GetString(merchant.Name);
 
             _partyPreview.gameObject.SetActive(_merchant.SoldItemsTypes.Contains(ItemCategory.Armour) ||
                                                _merchant.SoldItemsTypes.Contains(ItemCategory.Accessory) ||
@@ -51,8 +52,10 @@ namespace Shop
             _optionsCursorPosition = 0;
             _itemsListCursorPosition = 0;
 
-            foreach (var option in _options)
-                option.Hover(false);
+            for(int i = 1; i < _options.Length; i++)
+            {
+                _options[i].Hover(false);
+            }
 
             _options[_optionsCursorPosition].Hover(true);
             _instItems = new List<SelectableItem>();
@@ -71,12 +74,14 @@ namespace Shop
         {
             if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions)
             {
+                CommonSounds.CursorMoved();
                 _optionsCursorPosition = _optionsCursorPosition == 0 ? _options.Length - 1 : --_optionsCursorPosition;
                 UpdateCursors();
             }
             else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems || 
                      GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SellingItems)
             {
+                CommonSounds.CursorMoved();
                 _confirmationWindow.MoveCursorLeft();
             }
         }
@@ -85,12 +90,14 @@ namespace Shop
         {
             if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions)
             {
+                CommonSounds.CursorMoved();
                 _optionsCursorPosition = _optionsCursorPosition == _options.Length - 1 ? 0 : ++_optionsCursorPosition;
                 UpdateCursors();
             }
             else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems ||
                      GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SellingItems)
             {
+                CommonSounds.CursorMoved();
                 _confirmationWindow.MoveCursorRight();
             }
         }
@@ -100,12 +107,14 @@ namespace Shop
             if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList ||
                GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopSellList)
             {
+                CommonSounds.CursorMoved();
                 _itemsListCursorPosition = _itemsListCursorPosition == 0 ? _instItems.Count - 1 : --_itemsListCursorPosition;
                 UpdateCursors();
             }
             else if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems ||
                     GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SellingItems)
             {
+                CommonSounds.CursorMoved();
                 _confirmationWindow.MoveCursorUp();
             }
         }
@@ -115,12 +124,14 @@ namespace Shop
             if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList ||
                 GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopSellList)
             {
+                CommonSounds.CursorMoved();
                 _itemsListCursorPosition = _itemsListCursorPosition == _instItems.Count - 1 ? 0 : ++_itemsListCursorPosition;
                 UpdateCursors();
             }
             else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems ||
                      GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SellingItems)
             {
+                CommonSounds.CursorMoved();
                 _confirmationWindow.MoveCursorDown();
             }
         }
@@ -132,12 +143,20 @@ namespace Shop
                 switch (_options[_optionsCursorPosition].Option)
                 {
                     case ShopOption.Buy:
+                        CommonSounds.OptionSelected();
                         GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopBuyList);
                         _options[_optionsCursorPosition].Select();
                         ShowItemsToBuy();
                         UpdateCursors();
                         break;
                     case ShopOption.Sell:
+                        if(!PartyManager.Instance.Inventory.Any(i => _merchant.SoldItemsTypes.Contains(i.ItemData.Category)))
+                        {
+                            PlayErrorSound();
+                            return;
+                        }
+
+                        CommonSounds.OptionSelected();
                         GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopSellList);
                         _options[_optionsCursorPosition].Select();
                         ShowItemsToSell();
@@ -175,6 +194,7 @@ namespace Shop
 
         public void Cancel()
         {
+            CommonSounds.ActionCancelled();
             if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions)
             {
                 FindObjectOfType<ShopLoader>().CloseShop();
@@ -184,6 +204,7 @@ namespace Shop
             {
                 _options[_optionsCursorPosition].Hover(true);
                 ClearItemsList();
+                _itemDetails.Show(false);
                 GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopOptions);
             }
             else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems ||
@@ -344,7 +365,7 @@ namespace Shop
             FindObjectOfType<AudioPlayer>().PlaySoundEffect(new PlaySoundEffect
             {
                 Name = "Error1",
-                Volume = 0.25f,
+                Volume = 0.75f,
                 Pitch = 1.0f
             });
         }
@@ -354,7 +375,7 @@ namespace Shop
             FindObjectOfType<AudioPlayer>().PlaySoundEffect(new PlaySoundEffect
             {
                 Name = "MoneyTransfer",
-                Volume = 0.25f,
+                Volume = 0.75f,
                 Pitch = 1.0f
             });
         }

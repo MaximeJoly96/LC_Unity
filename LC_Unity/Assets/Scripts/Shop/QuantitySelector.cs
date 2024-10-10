@@ -11,6 +11,8 @@ namespace Shop
         private Transform _upArrow;
         [SerializeField] 
         private Transform _downArrow;
+        [SerializeField]
+        private bool _isLastDigit;
 
         private int _currentValue;
 

@@ -1,12 +1,16 @@
 ﻿using System.Collections.Generic;
 using Inventory;
+using Core.Model;
 
 namespace Shop
 {
     public class Merchant
     {
-        public int Id { get; private set; }
-        public string Name { get; private set; }
+        private ElementIdentifier _identifier;
+
+        public int Id { get { return _identifier.Id; } }
+        public string Name { get { return _identifier.NameKey; } }
+        public string Description { get { return _identifier.DescriptionKey; } }
         public List<BaseItem> Items { get; private set; }
         public List<ItemCategory> SoldItemsTypes
         {
@@ -24,10 +28,9 @@ namespace Shop
             }
         }
 
-        public Merchant(int id, string name)
+        public Merchant(ElementIdentifier identifier)
         {
-            Id = id;
-            Name = name;
+            _identifier = identifier;
 
             Items = new List<BaseItem>();
         }

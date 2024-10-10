@@ -33,27 +33,21 @@ namespace Shop
                 switch(input)
                 {
                     case InputAction.Select:
-                        CommonSounds.OptionSelected();
                         _shopWindow.Select();
                         break;
                     case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
                         _shopWindow.Cancel();
                         break;
                     case InputAction.MoveLeft:
-                        CommonSounds.CursorMoved();
                         _shopWindow.MoveLeft();
                         break;
                     case InputAction.MoveRight:
-                        CommonSounds.CursorMoved();
                         _shopWindow.MoveRight();
                         break;
                     case InputAction.MoveUp:
-                        CommonSounds.CursorMoved();
                         _shopWindow.MoveUp();
                         break;
                     case InputAction.MoveDown:
-                        CommonSounds.CursorMoved();
                         _shopWindow.MoveDown();
                         break;
                 }
@@ -81,6 +75,11 @@ namespace Shop
             Merchant merchant = parser.ParseMerchants(_currentMerchants).FirstOrDefault(m => m.Id == shop.MerchantId);
 
             _shopWindow.SetupMerchant(merchant);
+        }
+
+        public void SetupWindow(ShopWindow shopWindow)
+        {
+            _shopWindow = shopWindow;
         }
 
         public void LoadMerchants(TextAsset merchants)
