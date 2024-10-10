@@ -101,6 +101,8 @@ namespace Party
 
         public void LoadPartyFromSave(List<Character> characters)
         {
+            _party.Clear();
+
             for(int i = 0; i < characters.Count; i++)
             {
                 _party.Add(characters[i]);

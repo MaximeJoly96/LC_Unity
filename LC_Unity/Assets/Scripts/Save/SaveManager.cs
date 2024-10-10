@@ -13,6 +13,7 @@ using Logging;
 using Core;
 using Party;
 using GameProgression;
+using MusicAndSounds;
 
 namespace Save
 {
@@ -162,6 +163,7 @@ namespace Save
 
             GlobalStateMachine.Instance.CurrentMapId = Data.MapID;
             GameObject.FindObjectOfType<GlobalTimer>().InitInGameTimer(Data.InGameTimeSeconds);
+            GameObject.FindObjectOfType<AudioPlayer>().StopAllAudio();
             SceneManager.LoadScene("Field");
         }
 

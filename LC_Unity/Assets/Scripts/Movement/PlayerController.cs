@@ -60,7 +60,7 @@ namespace Movement
 
         private void HandleInput(InputAction input)
         {
-            if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
+            if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
             {
                 switch (input)
                 {
@@ -75,6 +75,8 @@ namespace Movement
                         break;
                 }
             }
+            else
+                _change = Vector3.zero;
         }
 
         private void UpdatePlayerOnScreen()
@@ -115,6 +117,15 @@ namespace Movement
             Collider2D interactible = colliders.FirstOrDefault(c => c.gameObject.GetComponent<RunnableAgent>());
             if(interactible != null)
             {
+                SpriteRenderer playerSr = GetComponent<SpriteRenderer>();
+                SpriteRenderer interactSr = interactible.GetComponent<SpriteRenderer>();
+
+                // This is a dirty check to prevent interactions with NPCs that are outside a building while the player
+                // is inside one.
+                if (interactSr && playerSr.sortingLayerName.ToLower().Contains("interior") && 
+                    !interactSr.sortingLayerName.ToLower().Contains("interior"))
+                    return;
+
                 _change = interactible.transform.position - transform.position;
                 HandleAnimationAndMovement();
                 _rb.velocity = Vector3.zero;
@@ -122,6 +133,7 @@ namespace Movement
                 GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.Interacting);
 
                 RunnableAgent agent = interactible.GetComponent<RunnableAgent>();
+                agent.UpdateDirection(DirectionUtils.VectorToDirection(transform.position - interactible.transform.position));
 
                 agent.FinishedSequence.AddListener(() => GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField));
                 agent.RunSequence();

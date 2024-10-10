@@ -201,12 +201,14 @@ namespace MusicAndSounds
 
             for(float i = 0.0f; i < duration; i += Time.fixedDeltaTime)
             {
-                source.volume -= step;
+                if(source)
+                    source.volume -= step;
 
                 yield return wait;
             }
 
-            source.Stop();
+            if(source)
+                source.Stop();
         }
     }
 }

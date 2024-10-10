@@ -1,6 +1,7 @@
 ﻿using Core;
 using Language;
 using MsgBox;
+using MusicAndSounds;
 using UnityEngine.SceneManagement;
 
 namespace Menus.SubMenus.System
@@ -17,7 +18,10 @@ namespace Menus.SubMenus.System
         private void ConfirmSelect(MessageBoxAnswer result)
         {
             if (result == MessageBoxAnswer.Yes)
+            {
+                FindObjectOfType<AudioPlayer>().StopAllAudio();
                 SceneManager.LoadScene("TitleScreen");
+            }
             else
                 GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuSystemTab);
         }

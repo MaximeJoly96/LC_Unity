@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Movement;
 using Engine.Movement;
+using System.Linq;
 
 namespace Field
 {
@@ -69,20 +70,23 @@ namespace Field
                 _currentDirection = direction;
                 Animator animator = GetComponent<Animator>();
 
-                switch(direction)
+                if(animator && animator.parameters.Any(p => p.name == "X") && animator.parameters.Any(p => p.name == "Y"))
                 {
-                    case Direction.Left:
-                        animator.SetFloat("X", -1.0f);
-                        break;
-                    case Direction.Right:
-                        animator.SetFloat("X", 1.0f);
-                        break;
-                    case Direction.Up:
-                        animator.SetFloat("Y", 1.0f);
-                        break;
-                    case Direction.Down:
-                        animator.SetFloat("Y", -1.0f);
-                        break;
+                    switch (direction)
+                    {
+                        case Direction.Left:
+                            animator.SetFloat("X", -1.0f);
+                            break;
+                        case Direction.Right:
+                            animator.SetFloat("X", 1.0f);
+                            break;
+                        case Direction.Up:
+                            animator.SetFloat("Y", 1.0f);
+                            break;
+                        case Direction.Down:
+                            animator.SetFloat("Y", -1.0f);
+                            break;
+                    }
                 }
             }  
         }
