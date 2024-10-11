@@ -72,6 +72,11 @@ namespace Shop
             }
         }
 
+        public string SelectedItemQuantity { get { return _selectItemQuantity.GetComponent<TextMeshProUGUI>().text; } }
+        public string ItemName { get { return _itemName.text; } }
+        public string ItemPrice { get { return _itemPrice.text; } }
+        public string TotalPrice { get { return _totalPrice.text; } }
+
         private Animator _animator
         {
             get { return GetComponent<Animator>(); }
@@ -91,12 +96,15 @@ namespace Shop
             _buying = buying;
             _selectItemQuantity.UpdateKey(_buying ? "wishToBuy" : "wishToSell");
             GlobalStateMachine.Instance.UpdateState(_buying ? GlobalStateMachine.State.BuyingItems : GlobalStateMachine.State.SellingItems);
-            _animator.Play("OpenConfirmationWindow");
+
+            if(_animator)
+                _animator.Play("OpenConfirmationWindow");
         }
 
         public void Close()
         {
-            _animator.Play("CloseConfirmationWindow");
+            if(_animator)
+                _animator.Play("CloseConfirmationWindow");
         }
 
         public void FinishedOpening()
@@ -197,6 +205,46 @@ namespace Shop
 
             _totalPrice.text = total + " " + (total > 1 ? Localizer.Instance.GetString("moneyLabelPlural") :
                                                           Localizer.Instance.GetString("moneyLabel"));
+        }
+
+        public void SetItemNameObject(TMP_Text obj)
+        {
+            _itemName = obj;
+        }
+
+        public void SetItemIconObject(Image obj)
+        {
+            _itemIcon = obj;
+        }
+
+        public void SetItemPriceObject(TMP_Text obj)
+        {
+            _itemPrice = obj;
+        }
+
+        public void SetTotalPriceObject(TMP_Text obj)
+        {
+            _totalPrice = obj;
+        }
+
+        public void SetInStockObject(TMP_Text obj)
+        {
+            _inStock = obj;
+        }
+
+        public void SetSelectedQuantityObject(LocalizedText obj)
+        {
+            _selectItemQuantity = obj;
+        }
+
+        public void SetFirstDigitObject(QuantitySelector selectorObj)
+        {
+            _firstDigit = selectorObj;
+        }
+
+        public void SetSecondDigitObject(QuantitySelector selectorObj)
+        {
+            _secondDigit = selectorObj;
         }
     }
 }

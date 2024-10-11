@@ -8,6 +8,7 @@ using System.Collections;
 using UnityEditor;
 using Inventory;
 using Engine.SceneControl;
+using Core;
 
 namespace Testing.Shop
 {
@@ -59,6 +60,7 @@ namespace Testing.Shop
             GameObject go = new GameObject();
             _usedGameObjects.Add(go);
             ShopManager manager = go.AddComponent<ShopManager>();
+            manager.gameObject.AddComponent<InputReceiver>();
 
             ItemsWrapper wrapper = CreateEmptyWrapper();
             wrapper.FeedConsumables(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Shop/TestData/TestConsumables.xml"));

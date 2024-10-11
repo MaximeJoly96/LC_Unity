@@ -25,9 +25,15 @@ namespace Shop
         [SerializeField]
         private TMP_Text _itemDescription;
 
+        public TMP_Text ItemName { get { return _itemName; } }
+        public TMP_Text ItemDescription { get { return _itemDescription; } }
+        public TMP_Text InStock { get { return _inStock; } }
+        public TMP_Text ItemType { get { return _itemType; } }
+
         public void Feed(BaseItem item)
         {
             _itemName.text = Localizer.Instance.GetString(item.Name);
+            // TODO : localiser la description + fix les tests
             _itemDescription.text = item.DetailedDescription();
 
             if (item.Category == ItemCategory.Weapon)
@@ -63,6 +69,35 @@ namespace Shop
         public void Show(bool show)
         {
             _canvasGroup.alpha = show ? 1.0f : 0.0f;
+        }
+
+        public void SetItemNameObject(TMP_Text obj)
+        {
+            _itemName = obj;
+        }
+        public void SetItemDescriptionObject(TMP_Text obj)
+        {
+            _itemDescription = obj;
+        }
+
+        public void SetItemTypeObject(TMP_Text obj)
+        {
+            _itemType = obj;
+        }
+
+        public void SetInStockObject(TMP_Text obj)
+        {
+            _inStock = obj;
+        }
+
+        public void SetItemIconObject(Image obj)
+        {
+            _icon = obj;
+        }
+
+        public void SetCanvasGroupObject(CanvasGroup obj)
+        {
+            _canvasGroup = obj;
         }
     }
 }

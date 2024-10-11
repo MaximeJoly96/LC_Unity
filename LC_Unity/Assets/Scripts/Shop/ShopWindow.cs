@@ -386,5 +386,30 @@ namespace Shop
             _currentGold.text = PartyManager.Instance.Gold + " " + (PartyManager.Instance.Gold > 1 ? Localizer.Instance.GetString("moneyLabelPlural") :
                                                                                                      Localizer.Instance.GetString("moneyLabel"));
         }
+
+        public void SetOptions(IEnumerable<ShopOptions> options)
+        {
+            _options = options.ToArray();
+        }
+
+        public void SetShopNameObject(TMP_Text obj)
+        {
+            _shopName = obj;
+        }
+
+        public void SetScrollViewObject(ScrollRect obj)
+        {
+            _scrollView = obj;
+        }
+
+        public void SetCurrentGoldObject(TMP_Text obj)
+        {
+            _currentGold = obj;
+        }
+
+        public void SetPartyPreviewObject(PartyPreview obj)
+        {
+            _partyPreview = obj;
+        }
     }
 }

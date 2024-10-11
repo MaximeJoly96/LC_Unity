@@ -16,16 +16,18 @@ namespace Shop
 
         private Animator _animator { get { return GetComponent<Animator>(); } }
 
-        public ShopOption Option { get { return _option; } }
+        public ShopOption Option { get { return _option; } set { _option = value; } }
 
         public void Hover(bool hover)
         {
-            _animator.Play(hover ? "HoverOption" : "Idle");
+            if(_animator)
+                _animator.Play(hover ? "HoverOption" : "Idle");
         }
 
         public void Select()
         {
-            _animator.Play("OptionSelected");
+            if(_animator)
+                _animator.Play("OptionSelected");
         }
     }
 }

@@ -11,8 +11,6 @@ namespace Shop
         private Transform _upArrow;
         [SerializeField] 
         private Transform _downArrow;
-        [SerializeField]
-        private bool _isLastDigit;
 
         private int _currentValue;
 
@@ -39,6 +37,21 @@ namespace Shop
         public void Decrement()
         {
             SetValue(_currentValue == 0 ? 9 : --_currentValue);
+        }
+
+        public void SetBackgroundObject(Transform obj)
+        {
+            _background = obj;
+        }
+
+        public void SetUpArrowObject(Transform obj)
+        {
+            _upArrow = obj;
+        }
+
+        public void SetDownArrowObject(Transform obj)
+        {
+            _downArrow = obj;
         }
     }
 }

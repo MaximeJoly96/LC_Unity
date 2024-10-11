@@ -21,6 +21,9 @@ namespace Shop
         public BaseItem Item { get; private set; }
 
         private Animator _animator { get { return GetComponent<Animator>(); } }
+        public TMP_Text ItemName { get { return _itemName; } }
+        public TMP_Text Price { get { return _price; } }
+        public Image Icon { get { return _icon; } }
 
         public void Feed(BaseItem item)
         {
@@ -43,6 +46,21 @@ namespace Shop
         public void Hover(bool hover)
         {
             _animator.Play(hover ? "SelectableItemHover" : "Idle");
+        }
+
+        public void SetItemNameObject(TMP_Text obj)
+        {
+            _itemName = obj;
+        }
+
+        public void SetPriceObject(TMP_Text obj)
+        {
+            _price = obj;
+        }
+
+        public void SetIconObject(Image obj)
+        {
+            _icon = obj;
         }
     }
 }

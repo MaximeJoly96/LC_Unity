@@ -19,6 +19,9 @@ namespace Utils
 
         public Sprite GetSpriteForWeapon(int id)
         {
+            if (_weapons == null)
+                return null;
+
             WeaponDisplay weapon = _weapons.FirstOrDefault(w => w.Id == id);
             return weapon != null ? weapon.Icon : null;
         }

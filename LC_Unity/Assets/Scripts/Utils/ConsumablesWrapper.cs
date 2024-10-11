@@ -19,7 +19,7 @@ namespace Utils
 
         public Sprite GetSpriteForConsumable(int id)
         {
-            return _consumables.FirstOrDefault(c => c.Id == id).Icon;
+            return _consumables != null ? _consumables.FirstOrDefault(c => c.Id == id).Icon : null;
         }
     }
 }

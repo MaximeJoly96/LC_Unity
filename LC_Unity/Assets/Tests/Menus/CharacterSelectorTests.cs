@@ -289,7 +289,9 @@ namespace Testing.Menus
         {
             GameObject go = new GameObject();
             _usedGameObjects.Add(go);
-            return go.AddComponent<CharacterSelector>();
+            CharacterSelector selector = go.AddComponent<CharacterSelector>();
+            selector.gameObject.AddComponent<InputReceiver>();
+            return selector;
         }
 
         private CharacterPreview CreateDefaultPreview()
