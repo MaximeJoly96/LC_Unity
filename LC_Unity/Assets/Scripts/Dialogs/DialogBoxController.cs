@@ -22,24 +22,6 @@ namespace Dialogs
             _currentDialogBox.HasFinishedOpening.AddListener(() => _busy = false);
         }
 
-        protected override void ReceiveInput(InputAction input)
-        {
-            if(!_busy)
-                TryToCloseDialog(input);
-        }
-
-        private void TryToCloseDialog(Vector2 mousePosition)
-        {
-            if(!_busy)
-                CloseDialog();
-        }
-
-        private void TryToCloseDialog(InputAction button)
-        {
-            if (button == InputAction.Select && !_busy)
-                CloseDialog();
-        }
-
         private void CloseDialog()
         {
             if (_currentDialogBox)
@@ -49,6 +31,20 @@ namespace Dialogs
         private void DestroyCurrentDialog()
         {
             Destroy(_currentDialogBox.gameObject);
+        }
+
+        protected override void BindInputs()
+        {
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                    CloseDialog();
+            });
+        }
+
+        protected override bool CanReceiveInput()
+        {
+            return !_busy;
         }
     }
 }

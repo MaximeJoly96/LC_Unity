@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using Core;
-using Inputs;
 using Actors;
 using Utils;
 
@@ -8,53 +7,60 @@ namespace Menus
 {
     public class HorizontalMainMenuController : MonoBehaviour
     {
-        private const float DELAY_BETWEEN_ACTIONS = 0.2f; // seconds
-
         [SerializeField]
         private SubMenuButton[] _subMenuButtons;
 
-        private InputController _inputController;
+        private InputReceiver _inputReceiver;
         private int _cursorPosition;
-        private float _selectionDelay;
-        private bool _busy;
 
         private void Start()
         {
-            _inputController = FindObjectOfType<InputController>();
-            _inputController.ButtonClicked.AddListener(HandleInputs);
-
+            BindInputs();
             Init();
+        }
+
+        private void BindInputs()
+        {
+            _inputReceiver = GetComponent<InputReceiver>();
+
+            _inputReceiver.OnMoveLeft.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorLeft();
+                }
+            });
+
+            _inputReceiver.OnMoveRight.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorRight();
+                }
+            });
+
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.OptionSelected();
+                    SelectSubMenu();
+                }
+            });
+        }
+
+        private bool CanReceiveInput()
+        {
+            return GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenu;
         }
 
         public void Init()
         {
             _cursorPosition = 0;
-            _selectionDelay = 0.0f;
-            _busy = false;
 
             UpdateCursorPosition();
-        }
-
-        private void HandleInputs(InputAction input)
-        {
-            if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenu && !_busy)
-            {
-                switch(input)
-                {
-                    case InputAction.MoveLeft:
-                        CommonSounds.CursorMoved();
-                        MoveCursorLeft();
-                        break;
-                    case InputAction.MoveRight:
-                        CommonSounds.CursorMoved();
-                        MoveCursorRight();
-                        break;
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        SelectSubMenu();
-                        break;
-                }
-            }
         }
 
         private void MoveCursorLeft()
@@ -75,8 +81,6 @@ namespace Menus
             {
                 _subMenuButtons[i].DisplayCursor(i == _cursorPosition);
             }
-
-            _busy = true;
         }
 
         private void SelectSubMenu()
@@ -88,20 +92,6 @@ namespace Menus
         {
             _subMenuButtons[_cursorPosition].FeedCharacterDataToSubMenu(character);
             _subMenuButtons[_cursorPosition].OpenSubMenu();
-        }
-
-        private void Update()
-        {
-            if(_busy)
-            {
-                _selectionDelay += Time.deltaTime;
-
-                if (_selectionDelay >= DELAY_BETWEEN_ACTIONS)
-                {
-                    _selectionDelay = 0.0f;
-                    _busy = false;
-                }
-            }
         }
     }
 }

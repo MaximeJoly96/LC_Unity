@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using Actors;
 using System.Collections.Generic;
-using Inputs;
 using Core;
 using System.Collections;
 using UnityEngine.Events;
@@ -11,16 +10,12 @@ namespace Menus
 {
     public class CharacterSelector : MonoBehaviour
     {
-        private const float DELAY_BETWEEN_ACTIONS = 0.2f; // seconds
-
         [SerializeField]
         private CharacterPreview _characterPreviewPrefab;
 
+        private InputReceiver _inputReceiver;
         private List<CharacterPreview> _previews;
-        private InputController _inputController;
-        private bool _busy;
         private int _cursorPosition;
-        private float _selectionDelay;
         private UnityEvent<Character> _characterSelected;
         
         public UnityEvent<Character> CharacterSelected
@@ -39,11 +34,73 @@ namespace Menus
 
         private void Start()
         {
-            _inputController = FindObjectOfType<InputController>();
-            _inputController.ButtonClicked.AddListener(HandleInputs);
-
             _previews = new List<CharacterPreview>();
             Init();
+            BindInputs();
+        }
+
+        private void BindInputs()
+        {
+            _inputReceiver = FindObjectOfType<InputReceiver>();
+
+            _inputReceiver.OnMoveDown.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorDown();
+                }
+            });
+
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorUp();
+                }
+            });
+
+            _inputReceiver.OnMoveLeft.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorLeft();
+                }
+            });
+
+            _inputReceiver.OnMoveRight.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorRight();
+                }
+            });
+
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.OptionSelected();
+                    SelectCharacter();
+                }
+            });
+
+            _inputReceiver.OnCancel.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.ActionCancelled();
+                    StartCoroutine(ReturnToMainMenu());
+                }
+            });
+        }
+
+        private bool CanReceiveInput()
+        {
+            return GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SelectingCharacterPreview;
         }
 
         public void Init()
@@ -79,42 +136,6 @@ namespace Menus
         {
             Init();
             _previews[_cursorPosition].Hover();
-        }
-
-        private void HandleInputs(InputAction input)
-        {
-            if(!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SelectingCharacterPreview)
-            {
-                switch(input)
-                {
-                    case InputAction.MoveDown:
-                        CommonSounds.CursorMoved();
-                        MoveCursorDown();
-                        break;
-                    case InputAction.MoveUp:
-                        CommonSounds.CursorMoved();
-                        MoveCursorUp();
-                        break;
-                    case InputAction.MoveLeft:
-                        CommonSounds.CursorMoved();
-                        MoveCursorLeft();
-                        break;
-                    case InputAction.MoveRight:
-                        CommonSounds.CursorMoved();
-                        MoveCursorRight();
-                        break;
-                    case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
-                        StartCoroutine(ReturnToMainMenu());
-                        break;
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        SelectCharacter();
-                        break;
-                }
-
-                _busy = true;
-            }
         }
 
         private void MoveCursorDown()
@@ -162,20 +183,6 @@ namespace Menus
             for(int i = 0; i < _previews.Count; i++)
             {
                 _previews[i].Unselect();
-            }
-        }
-
-        private void Update()
-        {
-            if (_busy)
-            {
-                _selectionDelay += Time.deltaTime;
-
-                if (_selectionDelay >= DELAY_BETWEEN_ACTIONS)
-                {
-                    _selectionDelay = 0.0f;
-                    _busy = false;
-                }
             }
         }
 

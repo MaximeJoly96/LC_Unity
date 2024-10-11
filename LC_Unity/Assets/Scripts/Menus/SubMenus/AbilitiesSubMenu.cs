@@ -1,11 +1,24 @@
 ﻿using Core;
-using Inputs;
 using Utils;
 
 namespace Menus.SubMenus
 {
     public class AbilitiesSubMenu : SubMenu 
     {
+        protected override void BindInputs()
+        {
+            _inputReceiver.OnCancel.AddListener(() =>
+            {
+                CommonSounds.ActionCancelled();
+                Close();
+            });
+        }
+
+        protected override bool CanReceiveInput()
+        {
+            return !_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuAbilitiesTab;
+        }
+
         public override void Open()
         {
             StartCoroutine(DoOpen());
@@ -20,20 +33,6 @@ namespace Menus.SubMenus
         protected override void FinishedClosing()
         {
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SelectingCharacterPreview);
-        }
-
-        protected override void HandleInputs(InputAction input)
-        {
-            if(!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuAbilitiesTab)
-            {
-                switch(input)
-                {
-                    case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
-                        Close();
-                        break;
-                }
-            }
         }
     }
 }

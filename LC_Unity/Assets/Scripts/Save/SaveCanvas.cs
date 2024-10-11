@@ -2,7 +2,6 @@
 using TMPro;
 using Inputs;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine.UI;
 using MsgBox;
 using Language;
@@ -13,7 +12,6 @@ namespace Save
 {
     public class SaveCanvas : MonoBehaviour
     {
-        private const float SELECTION_DELAY = 0.2f; // seconds
         private const int MAX_SAVES = 15;
         private const float SLOT_MOVE_DELTA = 0.095f;
 
@@ -26,12 +24,11 @@ namespace Save
         [SerializeField]
         private ScrollRect _scrollView;
 
-        private float _selectionDelay;
-        private bool _delayOn;
         private bool _isOpen;
         private int _cursorPosition;
 
         private List<SaveSlot> _instSaveSlots;
+        private InputReceiver _inputReceiver;
 
         public CanvasGroup CanvasGroup { get { return GetComponent<CanvasGroup>(); } }
         public Animator Animator { get { return GetComponent<Animator>(); } }
@@ -39,15 +36,57 @@ namespace Save
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
-
-            _selectionDelay = 0.0f;
-            _delayOn = false;
         }
 
         private void Start()
         {
-            InputController inputCtrl = FindObjectOfType<InputController>();
-            inputCtrl.ButtonClicked.AddListener(ReceiveInput);
+            BindInputs();
+        }
+
+        private void BindInputs()
+        {
+            _inputReceiver = GetComponent<InputReceiver>();
+
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.OptionSelected();
+                    SelectSlot();
+                }
+            });
+
+            _inputReceiver.OnCancel.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.ActionCancelled();
+                    Close();
+                }
+            });
+
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveUp();
+                }
+            });
+
+            _inputReceiver.OnMoveDown.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveDown();
+                }
+            });
+        }
+
+        private bool CanReceiveInput()
+        {
+            return _isOpen && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SaveMenu;
         }
 
         public void Close()
@@ -78,47 +117,6 @@ namespace Save
         public void UpdateTooltip(string text)
         {
             _tooltip.text = text;
-        }
-
-        private void ReceiveInput(InputAction input)
-        {
-            if(!_delayOn && _isOpen && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SaveMenu)
-            {
-                switch (input)
-                {
-                    case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
-                        Close();
-                        break;
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        SelectSlot();
-                        break;
-                    case InputAction.MoveDown:
-                        CommonSounds.CursorMoved();
-                        MoveDown();
-                        break;
-                    case InputAction.MoveUp:
-                        CommonSounds.CursorMoved();
-                        MoveUp();
-                        break;
-                }
-
-                _delayOn = true;
-            }
-        }
-
-        protected void Update()
-        {
-            if (_delayOn)
-            {
-                _selectionDelay += Time.deltaTime;
-                if (_selectionDelay > SELECTION_DELAY)
-                {
-                    _selectionDelay = 0.0f;
-                    _delayOn = false;
-                }
-            }
         }
 
         private void LoadSaveSlots()

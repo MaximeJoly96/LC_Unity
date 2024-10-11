@@ -21,37 +21,50 @@ namespace Dialogs
             _currentInputNumber.HasClosed.AddListener(DestroyCurrentInputNumber);
         }
 
-        protected override void ReceiveInput(InputAction input)
-        {
-            if (_currentInputNumber != null && !_delayOn && string.IsNullOrEmpty(_selectedNumberCode))
-            {
-                switch (input)
-                {
-                    case InputAction.MoveDown:
-                        _currentInputNumber.MoveCursorDown();
-                        break;
-                    case InputAction.MoveUp:
-                        _currentInputNumber.MoveCursorUp();
-                        break;
-                    case InputAction.MoveLeft:
-                        _currentInputNumber.MoveCursorLeft();
-                        break;
-                    case InputAction.MoveRight:
-                        _currentInputNumber.MoveCursorRight();
-                        break;
-                    case InputAction.Select:
-                        _selectedNumberCode = _currentInputNumber.Validate();
-                        _currentInputNumber.Close();
-                        break;
-                }
-
-                StartSelectionDelay();
-            }
-        }
-
         private void DestroyCurrentInputNumber()
         {
             Destroy(_currentInputNumber.gameObject);
+        }
+
+        protected override void BindInputs()
+        {
+            _inputReceiver.OnMoveDown.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                    _currentInputNumber.MoveCursorDown();
+            });
+
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                    _currentInputNumber.MoveCursorUp();
+            });
+
+            _inputReceiver.OnMoveLeft.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                    _currentInputNumber.MoveCursorLeft();
+            });
+
+            _inputReceiver.OnMoveRight.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                    _currentInputNumber.MoveCursorRight();
+            });
+
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    _selectedNumberCode = _currentInputNumber.Validate();
+                    _currentInputNumber.Close();
+                }
+            });
+        }
+
+        protected override bool CanReceiveInput()
+        {
+            return _currentInputNumber != null && string.IsNullOrEmpty(_selectedNumberCode);
         }
     }
 }

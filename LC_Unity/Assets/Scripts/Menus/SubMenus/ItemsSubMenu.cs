@@ -2,15 +2,12 @@
 using UnityEngine;
 using Menus.SubMenus.Items;
 using Inputs;
-using TMPro;
 using Utils;
 
 namespace Menus.SubMenus
 {
     public class ItemsSubMenu : SubMenu
     {
-        private const float SELECTION_DELAY = 0.2f;
-
         [SerializeField]
         private ItemsCategoryMenu[] _categories;
         [SerializeField]
@@ -19,12 +16,72 @@ namespace Menus.SubMenus
         private ItemDetails _itemDetails;
 
         private int _cursorPosition;
-        private float _delay;
+
+        protected override bool CanReceiveInput()
+        {
+            return !_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuItemsTab;
+        }
+
+        protected override void BindInputs()
+        {
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.OptionSelected();
+                    Select();
+                }
+            });
+
+            _inputReceiver.OnCancel.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.ActionCancelled();
+                    Close();
+                }
+            });
+
+            _inputReceiver.OnMoveDown.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorDown();
+                }
+            });
+
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorUp();
+                }
+            });
+
+            _inputReceiver.OnMoveLeft.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorLeft();
+                }
+            });
+
+            _inputReceiver.OnMoveRight.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorRight();
+                }
+            });
+        }
 
         public override void Open()
         {
             _cursorPosition = 0;
-            _delay = 0.0f;
 
             _itemsList.ItemHovered.RemoveAllListeners();
             _itemsList.ItemHovered.AddListener(UpdateItemDescription);
@@ -54,42 +111,6 @@ namespace Menus.SubMenus
 
             _itemDetails.Clear();
             _itemsList.Init(_categories[_cursorPosition].Category);
-        }
-
-        protected override void HandleInputs(InputAction input)
-        {
-            if(!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuItemsTab)
-            {
-                switch(input)
-                {
-                    case InputAction.MoveLeft:
-                        CommonSounds.CursorMoved();
-                        MoveCursorLeft();
-                        break;
-                    case InputAction.MoveRight:
-                        CommonSounds.CursorMoved();
-                        MoveCursorRight();
-                        break;
-                    case InputAction.MoveDown:
-                        CommonSounds.CursorMoved();
-                        MoveCursorDown();
-                        break;
-                    case InputAction.MoveUp:
-                        CommonSounds.CursorMoved();
-                        MoveCursorUp();
-                        break;
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        Select();
-                        break;
-                    case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
-                        Close();
-                        break;
-                }
-
-                _busy = true;
-            }
         }
 
         protected void MoveCursorLeft()
@@ -122,20 +143,6 @@ namespace Menus.SubMenus
         private void UpdateItemDescription(SelectableItem item)
         {
             _itemDetails.Feed(item.Item);
-        }
-
-        private void Update()
-        {
-            if (_busy)
-            {
-                _delay += Time.deltaTime;
-
-                if (_delay >= SELECTION_DELAY)
-                {
-                    _delay = 0.0f;
-                    _busy = false;
-                }
-            }
         }
     }
 }

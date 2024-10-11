@@ -3,7 +3,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Menus.SubMenus.Status;
-using Inputs;
 using Utils;
 
 namespace Menus.SubMenus
@@ -34,6 +33,32 @@ namespace Menus.SubMenus
         private StatusSubPanel _effectsPanel;
         [SerializeField]
         private StatusSubPanel _essenceAffinityPanel;
+
+        protected override bool CanReceiveInput()
+        {
+            return !_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuStatusTab;
+        }
+
+        protected override void BindInputs()
+        {
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    (_statsPanel as StatsPanel).ChangePage();
+                }
+            });
+
+            _inputReceiver.OnCancel.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.ActionCancelled();
+                    Close();
+                }
+            });
+        }
 
         public override void Open()
         {
@@ -75,24 +100,6 @@ namespace Menus.SubMenus
                 _equipmentPanel.Feed(_fedCharacter);
                 _effectsPanel.Feed(_fedCharacter);
                 _essenceAffinityPanel.Feed(_fedCharacter);
-            }
-        }
-
-        protected override void HandleInputs(InputAction input)
-        {
-            if (!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuStatusTab)
-            {
-                switch (input)
-                {
-                    case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
-                        Close();
-                        break;
-                    case InputAction.Select:
-                        CommonSounds.CursorMoved();
-                        (_statsPanel as StatsPanel).ChangePage();
-                        break;
-                }
             }
         }
     }

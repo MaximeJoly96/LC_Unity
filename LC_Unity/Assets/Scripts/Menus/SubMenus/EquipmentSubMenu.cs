@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using Menus.SubMenus.Items;
 using Menus.SubMenus.Status;
-using Inputs;
 using Language;
 using Inventory;
 using System.Collections.Generic;
@@ -16,10 +15,7 @@ namespace Menus.SubMenus
 {
     public class EquipmentSubMenu : SubMenu
     {
-        private const float SELECTION_DELAY = 0.2f;
-
         private int _cursorPosition;
-        private float _delay;
         private SelectableItem _hoveredItem;
         private BaseItem _currentItem;
 
@@ -40,10 +36,54 @@ namespace Menus.SubMenus
         [SerializeField]
         private TMP_Text _hoveredItemDescription;
 
+        protected override void BindInputs()
+        {
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.OptionSelected();
+                    Select();
+                }
+            });
+
+            _inputReceiver.OnCancel.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.ActionCancelled();
+                    Cancel();
+                }
+            });
+
+            _inputReceiver.OnMoveDown.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveDown();
+                }
+            });
+
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveUp();
+                }
+            });
+        }
+
+        protected override bool CanReceiveInput()
+        {
+            return !_busy && (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuEquipmentTab ||
+                              GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.ChangingEquipment);
+        }
+
         public override void Open()
         {
             _cursorPosition = 0;
-            _delay = 0.0f;
 
             Init();
 
@@ -89,49 +129,6 @@ namespace Menus.SubMenus
                 _characterName.text = _fedCharacter.Name;
                 _stats.Feed(_fedCharacter);
                 _equipment.Feed(_fedCharacter);
-            }
-        }
-
-        private void Update()
-        {
-            if (_busy)
-            {
-                _delay += Time.deltaTime;
-
-                if (_delay >= SELECTION_DELAY)
-                {
-                    _delay = 0.0f;
-                    _busy = false;
-                }
-            }
-        }
-
-        protected override void HandleInputs(InputAction input)
-        {
-            if(!_busy && (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuEquipmentTab ||
-                          GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.ChangingEquipment))
-            {
-                switch(input)
-                {
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        Select();
-                        break;
-                    case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
-                        Cancel();
-                        break;
-                    case InputAction.MoveUp:
-                        CommonSounds.CursorMoved();
-                        MoveUp();
-                        break;
-                    case InputAction.MoveDown:
-                        CommonSounds.CursorMoved();
-                        MoveDown();
-                        break;
-                }
-
-                _busy = true;
             }
         }
 

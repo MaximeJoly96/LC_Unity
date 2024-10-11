@@ -1,21 +1,78 @@
 ﻿using Core;
 using UnityEngine;
 using Menus.SubMenus.System;
-using Inputs;
-using Menus.SubMenus.Items;
 using Utils;
 
 namespace Menus.SubMenus
 {
     public class SystemSubMenu : SubMenu 
     {
-        private const float SELECTION_DELAY = 0.2f;
-
         [SerializeField]
         private SystemSubMenuItem[] _subMenuItems;
 
-        private float _selectionDelay;
         private int _cursorPosition;
+
+        protected override bool CanReceiveInput()
+        {
+            return !_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuSystemTab;
+        }
+
+        protected override void BindInputs()
+        {
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.OptionSelected();
+                    SelectItem();
+                }
+            });
+
+            _inputReceiver.OnCancel.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.ActionCancelled();
+                    Close();
+                }
+            });
+
+            _inputReceiver.OnMoveDown.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorDown();
+                }
+            });
+
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorUp();
+                }
+            });
+
+            _inputReceiver.OnMoveLeft.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorLeft();
+                }
+            });
+
+            _inputReceiver.OnMoveRight.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorRight();
+                }
+            });
+        }
 
         public override void Open()
         {
@@ -32,55 +89,6 @@ namespace Menus.SubMenus
         protected override void FinishedClosing()
         {
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenu);
-        }
-
-        protected override void HandleInputs(InputAction input)
-        {
-            if(!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuSystemTab)
-            {
-                switch(input)
-                {
-                    case InputAction.MoveDown:
-                        CommonSounds.CursorMoved();
-                        MoveCursorDown();
-                        break;
-                    case InputAction.MoveUp:
-                        CommonSounds.CursorMoved();
-                        MoveCursorUp();
-                        break;
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        SelectItem();
-                        break;
-                    case InputAction.MoveLeft:
-                        CommonSounds.CursorMoved();
-                        MoveCursorLeft();
-                        break;
-                    case InputAction.MoveRight:
-                        CommonSounds.CursorMoved();
-                        MoveCursorRight();
-                        break;
-                    case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
-                        Close();
-                        break;
-                }
-
-                _busy = true;
-            }
-        }
-
-        protected void Update()
-        {
-            if (_busy)
-            {
-                _selectionDelay += Time.deltaTime;
-                if (_selectionDelay > SELECTION_DELAY)
-                {
-                    _selectionDelay = 0.0f;
-                    _busy = false;
-                }
-            }
         }
 
         private void MoveCursorUp()

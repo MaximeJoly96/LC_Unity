@@ -15,6 +15,7 @@ using Utils;
 using UnityEngine.SceneManagement;
 using MusicAndSounds;
 using System.Collections;
+using Core;
 
 namespace BattleSystem
 {
@@ -35,14 +36,9 @@ namespace BattleSystem
 
     public class BattleManager : MonoBehaviour
     {
-        private const float SELECTION_DELAY = 0.2f; // seconds
-
         private UnityEvent<BattleState> _stateChangedEvent;
         private List<BattlerBehaviour> _enemiesInCombat;
         private List<BattlerBehaviour> _charactersInCombat;
-
-        private bool _delayOn;
-        private float _selectionDelay;
 
         private int _characterPlacementCursorPosition;
         private PlacementCursor _firstPlacementCursor;
@@ -51,6 +47,7 @@ namespace BattleSystem
         private EnemiesManager _enemiesManager;
         private List<BattlerBehaviour> _allBattlers;
         private TurnManager _turnManager;
+        private InputReceiver _inputReceiver;
 
         [SerializeField]
         private BattleUiManager _uiManager;
@@ -103,12 +100,13 @@ namespace BattleSystem
 
         private void Awake()
         {
-            FindObjectOfType<InputController>().ButtonClicked.AddListener(ReceiveInput);
+            BindInputs();
+
+
+
             StopAllAudio();
             StartCombatBgm();
 
-            _selectionDelay = 0.0f;
-            _delayOn = false;
             _enemiesInCombat = new List<BattlerBehaviour>();
             _charactersInCombat = new List<BattlerBehaviour>();
 
@@ -141,58 +139,20 @@ namespace BattleSystem
         }
 
         #region Inputs
-        private void ReceiveInput(InputAction input)
+        private void BindInputs()
         {
-            if(!_delayOn)
-            {
-                switch (input)
-                {
-                    case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
-                        CancelButtonPressed();
-                        break;
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        SelectButtonPressed();
-                        break;
-                    case InputAction.MoveLeft:
-                        CommonSounds.CursorMoved();
-                        MoveLeftPressed();
-                        break;
-                    case InputAction.MoveRight:
-                        CommonSounds.CursorMoved();
-                        MoveRightPressed();
-                        break;
-                    case InputAction.MoveUp:
-                        CommonSounds.CursorMoved();
-                        MoveUpPressed();
-                        break;
-                    case InputAction.MoveDown:
-                        CommonSounds.CursorMoved();
-                        MoveDownPressed();
-                        break;
-                    case InputAction.OpenMenu:
-                        StartButtonPressed();
-                        break;
-                }
-
-                _delayOn = true;
-            }
-            
+            _inputReceiver = GetComponent<InputReceiver>();
+            _inputReceiver.OnCancel.AddListener(CancelButtonPressed);
+            _inputReceiver.OnSelect.AddListener(SelectButtonPressed);
+            _inputReceiver.OnOpenMenu.AddListener(StartButtonPressed);
+            _inputReceiver.OnMoveLeft.AddListener(MoveLeftPressed);
+            _inputReceiver.OnMoveRight.AddListener(MoveRightPressed);
+            _inputReceiver.OnMoveDown.AddListener(MoveDownPressed);
+            _inputReceiver.OnMoveUp.AddListener(MoveUpPressed);
         }
 
         protected void Update()
         {
-            if (_delayOn)
-            {
-                _selectionDelay += Time.deltaTime;
-                if (_selectionDelay > SELECTION_DELAY)
-                {
-                    _selectionDelay = 0.0f;
-                    _delayOn = false;
-                }
-            }
-
             if(CurrentState == BattleState.BattleProcess)
             {
                 if(_charactersInCombat.All(c => c.FinishedAction) && _enemiesInCombat.All(c => c.FinishedAction))
@@ -211,6 +171,7 @@ namespace BattleSystem
             switch (CurrentState)
             {
                 case BattleState.PlacingCharacters:
+                    CommonSounds.OptionSelected();
                     _cursorsManager.StopCurrentCursor();
                     _selectedCharacterForSwap = _charactersInCombat[_characterPlacementCursorPosition];
                     _cursorsManager.CreateCursor(_selectedCharacterForSwap.transform.position);
@@ -218,6 +179,7 @@ namespace BattleSystem
                     UpdateInstructions();
                     break;
                 case BattleState.SwappingCharacters:
+                    CommonSounds.OptionSelected();
                     _cursorsManager.StopCurrentCursor();
                     _cursorsManager.ClearCursors();
                     SwapCharacters();
@@ -225,9 +187,11 @@ namespace BattleSystem
                     UpdateInstructions();
                     break;
                 case BattleState.PlayerMoveSelection:
+                    CommonSounds.OptionSelected();
                     _uiManager.SelectMove();
                     break;
                 case BattleState.TargetSelection:
+                    CommonSounds.OptionSelected();
                     _targetManager.ConfirmTarget(_turnManager.CurrentCharacter);
                     _targetManager.Clear();
                     _uiManager.CloseTargetInfo();
@@ -243,6 +207,7 @@ namespace BattleSystem
             switch(CurrentState)
             {
                 case BattleState.SwappingCharacters:
+                    CommonSounds.ActionCancelled();
                     _cursorsManager.StopCurrentCursor();
                     _cursorsManager.ClearCursors();
                     _cursorsManager.CreateCursor(_charactersInCombat[0].transform.position);
@@ -250,6 +215,7 @@ namespace BattleSystem
                     UpdateInstructions();
                     break;
                 case BattleState.TargetSelection:
+                    CommonSounds.ActionCancelled();
                     _targetManager.Clear();
                     _uiManager.CloseTargetInfo();
                     UpdateState(BattleState.PlayerMoveSelection);
@@ -263,11 +229,13 @@ namespace BattleSystem
             {
                 case BattleState.PlacingCharacters:
                 case BattleState.SwappingCharacters:
+                    CommonSounds.CursorMoved();
                     _characterPlacementCursorPosition = _characterPlacementCursorPosition == 0 ?
                                                         _charactersInCombat.Count - 1 : --_characterPlacementCursorPosition;
                     _cursorsManager.UpdateCurrentCursor(_charactersInCombat[_characterPlacementCursorPosition].transform.position);
                     break;
                 case BattleState.TargetSelection:
+                    CommonSounds.CursorMoved();
                     _targetManager.PreviousTarget();
                     _uiManager.ShowTargetInfo(_targetManager.CurrentlySelectedTarget);
                     break;
@@ -280,11 +248,13 @@ namespace BattleSystem
             {
                 case BattleState.PlacingCharacters:
                 case BattleState.SwappingCharacters:
+                    CommonSounds.CursorMoved();
                     _characterPlacementCursorPosition = _characterPlacementCursorPosition == _charactersInCombat.Count - 1 ?
                                                         0 : ++_characterPlacementCursorPosition;
                     _cursorsManager.UpdateCurrentCursor(_charactersInCombat[_characterPlacementCursorPosition].transform.position);
                     break;
                 case BattleState.TargetSelection:
+                    CommonSounds.CursorMoved();
                     _targetManager.NextTarget();
                     _uiManager.ShowTargetInfo(_targetManager.CurrentlySelectedTarget);
                     break;
@@ -296,6 +266,7 @@ namespace BattleSystem
             switch(CurrentState)
             {
                 case BattleState.PlayerMoveSelection:
+                    CommonSounds.CursorMoved();
                     _uiManager.UpPressedOnMoveSelection();
                     break;
             }
@@ -306,6 +277,7 @@ namespace BattleSystem
             switch (CurrentState)
             {
                 case BattleState.PlayerMoveSelection:
+                    CommonSounds.CursorMoved();
                     _uiManager.DownPressedOnMoveSelection();
                     break;
             }

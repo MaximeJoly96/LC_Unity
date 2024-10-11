@@ -25,6 +25,68 @@ namespace TitleScreen
             }
         }
 
+        protected override bool CanReceiveInput()
+        {
+            return GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.TitleScreenOptions;
+        }
+
+        protected override void BindInputs()
+        {
+            _inputReceiver.OnMoveDown.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorDown();
+                }
+            });
+
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorUp();
+                }
+            });
+
+            _inputReceiver.OnMoveLeft.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorLeft();
+                }
+            });
+
+            _inputReceiver.OnMoveRight.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorRight();
+                }
+            });
+
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.OptionSelected();
+                    SelectOption();
+                }
+            });
+
+            _inputReceiver.OnCancel.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.ActionCancelled();
+                    BackButtonEvent.Invoke();
+                }
+            });
+        }
+
         protected override void Start()
         {
             base.Start();
@@ -32,42 +94,6 @@ namespace TitleScreen
 
             if (back)
                 back.BackButtonSelected.AddListener(() => BackButtonEvent.Invoke());
-        }
-
-        protected override void ReceiveInput(InputAction input)
-        {
-            if(!_delayOn && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.TitleScreenOptions)
-            {
-                switch (input)
-                {
-                    case InputAction.MoveDown:
-                        CommonSounds.CursorMoved();
-                        MoveCursorDown();
-                        break;
-                    case InputAction.MoveUp:
-                        CommonSounds.CursorMoved();
-                        MoveCursorUp();
-                        break;
-                    case InputAction.MoveLeft:
-                        CommonSounds.CursorMoved();
-                        MoveCursorLeft();
-                        break;
-                    case InputAction.MoveRight:
-                        CommonSounds.CursorMoved();
-                        MoveCursorRight();
-                        break;
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        SelectOption();
-                        break;
-                    case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
-                        BackButtonEvent.Invoke();
-                        break;
-                }
-
-                _delayOn = true;
-            }
         }
 
         private void MoveCursorLeft()

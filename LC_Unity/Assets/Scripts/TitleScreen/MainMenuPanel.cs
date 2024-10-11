@@ -1,9 +1,5 @@
 ﻿using UnityEngine;
-using Inputs;
 using UnityEngine.Events;
-using System.Collections.Generic;
-using Engine.MusicAndSounds;
-using MusicAndSounds;
 using Utils;
 
 namespace TitleScreen
@@ -27,28 +23,39 @@ namespace TitleScreen
             }
         }
 
-        protected override void ReceiveInput(InputAction input)
+        protected override void BindInputs()
         {
-            if (!_delayOn)
+            _inputReceiver.OnMoveDown.AddListener(() =>
             {
-                switch (input)
+                if(CanReceiveInput())
                 {
-                    case InputAction.MoveDown:
-                        CommonSounds.CursorMoved();
-                        MoveCursorDown();
-                        break;
-                    case InputAction.MoveUp:
-                        CommonSounds.CursorMoved();
-                        MoveCursorUp();
-                        break;
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        SelectOption();
-                        break;
+                    CommonSounds.CursorMoved();
+                    MoveCursorDown();
                 }
+            });
 
-                _delayOn = true;
-            }
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorUp();
+                }
+            });
+
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.OptionSelected();
+                    SelectOption();
+                }
+            });
+        }
+
+        protected override bool CanReceiveInput()
+        {
+            return true;
         }
 
         private void MoveCursorDown()

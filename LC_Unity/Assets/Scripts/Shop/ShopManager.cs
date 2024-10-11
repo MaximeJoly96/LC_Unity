@@ -1,72 +1,80 @@
 ﻿using UnityEngine;
-using Inputs;
 using Core;
 using Engine.SceneControl;
 using System.Linq;
-using Utils;
 
 namespace Shop
 {
     public class ShopManager : MonoBehaviour
     {
-        private const float SELECTION_DELAY = 0.2f; // seconds
-
-        private float _selectionDelay;
-        private bool _delayOn;
         private TextAsset _currentMerchants;
+        private InputReceiver _inputReceiver;
 
         [SerializeField]
         private ShopWindow _shopWindow;
 
         private void Start()
         {
-            FindObjectOfType<InputController>().ButtonClicked.AddListener(HandleInputs);
-
-            _selectionDelay = 0.0f;
-            _delayOn = false;
+            BindInputs();
         }
 
-        private void HandleInputs(InputAction input)
+        private void BindInputs()
         {
-            if(!_delayOn && InShopState())
-            {
-                switch(input)
-                {
-                    case InputAction.Select:
-                        _shopWindow.Select();
-                        break;
-                    case InputAction.Cancel:
-                        _shopWindow.Cancel();
-                        break;
-                    case InputAction.MoveLeft:
-                        _shopWindow.MoveLeft();
-                        break;
-                    case InputAction.MoveRight:
-                        _shopWindow.MoveRight();
-                        break;
-                    case InputAction.MoveUp:
-                        _shopWindow.MoveUp();
-                        break;
-                    case InputAction.MoveDown:
-                        _shopWindow.MoveDown();
-                        break;
-                }
+            _inputReceiver = GetComponent<InputReceiver>();
 
-                _delayOn = true;
-            }
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    _shopWindow.Select();
+                }
+            });
+
+            _inputReceiver.OnCancel.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    _shopWindow.Cancel();
+                }
+            });
+
+            _inputReceiver.OnMoveDown.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    _shopWindow.MoveDown();
+                }
+            });
+
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    _shopWindow.MoveUp();
+                }
+            });
+
+            _inputReceiver.OnMoveLeft.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    _shopWindow.MoveLeft();
+                }
+            });
+
+            _inputReceiver.OnMoveRight.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    _shopWindow.MoveRight();
+                }
+            });
+
         }
 
-        protected void Update()
+        private bool CanReceiveInput()
         {
-            if (_delayOn)
-            {
-                _selectionDelay += Time.deltaTime;
-                if (_selectionDelay > SELECTION_DELAY)
-                {
-                    _selectionDelay = 0.0f;
-                    _delayOn = false;
-                }
-            }
+            return InShopState();
         }
 
         public void SetupShop(ShopProcessing shop)

@@ -21,31 +21,38 @@ namespace Dialogs
             _currentChoiceList.HasClosed.AddListener(DestroyCurrentList);
         }
 
-        protected override void ReceiveInput(InputAction input)
+        private void DestroyCurrentList()
         {
-            if (_currentChoiceList != null && !_delayOn && _selectedChoice != "")
+            Destroy(_currentChoiceList.gameObject);
+        }
+
+        protected override void BindInputs()
+        {
+            _inputReceiver.OnSelect.AddListener(() =>
             {
-                if (input == InputAction.Select)
+                if (CanReceiveInput())
                 {
                     _selectedChoice = _currentChoiceList.Validate();
                     _currentChoiceList.Close();
                 }
-                else if (input == InputAction.MoveDown)
-                {
+            });
+
+            _inputReceiver.OnMoveDown.AddListener(() =>
+            {
+                if (CanReceiveInput())
                     _currentChoiceList.MoveCursorDown();
-                    StartSelectionDelay();
-                }
-                else if (input == InputAction.MoveUp)
-                {
+            });
+
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if (CanReceiveInput())
                     _currentChoiceList.MoveCursorUp();
-                    StartSelectionDelay();
-                }
-            }
+            });
         }
 
-        private void DestroyCurrentList()
+        protected override bool CanReceiveInput()
         {
-            Destroy(_currentChoiceList.gameObject);
+            return _currentChoiceList != null && _selectedChoice != "";
         }
     }
 }

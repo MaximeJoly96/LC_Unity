@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Inputs;
 using Core;
 using Actors;
 
@@ -11,6 +10,7 @@ namespace Menus.SubMenus
         [SerializeField]
         private Transform _boundView;
 
+        protected InputReceiver _inputReceiver;
         protected bool _busy;
         protected Character _fedCharacter;
 
@@ -19,8 +19,12 @@ namespace Menus.SubMenus
 
         protected virtual void Start()
         {
-            FindObjectOfType<InputController>().ButtonClicked.AddListener(HandleInputs);
+            _inputReceiver = GetComponent<InputReceiver>();
+            BindInputs();
         }
+
+        protected abstract void BindInputs();
+        protected abstract bool CanReceiveInput();
 
         protected IEnumerator DoOpen()
         {
@@ -60,8 +64,6 @@ namespace Menus.SubMenus
             yield return new WaitForSeconds(0.2f);
             FinishedClosing();
         }
-
-        protected abstract void HandleInputs(InputAction input);
 
         protected abstract void FinishedClosing();
 

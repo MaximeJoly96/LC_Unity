@@ -12,23 +12,47 @@ namespace Menus
 {
     public class SpecificCharacterSelectionMenu : MonoBehaviour
     {
-        private const float DELAY_BETWEEN_ACTIONS = 0.2f;
-
         [SerializeField]
         private TargetableCharacter _targetableCharacterPrefab;
         [SerializeField]
         private Transform _wrapper;
 
+        private InputReceiver _inputReceiver;
         private SelectableItem _selectedItem;
-        private bool _busy;
-        private float _delay;
         private List<TargetableCharacter> _characters;
 
         private GlobalStateMachine.State _previousState;
 
         private void Start()
         {
-            FindObjectOfType<InputController>().ButtonClicked.AddListener(HandleInputs);
+            BindInputs();
+        }
+
+        private void BindInputs()
+        {
+            _inputReceiver = GetComponent<InputReceiver>();
+
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.OptionSelected();
+                }
+            });
+
+            _inputReceiver.OnCancel.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.ActionCancelled();
+                    Close();
+                }
+            });
+        }
+
+        private bool CanReceiveInput()
+        {
+            return GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InCharacterTargetMenu;
         }
 
         public void Open()
@@ -85,25 +109,6 @@ namespace Menus
             _selectedItem = item;
         }
 
-        private void HandleInputs(InputAction input)
-        {
-            if(!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InCharacterTargetMenu)
-            {
-                switch(input)
-                {
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        break;
-                    case InputAction.Cancel:
-                        CommonSounds.ActionCancelled();
-                        Close();
-                        break;
-                }
-
-                _busy = true;
-            }
-        }
-
         private void Init()
         {
             List<Character> party = PartyManager.Instance.GetParty();
@@ -123,20 +128,6 @@ namespace Menus
             foreach(Transform child in _wrapper)
             {
                 Destroy(child.gameObject);
-            }
-        }
-
-        private void Update()
-        {
-            if (_busy)
-            {
-                _delay += Time.deltaTime;
-
-                if (_delay >= DELAY_BETWEEN_ACTIONS)
-                {
-                    _delay = 0.0f;
-                    _busy = false;
-                }
             }
         }
     }

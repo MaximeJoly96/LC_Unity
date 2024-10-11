@@ -33,8 +33,6 @@ namespace MsgBox
 
     public class MessageBox : MonoBehaviour
     {
-        private const float SELECTION_DELAY = 0.2f;
-
         [SerializeField]
         private TMP_Text _boxTitle;
         [SerializeField]
@@ -47,11 +45,10 @@ namespace MsgBox
         [SerializeField]
         private MessageBoxButtonsSet[] _buttonsSets;
 
-        private bool _busy;
-        private float _selectionDelay;
         private int _cursorPosition;
         private MessageBoxAnswerType _currentAnswerType;
         private MessageBoxAnswer _result;
+        private InputReceiver _inputReceiver;
 
         private UnityEvent<MessageBoxAnswer> _messageBoxClosedWithResult;
         public UnityEvent<MessageBoxAnswer> MessageBoxClosedWithResult
@@ -67,7 +64,44 @@ namespace MsgBox
 
         private void Start()
         {
-            FindObjectOfType<InputController>().ButtonClicked.AddListener(HandleInputs);
+            BindInputs();
+        }
+
+        private void BindInputs()
+        {
+            _inputReceiver = GetComponent<InputReceiver>();
+
+            _inputReceiver.OnMoveLeft.AddListener(() =>
+            {
+                if(CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveLeft();
+                }
+            });
+
+            _inputReceiver.OnMoveRight.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveRight();
+                }
+            });
+
+            _inputReceiver.OnSelect.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    SelectAnswer();
+                }
+            });
+        }
+
+        private bool CanReceiveInput()
+        {
+            return GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMessageBox;
         }
 
         public void Show(string message, MessageBoxAnswerType answerType, MessageBoxType messageType)
@@ -117,43 +151,6 @@ namespace MsgBox
         public void FinishedClosing()
         {
             MessageBoxClosedWithResult.Invoke(_result);
-        }
-
-        private void HandleInputs(InputAction input)
-        {
-            if(!_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMessageBox)
-            {
-                switch(input)
-                {
-                    case InputAction.MoveLeft:
-                        CommonSounds.CursorMoved();
-                        MoveLeft();
-                        break;
-                    case InputAction.MoveRight:
-                        CommonSounds.CursorMoved();
-                        MoveRight();
-                        break;
-                    case InputAction.Select:
-                        CommonSounds.OptionSelected();
-                        SelectAnswer();
-                        break;
-                }
-
-                _busy = true;
-            }
-        }
-
-        protected void Update()
-        {
-            if (_busy)
-            {
-                _selectionDelay += Time.deltaTime;
-                if (_selectionDelay > SELECTION_DELAY)
-                {
-                    _selectionDelay = 0.0f;
-                    _busy = false;
-                }
-            }
         }
 
         private void MoveLeft()
