@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 73
+  controlID: 44
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 74
+  controlID: 45
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -382,9 +382,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 645f0000
+      m_SelectedIDs: 3c5f0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 2e48ffffe449ffff4492ffff7a92ffffb293ffff9494ffffca94ffff2296ffffc8a9fffffea9ffff68c6ffff70c7ffffa6c7ffffe8c8ffffcac9ffff00caffff6ce6ffffeef7ffff3afaffff2efbffff2064000000690000b26a0000bc6a0000b86b0000feaf0000b0060100ba080100d80a0100b60d0100
+      m_ExpandedIDs: 6465ffff1469ffffcc92ffff6294ffff6ae9ffffe6efffff1ef3ffff6ef3ffffa4f3ffffd0f4ffffccf6ffff02f7ffff32f8ffff2efbffff7e810000108800001a880000168900004eae00002cb000009e0d0100062301000625010050500100f2570100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -437,7 +437,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 1043
+    ID: 210
     splitterInitialOffset: 0
     currentActiveSplitter: -1
     realSizes:
@@ -468,9 +468,9 @@ MonoBehaviour:
       uniqueId: '[LC][suite]'
       name: LC
       fullName: LC
-      resultStatus: 2
-      duration: 0.1505616
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 2.21339
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -484,9 +484,9 @@ MonoBehaviour:
       uniqueId: '[Tests.dll][suite]'
       name: Tests.dll
       fullName: E:/Unity_Projects/LC_Unity/LC_Unity/Library/ScriptAssemblies/Tests.dll
-      resultStatus: 2
-      duration: 0.1132178
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 2.1804461
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -500,9 +500,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/[Testing][suite]
       name: Testing
       fullName: Testing
-      resultStatus: 2
-      duration: 0.1005619
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 2.1698027
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -2154,7 +2154,7 @@ MonoBehaviour:
       name: Core
       fullName: Testing.Core
       resultStatus: 1
-      duration: 0.0284391
+      duration: 2.1660118
       messages: 
       output: 
       stacktrace: 
@@ -2215,6 +2215,39 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1198
       parentUniqueId: Tests.dll/Testing/Core/[Tests][Testing.Core.GlobalStateMachineTests][suite]
+    - id: 1306
+      uniqueId: Tests.dll/Testing/Core/[Tests][Testing.Core.InputReceiverTests][suite]
+      name: InputReceiverTests
+      fullName: Testing.Core.InputReceiverTests
+      resultStatus: 1
+      duration: 2.1614091
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1431
+      parentUniqueId: Tests.dll/Testing/[Tests][Testing.Core][suite]
+    - id: 1307
+      uniqueId: Tests.dll/Testing/Core/InputReceiverTests/[Tests][Testing.Core.InputReceiverTests.ProperEventsAreRaisedWhenInputsAreRecorded]
+      name: ProperEventsAreRaisedWhenInputsAreRecorded
+      fullName: Testing.Core.InputReceiverTests.ProperEventsAreRaisedWhenInputsAreRecorded
+      resultStatus: 1
+      duration: 2.141584
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1306
+      parentUniqueId: Tests.dll/Testing/Core/[Tests][Testing.Core.InputReceiverTests][suite]
     - id: 1276
       uniqueId: Tests.dll/Testing/Core/[Tests][Testing.Core.Model][suite]
       name: Model
@@ -7820,28 +7853,13 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1008
       parentUniqueId: Tests.dll/Testing/Utils/[Tests][Testing.Utils.TimeConverterTests][suite]
-    m_ResultText: "ShopCanBeSetup (0,063s)\n---\nSystem.NullReferenceException :
-      Object reference not set to an instance of an object\n---\nat Shop.ShopWindow.SetupMerchant
-      (Shop.Merchant merchant) [0x00008] in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Scripts\\Shop\\ShopWindow.cs:43
-      \r\n  at Shop.ShopManager.SetupShop (Engine.SceneControl.ShopProcessing shop)
-      [0x00032] in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Scripts\\Shop\\ShopManager.cs:83
-      \r\n  at Testing.Shop.ShopManagerTests+<ShopCanBeSetup>d__6.MoveNext () [0x000e3]
-      in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Tests\\Shop\\ShopManagerTests.cs:71
-      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e]
-      in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Library\\PackageCache\\com.unity.test-framework@1.1.29\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46"
-    m_ResultStacktrace: "  at Shop.ShopWindow.SetupMerchant (Shop.Merchant merchant)
-      [0x00008] in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Scripts\\Shop\\ShopWindow.cs:43
-      \r\n  at Shop.ShopManager.SetupShop (Engine.SceneControl.ShopProcessing shop)
-      [0x00032] in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Scripts\\Shop\\ShopManager.cs:83
-      \r\n  at Testing.Shop.ShopManagerTests+<ShopCanBeSetup>d__6.MoveNext () [0x000e3]
-      in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Tests\\Shop\\ShopManagerTests.cs:71
-      \r\n  at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e]
-      in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Library\\PackageCache\\com.unity.test-framework@1.1.29\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46 "
+    m_ResultText: ProperEventsAreRaisedWhenInputsAreRecorded (2,142s)
+    m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 98d1a1eb
-      m_LastClickedID: -341716584
-      m_ExpandedIDs: 0cdece80e95922837d27c088d1e1e588ddd5208b5155378c2a9e4c93c87ae496241beb978330b39d02715a9e09add29e759bef9e7bf06da2d4aaefa4a4ca3fa629bf73aa079c34ae3bf28fb7b75f6dbe3c9679be944c81bead0dd3c21665e8c598d140c68c3bacc713d282c85c8600ca00329dcdd14892d237d566d76e3b5fd91eda61da628e6ddb1031dddcc77613ddd0fc5cdf534bece8427858ea2f67adefafd157f2d5f817f65bc100f7e557abf787cbe0f805f251f9390acefbd34366fcf586d3fcfa09070271ab9407b89359084deeca09000c200bd84bb2177bd7f21a4522021b01d8b11cc48194229038d0238d11e026271162275410cf293ae17a2acc405a316e478e310a9020347950be34afaa083888ba9e3a5900253bf504303ea67fca4232d0ec438a2075497e134b4b4bc765507441155194689155d40d6d617899ab662627a86a37ca336b8092776b2b342b6e32871475accef176ca400a77c3313d77158eb47bfd6e247f199a897fffffff7f
+      m_SelectedIDs: 04da1558
+      m_LastClickedID: 1477827076
+      m_ExpandedIDs: 0cdece80e95922837d27c088d1e1e588ddd5208b5155378c2a9e4c93c87ae496241beb978330b39d02715a9e09add29e759bef9ed340b9a17bf06da2d4aaefa4a4ca3fa629bf73aa079c34ae3bf28fb7b75f6dbe3c9679be944c81bead0dd3c21665e8c598d140c68c3bacc713d282c85c8600ca00329dcdd14892d237d566d76e3b5fd91eda61da628e6ddb1031dddcc77613ddd0fc5cdf3f92c2df534bece8427858ea2f67adefafd157f2d5f817f65bc100f7e557abf787cbe0f805f251f9390acefbd34366fcf586d3fcfa09070271ab9407b89359084deeca09000c200bd84bb2177bd7f21a4522021b01d8b11cc48194229038d0238d11e026271162275410cf293ae17a2acc405a316e478e310a9020347950be34afaa083888ba9e3a5900253bf504303ea67fca4232d0ec438a2075497e134b4b4bc765507441155194689155d40d6d617899ab662627a86a37ca336b8092776b2b342b6e32871475accef176ca400a77c3313d77158eb47bfd6e247f199a897fffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -8010,6 +8028,8 @@ MonoBehaviour:
     - {fileID: -3953520367883825487, guid: 8881e36e5398919458c143489fee60c2, type: 2}
     - {fileID: 6364643468937992369, guid: e53e9e9d7b2d19343a08d7d1e116a2d9, type: 2}
     - {fileID: -7966862731889345321, guid: c386e652e55f123429493a0d4edd2e98, type: 2}
+    - {fileID: 2294980065352225193, guid: ff6dba35b15e64f4e8ce5eb13ecaecd0, type: 2}
+    - {fileID: 7274301593529720717, guid: 379dbfeb6b450944d9a9944b1d3dfb47, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.8557895
       e01: 0
@@ -8971,11 +8991,43 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 5fc3f65af79f2e34d9b2eed736679df3,
+  m_AnimatorController: {fileID: 9100000, guid: 379dbfeb6b450944d9a9944b1d3dfb47,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -314140631793947337, guid: 5fc3f65af79f2e34d9b2eed736679df3,
+  - m_Target: {fileID: 7274301593529720717, guid: 379dbfeb6b450944d9a9944b1d3dfb47,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -9348,7 +9400,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 35952
+  m_LastSelectedObjectID: 85248
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -9474,9 +9526,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 556}
-    m_SelectedIDs: fa5e0000
-    m_LastClickedID: 24314
-    m_ExpandedIDs: 00000000965e0000985e00009a5e00009c5e00009e5e0000a05e0000a25e0000a45e0000a65e0000a85e0000e05e0000e65e000000ca9a3bffffff7f
+    m_SelectedIDs: 005f0000
+    m_LastClickedID: 24320
+    m_ExpandedIDs: 000000009e5e0000a05e0000a25e0000a45e0000a65e0000a85e0000aa5e0000ac5e0000ae5e0000b05e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -9504,7 +9556,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000965e0000985e00009a5e00009c5e00009e5e0000a05e0000a25e0000a45e0000a65e0000a85e0000
+    m_ExpandedIDs: 000000009e5e0000a05e0000a25e0000a45e0000a65e0000a85e0000aa5e0000ac5e0000ae5e0000b05e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

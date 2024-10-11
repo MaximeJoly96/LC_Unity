@@ -9,8 +9,11 @@ namespace Menus.SubMenus
         {
             _inputReceiver.OnCancel.AddListener(() =>
             {
-                CommonSounds.ActionCancelled();
-                Close();
+                if(CanReceiveInput())
+                {
+                    CommonSounds.ActionCancelled();
+                    Close();
+                }
             });
         }
 

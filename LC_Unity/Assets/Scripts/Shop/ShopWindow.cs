@@ -173,8 +173,9 @@ namespace Shop
                 {
                     PlayErrorSound();
                     return;
-                }   
+                }
 
+                CommonSounds.OptionSelected();
                 Buy(_instItems[_itemsListCursorPosition].Item);
             }
             else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopSellList)
