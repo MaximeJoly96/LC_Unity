@@ -38,6 +38,10 @@ namespace Shop
         private List<SelectableItem> _instItems;
         private Merchant _merchant;
 
+        public string ShopName { get { return _shopName.text;} }
+        public string CurrentGold { get { return _currentGold.text; } }
+        public ItemDetails ItemDetails { get { return _itemDetails; } }
+
         public void SetupMerchant(Merchant merchant)
         {
             _merchant = merchant;
@@ -410,6 +414,16 @@ namespace Shop
         public void SetPartyPreviewObject(PartyPreview obj)
         {
             _partyPreview = obj;
+        }
+
+        public void SetItemDetailsObject(ItemDetails obj)
+        {
+            _itemDetails = obj;
+        }
+
+        public void SetConfirmationWindowObject(ShopConfirmationWindow obj)
+        {
+            _confirmationWindow = obj;
         }
     }
 }
