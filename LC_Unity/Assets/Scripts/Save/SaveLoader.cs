@@ -27,7 +27,14 @@ namespace Save
                 content = sr.ReadToEnd();
             }
 
-            string[] splitContent = content.Split("\r\n");
+            string separator = "";
+
+#if UNITY_ANDROID
+            separator = "\n";
+#else
+            separator = "\r\n";
+#endif
+            string[] splitContent = content.Split(separator);
 
             for (int i = 0; i < splitContent.Length; i++)
             {
