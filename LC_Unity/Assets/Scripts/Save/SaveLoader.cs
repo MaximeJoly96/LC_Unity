@@ -41,10 +41,15 @@ namespace Save
             var files = Directory.GetFiles(SAVE_BASE_PATH).Where(f => f.EndsWith(".data"));
             foreach(string file in files)
             {
+#if UNITY_ANDROID
+                string[] split = file.Split("/");
+                string id = split[split.Length - 1].Replace("save", "").Replace(".data", "");
+                ids.Add(int.Parse(id));
+#else
                 string[] split = file.Split("\\");
-
                 string id = split[1].Replace("save", "").Replace(".data", "");
                 ids.Add(int.Parse(id));
+#endif
             }
 
             return ids;

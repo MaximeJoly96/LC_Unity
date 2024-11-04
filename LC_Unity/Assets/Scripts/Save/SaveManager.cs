@@ -180,7 +180,7 @@ namespace Save
             return characters;
         }
 
-        private List<InventoryItem>  RetrieveInventoryData(Dictionary<string, string> saveData)
+        private List<InventoryItem> RetrieveInventoryData(Dictionary<string, string> saveData)
         {
             List<InventoryItem> items = new List<InventoryItem>();
 
