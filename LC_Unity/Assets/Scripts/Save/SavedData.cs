@@ -7,11 +7,11 @@ namespace Save
 {
     public class SavedData
     {
-        public Vector2 PlayerPosition { get; internal set; }
-        public int MapID { get; internal set; }
-        public float InGameTimeSeconds { get; internal set; }
-        public List<Character> Party { get; internal set; }
-        public List<InventoryItem> Inventory { get; internal set; }
-        public int Gold { get; internal set; }
+        public Vector2 PlayerPosition { get; set; }
+        public int MapID { get; set; }
+        public float InGameTimeSeconds { get; set; }
+        public List<Character> Party { get; set; }
+        public List<InventoryItem> Inventory { get; set; }
+        public int Gold { get; set; }
     }
 }

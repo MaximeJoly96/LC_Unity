@@ -32,6 +32,10 @@ namespace Save
 
         public CanvasGroup CanvasGroup { get { return GetComponent<CanvasGroup>(); } }
         public Animator Animator { get { return GetComponent<Animator>(); } }
+        public TMP_Text Tooltip { get { return _tooltip; } }
+        public Transform SavesWrapper { get { return _savesWrapper; } }
+        public SaveSlot SaveSlotPrefab { get { return _saveSlotPrefab; } }
+        public ScrollRect ScrollView { get { return _scrollView; } }
 
         private void Awake()
         {
@@ -92,7 +96,9 @@ namespace Save
         public void Close()
         {
             _isOpen = false;
-            Animator.Play("CloseSaveWindow");
+
+            if(Animator)
+                Animator.Play("CloseSaveWindow");
         }
 
         public void FinishedClosing()
@@ -103,10 +109,13 @@ namespace Save
         public void Open()
         {
             _cursorPosition = 0;
-            Animator.Play("OpenSaveWindow");
+
+            if(Animator)
+                Animator.Play("OpenSaveWindow");
+
             LoadSaveSlots();
             UpdateCursor(false);
-            _scrollView.verticalNormalizedPosition = 1.0f;
+            ScrollView.verticalNormalizedPosition = 1.0f;
         }
 
         public void FinishedOpening()
@@ -116,7 +125,7 @@ namespace Save
 
         public void UpdateTooltip(string text)
         {
-            _tooltip.text = text;
+            Tooltip.text = text;
         }
 
         private void LoadSaveSlots()
@@ -125,7 +134,7 @@ namespace Save
 
             for(int i = 0; i < MAX_SAVES;  i++)
             {
-                SaveSlot slot = Instantiate(_saveSlotPrefab, _savesWrapper);
+                SaveSlot slot = Instantiate(SaveSlotPrefab, SavesWrapper);
                 _instSaveSlots.Add(slot);
             }
 
@@ -143,7 +152,7 @@ namespace Save
             else
                 _instSaveSlots.Clear();
 
-            foreach(Transform child in _savesWrapper)
+            foreach(Transform child in SavesWrapper)
             {
                 Destroy(child.gameObject);
             }
@@ -172,11 +181,11 @@ namespace Save
             }
 
             if (_cursorPosition == MAX_SAVES - 1)
-                _scrollView.verticalNormalizedPosition = 0.0f;
+                ScrollView.verticalNormalizedPosition = 0.0f;
             else if (_cursorPosition >= 4)   
-                _scrollView.verticalNormalizedPosition -= goingUp ? -1.0f * SLOT_MOVE_DELTA : SLOT_MOVE_DELTA;
+                ScrollView.verticalNormalizedPosition -= goingUp ? -1.0f * SLOT_MOVE_DELTA : SLOT_MOVE_DELTA;
             else
-                _scrollView.verticalNormalizedPosition = 1.0f;
+                ScrollView.verticalNormalizedPosition = 1.0f;
         }
 
         private void SelectSlot()
@@ -211,6 +220,14 @@ namespace Save
                 SaveManager.Instance.SlotSelected(_cursorPosition);
             else
                 GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);
+        }
+
+        public void SetComponents(TMP_Text tooltip, Transform savesWrapper, SaveSlot saveSlotPrefab, ScrollRect scrollRect)
+        {
+            _tooltip = tooltip;
+            _savesWrapper = savesWrapper;
+            _saveSlotPrefab = saveSlotPrefab;
+            _scrollView = scrollRect;
         }
     }
 }

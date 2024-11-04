@@ -2,6 +2,8 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System;
+using Logging;
 
 namespace Save
 {
@@ -12,19 +14,24 @@ namespace Save
         public Dictionary<string, string> LoadSaveFile(int slotId)
         {
             string path = SAVE_BASE_PATH + "/save" + slotId + ".data";
+            return LoadSaveFile(path);
+        }
+
+        public Dictionary<string, string> LoadSaveFile(string path)
+        {
             Dictionary<string, string> data = new Dictionary<string, string>();
             string content = "";
 
-            using(StreamReader sr = new StreamReader(path))
+            using (StreamReader sr = new StreamReader(path))
             {
                 content = sr.ReadToEnd();
             }
 
             string[] splitContent = content.Split("\r\n");
 
-            for(int i = 0; i < splitContent.Length; i++)
+            for (int i = 0; i < splitContent.Length; i++)
             {
-                if(splitContent[i] != string.Empty)
+                if (splitContent[i] != string.Empty)
                 {
                     string[] splitLine = splitContent[i].Split('=');
                     data.Add(splitLine[0], splitLine[1]);
@@ -44,11 +51,27 @@ namespace Save
 #if UNITY_ANDROID
                 string[] split = file.Split("/");
                 string id = split[split.Length - 1].Replace("save", "").Replace(".data", "");
-                ids.Add(int.Parse(id));
+
+                try
+                {
+                    ids.Add(int.Parse(id));
+                }
+                catch(FormatException e)
+                {
+                    LogsHandler.Instance.LogError("Could not get save ID. Reason: " + e.Message);
+                }
 #else
                 string[] split = file.Split("\\");
                 string id = split[1].Replace("save", "").Replace(".data", "");
-                ids.Add(int.Parse(id));
+
+                try
+                {
+                    ids.Add(int.Parse(id));
+                }
+                catch(FormatException e)
+                {
+                    LogsHandler.Instance.LogError("Could not get save ID. Reason: " + e.Message);
+                }
 #endif
             }
 

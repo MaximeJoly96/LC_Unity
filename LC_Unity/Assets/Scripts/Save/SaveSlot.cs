@@ -21,25 +21,30 @@ namespace Save
         private Image[] _characters;
 
         public SavedData Data { get; private set; }
+        public Transform BlankSave { get { return _blankSave; } }
+        public Transform SaveWithData { get { return _saveWithData; } }
+        public TMP_Text InGameTime { get { return _inGameTime; } }
+        public TMP_Text Location { get { return _location; } }
+        public Image[] Characters { get { return _characters; } }
 
         public void Init(SavedData data)
         {
-            _blankSave.gameObject.SetActive(false);
-            _saveWithData.gameObject.SetActive(true);
+            BlankSave.gameObject.SetActive(false);
+            SaveWithData.gameObject.SetActive(true);
 
             Data = data;
 
-            _location.text = Localizer.Instance.GetString(FieldNames.MAP_NAMES[Data.MapID]);
-            _inGameTime.text = TimeConverter.FormatTimeFromSeconds(data.InGameTimeSeconds);
+            Location.text = Localizer.Instance.GetString(FieldNames.MAP_NAMES[Data.MapID]);
+            InGameTime.text = TimeConverter.FormatTimeFromSeconds(data.InGameTimeSeconds);
 
-            for(int i = 0;  i < _characters.Length; i++)
+            for(int i = 0;  i < Characters.Length; i++)
             {
-                _characters[i].gameObject.SetActive(false);
+                Characters[i].gameObject.SetActive(false);
             }
 
             for(int i = 0; i < Data.Party.Count; i++)
             {
-                _characters[i].gameObject.SetActive(true);
+                Characters[i].gameObject.SetActive(true);
             }
 
             SetSize();
@@ -47,12 +52,16 @@ namespace Save
 
         public void Select()
         {
-            GetComponent<Animator>().Play("SaveSlotSelected");
+            Animator animator = GetComponent<Animator>();
+            if(animator)
+                animator.Play("SaveSlotSelected");
         }
 
         public void Unselect()
         {
-            GetComponent<Animator>().Play("SaveSlotIdle");
+            Animator animator = GetComponent<Animator>();
+            if (animator)
+                animator.Play("SaveSlotIdle");
         }
 
         private void SetSize()
@@ -60,6 +69,15 @@ namespace Save
             RectTransform rt = GetComponent<RectTransform>();
 
             rt.sizeDelta = new Vector2(rt.sizeDelta.x, rt.sizeDelta.y * Screen.currentResolution.height / 1080.0f);
+        }
+
+        public void SetComponents(Transform blankSave, Transform saveWithData, TMP_Text inGameTime, TMP_Text location, Image[] characters)
+        {
+            _blankSave = blankSave;
+            _saveWithData = saveWithData;
+            _inGameTime = inGameTime;
+            _location = location;
+            _characters = characters;
         }
     }
 }
