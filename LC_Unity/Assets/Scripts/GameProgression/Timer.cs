@@ -1,4 +1,6 @@
-﻿namespace GameProgression
+﻿using System.Globalization;
+
+namespace GameProgression
 {
     public class Timer
     {
@@ -39,7 +41,7 @@
 
         public override string ToString()
         {
-            return CurrentTime + "/" + MaxDuration;
+            return CurrentTime.ToString(CultureInfo.InvariantCulture) + "/" + MaxDuration.ToString(CultureInfo.InvariantCulture);
         }
     }
 }

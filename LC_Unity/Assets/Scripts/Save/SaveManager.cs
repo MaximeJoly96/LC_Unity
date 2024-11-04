@@ -126,7 +126,7 @@ namespace Save
         {
             try
             {
-                Dictionary<string, string> saveData = _creator.CreateSaveFile(slotId);
+                Dictionary<string, string> saveData = _creator.CreateSaveData();
 
                 Data = new SavedData
                 {
@@ -138,6 +138,8 @@ namespace Save
                     Inventory = RetrieveInventoryData(saveData),
                     Gold = int.Parse(saveData["gold"])
                 };
+
+                _creator.WriteSaveDataToDisk(slotId, saveData);
             }
             catch (Exception e)
             {
