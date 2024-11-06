@@ -5,7 +5,6 @@
       <AllowCutsceneSkip Allow="false" />
       <ChangeMapNameDisplay Enabled="true" />
       <PlayBgm Name="haalmikah" Volume="0.75" Pitch="1" />
-      <EnterBuilding AgentId="barDoor" />
       <CameraFollowPlayer Follow="true" />
       <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
         <Transparent Status="false" />
@@ -85,7 +84,6 @@
       </TintScreen>
       <Wait Duration="2" />
       <ControlSwitch Key="introCompleted" Value="true" />
-      <EnterBuilding AgentId="barExit" />
       <TransferObject Target="player">
         <Direction>Bottom</Direction>
         <Destination X="0" Y="1" MapId="0" Inside="false" />
