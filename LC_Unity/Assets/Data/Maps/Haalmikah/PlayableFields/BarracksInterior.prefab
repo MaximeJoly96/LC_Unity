@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1062941693533834588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3005107919925497292}
+  m_Layer: 0
+  m_Name: Entrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3005107919925497292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062941693533834588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2, y: -0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6993859327440883648}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6993859326073680202
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993859326073679541}
   - component: {fileID: 6993859326073679540}
+  - component: {fileID: 1051372621594568477}
   m_Layer: 0
   m_Name: Stool
   m_TagString: Untagged
@@ -70,8 +102,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 80dbb90db627cfa4c9e5b7d4190ed359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -84,6 +116,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1051372621594568477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859326073680202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859326083025584
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993859326314345421}
   - component: {fileID: 6993859326314345420}
+  - component: {fileID: 3871726258368500761}
   m_Layer: 0
   m_Name: Stool
   m_TagString: Untagged
@@ -191,8 +236,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 80dbb90db627cfa4c9e5b7d4190ed359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -205,6 +250,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3871726258368500761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859326314345410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859326370309963
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +273,7 @@ GameObject:
   - component: {fileID: 6993859326370309962}
   - component: {fileID: 6993859326370309300}
   - component: {fileID: 6993859326370309301}
+  - component: {fileID: 5613844997363486633}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -276,8 +334,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fefcdf8c97059e248a8c5f4e3e73697a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -316,6 +374,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4042015, y: 0.46656886}
   m_EdgeRadius: 0
+--- !u!114 &5613844997363486633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859326370309963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859326537686855
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993859326537686854}
   - component: {fileID: 6993859326537686849}
+  - component: {fileID: 2206273263656953230}
   m_Layer: 0
   m_Name: Stool
   m_TagString: Untagged
@@ -386,8 +457,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 80dbb90db627cfa4c9e5b7d4190ed359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -400,6 +471,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2206273263656953230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859326537686855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859326771775081
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993859326771775080}
   - component: {fileID: 6993859326771775083}
+  - component: {fileID: 1317731284629319330}
   m_Layer: 0
   m_Name: Stool
   m_TagString: Untagged
@@ -470,8 +554,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 80dbb90db627cfa4c9e5b7d4190ed359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -484,6 +568,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1317731284629319330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859326771775081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859327007197956
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993859327007197959}
   - component: {fileID: 6993859327007197958}
+  - component: {fileID: 931164184898520129}
   m_Layer: 0
   m_Name: Flag
   m_TagString: Untagged
@@ -554,8 +651,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1567f7f4eed867d4fb987ade27058a9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -568,6 +665,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &931164184898520129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859327007197956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859327390178311
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +726,7 @@ GameObject:
   - component: {fileID: 6993859327401145692}
   - component: {fileID: 6993859327401145694}
   - component: {fileID: 6993859327401145695}
+  - component: {fileID: 8532188268913759963}
   m_Layer: 0
   m_Name: Closet
   m_TagString: Untagged
@@ -677,8 +787,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 31245f1d85c4f8e4fab6d5a4b78d090b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -717,6 +827,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26180568, y: 0.41784352}
   m_EdgeRadius: 0
+--- !u!114 &8532188268913759963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859327401145693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859327440883649
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +870,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6993859326083025587}
+  - {fileID: 3005107919925497292}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -834,6 +957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993859327445528251}
   - component: {fileID: 6993859327445528250}
+  - component: {fileID: 2220604300463401168}
   m_Layer: 0
   m_Name: Stool
   m_TagString: Untagged
@@ -894,8 +1018,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 80dbb90db627cfa4c9e5b7d4190ed359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -908,6 +1032,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2220604300463401168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859327445528248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859327564390570
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +1054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993859327564390549}
   - component: {fileID: 6993859327564390548}
+  - component: {fileID: 722137958566921035}
   m_Layer: 0
   m_Name: Wall_Shelves
   m_TagString: Untagged
@@ -978,8 +1115,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72ef245737cf88940bf93578673d281a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -992,6 +1129,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &722137958566921035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859327564390570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859327569182318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +1151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993859327569182313}
   - component: {fileID: 6993859327569182312}
+  - component: {fileID: 9167987885476619472}
   m_Layer: 0
   m_Name: Stool
   m_TagString: Untagged
@@ -1062,8 +1212,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 80dbb90db627cfa4c9e5b7d4190ed359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1076,6 +1226,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9167987885476619472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859327569182318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859327583851294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993859327583851289}
   - component: {fileID: 6993859327583851288}
+  - component: {fileID: 6805984403277128194}
   m_Layer: 0
   m_Name: Wall_Shelves
   m_TagString: Untagged
@@ -1146,8 +1309,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72ef245737cf88940bf93578673d281a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1160,6 +1323,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6805984403277128194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859327583851294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6993859327775369711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993859327775369710}
   - component: {fileID: 6993859327775369705}
+  - component: {fileID: 8250629664978887189}
   m_Layer: 0
   m_Name: Stool
   m_TagString: Untagged
@@ -1230,8 +1406,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 80dbb90db627cfa4c9e5b7d4190ed359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1244,3 +1420,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8250629664978887189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993859327775369711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

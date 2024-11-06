@@ -194,14 +194,5 @@ namespace Engine.Movement
 
             return follow;
         }
-
-        public static EnterBuilding ParseEnterBuilding(XmlNode node)
-        {
-            EnterBuilding enterBuilding = new EnterBuilding();
-
-            enterBuilding.AgentId = node.Attributes["AgentId"].InnerText;
-
-            return enterBuilding;
-        }
     }
 }

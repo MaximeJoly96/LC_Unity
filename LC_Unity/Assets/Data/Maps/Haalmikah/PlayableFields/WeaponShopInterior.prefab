@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4689054700930928177}
   - component: {fileID: 4689054700930928179}
   - component: {fileID: 4689054700930928178}
+  - component: {fileID: 3125216033401317546}
   m_Layer: 0
   m_Name: Counter
   m_TagString: Untagged
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d95bb99f99bc6cb4c8bdd2ec38991878, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -111,6 +112,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.78, y: 0.16151667}
   m_EdgeRadius: 0
+--- !u!114 &3125216033401317546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689054700930928176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4689054701057061154
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4689054701057061155}
   - component: {fileID: 4689054701057061164}
+  - component: {fileID: 280891043817613285}
   m_Layer: 0
   m_Name: Window
   m_TagString: Untagged
@@ -181,8 +195,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 715d7f9e677d4ea459fcb892f25f0412, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -195,6 +209,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &280891043817613285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689054701057061154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4689054701151018107
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +252,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4689054702201318351}
+  - {fileID: 7924028026614573569}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -312,6 +339,7 @@ GameObject:
   - component: {fileID: 4689054701573019925}
   - component: {fileID: 4689054701573019927}
   - component: {fileID: 4689054701573019926}
+  - component: {fileID: 3572345557568370115}
   m_Layer: 0
   m_Name: Logs
   m_TagString: Untagged
@@ -372,8 +400,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9237e4e2a462ba941a6e557f005adae1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -412,6 +440,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17844784, y: 0.17844796}
   m_EdgeRadius: 0
+--- !u!114 &3572345557568370115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689054701573019924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4689054701891426010
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4689054701891426011}
   - component: {fileID: 4689054701891426020}
+  - component: {fileID: 2163509372774045482}
   m_Layer: 0
   m_Name: Weapons_Hanging
   m_TagString: Untagged
@@ -482,8 +523,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d9f72a80851d3914f95643abe6904111, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -496,6 +537,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2163509372774045482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689054701891426010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4689054702021606922
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +560,7 @@ GameObject:
   - component: {fileID: 4689054702021606923}
   - component: {fileID: 4689054702021606933}
   - component: {fileID: 4689054702021606932}
+  - component: {fileID: 6464811201573360877}
   m_Layer: 0
   m_Name: WoodenBox
   m_TagString: Untagged
@@ -567,8 +621,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0cf7b216e3cffc24eb44f9697d852ca9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -607,6 +661,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.10428214}
   m_EdgeRadius: 0
+--- !u!114 &6464811201573360877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689054702021606922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4689054702156283236
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +806,7 @@ GameObject:
   - component: {fileID: 4689054702379443446}
   - component: {fileID: 4689054702379443440}
   - component: {fileID: 4689054702379443447}
+  - component: {fileID: 300604129497790519}
   m_Layer: 0
   m_Name: VerticalBoxes
   m_TagString: Untagged
@@ -800,8 +867,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e97cfa25aed42044d8e67989d74a934d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -840,3 +907,46 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.31791282}
   m_EdgeRadius: 0
+--- !u!114 &300604129497790519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689054702379443445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4702746302806898531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7924028026614573569}
+  m_Layer: 0
+  m_Name: Entrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7924028026614573569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702746302806898531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.45, y: -0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4689054701151018372}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

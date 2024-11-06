@@ -112,13 +112,5 @@ namespace Testing.Engine.Movement
 
             Assert.IsTrue(follow.Follow);
         }
-
-        [Test]
-        public void ParseEnterBuildingTest()
-        {
-            EnterBuilding enter = XmlMovementParser.ParseEnterBuilding(GetDataToParse("EnterBuilding"));
-
-            Assert.AreEqual("door", enter.AgentId);
-        }
     }
 }

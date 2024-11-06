@@ -23,7 +23,6 @@ namespace Field
 
         private List<PlayableField> _instFields;
         private PlayableField _currentField;
-        protected Door[] _doors;
 
         public PlayableField CurrentField
         {
@@ -47,7 +46,6 @@ namespace Field
             BuildField(_allFields.FirstOrDefault(f => f.MapId == GlobalStateMachine.Instance.CurrentMapId));
 
             ScanForAgents();
-            ScanForDoors();
             ScanForTransitions();
 
             PositionPlayer();
@@ -57,15 +55,22 @@ namespace Field
 
         public void BuildField(PlayableField field)
         {
-            PlayableField mainField = Instantiate(field);
+            PlayableField mainField = _instFields.FirstOrDefault(f => f.MapId == field.MapId);
+            if(!mainField)
+            {
+                mainField = Instantiate(field);
+                _instFields.Add(mainField);
+            }  
+
+            mainField.gameObject.SetActive(true);
             CurrentField = mainField;
-            _instFields.Add(mainField);
 
             FindObjectOfType<ShopManager>().LoadMerchants(mainField.Merchants);
 
             for(int i = 0; i < field.NeighbourFields.Length; i++)
             {
-                _instFields.Add(Instantiate(field.NeighbourFields[i]));
+                if(!_instFields.Any(f => f.MapId == field.NeighbourFields[i].MapId))
+                    _instFields.Add(Instantiate(field.NeighbourFields[i]));
             }
         }
 
@@ -104,7 +109,6 @@ namespace Field
                     BuildField(newField);
 
                     ScanForAgents();
-                    ScanForDoors();
                     ScanForTransitions();
                 }
             }
@@ -125,22 +129,22 @@ namespace Field
                     agent.UpdateDirection(transferObject.Direction);
                 }
             }
-        }
 
-        protected virtual void ScanForDoors()
-        {
-            _doors = FindObjectsOfType<Door>();
-
-            foreach (Door door in _doors)
-            {
-                door.DoorStatusChanged.AddListener(SwitchToInteriorMode);
-            }
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
         }
 
         public virtual void SwitchToInteriorMode(bool switchOn)
         {
             _interiorMask.SetActive(switchOn);
             CurrentField.DisableCollisions(switchOn);
+
+            PlayerController pc = FindObjectOfType<PlayerController>();
+            if (pc)
+            {
+                pc.GetComponent<SpriteRenderer>().sortingLayerName = switchOn ? "InteriorPlayer" : "Player";
+                pc.transform.localScale = switchOn ? new Vector3(0.8f, 0.8f, 0.8f) : Vector3.one;
+            }
+                
         }
 
         private void PositionPlayer()
@@ -196,7 +200,6 @@ namespace Field
                 }
 
                 ScanForAgents();
-                ScanForDoors();
                 ScanForTransitions();
                 DestroyUnnecessaryFields();
             }

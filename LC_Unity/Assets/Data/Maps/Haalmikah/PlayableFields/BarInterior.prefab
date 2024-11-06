@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2748644979277805136}
   - component: {fileID: 2099895499863328667}
   - component: {fileID: 8772066254346908463}
+  - component: {fileID: 3484340590517690145}
   m_Layer: 0
   m_Name: Warlok
   m_TagString: Untagged
@@ -151,6 +152,18 @@ MonoBehaviour:
   _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 0}
   _trigger: 0
+--- !u!114 &3484340590517690145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793176486742269788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1681507117752463670
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +175,7 @@ GameObject:
   - component: {fileID: 1681507117752463671}
   - component: {fileID: 1681507117752463669}
   - component: {fileID: 1681507117752463668}
+  - component: {fileID: 3519890798844258282}
   m_Layer: 0
   m_Name: Logs
   m_TagString: Untagged
@@ -222,8 +236,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8e8a25aad2f5d834096d7be8ded6bc7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -262,6 +276,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18045424, y: 0.18649697}
   m_EdgeRadius: 0
+--- !u!114 &3519890798844258282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681507117752463670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1681507117858515429
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1681507117858515426}
   - component: {fileID: 1681507117858515427}
+  - component: {fileID: 2183810172779583485}
   m_Layer: 0
   m_Name: Wall_Shelves
   m_TagString: Untagged
@@ -332,8 +359,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 625a37ae870e4b948b901f00a0dbe841, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -346,6 +373,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2183810172779583485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681507117858515429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1681507118307279032
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +417,7 @@ Transform:
   m_Children:
   - {fileID: 1681507119203764575}
   - {fileID: 3666840479451250093}
+  - {fileID: 7881418402606094281}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -464,6 +504,7 @@ GameObject:
   - component: {fileID: 1681507118580846429}
   - component: {fileID: 1681507118580846427}
   - component: {fileID: 1681507118580846426}
+  - component: {fileID: 3617317315029979957}
   m_Layer: 0
   m_Name: Counter
   m_TagString: Untagged
@@ -524,8 +565,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c684e47a780899049af47f4f550164df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -564,6 +605,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.74, y: 0.1622988}
   m_EdgeRadius: 0
+--- !u!114 &3617317315029979957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681507118580846428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1681507119203764574
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1681507119603158166}
   - component: {fileID: 1681507119603158167}
+  - component: {fileID: 2664667775502622948}
   m_Layer: 0
   m_Name: Doormat
   m_TagString: Untagged
@@ -683,6 +737,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2664667775502622948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681507119603158153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2449578823127075109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7881418402606094281}
+  m_Layer: 0
+  m_Name: Entrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7881418402606094281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2449578823127075109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.35, y: -0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1681507118307279033}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4816871277139111536
 GameObject:
   m_ObjectHideFlags: 0

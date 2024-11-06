@@ -100,9 +100,6 @@ namespace Engine.Events
                         case EventType.CameraFollowPlayer:
                             sequence.Add(XmlMovementParser.ParseCameraFollowPlayer(evt));
                             break;
-                        case EventType.EnterBuilding:
-                            sequence.Add(XmlMovementParser.ParseEnterBuilding(evt));
-                            break;
                         case EventType.ShowAnimation:
                             sequence.Add(XmlCharacterParser.ParseShowAnimation(evt));
                             break;

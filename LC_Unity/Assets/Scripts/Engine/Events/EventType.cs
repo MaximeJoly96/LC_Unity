@@ -35,7 +35,6 @@
         SetMoveRoute,
         TransferObject,
         CameraFollowPlayer,
-        EnterBuilding,
 
         // Character
         ShowAnimation,

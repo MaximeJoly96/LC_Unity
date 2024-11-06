@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &289330719923526984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4535263051251993510}
+  m_Layer: 0
+  m_Name: Entrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4535263051251993510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289330719923526984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4, y: -0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3332833115590613456}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3332833113928292156
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +126,7 @@ GameObject:
   - component: {fileID: 3332833114722852750}
   - component: {fileID: 3332833114722852736}
   - component: {fileID: 3332833114722852737}
+  - component: {fileID: 8158514774212968589}
   m_Layer: 0
   m_Name: WoodenBox
   m_TagString: Untagged
@@ -155,8 +187,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ff95f40e36f63d940b5b1ac49ba9cb7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -195,6 +227,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.30000848, y: 0.14737926}
   m_EdgeRadius: 0
+--- !u!114 &8158514774212968589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332833114722852751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3332833114764769707
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3332833114768902858}
   - component: {fileID: 3332833114768902861}
+  - component: {fileID: 4079005758295254234}
   m_Layer: 0
   m_Name: Wall_Shelves
   m_TagString: Untagged
@@ -302,8 +347,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7adce075ef953564da531fb77de23ce3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -316,6 +361,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4079005758295254234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332833114768902859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3332833114782751939
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +384,7 @@ GameObject:
   - component: {fileID: 3332833114782751938}
   - component: {fileID: 3332833114782751940}
   - component: {fileID: 3332833114782751941}
+  - component: {fileID: 8259812558571394120}
   m_Layer: 0
   m_Name: Shelves
   m_TagString: Untagged
@@ -387,8 +445,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f1eff95562ce5ea4fa7c3fb63348e61e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -427,6 +485,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33895344, y: 0.48}
   m_EdgeRadius: 0
+--- !u!114 &8259812558571394120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332833114782751939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3332833114979484228
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +508,7 @@ GameObject:
   - component: {fileID: 3332833114979484231}
   - component: {fileID: 3332833114979484281}
   - component: {fileID: 3332833114979484230}
+  - component: {fileID: 2079286422217501769}
   m_Layer: 0
   m_Name: Counter
   m_TagString: Untagged
@@ -498,8 +569,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1343366585
-  m_SortingLayer: 6
+  m_SortingLayerID: -2025963587
+  m_SortingLayer: 7
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5ac2bc2b606193244a603b265ff0b5da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -538,6 +609,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.90211105, y: 0.23685148}
   m_EdgeRadius: 0
+--- !u!114 &2079286422217501769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332833114979484228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3332833115590613457
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +652,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3332833114764769706}
+  - {fileID: 4535263051251993510}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
