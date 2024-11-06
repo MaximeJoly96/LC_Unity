@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Core;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Field
@@ -17,6 +18,8 @@ namespace Field
         private Transform _transitionsWrapper;
         [SerializeField]
         private string _bgmKey;
+        [SerializeField]
+        private bool _showOnlyIfCurrentMap;
 
         private List<MapTransition> _transitions;
 
@@ -52,6 +55,19 @@ namespace Field
             {
                 col.gameObject.SetActive(!disable);
             }
+        }
+
+        private void Start()
+        {
+            if (_showOnlyIfCurrentMap)
+                Show(GlobalStateMachine.Instance.CurrentMapId == _mapId);
+            else
+                Show(true);
+        }
+
+        public void Show(bool show)
+        {
+            gameObject.SetActive(show);
         }
     }
 }
