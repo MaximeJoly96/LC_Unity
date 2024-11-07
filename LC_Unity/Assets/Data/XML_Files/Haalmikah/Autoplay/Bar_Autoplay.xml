@@ -2,6 +2,7 @@
 <EventsSequence>
   <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="introCompleted" SecondMember="true">
     <true>
+      <ChangeGameState State="OnField" />
       <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlok">
         <Transparent Status="true" />
       </SetMoveRoute>

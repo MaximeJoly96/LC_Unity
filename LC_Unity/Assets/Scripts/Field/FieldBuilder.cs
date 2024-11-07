@@ -70,8 +70,16 @@ namespace Field
             for(int i = 0; i < field.NeighbourFields.Length; i++)
             {
                 if(!_instFields.Any(f => f.MapId == field.NeighbourFields[i].MapId))
-                    _instFields.Add(Instantiate(field.NeighbourFields[i]));
+                {
+                    PlayableField neighbour = Instantiate(field.NeighbourFields[i]);
+                    _instFields.Add(neighbour);
+
+                    neighbour.gameObject.SetActive(!mainField.ShowOnlyIfCurrentMap);
+                }  
             }
+
+            if(mainField.ShowOnlyIfCurrentMap)
+                SwitchToInteriorMode(true);
         }
 
         public void ScanForAgents()
@@ -129,8 +137,6 @@ namespace Field
                     agent.UpdateDirection(transferObject.Direction);
                 }
             }
-
-            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
         }
 
         public virtual void SwitchToInteriorMode(bool switchOn)
@@ -143,8 +149,7 @@ namespace Field
             {
                 pc.GetComponent<SpriteRenderer>().sortingLayerName = switchOn ? "InteriorPlayer" : "Player";
                 pc.transform.localScale = switchOn ? new Vector3(0.8f, 0.8f, 0.8f) : Vector3.one;
-            }
-                
+            }  
         }
 
         private void PositionPlayer()

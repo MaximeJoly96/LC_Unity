@@ -84,20 +84,14 @@
       </TintScreen>
       <Wait Duration="2" />
       <ControlSwitch Key="introCompleted" Value="true" />
+      <ControlVariable Key="quest0Progress">
+        <Operation>Set</Operation>
+        <Operand Type="Constant">-1</Operand>
+      </ControlVariable>
       <TransferObject Target="player">
         <Direction>Bottom</Direction>
         <Destination X="0" Y="1" MapId="0" Inside="false" />
       </TransferObject>
-      <Wait Duration="0.2" />
-      <TintScreen Duration="1" WaitForCompletion="true">
-        <TargetColor R="0" G="0" B="0" A="0" />
-      </TintScreen>
-      <ControlVariable Key="quest0Progress">
-        <Operation>Set</Operation>
-        <Operand Type="Constant">0</Operand>
-      </ControlVariable>
-      <ChangeGameState State="OnField" />
-      <ChangeMenuAccess Enabled="true" />
     </true>
   </ConditionalBranch>
 </EventsSequence>

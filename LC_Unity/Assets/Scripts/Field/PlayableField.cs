@@ -48,6 +48,7 @@ namespace Field
         }
 
         public string BgmKey { get { return _bgmKey; } }
+        public bool ShowOnlyIfCurrentMap { get { return _showOnlyIfCurrentMap;} }
 
         public void DisableCollisions(bool disable)
         {

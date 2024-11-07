@@ -20,6 +20,10 @@ namespace Engine.Movement.Moves
                 if (animator)
                     animator.enabled = !On;
 
+                Collider2D collider = agent.GetComponent<Collider2D>();
+                if(collider)
+                    collider.enabled = !On;
+
                 IsFinished = true;
             }
         }
