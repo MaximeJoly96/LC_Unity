@@ -38,7 +38,10 @@ namespace Field
                     {
                         foreach (Transform mt in _transitionsWrapper)
                         {
-                            _transitions.Add(mt.GetComponent<MapTransition>());
+                            MapTransition transition = mt.GetComponent<MapTransition>();
+
+                            if(transition)
+                                _transitions.Add(transition);
                         }
                     }
                 }

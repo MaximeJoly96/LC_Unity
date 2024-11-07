@@ -11,6 +11,7 @@ using UnityEngine.Audio;
 using MusicAndSounds;
 using Engine.Movement;
 using UnityEngine.UIElements;
+using System.Collections;
 
 namespace Field
 {
@@ -177,6 +178,7 @@ namespace Field
             {
                 for (int j = 0; j < _instFields[i].Transitions.Count; j++)
                 {
+                    _instFields[i].Transitions[j].TransitionnedToMap.RemoveAllListeners();
                     _instFields[i].Transitions[j].TransitionnedToMap.AddListener(TransitionOccured);
                 }
             }
@@ -185,7 +187,7 @@ namespace Field
         private void TransitionOccured(int mapId)
         {
             if(CurrentField.MapId != mapId)
-            { 
+            {
                 PlayableField newField = _instFields.FirstOrDefault(f => f.MapId == mapId);
 
                 if (newField.BgmKey != CurrentField.BgmKey)
@@ -198,7 +200,7 @@ namespace Field
 
                 for(int i = 0; i < CurrentField.NeighbourFields.Length; i++)
                 {
-                    if(_instFields.FirstOrDefault(f => CurrentField.NeighbourFields[i].MapId == f.MapId) == null)
+                    if (_instFields.Count(f => f.MapId == CurrentField.NeighbourFields[i].MapId) == 0)
                     {
                         _instFields.Add(Instantiate(CurrentField.NeighbourFields[i]));
                     }
@@ -206,11 +208,11 @@ namespace Field
 
                 ScanForAgents();
                 ScanForTransitions();
-                DestroyUnnecessaryFields();
+                StartCoroutine(DestroyUnnecessaryFields());
             }
         }
 
-        private void DestroyUnnecessaryFields()
+        private IEnumerator DestroyUnnecessaryFields()
         {
             _instFields = _instFields.Where(f => f != null).ToList();
             List<PlayableField> toDestroy = new List<PlayableField>();
@@ -224,6 +226,10 @@ namespace Field
 
             for (int i = 0; i < toDestroy.Count; i++)
                 Destroy(toDestroy[i].gameObject);
+
+            yield return null;
+
+            _instFields = _instFields.Where(f => f != null).ToList();
         }
 
         private void PlayFieldBgm(PlayableField field)
