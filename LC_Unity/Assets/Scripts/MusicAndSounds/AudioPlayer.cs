@@ -110,6 +110,11 @@ namespace MusicAndSounds
             }
         }
 
+        public SoundMetadata GetSoundEffectMetadata(string name)
+        {
+            return _soundEffectsBank.GetSound(name);
+        }
+
         private void Awake()
         {
             _runningAudios = new List<RunningAudio>();
