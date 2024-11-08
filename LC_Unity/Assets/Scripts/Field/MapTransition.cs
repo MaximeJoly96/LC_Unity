@@ -22,14 +22,9 @@ namespace Field
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        public void TriggerTransition()
         {
-            PlayerController pc = collision.GetComponent<PlayerController>();
-
-            if(pc)
-            {
-                TransitionnedToMap.Invoke(_idToTransitionInto);
-            }
+            TransitionnedToMap.Invoke(_idToTransitionInto);
         }
     }
 }

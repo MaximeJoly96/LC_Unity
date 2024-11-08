@@ -53,6 +53,11 @@ namespace Movement
 #endif
         }
 
+        private void FixedUpdate()
+        {
+            CheckMapTransitions();
+        }
+
         private void Update()
         {
             HandleAnimationAndMovement();
@@ -108,6 +113,19 @@ namespace Movement
             }
             else
                 _animator.SetBool("Moving", false);
+        }
+
+        private void CheckMapTransitions()
+        {
+            if (Vector2.Distance(_change, Vector2.zero) < 0.01f)
+                return;
+
+            RaycastHit2D[] hits = Physics2D.RaycastAll(GetComponent<Collider2D>().bounds.center, _change);
+
+            RaycastHit2D transition = hits.FirstOrDefault(h => h && h.collider.GetComponent<MapTransition>());
+
+            if (transition)
+                transition.collider.GetComponent<MapTransition>().TriggerTransition();
         }
 
         public void CheckForInteraction()

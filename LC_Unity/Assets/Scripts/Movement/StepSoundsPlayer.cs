@@ -69,10 +69,9 @@ namespace Movement
             Bounds colliderBounds = GetComponent<Collider2D>().bounds;
             RaycastHit2D[] result = Physics2D.RaycastAll(colliderBounds.center, new Vector3(0.0f, -1.0f, 0.0f));
 
-            WalkableSurface hitSurface = result.FirstOrDefault(r => r && r.collider.GetComponent<WalkableSurface>())
-                                               .collider.GetComponent<WalkableSurface>();
+            RaycastHit2D hitSurface = result.FirstOrDefault(r => r && r.collider.GetComponent<WalkableSurface>());
 
-            return hitSurface ? hitSurface.GroundType : GroundType.None;
+            return hitSurface ? hitSurface.collider.GetComponent<WalkableSurface>().GroundType : GroundType.None;
         }
     }
 }
