@@ -42,6 +42,11 @@ namespace Questing
             Status = QuestStatus.NotRunning;
         }
 
+        public static Quest DefaultQuest()
+        {
+            return new Quest(-1, "default", "default", QuestType.Main, new QuestReward(0, 0, new List<Inventory.InventoryItem>()));
+        }
+
         public void AddStep(QuestStep step)
         {
             Steps.Add(step);
