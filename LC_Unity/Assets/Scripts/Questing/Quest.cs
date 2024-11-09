@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Core.Model;
 
 namespace Questing
@@ -42,6 +43,14 @@ namespace Questing
             Status = QuestStatus.NotRunning;
         }
 
+        public Quest(Quest quest) : this(quest.Id, quest.NameKey, quest.DescriptionKey, quest.Type, quest.Reward)
+        {
+            foreach (QuestStep step in quest.Steps)
+                AddStep(step);
+
+            Status = quest.Status;
+        }
+
         public static Quest DefaultQuest()
         {
             return new Quest(-1, "default", "default", QuestType.Main, new QuestReward(0, 0, new List<Inventory.InventoryItem>()));
@@ -55,6 +64,11 @@ namespace Questing
         public void ChangeStatus(QuestStatus status)
         {
             Status = status;
+        }
+
+        public QuestStep GetStep(int id)
+        {
+            return Steps.FirstOrDefault(s => s.Id == id);
         }
     }
 }

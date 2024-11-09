@@ -10,8 +10,10 @@ namespace Questing
 {
     public class QuestsParser
     {
-        public static Quest ParseQuest(int id, TextAsset file)
+        public static List<Quest> ParseAllQuests(TextAsset file)
         {
+            List<Quest> quests = new List<Quest>();
+
             try
             {
                 XmlDocument document = new XmlDocument();
@@ -20,13 +22,17 @@ namespace Questing
                 XmlNode mainNode = document.SelectSingleNode("Quests");
                 XmlNodeList allQuests = mainNode.SelectNodes("Quest");
 
-                return ParseQuestData(allQuests.OfType<XmlNode>().FirstOrDefault());
+                foreach(XmlNode questNode in allQuests)
+                {
+                    quests.Add(ParseQuestData(questNode));
+                }
             }
             catch(Exception e)
             {
-                LogsHandler.Instance.LogError("Could not parse quest with ID " + id + ". Reason: " + e.Message);
-                return Quest.DefaultQuest();
+                LogsHandler.Instance.LogError("Could not parse certains quests. Reason: " + e.Message);
             }
+
+            return quests;
         }
 
         private static Quest ParseQuestData(XmlNode questNode)

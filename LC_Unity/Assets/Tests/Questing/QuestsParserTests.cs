@@ -41,7 +41,7 @@ namespace Testing.Questing
 
             TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/TestQuests.xml");
 
-            Quest quest = QuestsParser.ParseQuest(0, file);
+            Quest quest = QuestsParser.ParseAllQuests(file)[0];
 
             Assert.AreEqual(0, quest.Id);
             Assert.AreEqual("testQuest0", quest.NameKey);
