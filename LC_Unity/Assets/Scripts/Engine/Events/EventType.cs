@@ -91,6 +91,10 @@
         // Map
         ChangeMapNameDisplay,
 
-
+        // Questing
+        StartQuest,
+        FailQuest,
+        ProgressQuest,
+        CompleteQuest
     }
 }

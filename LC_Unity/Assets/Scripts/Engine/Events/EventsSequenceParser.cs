@@ -15,6 +15,7 @@ using Engine.MusicAndSounds;
 using Engine.SceneControl;
 using Engine.SystemSettings;
 using Engine.Map;
+using Engine.Questing;
 using Logging;
 
 namespace Engine.Events
@@ -216,6 +217,18 @@ namespace Engine.Events
                             break;
                         case EventType.ChangeGameState:
                             sequence.Add(XmlSystemSettingsParser.ParseChangeGameState(evt));
+                            break;
+                        case EventType.StartQuest:
+                            sequence.Add(XmlQuestingParser.ParseStartQuest(evt));
+                            break;
+                        case EventType.FailQuest:
+                            sequence.Add(XmlQuestingParser.ParseFailQuest(evt));
+                            break;
+                        case EventType.ProgressQuest:
+                            sequence.Add(XmlQuestingParser.ParseProgressQuest(evt));
+                            break;
+                        case EventType.CompleteQuest:
+                            sequence.Add(XmlQuestingParser.ParseCompleteQuest(evt));
                             break;
                         default:
                             throw new ArgumentException("Cannot resolve EventType " + eventType + ".");
