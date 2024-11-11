@@ -32,15 +32,15 @@ namespace Testing.Language
             _usedGameObjects.Add(localizer);
             Localizer component = localizer.AddComponent<Localizer>();
 
-            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/french.csv");
-            component.LoadLanguage(global::Language.Language.French, file);
+            TextAsset[] files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/french.csv") };
+            component.LoadLanguage(global::Language.Language.French, files);
 
             Assert.AreEqual("Valeur", component.GetString("key1"));
             Assert.AreEqual("Autre valeur", component.GetString("key2"));
             Assert.AreEqual("Dernière valeur", component.GetString("key3"));
 
-            file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/english.csv");
-            component.LoadLanguage(global::Language.Language.English, file);
+            files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/english.csv") };
+            component.LoadLanguage(global::Language.Language.English, files);
 
             Assert.AreEqual("Value", component.GetString("key1"));
             Assert.AreEqual("Other value", component.GetString("key2"));

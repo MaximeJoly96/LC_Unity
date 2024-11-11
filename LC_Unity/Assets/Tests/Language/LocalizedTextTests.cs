@@ -51,8 +51,8 @@ namespace Testing.Language
             _usedGameObjects.Add(go);
             Localizer localzier = go.AddComponent<Localizer>();
 
-            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/french.csv");
-            localzier.LoadLanguage(global::Language.Language.French, file);
+            TextAsset[] files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Language/french.csv") };
+            localzier.LoadLanguage(global::Language.Language.French, files);
         }
     }
 }

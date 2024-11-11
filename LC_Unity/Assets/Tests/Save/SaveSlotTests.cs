@@ -47,8 +47,8 @@ namespace Testing.Save
             _usedGameObjects.Add(localizer);
             Localizer component = localizer.AddComponent<Localizer>();
 
-            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Save/french.csv");
-            component.LoadLanguage(global::Language.Language.French, file);
+            TextAsset[] files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Save/french.csv") };
+            component.LoadLanguage(global::Language.Language.French, files);
 
             return component;
         }

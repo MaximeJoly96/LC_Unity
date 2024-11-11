@@ -71,8 +71,8 @@ namespace Testing.Inventory
             _usedGameObjects.Add(localizer);
             Localizer component = localizer.AddComponent<Localizer>();
 
-            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/french.csv");
-            component.LoadLanguage(global::Language.Language.French, file);
+            TextAsset[] files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/french.csv") };
+            component.LoadLanguage(global::Language.Language.French, files);
 
             BaseItem item = new BaseItem(new ElementIdentifier(3, "itemKey", "descriptionKey"), 12, 6, ItemCategory.Consumable);
             item.AddEffect(new AdditionalStrike { Amount = 3 });

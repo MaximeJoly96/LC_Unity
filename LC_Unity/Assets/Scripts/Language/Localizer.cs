@@ -37,16 +37,16 @@ namespace Language
         public void LoadLanguage(Language language)
         {
             Localization localization = _localizations.FirstOrDefault(l => l.language == language);
-            LoadLanguage(language, localization.languageFile);
+            LoadLanguage(language, localization.languageFiles);
         }
 
-        public void LoadLanguage(Language language, TextAsset file)
+        public void LoadLanguage(Language language, TextAsset[] files)
         {
             _currentLanguage = language;
 
-            if(file != null)
+            if(files != null)
             {
-                ParseLanguageFile(file);
+                ParseLanguageFiles(files);
                 LanguageUpdated.Invoke();
             }
             else
@@ -55,19 +55,22 @@ namespace Language
             }
         }
 
-        private void ParseLanguageFile(TextAsset languageFile)
+        private void ParseLanguageFiles(TextAsset[] languageFiles)
         {
-            string content = languageFile.text;
-            string[] lines = content.Split('\n');
-
             _keyValuePairs = new Dictionary<string, string>();
 
-            for(int i = 0; i < lines.Length; i++)
+            for(int l = 0; l < languageFiles.Length; l++)
             {
-                string[] splitLine = lines[i].Split(';');
+                string content = languageFiles[l].text;
+                string[] lines = content.Split('\n');
 
-                if(splitLine.Length == 2)
-                    _keyValuePairs.Add(splitLine[0].Trim(), splitLine[1].Trim());
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    string[] splitLine = lines[i].Split(';');
+
+                    if (splitLine.Length == 2)
+                        _keyValuePairs.Add(splitLine[0].Trim(), splitLine[1].Trim());
+                }
             }
         }
 

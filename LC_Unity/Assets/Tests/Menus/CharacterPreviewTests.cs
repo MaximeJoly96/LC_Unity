@@ -149,8 +149,8 @@ namespace Testing.Menus
             _usedGameObjects.Add(localizer);
             Localizer component = localizer.AddComponent<Localizer>();
 
-            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Menus/french.csv");
-            component.LoadLanguage(global::Language.Language.French, file);
+            TextAsset[] files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Menus/french.csv") };
+            component.LoadLanguage(global::Language.Language.French, files);
 
             return component;
         }

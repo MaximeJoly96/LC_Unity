@@ -51,8 +51,8 @@ namespace Testing.Actors.Equipment
             _usedGameObjects.Add(localizer);
             Localizer component = localizer.AddComponent<Localizer>();
 
-            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Actors/TestData/french.csv");
-            component.LoadLanguage(global::Language.Language.French, file);
+            TextAsset[] files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Actors/TestData/french.csv") };
+            component.LoadLanguage(global::Language.Language.French, files);
 
             EquipmentSlot headSlot = new EquipmentSlot(EquipmentPosition.Helmet, 2001);
             ItemsWrapper wrapper = CreateEmptyWrapper();

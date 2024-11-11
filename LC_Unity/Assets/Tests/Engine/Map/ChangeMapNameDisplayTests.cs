@@ -57,8 +57,8 @@ namespace Testing.Engine.Map
             _usedGameObjects.Add(localizer);
             Localizer component = localizer.AddComponent<Localizer>();
 
-            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Map/french.csv");
-            component.LoadLanguage(global::Language.Language.French, file);
+            TextAsset[] files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Map/french.csv") };
+            component.LoadLanguage(global::Language.Language.French, files);
 
             GlobalStateMachine.Instance.CurrentMapId = 0;
 

@@ -7,6 +7,6 @@ namespace Language
     public class Localization
     {
         public Language language;
-        public TextAsset languageFile;
+        public TextAsset[] languageFiles;
     }
 }

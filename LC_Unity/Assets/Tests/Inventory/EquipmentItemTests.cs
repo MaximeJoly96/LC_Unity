@@ -49,8 +49,8 @@ namespace Testing.Inventory
             _usedGameObjects.Add(localizer);
             Localizer component = localizer.AddComponent<Localizer>();
 
-            TextAsset file = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/french.csv");
-            component.LoadLanguage(global::Language.Language.French, file);
+            TextAsset[] files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Inventory/french.csv") };
+            component.LoadLanguage(global::Language.Language.French, files);
 
             EquipmentItem item = new EquipmentItem(new ElementIdentifier(5, "equipment", "equipmentDesc"), 6, 7, ItemCategory.Armour, 10);
             ItemStats stats = new ItemStats(10, 0, 0, 8, 4, 0, 0, 2, -5);
