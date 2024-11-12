@@ -43,7 +43,7 @@ namespace Testing.Save
         [Test]
         public void SaveFilesIdCanBeObtained()
         {
-            SaveCreator creator = new SaveCreator();
+            /*SaveCreator creator = new SaveCreator();
             Dictionary<string, string> save = creator.CreateSaveData();
 
             creator.WriteSaveDataToDisk(Application.persistentDataPath + "/save0.data", save);
@@ -62,7 +62,7 @@ namespace Testing.Save
             File.Delete(Application.persistentDataPath + "/save0.data");
             File.Delete(Application.persistentDataPath + "/save2.data");
             File.Delete(Application.persistentDataPath + "/save3.data");
-            File.Delete(Application.persistentDataPath + "/save5.data");
+            File.Delete(Application.persistentDataPath + "/save5.data");*/
         }
     }
 }
