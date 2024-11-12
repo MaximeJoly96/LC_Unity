@@ -64,7 +64,7 @@ namespace Testing.Shop
             _usedGameObjects.Add(go);
             ShopWindow window = go.AddComponent<ShopWindow>();
 
-            List<ShopOptions> options = new List<ShopOptions>
+            List<ShopHorizontalMenuButton> options = new List<ShopHorizontalMenuButton>
             {
                 CreateOptions(ShopOption.Buy),
                 CreateOptions(ShopOption.Sell),
@@ -100,11 +100,11 @@ namespace Testing.Shop
             return window;
         }
 
-        private ShopOptions CreateOptions(ShopOption option)
+        private ShopHorizontalMenuButton CreateOptions(ShopOption option)
         {
             GameObject go = new GameObject();
             _usedGameObjects.Add(go);
-            ShopOptions opt = go.AddComponent<ShopOptions>();
+            ShopHorizontalMenuButton opt = go.AddComponent<ShopHorizontalMenuButton>();
             opt.Option = option;
 
             return opt;

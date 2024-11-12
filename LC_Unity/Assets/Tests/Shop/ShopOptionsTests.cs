@@ -29,7 +29,7 @@ namespace Testing.Shop
         {
             GameObject go = new GameObject();
             _usedGameObjects.Add(go);
-            ShopOptions options = go.AddComponent<ShopOptions>();
+            ShopHorizontalMenuButton options = go.AddComponent<ShopHorizontalMenuButton>();
 
             options.Option = ShopOption.Buy;
 

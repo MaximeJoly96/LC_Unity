@@ -15,8 +15,6 @@ namespace Menus.SubMenus
         [SerializeField]
         private ItemDetails _itemDetails;
 
-        private int _cursorPosition;
-
         protected override bool CanReceiveInput()
         {
             return !_busy && GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InMenuItemsTab;
@@ -64,7 +62,6 @@ namespace Menus.SubMenus
         public override void Open()
         {
             _horizontalMenu.Init();
-            _cursorPosition = 0;
 
             _itemsList.ItemHovered.RemoveAllListeners();
             _itemsList.ItemHovered.AddListener(UpdateItemDescription);

@@ -18,7 +18,7 @@ namespace Shop
         [SerializeField]
         private TMP_Text _shopName;
         [SerializeField]
-        private ShopOptions[] _options;
+        private ShopHorizontalMenu _shopHorizontalMenu;
         [SerializeField]
         private ScrollRect _scrollView;
         [SerializeField]
@@ -33,7 +33,6 @@ namespace Shop
         [SerializeField]
         private ShopConfirmationWindow _confirmationWindow;
 
-        private int _optionsCursorPosition;
         private int _itemsListCursorPosition;
         private List<SelectableItem> _instItems;
         private Merchant _merchant;
@@ -53,15 +52,9 @@ namespace Shop
 
             UpdateGoldText();
 
-            _optionsCursorPosition = 0;
             _itemsListCursorPosition = 0;
 
-            for(int i = 1; i < _options.Length; i++)
-            {
-                _options[i].Hover(false);
-            }
-
-            _options[_optionsCursorPosition].Hover(true);
+            _shopHorizontalMenu.Init();
             _instItems = new List<SelectableItem>();
 
             _itemDetails.Show(false);
@@ -76,14 +69,8 @@ namespace Shop
 
         public void MoveLeft()
         {
-            if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions)
-            {
-                CommonSounds.CursorMoved();
-                _optionsCursorPosition = _optionsCursorPosition == 0 ? _options.Length - 1 : --_optionsCursorPosition;
-                UpdateCursors();
-            }
-            else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems || 
-                     GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SellingItems)
+            if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems || 
+                GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SellingItems)
             {
                 CommonSounds.CursorMoved();
                 _confirmationWindow.MoveCursorLeft();
@@ -92,14 +79,8 @@ namespace Shop
 
         public void MoveRight()
         {
-            if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions)
-            {
-                CommonSounds.CursorMoved();
-                _optionsCursorPosition = _optionsCursorPosition == _options.Length - 1 ? 0 : ++_optionsCursorPosition;
-                UpdateCursors();
-            }
-            else if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems ||
-                     GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SellingItems)
+            if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BuyingItems ||
+                GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.SellingItems)
             {
                 CommonSounds.CursorMoved();
                 _confirmationWindow.MoveCursorRight();
@@ -142,14 +123,14 @@ namespace Shop
 
         public void Select()
         {
-            if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions)
+            /*if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions)
             {
                 switch (_options[_optionsCursorPosition].Option)
                 {
                     case ShopOption.Buy:
                         CommonSounds.OptionSelected();
                         GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopBuyList);
-                        _options[_optionsCursorPosition].Select();
+                        _options[_optionsCursorPosition].SelectButton();
                         ShowItemsToBuy();
                         UpdateCursors();
                         break;
@@ -162,7 +143,7 @@ namespace Shop
 
                         CommonSounds.OptionSelected();
                         GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopSellList);
-                        _options[_optionsCursorPosition].Select();
+                        _options[_optionsCursorPosition].SelectButton();
                         ShowItemsToSell();
                         UpdateCursors();
                         break;
@@ -171,7 +152,7 @@ namespace Shop
                         break;
                 }
             }
-            else if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList)
+            else */if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList)
             {
                 if (PartyManager.Instance.Gold < _instItems[_itemsListCursorPosition].Item.Price)
                 {
@@ -207,7 +188,6 @@ namespace Shop
             else if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList ||
                     GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopSellList)
             {
-                _options[_optionsCursorPosition].Hover(true);
                 ClearItemsList();
                 _itemDetails.Show(false);
                 GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopOptions);
@@ -223,11 +203,6 @@ namespace Shop
         {
             if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions)
             {
-                for (int i = 0; i < _options.Length; i++)
-                {
-                    _options[i].Hover(i == _optionsCursorPosition);
-                }
-
                 if (_instItems.Count > 0)
                 {
                     _instItems[0].Hover(true);
@@ -391,9 +366,9 @@ namespace Shop
                                                                                                      Localizer.Instance.GetString("moneyLabel"));
         }
 
-        public void SetOptions(IEnumerable<ShopOptions> options)
+        public void SetOptions(IEnumerable<ShopHorizontalMenuButton> options)
         {
-            _options = options.ToArray();
+            //_options = options.ToArray();
         }
 
         public void SetShopNameObject(TMP_Text obj)
