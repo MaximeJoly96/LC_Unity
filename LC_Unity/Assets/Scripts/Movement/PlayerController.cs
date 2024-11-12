@@ -122,7 +122,7 @@ namespace Movement
 
             RaycastHit2D[] hits = Physics2D.RaycastAll(GetComponent<Collider2D>().bounds.center, _change);
 
-            RaycastHit2D transition = hits.FirstOrDefault(h => h && h.collider.GetComponent<MapTransition>());
+            RaycastHit2D transition = hits.FirstOrDefault(h => h && h.collider.GetComponent<MapTransition>() && h.distance < 0.1f);
 
             if (transition)
                 transition.collider.GetComponent<MapTransition>().TriggerTransition();
