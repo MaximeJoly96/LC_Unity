@@ -9,7 +9,7 @@ namespace Menus.SubMenus
     public class ItemsSubMenu : SubMenu
     {
         [SerializeField]
-        private ItemsCategoryMenu[] _categories;
+        private ItemsHorizontalMenu _horizontalMenu;
         [SerializeField]
         private SelectableItemsList _itemsList;
         [SerializeField]
@@ -59,28 +59,11 @@ namespace Menus.SubMenus
                     MoveCursorUp();
                 }
             });
-
-            _inputReceiver.OnMoveLeft.AddListener(() =>
-            {
-                if(CanReceiveInput())
-                {
-                    CommonSounds.CursorMoved();
-                    MoveCursorLeft();
-                }
-            });
-
-            _inputReceiver.OnMoveRight.AddListener(() =>
-            {
-                if(CanReceiveInput())
-                {
-                    CommonSounds.CursorMoved();
-                    MoveCursorRight();
-                }
-            });
         }
 
         public override void Open()
         {
+            _horizontalMenu.Init();
             _cursorPosition = 0;
 
             _itemsList.ItemHovered.RemoveAllListeners();
@@ -104,25 +87,8 @@ namespace Menus.SubMenus
 
         private void PlaceCursor()
         {
-            for(int i = 0; i < _categories.Length; i++)
-            {
-                _categories[i].ShowCursor(_cursorPosition == i);
-            }
-
             _itemDetails.Clear();
-            _itemsList.Init(_categories[_cursorPosition].Category);
-        }
-
-        protected void MoveCursorLeft()
-        {
-            _cursorPosition = _cursorPosition == 0 ? _categories.Length - 1 : --_cursorPosition;
-            PlaceCursor();
-        }
-
-        protected void MoveCursorRight()
-        {
-            _cursorPosition = _cursorPosition == _categories.Length - 1 ? 0 : ++_cursorPosition;
-            PlaceCursor();
+            _itemsList.Init(_horizontalMenu.SelectedCategory);
         }
 
         private void MoveCursorDown()
