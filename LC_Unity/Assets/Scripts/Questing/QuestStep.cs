@@ -1,4 +1,6 @@
 ﻿using Core.Model;
+using System;
+using System.Text;
 
 namespace Questing
 {
@@ -28,9 +30,35 @@ namespace Questing
             Status = QuestStepStatus.Locked;
         }
 
+        public QuestStep(int id, QuestStepStatus status) : this(id, "", "", new QuestReward())
+        {
+            Status = status;
+        }
+
         public void ChangeStatus(QuestStepStatus status)
         {
             Status = status;
+        }
+
+        public string Serialize()
+        {
+            StringBuilder builder = new StringBuilder();
+
+            builder.Append("step");
+            builder.Append(Id.ToString());
+            builder.Append(";");
+            builder.Append(Status.ToString());
+
+            return builder.ToString();
+        }
+
+        public static QuestStep Deserialize(string serializedVersion)
+        {
+            string[] split = serializedVersion.Split(';');
+            int id = int.Parse(split[0].Replace("step", ""));
+            QuestStepStatus status = (QuestStepStatus)Enum.Parse(typeof(QuestStepStatus), split[1]);
+
+            return new QuestStep(id, status);
         }
     }
 }

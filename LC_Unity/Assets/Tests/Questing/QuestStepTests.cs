@@ -40,5 +40,56 @@ namespace Testing.Questing
 
             Assert.AreEqual(QuestStepStatus.Completed, step.Status);
         }
+
+        [Test]
+        public void QuestStepCanBeSerialized()
+        {
+            QuestStep step = new QuestStep(2, "myStep", "stepDesc", new QuestReward(3, 5, new List<InventoryItem>()));
+
+            string serialized = step.Serialize();
+
+            Assert.AreEqual("step2;Locked", serialized);
+
+            step.ChangeStatus(QuestStepStatus.Failed);
+
+            serialized = step.Serialize();
+
+            Assert.AreEqual("step2;Failed", serialized);
+
+            step.ChangeStatus(QuestStepStatus.Completed);
+
+            serialized = step.Serialize();
+
+            Assert.AreEqual("step2;Completed", serialized);
+
+            step.ChangeStatus(QuestStepStatus.Unlocked);
+
+            serialized = step.Serialize();
+
+            Assert.AreEqual("step2;Unlocked", serialized);
+        }
+
+        [Test]
+        public void QuestStepCanBeDeserialized()
+        {
+            string serializedFailed = "step3;Failed";
+            string serializedLocked = "step2;Locked";
+            string serializedUnlocked = "step4;Unlocked";
+            string serializedCompleted = "step1;Completed";
+
+            QuestStep stepFailed = QuestStep.Deserialize(serializedFailed);
+            QuestStep stepLocked = QuestStep.Deserialize(serializedLocked);
+            QuestStep stepUnlocked = QuestStep.Deserialize(serializedUnlocked);
+            QuestStep stepCompleted = QuestStep.Deserialize(serializedCompleted);
+
+            Assert.AreEqual(3, stepFailed.Id);
+            Assert.AreEqual(QuestStepStatus.Failed, stepFailed.Status);
+            Assert.AreEqual(2, stepLocked.Id);
+            Assert.AreEqual(QuestStepStatus.Locked, stepLocked.Status);
+            Assert.AreEqual(4, stepUnlocked.Id);
+            Assert.AreEqual(QuestStepStatus.Unlocked, stepUnlocked.Status);
+            Assert.AreEqual(1, stepCompleted.Id);
+            Assert.AreEqual(QuestStepStatus.Completed, stepCompleted.Status);
+        }
     }
 }

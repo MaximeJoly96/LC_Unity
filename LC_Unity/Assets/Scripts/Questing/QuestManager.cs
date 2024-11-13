@@ -3,6 +3,7 @@ using System.Linq;
 using Engine.Questing;
 using Logging;
 using UnityEngine;
+using System.Text;
 
 namespace Questing
 {
@@ -152,6 +153,60 @@ namespace Questing
             Quest toAdd = new Quest(quest);
             toAdd.ChangeStatus(status);
             _allQuests.Add(toAdd);
+        }
+
+        public string Serialize()
+        {
+            StringBuilder builder = new StringBuilder();
+
+            for(int i = 0; i < _allQuests.Count; i++)
+            {
+                builder.AppendLine(_allQuests[i].Serialize());
+                string questId = _allQuests[i].SerializeId();
+
+                for(int j = 0; j < _allQuests[i].Steps.Count; j++)
+                {
+                    builder.AppendLine(questId + _allQuests[i].GetStep(j).Serialize());
+                }
+            }
+
+            return builder.ToString();
+        }
+
+        public void Deserialize(string serializedVersion)
+        {
+            Reset();
+#if UNITY_ANDROID
+            string[] split = serializedVersion.Split("\n");
+#else
+            string[] split = serializedVersion.Split("\r\n");
+#endif
+
+            for (int i = 0; i < split.Length && split[i].Contains("quest"); i++)
+            {
+                if (split[i].Contains("step"))
+                {
+                    // First we need the quest ID
+                    string prefix = split[i].Split(';')[0];
+                    int index = prefix.IndexOf("step");
+                    string prefixWithoutStep = prefix.Substring(0, index);
+                    int questId = int.Parse(prefixWithoutStep.Replace("quest", ""));
+
+                    Quest matchingQuest = _allQuests.FirstOrDefault(q => q.Id == questId);
+                    if(matchingQuest != null)
+                    {
+                        QuestStep step = QuestStep.Deserialize(split[i].Replace(prefixWithoutStep, ""));
+                        matchingQuest.AddStep(step);
+                    }
+                    else
+                        LogsHandler.Instance.LogWarning(prefix + " could not find a matching quest and will be ignored.");
+                }
+                else
+                {
+                    Quest quest = Quest.Deserialize(split[i]);
+                    _allQuests.Add(quest);
+                }
+            }
         }
     }
 }

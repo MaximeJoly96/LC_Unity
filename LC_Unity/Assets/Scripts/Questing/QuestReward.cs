@@ -15,5 +15,12 @@ namespace Questing
             Gold = gold;
             Items = items;
         }
+
+        public QuestReward()
+        {
+            Exp = 0;
+            Gold = 0;
+            Items = new List<InventoryItem>();
+        }
     }
 }

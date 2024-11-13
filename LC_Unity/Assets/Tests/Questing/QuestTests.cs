@@ -57,5 +57,56 @@ namespace Testing.Questing
             Assert.AreEqual("stepKey", quest.Steps[0].NameKey);
             Assert.AreEqual("stepDescription", quest.Steps[0].DescriptionKey);
         }
+
+        [Test]
+        public void QuestCanBeSerialized()
+        {
+            Quest quest = new Quest(2, "myQuest", "myDescription", QuestType.Bounty, new QuestReward(20, 10, new List<InventoryItem>()));
+
+            string serialized = quest.Serialize();
+
+            Assert.AreEqual("quest2;NotRunning", serialized);
+
+            quest.ChangeStatus(QuestStatus.Running);
+
+            serialized = quest.Serialize();
+
+            Assert.AreEqual("quest2;Running", serialized);
+
+            quest.ChangeStatus(QuestStatus.Failed);
+
+            serialized = quest.Serialize();
+
+            Assert.AreEqual("quest2;Failed", serialized);
+
+            quest.ChangeStatus(QuestStatus.Completed);
+
+            serialized = quest.Serialize();
+
+            Assert.AreEqual("quest2;Completed", serialized);
+        }
+
+        [Test]
+        public void QuestCanBeDeserialized()
+        {
+            string serializedCompleted = "quest2;Completed";
+            string serializedFailed = "quest1;Failed";
+            string serializedNotRunning = "quest3;NotRunning";
+            string serializedRunning = "quest0;Running";
+
+            Quest completedQuest = Quest.Deserialize(serializedCompleted);
+            Quest failedQuest = Quest.Deserialize(serializedFailed);
+            Quest notRunningQuest = Quest.Deserialize(serializedNotRunning);
+            Quest runningQuest = Quest.Deserialize(serializedRunning);
+
+            Assert.AreEqual(2, completedQuest.Id);
+            Assert.AreEqual(QuestStatus.Completed, completedQuest.Status);
+            Assert.AreEqual(1, failedQuest.Id);
+            Assert.AreEqual(QuestStatus.Failed, failedQuest.Status);
+            Assert.AreEqual(3, notRunningQuest.Id);
+            Assert.AreEqual(QuestStatus.NotRunning, notRunningQuest.Status);
+            Assert.AreEqual(0, runningQuest.Id);
+            Assert.AreEqual(QuestStatus.Running, runningQuest.Status);
+        }
     }
 }

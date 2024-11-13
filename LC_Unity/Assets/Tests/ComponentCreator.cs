@@ -3,6 +3,8 @@ using UnityEngine;
 using UI;
 using Inputs;
 using MusicAndSounds;
+using Questing;
+using Inventory;
 
 namespace Testing
 {
@@ -44,6 +46,28 @@ namespace Testing
             GameObject go = CreateEmptyGameObject();
 
             return go.AddComponent<AudioPlayer>();
+        }
+
+        public static QuestsWrapper CreateQuestsWrapper(string mainQuestsPath, string sideQuestsPath, string bountiesPath, string proQuestsPath)
+        {
+            GameObject go = CreateEmptyGameObject();
+            QuestsWrapper wrapper = go.AddComponent<QuestsWrapper>();
+
+            wrapper.Feed(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/" + mainQuestsPath),
+                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/" + sideQuestsPath),
+                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/" + bountiesPath),
+                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/" + proQuestsPath));
+
+            return wrapper;
+        }
+
+        public static ItemsWrapper CreateItemsWrapper(string itemsPath)
+        {
+            GameObject go = CreateEmptyGameObject();
+            ItemsWrapper wrapper = go.AddComponent<ItemsWrapper>();
+
+            wrapper.FeedConsumables(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/" + itemsPath));
+            return wrapper;
         }
     }
 }
