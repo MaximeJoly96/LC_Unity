@@ -55,6 +55,8 @@ namespace Shop
             _itemsListCursorPosition = 0;
 
             _shopHorizontalMenu.Init();
+            _shopHorizontalMenu.OptionSelected.RemoveAllListeners();
+            _shopHorizontalMenu.OptionSelected.AddListener(ShopOptionSelected);
             _instItems = new List<SelectableItem>();
 
             _itemDetails.Show(false);
@@ -121,38 +123,37 @@ namespace Shop
             }
         }
 
+        private void ShopOptionSelected(ShopOption option)
+        {
+            switch (option)
+            {
+                case ShopOption.Buy:
+                    CommonSounds.OptionSelected();
+                    GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopBuyList);
+                    ShowItemsToBuy();
+                    UpdateCursors();
+                    break;
+                case ShopOption.Sell:
+                    if (!PartyManager.Instance.Inventory.Any(i => _merchant.SoldItemsTypes.Contains(i.ItemData.Category)))
+                    {
+                        PlayErrorSound();
+                        return;
+                    }
+
+                    CommonSounds.OptionSelected();
+                    GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopSellList);
+                    ShowItemsToSell();
+                    UpdateCursors();
+                    break;
+                case ShopOption.Leave:
+                    Cancel();
+                    break;
+            }
+        }
+
         public void Select()
         {
-            /*if (GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopOptions)
-            {
-                switch (_options[_optionsCursorPosition].Option)
-                {
-                    case ShopOption.Buy:
-                        CommonSounds.OptionSelected();
-                        GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopBuyList);
-                        _options[_optionsCursorPosition].SelectButton();
-                        ShowItemsToBuy();
-                        UpdateCursors();
-                        break;
-                    case ShopOption.Sell:
-                        if(!PartyManager.Instance.Inventory.Any(i => _merchant.SoldItemsTypes.Contains(i.ItemData.Category)))
-                        {
-                            PlayErrorSound();
-                            return;
-                        }
-
-                        CommonSounds.OptionSelected();
-                        GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InShopSellList);
-                        _options[_optionsCursorPosition].SelectButton();
-                        ShowItemsToSell();
-                        UpdateCursors();
-                        break;
-                    case ShopOption.Leave:
-                        Cancel();
-                        break;
-                }
-            }
-            else */if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList)
+            if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.InShopBuyList)
             {
                 if (PartyManager.Instance.Gold < _instItems[_itemsListCursorPosition].Item.Price)
                 {

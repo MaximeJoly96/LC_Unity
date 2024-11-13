@@ -69,7 +69,7 @@ namespace UI
 
         protected virtual bool CanReceiveInput() { return true; }
 
-        public void Init()
+        public virtual void Init()
         {
             _cursorPosition = 0;
 
