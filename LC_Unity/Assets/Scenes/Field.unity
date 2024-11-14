@@ -2002,6 +2002,7 @@ GameObject:
   - component: {fileID: 64519482}
   - component: {fileID: 64519484}
   - component: {fileID: 64519485}
+  - component: {fileID: 64519486}
   m_Layer: 5
   m_Name: RunningQuests
   m_TagString: Untagged
@@ -2162,6 +2163,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &64519486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64519480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6074e82ca792914ebb7a30b172ab42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: runningQuests
 --- !u!1 &64532602
 GameObject:
   m_ObjectHideFlags: 0
@@ -11955,6 +11969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 521446158}
+  - component: {fileID: 521446159}
   m_Layer: 5
   m_Name: RewardWrapper
   m_TagString: Untagged
@@ -11984,6 +11999,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -257.5}
   m_SizeDelta: {x: -40, y: -555}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &521446159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521446157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f75d2fbaecb33a4e8f3a591a48634ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rewardComponentPrefab: {fileID: 5832090516664307835, guid: 83a60811ae23afb47aa3f4c311784222,
+    type: 3}
 --- !u!1 &523647141
 GameObject:
   m_ObjectHideFlags: 0
@@ -13089,6 +13118,7 @@ GameObject:
   - component: {fileID: 571340624}
   - component: {fileID: 571340626}
   - component: {fileID: 571340625}
+  - component: {fileID: 571340627}
   m_Layer: 5
   m_Name: QuestDescriptionWrapper
   m_TagString: Untagged
@@ -13158,6 +13188,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571340623}
   m_CullTransparentMesh: 1
+--- !u!114 &571340627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571340623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f78cfe3b9208442951832f9e63ba35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questNameLabel: {fileID: 449243149}
+  _questDescriptionLabel: {fileID: 35335761}
+  _questStepsDisplay: {fileID: 995165382}
+  _questRewardDisplay: {fileID: 521446159}
 --- !u!1 &571808546
 GameObject:
   m_ObjectHideFlags: 0
@@ -15990,7 +16036,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687394265}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -20567,6 +20613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995165380}
   - component: {fileID: 995165381}
+  - component: {fileID: 995165382}
   m_Layer: 5
   m_Name: Steps
   m_TagString: Untagged
@@ -20626,6 +20673,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &995165382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995165379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78669ad0d278e3d45ab634eded523866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stepPrefab: {fileID: 0}
 --- !u!1 &995887155
 GameObject:
   m_ObjectHideFlags: 0
@@ -23866,7 +23926,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189303098}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -35490,6 +35550,7 @@ GameObject:
   - component: {fileID: 1741720071}
   - component: {fileID: 1741720073}
   - component: {fileID: 1741720074}
+  - component: {fileID: 1741720075}
   m_Layer: 5
   m_Name: FailedQuests
   m_TagString: Untagged
@@ -35650,6 +35711,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1741720075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741720069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6074e82ca792914ebb7a30b172ab42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: failedQuests
 --- !u!1 &1743477270
 GameObject:
   m_ObjectHideFlags: 0
@@ -40548,6 +40622,7 @@ GameObject:
   - component: {fileID: 2012783805}
   - component: {fileID: 2012783807}
   - component: {fileID: 2012783808}
+  - component: {fileID: 2012783809}
   m_Layer: 5
   m_Name: CompleteQuests
   m_TagString: Untagged
@@ -40708,6 +40783,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2012783809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012783803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6074e82ca792914ebb7a30b172ab42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: completedQuests
 --- !u!1 &2022151789
 GameObject:
   m_ObjectHideFlags: 0
