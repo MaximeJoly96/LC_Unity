@@ -7582,6 +7582,8 @@ GameObject:
   - component: {fileID: 298424530}
   - component: {fileID: 298424532}
   - component: {fileID: 298424531}
+  - component: {fileID: 298424534}
+  - component: {fileID: 298424535}
   m_Layer: 5
   m_Name: ListWrapper
   m_TagString: Untagged
@@ -7647,6 +7649,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298424529}
   m_CullTransparentMesh: 1
+--- !u!114 &298424534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298424529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 10
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 5
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &298424535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298424529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0e29ca270ac104bae06cb51c98d305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectableItemPrefab: {fileID: 4322489505029059099, guid: 28eb4d0ffe1b3264db109676273ea85e,
+    type: 3}
 --- !u!1 &298915390
 GameObject:
   m_ObjectHideFlags: 0
@@ -16036,7 +16078,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687394265}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -23926,7 +23968,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189303098}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -25099,6 +25141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boundView: {fileID: 1189303099}
   _horizontalMenu: {fileID: 2088562751}
+  _listOfQuests: {fileID: 298424535}
 --- !u!114 &1222526053
 MonoBehaviour:
   m_ObjectHideFlags: 0

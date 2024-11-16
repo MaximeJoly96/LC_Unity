@@ -28,6 +28,11 @@ namespace Questing
             }
         }
 
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+
         public Quest GetQuest(int id)
         {
             return AllQuests.FirstOrDefault(q => q.Id == id);

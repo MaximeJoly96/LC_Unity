@@ -2,6 +2,8 @@
 using Utils;
 using UnityEngine;
 using Menus.SubMenus.Quests;
+using UI;
+using Questing;
 
 namespace Menus.SubMenus
 {
@@ -9,6 +11,8 @@ namespace Menus.SubMenus
     {
         [SerializeField]
         protected QuestsHorizontalMenu _horizontalMenu;
+        [SerializeField]
+        protected SelectableQuestsList _listOfQuests;
 
         protected override void BindInputs()
         {
@@ -31,6 +35,7 @@ namespace Menus.SubMenus
         {
             StartCoroutine(DoOpen());
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuQuestsTab);
+            _horizontalMenu.QuestStatusWasSelected.AddListener((s) => FeedListOfQuests(s));
         }
 
         public override void Close()
@@ -41,6 +46,27 @@ namespace Menus.SubMenus
         protected override void FinishedClosing()
         {
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenu);
+        }
+
+        protected void FeedListOfQuests(QuestStatus status)
+        {
+            if(!_busy)
+            {
+                GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.BrowsingQuests);
+
+                switch(status)
+                {
+                    case QuestStatus.Running:
+                        _listOfQuests.FeedQuests(QuestManager.Instance.RunningQuests);
+                        break;
+                    case QuestStatus.Completed:
+                        _listOfQuests.FeedQuests(QuestManager.Instance.CompletedQuests);
+                        break;
+                    case QuestStatus.Failed:
+                        _listOfQuests.FeedQuests(QuestManager.Instance.FailedQuests);
+                        break;
+                }
+            }
         }
     }
 }

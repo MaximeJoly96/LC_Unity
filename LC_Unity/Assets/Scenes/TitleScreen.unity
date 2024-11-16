@@ -5696,7 +5696,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 60
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8030,6 +8030,7 @@ GameObject:
   - component: {fileID: 1753880700}
   - component: {fileID: 1753880701}
   - component: {fileID: 1753880702}
+  - component: {fileID: 1753880703}
   m_Layer: 0
   m_Name: Utils
   m_TagString: Untagged
@@ -8680,6 +8681,22 @@ MonoBehaviour:
   - Type: 5
     BalloonIcon: {fileID: 2168830747137082428, guid: 97708cbaaec7f454c8f81dda45058cc1,
       type: 3}
+--- !u!114 &1753880703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753880695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93fbdafddd0a0d4f92eb08288079a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainQuests: {fileID: 4900000, guid: b5a9f8e9c2ba3584293293d0f857cf05, type: 3}
+  _sideQuests: {fileID: 4900000, guid: ebd219d11f018904485ec6a13a0b1101, type: 3}
+  _bounties: {fileID: 4900000, guid: 17732396c311704419c513dc0c7df5f4, type: 3}
+  _professionQuests: {fileID: 4900000, guid: aab60f91c52bf7246a3601df0a5c84d8, type: 3}
 --- !u!1 &1762236037
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,6 +42,7 @@ namespace Menus.SubMenus
             group.alpha = 1.0f;
             group.interactable = true;
             _busy = false;
+            FinishedOpening();
         }
 
         protected IEnumerator DoClose()
@@ -70,6 +71,11 @@ namespace Menus.SubMenus
         public void Feed(Character character)
         {
             _fedCharacter = character;
+        }
+
+        protected virtual void FinishedOpening()
+        {
+
         }
     }
 }

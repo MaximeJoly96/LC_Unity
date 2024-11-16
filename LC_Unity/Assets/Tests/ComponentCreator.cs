@@ -5,6 +5,7 @@ using Inputs;
 using MusicAndSounds;
 using Questing;
 using Inventory;
+using Menus.SubMenus.Quests;
 
 namespace Testing
 {
@@ -27,6 +28,17 @@ namespace Testing
             Animator animator = go.AddComponent<Animator>();
             animator.runtimeAnimatorController = CreateAnimatorController("UI/TestAnimations/HorizontalMenuButton/HorizontalMenuButtonController.controller");
 
+            return button;
+        }
+
+        public static QuestsHorizontalMenuButton CreateQuestsHorizontalMenuButton(QuestStatus status)
+        {
+            GameObject go = CreateEmptyGameObject();
+            QuestsHorizontalMenuButton button = go.AddComponent<QuestsHorizontalMenuButton>();
+            Animator animator = go.AddComponent<Animator>();
+            animator.runtimeAnimatorController = CreateAnimatorController("UI/TestAnimations/HorizontalMenuButton/HorizontalMenuButtonController.controller");
+
+            button.StatusType = status;
             return button;
         }
 

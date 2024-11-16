@@ -21,6 +21,7 @@ namespace Core
             InMenuAbilitiesTab,
             InMenuStatusTab,
             InMenuQuestsTab,
+            BrowsingQuests,
             InMenuSystemTab,
             TransitionCharacterTarget,
             InCharacterTargetMenu,
