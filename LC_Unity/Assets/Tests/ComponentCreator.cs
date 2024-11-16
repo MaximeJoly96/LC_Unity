@@ -69,5 +69,17 @@ namespace Testing
             wrapper.FeedConsumables(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/" + itemsPath));
             return wrapper;
         }
+
+        public static SelectableItem CreateSelectableItem()
+        {
+            GameObject go = CreateEmptyGameObject();
+            SelectableItem item = go.AddComponent<SelectableItem>();
+
+            GameObject cursor = CreateEmptyGameObject();
+            cursor.transform.SetParent(item.transform);
+            item.Cursor = item.transform.GetChild(0);
+
+            return item;
+        }
     }
 }
