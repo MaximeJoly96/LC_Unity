@@ -11,8 +11,12 @@ namespace Menus.SubMenus.Quests
         [SerializeField]
         private Image _icon;
 
+        public Quest QuestData { get; private set; }
+
         public void Feed(Quest quest)
         {
+            QuestData = quest;
+
             _label.text = Localizer.Instance.GetString(quest.NameKey);
         }
     }

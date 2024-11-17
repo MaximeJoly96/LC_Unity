@@ -16,6 +16,7 @@ namespace UI
 
         public List<SelectableItem> CreatedItems { get { return _createdItems; } }
         public int CursorPosition { get { return _cursorPosition; } }
+        public SelectableItem SelectedItem { get { return _createdItems[_cursorPosition]; } }
 
         protected virtual void Awake()
         {
@@ -37,15 +38,26 @@ namespace UI
 
             receiver.OnMoveUp.AddListener(() =>
             {
-                CommonSounds.CursorMoved();
-                MoveCursorUp();
+                if(CanReceiveInputs())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorUp();
+                }
             });
 
             receiver.OnMoveDown.AddListener(() =>
             {
-                CommonSounds.CursorMoved();
-                MoveCursorDown();
+                if(CanReceiveInputs())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorDown();
+                }
             });
+        }
+
+        protected virtual bool CanReceiveInputs()
+        {
+            return true;
         }
 
         public SelectableItem AddItem()
@@ -87,6 +99,14 @@ namespace UI
         {
             _cursorPosition = 0;
             PlaceCursor();
+        }
+
+        public virtual void Clear()
+        {
+            _createdItems = new List<SelectableItem>();
+
+            foreach (Transform child in transform)
+                Destroy(child.gameObject);
         }
     }
 }

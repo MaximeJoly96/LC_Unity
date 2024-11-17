@@ -13,7 +13,6 @@ namespace Testing.UI
         {
             SelectableItem item = ComponentCreator.CreateSelectableItem();
             _usedGameObjects.Add(item.gameObject);
-            _usedGameObjects.Add(item.Cursor.gameObject);
 
             yield return null;
 

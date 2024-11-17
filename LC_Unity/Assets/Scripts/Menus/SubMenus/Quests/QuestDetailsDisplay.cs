@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using Questing;
+using Language;
 
 namespace Menus.SubMenus.Quests
 {
@@ -19,5 +20,15 @@ namespace Menus.SubMenus.Quests
         [SerializeField]
         private QuestRewardDisplay _questRewardDisplay;
 
+        public void ShowQuestDetails(Quest quest)
+        {
+            _questData = quest;
+
+            _questNameLabel.text = Localizer.Instance.GetString(quest.NameKey);
+            _questDescriptionLabel.text = Localizer.Instance.GetString(quest.DescriptionKey);
+
+            _questStepsDisplay.Init(quest.Steps);
+            _questRewardDisplay.Init(quest.Reward);
+        }
     }
 }

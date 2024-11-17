@@ -13,6 +13,8 @@ namespace Menus.SubMenus
         protected QuestsHorizontalMenu _horizontalMenu;
         [SerializeField]
         protected SelectableQuestsList _listOfQuests;
+        [SerializeField]
+        protected QuestDetailsDisplay _detailsDisplay;
 
         protected override void BindInputs()
         {
@@ -66,6 +68,8 @@ namespace Menus.SubMenus
                         _listOfQuests.FeedQuests(QuestManager.Instance.FailedQuests);
                         break;
                 }
+
+                _detailsDisplay.ShowQuestDetails(_listOfQuests.SelectedQuest);
             }
         }
     }

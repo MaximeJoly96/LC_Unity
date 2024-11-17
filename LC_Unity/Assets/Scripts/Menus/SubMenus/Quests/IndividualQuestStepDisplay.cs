@@ -14,6 +14,11 @@ namespace Menus.SubMenus.Quests
         [SerializeField]
         private TMP_Text _questStepDescription;
         [SerializeField]
-        private QuestStepRewardDisplay _questStepRewardDisplay;
+        private QuestRewardDisplay _questStepRewardDisplay;
+
+        public void Init(QuestStep stepData)
+        {
+            _questStepData = stepData;
+        }
     }
 }
