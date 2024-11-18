@@ -113,5 +113,18 @@ namespace Questing
 
             return new Quest(id, status);
         }
+
+        public void Update(Quest quest)
+        {
+            _identifier = new ElementIdentifier(quest.Id, quest.NameKey, quest.DescriptionKey);
+            Type = quest.Type;
+
+            for(int i = 0; i < Steps.Count; i++)
+            {
+                Steps[i].Update(quest.GetStep(i));
+            }
+
+            Reward = quest.Reward;
+        }
     }
 }

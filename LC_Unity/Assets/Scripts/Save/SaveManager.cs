@@ -14,6 +14,8 @@ using Core;
 using Party;
 using GameProgression;
 using MusicAndSounds;
+using System.Text;
+using Questing;
 
 namespace Save
 {
@@ -217,6 +219,16 @@ namespace Save
                     PersistentDataHolder.Instance.StoreData(key, float.Parse(kvp.Value, CultureInfo.InvariantCulture));
                 }
             }
+
+            StringBuilder builder = new StringBuilder();
+            Dictionary<string, string> serializedQuests = saveData.Where(d => d.Key.StartsWith("quest")).ToDictionary(d => d.Key, d => d.Value);
+            foreach(KeyValuePair<string,string> kvp in serializedQuests)
+            {
+                builder.AppendLine(kvp.Key + ";" + kvp.Value);
+            }
+
+            QuestManager.Instance.Deserialize(builder.ToString());
+            QuestManager.Instance.RefreshData();
 
             return new SavedData
             {

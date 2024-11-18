@@ -208,5 +208,15 @@ namespace Questing
                 }
             }
         }
+
+        public void RefreshData()
+        {
+            QuestsWrapper wrapper = Object.FindObjectOfType<QuestsWrapper>();
+
+            for (int i = 0; i < _allQuests.Count; i++)
+            {
+                _allQuests[i].Update(wrapper.GetQuest(_allQuests[i].Id));
+            }
+        }
     }
 }

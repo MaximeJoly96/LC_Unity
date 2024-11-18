@@ -11,6 +11,7 @@ using Utils;
 using GameProgression;
 using Core;
 using System;
+using Questing;
 
 namespace Save
 {
@@ -26,6 +27,7 @@ namespace Save
             data = StoreInventoryData(data);
             data = StorePersistentData(data);
             data = StoreTimers(data);
+            data = StoreQuests(data);
 
             return data;
         }
@@ -127,6 +129,25 @@ namespace Save
             {
                 foreach (Timer timer in timersManager.Timers)
                     baseData.Add("timer-" + timer.Key, timer.ToString());
+            }
+
+            return baseData;
+        }
+
+        public Dictionary<string, string> StoreQuests(Dictionary<string, string> baseData)
+        {
+#if UNITY_ANDROID
+            string[] serialized = QuestManager.Instance.Serialize().Split("\n");
+#else
+            string[] serialized = QuestManager.Instance.Serialize().Split("\r\n");
+#endif
+            for(int i = 0; i < serialized.Length; i++)
+            {
+                if (serialized[i].Length > 0 && serialized[i].Contains(';'))
+                {
+                    string[] split = serialized[i].Split(';');
+                    baseData.Add(split[0], split[1]);
+                }
             }
 
             return baseData;

@@ -176,6 +176,25 @@ namespace Testing.UI
             Assert.AreEqual(0, list.transform.childCount);
         }
 
+        [UnityTest]
+        public IEnumerator CancelOperationIsDetected()
+        {
+            int testVariable = 0;
+
+            AudioPlayer player = ComponentCreator.CreateAudioPlayer();
+            _usedGameObjects.Add(player.gameObject);
+            SelectableList list = CreateEmptyList();
+            list.Init();
+            list.SelectionCancelled.RemoveAllListeners();
+            list.SelectionCancelled.AddListener(() => testVariable = 3);
+
+            yield return null;
+
+            Assert.AreEqual(0, testVariable);
+            _inputController.ButtonClicked.Invoke(InputAction.Cancel);
+            Assert.AreEqual(3, testVariable);
+        }
+
         private void AssertCursorStatus(SelectableList list)
         {
             for(int i = 0; i < list.CreatedItems.Count; i++)

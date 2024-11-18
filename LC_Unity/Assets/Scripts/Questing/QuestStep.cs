@@ -60,5 +60,11 @@ namespace Questing
 
             return new QuestStep(id, status);
         }
+
+        public void Update(QuestStep step)
+        {
+            _identifier = new ElementIdentifier(step.Id, step.NameKey, step.DescriptionKey);
+            Reward = step.Reward;
+        }
     }
 }

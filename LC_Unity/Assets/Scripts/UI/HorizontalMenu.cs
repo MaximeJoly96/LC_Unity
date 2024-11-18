@@ -88,7 +88,7 @@ namespace UI
             UpdateCursorPosition();
         }
 
-        private void UpdateCursorPosition()
+        public void UpdateCursorPosition()
         {
             for (int i = 0; i < _buttons.Length; i++)
             {

@@ -27,6 +27,8 @@ namespace Menus.SubMenus.Quests
 
         public void ShowQuestDetails(Quest quest)
         {
+            Clear();
+
             _questData = quest;
 
             _questNameLabel.text = Localizer.Instance.GetString(quest.NameKey);

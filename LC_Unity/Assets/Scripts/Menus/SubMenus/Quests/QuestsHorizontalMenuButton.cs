@@ -28,6 +28,7 @@ namespace Menus.SubMenus.Quests
         {
             base.SelectButton();
             QuestStatusSelected.Invoke(StatusType);
+            _Animator.Play("Selected");
         }
     }
 }

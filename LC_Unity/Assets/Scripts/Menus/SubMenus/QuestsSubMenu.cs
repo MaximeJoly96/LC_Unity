@@ -4,6 +4,7 @@ using UnityEngine;
 using Menus.SubMenus.Quests;
 using UI;
 using Questing;
+using System.Collections;
 
 namespace Menus.SubMenus
 {
@@ -37,7 +38,22 @@ namespace Menus.SubMenus
         {
             StartCoroutine(DoOpen());
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuQuestsTab);
-            _horizontalMenu.QuestStatusWasSelected.AddListener((s) => FeedListOfQuests(s));
+
+            _horizontalMenu.QuestStatusWasSelected.AddListener((s) => 
+            {
+                FeedListOfQuests(s);
+                _listOfQuests.HoverFirstItem();
+            });
+
+            _listOfQuests.Init();
+            _listOfQuests.SelectionCancelled.RemoveAllListeners();
+            _listOfQuests.SelectionCancelled.AddListener(() =>
+            {
+                StartCoroutine(SelectionCancelled());
+            });
+            _listOfQuests.SelectionChanged.RemoveAllListeners();
+            _listOfQuests.SelectionChanged.AddListener(() => _detailsDisplay.ShowQuestDetails(_listOfQuests.SelectedQuest));
+
             _detailsDisplay.Clear();
         }
 
@@ -70,8 +86,18 @@ namespace Menus.SubMenus
                         break;
                 }
 
-                _detailsDisplay.ShowQuestDetails(_listOfQuests.SelectedQuest);
+                if(_listOfQuests.CreatedItems.Count > 0)
+                    _detailsDisplay.ShowQuestDetails(_listOfQuests.SelectedQuest);
             }
+        }
+
+        protected IEnumerator SelectionCancelled()
+        {
+            _listOfQuests.Clear();
+            _detailsDisplay.Clear();
+            _horizontalMenu.UpdateCursorPosition();
+            yield return new WaitForSeconds(0.1f);
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuQuestsTab);
         }
     }
 }

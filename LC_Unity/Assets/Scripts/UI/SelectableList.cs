@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using Core;
 using Utils;
+using UnityEngine.Events;
 
 namespace UI
 {
@@ -14,9 +15,32 @@ namespace UI
         protected List<SelectableItem> _createdItems;
         protected int _cursorPosition;
 
+        protected UnityEvent _selectionCancelled;
+        protected UnityEvent _selectionChanged;
+
         public List<SelectableItem> CreatedItems { get { return _createdItems; } }
         public int CursorPosition { get { return _cursorPosition; } }
         public SelectableItem SelectedItem { get { return _createdItems[_cursorPosition]; } }
+        public UnityEvent SelectionCancelled
+        {
+            get
+            {
+                if(_selectionCancelled == null)
+                    _selectionCancelled = new UnityEvent();
+
+                return _selectionCancelled;
+            }
+        }
+        public UnityEvent SelectionChanged
+        {
+            get
+            {
+                if (_selectionChanged == null)
+                    _selectionChanged = new UnityEvent();
+
+                return _selectionChanged;
+            }
+        }
 
         protected virtual void Awake()
         {
@@ -35,6 +59,7 @@ namespace UI
 
             receiver.OnMoveUp.RemoveAllListeners();
             receiver.OnMoveDown.RemoveAllListeners();
+            receiver.OnCancel.RemoveAllListeners();
 
             receiver.OnMoveUp.AddListener(() =>
             {
@@ -51,6 +76,15 @@ namespace UI
                 {
                     CommonSounds.CursorMoved();
                     MoveCursorDown();
+                }
+            });
+
+            receiver.OnCancel.AddListener(() =>
+            {
+                if (CanReceiveInputs())
+                {
+                    CommonSounds.ActionCancelled();
+                    Cancel();
                 }
             });
         }
@@ -79,12 +113,14 @@ namespace UI
         {
             _cursorPosition = _cursorPosition == _createdItems.Count - 1 ? 0 : ++_cursorPosition;
             PlaceCursor();
+            SelectionChanged.Invoke();
         }
 
         protected virtual void MoveCursorUp()
         {
             _cursorPosition = _cursorPosition == 0 ? _createdItems.Count - 1 : --_cursorPosition;
             PlaceCursor();
+            SelectionChanged.Invoke();
         }
 
         protected virtual void PlaceCursor()
@@ -107,6 +143,11 @@ namespace UI
 
             foreach (Transform child in transform)
                 Destroy(child.gameObject);
+        }
+
+        protected virtual void Cancel()
+        {
+            SelectionCancelled.Invoke();
         }
     }
 }

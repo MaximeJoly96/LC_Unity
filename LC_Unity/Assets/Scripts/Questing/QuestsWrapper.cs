@@ -1,9 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Questing
 {
+    [Serializable]
+    public struct QuestTypeDisplay
+    {
+        public QuestType QuestType;
+        public Sprite Icon;
+    }
+
     public class QuestsWrapper : MonoBehaviour
     {
         [SerializeField]
@@ -16,6 +24,9 @@ namespace Questing
         private TextAsset _professionQuests;
 
         private List<Quest> _allQuests;
+
+        [SerializeField]
+        private QuestTypeDisplay[] _questTypesIcons;
 
         private List<Quest> AllQuests
         {
@@ -56,6 +67,11 @@ namespace Questing
             _sideQuests = sideQuests;
             _bounties = bounties;
             _professionQuests = professionQuests;
+        }
+
+        public Sprite GetSpriteForQuestType(QuestType type)
+        {
+            return _questTypesIcons.FirstOrDefault(t => t.QuestType == type).Icon;
         }
     }
 }
