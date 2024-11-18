@@ -159,5 +159,53 @@ namespace Testing
 
             return reward;
         }
+
+        public static QuestDetailsDisplay CreateQuestDetailsDisplay()
+        {
+            GameObject go = CreateEmptyGameObject();
+            QuestDetailsDisplay display = go.AddComponent<QuestDetailsDisplay>();
+
+            TextMeshProUGUI nameLabel = CreateText();
+            nameLabel.transform.SetParent(display.transform);
+            display.NameLabel = nameLabel;
+
+            TextMeshProUGUI descriptionLabel = CreateText();
+            descriptionLabel.transform.SetParent(display.transform);
+            display.DescriptionLabel = descriptionLabel;
+
+            GameObject stepsDisplayGo = CreateEmptyGameObject();
+            QuestStepsDisplay stepsDisplay = stepsDisplayGo.AddComponent<QuestStepsDisplay>();
+            stepsDisplay.transform.SetParent(display.transform);
+            display.StepsDisplay = stepsDisplay;
+
+            GameObject rewardsDisplayGo = CreateEmptyGameObject();
+            QuestRewardDisplay rewardsDisplay = rewardsDisplayGo.AddComponent<QuestRewardDisplay>();
+            rewardsDisplay.transform.SetParent(display.transform);
+            display.RewardsDisplay = rewardsDisplay;
+
+            return display;
+        }
+
+        public static IndividualQuestStepDisplay CreateQuestStepDisplay()
+        {
+            GameObject go = CreateEmptyGameObject();
+            IndividualQuestStepDisplay stepDisplay = go.AddComponent<IndividualQuestStepDisplay>();
+
+            TextMeshProUGUI nameLabel = CreateText();
+            nameLabel.transform.SetParent(stepDisplay.transform);
+            stepDisplay.StepLabel = nameLabel;
+
+            TextMeshProUGUI descriptionLabel = CreateText();
+            descriptionLabel.transform.SetParent(stepDisplay.transform);
+            stepDisplay.StepDescription = descriptionLabel;
+
+            GameObject rewardDisplayGo = CreateEmptyGameObject();
+            QuestRewardDisplay rewardDisplay = rewardDisplayGo.AddComponent<QuestRewardDisplay>();
+            rewardDisplay.SetRewardComponentPrefab(CreateRewardComponentDisplay());
+            rewardDisplay.transform.SetParent(stepDisplay.transform);
+            stepDisplay.RewardDisplay = rewardDisplay;
+
+            return stepDisplay;
+        }
     }
 }

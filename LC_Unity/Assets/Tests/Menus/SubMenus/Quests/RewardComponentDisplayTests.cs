@@ -2,6 +2,7 @@
 using Language;
 using Menus.SubMenus.Quests;
 using Inventory;
+using UnityEngine;
 
 namespace Testing.Menus.SubMenus.Quests
 {
@@ -58,6 +59,35 @@ namespace Testing.Menus.SubMenus.Quests
 
             Assert.AreEqual("3", display.Quantity.text);
             Assert.AreEqual("Potion", display.Label.text);
+        }
+
+        [Test]
+        public void VisualStatusCanBeUpdated()
+        {
+            RewardComponentDisplay display = ComponentCreator.CreateRewardComponentDisplay();
+            _usedGameObjects.Add(display.gameObject);
+
+            Assert.IsTrue(Mathf.Abs(Color.white.r - display.Label.color.r) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.white.g - display.Label.color.g) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.white.b - display.Label.color.b) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.white.a - display.Label.color.a) < 0.01f);
+
+            Assert.IsTrue(Mathf.Abs(Color.white.r - display.Quantity.color.r) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.white.g - display.Quantity.color.g) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.white.b - display.Quantity.color.b) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.white.a - display.Quantity.color.a) < 0.01f);
+
+            display.UpdateVisualStatus(Color.green);
+
+            Assert.IsTrue(Mathf.Abs(Color.green.r - display.Label.color.r) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.green.g - display.Label.color.g) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.green.b - display.Label.color.b) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.green.a - display.Label.color.a) < 0.01f);
+
+            Assert.IsTrue(Mathf.Abs(Color.green.r - display.Quantity.color.r) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.green.g - display.Quantity.color.g) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.green.b - display.Quantity.color.b) < 0.01f);
+            Assert.IsTrue(Mathf.Abs(Color.green.a - display.Quantity.color.a) < 0.01f);
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using Questing;
 using System.Collections.Generic;
-using Codice.Client.BaseCommands.BranchExplorer;
 
 namespace Menus.SubMenus.Quests
 {
@@ -25,7 +22,10 @@ namespace Menus.SubMenus.Quests
 
             for(int i = 0; i < questSteps.Count; i++)
             {
+                IndividualQuestStepDisplay step = Instantiate(_stepPrefab, transform);
+                _steps.Add(step);
 
+                step.Init(questSteps[i]);
             }
         }
 
@@ -37,6 +37,11 @@ namespace Menus.SubMenus.Quests
             {
                 Destroy(child.gameObject);
             }
+        }
+
+        public void SetStepDisplayPrefab(IndividualQuestStepDisplay prefab)
+        {
+            _stepPrefab = prefab;
         }
     }
 }

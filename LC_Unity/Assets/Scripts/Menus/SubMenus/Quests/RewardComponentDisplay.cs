@@ -55,5 +55,11 @@ namespace Menus.SubMenus.Quests
         {
 
         }
+
+        public void UpdateVisualStatus(Color color)
+        {
+            _label.color = color;
+            _quantity.color = color;
+        }
     }
 }

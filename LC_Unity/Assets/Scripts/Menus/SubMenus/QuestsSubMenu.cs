@@ -38,6 +38,7 @@ namespace Menus.SubMenus
             StartCoroutine(DoOpen());
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuQuestsTab);
             _horizontalMenu.QuestStatusWasSelected.AddListener((s) => FeedListOfQuests(s));
+            _detailsDisplay.Clear();
         }
 
         public override void Close()
