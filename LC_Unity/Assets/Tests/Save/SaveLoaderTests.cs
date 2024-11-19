@@ -6,6 +6,7 @@ using Core;
 using GameProgression;
 using Party;
 using System.IO;
+using Save.Model;
 
 namespace Testing.Save
 {
@@ -41,28 +42,24 @@ namespace Testing.Save
         }
 
         [Test]
-        public void SaveFilesIdCanBeObtained()
+        public void SaveDescriptorsCanBeObtained()
         {
-            /*SaveCreator creator = new SaveCreator();
-            Dictionary<string, string> save = creator.CreateSaveData();
-
-            creator.WriteSaveDataToDisk(Application.persistentDataPath + "/save0.data", save);
-            creator.WriteSaveDataToDisk(Application.persistentDataPath + "/save2.data", save);
-            creator.WriteSaveDataToDisk(Application.persistentDataPath + "/save3.data", save);
-            creator.WriteSaveDataToDisk(Application.persistentDataPath + "/save5.data", save);
-
             SaveLoader loader = new SaveLoader();
-            List<int> saveIds = loader.GetSavesId();
+            List<SaveDescriptor> descriptors = loader.GetSaveDescriptors("Assets/Tests/Save/TestData/");
 
-            Assert.AreEqual(0, saveIds[0]);
-            Assert.AreEqual(2, saveIds[1]);
-            Assert.AreEqual(3, saveIds[2]);
-            Assert.AreEqual(5, saveIds[3]);
+            Assert.AreEqual(3, descriptors.Count);
 
-            File.Delete(Application.persistentDataPath + "/save0.data");
-            File.Delete(Application.persistentDataPath + "/save2.data");
-            File.Delete(Application.persistentDataPath + "/save3.data");
-            File.Delete(Application.persistentDataPath + "/save5.data");*/
+            Assert.AreEqual(0, descriptors[0].Id);
+            Assert.AreEqual(2, descriptors[0].MapId);
+            Assert.IsTrue(Mathf.Abs(descriptors[0].InGameTime - 32568.9f) < 0.01f);
+
+            Assert.AreEqual(1, descriptors[1].Id);
+            Assert.AreEqual(3, descriptors[1].MapId);
+            Assert.IsTrue(Mathf.Abs(descriptors[1].InGameTime - 17.8f) < 0.01f);
+
+            Assert.AreEqual(2, descriptors[2].Id);
+            Assert.AreEqual(1000, descriptors[2].MapId);
+            Assert.IsTrue(Mathf.Abs(descriptors[2].InGameTime - 498563.6f) < 0.01f);
         }
     }
 }

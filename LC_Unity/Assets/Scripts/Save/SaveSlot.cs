@@ -28,9 +28,17 @@ namespace Save
 
         public void Init(SaveDescriptor descriptor)
         {
+            SlotIdLabel.text = descriptor.Id.ToString();
+
+            if (descriptor.MapId == -1)
+            {
+                Label.text = Localizer.Instance.GetString("noSaveData");
+                InGameTime.text = string.Empty;
+                return;
+            }
+
             Label.text = Localizer.Instance.GetString(FieldNames.MAP_NAMES[descriptor.MapId]);
             InGameTime.text = TimeConverter.FormatTimeFromSeconds(descriptor.InGameTime);
-            SlotIdLabel.text = descriptor.Id.ToString();
         }
 
         public override void ShowCursor(bool show)

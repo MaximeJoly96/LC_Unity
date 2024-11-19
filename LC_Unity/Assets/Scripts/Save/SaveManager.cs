@@ -16,12 +16,15 @@ using GameProgression;
 using MusicAndSounds;
 using System.Text;
 using Questing;
+using Save.Model;
 
 namespace Save
 {
     public class SaveManager
     {
         public enum SaveState { CreateSave, LoadSave, Closed }
+
+        private const int MAX_SAVES = 10;
 
         private static SaveManager _instance;
 
@@ -120,6 +123,39 @@ namespace Save
         {
             CurrentSaveState = SaveState.Closed;
             GlobalStateMachine.Instance.LoadRememberedState();
+        }
+
+        public List<SaveDescriptor> GetSaveDescriptors()
+        {
+            List<SaveDescriptor> emptyData = CreateEmptyDataSlots(MAX_SAVES);
+            List<SaveDescriptor> descriptorsWithData = _loader.GetSaveDescriptors();
+
+            List<SaveDescriptor> mergedDescriptors = MergeEmptyDescriptorsWithData(emptyData, descriptorsWithData);
+
+            return mergedDescriptors;
+        }
+
+        public List<SaveDescriptor> CreateEmptyDataSlots(int size)
+        {
+            List<SaveDescriptor> saves = new List<SaveDescriptor>();
+
+            for(int i = 0; i < size; i++)
+            {
+                saves.Add(new SaveDescriptor(i, -1, 0.0f));
+            }
+
+            return saves;
+        }
+
+        public List<SaveDescriptor> MergeEmptyDescriptorsWithData(List<SaveDescriptor> emptyData, List<SaveDescriptor> withData)
+        {
+            for(int i = 0; i < emptyData.Count; i++)
+            {
+                if (!withData.Any(d => d.Id == emptyData[i].Id))
+                    withData.Add(emptyData[i]);
+            }
+
+            return withData.OrderBy(d => d.Id).ToList();
         }
 
         public void LoadSaveFile(int slotId)

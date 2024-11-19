@@ -67,6 +67,8 @@ namespace Save
 
         public void FinishedOpening()
         {
+            _savesList.FeedSaves(SaveManager.Instance.GetSaveDescriptors());
+            _savesList.HoverFirstItem();
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.BrowsingSaves);
         }
 

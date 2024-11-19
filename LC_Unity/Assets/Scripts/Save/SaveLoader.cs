@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using Logging;
+using Save.Model;
+using System.Globalization;
 
 namespace Save
 {
@@ -83,6 +85,46 @@ namespace Save
             }
 
             return ids;
+        }
+
+        public List<SaveDescriptor> GetSaveDescriptors(string path)
+        {
+            List<SaveDescriptor> descriptors = new List<SaveDescriptor>();
+            var files = Directory.GetFiles(path).Where(f => f.EndsWith(".data") && f.Contains("save"));
+
+            for (int i = 0; i < files.Count(); i++)
+            {
+                Dictionary<string, string> data = new Dictionary<string, string>();
+                string content = "";
+
+                using (StreamReader sr = new StreamReader(files.ElementAt(i)))
+                {
+                    content = sr.ReadToEnd();
+                }
+
+                string separator = "";
+
+#if UNITY_ANDROID
+                separator = "\n";
+#else
+                separator = "\r\n";
+#endif
+                string[] splitContent = content.Split(separator);
+
+                string mapLine = splitContent.FirstOrDefault(s => s.StartsWith("mapId"));
+                string inGameTimeLine = splitContent.FirstOrDefault(s => s.StartsWith("inGameTime"));
+
+                descriptors.Add(new SaveDescriptor(i,
+                                                   int.Parse(mapLine.Split('=')[1]),
+                                                   float.Parse(inGameTimeLine.Split('=')[1], CultureInfo.InvariantCulture)));
+            }
+
+            return descriptors;
+        }
+
+        public List<SaveDescriptor> GetSaveDescriptors()
+        {
+            return GetSaveDescriptors(SAVE_BASE_PATH);
         }
     }
 }
