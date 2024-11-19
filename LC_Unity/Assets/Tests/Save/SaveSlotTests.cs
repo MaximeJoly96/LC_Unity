@@ -10,6 +10,7 @@ using Party;
 using Actors;
 using Inventory;
 using Language;
+using Save.Model;
 
 namespace Testing.Save
 {
@@ -23,69 +24,22 @@ namespace Testing.Save
             GlobalStateMachine.Instance.CurrentMapId = -1;
         }
 
-        private SaveSlot CreateDefaultSlot()
-        {
-            GameObject slotGo = ComponentCreator.CreateEmptyGameObject();
-            SaveSlot slot = slotGo.AddComponent<SaveSlot>();
-            slotGo.AddComponent<RectTransform>();
-
-            GameObject blankSaveGo = ComponentCreator.CreateEmptyGameObject();
-            blankSaveGo.transform.SetParent(slotGo.transform);
-
-            GameObject saveWithDataGo = ComponentCreator.CreateEmptyGameObject();
-            saveWithDataGo.transform.SetParent(slotGo.transform);
-
-            TextMeshProUGUI inGameTime = ComponentCreator.CreateText();
-            inGameTime.transform.SetParent(slotGo.transform);
-
-            TextMeshProUGUI location = ComponentCreator.CreateText();
-            location.transform.SetParent(slotGo.transform);
-
-            Image characterImg1 = ComponentCreator.CreateImage();
-            characterImg1.transform.SetParent(slotGo.transform);
-
-            Image characterImg2 = ComponentCreator.CreateImage();
-            characterImg2.transform.SetParent(slotGo.transform);
-
-            _usedGameObjects.Add(slotGo);
-
-            slot.SetComponents(blankSaveGo.transform,
-                               saveWithDataGo.transform,
-                               inGameTime,
-                               location,
-                               new Image[]
-                               {
-                                   characterImg1 , characterImg2
-                               });
-            return slot;
-        }
-
         [Test]
         public void SlotCanBeInited()
         {
             Localizer localizer = ComponentCreator.CreateLocalizer("Save/french.csv", global::Language.Language.French);
             _usedGameObjects.Add(localizer.gameObject);
 
-            SavedData data = new SavedData
-            {
-                PlayerPosition = new Vector2(),
-                MapID = 1000,
-                Gold = 500,
-                InGameTimeSeconds = 10.0f,
-                Party = new List<Character>(),
-                Inventory = new List<InventoryItem>()
-            };
+            SaveDescriptor descriptor = new SaveDescriptor(1, 1000, 10.0f);
 
-            SaveSlot slot = CreateDefaultSlot();
-            slot.Init(data);
+            SaveSlot slot = ComponentCreator.CreateSaveSlot();
+            _usedGameObjects.Add(slot.gameObject);
 
-            Assert.IsFalse(slot.BlankSave.gameObject.activeInHierarchy);
-            Assert.IsTrue(slot.SaveWithData.gameObject.activeInHierarchy);
-            Assert.AreEqual("Introduction", slot.Location.text);
+            slot.Init(descriptor);
+
+            Assert.AreEqual("Introduction", slot.Label.text);
             Assert.AreEqual("00:00:10", slot.InGameTime.text);
-
-            foreach(Image img in slot.Characters)
-                Assert.IsFalse(img.gameObject.activeInHierarchy);
+            Assert.AreEqual("1", slot.SlotIdLabel.text);
         }
     }
 }

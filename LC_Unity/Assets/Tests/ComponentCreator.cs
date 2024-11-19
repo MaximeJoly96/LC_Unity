@@ -9,6 +9,7 @@ using Menus.SubMenus.Quests;
 using TMPro;
 using Language;
 using UnityEngine.UI;
+using Save;
 
 namespace Testing
 {
@@ -206,6 +207,30 @@ namespace Testing
             stepDisplay.RewardDisplay = rewardDisplay;
 
             return stepDisplay;
+        }
+
+        public static SaveSlot CreateSaveSlot()
+        {
+            GameObject slotGo = CreateEmptyGameObject();
+            SaveSlot slot = slotGo.AddComponent<SaveSlot>();
+
+            TextMeshProUGUI inGameTime = CreateText();
+            inGameTime.transform.SetParent(slotGo.transform);
+            slot.InGameTime = inGameTime;
+
+            TextMeshProUGUI location = CreateText();
+            location.transform.SetParent(slotGo.transform);
+            slot.Label = location;
+
+            TextMeshProUGUI slotIdLabel = CreateText();
+            slotIdLabel.transform.SetParent(slotGo.transform);
+            slot.SlotIdLabel = slotIdLabel;
+
+            Image cursor = CreateImage();
+            cursor.transform.SetParent(slot.transform);
+            slot.Cursor = cursor.transform;
+
+            return slot;
         }
     }
 }
