@@ -10,29 +10,11 @@ using Party;
 using Actors;
 using Inventory;
 using Language;
-using UnityEditor;
 
 namespace Testing.Save
 {
-    public class SaveSlotTests
+    public class SaveSlotTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         [SetUp]
         public void Setup()
         {
@@ -41,45 +23,29 @@ namespace Testing.Save
             GlobalStateMachine.Instance.CurrentMapId = -1;
         }
 
-        private Localizer CreateFrenchLocalizer()
-        {
-            GameObject localizer = new GameObject("Localizer");
-            _usedGameObjects.Add(localizer);
-            Localizer component = localizer.AddComponent<Localizer>();
-
-            TextAsset[] files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Save/french.csv") };
-            component.LoadLanguage(global::Language.Language.French, files);
-
-            return component;
-        }
-
         private SaveSlot CreateDefaultSlot()
         {
-            GameObject slotGo = new GameObject();
+            GameObject slotGo = ComponentCreator.CreateEmptyGameObject();
             SaveSlot slot = slotGo.AddComponent<SaveSlot>();
             slotGo.AddComponent<RectTransform>();
 
-            GameObject blankSaveGo = new GameObject();
+            GameObject blankSaveGo = ComponentCreator.CreateEmptyGameObject();
             blankSaveGo.transform.SetParent(slotGo.transform);
 
-            GameObject saveWithDataGo = new GameObject();
+            GameObject saveWithDataGo = ComponentCreator.CreateEmptyGameObject();
             saveWithDataGo.transform.SetParent(slotGo.transform);
 
-            GameObject inGameTimeGo = new GameObject();
-            TextMeshProUGUI inGameTime = inGameTimeGo.AddComponent<TextMeshProUGUI>();
-            inGameTimeGo.transform.SetParent(slotGo.transform);
+            TextMeshProUGUI inGameTime = ComponentCreator.CreateText();
+            inGameTime.transform.SetParent(slotGo.transform);
 
-            GameObject locationGo = new GameObject();
-            TextMeshProUGUI location = locationGo.AddComponent<TextMeshProUGUI>();
-            locationGo.transform.SetParent(slotGo.transform);
+            TextMeshProUGUI location = ComponentCreator.CreateText();
+            location.transform.SetParent(slotGo.transform);
 
-            GameObject characterImgGo1 = new GameObject();
-            Image characterImg1 = characterImgGo1.AddComponent<Image>();
-            characterImgGo1.transform.SetParent(slotGo.transform);
+            Image characterImg1 = ComponentCreator.CreateImage();
+            characterImg1.transform.SetParent(slotGo.transform);
 
-            GameObject characterImgGo2 = new GameObject();
-            Image characterImg2 = characterImgGo2.AddComponent<Image>();
-            characterImgGo2.transform.SetParent(slotGo.transform);
+            Image characterImg2 = ComponentCreator.CreateImage();
+            characterImg2.transform.SetParent(slotGo.transform);
 
             _usedGameObjects.Add(slotGo);
 
@@ -97,7 +63,8 @@ namespace Testing.Save
         [Test]
         public void SlotCanBeInited()
         {
-            CreateFrenchLocalizer();
+            Localizer localizer = ComponentCreator.CreateLocalizer("Save/french.csv", global::Language.Language.French);
+            _usedGameObjects.Add(localizer.gameObject);
 
             SavedData data = new SavedData
             {

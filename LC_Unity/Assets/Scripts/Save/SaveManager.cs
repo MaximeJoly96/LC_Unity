@@ -36,8 +36,22 @@ namespace Save
             }
         }
 
+        #region Events
+        private UnityEvent<SaveState> _saveStateChanged;
+        public UnityEvent<SaveState> SaveStateChanged
+        {
+            get
+            {
+                if(_saveStateChanged == null)
+                    _saveStateChanged = new UnityEvent<SaveState>();
+
+                return _saveStateChanged;
+            }
+        }        
+        #endregion
         private SaveCanvas _saveCanvasCache;
         private UnityEvent _saveCancelledEvent;
+        
         private readonly SaveCreator _creator;
         private readonly SaveLoader _loader;
         
@@ -73,38 +87,39 @@ namespace Save
             _loader = new SaveLoader();
         }
 
-        public void OpenSaveWindow()
-        {
-            SaveCanvasCache.Open();
-            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);
-        }
-
         public void CloseSaveWindow()
         {
             SaveCanvasCache.Close();
         }
 
+        private void OpenSaveWindow(SaveState state)
+        {
+            // We need to store the current state before it changes. Once the window closes, we need to go back to that state.
+            GlobalStateMachine.Instance.RememberState();
+
+            CurrentSaveState = state;
+            SaveStateChanged.Invoke(CurrentSaveState);
+        }
+
         public void InitSaveCreation()
         {
-            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);
-            CurrentSaveState = SaveState.CreateSave;
-
-            SaveCanvasCache.UpdateTooltip(Localizer.Instance.GetString("createSaveTooltip"));
-            SaveCanvasCache.Open();
+            OpenSaveWindow(SaveState.CreateSave);
         }
 
         public void InitSaveLoad()
         {
-            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);
-            CurrentSaveState = SaveState.LoadSave;
-
-            SaveCanvasCache.UpdateTooltip(Localizer.Instance.GetString("loadSaveTooltip"));
-            SaveCanvasCache.Open();
+            OpenSaveWindow(SaveState.LoadSave);
         }
 
         public void LoadPreviousState()
         {
             SaveCancelledEvent.Invoke();
+        }
+
+        public void FinishedClosing()
+        {
+            CurrentSaveState = SaveState.Closed;
+            GlobalStateMachine.Instance.LoadRememberedState();
         }
 
         public void LoadSaveFile(int slotId)

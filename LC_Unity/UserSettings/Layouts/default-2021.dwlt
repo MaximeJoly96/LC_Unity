@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Test Runner
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 67
+  controlID: 12934
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 68
+  controlID: 12935
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,8 +165,8 @@ MonoBehaviour:
     y: 0
     width: 280
     height: 660
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: TestRunnerWindow
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -193,15 +193,15 @@ MonoBehaviour:
     height: 660
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 13}
   - {fileID: 14}
   - {fileID: 15}
-  - {fileID: 16}
   - {fileID: 11}
-  m_Selected: 0
-  m_LastSelected: 4
+  - {fileID: 16}
+  m_Selected: 3
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -221,8 +221,8 @@ MonoBehaviour:
     y: 0
     width: 772
     height: 660
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -248,15 +248,15 @@ MonoBehaviour:
     y: 660
     width: 1920
     height: 287
-  m_MinSize: {x: 230, y: 271}
-  m_MaxSize: {x: 10000, y: 10021}
-  m_ActualView: {fileID: 19}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 21}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -384,7 +384,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0ef6feff44f6feff04f8feffe8f8feff1ef9feffdefafeff5afcfeff90fcfeff4afefeff30fffeff66fffeff2001ffff0602ffff3c02fffff603ffffce09ffff721dffff5a26ffff9026ffffcc27ffff3e29ffff7429ffffb02affff962bffffcc2bffff082dffffa24dffff5a4fffff206bffff7671ffffac71fffff872ffffd277ffffd87affff5c8effff9a96ffffd096ffff2498ffff2efbffffc0c40000a2c700003eca000002d0000018d5000018d60000b4d8000078de00001a070100b60901005c0e0100660e01007a0f0100e64301004e4401004e450100ea470100ae4d0100
+      m_ExpandedIDs: 9061faffc661faff6463faff90d9fcff6edbfcff5a69fdff9069fdffda6afdff9c88fdff9a8afdffcea9fdff46bdfdff6e36feff224bfeffdc53feff245efeff187efeff4e7efeff2c84feff1285feff4885feff8486feff0a89feff088dfeff26a9feff5ca9feffd0aafeffb2abfeffe8abfeff82adfeff66aefeff9caefeffe4affeffa8eefeffa605ffffd229ffffae2bffff8840ffffb265ffff0873ffff16aaffff4caaffffbeacffffa6adffffdcadffff4eb0ffff9cb0ffffd2b0ffff44b3ffff92b3ffffc8b3ffff3ab6ffff1eb7ffff54b7ffffd4b8ffffb8b9ffffeeb9ffff62bbffff5cbdffff92bdffff00bffffffac0ffff30c1ffff16c3ffff1ec4ffff54c4ffffb6c5ffff9ac6ffffd0c6ffff26c8ffff0cc9ffff42c9ffff8ccafffffecbffff34ccffff7ecdffff48edffff7eedffff3aefffffacf0ffffe2f0ffff42f3ffff5cf4ffff92f4ffffbef5ffff0ef6ffff44f6ffffa8f8ffff2efbfffffcf80000fcf900007cfb000098fc00005c020100582d01002e2f01002e300100a6310100c232010072380100463d0100463e0100da4001008a460100b0700100b07101002873010044740100f4790100f8bc01008cbf01003cc50100720902000a0c0200480c0200dc0e02008c14020098140200c85e02009e61020032640200e2690200a88002003c830200ec8802000289020072fb020006fe0200b6030300
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -437,7 +437,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 208
+    ID: 13531
     splitterInitialOffset: 522
     currentActiveSplitter: -1
     realSizes:
@@ -469,7 +469,7 @@ MonoBehaviour:
       name: LC
       fullName: LC
       resultStatus: 1
-      duration: 0.2867709
+      duration: 0.3102
       messages: 
       output: 
       stacktrace: 
@@ -485,7 +485,7 @@ MonoBehaviour:
       name: Tests.dll
       fullName: E:/Unity_Projects/LC_Unity/LC_Unity/Library/ScriptAssemblies/Tests.dll
       resultStatus: 1
-      duration: 0.224239
+      duration: 0.255543
       messages: 
       output: 
       stacktrace: 
@@ -501,7 +501,7 @@ MonoBehaviour:
       name: Testing
       fullName: Testing
       resultStatus: 1
-      duration: 0.1736903
+      duration: 0.2200219
       messages: 
       output: 
       stacktrace: 
@@ -7299,7 +7299,7 @@ MonoBehaviour:
       name: Menus
       fullName: Testing.Menus
       resultStatus: 1
-      duration: 0.1279874
+      duration: 2.001988
       messages: 
       output: 
       stacktrace: 
@@ -7499,7 +7499,7 @@ MonoBehaviour:
       name: SubMenus
       fullName: Testing.Menus.SubMenus
       resultStatus: 1
-      duration: 0.1215735
+      duration: 1.9922476
       messages: 
       output: 
       stacktrace: 
@@ -7515,7 +7515,7 @@ MonoBehaviour:
       name: Quests
       fullName: Testing.Menus.SubMenus.Quests
       resultStatus: 1
-      duration: 0.117148
+      duration: 1.9868219
       messages: 
       output: 
       stacktrace: 
@@ -7526,12 +7526,112 @@ MonoBehaviour:
       categories: []
       parentId: 1491
       parentUniqueId: Tests.dll/Testing/Menus/[SubMenus][suite]
+    - id: 1117
+      uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests][suite]
+      name: IndividualQuestStepDisplayTests
+      fullName: Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests
+      resultStatus: 1
+      duration: 0.3026878
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1516
+      parentUniqueId: Tests.dll/Testing/Menus/SubMenus/[Tests][Testing.Menus.SubMenus.Quests][suite]
+    - id: 1118
+      uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/IndividualQuestStepDisplayTests/[Tests][Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests.StepCanBeInitialized]
+      name: StepCanBeInitialized
+      fullName: Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests.StepCanBeInitialized
+      resultStatus: 1
+      duration: 0.2098935
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1117
+      parentUniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests][suite]
+    - id: 1119
+      uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/IndividualQuestStepDisplayTests/[Tests][Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests.VisualStatusCanBeUpdated]
+      name: VisualStatusCanBeUpdated
+      fullName: Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests.VisualStatusCanBeUpdated
+      resultStatus: 1
+      duration: 0.0593512
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1117
+      parentUniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests][suite]
+    - id: 1117
+      uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests][suite]
+      name: QuestDetailsDisplayTests
+      fullName: Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests
+      resultStatus: 1
+      duration: 0.2360193
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1513
+      parentUniqueId: Tests.dll/Testing/Menus/SubMenus/[Tests][Testing.Menus.SubMenus.Quests][suite]
+    - id: 1118
+      uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/QuestDetailsDisplayTests/[Tests][Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests.DetailsCanBeCleared]
+      name: DetailsCanBeCleared
+      fullName: Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests.DetailsCanBeCleared
+      resultStatus: 1
+      duration: 0.0684008
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1117
+      parentUniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests][suite]
+    - id: 1119
+      uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/QuestDetailsDisplayTests/[Tests][Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests.DetailsCanBeShown]
+      name: DetailsCanBeShown
+      fullName: Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests.DetailsCanBeShown
+      resultStatus: 1
+      duration: 0.1547557
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1117
+      parentUniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests][suite]
     - id: 1109
       uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests][suite]
       name: QuestRewardDisplayTests
       fullName: Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests
       resultStatus: 1
-      duration: 0.0497121
+      duration: 0.0899541
       messages: 
       output: 
       stacktrace: 
@@ -7547,7 +7647,7 @@ MonoBehaviour:
       name: QuestRewardDisplayCanBeCleared
       fullName: Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests.QuestRewardDisplayCanBeCleared
       resultStatus: 1
-      duration: 0.0342847
+      duration: 0.0198225
       messages: 
       output: 
       stacktrace: 
@@ -7559,12 +7659,46 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1109
       parentUniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests][suite]
+    - id: 1119
+      uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/QuestRewardDisplayTests/[Tests][Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests.QuestRewardDisplayCanBeInited]
+      name: QuestRewardDisplayCanBeInited
+      fullName: Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests.QuestRewardDisplayCanBeInited
+      resultStatus: 1
+      duration: 0.0286256
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1117
+      parentUniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests][suite]
+    - id: 1125
+      uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/QuestRewardDisplayTests/[Tests][Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests.VisualStatusCanBeUpdated]
+      name: VisualStatusCanBeUpdated
+      fullName: Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests.VisualStatusCanBeUpdated
+      resultStatus: 1
+      duration: 0.0277775
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1122
+      parentUniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests][suite]
     - id: 1117
       uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.QuestsHorizontalMenuTests][suite]
       name: QuestsHorizontalMenuTests
       fullName: Testing.Menus.SubMenus.Quests.QuestsHorizontalMenuTests
       resultStatus: 1
-      duration: 1.3193917
+      duration: 1.3036239
       messages: 
       output: 
       stacktrace: 
@@ -7580,7 +7714,7 @@ MonoBehaviour:
       name: SelectedQuestStatusCanBeObtained
       fullName: Testing.Menus.SubMenus.Quests.QuestsHorizontalMenuTests.SelectedQuestStatusCanBeObtained
       resultStatus: 1
-      duration: 1.2986991
+      duration: 1.2962226
       messages: 
       output: 
       stacktrace: 
@@ -7597,7 +7731,7 @@ MonoBehaviour:
       name: QuestStepsDisplayTests
       fullName: Testing.Menus.SubMenus.Quests.QuestStepsDisplayTests
       resultStatus: 1
-      duration: 0.0469864
+      duration: 0.0189003
       messages: 
       output: 
       stacktrace: 
@@ -7613,7 +7747,7 @@ MonoBehaviour:
       name: DisplayCanBeCleared
       fullName: Testing.Menus.SubMenus.Quests.QuestStepsDisplayTests.DisplayCanBeCleared
       resultStatus: 1
-      duration: 0.0309398
+      duration: 0.0141264
       messages: 
       output: 
       stacktrace: 
@@ -7630,7 +7764,7 @@ MonoBehaviour:
       name: RewardComponentDisplayTests
       fullName: Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests
       resultStatus: 1
-      duration: 0.110132
+      duration: 0.0160887
       messages: 
       output: 
       stacktrace: 
@@ -7646,7 +7780,7 @@ MonoBehaviour:
       name: ComponentCanBeInitedWithExperience
       fullName: Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests.ComponentCanBeInitedWithExperience
       resultStatus: 1
-      duration: 0.0640629
+      duration: 0.0034375
       messages: 
       output: 
       stacktrace: 
@@ -7663,7 +7797,7 @@ MonoBehaviour:
       name: ComponentCanBeInitedWithGold
       fullName: Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests.ComponentCanBeInitedWithGold
       resultStatus: 1
-      duration: 0.0017413
+      duration: 0.0014786
       messages: 
       output: 
       stacktrace: 
@@ -7680,7 +7814,7 @@ MonoBehaviour:
       name: ComponentCanBeInitedWithItem
       fullName: Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests.ComponentCanBeInitedWithItem
       resultStatus: 1
-      duration: 0.0215627
+      duration: 0.0020563
       messages: 
       output: 
       stacktrace: 
@@ -7692,12 +7826,29 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1123
       parentUniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests][suite]
+    - id: 1133
+      uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/RewardComponentDisplayTests/[Tests][Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests.VisualStatusCanBeUpdated]
+      name: VisualStatusCanBeUpdated
+      fullName: Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests.VisualStatusCanBeUpdated
+      resultStatus: 1
+      duration: 0.0017286
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1129
+      parentUniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests][suite]
     - id: 1123
       uniqueId: Tests.dll/Testing/Menus/SubMenus/Quests/[Tests][Testing.Menus.SubMenus.Quests.SelectableQuestTests][suite]
       name: SelectableQuestTests
       fullName: Testing.Menus.SubMenus.Quests.SelectableQuestTests
       resultStatus: 1
-      duration: 0.0773963
+      duration: 0.0076182
       messages: 
       output: 
       stacktrace: 
@@ -7713,7 +7864,7 @@ MonoBehaviour:
       name: QuestDataCanBeFed
       fullName: Testing.Menus.SubMenus.Quests.SelectableQuestTests.QuestDataCanBeFed
       resultStatus: 1
-      duration: 0.0571008
+      duration: 0.002143
       messages: 
       output: 
       stacktrace: 
@@ -8016,7 +8167,7 @@ MonoBehaviour:
       name: Questing
       fullName: Testing.Questing
       resultStatus: 1
-      duration: 0.1389392
+      duration: 0.1836
       messages: 
       output: 
       stacktrace: 
@@ -8032,7 +8183,7 @@ MonoBehaviour:
       name: QuestManagerTests
       fullName: Testing.Questing.QuestManagerTests
       resultStatus: 1
-      duration: 0.0786411
+      duration: 0.1252052
       messages: 
       output: 
       stacktrace: 
@@ -8048,7 +8199,7 @@ MonoBehaviour:
       name: QuestManagerDataCanBeDeserialized
       fullName: Testing.Questing.QuestManagerTests.QuestManagerDataCanBeDeserialized
       resultStatus: 1
-      duration: 0.0466661
+      duration: 0.0914359
       messages: 
       output: 
       stacktrace: 
@@ -8065,7 +8216,7 @@ MonoBehaviour:
       name: QuestManagerDataCanBeSerialized
       fullName: Testing.Questing.QuestManagerTests.QuestManagerDataCanBeSerialized
       resultStatus: 1
-      duration: 0.0098765
+      duration: 0.0098647
       messages: 
       output: 
       stacktrace: 
@@ -8082,7 +8233,7 @@ MonoBehaviour:
       name: QuestRewardTests
       fullName: Testing.Questing.QuestRewardTests
       resultStatus: 1
-      duration: 0.0064158
+      duration: 0.0075146
       messages: 
       output: 
       stacktrace: 
@@ -8098,7 +8249,7 @@ MonoBehaviour:
       name: QuestRewardCanBeCreated
       fullName: Testing.Questing.QuestRewardTests.QuestRewardCanBeCreated
       resultStatus: 1
-      duration: 0.0016934
+      duration: 0.0018693
       messages: 
       output: 
       stacktrace: 
@@ -8115,7 +8266,7 @@ MonoBehaviour:
       name: QuestsParserTests
       fullName: Testing.Questing.QuestsParserTests
       resultStatus: 1
-      duration: 0.0231338
+      duration: 0.0186148
       messages: 
       output: 
       stacktrace: 
@@ -8131,7 +8282,7 @@ MonoBehaviour:
       name: QuestDataCanBeParsed
       fullName: Testing.Questing.QuestsParserTests.QuestDataCanBeParsed
       resultStatus: 1
-      duration: 0.0165311
+      duration: 0.0119271
       messages: 
       output: 
       stacktrace: 
@@ -8148,7 +8299,7 @@ MonoBehaviour:
       name: QuestStepTests
       fullName: Testing.Questing.QuestStepTests
       resultStatus: 1
-      duration: 0.0105936
+      duration: 0.0113289
       messages: 
       output: 
       stacktrace: 
@@ -8164,7 +8315,7 @@ MonoBehaviour:
       name: EmptyQuestStepCanBeCreated
       fullName: Testing.Questing.QuestStepTests.EmptyQuestStepCanBeCreated
       resultStatus: 1
-      duration: 0.0004953
+      duration: 0.0005652
       messages: 
       output: 
       stacktrace: 
@@ -8181,7 +8332,7 @@ MonoBehaviour:
       name: QuestStepCanBeDeserialized
       fullName: Testing.Questing.QuestStepTests.QuestStepCanBeDeserialized
       resultStatus: 1
-      duration: 0.0006416
+      duration: 0.0006003
       messages: 
       output: 
       stacktrace: 
@@ -8198,7 +8349,7 @@ MonoBehaviour:
       name: QuestStepCanBeSerialized
       fullName: Testing.Questing.QuestStepTests.QuestStepCanBeSerialized
       resultStatus: 1
-      duration: 0.0004756
+      duration: 0.0005148
       messages: 
       output: 
       stacktrace: 
@@ -8215,7 +8366,7 @@ MonoBehaviour:
       name: QuestStepStatusCanBeChanged
       fullName: Testing.Questing.QuestStepTests.QuestStepStatusCanBeChanged
       resultStatus: 1
-      duration: 0.0006428
+      duration: 0.0004434
       messages: 
       output: 
       stacktrace: 
@@ -8232,7 +8383,7 @@ MonoBehaviour:
       name: QuestTests
       fullName: Testing.Questing.QuestTests
       resultStatus: 1
-      duration: 0.0113006
+      duration: 0.01204
       messages: 
       output: 
       stacktrace: 
@@ -8248,7 +8399,7 @@ MonoBehaviour:
       name: EmptyQuestCanBeCreated
       fullName: Testing.Questing.QuestTests.EmptyQuestCanBeCreated
       resultStatus: 1
-      duration: 0.000577
+      duration: 0.0006637
       messages: 
       output: 
       stacktrace: 
@@ -8265,7 +8416,7 @@ MonoBehaviour:
       name: QuestCanBeDeserialized
       fullName: Testing.Questing.QuestTests.QuestCanBeDeserialized
       resultStatus: 1
-      duration: 0.0005096
+      duration: 0.0006854
       messages: 
       output: 
       stacktrace: 
@@ -8282,7 +8433,7 @@ MonoBehaviour:
       name: QuestCanBeSerialized
       fullName: Testing.Questing.QuestTests.QuestCanBeSerialized
       resultStatus: 1
-      duration: 0.0004004
+      duration: 0.0005116
       messages: 
       output: 
       stacktrace: 
@@ -8299,7 +8450,7 @@ MonoBehaviour:
       name: QuestStatusCanBeChanged
       fullName: Testing.Questing.QuestTests.QuestStatusCanBeChanged
       resultStatus: 1
-      duration: 0.000336
+      duration: 0.0004612
       messages: 
       output: 
       stacktrace: 
@@ -8316,7 +8467,7 @@ MonoBehaviour:
       name: QuestStepCanBeAdded
       fullName: Testing.Questing.QuestTests.QuestStepCanBeAdded
       resultStatus: 1
-      duration: 0.0004022
+      duration: 0.0005414
       messages: 
       output: 
       stacktrace: 
@@ -9212,7 +9363,7 @@ MonoBehaviour:
       name: UI
       fullName: Testing.UI
       resultStatus: 1
-      duration: 0.0744613
+      duration: 0.1139649
       messages: 
       output: 
       stacktrace: 
@@ -9344,7 +9495,7 @@ MonoBehaviour:
       name: SelectableListTests
       fullName: Testing.UI.SelectableListTests
       resultStatus: 1
-      duration: 0.0689358
+      duration: 0.1088383
       messages: 
       output: 
       stacktrace: 
@@ -9355,6 +9506,23 @@ MonoBehaviour:
       categories: []
       parentId: 1490
       parentUniqueId: Tests.dll/Testing/[Tests][Testing.UI][suite]
+    - id: 1023
+      uniqueId: Tests.dll/Testing/UI/SelectableListTests/[Tests][Testing.UI.SelectableListTests.CancelOperationIsDetected]
+      name: CancelOperationIsDetected
+      fullName: Testing.UI.SelectableListTests.CancelOperationIsDetected
+      resultStatus: 1
+      duration: 0.0873128
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1017
+      parentUniqueId: Tests.dll/Testing/UI/[Tests][Testing.UI.SelectableListTests][suite]
     - id: 1018
       uniqueId: Tests.dll/Testing/UI/SelectableListTests/[Tests][Testing.UI.SelectableListTests.CursorCanBeMoved]
       name: CursorCanBeMoved
@@ -9605,13 +9773,13 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1008
       parentUniqueId: Tests.dll/Testing/Utils/[Tests][Testing.Utils.TimeConverterTests][suite]
-    m_ResultText: RewardComponentDisplayTests (0,110s)
+    m_ResultText: Questing (0,184s)
     m_ResultStacktrace: 
     m_TestListState:
-      scrollPos: {x: 0, y: 245}
-      m_SelectedIDs: 80cb9ccd
-      m_LastClickedID: -845362304
-      m_ExpandedIDs: 0cdece80e95922837d27c088ddd5208b5155378cd887a28e2a9e4c93c87ae496241beb972382bb9c8330b39d02715a9e09add29e759bef9ed340b9a17bf06da2d4aaefa4a4ca3fa65f79f2a829bf73aa914bb5ad079c34ae3bf28fb7b75f6dbe3c9679be944c81be024969c1ad0dd3c21665e8c598d140c68c3bacc713d282c802a7b6c95c8600ca2bab08cd80cb9ccdd14892d237d566d76e3b5fd9a5300eda1eda61da628e6ddb1031dddcc77613dd7c6e4bdd8c60acded0fc5cdf32b5d8e15d006de6427858ea02b6e9ea6b36cdee2f67adefafd157f2fde983f3d5f817f65bc100f7e557abf787cbe0f8cf7f5cf9390acefbd34366fcf586d3fcbbb68d003872b70371ab9407b8935908e9ea6b094deeca0900b5fa09b24fa80bd84bb217d67107197bd7f21a4522021b01d8b11c720b2f1ec48194229038d0238d11e026271162275410cf293ae17a2acc405a316e478e31ba63e033afaa083888ba9e3a5900253bf504303ea67fca4232d0ec4353adc94484f5ef448dd8cb468a2075497e134b4b4bc765507441155175b2fe52958cc95ad40d6d61d0dfe3627899ab6637ca336b8092776b15b5276c2b342b6e1640d16fa67d017432871475accef176ca400a77c3313d77158eb47be4ff637efd6e247f199a897fffffff7f
+      scrollPos: {x: 0, y: 577}
+      m_SelectedIDs: ba63e033
+      m_LastClickedID: 870343610
+      m_ExpandedIDs: 0cdece80e95922837d27c088ddd5208b5155378cd887a28e2a9e4c93c87ae496241beb972382bb9c8330b39d02715a9e09add29e759bef9ed340b9a17bf06da2d4aaefa4b76bf0a5a4ca3fa65f79f2a829bf73aa914bb5ad079c34ae3bf28fb7b75f6dbe3c9679be944c81be024969c1ad0dd3c21665e8c598d140c68c3bacc713d282c802a7b6c95c8600ca2bab08cd80cb9ccdd14892d237d566d76e3b5fd9a5300eda1eda61da628e6ddb1031dddcc77613dd7c6e4bdd8c60acded0fc5cdf32b5d8e15d006de6427858ea02b6e9ea6b36cdee2f67adefafd157f2fde983f3d5f817f65bc100f7e557abf787cbe0f8cf7f5cf9390acefbd34366fcf586d3fcbbb68d003872b70371ab9407b8935908e9ea6b094deeca0900b5fa09b24fa80bd84bb217d67107197bd7f21a4522021b01d8b11c720b2f1ec48194229038d02306d9b6268d11e026271162275410cf293ae17a2acc405a316e478e31ba63e033afaa083888ba9e3a5900253bf504303ea67fca4232d0ec4353adc94484f5ef448dd8cb468a2075497e134b4b4bc765507441155175b2fe52958cc95ad40d6d61d0dfe362a31ce0657899ab6637ca336b8092776b15b5276c2b342b6e1640d16f9f3f9473a67d017432871475accef176ca400a77c3313d77158eb47be4ff637efd6e247f199a897fffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -9710,7 +9878,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 281
+    x: 280
     y: 73
     width: 866
     height: 639
@@ -9785,6 +9953,7 @@ MonoBehaviour:
     - {fileID: 1593451176219802515, guid: c77493920d83bbc49bf00f01a804d99b, type: 2}
     - {fileID: 7566274477759151917, guid: 6945912a8ed735b4e80118009a54ea18, type: 2}
     - {fileID: 7566274477759151917, guid: e302637668d065b41a93d3f3d995008d, type: 2}
+    - {fileID: 7095831500215866667, guid: be229f42dc7e0ce4e8503adabd63b3c0, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.8557895
       e01: 0
@@ -10826,6 +10995,22 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 9100000, guid: e302637668d065b41a93d3f3d995008d,
     type: 2}
@@ -10875,7 +11060,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 54552
+  m_LastSelectedObjectID: 162828
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -11124,9 +11309,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 866.2189, y: -86.1319, z: -9.697468}
+    m_Target: {x: 1640.6241, y: 584.02045, z: -4.6588993}
     speed: 2
-    m_Value: {x: 866.2189, y: -86.1319, z: -9.697468}
+    m_Value: {x: 1640.6241, y: 584.02045, z: -4.6588993}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -11177,9 +11362,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2029.2073
+    m_Target: 851.41077
     speed: 2
-    m_Value: 2029.2073
+    m_Value: 851.41077
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -11316,22 +11501,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Tests/Menus/SubMenus/Quests
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Tests/Menus/SubMenus/Quests
+  - Assets/Scenes
   m_LastFoldersGridSize: 96
   m_LastProjectPath: E:\Unity_Projects\LC_Unity\LC_Unity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 858}
-    m_SelectedIDs: 7e700000
-    m_LastClickedID: 28798
-    m_ExpandedIDs: 000000002c6000002e60000030600000326000003460000036600000386000003a6000003c6000003e6000001c61000018650000fa680000d46c00005872000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 586}
+    m_SelectedIDs: 90600000
+    m_LastClickedID: 24720
+    m_ExpandedIDs: 000000002c6000002e60000030600000326000003460000036600000386000003a6000003c6000003e60000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -11359,7 +11544,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002c6000002e60000030600000326000003460000036600000386000003a6000003c6000003e600000
+    m_ExpandedIDs: 000000002c6000002e60000030600000326000003460000036600000386000003a6000003c6000003e60000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -11384,10 +11569,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000000000000b26c0000445000003a16000054670000a84f0000e4150000ca510000b6150000888d0000149effff3aca0000306f00002a60000002e3000008760100f4c703001e3c0400
+    m_SelectedInstanceIDs: 9e6b0000
+    m_LastClickedInstanceID: 27550
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c623000000000000b26c0000445000003a16000054670000a84f0000e4150000ca510000b6150000888d0000149effff3aca0000306f00002a60000002e3000008760100f4c703001e3c0400dac50100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

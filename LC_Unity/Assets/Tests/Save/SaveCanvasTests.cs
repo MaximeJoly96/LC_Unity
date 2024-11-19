@@ -1,146 +1,124 @@
-﻿using UnityEngine;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Save;
+using UnityEngine;
 using TMPro;
 using Core;
-using GameProgression;
-using Party;
-using System.Collections.Generic;
-using UnityEngine.UI;
-using Inputs;
-using UnityEngine.TestTools;
+using MusicAndSounds;
 using System.Collections;
+using UnityEngine.TestTools;
+using Inputs;
 using Language;
-using UnityEditor;
 
 namespace Testing.Save
 {
-    public class SaveCanvasTests
+    public class SaveCanvasTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
+        private InputController _inputController;
 
-        [TearDown]
-        public void TearDown()
+        private SaveCanvas CreateSaveCanvas()
         {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
+            AudioPlayer player = ComponentCreator.CreateAudioPlayer();
+            GameObject go = ComponentCreator.CreateEmptyGameObject();
 
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
+            SaveCanvas canvas = go.AddComponent<SaveCanvas>();
+            TextMeshProUGUI tooltip = ComponentCreator.CreateText();
+            tooltip.transform.SetParent(canvas.transform);
+            canvas.Tooltip = tooltip;
+
+            GameObject savesListGo = ComponentCreator.CreateEmptyGameObject();
+            SelectableSavesList savesList = savesListGo.AddComponent<SelectableSavesList>();
+            savesList.transform.SetParent(canvas.transform);
+            canvas.SavesList = savesList;
+
+            savesList.gameObject.AddComponent<InputReceiver>();
+
+            Animator animator = go.AddComponent<Animator>();
+            animator.runtimeAnimatorController = ComponentCreator.CreateAnimatorController("Save/TestAnimations/SaveCanvas/SaveCanvasController.controller");
+
+            _usedGameObjects.Add(canvas.gameObject);
+            _usedGameObjects.Add(player.gameObject);
+
+            return canvas;
         }
 
         [SetUp]
         public void Setup()
         {
-            PersistentDataHolder.Instance.Reset();
-            PartyManager.Instance.Clear();
-            GlobalStateMachine.Instance.CurrentMapId = -1;
-        }
+            SaveManager.Instance.SaveStateChanged.RemoveAllListeners();
+            _inputController = ComponentCreator.CreateInputController();
+            _usedGameObjects.Add(_inputController.gameObject);
 
-        private SaveCanvas CreateDefaultCanvas()
-        {
-            GameObject go = new GameObject();
-            SaveCanvas canvas = go.AddComponent<SaveCanvas>();
-
-            GameObject tooltipGo = new GameObject();
-            TextMeshProUGUI tooltip = tooltipGo.AddComponent<TextMeshProUGUI>();
-            tooltipGo.transform.SetParent(go.transform);
-
-            GameObject wrapperGo = new GameObject();
-            wrapperGo.AddComponent<RectTransform>();
-            wrapperGo.transform.SetParent(go.transform);
-
-            GameObject scrollRectGo = new GameObject();
-            ScrollRect scrollRect = scrollRectGo.AddComponent<ScrollRect>();
-            scrollRect.content = wrapperGo.GetComponent<RectTransform>();
-            scrollRectGo.transform.SetParent(go.transform);
-
-            SaveSlot saveSlotPrefab = CreateDefaultSlot();
-
-            canvas.SetComponents(tooltip, wrapperGo.transform, saveSlotPrefab, scrollRect);
-
-            go.AddComponent<InputReceiver>();
-            _usedGameObjects.Add(go);
-
-            return canvas;
-        }
-
-        private InputController CreateInputController()
-        {
-            GameObject go = new GameObject();
-            _usedGameObjects.Add(go);
-            return go.AddComponent<InputController>();
-        }
-
-        private Localizer CreateFrenchLocalizer()
-        {
-            GameObject localizer = new GameObject("Localizer");
-            _usedGameObjects.Add(localizer);
-            Localizer component = localizer.AddComponent<Localizer>();
-
-            TextAsset[] files = new TextAsset[] { AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Save/french.csv") };
-            component.LoadLanguage(global::Language.Language.French, files);
-
-            return component;
-        }
-
-        private SaveSlot CreateDefaultSlot()
-        {
-            GameObject slotGo = new GameObject();
-            SaveSlot slot = slotGo.AddComponent<SaveSlot>();
-            slotGo.AddComponent<RectTransform>();
-
-            GameObject blankSaveGo = new GameObject();
-            blankSaveGo.transform.SetParent(slotGo.transform);
-
-            GameObject saveWithDataGo = new GameObject();
-            saveWithDataGo.transform.SetParent(slotGo.transform);
-
-            GameObject inGameTimeGo = new GameObject();
-            TextMeshProUGUI inGameTime = inGameTimeGo.AddComponent<TextMeshProUGUI>();
-            inGameTimeGo.transform.SetParent(slotGo.transform);
-
-            GameObject locationGo = new GameObject();
-            TextMeshProUGUI location = locationGo.AddComponent<TextMeshProUGUI>();
-            locationGo.transform.SetParent(slotGo.transform);
-
-            GameObject characterImgGo1 = new GameObject();
-            Image characterImg1 = characterImgGo1.AddComponent<Image>();
-            characterImgGo1.transform.SetParent(slotGo.transform);
-
-            GameObject characterImgGo2 = new GameObject();
-            Image characterImg2 = characterImgGo2.AddComponent<Image>();
-            characterImgGo2.transform.SetParent(slotGo.transform);
-
-            _usedGameObjects.Add(slotGo);
-
-            slot.SetComponents(blankSaveGo.transform,
-                               saveWithDataGo.transform,
-                               inGameTime,
-                               location,
-                               new Image[]
-                               {
-                                   characterImg1 , characterImg2
-                               });
-            return slot;
+            Localizer localizer = ComponentCreator.CreateLocalizer("Save/french.csv", global::Language.Language.French);
+            _usedGameObjects.Add(localizer.gameObject);
         }
 
         [UnityTest]
-        public IEnumerator SaveCanvasCanBeOpened()
+        public IEnumerator SaveStateChangesAreDetected()
         {
-            /*CreateFrenchLocalizer();
-            CreateInputController();
-            SaveCanvas canvas = CreateDefaultCanvas();*/
+            SaveCanvas canvas = CreateSaveCanvas();
+            SaveManager manager = SaveManager.Instance;
 
             yield return null;
 
-            /*canvas.Open();
-            Assert.IsTrue(Mathf.Abs(canvas.ScrollView.verticalNormalizedPosition - 0.0f) < 0.01f);*/
+            manager.InitSaveCreation();
+            Assert.AreEqual(GlobalStateMachine.State.OpeningSaves, GlobalStateMachine.Instance.CurrentState);
+
+            manager.InitSaveLoad();
+            Assert.AreEqual(GlobalStateMachine.State.OpeningSaves, GlobalStateMachine.Instance.CurrentState);
+        }
+
+        [UnityTest]
+        public IEnumerator TooltipIsUpdatedWhenSaveStateChanges()
+        {
+            SaveCanvas canvas = CreateSaveCanvas();
+            SaveManager manager = SaveManager.Instance;
+
+            yield return null;
+
+            manager.InitSaveCreation();
+            Assert.AreEqual("Sélectionnez un emplacement pour la sauvegarde.", canvas.Tooltip.text);
+
+            manager.InitSaveLoad();
+            Assert.AreEqual("Sélectionnez la sauvegarde à charger.", canvas.Tooltip.text);
+        }
+
+        [UnityTest]
+        public IEnumerator GlobalStateIsUpdatedAfterOpening()
+        {
+            SaveCanvas canvas = CreateSaveCanvas();
+            SaveManager manager = SaveManager.Instance;
+
+            yield return null;
+
+            manager.InitSaveCreation();
+
+            yield return new WaitForSeconds(1.0f);
+
+            Assert.AreEqual(GlobalStateMachine.State.BrowsingSaves, GlobalStateMachine.Instance.CurrentState);
+        }
+
+        [UnityTest]
+        public IEnumerator CancelEventIsDetected()
+        {
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.TitleScreen);
+
+            SaveCanvas canvas = CreateSaveCanvas();
+            SaveManager manager = SaveManager.Instance;
+
+            yield return null;
+
+            manager.InitSaveCreation();
+
+            yield return new WaitForSeconds(1.0f);
+
+            _inputController.ButtonClicked.Invoke(InputAction.Cancel);
+
+            Assert.AreEqual(GlobalStateMachine.State.ClosingSaves, GlobalStateMachine.Instance.CurrentState);
+            
+            yield return new WaitForSeconds(1.0f);
+
+            Assert.AreEqual(GlobalStateMachine.State.TitleScreen, GlobalStateMachine.Instance.CurrentState);
+            Assert.AreEqual(SaveManager.SaveState.Closed, manager.CurrentSaveState);
         }
     }
 }

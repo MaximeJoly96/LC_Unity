@@ -9,6 +9,7 @@ namespace Core
         {
             TitleScreen,
             TitleScreenOptions,
+
             OnField,
             InMenu,
             Interacting,
@@ -28,7 +29,11 @@ namespace Core
             OpeningMessageBox,
             InMessageBox,
             ClosingMessageBox,
-            SaveMenu,
+
+            OpeningSaves,
+            BrowsingSaves,
+            ClosingSaves,
+
             OpeningShop,
             InShopOptions,
             InShopBuyList,
@@ -39,6 +44,7 @@ namespace Core
             PromptedToSkipScene
         }
 
+        private State _rememberedState;
         private static GlobalStateMachine _instance;
 
         public static GlobalStateMachine Instance
@@ -74,6 +80,16 @@ namespace Core
 
             CurrentState = state;
             StateChanged.Invoke(CurrentState);
+        }
+
+        public void RememberState()
+        {
+            _rememberedState = CurrentState;
+        }
+
+        public void LoadRememberedState()
+        {
+            UpdateState(_rememberedState);
         }
     }
 }

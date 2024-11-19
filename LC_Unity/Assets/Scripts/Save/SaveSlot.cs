@@ -4,10 +4,11 @@ using Field;
 using Language;
 using Utils;
 using UnityEngine.UI;
+using UI;
 
 namespace Save
 {
-    public class SaveSlot : MonoBehaviour
+    public class SaveSlot : SelectableItem
     {
         [SerializeField]
         private Transform _blankSave;
@@ -26,6 +27,11 @@ namespace Save
         public TMP_Text InGameTime { get { return _inGameTime; } }
         public TMP_Text Location { get { return _location; } }
         public Image[] Characters { get { return _characters; } }
+
+        public override void ShowCursor(bool show)
+        {
+            GetComponent<Image>().enabled = show;
+        }
 
         public void Init(SavedData data)
         {

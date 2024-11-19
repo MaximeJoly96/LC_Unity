@@ -22,5 +22,24 @@ namespace Testing.Core
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuSystemTab);
             Assert.AreEqual(GlobalStateMachine.State.OnField, GlobalStateMachine.Instance.CurrentState);
         }
+
+        [Test]
+        public void StateCanBeRememberedAndReloaded()
+        {
+            GlobalStateMachine machine = GlobalStateMachine.Instance;
+
+            machine.UpdateState(GlobalStateMachine.State.OnField);
+            machine.RememberState();
+
+            Assert.AreEqual(GlobalStateMachine.State.OnField, machine.CurrentState);
+
+            machine.UpdateState(GlobalStateMachine.State.ClosingSaves);
+
+            Assert.AreEqual(GlobalStateMachine.State.ClosingSaves, machine.CurrentState);
+
+            machine.LoadRememberedState();
+
+            Assert.AreEqual(GlobalStateMachine.State.OnField, machine.CurrentState);
+        }
     }
 }
