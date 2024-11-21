@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 42
+  controlID: 44
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 43
+  controlID: 45
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -204,7 +204,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c655fffffc55ffff1c57ffff2658ffff5c58ffff7c59fffff659ffff2c5affff4c5bffff585cffff8e5cffffae5dffffc860fffffe60ffff4a63ffff5264ffff8864ffff2466ffffbe67fffff467ffff7669ffff586effff8e6effffde6fffffbc71fffff271ffff1273ffff5276ffff8876ffffd877ffff10abffff46abffff36adffffbcaffffff2afffff12b1ffffeeb1ffff24b2ffff44b3ffff3ab5ffff70b5ffffbeb6ffff9ab7ffffd0b7ffffc0b9ffff62bcffff98bcffff88beffff08c1ffff3ec1ffff8cc2ffff54c9ffff8ac9ffff44cbffff20ccffff56ccffffdacdffff10d3ffff46d3ffffc6d4ffff38d6ffff6ed6ffffb4d7ffff1cd9ffff52d9ffff98daffff78dbffffaedbffffeedcffff5adeffff90deffffd0dfffff6ce3ffffa2e3ffffcae4ffff2ef6ffff64f6ffffcaf7ffff2efbffffbc5300000e550000187a00006c7a0000f87a0000a27b00004a7c0000b4a700000acd000062ce0000
+      m_ExpandedIDs: 2efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -247,8 +247,8 @@ MonoBehaviour:
     y: 0
     width: 868
     height: 660
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 7}
@@ -287,7 +287,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 878
+    ID: 510
     splitterInitialOffset: 522
     currentActiveSplitter: -1
     realSizes:
@@ -319,7 +319,7 @@ MonoBehaviour:
       name: LC
       fullName: LC
       resultStatus: 2
-      duration: 12.319743
+      duration: 2.3222396
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -335,7 +335,7 @@ MonoBehaviour:
       name: Tests.dll
       fullName: E:/Unity_Projects/LC_Unity/LC_Unity/Library/ScriptAssemblies/Tests.dll
       resultStatus: 2
-      duration: 12.276308
+      duration: 2.257869
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -351,7 +351,7 @@ MonoBehaviour:
       name: Testing
       fullName: Testing
       resultStatus: 2
-      duration: 12.240841
+      duration: 2.2069635
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -8351,7 +8351,7 @@ MonoBehaviour:
       name: Save
       fullName: Testing.Save
       resultStatus: 2
-      duration: 12.2265005
+      duration: 2.1713161
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -8415,9 +8415,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/Testing/Save/[Tests][Testing.Save.SaveCanvasTests][suite]
       name: SaveCanvasTests
       fullName: Testing.Save.SaveCanvasTests
-      resultStatus: 1
-      duration: 3.1592927
-      messages: 
+      resultStatus: 2
+      duration: 2.1636138
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -8431,11 +8431,39 @@ MonoBehaviour:
       uniqueId: Tests.dll/Testing/Save/SaveCanvasTests/[Tests][Testing.Save.SaveCanvasTests.CancelEventIsDetected]
       name: CancelEventIsDetected
       fullName: Testing.Save.SaveCanvasTests.CancelEventIsDetected
-      resultStatus: 1
-      duration: 2.088709
-      messages: 
-      output: 
-      stacktrace: 
+      resultStatus: 2
+      duration: 1.0952829
+      messages: 'Unhandled log message: ''[Exception] ArgumentException: The Object
+        you want to instantiate is null.''. Use UnityEngine.TestTools.LogAssert.Expect'
+      output: 'ArgumentException: The Object you want to instantiate is null.
+
+'
+      stacktrace: 'UnityEngine.Object.CheckNullArgument (System.Object arg, System.String
+        message) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+        UnityEngine.Object.Instantiate
+        (UnityEngine.Object original, UnityEngine.Transform parent, System.Boolean
+        instantiateInWorldSpace) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+        UnityEngine.Object.Instantiate[T]
+        (T original, UnityEngine.Transform parent, System.Boolean worldPositionStays)
+        (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+        UnityEngine.Object.Instantiate[T]
+        (T original, UnityEngine.Transform parent) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+        UI.SelectableList.AddItem
+        () (at Assets/Scripts/UI/SelectableList.cs:121)
+
+        Save.SelectableSavesList.FeedSaves
+        (System.Collections.Generic.List`1[T] saves) (at Assets/Scripts/Save/SelectableSavesList.cs:21)
+
+        Save.SaveCanvas.FinishedOpening
+        () (at Assets/Scripts/Save/SaveCanvas.cs:71)
+
+
+
+'
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -8448,11 +8476,39 @@ MonoBehaviour:
       uniqueId: Tests.dll/Testing/Save/SaveCanvasTests/[Tests][Testing.Save.SaveCanvasTests.GlobalStateIsUpdatedAfterOpening]
       name: GlobalStateIsUpdatedAfterOpening
       fullName: Testing.Save.SaveCanvasTests.GlobalStateIsUpdatedAfterOpening
-      resultStatus: 1
-      duration: 1.0154784
-      messages: 
-      output: 
-      stacktrace: 
+      resultStatus: 2
+      duration: 1.0170068
+      messages: 'Unhandled log message: ''[Exception] ArgumentException: The Object
+        you want to instantiate is null.''. Use UnityEngine.TestTools.LogAssert.Expect'
+      output: 'ArgumentException: The Object you want to instantiate is null.
+
+'
+      stacktrace: 'UnityEngine.Object.CheckNullArgument (System.Object arg, System.String
+        message) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+        UnityEngine.Object.Instantiate
+        (UnityEngine.Object original, UnityEngine.Transform parent, System.Boolean
+        instantiateInWorldSpace) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+        UnityEngine.Object.Instantiate[T]
+        (T original, UnityEngine.Transform parent, System.Boolean worldPositionStays)
+        (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+        UnityEngine.Object.Instantiate[T]
+        (T original, UnityEngine.Transform parent) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+        UI.SelectableList.AddItem
+        () (at Assets/Scripts/UI/SelectableList.cs:121)
+
+        Save.SelectableSavesList.FeedSaves
+        (System.Collections.Generic.List`1[T] saves) (at Assets/Scripts/Save/SelectableSavesList.cs:21)
+
+        Save.SaveCanvas.FinishedOpening
+        () (at Assets/Scripts/Save/SaveCanvas.cs:71)
+
+
+
+'
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -8466,7 +8522,7 @@ MonoBehaviour:
       name: SaveStateChangesAreDetected
       fullName: Testing.Save.SaveCanvasTests.SaveStateChangesAreDetected
       resultStatus: 1
-      duration: 0.0171038
+      duration: 0.0143821
       messages: 
       output: 
       stacktrace: 
@@ -8483,7 +8539,7 @@ MonoBehaviour:
       name: TooltipIsUpdatedWhenSaveStateChanges
       fullName: Testing.Save.SaveCanvasTests.TooltipIsUpdatedWhenSaveStateChanges
       resultStatus: 1
-      duration: 0.0118653
+      duration: 0.0119307
       messages: 
       output: 
       stacktrace: 
@@ -8651,9 +8707,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/Testing/Save/[Tests][Testing.Save.SaveLoaderTests][suite]
       name: SaveLoaderTests
       fullName: Testing.Save.SaveLoaderTests
-      resultStatus: 0
-      duration: 12.213441
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.0515941
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -8684,19 +8740,11 @@ MonoBehaviour:
       uniqueId: Tests.dll/Testing/Save/SaveLoaderTests/[Tests][Testing.Save.SaveLoaderTests.SaveDescriptorsCanBeObtained]
       name: SaveDescriptorsCanBeObtained
       fullName: Testing.Save.SaveLoaderTests.SaveDescriptorsCanBeObtained
-      resultStatus: 0
-      duration: 12.131723
-      messages: 'System.IndexOutOfRangeException : Index was outside the bounds of
-        the array.'
+      resultStatus: 1
+      duration: 0.0292467
+      messages: 
       output: 
-      stacktrace: "  at Save.SaveLoader.GetSaveDescriptors (System.String path) [0x000d9]
-        in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Scripts\\Save\\SaveLoader.cs:117
-        \r\n  at Testing.Save.SaveLoaderTests.SaveDescriptorsCanBeObtained () [0x00007]
-        in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Tests\\Save\\SaveLoaderTests.cs:48
-        \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
-        at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
-        invokeAttr, System.Reflection.Binder binder, System.Object[] parameters,
-        System.Globalization.CultureInfo culture) [0x0006a] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 "
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -8710,7 +8758,7 @@ MonoBehaviour:
       name: SaveManagerTests
       fullName: Testing.Save.SaveManagerTests
       resultStatus: 1
-      duration: 0.0444833
+      duration: 0.0564659
       messages: 
       output: 
       stacktrace: 
@@ -8721,12 +8769,46 @@ MonoBehaviour:
       categories: []
       parentId: 1435
       parentUniqueId: Tests.dll/Testing/[Tests][Testing.Save][suite]
+    - id: 1075
+      uniqueId: Tests.dll/Testing/Save/SaveManagerTests/[Tests][Testing.Save.SaveManagerTests.DescriptorsCanBeMerged]
+      name: DescriptorsCanBeMerged
+      fullName: Testing.Save.SaveManagerTests.DescriptorsCanBeMerged
+      resultStatus: 1
+      duration: 0.0239358
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1071
+      parentUniqueId: Tests.dll/Testing/Save/[Tests][Testing.Save.SaveManagerTests][suite]
+    - id: 1074
+      uniqueId: Tests.dll/Testing/Save/SaveManagerTests/[Tests][Testing.Save.SaveManagerTests.EmptySlotsCanBeCreated]
+      name: EmptySlotsCanBeCreated
+      fullName: Testing.Save.SaveManagerTests.EmptySlotsCanBeCreated
+      resultStatus: 1
+      duration: 0.0006922
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1071
+      parentUniqueId: Tests.dll/Testing/Save/[Tests][Testing.Save.SaveManagerTests][suite]
     - id: 1067
       uniqueId: Tests.dll/Testing/Save/SaveManagerTests/[Tests][Testing.Save.SaveManagerTests.SaveCreationRequestIsDetected]
       name: SaveCreationRequestIsDetected
       fullName: Testing.Save.SaveManagerTests.SaveCreationRequestIsDetected
       resultStatus: 1
-      duration: 0.0217219
+      duration: 0.002681
       messages: 
       output: 
       stacktrace: 
@@ -8743,7 +8825,7 @@ MonoBehaviour:
       name: SaveLoadRequestIsDetected
       fullName: Testing.Save.SaveManagerTests.SaveLoadRequestIsDetected
       resultStatus: 1
-      duration: 0.0006096
+      duration: 0.0005996
       messages: 
       output: 
       stacktrace: 
@@ -9781,27 +9863,73 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1008
       parentUniqueId: Tests.dll/Testing/Utils/[Tests][Testing.Utils.TimeConverterTests][suite]
-    m_ResultText: "SaveDescriptorsCanBeObtained (12,132s)\n---\nSystem.IndexOutOfRangeException
-      : Index was outside the bounds of the array.\n---\nat Save.SaveLoader.GetSaveDescriptors
-      (System.String path) [0x000d9] in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Scripts\\Save\\SaveLoader.cs:117
-      \r\n  at Testing.Save.SaveLoaderTests.SaveDescriptorsCanBeObtained () [0x00007]
-      in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Tests\\Save\\SaveLoaderTests.cs:48
-      \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
-      at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
-      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
-      culture) [0x0006a] in <7b935204f5ff4bcab44b3b0ebca330bf>:0"
-    m_ResultStacktrace: "  at Save.SaveLoader.GetSaveDescriptors (System.String path)
-      [0x000d9] in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Scripts\\Save\\SaveLoader.cs:117
-      \r\n  at Testing.Save.SaveLoaderTests.SaveDescriptorsCanBeObtained () [0x00007]
-      in E:\\Unity_Projects\\LC_Unity\\LC_Unity\\Assets\\Tests\\Save\\SaveLoaderTests.cs:48
-      \r\n  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)\r\n 
-      at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags
-      invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo
-      culture) [0x0006a] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 "
+    m_ResultText: 'CancelEventIsDetected (1,095s)
+
+      ---
+
+      Unhandled log
+      message: ''[Exception] ArgumentException: The Object you want to instantiate
+      is null.''. Use UnityEngine.TestTools.LogAssert.Expect
+
+      ---
+
+      UnityEngine.Object.CheckNullArgument
+      (System.Object arg, System.String message) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+      UnityEngine.Object.Instantiate
+      (UnityEngine.Object original, UnityEngine.Transform parent, System.Boolean
+      instantiateInWorldSpace) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+      UnityEngine.Object.Instantiate[T]
+      (T original, UnityEngine.Transform parent, System.Boolean worldPositionStays)
+      (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+      UnityEngine.Object.Instantiate[T]
+      (T original, UnityEngine.Transform parent) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+      UI.SelectableList.AddItem
+      () (at Assets/Scripts/UI/SelectableList.cs:121)
+
+      Save.SelectableSavesList.FeedSaves
+      (System.Collections.Generic.List`1[T] saves) (at Assets/Scripts/Save/SelectableSavesList.cs:21)
+
+      Save.SaveCanvas.FinishedOpening
+      () (at Assets/Scripts/Save/SaveCanvas.cs:71)
+
+      ---
+
+      ArgumentException:
+      The Object you want to instantiate is null.'
+    m_ResultStacktrace: 'UnityEngine.Object.CheckNullArgument (System.Object arg,
+      System.String message) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+      UnityEngine.Object.Instantiate
+      (UnityEngine.Object original, UnityEngine.Transform parent, System.Boolean
+      instantiateInWorldSpace) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+      UnityEngine.Object.Instantiate[T]
+      (T original, UnityEngine.Transform parent, System.Boolean worldPositionStays)
+      (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+      UnityEngine.Object.Instantiate[T]
+      (T original, UnityEngine.Transform parent) (at <8f6273cfb38947c9ab9b03fcb4ab3d17>:0)
+
+      UI.SelectableList.AddItem
+      () (at Assets/Scripts/UI/SelectableList.cs:121)
+
+      Save.SelectableSavesList.FeedSaves
+      (System.Collections.Generic.List`1[T] saves) (at Assets/Scripts/Save/SelectableSavesList.cs:21)
+
+      Save.SaveCanvas.FinishedOpening
+      () (at Assets/Scripts/Save/SaveCanvas.cs:71)
+
+
+
+'
     m_TestListState:
-      scrollPos: {x: 0, y: 1413}
-      m_SelectedIDs: ea48613e
-      m_LastClickedID: 1046563050
+      scrollPos: {x: 0, y: 1233}
+      m_SelectedIDs: 8257834c
+      m_LastClickedID: 1283676034
       m_ExpandedIDs: 0cdece80e95922837d27c088ddd5208b5155378cd887a28e2a9e4c93c87ae496241beb972382bb9c8330b39d02715a9e09add29e759bef9ed340b9a17bf06da2d4aaefa4b76bf0a5a4ca3fa65f79f2a829bf73aa914bb5ad079c34aef87addb13bf28fb7b75f6dbe3c9679be944c81be024969c1ad0dd3c21665e8c598d140c68c3bacc713d282c802a7b6c95c8600ca2bab08cd80cb9ccdd14892d237d566d76e3b5fd9a5300eda1eda61da628e6ddb1031dddcc77613dd7c6e4bdd8c60acded0fc5cdf3f92c2df32b5d8e15d006de6427858ea02b6e9ea6b36cdee4eaf28ef2f67adefafd157f2fde983f3d5f817f65bc100f7e557abf787cbe0f8cf7f5cf9390acefbd34366fcf586d3fcbbb68d003872b70371ab9407b8935908e9ea6b094deeca0900b5fa09b24fa80bd84bb217d67107197bd7f21a4522021b01d8b11c720b2f1ec48194229038d02306d9b6268d11e026271162275410cf293ae17a2acc405a316e478e31ba63e033afaa083888ba9e3a5900253bf504303ea67fca4232d0ec4353adc94484f5ef448dd8cb468a2075497e134b4b4bc765507441155175b2fe52958cc95ad40d6d61d0dfe362a31ce0657899ab6637ca336b8092776b15b5276c2b342b6e1640d16f12e13e719f3f9473a67d017432871475accef176ca400a77c3313d77158eb47be4ff637efd6e247f199a897fffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -11052,10 +11180,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 26a51217a5896574e8146cd593abf7eb,
+  m_AnimatorController: {fileID: 9100000, guid: 379dbfeb6b450944d9a9944b1d3dfb47,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 4860182366331858191, guid: 26a51217a5896574e8146cd593abf7eb,
+  - m_Target: {fileID: 7274301593529720717, guid: 379dbfeb6b450944d9a9944b1d3dfb47,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -11100,7 +11228,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 57064
+  m_LastSelectedObjectID: 68964
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -11448,8 +11576,8 @@ MonoBehaviour:
     y: 0
     width: 774
     height: 660
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -11611,7 +11739,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 490}
     m_SelectedIDs: 74610000
     m_LastClickedID: 24948
-    m_ExpandedIDs: 00000000486000004a6000004c6000004e60000050600000526000005460000056600000586000005a60000070610000b065000034660000d67000002a9e000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000086000000a6000000c6000000e60000010600000126000001460000016600000186000001a600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -11639,7 +11767,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000486000004a6000004c6000004e60000050600000526000005460000056600000586000005a600000
+    m_ExpandedIDs: 00000000086000000a6000000c6000000e60000010600000126000001460000016600000186000001a600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

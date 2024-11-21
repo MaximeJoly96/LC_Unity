@@ -15,7 +15,7 @@ namespace Save
         [SerializeField]
         private TMP_Text _slotIdLabel;
 
-        public SavedData Data { get; private set; }
+        public int SlotId { get; private set; }
         public TMP_Text InGameTime { get { return _inGameTime; } set { _inGameTime = value; } }
         public TMP_Text SlotIdLabel { get { return _slotIdLabel; } set { _slotIdLabel = value; } }
         public Animator Animator
@@ -28,6 +28,7 @@ namespace Save
 
         public void Init(SaveDescriptor descriptor)
         {
+            SlotId = descriptor.Id;
             SlotIdLabel.text = descriptor.Id.ToString();
 
             if (descriptor.MapId == -1)

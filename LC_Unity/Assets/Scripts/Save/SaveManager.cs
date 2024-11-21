@@ -24,7 +24,7 @@ namespace Save
     {
         public enum SaveState { CreateSave, LoadSave, Closed }
 
-        private const int MAX_SAVES = 10;
+        private const int MAX_SAVES = 7;
 
         private static SaveManager _instance;
 
@@ -97,9 +97,6 @@ namespace Save
 
         private void OpenSaveWindow(SaveState state)
         {
-            // We need to store the current state before it changes. Once the window closes, we need to go back to that state.
-            GlobalStateMachine.Instance.RememberState();
-
             CurrentSaveState = state;
             SaveStateChanged.Invoke(CurrentSaveState);
         }
@@ -114,15 +111,10 @@ namespace Save
             OpenSaveWindow(SaveState.LoadSave);
         }
 
-        public void LoadPreviousState()
-        {
-            SaveCancelledEvent.Invoke();
-        }
-
         public void FinishedClosing()
         {
             CurrentSaveState = SaveState.Closed;
-            GlobalStateMachine.Instance.LoadRememberedState();
+            SaveCancelledEvent.Invoke();
         }
 
         public List<SaveDescriptor> GetSaveDescriptors()
@@ -168,6 +160,11 @@ namespace Save
                 PartyManager.Instance.SetInventory(Data.Inventory);
                 PartyManager.Instance.ChangeGold(new Engine.Party.ChangeGold { Value = Data.Gold });
                 PartyManager.Instance.LoadPartyFromSave(Data.Party);
+
+                GlobalStateMachine.Instance.CurrentMapId = Data.MapID;
+                GameObject.FindObjectOfType<GlobalTimer>().InitInGameTimer(Data.InGameTimeSeconds);
+                GameObject.FindObjectOfType<AudioPlayer>().StopAllAudio();
+                SceneManager.LoadScene("Field");
             }
             catch(Exception e)
             {
@@ -200,26 +197,6 @@ namespace Save
             }
 
             CloseSaveWindow();
-        }
-
-        public void SlotSelected(int slotId)
-        {
-            switch(CurrentSaveState)
-            {
-                case SaveState.CreateSave:
-                    CreateSaveFile(slotId);
-                    break;
-                case SaveState.LoadSave:
-                    LoadSaveFile(slotId);
-                    break;
-            }
-
-            CloseSaveWindow();
-
-            GlobalStateMachine.Instance.CurrentMapId = Data.MapID;
-            GameObject.FindObjectOfType<GlobalTimer>().InitInGameTimer(Data.InGameTimeSeconds);
-            GameObject.FindObjectOfType<AudioPlayer>().StopAllAudio();
-            SceneManager.LoadScene("Field");
         }
 
         private List<Character> RetrievePartyData(Dictionary<string, string> saveData)

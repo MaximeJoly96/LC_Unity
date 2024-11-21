@@ -12,8 +12,6 @@ namespace Save
 {
     public class SaveCanvas : MonoBehaviour
     {
-        private const int MAX_SAVES = 15;
-
         [SerializeField]
         private TMP_Text _tooltip;
         [SerializeField]
@@ -40,6 +38,7 @@ namespace Save
 
             _savesList.Init();
             _savesList.SelectionCancelled.AddListener(SelectionCancelled);
+            _savesList.ItemSelected.AddListener(ItemSelected);
         }
 
         private void SaveStateChanged(SaveManager.SaveState state)
@@ -56,7 +55,9 @@ namespace Save
 
         public void Close()
         {
-            if(Animator)
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.ClosingSaves);
+
+            if (Animator)
                 Animator.Play("CloseSaveWindow");
         }
 
@@ -98,16 +99,20 @@ namespace Save
 
         private void SelectionCancelled()
         {
-            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.ClosingSaves);
             Close();
         }
 
-        private void ProceedWithSaveCreation(MessageBoxAnswer result)
+        private void ItemSelected()
         {
-            /*if (result == MessageBoxAnswer.Yes)
-                SaveManager.Instance.SlotSelected(_cursorPosition);
-            else
-                GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SaveMenu);*/
+            SaveSlot slot = _savesList.SelectedItem as SaveSlot;
+
+            if(SaveManager.Instance.CurrentSaveState == SaveManager.SaveState.CreateSave)
+                SaveManager.Instance.CreateSaveFile(slot.SlotId);
+
+            SaveManager.Instance.LoadSaveFile(slot.SlotId);
+
+            Close();
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField);
         }
     }
 }

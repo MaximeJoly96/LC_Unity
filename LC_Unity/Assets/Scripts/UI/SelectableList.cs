@@ -17,6 +17,7 @@ namespace UI
 
         protected UnityEvent _selectionCancelled;
         protected UnityEvent _selectionChanged;
+        protected UnityEvent _itemSelected;
 
         public List<SelectableItem> CreatedItems { get { return _createdItems; } }
         public int CursorPosition { get { return _cursorPosition; } }
@@ -42,6 +43,17 @@ namespace UI
             }
         }
 
+        public UnityEvent ItemSelected
+        {
+            get
+            {
+                if(_itemSelected == null)
+                    _itemSelected = new UnityEvent();
+
+                return _itemSelected;
+            }
+        }
+
         protected virtual void Awake()
         {
             _createdItems = new List<SelectableItem>();
@@ -60,6 +72,7 @@ namespace UI
             receiver.OnMoveUp.RemoveAllListeners();
             receiver.OnMoveDown.RemoveAllListeners();
             receiver.OnCancel.RemoveAllListeners();
+            receiver.OnSelect.RemoveAllListeners();
 
             receiver.OnMoveUp.AddListener(() =>
             {
@@ -85,6 +98,15 @@ namespace UI
                 {
                     CommonSounds.ActionCancelled();
                     Cancel();
+                }
+            });
+
+            receiver.OnSelect.AddListener(() =>
+            {
+                if (CanReceiveInputs())
+                {
+                    CommonSounds.OptionSelected();
+                    SelectItem();
                 }
             });
         }
@@ -135,6 +157,11 @@ namespace UI
         {
             _cursorPosition = 0;
             PlaceCursor();
+        }
+
+        protected virtual void SelectItem()
+        {
+            ItemSelected.Invoke();
         }
 
         public virtual void Clear()
