@@ -1,0 +1,928 @@
+Using pre-set license
+Built from '2021.2/staging' branch; Version is '2021.2.13f1 (90b6766da538) revision 9483894'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'fr' Physical Memory: 16339 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+E:\Unity\2021.2.13f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/Unity_Projects/LC_Unity/LC_Unity
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+59981
+Successfully changed project path to: E:/Unity_Projects/LC_Unity/LC_Unity
+E:/Unity_Projects/LC_Unity/LC_Unity
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 62.34 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.2.13f1 (90b6766da538)
+[Subsystems] Discovering subsystems at path E:/Unity/2021.2.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/Unity_Projects/LC_Unity/LC_Unity/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     6029 MB
+    Driver:   32.0.15.6614
+Initialize mono
+Mono path[0] = 'E:/Unity/2021.2.13f1/Editor/Data/Managed'
+Mono path[1] = 'E:/Unity/2021.2.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'E:/Unity/2021.2.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56896
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: E:/Unity/2021.2.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: E:/Unity/2021.2.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004329 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 52.11 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.851 seconds
+Domain Reload Profiling:
+	ReloadAssembly (852ms)
+		BeginReloadAssembly (95ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (618ms)
+			LoadAssemblies (94ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (155ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (336ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (70ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (52ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (141ms)
+				ProcessInitializeOnLoadMethodAttributes (70ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002888 seconds.
+Android Extension - Scanning For ADB Devices 823 ms
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.257 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1258ms)
+		BeginReloadAssembly (189ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (52ms)
+		EndReloadAssembly (915ms)
+			LoadAssemblies (109ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (258ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (439ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (67ms)
+				ProcessInitializeOnLoadAttributes (301ms)
+				ProcessInitializeOnLoadMethodAttributes (45ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2272 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (55.9 KB). Loaded Objects now: 2744.
+Memory consumption went from 89.9 MB to 89.9 MB.
+Total: 3.851000 ms (FindLiveObjects: 0.265400 ms CreateObjectMapping: 0.070600 ms MarkObjects: 3.415800 ms  DeleteObjects: 0.097600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 481683.680891 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eb8125360953baf014bdc9b056b2455') in 0.649256 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.700635 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarInterior.prefab
+  artifactKey: Guid(e32772f7947134a48a6e72cf1d0ffd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarInterior.prefab using Guid(e32772f7947134a48a6e72cf1d0ffd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '903c372f8d9b7ee77f06a6ef5f5284a3') in 0.210858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanInterior.prefab
+  artifactKey: Guid(7f63fb16985bac5468fa785e069b0036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanInterior.prefab using Guid(7f63fb16985bac5468fa785e069b0036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8da0f29318207c3c67d7e63e486a81bd') in 0.220387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarracksBasement.prefab
+  artifactKey: Guid(859f62a41cba8df43a4d77314c265110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarracksBasement.prefab using Guid(859f62a41cba8df43a4d77314c265110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2184b317017a1047dd49edee27ec693') in 0.181746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HouseInterior.prefab
+  artifactKey: Guid(c5d437b034db4fd4287ecf726398da08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HouseInterior.prefab using Guid(c5d437b034db4fd4287ecf726398da08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91aff835e427f1a612196bccd482e72c') in 0.180413 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanBasement.prefab
+  artifactKey: Guid(766b67947975b404fba753a8eb8e75f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanBasement.prefab using Guid(766b67947975b404fba753a8eb8e75f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0c36f5d909f3cbbb3aad8ec3271ae77') in 0.155913 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarracksInterior.prefab
+  artifactKey: Guid(7540e9db0fc9502469df53114008945d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarracksInterior.prefab using Guid(7540e9db0fc9502469df53114008945d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '579a5671c5d29f5b7403397d921d3c07') in 0.160914 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/WeaponShopInterior.prefab
+  artifactKey: Guid(53225437318d5bf40b0de0fa7f49a9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/WeaponShopInterior.prefab using Guid(53225437318d5bf40b0de0fa7f49a9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '104de7213c4311c215d1bbf388bba66d') in 0.169127 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/ItemShopInterior.prefab
+  artifactKey: Guid(0228bdd11c343be4c89480a22ae44bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/ItemShopInterior.prefab using Guid(0228bdd11c343be4c89480a22ae44bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8af4736153d285a4138916759c12b772') in 0.297975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.140001 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarInterior.prefab
+  artifactKey: Guid(e32772f7947134a48a6e72cf1d0ffd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarInterior.prefab using Guid(e32772f7947134a48a6e72cf1d0ffd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5e5bfbe24d177d15ee689ecf0caa0e8') in 0.228635 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanInterior.prefab
+  artifactKey: Guid(7f63fb16985bac5468fa785e069b0036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanInterior.prefab using Guid(7f63fb16985bac5468fa785e069b0036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1d41daf69c032d70e31020f8a35d5e4') in 0.173795 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarracksBasement.prefab
+  artifactKey: Guid(859f62a41cba8df43a4d77314c265110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarracksBasement.prefab using Guid(859f62a41cba8df43a4d77314c265110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8663827dcac8a00545ac448a49f8406') in 0.154085 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HouseInterior.prefab
+  artifactKey: Guid(c5d437b034db4fd4287ecf726398da08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HouseInterior.prefab using Guid(c5d437b034db4fd4287ecf726398da08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6970b198aa9711bd40b655582c0d8071') in 0.172619 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanBasement.prefab
+  artifactKey: Guid(766b67947975b404fba753a8eb8e75f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanBasement.prefab using Guid(766b67947975b404fba753a8eb8e75f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d36e561a4d5b6867a74f86b6b215402') in 0.209009 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarracksInterior.prefab
+  artifactKey: Guid(7540e9db0fc9502469df53114008945d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarracksInterior.prefab using Guid(7540e9db0fc9502469df53114008945d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f07ded521a3c5313c33c77184905237') in 0.179208 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/WeaponShopInterior.prefab
+  artifactKey: Guid(53225437318d5bf40b0de0fa7f49a9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/WeaponShopInterior.prefab using Guid(53225437318d5bf40b0de0fa7f49a9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6756053ef4e67d70e27e462ff15cad02') in 0.206534 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/ItemShopInterior.prefab
+  artifactKey: Guid(0228bdd11c343be4c89480a22ae44bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/ItemShopInterior.prefab using Guid(0228bdd11c343be4c89480a22ae44bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '580d678bca534ed5c9b593a8a1371b88') in 0.162731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.912161 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarInterior.prefab
+  artifactKey: Guid(e32772f7947134a48a6e72cf1d0ffd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarInterior.prefab using Guid(e32772f7947134a48a6e72cf1d0ffd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fb5e829bee9547dd7a5ff414b211cb4') in 0.202378 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanInterior.prefab
+  artifactKey: Guid(7f63fb16985bac5468fa785e069b0036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanInterior.prefab using Guid(7f63fb16985bac5468fa785e069b0036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6589f549b79b98bbf3de333a907d905c') in 0.174294 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarracksBasement.prefab
+  artifactKey: Guid(859f62a41cba8df43a4d77314c265110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarracksBasement.prefab using Guid(859f62a41cba8df43a4d77314c265110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f4eb77ee3b46aa747be02f0da961e7b') in 0.152447 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HouseInterior.prefab
+  artifactKey: Guid(c5d437b034db4fd4287ecf726398da08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HouseInterior.prefab using Guid(c5d437b034db4fd4287ecf726398da08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb1a50462db99fc662c4b861f36257bf') in 0.196740 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.101717 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarInterior.prefab
+  artifactKey: Guid(e32772f7947134a48a6e72cf1d0ffd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarInterior.prefab using Guid(e32772f7947134a48a6e72cf1d0ffd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23af5eaa146f7b8fed362ea3f21cd7ae') in 0.210479 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000121 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanInterior.prefab
+  artifactKey: Guid(7f63fb16985bac5468fa785e069b0036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanInterior.prefab using Guid(7f63fb16985bac5468fa785e069b0036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '489c4778a69438d949d35a053aefa336') in 0.171558 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarracksBasement.prefab
+  artifactKey: Guid(859f62a41cba8df43a4d77314c265110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarracksBasement.prefab using Guid(859f62a41cba8df43a4d77314c265110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89d7718e416fcf62c641e1fbb480561c') in 0.165079 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HouseInterior.prefab
+  artifactKey: Guid(c5d437b034db4fd4287ecf726398da08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HouseInterior.prefab using Guid(c5d437b034db4fd4287ecf726398da08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '711edcebbf2d8052c566ae83c993a91f') in 0.158110 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanBasement.prefab
+  artifactKey: Guid(766b67947975b404fba753a8eb8e75f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanBasement.prefab using Guid(766b67947975b404fba753a8eb8e75f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cce163aca6d5bf9bd3ba79dbce3a933') in 0.149304 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarracksInterior.prefab
+  artifactKey: Guid(7540e9db0fc9502469df53114008945d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarracksInterior.prefab using Guid(7540e9db0fc9502469df53114008945d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a42b8fa0948466670c9304c1a3fcceeb') in 0.154759 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/WeaponShopInterior.prefab
+  artifactKey: Guid(53225437318d5bf40b0de0fa7f49a9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/WeaponShopInterior.prefab using Guid(53225437318d5bf40b0de0fa7f49a9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e5828054acdea86892d3356bbf588b6') in 0.155732 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.115759 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarInterior.prefab
+  artifactKey: Guid(e32772f7947134a48a6e72cf1d0ffd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarInterior.prefab using Guid(e32772f7947134a48a6e72cf1d0ffd33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bd5d9e04e7690cbc26eed16b9dcc2de') in 0.188165 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanInterior.prefab
+  artifactKey: Guid(7f63fb16985bac5468fa785e069b0036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanInterior.prefab using Guid(7f63fb16985bac5468fa785e069b0036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a129923a63f148c89ab8e588444bd5b8') in 0.161455 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarracksBasement.prefab
+  artifactKey: Guid(859f62a41cba8df43a4d77314c265110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarracksBasement.prefab using Guid(859f62a41cba8df43a4d77314c265110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10df9193404f382e8d72cd1ace0012ee') in 0.166872 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HouseInterior.prefab
+  artifactKey: Guid(c5d437b034db4fd4287ecf726398da08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HouseInterior.prefab using Guid(c5d437b034db4fd4287ecf726398da08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa116b08ab2c0bc1699a98f4bee1559e') in 0.163479 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanBasement.prefab
+  artifactKey: Guid(766b67947975b404fba753a8eb8e75f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/HuntersClanBasement.prefab using Guid(766b67947975b404fba753a8eb8e75f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fddeeda1143c4ec29ddd5498d7fcfecd') in 0.216045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/BarracksInterior.prefab
+  artifactKey: Guid(7540e9db0fc9502469df53114008945d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/BarracksInterior.prefab using Guid(7540e9db0fc9502469df53114008945d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e240c2787ef6bfa544c196e805413dee') in 0.191094 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/WeaponShopInterior.prefab
+  artifactKey: Guid(53225437318d5bf40b0de0fa7f49a9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/WeaponShopInterior.prefab using Guid(53225437318d5bf40b0de0fa7f49a9b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a0bdb2590d93251a47a0eb3cdafa1c4') in 0.162980 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Data/Maps/Haalmikah/PlayableFields/ItemShopInterior.prefab
+  artifactKey: Guid(0228bdd11c343be4c89480a22ae44bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/PlayableFields/ItemShopInterior.prefab using Guid(0228bdd11c343be4c89480a22ae44bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c269c4f203f2f61b6cdb03f504c64f00') in 0.158085 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.095267 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10fa0fdb7e3fd1f8cda80344ac8f7fa3') in 0.170626 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.219935 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd175639dd5aa047da699f672ca0c4c2') in 0.177545 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.729906 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf7311f5c0f514b492de7781eef54eb2') in 0.468136 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.968890 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6e518e877337d3adcb567907388dbb9') in 0.186775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.871782 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abe6a2a958a4486b3e688f0cde2d49dd') in 0.172558 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.259499 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68b01d6df4ccdd61538c28d8cf289237') in 0.192383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.258184 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cb1e2e2775d16c17a2f3e3bb87f72f7') in 0.180673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.473480 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89fab058ed5e5f3d042f1c7a65e19081') in 0.187404 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.493666 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b6fc99067f33251b0e936f8779aa48e') in 0.248723 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002367 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.259 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1260ms)
+		BeginReloadAssembly (168ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (975ms)
+			LoadAssemblies (89ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (219ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (85ms)
+			SetupLoadedEditorAssemblies (502ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (32ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (80ms)
+				ProcessInitializeOnLoadAttributes (336ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2254 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2752.
+Memory consumption went from 94.3 MB to 94.3 MB.
+Total: 3.822000 ms (FindLiveObjects: 0.203400 ms CreateObjectMapping: 0.054900 ms MarkObjects: 3.543300 ms  DeleteObjects: 0.018800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 75.492111 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b324398d43b1b6808090f81ece916b7') in 0.244203 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002411 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.286 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1287ms)
+		BeginReloadAssembly (147ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (1026ms)
+			LoadAssemblies (89ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (217ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (73ms)
+			SetupLoadedEditorAssemblies (586ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (26ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (86ms)
+				ProcessInitializeOnLoadAttributes (413ms)
+				ProcessInitializeOnLoadMethodAttributes (54ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.34 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2254 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.7 KB). Loaded Objects now: 2754.
+Memory consumption went from 94.3 MB to 94.3 MB.
+Total: 9.210800 ms (FindLiveObjects: 0.298600 ms CreateObjectMapping: 0.074800 ms MarkObjects: 8.814300 ms  DeleteObjects: 0.021100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 18053.707149 seconds.
+  path: Assets/Data/Characters/Playables/Louga.prefab
+  artifactKey: Guid(ce3ef97071cb0e043a66f39052a6ba0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Characters/Playables/Louga.prefab using Guid(ce3ef97071cb0e043a66f39052a6ba0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17016a25a3b7eecc93a023d75029e014') in 0.401691 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.426253 seconds.
+  path: Assets/Data/Characters/NPCs
+  artifactKey: Guid(6a1e6424042434d4488ac4da03c363c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Characters/NPCs using Guid(6a1e6424042434d4488ac4da03c363c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1781c2b5f9df633e7431039cd3b98c53') in 0.002605 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 36.312080 seconds.
+  path: Assets/Data/Characters/NPCs/Pernambulis_Soldier_1.png
+  artifactKey: Guid(5a791b41ff6a0f94a9341b8a58e76db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Characters/NPCs/Pernambulis_Soldier_1.png using Guid(5a791b41ff6a0f94a9341b8a58e76db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '156a4575d1220d85b165da16e276d5d5') in 0.199596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.177851 seconds.
+  path: Assets/Data/Characters/NPCs/Pernambulis_Soldier_1.png
+  artifactKey: Guid(5a791b41ff6a0f94a9341b8a58e76db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Characters/NPCs/Pernambulis_Soldier_1.png using Guid(5a791b41ff6a0f94a9341b8a58e76db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b999a045b9ad362a98bf00a40f36e6f') in 0.010688 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.139460 seconds.
+  path: Assets/Data/Characters/NPCs/Pernambulis_Soldier_1.png
+  artifactKey: Guid(5a791b41ff6a0f94a9341b8a58e76db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Characters/NPCs/Pernambulis_Soldier_1.png using Guid(5a791b41ff6a0f94a9341b8a58e76db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05d0d711fe2a4f7d1034a3ec630020e8') in 0.132198 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.852994 seconds.
+  path: Assets/Data/Animations/NPCs
+  artifactKey: Guid(46f521205dc5e9e46927c713404257e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/NPCs using Guid(46f521205dc5e9e46927c713404257e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad01b6e0b6f308ae790fa3750c2bc6b6') in 0.002081 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.450929 seconds.
+  path: Assets/Data/Animations/NPCs/Pernambulis_Soldier_1
+  artifactKey: Guid(58cd1bee0b34bbc448b371a4a9b015a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/NPCs/Pernambulis_Soldier_1 using Guid(58cd1bee0b34bbc448b371a4a9b015a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4becc05f5ff44fecfc6cc9f6dd3f86ed') in 0.001826 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.722680 seconds.
+  path: Assets/Data/Animations/NPCs/Pernambulis_Soldier_1/Pernambulis_Soldier_1Controller.controller
+  artifactKey: Guid(a26e37e32db2dd745a01b5731af540d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/NPCs/Pernambulis_Soldier_1/Pernambulis_Soldier_1Controller.controller using Guid(a26e37e32db2dd745a01b5731af540d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8967243c799fa895c5bd2bbebb9da9b6') in 0.006137 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.499998 seconds.
+  path: Assets/Data/Animations/MainCharacters/Dagner_Alive/DagnerAliveController.controller
+  artifactKey: Guid(61ab130c6e6fba24ca65bc9a9a5c0fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/MainCharacters/Dagner_Alive/DagnerAliveController.controller using Guid(61ab130c6e6fba24ca65bc9a9a5c0fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9534a9df65627d0767da9e5f07f7cf04') in 0.007918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.332060 seconds.
+  path: Assets/Data/Animations/NPCs/Pernambulis_Soldier_1/DagnerAliveController.controller
+  artifactKey: Guid(35eabbbb834a008458640257d5521c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/NPCs/Pernambulis_Soldier_1/DagnerAliveController.controller using Guid(35eabbbb834a008458640257d5521c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bad66d97908080282e1b79eef2fa836') in 0.006647 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.456989 seconds.
+  path: Assets/Data/Animations/NPCs/Pernambulis_Soldier_1/Pernambulis_Soldier_1Controller.controller
+  artifactKey: Guid(35eabbbb834a008458640257d5521c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/NPCs/Pernambulis_Soldier_1/Pernambulis_Soldier_1Controller.controller using Guid(35eabbbb834a008458640257d5521c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '314951638d9e7833b764c9e41b37036a') in 0.005987 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 102.668229 seconds.
+  path: Assets/Scenes/Field.unity
+  artifactKey: Guid(821aea5891f4fda46880a2119fb0441b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Field.unity using Guid(821aea5891f4fda46880a2119fb0441b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96487c231f922a1c43528e5e626c41e5') in 0.017655 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 85.413578 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ab0af5f1a0feed9835fb565c5e2efb4') in 0.313727 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 45.105327 seconds.
+  path: Assets/Data/Characters/NPCs/Pernambulis_Soldier_1.png
+  artifactKey: Guid(5a791b41ff6a0f94a9341b8a58e76db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Characters/NPCs/Pernambulis_Soldier_1.png using Guid(5a791b41ff6a0f94a9341b8a58e76db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c2da3f6b4050e635300f4638e1b984d') in 0.133604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 338.619803 seconds.
+  path: Assets/Scenes/TitleScreen.unity
+  artifactKey: Guid(889bf1c2a4b971c48a8487847c5cfd11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TitleScreen.unity using Guid(889bf1c2a4b971c48a8487847c5cfd11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48619e56c65fb756d40c6f89d6d6ca33') in 0.003927 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002585 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.360 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1361ms)
+		BeginReloadAssembly (214ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (86ms)
+		EndReloadAssembly (1027ms)
+			LoadAssemblies (103ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (243ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (522ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (38ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (83ms)
+				ProcessInitializeOnLoadAttributes (344ms)
+				ProcessInitializeOnLoadMethodAttributes (49ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.60 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2254 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2761.
+Memory consumption went from 94.4 MB to 94.4 MB.
+Total: 5.278500 ms (FindLiveObjects: 0.236200 ms CreateObjectMapping: 0.152100 ms MarkObjects: 4.851300 ms  DeleteObjects: 0.036900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002574 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.437 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1439ms)
+		BeginReloadAssembly (152ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (1174ms)
+			LoadAssemblies (92ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (220ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (76ms)
+			SetupLoadedEditorAssemblies (727ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (27ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (569ms)
+				ProcessInitializeOnLoadMethodAttributes (55ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2254 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2763.
+Memory consumption went from 94.4 MB to 94.4 MB.
+Total: 3.507700 ms (FindLiveObjects: 0.228800 ms CreateObjectMapping: 0.076200 ms MarkObjects: 3.180900 ms  DeleteObjects: 0.020200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 155.873051 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9101c629412069cd4ce1215b6065bd5') in 0.315651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.004369 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd97959d1c3f1fddcff882b86a8d60cad') in 0.254055 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.174414 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f98602a814107a6407f3743ef08f82fb') in 0.235611 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.966599 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e996cd95c163d04fbc471f6079328c3') in 0.318753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.277822 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f05279b6e0ee12b5696b35b826e4bf2') in 0.229258 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.161462 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c6be0979ac81a291567d14ff74b9606') in 0.234521 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.849891 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cb14bfa787bf91647de7414a6d3149b') in 0.241669 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.487111 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53187efbae4281a4a4fc7c8158bd6229') in 0.223364 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.245264 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e62863a93194eb786153ac79cdfbb55e') in 0.229868 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.869156 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6540817c06bb1d2bb3f4d8572a24709c') in 0.261800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.663652 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90e2856150e6ff441b91d73ea416cd80') in 0.283935 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.463051 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff7cbe07084358adf64f0aa7bfa869d4') in 0.253147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.911556 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '914f7e1a14e73293c1422e1b7421c812') in 0.235207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.220173 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e9a231bfce59627fbd5826f0e220867') in 0.235898 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.983053 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26c18acc4dcf5655e80e2a28fcc945a2') in 0.230459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.116496 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa52dde1a2aa76a1f8afcc1f4e50adac') in 0.220782 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.999147 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fae8eb145479d1897524dc47d531fa3') in 0.233437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.323577 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f9dfcf68d8a68e9d0bb8a6f3bd9d445') in 0.241669 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.687773 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec822a335c3304673c9d4a3d20158afa') in 0.299098 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.860514 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '577c0fe64aa98d4fd1cdd4e30ccca01b') in 0.269168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.516538 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1147188ef6d5db8c3fedc14e62d417e9') in 0.284054 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002615 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.326 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1327ms)
+		BeginReloadAssembly (166ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (1048ms)
+			LoadAssemblies (104ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (218ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (98ms)
+			SetupLoadedEditorAssemblies (530ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (48ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (85ms)
+				ProcessInitializeOnLoadAttributes (340ms)
+				ProcessInitializeOnLoadMethodAttributes (49ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2254 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2765.
+Memory consumption went from 95.4 MB to 95.4 MB.
+Total: 3.819500 ms (FindLiveObjects: 0.212300 ms CreateObjectMapping: 0.056400 ms MarkObjects: 3.529700 ms  DeleteObjects: 0.019500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
