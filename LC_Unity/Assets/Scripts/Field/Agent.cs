@@ -63,6 +63,11 @@ namespace Field
             _id = id;
         }
 
+        protected virtual void Start()
+        {
+            UpdateDirection(_currentDirection);
+        }
+
         public void UpdateDirection(Direction direction)
         {
             if(!FixedDirection)
