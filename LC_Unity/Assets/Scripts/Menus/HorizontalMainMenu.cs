@@ -15,7 +15,7 @@ namespace Menus
         public void OpenCharacterTabWithSelectedCharacter(Character character)
         {
             (_buttons[_cursorPosition] as HorizontalMainMenuButton).FeedCharacterDataToSubMenu(character);
-            _buttons[_cursorPosition].SelectButton();
+            (_buttons[_cursorPosition] as HorizontalMainMenuButton).OpenSubMenu();
         }
         #endregion
     }

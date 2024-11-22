@@ -81,14 +81,18 @@ namespace Field
                     {
                         case Direction.Left:
                             animator.SetFloat("X", -1.0f);
+                            animator.SetFloat("Y", 0.0f);
                             break;
                         case Direction.Right:
                             animator.SetFloat("X", 1.0f);
+                            animator.SetFloat("Y", 0.0f);
                             break;
                         case Direction.Up:
+                            animator.SetFloat("X", 0.0f);
                             animator.SetFloat("Y", 1.0f);
                             break;
                         case Direction.Down:
+                            animator.SetFloat("X", 0.0f);
                             animator.SetFloat("Y", -1.0f);
                             break;
                     }
