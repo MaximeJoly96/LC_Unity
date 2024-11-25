@@ -19,6 +19,7 @@ namespace Field
             { 10, "haalmikahFortressWeaponShop" },
             { 11, "haalmikahFortressBarracks" },
             { 12, "haalmikahFortressBarracksBasement" },
+            { 13, "gramontCastle" },
             { 1000, "introMapName" },
             { 1001, "introMapName" },
             { 1002, "introMapName" },
