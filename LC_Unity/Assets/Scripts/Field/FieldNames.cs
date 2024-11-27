@@ -21,6 +21,7 @@ namespace Field
             { 12, "haalmikahFortressBarracksBasement" },
             { 13, "gramontCastle" },
             { 14, "gramontCastleFirstFloor" },
+            { 15, "gramontCastleTower" },
             { 1000, "introMapName" },
             { 1001, "introMapName" },
             { 1002, "introMapName" },

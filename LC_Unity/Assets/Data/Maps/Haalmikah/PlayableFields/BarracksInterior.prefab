@@ -2061,8 +2061,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6868253028188774547}
-  - component: {fileID: 2666341637782497714}
   - component: {fileID: 5903372335350661750}
+  - component: {fileID: 7517488249152744685}
   m_Layer: 0
   m_Name: Autoplay
   m_TagString: Untagged
@@ -2085,24 +2085,6 @@ Transform:
   m_Father: {fileID: 8008323855344689523}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2666341637782497714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8789697467995488301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7ee6a4bb37250c438b32733acf53077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: barracksAutoplay
-  _speed: 0
-  _currentDirection: 0
-  _balloonIconSpot: {fileID: 0}
-  _sequenceFile: {fileID: 4900000, guid: 81d7061a80fb81649812b875440e7cd0, type: 3}
-  _trigger: 1
 --- !u!114 &5903372335350661750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2115,3 +2097,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86090872329d9ef4490feee3865dec92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7517488249152744685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8789697467995488301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0a0c7f6a4c0c0408e9afda1a21870a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: barracksAutoplay
+  _speed: 0
+  _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
+  _sequenceFile: {fileID: 0}
+  _trigger: 0

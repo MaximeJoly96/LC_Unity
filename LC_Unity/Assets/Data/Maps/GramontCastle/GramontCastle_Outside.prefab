@@ -536,6 +536,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6978089293747739184}
+  - {fileID: 927939763749645852}
   m_Father: {fileID: 7157139878943780502}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -853,6 +854,7 @@ MonoBehaviour:
   _neighbourFields:
   - {fileID: 3036369374361966236, guid: afd9d565517cc8244821807bed53a3c2, type: 3}
   - {fileID: 190831539216003347, guid: 863a112d70f8ea6458ae9f8cb79e78c9, type: 3}
+  - {fileID: 8653182153926163429, guid: 2793102d9fe00b5488755eaf7002e0be, type: 3}
   _mapId: 13
   _transitionsWrapper: {fileID: 9181063191756637127}
   _bgmKey: haalmikahRegion
@@ -941,6 +943,96 @@ Transform:
   m_Father: {fileID: 7157139878943780502}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5651626072237858048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927939763749645852}
+  - component: {fileID: 5569275259253765155}
+  - component: {fileID: 5042531014458707088}
+  - component: {fileID: 2321097375392958922}
+  m_Layer: 0
+  m_Name: LeftTower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &927939763749645852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651626072237858048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9142060942847160255}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &5569275259253765155
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651626072237858048}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.8530178, y: 0.3232832}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3549385, y: 0.61367226}
+  m_EdgeRadius: 0
+--- !u!114 &5042531014458707088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651626072237858048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86090872329d9ef4490feee3865dec92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2321097375392958922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651626072237858048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ee6a4bb37250c438b32733acf53077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: leftTowerToCastle
+  _speed: 0
+  _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
+  _sequenceFile: {fileID: 4900000, guid: a7706f9d1ff0b5e44bfe62c860cc5333, type: 3}
+  _trigger: 0
 --- !u!1 &7394896339490330978
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +1043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3450478245774088720}
   - component: {fileID: 49403586759043474}
-  - component: {fileID: 2544831606850575577}
+  - component: {fileID: 709253102620559264}
   m_Layer: 0
   m_Name: Autoplay
   m_TagString: Untagged
@@ -986,7 +1078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86090872329d9ef4490feee3865dec92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2544831606850575577
+--- !u!114 &709253102620559264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -995,15 +1087,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7394896339490330978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7ee6a4bb37250c438b32733acf53077, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f0a0c7f6a4c0c0408e9afda1a21870a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _id: autoplayCastleOutside
   _speed: 0
   _currentDirection: 0
   _balloonIconSpot: {fileID: 0}
-  _sequenceFile: {fileID: 4900000, guid: a6ebc416b0f8939418560d5f4f86bd91, type: 3}
-  _trigger: 1
+  _sequenceFile: {fileID: 0}
+  _trigger: 0
 --- !u!1 &7941290314327983650
 GameObject:
   m_ObjectHideFlags: 0
