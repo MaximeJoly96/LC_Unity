@@ -194,5 +194,26 @@ namespace Engine.Movement
 
             return follow;
         }
+
+        public static ChangeFloor ParseChangeFloor(XmlNode node)
+        {
+            ChangeFloor change = new ChangeFloor();
+
+            change.Up = bool.Parse(node.Attributes["Up"].InnerText);
+            change.X = float.Parse(node.Attributes["X"].InnerText, CultureInfo.InvariantCulture);
+            change.Y = float.Parse(node.Attributes["Y"].InnerText, CultureInfo.InvariantCulture);
+
+            return change;
+        }
+
+        public static SetFloor ParseSetFloor(XmlNode node)
+        {
+            SetFloor set = new SetFloor();
+
+            set.FieldId = int.Parse(node.Attributes["FieldId"].InnerText);
+            set.FloorId = int.Parse(node.Attributes["FloorId"].InnerText);
+
+            return set;
+        }
     }
 }

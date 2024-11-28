@@ -230,6 +230,12 @@ namespace Engine.Events
                         case EventType.CompleteQuest:
                             sequence.Add(XmlQuestingParser.ParseCompleteQuest(evt));
                             break;
+                        case EventType.ChangeFloor:
+                            sequence.Add(XmlMovementParser.ParseChangeFloor(evt));
+                            break;
+                        case EventType.SetFloor:
+                            sequence.Add(XmlMovementParser.ParseSetFloor(evt));
+                            break;
                         default:
                             throw new ArgumentException("Cannot resolve EventType " + eventType + ".");
                     }

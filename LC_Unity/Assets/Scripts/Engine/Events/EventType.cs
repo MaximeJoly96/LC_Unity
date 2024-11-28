@@ -35,6 +35,8 @@
         SetMoveRoute,
         TransferObject,
         CameraFollowPlayer,
+        ChangeFloor,
+        SetFloor,
 
         // Character
         ShowAnimation,

@@ -47,6 +47,8 @@ namespace Field
             }
         }
 
+        public AgentTrigger Trigger { get { return _trigger; } }
+
         public void SetSequence(EventsSequence sequence)
         {
             _sequence = sequence;

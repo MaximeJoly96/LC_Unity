@@ -61,6 +61,12 @@ namespace Field
             {
                 mainField = Instantiate(field);
                 _instFields.Add(mainField);
+
+                if(mainField is FieldWithFloors)
+                {
+                    (mainField as FieldWithFloors).SetFloor((field as FieldWithFloors).CurrentFloorIndex);
+                    (mainField as FieldWithFloors).UpdateVisuals();
+                }
             }  
 
             mainField.gameObject.SetActive(true);
@@ -151,6 +157,31 @@ namespace Field
                 pc.GetComponent<SpriteRenderer>().sortingLayerName = switchOn ? "InteriorPlayer" : "Player";
                 pc.transform.localScale = switchOn ? new Vector3(0.8f, 0.8f, 0.8f) : Vector3.one;
             }  
+        }
+
+        public void ChangeFloor(ChangeFloor change)
+        {
+            if(CurrentField is FieldWithFloors)
+            {
+                (CurrentField as FieldWithFloors).ChangeFloor(change.Up);
+
+                PlayerController pc = FindObjectOfType<PlayerController>();
+                if (pc)
+                    pc.transform.Translate(new Vector3(change.X, change.Y));
+            }
+        }
+
+        public void SetFloor(SetFloor set)
+        {
+            PlayableField field = _allFields.FirstOrDefault(f => f.MapId == set.FieldId);
+
+            if(field && field is FieldWithFloors)
+                (field as FieldWithFloors).SetFloor(set.FloorId);
+
+            PlayableField existingField = _instFields.FirstOrDefault(f => f.MapId == set.FieldId);
+
+            if (existingField && existingField is FieldWithFloors)
+                (existingField as FieldWithFloors).SetFloor(set.FloorId);
         }
 
         private void PositionPlayer()

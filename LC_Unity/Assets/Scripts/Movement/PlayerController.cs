@@ -61,6 +61,7 @@ namespace Movement
         private void Update()
         {
             HandleAnimationAndMovement();
+            CheckForContactEvents();
         }
 
         private void HandleInput(InputAction input)
@@ -133,16 +134,10 @@ namespace Movement
             Collider2D[] colliders = Physics2D.OverlapCircleAll(_collider.bounds.center, 0.2f);
 
             Collider2D interactible = colliders.FirstOrDefault(c => c.gameObject.GetComponent<RunnableAgent>());
-            if(interactible != null)
+            if(interactible != null && interactible.GetComponent<RunnableAgent>().Trigger == AgentTrigger.Manual)
             {
                 SpriteRenderer playerSr = GetComponent<SpriteRenderer>();
                 SpriteRenderer interactSr = interactible.GetComponent<SpriteRenderer>();
-
-                // This is a dirty check to prevent interactions with NPCs that are outside a building while the player
-                // is inside one.
-                if (interactSr && playerSr.sortingLayerName.ToLower().Contains("interior") && 
-                    !interactSr.sortingLayerName.ToLower().Contains("interior"))
-                    return;
 
                 _change = interactible.transform.position - transform.position;
                 HandleAnimationAndMovement();
@@ -153,6 +148,19 @@ namespace Movement
                 RunnableAgent agent = interactible.GetComponent<RunnableAgent>();
                 agent.UpdateDirection(DirectionUtils.VectorToDirection(transform.position - interactible.transform.position));
 
+                agent.FinishedSequence.AddListener(() => GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField));
+                agent.RunSequence();
+            }
+        }
+
+        private void CheckForContactEvents()
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(_collider.bounds.center, 0.05f);
+
+            Collider2D interactible = colliders.FirstOrDefault(c => c.gameObject.GetComponent<RunnableAgent>());
+            if(interactible != null && interactible.GetComponent<RunnableAgent>().Trigger == AgentTrigger.Contact)
+            {
+                RunnableAgent agent = interactible.GetComponent<RunnableAgent>();
                 agent.FinishedSequence.AddListener(() => GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField));
                 agent.RunSequence();
             }
