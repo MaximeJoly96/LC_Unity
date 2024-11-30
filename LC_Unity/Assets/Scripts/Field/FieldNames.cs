@@ -27,6 +27,7 @@ namespace Field
             { 18, "gramontCastleTower" },
             { 19, "gramontCastleSecondFloor" },
             { 20, "gramontCastleThirdFloor" },
+            { 21, "gramontCastleThroneRoom" },
             { 1000, "introMapName" },
             { 1001, "introMapName" },
             { 1002, "introMapName" },
