@@ -151,6 +151,17 @@ namespace Engine.FlowControl
 
                     return condition;
                 }
+                else if(type == "Started")
+                {
+                    QuestStartedCondition condition = new QuestStartedCondition
+                    {
+                        QuestId = questId,
+                        SequenceWhenTrue = ParseConditionResults(true, data),
+                        SequenceWhenFalse = ParseConditionResults(false, data)
+                    };
+
+                    return condition;
+                }
                 else
                     throw new InvalidOperationException("Unsupported Quest condition type. Found: " + type);
             }

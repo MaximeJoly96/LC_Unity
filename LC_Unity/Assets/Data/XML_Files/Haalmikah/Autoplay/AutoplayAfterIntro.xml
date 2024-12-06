@@ -1,19 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="quest0Progress" SecondMember="-1">
+  <QuestCondition Type="Started" QuestId="0">
     <true>
-      <Wait Duration="0.2" />
-      <TintScreen Duration="1" WaitForCompletion="true">
+      <TintScreen Duration="1" WaitForCompletion="false">
         <TargetColor R="0" G="0" B="0" A="0" />
       </TintScreen>
-      <ControlVariable Key="quest0Progress">
-        <Operation>Set</Operation>
-        <Operand Type="Constant">0</Operand>
-      </ControlVariable>
       <ChangeMenuAccess Enabled="true" />
     </true>
-    <false>
-    </false>
-  </ConditionalBranch>
+  </QuestCondition>
   <ChangeGameState State="OnField" />
 </EventsSequence>

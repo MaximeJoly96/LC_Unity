@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="introCompleted" SecondMember="true">
+  <QuestCondition Type="Started" QuestId="0">
     <true>
       <ChangeGameState State="OnField" />
       <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlok">
         <Transparent Status="true" />
       </SetMoveRoute>
     </true>
-  </ConditionalBranch>
+  </QuestCondition>
 </EventsSequence>

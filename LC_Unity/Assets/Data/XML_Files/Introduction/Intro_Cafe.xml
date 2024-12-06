@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="introCompleted" SecondMember="false">
-    <true>
+  <QuestCondition Type="Started" QuestId="0">
+    <false>
       <AllowCutsceneSkip Allow="false" />
       <ChangeMapNameDisplay Enabled="true" />
       <PlayBgm Name="haalmikah" Volume="0.75" Pitch="1" />
@@ -85,15 +85,10 @@
       <Wait Duration="2" />
       <StartQuest Id="0" />
       <ProgressQuest Id="0" StepId="0" Status="Unlocked" />
-      <ControlSwitch Key="introCompleted" Value="true" />
-      <ControlVariable Key="quest0Progress">
-        <Operation>Set</Operation>
-        <Operand Type="Constant">-1</Operand>
-      </ControlVariable>
       <TransferObject Target="player">
         <Direction>Bottom</Direction>
         <Destination X="0" Y="1" MapId="0" Inside="false" />
       </TransferObject>
-    </true>
-  </ConditionalBranch>
+    </false>
+  </QuestCondition>
 </EventsSequence>

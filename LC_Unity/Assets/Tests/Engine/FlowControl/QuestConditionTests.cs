@@ -113,6 +113,31 @@ namespace Testing.Engine.FlowControl
             Assert.IsTrue((bool)PersistentDataHolder.Instance.GetData("testSwitch"));
         }
 
+        [UnityTest]
+        public IEnumerator QuestStartedConditionCanBeExecuted()
+        {
+            QuestStartedCondition condition = new QuestStartedCondition
+            {
+                QuestId = 3,
+                SequenceWhenTrue = CreateSequenceWithPositiveSwitch(),
+                SequenceWhenFalse = CreateSequenceWithNegativeSwitch()
+            };
+
+            condition.Run();
+
+            yield return null;
+
+            Assert.IsFalse((bool)PersistentDataHolder.Instance.GetData("testSwitch"));
+
+            QuestManager.Instance.StartQuest(new StartQuest { Id = 3 });
+
+            condition.Run();
+
+            yield return null;
+
+            Assert.IsTrue((bool)PersistentDataHolder.Instance.GetData("testSwitch"));
+        }
+
         private EventsSequence CreateSequenceWithNegativeSwitch()
         {
             ControlSwitch ctrlSwitch = new ControlSwitch
