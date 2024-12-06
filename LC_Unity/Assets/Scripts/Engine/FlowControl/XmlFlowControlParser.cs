@@ -61,7 +61,7 @@ namespace Engine.FlowControl
                     return condition;
                 }
                 else
-                    throw new InvalidOperationException("Unsupported ConditionalBranch type");
+                    throw new InvalidOperationException("Unsupported ConditionalBranch type. Found: " + type);
             }
             catch(Exception e)
             {
@@ -101,11 +101,62 @@ namespace Engine.FlowControl
                     return itemEquipped;
                 }
                 else
-                    throw new InvalidOperationException("Unsupported Inventory condition type");
+                    throw new InvalidOperationException("Unsupported Inventory condition type. Found: " + type);
             }
             catch(Exception e)
             {
                 LogsHandler.Instance.LogFatalError("XmlFlowControlParser cannot parse InventoryCondition. Exception: " + e.Message);
+                return null;
+            }
+        }
+
+        public static QuestCondition ParseQuestCondition(XmlNode data)
+        {
+            try
+            {
+                string type = data.Attributes["Type"].InnerText;
+                int questId = int.Parse(data.Attributes["QuestId"].InnerText);
+
+                if (type == "Completed")
+                {
+                    QuestCompletedCondition condition = new QuestCompletedCondition
+                    {
+                        QuestId = questId,
+                        SequenceWhenTrue = ParseConditionResults(true, data),
+                        SequenceWhenFalse = ParseConditionResults(false, data)
+                    };
+
+                    return condition;
+                }
+                else if (type == "StepCompleted")
+                {
+                    QuestStepCompletedCondition condition = new QuestStepCompletedCondition
+                    {
+                        QuestId = questId,
+                        QuestStepId = int.Parse(data.Attributes["StepId"].InnerText),
+                        SequenceWhenTrue = ParseConditionResults(true, data),
+                        SequenceWhenFalse = ParseConditionResults(false, data)
+                    };
+
+                    return condition;
+                }
+                else if (type == "Failed")
+                {
+                    QuestFailedCondition condition = new QuestFailedCondition
+                    {
+                        QuestId = questId,
+                        SequenceWhenTrue = ParseConditionResults(true, data),
+                        SequenceWhenFalse = ParseConditionResults(false, data)
+                    };
+
+                    return condition;
+                }
+                else
+                    throw new InvalidOperationException("Unsupported Quest condition type. Found: " + type);
+            }
+            catch(Exception e)
+            {
+                LogsHandler.Instance.LogFatalError("XmlFlowControlParser cannot parse QuestCondition. Exception: " + e.Message);
                 return null;
             }
         }

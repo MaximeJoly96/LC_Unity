@@ -10,6 +10,7 @@ using TMPro;
 using Language;
 using UnityEngine.UI;
 using Save;
+using Engine.Events;
 
 namespace Testing
 {
@@ -231,6 +232,12 @@ namespace Testing
             slot.Cursor = cursor.transform;
 
             return slot;
+        }
+
+        public static EventsRunner CreateEventsRunner()
+        {
+            GameObject go = CreateEmptyGameObject();
+            return go.AddComponent<EventsRunner>();
         }
     }
 }

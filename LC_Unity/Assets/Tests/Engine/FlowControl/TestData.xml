@@ -5,4 +5,7 @@
   <ConditionalBranch Type="TimerCondition" Condition="Before" FirstMember="var1" SecondMember="30" />
   <InventoryCondition Type="ItemPossessed" MinQuantity="1" ItemId="0" />
   <InventoryCondition Type="ItemEquipped" ItemId="0" />
+  <QuestCondition Type="Completed" QuestId="1" />
+  <QuestCondition Type="StepCompleted" QuestId="2" StepId="1" />
+  <QuestCondition Type="Failed" QuestId="3" />
 </EventsSequence>

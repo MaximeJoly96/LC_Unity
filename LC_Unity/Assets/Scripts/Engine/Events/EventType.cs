@@ -15,6 +15,7 @@
         // FlowControl
         ConditionalBranch,
         InventoryCondition,
+        QuestCondition,
 
         // Party
         ChangeGold,

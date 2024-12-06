@@ -59,6 +59,9 @@ namespace Engine.Events
                         case EventType.InventoryCondition:
                             sequence.Add(XmlFlowControlParser.ParseInventoryCondition(evt));
                             break;
+                        case EventType.QuestCondition:
+                            sequence.Add(XmlFlowControlParser.ParseQuestCondition(evt));
+                            break;
                         case EventType.ChangeGold:
                             sequence.Add(XmlPartyParser.ParseChangeGold(evt));
                             break;

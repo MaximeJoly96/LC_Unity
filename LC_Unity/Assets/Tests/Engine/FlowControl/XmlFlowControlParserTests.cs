@@ -72,5 +72,39 @@ namespace Testing.Engine.FlowControl
             Assert.NotNull(equipped.SequenceWhenFalse);
             Assert.NotNull(equipped.SequenceWhenTrue);
         }
+
+        [Test]
+        public void QuestCompletedConditionCanBeParsed()
+        {
+            QuestCompletedCondition condition = XmlFlowControlParser.ParseQuestCondition(GetDataToParse("QuestCondition", 0)) as QuestCompletedCondition;
+
+            Assert.AreEqual(1, condition.QuestId);
+
+            Assert.NotNull(condition.SequenceWhenFalse);
+            Assert.NotNull(condition.SequenceWhenTrue);
+        }
+
+        [Test]
+        public void QuestStepCompletedConditionCanBeParsed()
+        {
+            QuestStepCompletedCondition condition = XmlFlowControlParser.ParseQuestCondition(GetDataToParse("QuestCondition", 1)) as QuestStepCompletedCondition;
+
+            Assert.AreEqual(2, condition.QuestId);
+            Assert.AreEqual(1, condition.QuestStepId);
+
+            Assert.NotNull(condition.SequenceWhenFalse);
+            Assert.NotNull(condition.SequenceWhenTrue);
+        }
+
+        [Test]
+        public void QuestFailedConditionCanBeParsed()
+        {
+            QuestFailedCondition condition = XmlFlowControlParser.ParseQuestCondition(GetDataToParse("QuestCondition", 2)) as QuestFailedCondition;
+
+            Assert.AreEqual(3, condition.QuestId);
+
+            Assert.NotNull(condition.SequenceWhenFalse);
+            Assert.NotNull(condition.SequenceWhenTrue);
+        }
     }
 }
