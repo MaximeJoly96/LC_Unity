@@ -12,7 +12,8 @@ namespace BattleSystem
         {
             BattleDataHolder.Instance.BattleData = battle;
             SaveManager.Instance.Data.PlayerPosition = Object.FindObjectOfType<PlayerController>().Position;
-            SceneManager.LoadScene("Battle");
+
+            Object.FindObjectOfType<BattleTransitionsHolder>().PlayRandomTransition();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="quest0Progress" SecondMember="0">
+  <QuestCondition Type="Started" QuestId="0">
     <true>
       <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokOutside">
         <TurnTowards Target="louga" />
@@ -27,5 +27,5 @@
       <ProgressQuest Id="0" StepId="0" Status="Completed" />
       <ProgressQuest Id="0" StepId="1" Status="Unlocked" />
     </true>
-  </ConditionalBranch>
+  </QuestCondition>
 </EventsSequence>

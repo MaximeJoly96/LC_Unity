@@ -32,7 +32,8 @@ namespace BattleSystem.Data
                 {
                     Troop t = new Troop(matchingId,
                                         ParseMembers(troops[i - 1]),
-                                        ParsePlayerSpots(troops[i - 1]));
+                                        ParsePlayerSpots(troops[i - 1]),
+                                        int.Parse(troops[i - 1].Attributes["BattlefieldId"].InnerText));
 
                     return t;
                 }

@@ -16,6 +16,7 @@ using UnityEngine.SceneManagement;
 using MusicAndSounds;
 using System.Collections;
 using Core;
+using BattleSystem.Fields;
 
 namespace BattleSystem
 {
@@ -65,6 +66,8 @@ namespace BattleSystem
         private BattleProcessor _battleProcessor;
         [SerializeField]
         private CursorsManager _cursorsManager;
+        [SerializeField]
+        private BattlefieldsHolder _battlefieldsHolder;
 
         public BattleState CurrentState { get; private set; }
         public UnityEvent<BattleState> StateChangedEvent
@@ -124,6 +127,7 @@ namespace BattleSystem
 
             LoadBattlers(troop);
             LoadCharacters(troop);
+            LoadBattlefield(troop);
 
             UpdateState(BattleState.Loaded);
             
@@ -513,6 +517,13 @@ namespace BattleSystem
                 Volume = 0.75f,
                 Pitch = 1.0f
             });
+        }
+
+        private void LoadBattlefield(Troop troop)
+        {
+            Battlefield field = _battlefieldsHolder.GetField(troop.BattlefieldId);
+
+            Instantiate(field);
         }
     }
 }

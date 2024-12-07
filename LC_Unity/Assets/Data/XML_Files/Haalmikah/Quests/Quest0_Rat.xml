@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="quest0Progress" SecondMember="3">
+  <QuestCondition Type="StepCompleted" QuestId="0" StepId="2">
     <true>
       <SetMoveRoute SkipIfCannotMove="false" WaitForCompletion="true" RepeatAction="false" AgentId="tutorial_Rat">
         <TurnTowards Target="louga" />
@@ -21,5 +21,5 @@
       </ControlVariable>
       <DisableAgent Target="tutorial_Rat" />
     </true>
-  </ConditionalBranch>
+  </QuestCondition>
 </EventsSequence>

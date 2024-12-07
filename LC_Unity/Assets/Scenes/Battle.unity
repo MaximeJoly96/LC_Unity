@@ -1127,6 +1127,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417887846}
   m_CullTransparentMesh: 1
+--- !u!1 &421464748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 421464750}
+  - component: {fileID: 421464749}
+  m_Layer: 0
+  m_Name: Battlefields
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &421464749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421464748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9c75d3a98db4c42be9f46268083978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fields:
+  - {fileID: 4288937746140353653, guid: 0b92b01b17869f143a127b5ae7710a8c, type: 3}
+--- !u!4 &421464750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421464748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &433986301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,6 +1728,7 @@ MonoBehaviour:
   _targetManager: {fileID: 1694933145}
   _battleProcessor: {fileID: 1652370907}
   _cursorsManager: {fileID: 924760435}
+  _battlefieldsHolder: {fileID: 421464749}
 --- !u!4 &621197451
 Transform:
   m_ObjectHideFlags: 0
@@ -1895,7 +1942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &777471074
 MonoBehaviour:
   m_ObjectHideFlags: 0
