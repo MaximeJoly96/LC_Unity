@@ -11,6 +11,7 @@ namespace BattleSystem.UI
         private TMP_Text _label;
 
         public AbilityCategory Category { get; private set; }
+        public TMP_Text Label { get { return _label; } set { _label = value; } }
 
         public void Feed(AbilityCategory category)
         {

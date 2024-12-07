@@ -29,6 +29,7 @@ namespace Abilities
     {
         AttackCommand,
         Skill,
+        ItemCommand,
         FleeCommand
     }
 

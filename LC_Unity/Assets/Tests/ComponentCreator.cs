@@ -11,6 +11,12 @@ using Language;
 using UnityEngine.UI;
 using Save;
 using Engine.Events;
+using Movement;
+using BattleSystem.UI;
+using Core.Model;
+using Utils;
+using Actors;
+using BattleSystem;
 
 namespace Testing
 {
@@ -238,6 +244,65 @@ namespace Testing
         {
             GameObject go = CreateEmptyGameObject();
             return go.AddComponent<EventsRunner>();
+        }
+
+        public static PlayerController CreatePlayerController()
+        {
+            GameObject go = CreateEmptyGameObject();
+            return go.AddComponent<PlayerController>();
+        }
+
+        public static SimpleTextWindow CreateSimpleTextWindow(string animatorPath)
+        {
+            GameObject go = CreateEmptyGameObject();
+
+            SimpleTextWindow window = go.AddComponent<SimpleTextWindow>();
+            Animator animator = go.AddComponent<Animator>();
+            animator.runtimeAnimatorController = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>("Assets/Tests/" + animatorPath);
+            TextMeshProUGUI text = go.AddComponent<TextMeshProUGUI>();
+            window.Text = text;
+
+            return window;
+        }
+
+        public static Character CreateDummyCharacter()
+        {
+            return new Character(new ElementIdentifier(0, "name", ""),
+                                 new QuadraticFunction(10.0f, 10.0f, 10.0f),
+                                 new StatScalingFunction(100.0f, 1.0f, 100.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f),
+                                 new StatScalingFunction(10.0f, 1.0f, 10.0f));
+        }
+
+        public static BattleUiManager CreateBattleUiManager()
+        {
+            GameObject go = CreateEmptyGameObject();
+
+            SimpleTextWindow helpWindow = CreateSimpleTextWindow("BattleSystem/UI/TestAnimations/SimpleWindowController.controller");
+            SimpleTextWindow attackLabelWindow = CreateSimpleTextWindow("BattleSystem/UI/TestAnimations/SimpleWindowController.controller");
+
+            BattleUiManager uiManager = go.AddComponent<BattleUiManager>();
+            uiManager.HelpWindow = helpWindow;
+            uiManager.AttackLabelWindow = attackLabelWindow;
+
+            PlayerGlobalUi playerGlobalUi = CreatePlayerGlobalUi();
+            uiManager.PlayerGlobalUi = playerGlobalUi;
+
+            return uiManager;
+        }
+
+        public static PlayerGlobalUi CreatePlayerGlobalUi()
+        {
+            GameObject go = CreateEmptyGameObject();
+
+            PlayerGlobalUi ui = go.AddComponent<PlayerGlobalUi>();
+            return ui;
         }
     }
 }

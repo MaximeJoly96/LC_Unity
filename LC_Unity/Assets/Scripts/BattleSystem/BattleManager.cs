@@ -81,6 +81,7 @@ namespace BattleSystem
             }
         }
 
+        #region Properties
         public List<BattlerBehaviour> CharactersInCombat
         {
             get { return _charactersInCombat; }
@@ -101,11 +102,13 @@ namespace BattleSystem
             }
         }
 
-        private void Awake()
+        public BattleUiManager UiManager { get { return _uiManager; } set { _uiManager = value; } }
+        public TextAsset Troops { get { return _troops; } set { _troops = value; } }
+        #endregion
+
+        private void Start()
         {
             BindInputs();
-
-
 
             StopAllAudio();
             StartCombatBgm();

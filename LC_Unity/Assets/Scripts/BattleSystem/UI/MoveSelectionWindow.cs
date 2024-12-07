@@ -11,8 +11,6 @@ namespace BattleSystem.UI
         public enum SelectionState { Category }
 
         [SerializeField]
-        private TMP_Text _instructionsText;
-        [SerializeField]
         private Transform _cursor;
         [SerializeField]
         private Transform _listWrapper;
@@ -25,15 +23,15 @@ namespace BattleSystem.UI
         private int _cursorCurrentPosition;
         private SelectionState _currentSelectionState;
 
+        #region Properties
         private Animator Animator
         {
             get { return GetComponent<Animator>(); }
         }
 
-        public void UpdateInstructions(string characterName)
-        {
-            _instructionsText.text = "Select " + characterName + "'s next move.";
-        }
+        public Transform Cursor { get { return _cursor; } set { _cursor = value; } }
+        public Transform ListWrapper { get { return _listWrapper; } set { _listWrapper = value; } }
+        #endregion
 
         public void Show()
         {
@@ -50,7 +48,6 @@ namespace BattleSystem.UI
             _currentCharacter = character;
             _currentSelectionState = SelectionState.Category;
 
-            UpdateInstructions(_currentCharacter.BattlerData.Character.Name);
             CreateMoveCategories(_currentCharacter.BattlerData.Character.Abilities);
         }
 

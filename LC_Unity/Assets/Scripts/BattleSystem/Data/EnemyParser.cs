@@ -36,7 +36,7 @@ namespace BattleSystem.Data
                 {
                     ElementIdentifier identifier = new ElementIdentifier(matchingId, ParseStringValue(enemies[i - 1], "Name"), "");
                     Character c = new Character(identifier,
-                                                new QuadraticFunction(1, 0, 0),
+                                                ParseQuadraticFunction(enemies[i - 1], "Exp"),
                                                 ParseStatScalingFunction(enemies[i - 1], "BaseHealth"),
                                                 ParseStatScalingFunction(enemies[i - 1], "BaseMana"),
                                                 ParseStatScalingFunction(enemies[i - 1], "BaseEssence"),
@@ -46,6 +46,7 @@ namespace BattleSystem.Data
                                                 ParseStatScalingFunction(enemies[i - 1], "BaseMagicDefense"),
                                                 ParseStatScalingFunction(enemies[i - 1], "BaseAgility"),
                                                 ParseStatScalingFunction(enemies[i - 1], "BaseLuck"));
+                    c.GiveExp(ParseIntValue(enemies[i - 1], "BaseExp"));
 
                     Battler b = new Battler(c);
 
@@ -66,6 +67,16 @@ namespace BattleSystem.Data
             StatScalingFunction func = new StatScalingFunction(ParseFloatAttribute(node, "A"),
                                                                ParseFloatAttribute(node, "Exponent"),
                                                                ParseFloatAttribute(node, "B"));
+
+            return func;
+        }
+
+        private static QuadraticFunction ParseQuadraticFunction(XmlNode parentNode, string tag)
+        {
+            XmlNode node = parentNode.SelectSingleNode(tag);
+            QuadraticFunction func = new QuadraticFunction(ParseFloatAttribute(node, "A"),
+                                                           ParseFloatAttribute(node, "B"),
+                                                           ParseFloatAttribute(node, "C"));
 
             return func;
         }

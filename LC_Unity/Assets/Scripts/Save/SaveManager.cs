@@ -269,5 +269,13 @@ namespace Save
                 Gold = int.Parse(saveData["gold"])
             };
         }
+
+        public void SetPlayerPosition(Vector2 position)
+        {
+            if (Data == null)
+                Data = new SavedData();
+
+            Data.PlayerPosition = position;
+        }
     }
 }

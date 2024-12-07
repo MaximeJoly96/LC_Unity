@@ -8,7 +8,8 @@ namespace BattleSystem.UI
         [SerializeField]
         private TMP_Text _text;
 
-        private Animator Animator { get { return GetComponent<Animator>(); } }
+        public Animator Animator { get { return GetComponent<Animator>(); } }
+        public TMP_Text Text { get { return _text; } set { _text = value; } }
 
         public void UpdateText(string text)
         {

@@ -27,6 +27,7 @@ namespace BattleSystem
 
         private List<PlayerUiPreview> _playerUiPreviews;
 
+        #region Events
         private UnityEvent _battleStartTagClosed;
         public UnityEvent BattleStartTagClosed
         {
@@ -62,6 +63,13 @@ namespace BattleSystem
                 return _defeatConcluded;
             }
         }
+        #endregion
+
+        #region Properties
+        public SimpleTextWindow HelpWindow { get { return _helpWindow; } set { _helpWindow = value; } }
+        public SimpleTextWindow AttackLabelWindow { get { return _attackLabelWindow; } set { _attackLabelWindow = value; } }
+        public PlayerGlobalUi PlayerGlobalUi { get { return _playerGlobalUi; } set { _playerGlobalUi = value; } }
+        #endregion
 
         public void FeedParty(List<Character> characters)
         {

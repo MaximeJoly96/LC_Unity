@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Test Runner
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 99
+  controlID: 13238
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,11 +141,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1920
-    height: 692
+    height: 683
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 100
+  controlID: 13239
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,9 +164,9 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 279
-    height: 692
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    height: 683
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: TestRunnerWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -190,18 +190,18 @@ MonoBehaviour:
     x: 279
     y: 0
     width: 1060
-    height: 692
+    height: 683
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 11}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
-  - {fileID: 14}
   - {fileID: 11}
+  - {fileID: 14}
   - {fileID: 15}
   - {fileID: 16}
-  m_Selected: 2
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,9 +220,9 @@ MonoBehaviour:
     x: 1339
     y: 0
     width: 581
-    height: 692
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+    height: 683
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -239,24 +239,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 692
+    y: 683
     width: 1920
-    height: 255
-  m_MinSize: {x: 230, y: 271}
-  m_MaxSize: {x: 10000, y: 10021}
-  m_ActualView: {fileID: 19}
+    height: 264
+  m_MinSize: {x: 100, y: 121}
+  m_MaxSize: {x: 4000, y: 4021}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 21}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -281,7 +281,7 @@ MonoBehaviour:
     x: 279
     y: 73
     width: 1058
-    height: 671
+    height: 662
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -329,9 +329,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 1058
-      height: 650
+      height: 641
     m_Scale: {x: 0.55104166, y: 0.55104166}
-    m_Translation: {x: 529, y: 325}
+    m_Translation: {x: 529, y: 320.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -339,12 +339,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -960
-      y: -589.79205
+      y: -581.62573
       width: 1920
-      height: 1179.5841
+      height: 1163.2515
     m_MinimalGUI: 1
   m_defaultScale: 0.55104166
-  m_LastWindowPixelSize: {x: 1058, y: 671}
+  m_LastWindowPixelSize: {x: 1058, y: 662}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000000000000
@@ -374,7 +374,7 @@ MonoBehaviour:
     x: 0
     y: 73
     width: 278
-    height: 671
+    height: 662
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -384,7 +384,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ea64feff7273feff8aacfeff8eacfeff24b2fefffed1feff7e39ffffb239ffff143bffff103cffff443cffff5e3dffffb871ffffec71ffff1273ffffec73ffff2074ffff4675ffff9075ffffc475ffffea76ffff3477ffff6877ffff8e78ffffd679ffff0a7affff307bffff7a7bffffae7bfffffc7cffffd47dffff087effff567fffff2e80ffff6280ffffb081ffffcc82ffff0083ffff3c84ffff4485ffff7885ffffa286ffff4e8affff828affffd48bffffc68cfffffa8cffff4e8effff04faffff
+      m_ExpandedIDs: 30e0fdff64e0fdff7ee1fdff58e2fdff8ce2fdffa6e3fdff7ee4fdffb2e4fdffcce5fdff16e6fdff4ae6fdffa4e7fdffeee7fdff22e8fdff94eafdfff8ebfdff2cecfdff46edfdff1eeefdff52eefdff6ceffdffdceffdff10f0fdff2af1fdff9af1fdffcef1fdffe8f2fdff32f3fdff66f3fdff80f4fdffeaf4fdff1ef5fdff38f6fdff10f7fdff44f7fdff5ef8fdffa8f8fdffdcf8fdfff6f9fdff66fafdff9afafdffb4fbfdff52fdfdff86fdfdffa0fefdff2c00feff6000feffba01feffac03feffe003feff3a05feff1406feff4806feffa207feff5213feffac15feffe015feff0e17feff5a17feff8e17feffbc18feff081bfeff3c1bfeff901cfeff4c1dfeff801dfeffd41efeff901ffeffc41ffeff1821feff0e25feff4225feff5c26feff3827feff6c27feff8e28feff4a29feff7e29feffa02afeffcc2afeff002bfeff222cfeff4e2cfeff822cfeff9c2dfeff6a2ffeff9e2ffeffb830feffe430feff1831feff4232feff0435feff3835feff7a36feff063bfeff3a3bfeff943cfeffea3ffeff1e40feff4841feff8c42feffc042feffea43feff8a46feffbe46feffe447feffa048feffd448fefff449feff4a4cfeff7e4cfeff9e4dfeff8652feff4c61feff3881feffd281feff4689feffa889feff8a9bfeff7ca8feffc4a9feff9cb5fefff0b5feff24b6feff3eb7feff04b8feff38b8feff52b9feff7eb9feffb2b9feffccbafeffd6bffeff0ac0feff2ac1feffe4c1feff18c2feff58c3feffdef7feff9c10ffffca10ffffced7ffff2efbffff2e2f0100922f0100767501006c2e0200742e0200ec2e0200fe2e02000a2f0200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -431,18 +431,18 @@ MonoBehaviour:
     x: 279
     y: 73
     width: 1058
-    height: 671
+    height: 662
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 262
+    ID: 14105
     splitterInitialOffset: 522
     currentActiveSplitter: -1
     realSizes:
-    - 481
-    - 120
+    - 473
+    - 119
     relativeSizes:
     - 0.7996485
     - 0.20035148
@@ -452,7 +452,7 @@ MonoBehaviour:
     maxSizes:
     - 0
     - 0
-    lastTotalSize: 601
+    lastTotalSize: 592
     splitSize: 6
     xOffset: 0
     m_Version: 1
@@ -469,7 +469,7 @@ MonoBehaviour:
       name: LC
       fullName: LC
       resultStatus: 1
-      duration: 0.2010094
+      duration: 0.134551
       messages: 
       output: 
       stacktrace: 
@@ -485,7 +485,7 @@ MonoBehaviour:
       name: Tests.dll
       fullName: E:/Unity_Projects/LC_Unity/LC_Unity/Library/ScriptAssemblies/Tests.dll
       resultStatus: 1
-      duration: 0.1678733
+      duration: 0.0946095
       messages: 
       output: 
       stacktrace: 
@@ -501,7 +501,7 @@ MonoBehaviour:
       name: Testing
       fullName: Testing
       resultStatus: 1
-      duration: 0.1500185
+      duration: 0.0796845
       messages: 
       output: 
       stacktrace: 
@@ -800,7 +800,7 @@ MonoBehaviour:
       name: Actors
       fullName: Testing.Actors
       resultStatus: 1
-      duration: 0.9230028
+      duration: 0.2736654
       messages: 
       output: 
       stacktrace: 
@@ -816,7 +816,7 @@ MonoBehaviour:
       name: ActiveEffectTests
       fullName: Testing.Actors.ActiveEffectTests
       resultStatus: 1
-      duration: 0.0049096
+      duration: 0.0357507
       messages: 
       output: 
       stacktrace: 
@@ -832,7 +832,7 @@ MonoBehaviour:
       name: ActiveEffectCanBeCreated
       fullName: Testing.Actors.ActiveEffectTests.ActiveEffectCanBeCreated
       resultStatus: 1
-      duration: 0.0004699
+      duration: 0.0186152
       messages: 
       output: 
       stacktrace: 
@@ -849,7 +849,7 @@ MonoBehaviour:
       name: CharactersManagerTests
       fullName: Testing.Actors.CharactersManagerTests
       resultStatus: 1
-      duration: 0.0775027
+      duration: 0.0456195
       messages: 
       output: 
       stacktrace: 
@@ -865,7 +865,7 @@ MonoBehaviour:
       name: CharactersCanBeLoadedFromFile
       fullName: Testing.Actors.CharactersManagerTests.CharactersCanBeLoadedFromFile
       resultStatus: 1
-      duration: 0.0632341
+      duration: 0.038452
       messages: 
       output: 
       stacktrace: 
@@ -882,7 +882,7 @@ MonoBehaviour:
       name: CharactersManagerCanBeCreated
       fullName: Testing.Actors.CharactersManagerTests.CharactersManagerCanBeCreated
       resultStatus: 1
-      duration: 0.0005061
+      duration: 0.0002819
       messages: 
       output: 
       stacktrace: 
@@ -899,7 +899,7 @@ MonoBehaviour:
       name: NewCharacterCanBeAdded
       fullName: Testing.Actors.CharactersManagerTests.NewCharacterCanBeAdded
       resultStatus: 1
-      duration: 0.0084772
+      duration: 0.0026713
       messages: 
       output: 
       stacktrace: 
@@ -916,7 +916,7 @@ MonoBehaviour:
       name: CharacterStatsTests
       fullName: Testing.Actors.CharacterStatsTests
       resultStatus: 1
-      duration: 0.1478989
+      duration: 0.0576167
       messages: 
       output: 
       stacktrace: 
@@ -932,7 +932,7 @@ MonoBehaviour:
       name: BonusStatsCanBeObtained
       fullName: Testing.Actors.CharacterStatsTests.BonusStatsCanBeObtained
       resultStatus: 1
-      duration: 0.0471968
+      duration: 0.0244899
       messages: 
       output: 
       stacktrace: 
@@ -949,7 +949,7 @@ MonoBehaviour:
       name: CharacterStatsCanBeCreated
       fullName: Testing.Actors.CharacterStatsTests.CharacterStatsCanBeCreated
       resultStatus: 1
-      duration: 0.0098883
+      duration: 0.003053
       messages: 
       output: 
       stacktrace: 
@@ -966,7 +966,7 @@ MonoBehaviour:
       name: CurrentEssenceCanBeChanged
       fullName: Testing.Actors.CharacterStatsTests.CurrentEssenceCanBeChanged
       resultStatus: 1
-      duration: 0.0112751
+      duration: 0.0031597
       messages: 
       output: 
       stacktrace: 
@@ -983,7 +983,7 @@ MonoBehaviour:
       name: CurrentHealthCanBeChanged
       fullName: Testing.Actors.CharacterStatsTests.CurrentHealthCanBeChanged
       resultStatus: 1
-      duration: 0.0122779
+      duration: 0.0033674
       messages: 
       output: 
       stacktrace: 
@@ -1000,7 +1000,7 @@ MonoBehaviour:
       name: CurrentManaCanBeChanged
       fullName: Testing.Actors.CharacterStatsTests.CurrentManaCanBeChanged
       resultStatus: 1
-      duration: 0.0111782
+      duration: 0.0035399
       messages: 
       output: 
       stacktrace: 
@@ -1017,7 +1017,7 @@ MonoBehaviour:
       name: ExperienceNeededForNextLevelCanBeObtained
       fullName: Testing.Actors.CharacterStatsTests.ExperienceNeededForNextLevelCanBeObtained
       resultStatus: 1
-      duration: 0.0071163
+      duration: 0.0022014
       messages: 
       output: 
       stacktrace: 
@@ -1034,7 +1034,7 @@ MonoBehaviour:
       name: LevelCanBeComputedFromExperience
       fullName: Testing.Actors.CharacterStatsTests.LevelCanBeComputedFromExperience
       resultStatus: 1
-      duration: 0.0076404
+      duration: 0.0020567
       messages: 
       output: 
       stacktrace: 
@@ -1051,7 +1051,7 @@ MonoBehaviour:
       name: SecondaryStatsCanBeObtained
       fullName: Testing.Actors.CharacterStatsTests.SecondaryStatsCanBeObtained
       resultStatus: 1
-      duration: 0.010344
+      duration: 0.0031726
       messages: 
       output: 
       stacktrace: 
@@ -1068,7 +1068,7 @@ MonoBehaviour:
       name: StatsCanBeComputedBasedOnLevel
       fullName: Testing.Actors.CharacterStatsTests.StatsCanBeComputedBasedOnLevel
       resultStatus: 1
-      duration: 0.0141318
+      duration: 0.0047561
       messages: 
       output: 
       stacktrace: 
@@ -1085,7 +1085,7 @@ MonoBehaviour:
       name: TotalExperienceNeededForLevelCanBeObtained
       fullName: Testing.Actors.CharacterStatsTests.TotalExperienceNeededForLevelCanBeObtained
       resultStatus: 1
-      duration: 0.0075281
+      duration: 0.0022468
       messages: 
       output: 
       stacktrace: 
@@ -1102,7 +1102,7 @@ MonoBehaviour:
       name: CharacterTests
       fullName: Testing.Actors.CharacterTests
       resultStatus: 1
-      duration: 0.1501656
+      duration: 0.0559044
       messages: 
       output: 
       stacktrace: 
@@ -1118,7 +1118,7 @@ MonoBehaviour:
       name: AbilityCanBeForgotten
       fullName: Testing.Actors.CharacterTests.AbilityCanBeForgotten
       resultStatus: 1
-      duration: 0.0082583
+      duration: 0.0036871
       messages: 
       output: 
       stacktrace: 
@@ -1135,7 +1135,7 @@ MonoBehaviour:
       name: AbilityCanBeLearnt
       fullName: Testing.Actors.CharacterTests.AbilityCanBeLearnt
       resultStatus: 1
-      duration: 0.0070402
+      duration: 0.002485
       messages: 
       output: 
       stacktrace: 
@@ -1152,7 +1152,7 @@ MonoBehaviour:
       name: CanCheckIfItemIsEquipped
       fullName: Testing.Actors.CharacterTests.CanCheckIfItemIsEquipped
       resultStatus: 1
-      duration: 0.0125141
+      duration: 0.0058851
       messages: 
       output: 
       stacktrace: 
@@ -1169,7 +1169,7 @@ MonoBehaviour:
       name: CharacterCanBeDeserialized
       fullName: Testing.Actors.CharacterTests.CharacterCanBeDeserialized
       resultStatus: 1
-      duration: 0.0132921
+      duration: 0.0050299
       messages: 
       output: 
       stacktrace: 
@@ -1186,7 +1186,7 @@ MonoBehaviour:
       name: CharacterCanBeSerialized
       fullName: Testing.Actors.CharacterTests.CharacterCanBeSerialized
       resultStatus: 1
-      duration: 0.0136861
+      duration: 0.0046977
       messages: 
       output: 
       stacktrace: 
@@ -1203,7 +1203,7 @@ MonoBehaviour:
       name: CharacterNameCanBeUpdated
       fullName: Testing.Actors.CharacterTests.CharacterNameCanBeUpdated
       resultStatus: 1
-      duration: 0.0077664
+      duration: 0.0025475
       messages: 
       output: 
       stacktrace: 
@@ -1220,7 +1220,7 @@ MonoBehaviour:
       name: CharacterWithFunctionsCanBeCreated
       fullName: Testing.Actors.CharacterTests.CharacterWithFunctionsCanBeCreated
       resultStatus: 1
-      duration: 0.0114044
+      duration: 0.0046215
       messages: 
       output: 
       stacktrace: 
@@ -1237,7 +1237,7 @@ MonoBehaviour:
       name: ElementalAffinityCanBeObtainedFromElement
       fullName: Testing.Actors.CharacterTests.ElementalAffinityCanBeObtainedFromElement
       resultStatus: 1
-      duration: 0.0105568
+      duration: 0.003503
       messages: 
       output: 
       stacktrace: 
@@ -1254,7 +1254,7 @@ MonoBehaviour:
       name: EquipmentCanBeChanged
       fullName: Testing.Actors.CharacterTests.EquipmentCanBeChanged
       resultStatus: 1
-      duration: 0.0125614
+      duration: 0.0046252
       messages: 
       output: 
       stacktrace: 
@@ -1271,7 +1271,7 @@ MonoBehaviour:
       name: ExperienceCanBeGiven
       fullName: Testing.Actors.CharacterTests.ExperienceCanBeGiven
       resultStatus: 1
-      duration: 0.0076099
+      duration: 0.0027504
       messages: 
       output: 
       stacktrace: 
@@ -1288,7 +1288,7 @@ MonoBehaviour:
       name: LevelCanBeChanged
       fullName: Testing.Actors.CharacterTests.LevelCanBeChanged
       resultStatus: 1
-      duration: 0.0116608
+      duration: 0.0031099
       messages: 
       output: 
       stacktrace: 
@@ -1305,7 +1305,7 @@ MonoBehaviour:
       name: ParameterlessCharacterCanBeCreated
       fullName: Testing.Actors.CharacterTests.ParameterlessCharacterCanBeCreated
       resultStatus: 1
-      duration: 0.0033704
+      duration: 0.0014009
       messages: 
       output: 
       stacktrace: 
@@ -1322,7 +1322,7 @@ MonoBehaviour:
       name: ResourcesCanBeRecovered
       fullName: Testing.Actors.CharacterTests.ResourcesCanBeRecovered
       resultStatus: 1
-      duration: 0.0163969
+      duration: 0.0051982
       messages: 
       output: 
       stacktrace: 
@@ -1339,7 +1339,7 @@ MonoBehaviour:
       name: ElementalAffinityTests
       fullName: Testing.Actors.ElementalAffinityTests
       resultStatus: 1
-      duration: 0.0132451
+      duration: 0.0105936
       messages: 
       output: 
       stacktrace: 
@@ -1355,7 +1355,7 @@ MonoBehaviour:
       name: ElementalAffinityCanBeCreated
       fullName: Testing.Actors.ElementalAffinityTests.ElementalAffinityCanBeCreated
       resultStatus: 1
-      duration: 0.0055684
+      duration: 0.0056747
       messages: 
       output: 
       stacktrace: 
@@ -1372,7 +1372,7 @@ MonoBehaviour:
       name: Equipment
       fullName: Testing.Actors.Equipment
       resultStatus: 1
-      duration: 0.0324199
+      duration: 0.0230781
       messages: 
       output: 
       stacktrace: 
@@ -1388,7 +1388,7 @@ MonoBehaviour:
       name: CharacterEquipmentTests
       fullName: Testing.Actors.Equipment.CharacterEquipmentTests
       resultStatus: 1
-      duration: 0.0135483
+      duration: 0.0076137
       messages: 
       output: 
       stacktrace: 
@@ -1404,7 +1404,7 @@ MonoBehaviour:
       name: AllEffectsFromEquippedItemsCanBeRetrieved
       fullName: Testing.Actors.Equipment.CharacterEquipmentTests.AllEffectsFromEquippedItemsCanBeRetrieved
       resultStatus: 1
-      duration: 0.0056524
+      duration: 0.0035492
       messages: 
       output: 
       stacktrace: 
@@ -1421,7 +1421,7 @@ MonoBehaviour:
       name: InitialEquipmentCanBeDefined
       fullName: Testing.Actors.Equipment.CharacterEquipmentTests.InitialEquipmentCanBeDefined
       resultStatus: 1
-      duration: 0.0006756
+      duration: 0.0005103
       messages: 
       output: 
       stacktrace: 
@@ -1438,7 +1438,7 @@ MonoBehaviour:
       name: EquipmentSlotTests
       fullName: Testing.Actors.Equipment.EquipmentSlotTests
       resultStatus: 1
-      duration: 0.0114716
+      duration: 0.0108301
       messages: 
       output: 
       stacktrace: 
@@ -1454,7 +1454,7 @@ MonoBehaviour:
       name: EquipmentItemCanBeObtainedFromSlot
       fullName: Testing.Actors.Equipment.EquipmentSlotTests.EquipmentItemCanBeObtainedFromSlot
       resultStatus: 1
-      duration: 0.0021147
+      duration: 0.0017666
       messages: 
       output: 
       stacktrace: 
@@ -1471,7 +1471,7 @@ MonoBehaviour:
       name: EquipmentSlotCanBeCreated
       fullName: Testing.Actors.Equipment.EquipmentSlotTests.EquipmentSlotCanBeCreated
       resultStatus: 1
-      duration: 0.0004654
+      duration: 0.0004982
       messages: 
       output: 
       stacktrace: 
@@ -1488,7 +1488,7 @@ MonoBehaviour:
       name: ItemNameCanBeObtained
       fullName: Testing.Actors.Equipment.EquipmentSlotTests.ItemNameCanBeObtained
       resultStatus: 1
-      duration: 0.003061
+      duration: 0.0037174
       messages: 
       output: 
       stacktrace: 
@@ -1505,7 +1505,7 @@ MonoBehaviour:
       name: EssenceAffinityTests
       fullName: Testing.Actors.EssenceAffinityTests
       resultStatus: 1
-      duration: 0.0138482
+      duration: 0.0055299
       messages: 
       output: 
       stacktrace: 
@@ -1521,7 +1521,7 @@ MonoBehaviour:
       name: EssenceAffinityCanBeCreated
       fullName: Testing.Actors.EssenceAffinityTests.EssenceAffinityCanBeCreated
       resultStatus: 1
-      duration: 0.0022668
+      duration: 0.0012241
       messages: 
       output: 
       stacktrace: 
@@ -1538,7 +1538,7 @@ MonoBehaviour:
       name: XmlCharacterParserTests
       fullName: Testing.Actors.XmlCharacterParserTests
       resultStatus: 1
-      duration: 0.4741488
+      duration: 0.0338244
       messages: 
       output: 
       stacktrace: 
@@ -1554,7 +1554,7 @@ MonoBehaviour:
       name: ListOfCharactersCanBeParsed
       fullName: Testing.Actors.XmlCharacterParserTests.ListOfCharactersCanBeParsed
       resultStatus: 1
-      duration: 0.4294316
+      duration: 0.0281895
       messages: 
       output: 
       stacktrace: 
@@ -1566,12 +1566,12 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1337
       parentUniqueId: Tests.dll/Testing/Actors/[Tests][Testing.Actors.XmlCharacterParserTests][suite]
-    - id: 1277
-      uniqueId: Tests.dll/Testing/[BattleSystem][suite]
+    - id: 1582
+      uniqueId: Tests.dll/Testing/[Tests][Testing.BattleSystem][suite]
       name: BattleSystem
       fullName: Testing.BattleSystem
       resultStatus: 1
-      duration: 1.0550368
+      duration: 0.073052
       messages: 
       output: 
       stacktrace: 
@@ -1580,8 +1580,98 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1250
+      parentId: 1543
       parentUniqueId: Tests.dll/[Testing][suite]
+    - id: 1442
+      uniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.BattleLoaderTests][suite]
+      name: BattleLoaderTests
+      fullName: Testing.BattleSystem.BattleLoaderTests
+      resultStatus: 1
+      duration: 0.0412871
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1582
+      parentUniqueId: Tests.dll/Testing/[Tests][Testing.BattleSystem][suite]
+    - id: 1443
+      uniqueId: Tests.dll/Testing/BattleSystem/BattleLoaderTests/[Tests][Testing.BattleSystem.BattleLoaderTests.BattleDataCanBeLoaded]
+      name: BattleDataCanBeLoaded
+      fullName: Testing.BattleSystem.BattleLoaderTests.BattleDataCanBeLoaded
+      resultStatus: 1
+      duration: 0.0238343
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1442
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.BattleLoaderTests][suite]
+    - id: 1444
+      uniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.BattleManagerTests][suite]
+      name: BattleManagerTests
+      fullName: Testing.BattleSystem.BattleManagerTests
+      resultStatus: 2
+      duration: 0.1136951
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1595
+      parentUniqueId: Tests.dll/Testing/[Tests][Testing.BattleSystem][suite]
+    - id: 1445
+      uniqueId: Tests.dll/Testing/BattleSystem/BattleManagerTests/[Tests][Testing.BattleSystem.BattleManagerTests.BattleManagerCanBeInitialized]
+      name: BattleManagerCanBeInitialized
+      fullName: Testing.BattleSystem.BattleManagerTests.BattleManagerCanBeInitialized
+      resultStatus: 2
+      duration: 0.0939789
+      messages: 'Unhandled log message: ''[Error] Cannot parse enemy with ID 0. Details
+        = Object reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
+      output: 'Cannot parse enemy with ID 0. Details = Object reference not set to
+        an instance of an object
+
+        NullReferenceException: Object reference
+        not set to an instance of an object
+
+'
+      stacktrace: 'Logging.LogsHandler:Log (string,Logging.LogsHandler/LogSeverity)
+        (at Assets/Scripts/Logging/LogsHandler.cs:56)
+
+        Logging.LogsHandler:LogError
+        (string) (at Assets/Scripts/Logging/LogsHandler.cs:32)
+
+        BattleSystem.Data.EnemyParser:ParseEnemy
+        (UnityEngine.TextAsset,int) (at Assets/Scripts/BattleSystem/Data/EnemyParser.cs:58)
+
+        BattleSystem.BattleManager:LoadBattlers
+        (BattleSystem.Model.Troop) (at Assets/Scripts/BattleSystem/BattleManager.cs:324)
+
+        BattleSystem.BattleManager:Start
+        () (at Assets/Scripts/BattleSystem/BattleManager.cs:131)
+
+        
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1444
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.BattleManagerTests][suite]
     - id: 1279
       uniqueId: Tests.dll/Testing/BattleSystem/[Behaviours][suite]
       name: Behaviours
@@ -2066,12 +2156,176 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1207
       parentUniqueId: Tests.dll/Testing/BattleSystem/Behaviours/UI/[Tests][Testing.BattleSystem.Behaviours.UI.TimelineUiControllerTests][suite]
+    - id: 1583
+      uniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Data][suite]
+      name: Data
+      fullName: Testing.BattleSystem.Data
+      resultStatus: 1
+      duration: 0.0666868
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1580
+      parentUniqueId: Tests.dll/Testing/[BattleSystem][suite]
+    - id: 1469
+      uniqueId: Tests.dll/Testing/BattleSystem/Data/[Tests][Testing.BattleSystem.Data.EnemyParserTests][suite]
+      name: EnemyParserTests
+      fullName: Testing.BattleSystem.Data.EnemyParserTests
+      resultStatus: 1
+      duration: 0.0623852
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1603
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Data][suite]
+    - id: 1470
+      uniqueId: Tests.dll/Testing/BattleSystem/Data/EnemyParserTests/[Tests][Testing.BattleSystem.Data.EnemyParserTests.EnemyCanBeParsed]
+      name: EnemyCanBeParsed
+      fullName: Testing.BattleSystem.Data.EnemyParserTests.EnemyCanBeParsed
+      resultStatus: 1
+      duration: 0.0426476
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1469
+      parentUniqueId: Tests.dll/Testing/BattleSystem/Data/[Tests][Testing.BattleSystem.Data.EnemyParserTests][suite]
+    - id: 1452
+      uniqueId: Tests.dll/Testing/BattleSystem/Data/[Tests][Testing.BattleSystem.Data.TroopParserTests][suite]
+      name: TroopParserTests
+      fullName: Testing.BattleSystem.Data.TroopParserTests
+      resultStatus: 1
+      duration: 0.0501917
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1583
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Data][suite]
+    - id: 1453
+      uniqueId: Tests.dll/Testing/BattleSystem/Data/TroopParserTests/[Tests][Testing.BattleSystem.Data.TroopParserTests.TroopCanBeParsed]
+      name: TroopCanBeParsed
+      fullName: Testing.BattleSystem.Data.TroopParserTests.TroopCanBeParsed
+      resultStatus: 1
+      duration: 0.035553
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1452
+      parentUniqueId: Tests.dll/Testing/BattleSystem/Data/[Tests][Testing.BattleSystem.Data.TroopParserTests][suite]
+    - id: 1578
+      uniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Fields][suite]
+      name: Fields
+      fullName: Testing.BattleSystem.Fields
+      resultStatus: 1
+      duration: 0.0380674
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1576
+      parentUniqueId: Tests.dll/Testing/[BattleSystem][suite]
+    - id: 1446
+      uniqueId: Tests.dll/Testing/BattleSystem/Fields/[Tests][Testing.BattleSystem.Fields.BattlefieldsHolderTests][suite]
+      name: BattlefieldsHolderTests
+      fullName: Testing.BattleSystem.Fields.BattlefieldsHolderTests
+      resultStatus: 1
+      duration: 0.037299
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1578
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Fields][suite]
+    - id: 1447
+      uniqueId: Tests.dll/Testing/BattleSystem/Fields/BattlefieldsHolderTests/[Tests][Testing.BattleSystem.Fields.BattlefieldsHolderTests.FieldCanBeRetrievedById]
+      name: FieldCanBeRetrievedById
+      fullName: Testing.BattleSystem.Fields.BattlefieldsHolderTests.FieldCanBeRetrievedById
+      resultStatus: 1
+      duration: 0.0205168
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1446
+      parentUniqueId: Tests.dll/Testing/BattleSystem/Fields/[Tests][Testing.BattleSystem.Fields.BattlefieldsHolderTests][suite]
+    - id: 1448
+      uniqueId: Tests.dll/Testing/BattleSystem/Fields/[Tests][Testing.BattleSystem.Fields.BattlefieldTests][suite]
+      name: BattlefieldTests
+      fullName: Testing.BattleSystem.Fields.BattlefieldTests
+      resultStatus: 1
+      duration: 0.0325341
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1578
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Fields][suite]
+    - id: 1449
+      uniqueId: Tests.dll/Testing/BattleSystem/Fields/BattlefieldTests/[Tests][Testing.BattleSystem.Fields.BattlefieldTests.FieldIdCanBeObtained]
+      name: FieldIdCanBeObtained
+      fullName: Testing.BattleSystem.Fields.BattlefieldTests.FieldIdCanBeObtained
+      resultStatus: 1
+      duration: 0.016967
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1448
+      parentUniqueId: Tests.dll/Testing/BattleSystem/Fields/[Tests][Testing.BattleSystem.Fields.BattlefieldTests][suite]
     - id: 1278
       uniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Model][suite]
       name: Model
       fullName: Testing.BattleSystem.Model
       resultStatus: 1
-      duration: 0.0914387
+      duration: 0.0414078
       messages: 
       output: 
       stacktrace: 
@@ -2082,12 +2336,78 @@ MonoBehaviour:
       categories: []
       parentId: 1277
       parentUniqueId: Tests.dll/Testing/[BattleSystem][suite]
+    - id: 1446
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.BattlerTests][suite]
+      name: BattlerTests
+      fullName: Testing.BattleSystem.Model.BattlerTests
+      resultStatus: 1
+      duration: 0.0447596
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1588
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Model][suite]
+    - id: 1447
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/BattlerTests/[Tests][Testing.BattleSystem.Model.BattlerTests.BattlerHealthCanBeChanged]
+      name: BattlerHealthCanBeChanged
+      fullName: Testing.BattleSystem.Model.BattlerTests.BattlerHealthCanBeChanged
+      resultStatus: 1
+      duration: 0.0268279
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1446
+      parentUniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.BattlerTests][suite]
+    - id: 1448
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.PlayerSpotTests][suite]
+      name: PlayerSpotTests
+      fullName: Testing.BattleSystem.Model.PlayerSpotTests
+      resultStatus: 1
+      duration: 0.0363796
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1590
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Model][suite]
+    - id: 1449
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/PlayerSpotTests/[Tests][Testing.BattleSystem.Model.PlayerSpotTests.PlayerSpotCanBeCreated]
+      name: PlayerSpotCanBeCreated
+      fullName: Testing.BattleSystem.Model.PlayerSpotTests.PlayerSpotCanBeCreated
+      resultStatus: 1
+      duration: 0.0178602
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1448
+      parentUniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.PlayerSpotTests][suite]
     - id: 1203
       uniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.TimelineActionTests][suite]
       name: TimelineActionTests
       fullName: Testing.BattleSystem.Model.TimelineActionTests
       resultStatus: 1
-      duration: 0.0824832
+      duration: 0.0574344
       messages: 
       output: 
       stacktrace: 
@@ -2103,7 +2423,7 @@ MonoBehaviour:
       name: ComputeActionStartPointTest
       fullName: Testing.BattleSystem.Model.TimelineActionTests.ComputeActionStartPointTest
       resultStatus: 1
-      duration: 0.0489261
+      duration: 0.0261364
       messages: 
       output: 
       stacktrace: 
@@ -2120,7 +2440,7 @@ MonoBehaviour:
       name: TimelineActionCanBeCreatedFromBattlerBehaviourTest
       fullName: Testing.BattleSystem.Model.TimelineActionTests.TimelineActionCanBeCreatedFromBattlerBehaviourTest
       resultStatus: 1
-      duration: 0.016577
+      duration: 0.0067467
       messages: 
       output: 
       stacktrace: 
@@ -2137,7 +2457,7 @@ MonoBehaviour:
       name: TimelineActionCanBeCreatedFromValuesTest
       fullName: Testing.BattleSystem.Model.TimelineActionTests.TimelineActionCanBeCreatedFromValuesTest
       resultStatus: 1
-      duration: 0.0028817
+      duration: 0.0004195
       messages: 
       output: 
       stacktrace: 
@@ -2149,6 +2469,204 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1203
       parentUniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.TimelineActionTests][suite]
+    - id: 1454
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.TimelineSegmentTests][suite]
+      name: TimelineSegmentTests
+      fullName: Testing.BattleSystem.Model.TimelineSegmentTests
+      resultStatus: 1
+      duration: 0.0492401
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1593
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Model][suite]
+    - id: 1456
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/TimelineSegmentTests/[Tests][Testing.BattleSystem.Model.TimelineSegmentTests.SegmentLengthCanBeComputed]
+      name: SegmentLengthCanBeComputed
+      fullName: Testing.BattleSystem.Model.TimelineSegmentTests.SegmentLengthCanBeComputed
+      resultStatus: 1
+      duration: 0.0187904
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1454
+      parentUniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.TimelineSegmentTests][suite]
+    - id: 1455
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/TimelineSegmentTests/[Tests][Testing.BattleSystem.Model.TimelineSegmentTests.TimelineSegmentCanBeCreated]
+      name: TimelineSegmentCanBeCreated
+      fullName: Testing.BattleSystem.Model.TimelineSegmentTests.TimelineSegmentCanBeCreated
+      resultStatus: 1
+      duration: 0.0054006
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1454
+      parentUniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.TimelineSegmentTests][suite]
+    - id: 1457
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.TroopMemberTests][suite]
+      name: TroopMemberTests
+      fullName: Testing.BattleSystem.Model.TroopMemberTests
+      resultStatus: 1
+      duration: 0.0357032
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1595
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Model][suite]
+    - id: 1458
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/TroopMemberTests/[Tests][Testing.BattleSystem.Model.TroopMemberTests.TroopMemberCanBeCreated]
+      name: TroopMemberCanBeCreated
+      fullName: Testing.BattleSystem.Model.TroopMemberTests.TroopMemberCanBeCreated
+      resultStatus: 1
+      duration: 0.0189492
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1457
+      parentUniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.TroopMemberTests][suite]
+    - id: 1446
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.TroopTests][suite]
+      name: TroopTests
+      fullName: Testing.BattleSystem.Model.TroopTests
+      resultStatus: 1
+      duration: 0.0356291
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1581
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.Model][suite]
+    - id: 1447
+      uniqueId: Tests.dll/Testing/BattleSystem/Model/TroopTests/[Tests][Testing.BattleSystem.Model.TroopTests.TroopCanBeCreated]
+      name: TroopCanBeCreated
+      fullName: Testing.BattleSystem.Model.TroopTests.TroopCanBeCreated
+      resultStatus: 1
+      duration: 0.0162891
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1446
+      parentUniqueId: Tests.dll/Testing/BattleSystem/Model/[Tests][Testing.BattleSystem.Model.TroopTests][suite]
+    - id: 1585
+      uniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.UI][suite]
+      name: UI
+      fullName: Testing.BattleSystem.UI
+      resultStatus: 1
+      duration: 0.1141572
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1584
+      parentUniqueId: Tests.dll/Testing/[Tests][Testing.BattleSystem][suite]
+    - id: 1446
+      uniqueId: Tests.dll/Testing/BattleSystem/UI/[Tests][Testing.BattleSystem.UI.SelectableMoveCategoryTests][suite]
+      name: SelectableMoveCategoryTests
+      fullName: Testing.BattleSystem.UI.SelectableMoveCategoryTests
+      resultStatus: 1
+      duration: 0.1085865
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1598
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.UI][suite]
+    - id: 1447
+      uniqueId: Tests.dll/Testing/BattleSystem/UI/SelectableMoveCategoryTests/[Tests][Testing.BattleSystem.UI.SelectableMoveCategoryTests.DataCanBeFed]
+      name: DataCanBeFed
+      fullName: Testing.BattleSystem.UI.SelectableMoveCategoryTests.DataCanBeFed
+      resultStatus: 1
+      duration: 0.0889067
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1446
+      parentUniqueId: Tests.dll/Testing/BattleSystem/UI/[Tests][Testing.BattleSystem.UI.SelectableMoveCategoryTests][suite]
+    - id: 1444
+      uniqueId: Tests.dll/Testing/BattleSystem/UI/[Tests][Testing.BattleSystem.UI.SimpleTextWindowTests][suite]
+      name: SimpleTextWindowTests
+      fullName: Testing.BattleSystem.UI.SimpleTextWindowTests
+      resultStatus: 1
+      duration: 0.080472
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1585
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.UI][suite]
+    - id: 1445
+      uniqueId: Tests.dll/Testing/BattleSystem/UI/SimpleTextWindowTests/[Tests][Testing.BattleSystem.UI.SimpleTextWindowTests.TextCanBeUpdated]
+      name: TextCanBeUpdated
+      fullName: Testing.BattleSystem.UI.SimpleTextWindowTests.TextCanBeUpdated
+      resultStatus: 1
+      duration: 0.0606843
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1444
+      parentUniqueId: Tests.dll/Testing/BattleSystem/UI/[Tests][Testing.BattleSystem.UI.SimpleTextWindowTests][suite]
     - id: 1275
       uniqueId: Tests.dll/Testing/[Tests][Testing.Core][suite]
       name: Core
@@ -10231,13 +10749,13 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1008
       parentUniqueId: Tests.dll/Testing/Utils/[Tests][Testing.Utils.TimeConverterTests][suite]
-    m_ResultText: QuestConditionTests (0,116s)
+    m_ResultText: EnemyCanBeParsed (0,043s)
     m_ResultStacktrace: 
     m_TestListState:
-      scrollPos: {x: 0, y: 240}
-      m_SelectedIDs: 1867542f
-      m_LastClickedID: 794060568
-      m_ExpandedIDs: 0cdece80e95922837e2f00847d27c088d1e1e588ddd5208b5155378cc3f7618cd887a28e2a9e4c93c87ae496241beb972382bb9c8330b39d02715a9e09add29e759bef9ed340b9a17bf06da2d4aaefa4b76bf0a5a4ca3fa65f79f2a829bf73aa914bb5ad079c34aef87addb13bf28fb7b75f6dbe3c9679be944c81be024969c1ad0dd3c21665e8c598d140c68c3bacc713d282c802a7b6c95c8600ca2bab08cd80cb9ccdd14892d237d566d76e3b5fd9a5300eda1eda61da628e6ddb1031dddcc77613dd7c6e4bdd8c60acded0fc5cdf3f92c2df32b5d8e15d006de6427858ea02b6e9ea6b36cdee4eaf28ef2f67adefafd157f2fde983f3d5f817f65bc100f7e557abf787cbe0f8cf7f5cf9390acefbd34366fcf586d3fcbbb68d003872b70371ab9407b8935908e9ea6b094deeca0900b5fa09b24fa80bd84bb217d67107197bd7f21a4522021b01d8b11c720b2f1ec48194229038d02306d9b6268d11e026271162275410cf293ae17a2a1867542fcc405a316e478e31ba63e033afaa083888ba9e3a5900253bf504303ea67fca4232d0ec4353adc94484f5ef448dd8cb468a2075497e134b4b5e12dd4b4bc765507441155175b2fe5294689155958cc95ad40d6d61d0dfe362a31ce0657899ab6637ca336b8092776b15b5276c2b342b6e1640d16f12e13e719f3f9473a67d017432871475accef176ca400a77c3313d77158eb47be4ff637efd6e247f199a897fffffff7f
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 5131548e
+      m_LastClickedID: -1907084975
+      m_ExpandedIDs: 0cdece80ea94e580e95922837e2f00847d27c088d1e1e588ddd5208b5155378cc3f7618cd887a28e2a9e4c93c87ae496241beb977348a09b2382bb9c8330b39d02715a9e09add29e759bef9ed340b9a17bf06da2d4aaefa4b76bf0a5a4ca3fa66d33aca75f79f2a8310ebcaa914bb5ad079c34aef87addb13bf28fb7f3d264b9b75f6dbe3c9679be944c81be024969c1ad0dd3c21665e8c598d140c68c3bacc713d282c802a7b6c95c8600ca2bab08cd80cb9ccd2e97d5cecbc54bd2d14892d237d566d76e3b5fd9a5300eda1eda61da628e6ddb1031dddcc77613dd7c6e4bdd8c60acded0fc5cdf3f92c2df32b5d8e1925181e25d006de6427858ea02b6e9ea6b36cdee4eaf28ef2f67adefafd157f2fde983f3d5f817f6809dbaf65bc100f7e557abf787cbe0f8cf7f5cf9390acefbd34366fcf586d3fcbbb68d003872b70371ab9407b8935908e9ea6b094deeca0900b5fa09b24fa80bd84bb217d67107197bd7f21a4522021b01d8b11c720b2f1e6e83a91ec48194229038d02306d9b6268d11e02627116227da52eb285410cf293ae17a2a1867542fcc405a316e478e31ba63e033afaa083888ba9e3a5900253b91c1773cf504303ea67fca4232d0ec4353adc94484f5ef448dd8cb468a2075497e134b4b5e12dd4b4bc765507441155175b2fe529468915599b4b856958cc95ad40d6d61d0dfe362b1ab6065a31ce0657899ab6637ca336b8092776b15b5276c2b342b6e1640d16f12e13e719f3f9473a67d017432871475accef176ca400a77c3313d77158eb47be4ff637efd6e247f199a897fffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -10324,38 +10842,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Animation
-    m_Image: {fileID: -8166618308981325432, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 279
-    y: 73
-    width: 1058
-    height: 671
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-  m_LockTracker:
-    m_IsLocked: 0
-  m_LastSelectedObjectID: 64038
---- !u!114 &15
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -10371,7 +10857,7 @@ MonoBehaviour:
     x: 279
     y: 73
     width: 1058
-    height: 671
+    height: 670
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -10383,6 +10869,10 @@ MonoBehaviour:
     - {fileID: -7308773839094073113, guid: b6512bd6d866bf448a8926246a8f0144, type: 2}
     - {fileID: -314140631793947337, guid: 35eabbbb834a008458640257d5521c51, type: 2}
     - {fileID: -6213126015869005641, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+    - {fileID: -3926946118967815135, guid: 932a1ed049457a24693b2d56cbf723b3, type: 2}
+    - {fileID: -314140631793947337, guid: c32103e5f1d49cd488a7e2f76fda18fd, type: 2}
+    - {fileID: 8736288720193687263, guid: 06f2e11bac4a82845a4ab75edcca46d7, type: 2}
+    - {fileID: 8736288720193687263, guid: d5a8de69ee037d840877f0e4047f083b, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.8473684
       e01: 0
@@ -10464,11 +10954,75 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: -164
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 52
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.68526316
+      e01: 0
+      e02: 0
+      e03: -19.263153
+      e10: 0
+      e11: 0.68526316
+      e12: 0
+      e13: 226.41579
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: b6512bd6d866bf448a8926246a8f0144,
+  m_AnimatorController: {fileID: 9100000, guid: d5a8de69ee037d840877f0e4047f083b,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -314140631793947337, guid: b6512bd6d866bf448a8926246a8f0144,
+  - m_Target: {fileID: 8736288720193687263, guid: d5a8de69ee037d840877f0e4047f083b,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -10482,7 +11036,7 @@ MonoBehaviour:
   m_CurrentEditor: 0
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &16
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10505,8 +11059,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 279
     y: 73
-    width: 1058
-    height: 671
+    width: 705
+    height: 670
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -10730,9 +11284,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.13524115, y: 0.0632248, z: -0.05905445}
+    m_Target: {x: 5.2268515, y: 3.1378312, z: 0.029886406}
     speed: 2
-    m_Value: {x: -0.13524115, y: 0.0632248, z: -0.05905445}
+    m_Value: {x: 5.2268515, y: 3.1378312, z: 0.029886406}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -10783,9 +11337,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.142193
+    m_Target: 3.4653966
     speed: 2
-    m_Value: 1.142193
+    m_Value: 3.4653966
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -10810,6 +11364,38 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animation
+    m_Image: {fileID: -8166618308981325432, guid: 0000000000000000d000000000000000,
+      type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 279
+    y: 73
+    width: 1058
+    height: 670
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: 136570
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -10834,7 +11420,7 @@ MonoBehaviour:
     x: 1339
     y: 73
     width: 580
-    height: 671
+    height: 662
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -10902,9 +11488,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 765
+    y: 764
     width: 1920
-    height: 234
+    height: 235
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -10922,22 +11508,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Data/Maps/Haalmikah
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Data/Maps/Haalmikah
+  - Assets/Scenes
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\maxad\Documents\git_projects\LC_Unity\LC_Unity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 122}
-    m_SelectedIDs: ee960000
-    m_LastClickedID: 38638
-    m_ExpandedIDs: 000000008482000086820000888200008a8200008c8200008e82000090820000b482000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 617}
+    m_SelectedIDs: 805a0000
+    m_LastClickedID: 23168
+    m_ExpandedIDs: 000000004c5a00004e5a0000505a0000525a0000545a0000565a0000585a0000645a00006a5a0000845a0000525c0000246c00003a7300004815020000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -10965,7 +11551,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008482000086820000888200008a8200008c8200008e82000090820000
+    m_ExpandedIDs: 000000004c5a00004e5a0000505a0000525a0000545a0000565a0000585a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -10992,7 +11578,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000b26c0000445000003a16000054670000a84f0000e4150000ca510000b6150000888d0000149effff3aca0000306f00002a60000002e3000008760100f4c703001e3c0400dac50100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -11017,7 +11603,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 120}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 96
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 197
@@ -11043,9 +11629,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 765
+    y: 756
     width: 1920
-    height: 234
+    height: 243
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default

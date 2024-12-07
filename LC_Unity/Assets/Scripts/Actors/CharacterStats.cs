@@ -21,8 +21,15 @@ namespace Actors
         {
             get
             {
-                float discriminant = ExpFunction.B * ExpFunction.B - 4 * ExpFunction.A * (ExpFunction.C - Exp);
-                return Mathf.FloorToInt((-ExpFunction.B + Mathf.Sqrt(discriminant)) / (2 * ExpFunction.A));
+                if(ExpFunction.A > 0.0f)
+                {
+                    float discriminant = ExpFunction.B * ExpFunction.B - 4 * ExpFunction.A * (ExpFunction.C - Exp);
+                    return Mathf.FloorToInt((-ExpFunction.B + Mathf.Sqrt(discriminant)) / (2 * ExpFunction.A));
+                }
+                else
+                {
+                    return Mathf.FloorToInt((Exp - ExpFunction.C) / ExpFunction.B);
+                }
             }
         }
 
