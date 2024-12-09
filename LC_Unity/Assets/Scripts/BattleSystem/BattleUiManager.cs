@@ -69,6 +69,13 @@ namespace BattleSystem
         public SimpleTextWindow HelpWindow { get { return _helpWindow; } set { _helpWindow = value; } }
         public SimpleTextWindow AttackLabelWindow { get { return _attackLabelWindow; } set { _attackLabelWindow = value; } }
         public PlayerGlobalUi PlayerGlobalUi { get { return _playerGlobalUi; } set { _playerGlobalUi = value; } }
+        public TimelineUiController TimelineUiController { get { return _timelineUiController; } set { _timelineUiController = value; } }
+        public BattleInitInstructionsWindow InitInstructionsWindow 
+        { 
+            get { return _battleInitInstructionsWindow; } 
+            set { _battleInitInstructionsWindow = value; }
+        }
+        public BattleStartTag BattleStartTag { get { return _battleStartTag; } set { _battleStartTag = value; } }
         #endregion
 
         public void FeedParty(List<Character> characters)

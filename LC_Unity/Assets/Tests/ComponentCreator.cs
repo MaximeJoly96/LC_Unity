@@ -17,6 +17,7 @@ using Core.Model;
 using Utils;
 using Actors;
 using BattleSystem;
+using BattleSystem.Fields;
 
 namespace Testing
 {
@@ -267,7 +268,12 @@ namespace Testing
 
         public static Character CreateDummyCharacter()
         {
-            return new Character(new ElementIdentifier(0, "name", ""),
+            return CreateDummyCharacter(0);
+        }
+
+        public static Character CreateDummyCharacter(int id)
+        {
+            return new Character(new ElementIdentifier(id, "name", ""),
                                  new QuadraticFunction(10.0f, 10.0f, 10.0f),
                                  new StatScalingFunction(100.0f, 1.0f, 100.0f),
                                  new StatScalingFunction(10.0f, 1.0f, 10.0f),
@@ -294,6 +300,15 @@ namespace Testing
             PlayerGlobalUi playerGlobalUi = CreatePlayerGlobalUi();
             uiManager.PlayerGlobalUi = playerGlobalUi;
 
+            TimelineUiController timelineUi = go.AddComponent<TimelineUiController>();
+            uiManager.TimelineUiController = timelineUi;
+            timelineUi.SetTimelinePrefab(CreateBattlerTimeline());
+
+            BattleInitInstructionsWindow initInstructionsWindow = CreateInitInstructionsWindow();
+            uiManager.InitInstructionsWindow = initInstructionsWindow;
+
+            uiManager.BattleStartTag = CreateBattleStartTag();
+
             return uiManager;
         }
 
@@ -303,6 +318,56 @@ namespace Testing
 
             PlayerGlobalUi ui = go.AddComponent<PlayerGlobalUi>();
             return ui;
+        }
+
+        public static BattlerBehaviour CreateBattlerBehaviour()
+        {
+            GameObject go = CreateEmptyGameObject();
+            BattlerBehaviour battler = go.AddComponent<BattlerBehaviour>();
+
+            return battler;
+        }
+
+        public static Battlefield CreateBattlefield(int id)
+        {
+            GameObject go = CreateEmptyGameObject();
+
+            Battlefield bf = go.AddComponent<Battlefield>();
+            bf.Id = id;
+
+            return bf;
+        }
+
+        public static BattlerTimeline CreateBattlerTimeline()
+        {
+            GameObject go = CreateEmptyGameObject();
+            BattlerTimeline timeline = go.AddComponent<BattlerTimeline>();
+
+            TextMeshProUGUI battlerName = CreateText();
+            battlerName.transform.SetParent(go.transform);
+            timeline.BattlerName = battlerName;
+
+            return timeline;
+        }
+
+        public static BattleInitInstructionsWindow CreateInitInstructionsWindow()
+        {
+            GameObject go = CreateEmptyGameObject();
+            BattleInitInstructionsWindow window = go.AddComponent<BattleInitInstructionsWindow>();
+
+            TextMeshProUGUI instructions = CreateText();
+            instructions.transform.SetParent(go.transform);
+            window.InstructionsText = instructions;
+
+            return window;
+        }
+
+        public static BattleStartTag CreateBattleStartTag()
+        {
+            GameObject go = CreateEmptyGameObject();
+            BattleStartTag tag = go.AddComponent<BattleStartTag>();
+
+            return tag;
         }
     }
 }

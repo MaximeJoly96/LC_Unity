@@ -104,6 +104,10 @@ namespace BattleSystem
 
         public BattleUiManager UiManager { get { return _uiManager; } set { _uiManager = value; } }
         public TextAsset Troops { get { return _troops; } set { _troops = value; } }
+        public TextAsset Enemies { get { return _enemies; } set { _enemies = value; } }
+        public BattlersHolder CharactersHolder { get { return _charactersHolder; } set { _charactersHolder = value; } }
+        public BattlersHolder BattlersHolder { get { return _battlersHolder; } set { _battlersHolder = value; } }
+        public BattlefieldsHolder BattlefieldsHolder { get  { return _battlefieldsHolder; } set { _battlefieldsHolder = value; } }
         #endregion
 
         private void Start()

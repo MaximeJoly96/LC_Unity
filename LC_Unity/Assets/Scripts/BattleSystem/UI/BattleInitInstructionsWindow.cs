@@ -24,17 +24,23 @@ namespace BattleSystem.UI
             }
         }
 
+        #region Properties
         public Animator Animator { get { return GetComponent<Animator>(); } }
+        public TMP_Text InstructionsText { get { return _instructionsText; } set { _instructionsText = value; } }
+        #endregion
 
         public void ShowWindow()
         {
-            Animator.Play("InstructionsWindowOpen");
+            if(Animator)
+                Animator.Play("InstructionsWindowOpen");
         }
 
         public void HideWindow()
         {
             _instructionsText.text = "";
-            Animator.Play("InstructionsWindowClose");
+
+            if(Animator)
+                Animator.Play("InstructionsWindowClose");
         }
 
         public void FinishedShowing()

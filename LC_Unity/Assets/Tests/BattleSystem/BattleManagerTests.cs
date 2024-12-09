@@ -8,6 +8,10 @@ using System.Collections;
 using UnityEngine.TestTools;
 using Engine.SceneControl;
 using UnityEditor;
+using BattleSystem.Model;
+using System.Collections.Generic;
+using Actors;
+using BattleSystem.Fields;
 
 namespace Testing.BattleSystem
 {
@@ -52,6 +56,63 @@ namespace Testing.BattleSystem
 
             battleManager.UiManager = CreateBattleUiManager();
             battleManager.Troops = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/BattleSystem/TestData/TestTroops.xml");
+            battleManager.Enemies = AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/BattleSystem/TestData/TestEnemies.xml");
+
+            battleManager.CharactersHolder = CreateBattlersHolder();
+            battleManager.BattlersHolder = CreateBattlersHolder();
+
+            Character c1 = ComponentCreator.CreateDummyCharacter(0);
+            Character c2 = ComponentCreator.CreateDummyCharacter(1);
+            Character c3 = ComponentCreator.CreateDummyCharacter(2);
+
+            Character c4 = ComponentCreator.CreateDummyCharacter(3);
+            Character c5 = ComponentCreator.CreateDummyCharacter(4);
+            Character c6 = ComponentCreator.CreateDummyCharacter(5);
+
+            List<BattlerBehaviour> battlers = new List<BattlerBehaviour>
+            {
+                ComponentCreator.CreateBattlerBehaviour(),
+                ComponentCreator.CreateBattlerBehaviour(),
+                ComponentCreator.CreateBattlerBehaviour()
+            };
+
+            battlers[0].Feed(new Battler(c1));
+            battlers[1].Feed(new Battler(c2));
+            battlers[2].Feed(new Battler(c3));
+
+            battleManager.BattlersHolder.Feed(battlers);
+
+            List<BattlerBehaviour> characters = new List<BattlerBehaviour>
+            {
+                ComponentCreator.CreateBattlerBehaviour(),
+                ComponentCreator.CreateBattlerBehaviour(),
+                ComponentCreator.CreateBattlerBehaviour()
+            };
+
+            characters[0].Feed(new Battler(c4));
+            characters[1].Feed(new Battler(c5));
+            characters[2].Feed(new Battler(c6));
+
+            battleManager.CharactersHolder.Feed(characters);
+
+            Battlefield[] fields = new Battlefield[]
+            {
+                ComponentCreator.CreateBattlefield(0),
+                ComponentCreator.CreateBattlefield(1),
+                ComponentCreator.CreateBattlefield(2)
+            };
+
+            foreach (Battlefield bf in fields)
+            {
+                _usedGameObjects.Add(bf.gameObject);
+            }
+
+            GameObject holderGo = ComponentCreator.CreateEmptyGameObject();
+            _usedGameObjects.Add(holderGo);
+            BattlefieldsHolder holder = holderGo.AddComponent<BattlefieldsHolder>();
+            holder.FeedFields(fields);
+
+            battleManager.BattlefieldsHolder = holder;
 
             return battleManager;
         }
@@ -64,6 +125,13 @@ namespace Testing.BattleSystem
             _usedGameObjects.Add(uiManager.gameObject);
 
             return uiManager;
+        }
+
+        private BattlersHolder CreateBattlersHolder()
+        {
+            GameObject go = ComponentCreator.CreateEmptyGameObject();
+            _usedGameObjects.Add(go.gameObject);
+            return go.AddComponent<BattlersHolder>();
         }
     }
 }

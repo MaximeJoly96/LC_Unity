@@ -17,6 +17,7 @@ namespace BattleSystem.UI
         private List<BattlerTimeline> _battlersTimelines;
         private Animator _animator;
 
+        #region Properties
         private Animator Animator
         {
             get
@@ -30,6 +31,7 @@ namespace BattleSystem.UI
         public List<BattlerTimeline> Timelines { get { return _battlersTimelines.Where(t => !t.Battler.IsDead).ToList(); } }
         public int BattlersCount { get { return _battlers.Count; } }
         public int TimelinesCount { get { return _battlersTimelines.Count; } }
+        #endregion
 
         public void Feed(List<BattlerBehaviour> battlers)
         {
@@ -107,6 +109,11 @@ namespace BattleSystem.UI
 
                 currentOffset += segments[i].Length;
             }
+        }
+
+        public void SetTimelinePrefab(BattlerTimeline prefab)
+        {
+            _battlerTimelinePrefab = prefab;
         }
     }
 }

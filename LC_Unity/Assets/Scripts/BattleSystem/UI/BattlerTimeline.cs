@@ -12,9 +12,12 @@ namespace BattleSystem.UI
         [SerializeField]
         private Image _timeline;
 
+        #region Properties
         public TimelineAction Action { get; set; }
         public BattlerBehaviour Battler { get; set; }
         public bool Processed { get; set; }
+        public TMP_Text BattlerName { get { return _battlerName; } set { _battlerName = value; } }
+        #endregion
 
         public void Feed(BattlerBehaviour battler)
         {

@@ -19,14 +19,21 @@ namespace BattleSystem.UI
             }
         }
 
+        private Animator _Animator
+        {
+            get { return GetComponent<Animator>(); }
+        }
+
         public void Show()
         {
-            GetComponent<Animator>().Play("ShowBattleStartTag");
+            if(_Animator)
+                _Animator.Play("ShowBattleStartTag");
         }
 
         public void Hide()
         {
-            GetComponent<Animator>().Play("HideBattleStartTag");
+            if(_Animator)
+                _Animator.Play("HideBattleStartTag");
         }
 
         public void FinishedHiding()
