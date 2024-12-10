@@ -34,13 +34,12 @@ namespace BattleSystem
 
         public void ConfirmTarget(BattlerBehaviour currentBattler)
         {
-            /* FIXME
             currentBattler.LockedInAbility = new Ability(CurrentAbility);
             currentBattler.LockedInAbility.Targets = new List<BattlerBehaviour> { _availableTargets[_cursorPosition] };
 
             if(currentBattler.LockedInAbility.Category == AbilityCategory.AttackCommand)
             {
-                Weapon weapon = currentBattler.BattlerData.Character.RightHand.GetItem() as Weapon;
+                Weapon weapon = currentBattler.BattlerData.Character.Equipment.RightHand.GetItem() as Weapon;
                 if(weapon != null)
                 {
                     currentBattler.LockedInAbility.Range = weapon.Range;
@@ -51,7 +50,7 @@ namespace BattleSystem
                     currentBattler.LockedInAbility.Range = 100;
                 }
                 
-            }*/
+            }
         }
 
         public void Clear()

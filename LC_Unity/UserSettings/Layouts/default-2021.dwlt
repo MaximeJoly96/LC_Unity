@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Test Runner
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 13238
+  controlID: 15212
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 13239
+  controlID: 15207
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: TestRunnerWindow
+  m_Name: AnimationWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -193,14 +193,14 @@ MonoBehaviour:
     height: 683
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 13}
   - {fileID: 11}
   - {fileID: 14}
   - {fileID: 15}
   - {fileID: 16}
-  m_Selected: 0
+  m_Selected: 4
   m_LastSelected: 1
 --- !u!114 &9
 MonoBehaviour:
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -248,15 +248,15 @@ MonoBehaviour:
     y: 683
     width: 1920
     height: 264
-  m_MinSize: {x: 100, y: 121}
-  m_MaxSize: {x: 4000, y: 4021}
-  m_ActualView: {fileID: 20}
+  m_MinSize: {x: 230, y: 271}
+  m_MaxSize: {x: 10000, y: 10021}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 21}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -319,7 +319,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -384,7 +384,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 30e0fdff64e0fdff7ee1fdff58e2fdff8ce2fdffa6e3fdff7ee4fdffb2e4fdffcce5fdff16e6fdff4ae6fdffa4e7fdffeee7fdff22e8fdff94eafdfff8ebfdff2cecfdff46edfdff1eeefdff52eefdff6ceffdffdceffdff10f0fdff2af1fdff9af1fdffcef1fdffe8f2fdff32f3fdff66f3fdff80f4fdffeaf4fdff1ef5fdff38f6fdff10f7fdff44f7fdff5ef8fdffa8f8fdffdcf8fdfff6f9fdff66fafdff9afafdffb4fbfdff52fdfdff86fdfdffa0fefdff2c00feff6000feffba01feffac03feffe003feff3a05feff1406feff4806feffa207feff5213feffac15feffe015feff0e17feff5a17feff8e17feffbc18feff081bfeff3c1bfeff901cfeff4c1dfeff801dfeffd41efeff901ffeffc41ffeff1821feff0e25feff4225feff5c26feff3827feff6c27feff8e28feff4a29feff7e29feffa02afeffcc2afeff002bfeff222cfeff4e2cfeff822cfeff9c2dfeff6a2ffeff9e2ffeffb830feffe430feff1831feff4232feff0435feff3835feff7a36feff063bfeff3a3bfeff943cfeffea3ffeff1e40feff4841feff8c42feffc042feffea43feff8a46feffbe46feffe447feffa048feffd448fefff449feff4a4cfeff7e4cfeff9e4dfeff8652feff4c61feff3881feffd281feff4689feffa889feff8a9bfeff7ca8feffc4a9feff9cb5fefff0b5feff24b6feff3eb7feff04b8feff38b8feff52b9feff7eb9feffb2b9feffccbafeffd6bffeff0ac0feff2ac1feffe4c1feff18c2feff58c3feffdef7feff9c10ffffca10ffffced7ffff2efbffff2e2f0100922f0100767501006c2e0200742e0200ec2e0200fe2e02000a2f0200
+      m_ExpandedIDs: a4e8feff58eafeffd0f1feffa8f2feff18f5feff90fcfeff48fdfeff0600ffff8007ffff040bfffff20dffff7a15fffffa18ffffa21bffff1a23ffffe824ffff8a29ffff1231ffff5c31ffffda36ffff663effff323fffff1042ffffb64cffff3862ffff2a64ffff3e67ffffc86effff4e70ffff9873ffff107bffff927dffff3ce7ffffcce8ffff88f0ffffeef1ffff3cf2ffff72f2ffff3af5ffffa6f6ffffdcf6ffffa8f9ffff2efbffff787d000016480100864801009848010062600100ca600100dc600100fc600100be61010038620100967a0100fe7a0100107b0100f07b0100587c01006a7c0100dcb8010056b9010076b9010036ba0100b0ba010010d101008ad10100aad10100e8d2010062d3010068e80100d0e80100e2e8010002e90100c2e901003cea0100fc02020056040200760402007e0402003a1e0200ac1e0200141f0200261f0200b01f0200be1f02008e3502000836020028360200e836020062370200c24d02003c4e02001c4f0200964f020048500200146602001e67020026670200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -437,7 +437,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 14105
+    ID: 129
     splitterInitialOffset: 522
     currentActiveSplitter: -1
     realSizes:
@@ -469,7 +469,7 @@ MonoBehaviour:
       name: LC
       fullName: LC
       resultStatus: 1
-      duration: 0.134551
+      duration: 0.2857493
       messages: 
       output: 
       stacktrace: 
@@ -485,7 +485,7 @@ MonoBehaviour:
       name: Tests.dll
       fullName: E:/Unity_Projects/LC_Unity/LC_Unity/Library/ScriptAssemblies/Tests.dll
       resultStatus: 1
-      duration: 0.0946095
+      duration: 0.2443637
       messages: 
       output: 
       stacktrace: 
@@ -501,7 +501,7 @@ MonoBehaviour:
       name: Testing
       fullName: Testing
       resultStatus: 1
-      duration: 0.0796845
+      duration: 0.2265777
       messages: 
       output: 
       stacktrace: 
@@ -1571,7 +1571,7 @@ MonoBehaviour:
       name: BattleSystem
       fullName: Testing.BattleSystem
       resultStatus: 1
-      duration: 0.073052
+      duration: 0.1902062
       messages: 
       output: 
       stacktrace: 
@@ -1619,9 +1619,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.BattleManagerTests][suite]
       name: BattleManagerTests
       fullName: Testing.BattleSystem.BattleManagerTests
-      resultStatus: 2
-      duration: 0.1136951
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.1799901
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1635,35 +1635,11 @@ MonoBehaviour:
       uniqueId: Tests.dll/Testing/BattleSystem/BattleManagerTests/[Tests][Testing.BattleSystem.BattleManagerTests.BattleManagerCanBeInitialized]
       name: BattleManagerCanBeInitialized
       fullName: Testing.BattleSystem.BattleManagerTests.BattleManagerCanBeInitialized
-      resultStatus: 2
-      duration: 0.0939789
-      messages: 'Unhandled log message: ''[Error] Cannot parse enemy with ID 0. Details
-        = Object reference not set to an instance of an object''. Use UnityEngine.TestTools.LogAssert.Expect'
-      output: 'Cannot parse enemy with ID 0. Details = Object reference not set to
-        an instance of an object
-
-        NullReferenceException: Object reference
-        not set to an instance of an object
-
-'
-      stacktrace: 'Logging.LogsHandler:Log (string,Logging.LogsHandler/LogSeverity)
-        (at Assets/Scripts/Logging/LogsHandler.cs:56)
-
-        Logging.LogsHandler:LogError
-        (string) (at Assets/Scripts/Logging/LogsHandler.cs:32)
-
-        BattleSystem.Data.EnemyParser:ParseEnemy
-        (UnityEngine.TextAsset,int) (at Assets/Scripts/BattleSystem/Data/EnemyParser.cs:58)
-
-        BattleSystem.BattleManager:LoadBattlers
-        (BattleSystem.Model.Troop) (at Assets/Scripts/BattleSystem/BattleManager.cs:324)
-
-        BattleSystem.BattleManager:Start
-        () (at Assets/Scripts/BattleSystem/BattleManager.cs:131)
-
-        
-
-'
+      resultStatus: 1
+      duration: 0.1191875
+      messages: 
+      output: 
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1672,6 +1648,56 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1444
       parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.BattleManagerTests][suite]
+    - id: 1446
+      uniqueId: Tests.dll/Testing/BattleSystem/BattleManagerTests/[Tests][Testing.BattleSystem.BattleManagerTests.BattleStateCanBeUpdated]
+      name: BattleStateCanBeUpdated
+      fullName: Testing.BattleSystem.BattleManagerTests.BattleStateCanBeUpdated
+      resultStatus: 1
+      duration: 0.0400931
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1444
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.BattleManagerTests][suite]
+    - id: 1446
+      uniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.BattlersHolderTests][suite]
+      name: BattlersHolderTests
+      fullName: Testing.BattleSystem.BattlersHolderTests
+      resultStatus: 1
+      duration: 0.0656476
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1601
+      parentUniqueId: Tests.dll/Testing/[Tests][Testing.BattleSystem][suite]
+    - id: 1447
+      uniqueId: Tests.dll/Testing/BattleSystem/BattlersHolderTests/[Tests][Testing.BattleSystem.BattlersHolderTests.BattlerCanBeInstantiated]
+      name: BattlerCanBeInstantiated
+      fullName: Testing.BattleSystem.BattlersHolderTests.BattlerCanBeInstantiated
+      resultStatus: 1
+      duration: 0.0458194
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1446
+      parentUniqueId: Tests.dll/Testing/BattleSystem/[Tests][Testing.BattleSystem.BattlersHolderTests][suite]
     - id: 1279
       uniqueId: Tests.dll/Testing/BattleSystem/[Behaviours][suite]
       name: Behaviours
@@ -10749,13 +10775,13 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1008
       parentUniqueId: Tests.dll/Testing/Utils/[Tests][Testing.Utils.TimeConverterTests][suite]
-    m_ResultText: EnemyCanBeParsed (0,043s)
+    m_ResultText: BattleManagerTests (0,180s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5131548e
-      m_LastClickedID: -1907084975
-      m_ExpandedIDs: 0cdece80ea94e580e95922837e2f00847d27c088d1e1e588ddd5208b5155378cc3f7618cd887a28e2a9e4c93c87ae496241beb977348a09b2382bb9c8330b39d02715a9e09add29e759bef9ed340b9a17bf06da2d4aaefa4b76bf0a5a4ca3fa66d33aca75f79f2a8310ebcaa914bb5ad079c34aef87addb13bf28fb7f3d264b9b75f6dbe3c9679be944c81be024969c1ad0dd3c21665e8c598d140c68c3bacc713d282c802a7b6c95c8600ca2bab08cd80cb9ccd2e97d5cecbc54bd2d14892d237d566d76e3b5fd9a5300eda1eda61da628e6ddb1031dddcc77613dd7c6e4bdd8c60acded0fc5cdf3f92c2df32b5d8e1925181e25d006de6427858ea02b6e9ea6b36cdee4eaf28ef2f67adefafd157f2fde983f3d5f817f6809dbaf65bc100f7e557abf787cbe0f8cf7f5cf9390acefbd34366fcf586d3fcbbb68d003872b70371ab9407b8935908e9ea6b094deeca0900b5fa09b24fa80bd84bb217d67107197bd7f21a4522021b01d8b11c720b2f1e6e83a91ec48194229038d02306d9b6268d11e02627116227da52eb285410cf293ae17a2a1867542fcc405a316e478e31ba63e033afaa083888ba9e3a5900253b91c1773cf504303ea67fca4232d0ec4353adc94484f5ef448dd8cb468a2075497e134b4b5e12dd4b4bc765507441155175b2fe529468915599b4b856958cc95ad40d6d61d0dfe362b1ab6065a31ce0657899ab6637ca336b8092776b15b5276c2b342b6e1640d16f12e13e719f3f9473a67d017432871475accef176ca400a77c3313d77158eb47be4ff637efd6e247f199a897fffffff7f
+      m_SelectedIDs: 213404d7
+      m_LastClickedID: -687590367
+      m_ExpandedIDs: 0cdece80ea94e580e95922837e2f00847d27c088d1e1e588ddd5208b5155378cc3f7618cd887a28e2a9e4c93c87ae496241beb977348a09b2382bb9c8330b39d02715a9e09add29e759bef9ed340b9a17bf06da2d4aaefa42f8e10a5b76bf0a5a4ca3fa66d33aca75f79f2a8310ebcaa914bb5ad079c34aef87addb13bf28fb7f3d264b9b75f6dbe3c9679be944c81be024969c1ad0dd3c21665e8c598d140c68c3bacc713d282c802a7b6c95c8600ca2bab08cd80cb9ccd2e97d5cecbc54bd2d14892d2213404d737d566d76e3b5fd9a5300eda1eda61da628e6ddb1031dddcc77613dd7c6e4bdd8c60acded0fc5cdf3f92c2df32b5d8e1925181e25d006de6427858ea02b6e9ea6b36cdee4eaf28ef2f67adefafd157f2fde983f3d5f817f6809dbaf65bc100f7e557abf787cbe0f8cf7f5cf9390acefbd34366fcf586d3fcbbb68d003872b70371ab9407b8935908e9ea6b094deeca0900b5fa09b24fa80bd84bb217d67107197bd7f21a4522021b01d8b11c720b2f1e6e83a91ec48194229038d02306d9b6268d11e02627116227da52eb285410cf293ae17a2a1867542fcc405a316e478e31ba63e033afaa083888ba9e3a5900253b91c1773cf504303ea67fca4232d0ec4353adc94484f5ef448dd8cb468a2075497e134b4b5e12dd4b4bc765507441155175b2fe529468915599b4b856958cc95ad40d6d61d0dfe362b1ab6065a31ce0657899ab6637ca336b8092776b15b5276c2b342b6e1640d16f12e13e719f3f9473a67d017432871475accef176ca400a77c3313d77158eb47be4ff637efd6e247f199a897fffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -10857,7 +10883,7 @@ MonoBehaviour:
     x: 279
     y: 73
     width: 1058
-    height: 670
+    height: 662
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -10873,6 +10899,7 @@ MonoBehaviour:
     - {fileID: -314140631793947337, guid: c32103e5f1d49cd488a7e2f76fda18fd, type: 2}
     - {fileID: 8736288720193687263, guid: 06f2e11bac4a82845a4ab75edcca46d7, type: 2}
     - {fileID: 8736288720193687263, guid: d5a8de69ee037d840877f0e4047f083b, type: 2}
+    - {fileID: 347726433019788935, guid: 2dbe891df1483e140b6b700e5d37ea32, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.8473684
       e01: 0
@@ -11018,11 +11045,27 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: d5a8de69ee037d840877f0e4047f083b,
+  m_AnimatorController: {fileID: 9100000, guid: 2dbe891df1483e140b6b700e5d37ea32,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 8736288720193687263, guid: d5a8de69ee037d840877f0e4047f083b,
+  - m_Target: {fileID: 347726433019788935, guid: 2dbe891df1483e140b6b700e5d37ea32,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -11059,8 +11102,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 279
     y: 73
-    width: 705
-    height: 670
+    width: 1058
+    height: 662
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -11284,9 +11327,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.2268515, y: 3.1378312, z: 0.029886406}
+    m_Target: {x: 0, y: 0, z: 0.5}
     speed: 2
-    m_Value: {x: 5.2268515, y: 3.1378312, z: 0.029886406}
+    m_Value: {x: 0, y: 0, z: 0.5}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -11337,9 +11380,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.4653966
+    m_Target: 1.2247449
     speed: 2
-    m_Value: 3.4653966
+    m_Value: 1.2247449
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -11388,14 +11431,14 @@ MonoBehaviour:
     x: 279
     y: 73
     width: 1058
-    height: 670
+    height: 662
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 136570
+  m_LastSelectedObjectID: 151616
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -11488,9 +11531,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 764
+    y: 756
     width: 1920
-    height: 235
+    height: 243
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -11516,14 +11559,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: 96
-  m_LastProjectPath: C:\Users\maxad\Documents\git_projects\LC_Unity\LC_Unity
+  m_LastProjectPath: E:\Unity_Projects\LC_Unity\LC_Unity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 617}
-    m_SelectedIDs: 805a0000
-    m_LastClickedID: 23168
-    m_ExpandedIDs: 000000004c5a00004e5a0000505a0000525a0000545a0000565a0000585a0000645a00006a5a0000845a0000525c0000246c00003a7300004815020000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 641}
+    m_SelectedIDs: 406b0000
+    m_LastClickedID: 27456
+    m_ExpandedIDs: 00000000de5a0000e05a0000e25a0000e45a0000e65a0000e85a0000ea5a0000ec5a0000ee5a0000f05a0000b85f0000d073000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -11551,7 +11594,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004c5a00004e5a0000505a0000525a0000545a0000565a0000585a000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000de5a0000e05a0000e25a0000e45a0000e65a0000e85a0000ea5a0000ec5a0000ee5a0000f05a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

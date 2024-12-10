@@ -48,40 +48,40 @@
             </false>
           </InventoryCondition>
         </true>
+        <false>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokQuest0Step2">
+            <TurnTowards Target="louga" />
+          </SetMoveRoute>
+          <Wait Duration="0.25" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest0Dialog1</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <Wait Duration="0.25" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest0Dialog2</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <Wait Duration="0.25" />
+          <ChangeItems Id="1000" Quantity="1" />
+          <PlaySoundEffect Name="gainItem" Volume="1" Pitch="1" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest0Dialog3</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <ProgressQuest Id="0" StepId="1" Status="Completed" />
+          <ProgressQuest Id="0" StepId="2" Status="Unlocked" />
+        </false>
       </QuestCondition>
     </true>
-    <false>
-      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokQuest0Step2">
-        <TurnTowards Target="louga" />
-      </SetMoveRoute>
-      <Wait Duration="0.25" />
-      <DisplayDialog>
-        <DialogBoxStyle>Classic</DialogBoxStyle>
-        <DialogBoxPosition>Bottom</DialogBoxPosition>
-        <Message>quest0Dialog1</Message>
-        <Locutor>warlok</Locutor>
-        <FaceGraphics></FaceGraphics>
-      </DisplayDialog>
-      <Wait Duration="0.25" />
-      <DisplayDialog>
-        <DialogBoxStyle>Classic</DialogBoxStyle>
-        <DialogBoxPosition>Bottom</DialogBoxPosition>
-        <Message>quest0Dialog2</Message>
-        <Locutor>warlok</Locutor>
-        <FaceGraphics></FaceGraphics>
-      </DisplayDialog>
-      <Wait Duration="0.25" />
-      <ChangeItems Id="1000" Quantity="1" />
-      <PlaySoundEffect Name="gainItem" Volume="1" Pitch="1" />
-      <DisplayDialog>
-        <DialogBoxStyle>Classic</DialogBoxStyle>
-        <DialogBoxPosition>Bottom</DialogBoxPosition>
-        <Message>quest0Dialog3</Message>
-        <Locutor>warlok</Locutor>
-        <FaceGraphics></FaceGraphics>
-      </DisplayDialog>
-      <ProgressQuest Id="0" StepId="1" Status="Completed" />
-      <ProgressQuest Id="0" StepId="2" Status="Unlocked" />
-    </false>
   </QuestCondition>
 </EventsSequence>

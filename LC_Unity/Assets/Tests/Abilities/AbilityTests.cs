@@ -86,5 +86,18 @@ namespace Testing.Abilities
             Assert.IsTrue(ability.Effects[0] is StatBoost);
             Assert.IsTrue(ability.Effects[1] is InflictStatus);
         }
+
+        [Test]
+        public void AbilityAnimationsCanBeEasilyChecked()
+        {
+            Ability ability = new Ability(new ElementIdentifier(4, "nameKey", "descriptionKey"), -2,
+                                          AbilityUsability.Always, TargetEligibility.All, AbilityCategory.Skill, 350);
+            ability.SetAnimation("", "strike", -1, -1, 2);
+
+            Assert.IsFalse(ability.HasChannelAnimation);
+            Assert.IsTrue(ability.HasStrikeAnimation);
+            Assert.IsFalse(ability.HasChannelParticles);
+            Assert.IsFalse(ability.HasImpactParticles);
+        }
     }
 }

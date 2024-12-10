@@ -13,6 +13,7 @@ using System.Linq;
 using Actions;
 using System.Xml.Serialization;
 using BattleSystem.Behaviours.AiBehaviours;
+using UnityEditor.Animations;
 
 namespace BattleSystem
 {
@@ -23,6 +24,7 @@ namespace BattleSystem
         [SerializeField]
         private bool _isEnemy;
         private BattleUiManager _uiManager;
+        private AttackAnimationsWrapper _attackAnimationsWrapper;
 
         public int BattlerId { get { return _battlerId; } }
         public bool IsEnemy { get { return _isEnemy; } set { _isEnemy = value; } }
@@ -40,6 +42,22 @@ namespace BattleSystem
 
                 return _uiManager;
             }
+        }
+
+        public AttackAnimationsWrapper AttackAnimationsWrapper
+        {
+            get
+            {
+                if(!_attackAnimationsWrapper)
+                    _attackAnimationsWrapper = FindObjectOfType<AttackAnimationsWrapper>();
+
+                return _attackAnimationsWrapper;
+            }
+        }
+
+        public Animator Animator
+        {
+            get { return GetComponent<Animator>(); }
         }
 
         public void Feed(Battler battler)
@@ -61,14 +79,15 @@ namespace BattleSystem
         {
             if (IsDead)
                 return;
-            /* FIXME
+            
             if (LockedInAbility.Category == AbilityCategory.AttackCommand)
             {
-                Weapon weapon = BattlerData.Character.RightHand.GetItem() as Weapon;
-                LockedInAbility.AnimationId = weapon != null ? weapon.Animation : 0;
+                Weapon weapon = BattlerData.Character.Equipment.RightHand.GetItem() as Weapon;
+                LockedInAbility.Animation = weapon != null ? weapon.Animation : null;
             }
 
-            GameObject hitAnimation = Instantiate(FindObjectOfType<AttackAnimationsWrapper>().GetAttackAnimation(LockedInAbility.AnimationId));
+            ProcessAbilityAfterMovement(LockedInAbility);
+            /*GameObject hitAnimation = Instantiate(FindObjectOfType<AttackAnimationsWrapper>().GetAttackAnimation(LockedInAbility.AnimationId));
             hitAnimation.transform.position = target.transform.position;
 
             AttackAnimationBehaviour aab = hitAnimation.GetComponent<AttackAnimationBehaviour>();
@@ -76,6 +95,15 @@ namespace BattleSystem
             aab.AnimationEndedEvent.RemoveAllListeners();
             aab.AbilityHitEvent.AddListener(Strike);
             aab.AnimationEndedEvent.AddListener(FinishedTurn);*/
+        }
+
+        public void ProcessAbilityAfterMovement(Ability ability)
+        {
+            if(ability.HasChannelAnimation)
+                Animator.SetBool("Channeling", true);
+
+            if (ability.HasStrikeAnimation)
+                Animator.SetBool("Striking", true);
         }
 
         private void Strike()

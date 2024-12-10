@@ -15,10 +15,8 @@
         <Wait Duration="0.1" />
         <ChangeOpacity Alpha="0" />
       </SetMoveRoute>
-      <ControlVariable Key="quest0Progress">
-        <Operation>Set</Operation>
-        <Operand Type="Constant">4</Operand>
-      </ControlVariable>
+      <ProgressQuest Id="0" StepId="3" Status="Completed" />
+      <ProgressQuest Id="0" StepId="4" Status="Unlocked" />
       <DisableAgent Target="tutorial_Rat" />
     </true>
   </QuestCondition>

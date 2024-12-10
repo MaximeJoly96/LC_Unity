@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <BattleProcessing TroopId="2" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
+  <QuestCondition Type="StepCompleted" QuestId="0" StepId="4">
+    <true>
+      <BattleProcessing TroopId="2" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
+      <ProgressQuest Id="0" StepId="5" Status="Completed" />
+      <ProgressQuest Id="0" StepId="6" Status="Unlocked" />
+    </true>
+  </QuestCondition>
 </EventsSequence>

@@ -60,6 +60,11 @@ namespace Abilities
         public int Id { get { return _identifier.Id; } }
         public string Name { get { return _identifier.NameKey; } }
         public string Description { get { return _identifier.DescriptionKey; } }
+        public bool HasChannelAnimation { get { return Animation.BattlerChannelAnimationName != string.Empty; } }
+        public bool HasChannelParticles { get { return Animation.BattlerChannelAnimationParticlesId != -1; } }
+        public bool HasStrikeAnimation { get { return Animation.BattlerStrikeAnimationName != string.Empty; } }
+        public bool HasImpactParticles { get { return Animation.ImpactAnimationParticlesId != -1; } }
+        public bool HasProjectile { get { return Animation.Projectile != null; } }
 
         public Ability(ElementIdentifier identifier, int priority, AbilityUsability usability, 
                        TargetEligibility eligibility, AbilityCategory category, int range)
@@ -78,7 +83,7 @@ namespace Abilities
                                                ability.Usability, ability.TargetEligibility, 
                                                ability.Category, ability.Range)
         {
-
+            SetAnimation(ability.Animation);
         }
 
         public void SetCost(int hp, int mp, int ep)
