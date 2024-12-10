@@ -1,4 +1,5 @@
 ﻿using BattleSystem;
+using BattleSystem.Behaviours;
 using UnityEngine;
 
 namespace Abilities
@@ -44,7 +45,7 @@ namespace Abilities
                 animator.Play(BattlerStrikeAnimationName);
         }
 
-        public void PlayChannelParticles(GameObject battler)
+        public AttackAnimationBehaviour PlayChannelParticles(GameObject battler)
         {
             AttackAnimationsWrapper wrapper = Object.FindObjectOfType<AttackAnimationsWrapper>();
             if(wrapper)
@@ -52,33 +53,45 @@ namespace Abilities
                 GameObject animation = Object.Instantiate(wrapper.GetAttackAnimation(BattlerChannelAnimationParticlesId), 
                                                           battler.transform.position, 
                                                           Quaternion.identity);
+
+                return animation.GetComponent<AttackAnimationBehaviour>();
             }
+
+            return null;
         }
 
-        public void PlayImpactParticles(GameObject battler)
+        public AttackAnimationBehaviour PlayImpactParticles(GameObject battler)
         {
             AttackAnimationsWrapper wrapper = Object.FindObjectOfType<AttackAnimationsWrapper>();
             if (wrapper)
             {
-                GameObject animation = Object.Instantiate(wrapper.GetAttackAnimation(BattlerChannelAnimationParticlesId),
+                GameObject animation = Object.Instantiate(wrapper.GetAttackAnimation(ImpactAnimationParticlesId),
                                                           battler.transform.position,
                                                           Quaternion.identity);
+
+                return animation.GetComponent<AttackAnimationBehaviour>();
             }
+
+            return null;
         }
 
-        public void CreateProjectile(Vector3 origin, float speed, ProjectileTrajectory trajectory)
+        public AbilityProjectile CreateProjectile(Vector3 origin, float speed, ProjectileTrajectory trajectory)
         {
             if(Projectile)
             {
                 AbilityProjectile instProjectile = Object.Instantiate(Projectile, origin, Quaternion.identity);
                 instProjectile.SetSpeed(speed);
                 instProjectile.SetTrajectory(trajectory);
+
+                return instProjectile;
             }
+
+            return null;
         }
 
         private static AbilityProjectile GetProjectileFromId(int id)
         {
-            return null;
+            return Object.FindObjectOfType<ProjectilesWrapper>().GetProjectileById(id);
         }
     }
 }

@@ -6147,6 +6147,10 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 35d788819442323478b63af4071b57d9, type: 3}
   - key: StepWood
     audio: {fileID: 8300000, guid: 5cb445d70df9f034abbb0b0448066202, type: 3}
+  - key: HolyChannel
+    audio: {fileID: 8300000, guid: 6b8356fd3a60b3d46a887974b991869c, type: 3}
+  - key: MagickaHit
+    audio: {fileID: 8300000, guid: 182d64b7337d7604e9b18c9cb0caf7be, type: 3}
 --- !u!4 &1338884173
 Transform:
   m_ObjectHideFlags: 0
@@ -6600,6 +6604,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442177748}
   m_CullTransparentMesh: 1
+--- !u!1 &1481264651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1481264653}
+  - component: {fileID: 1481264652}
+  m_Layer: 0
+  m_Name: ProjectilesWrapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1481264652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481264651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7b5183065edcf459a5ae1e751e4244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectiles:
+  - {fileID: -8094573046678409846, guid: 868b5a3989e70ab4096fd40e68df190d, type: 3}
+--- !u!4 &1481264653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481264651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483048269
 GameObject:
   m_ObjectHideFlags: 0

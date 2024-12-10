@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using BattleSystem;
+using BattleSystem.Model;
+using MusicAndSounds;
+using UnityEngine;
+using UnityEngine.Events;
 
 namespace Abilities
 {
@@ -13,10 +17,23 @@ namespace Abilities
         private bool _moving;
         private int _currentCheckpointId;
         private Vector3 _currentCheckpoint;
+        private UnityEvent<BattlerBehaviour> _projectileDestroyed;
 
         public float Speed { get { return _speed; } }
         public ProjectileTrajectory Trajectory { get { return _trajectory; } }
         public int Id { get { return _id; } }
+        public BattlerBehaviour OriginBattler { get; set; }
+        public TargetEligibility TargetEligibility { get; set; }
+        public UnityEvent<BattlerBehaviour> ProjectileDestroyed
+        {
+            get
+            {
+                if (_projectileDestroyed == null)
+                    _projectileDestroyed = new UnityEvent<BattlerBehaviour>();
+
+                return _projectileDestroyed;
+            }
+        }
 
         public void SetSpeed(float speed)
         {
@@ -34,9 +51,16 @@ namespace Abilities
             _moving = true;
         }
 
+        public void StopMoving(BattlerBehaviour target)
+        {
+            ProjectileDestroyed.Invoke(target);
+            _moving = false;
+            Destroy(gameObject);
+        }
+
         public void StopMoving()
         {
-            _moving = false;
+            StopMoving(null);
         }
 
         private void Update()
@@ -56,6 +80,49 @@ namespace Abilities
                         StopMoving();
                 }
             }
+        }
+
+        protected virtual void FixedUpdate()
+        {
+            Collider2D[] hits = new Collider2D[10];
+
+            if(Physics2D.OverlapCircleNonAlloc(gameObject.transform.position, GetComponent<CircleCollider2D>().radius, hits) > 0)
+            {
+                for(int i = 0; i < hits.Length; i++)
+                {
+                    if(hits[i] != null)
+                    {
+                        BattlerBehaviour battler = hits[i].transform.GetComponent<BattlerBehaviour>();
+
+                        if(battler && IsTargetEligibleForProjectile(battler))
+                        {
+                            StopMoving(battler);
+                        }
+                    }
+                }
+            }
+        }
+
+        private bool IsTargetEligibleForProjectile(BattlerBehaviour target)
+        {
+            switch(TargetEligibility)
+            {
+                case TargetEligibility.Any:
+                case TargetEligibility.All:
+                    break;
+                case TargetEligibility.Self:
+                    break;
+                case TargetEligibility.Ally:
+                case TargetEligibility.AllAllies:
+                    return target.IsEnemy == OriginBattler.IsEnemy;
+                case TargetEligibility.Enemy:
+                case TargetEligibility.AllEnemies:
+                    return target.IsEnemy != OriginBattler.IsEnemy;
+                case TargetEligibility.AnyExceptSelf:
+                    break;
+            }
+
+            return false;
         }
     }
 }

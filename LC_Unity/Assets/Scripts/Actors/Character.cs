@@ -64,7 +64,12 @@ namespace Actors
 
         public void GiveExp(int amount)
         {
+            int currentLevel = Stats.Level;
+
             Stats.GiveExperience(amount);
+
+            if (Stats.Level > currentLevel)
+                Recover();
         }
 
         public void Recover()

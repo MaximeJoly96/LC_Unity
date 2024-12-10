@@ -3,8 +3,17 @@
   <QuestCondition Type="StepCompleted" QuestId="0" StepId="4">
     <true>
       <BattleProcessing TroopId="2" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
+      <Wait Duration="1" />
+      <SetMoveRoute SkipIfCannotMove="false" WaitForCompletion="true" RepeatAction="false" AgentId="tutorial_Scarymbe">
+        <ChangeOpacity Alpha="0.6" />
+        <Wait Duration="0.1" />
+        <ChangeOpacity Alpha="0.3" />
+        <Wait Duration="0.1" />
+        <ChangeOpacity Alpha="0" />
+      </SetMoveRoute>
       <ProgressQuest Id="0" StepId="5" Status="Completed" />
       <ProgressQuest Id="0" StepId="6" Status="Unlocked" />
+      <DisableAgent Target="tutorial_Scarymbe" />
     </true>
   </QuestCondition>
 </EventsSequence>

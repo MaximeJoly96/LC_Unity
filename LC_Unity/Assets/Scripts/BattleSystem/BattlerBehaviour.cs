@@ -14,6 +14,7 @@ using Actions;
 using System.Xml.Serialization;
 using BattleSystem.Behaviours.AiBehaviours;
 using UnityEditor.Animations;
+using static UnityEngine.GraphicsBuffer;
 
 namespace BattleSystem
 {
@@ -87,23 +88,57 @@ namespace BattleSystem
             }
 
             ProcessAbilityAfterMovement(LockedInAbility);
-            /*GameObject hitAnimation = Instantiate(FindObjectOfType<AttackAnimationsWrapper>().GetAttackAnimation(LockedInAbility.AnimationId));
-            hitAnimation.transform.position = target.transform.position;
-
-            AttackAnimationBehaviour aab = hitAnimation.GetComponent<AttackAnimationBehaviour>();
-            aab.AbilityHitEvent.RemoveAllListeners();
-            aab.AnimationEndedEvent.RemoveAllListeners();
-            aab.AbilityHitEvent.AddListener(Strike);
-            aab.AnimationEndedEvent.AddListener(FinishedTurn);*/
         }
 
         public void ProcessAbilityAfterMovement(Ability ability)
         {
             if(ability.HasChannelAnimation)
-                Animator.SetBool("Channeling", true);
+                Animator.SetBool(ability.Animation.BattlerChannelAnimationName, true);
+            else if(ability.HasStrikeAnimation)
+                Animator.SetBool(ability.Animation.BattlerStrikeAnimationName, true);
+        }
 
-            if (ability.HasStrikeAnimation)
-                Animator.SetBool("Striking", true);
+        public void ChannelBreakpoint()
+        {
+            if(LockedInAbility.HasProjectile)
+            {
+                foreach(BattlerBehaviour target in LockedInAbility.Targets)
+                {
+                    ProjectileTrajectory trajectory = new ProjectileTrajectory();
+                    trajectory.AddCheckpoint(gameObject.transform.position);
+                    trajectory.AddCheckpoint(target.transform.position);
+
+                    AbilityProjectile projectile = LockedInAbility.Animation.CreateProjectile(gameObject.transform.position,
+                                                                                              LockedInAbility.Animation.Projectile.Speed,
+                                                                                              trajectory);
+                    projectile.TargetEligibility = LockedInAbility.TargetEligibility;
+                    projectile.OriginBattler = this;
+                    projectile.ProjectileDestroyed.AddListener(ProjectileWasDestroyed);
+                    projectile.StartMoving();
+                }
+            }
+        }
+
+        private void ProjectileWasDestroyed(BattlerBehaviour target)
+        {
+            if(target)
+            {
+                Strike(false, target);
+            }
+        }
+
+        public void ShowChannelParticles()
+        {
+            if(LockedInAbility.HasChannelParticles)
+            {
+                LockedInAbility.Animation.PlayChannelParticles(gameObject);
+            }
+        }
+
+        public void ConcludeChannel()
+        {
+            if (LockedInAbility.HasChannelAnimation)
+                Animator.SetBool(LockedInAbility.Animation.BattlerChannelAnimationName, false);
         }
 
         private void Strike()
@@ -111,23 +146,43 @@ namespace BattleSystem
             Strike(false);
         }
 
+        private void ShowImpact()
+        {
+            if (LockedInAbility.HasImpactParticles)
+            {
+                foreach (BattlerBehaviour target in LockedInAbility.Targets)
+                {
+                    AttackAnimationBehaviour aab = LockedInAbility.Animation.PlayImpactParticles(target.gameObject);
+                    aab.AnimationEndedEvent.RemoveAllListeners();
+                    aab.AnimationEndedEvent.AddListener(FinishedTurn);
+                }
+            }
+        }
+
         private void Strike(bool secondaryHit)
         {
+            Strike(secondaryHit, LockedInAbility.Targets[0]);
+        }
+
+        private void Strike(bool secondaryHit, BattlerBehaviour target)
+        {
+            ShowImpact();
+
             ApplyAbilityEffects(LockedInAbility, secondaryHit);
 
             int result = DamageFormula.ComputeResult(LockedInAbility.Id,
                                                      BattlerData.Character,
-                                                     LockedInAbility.Targets[0].BattlerData.Character);
+                                                     target.BattlerData.Character);
 
-            LockedInAbility.Targets[0].BattlerData.ChangeHealth(result);
+            target.BattlerData.ChangeHealth(result);
 
-            UiManager.DisplayDamage(LockedInAbility.Targets[0].transform.position, result);
-            UiManager.UpdatePlayerGui(LockedInAbility.Targets[0].BattlerData.Character);
+            UiManager.DisplayDamage(target.transform.position, result);
+            UiManager.UpdatePlayerGui(target.BattlerData.Character);
         }
 
-        private void ApplyAbilityEffects(Ability ability, bool secondaryHit)
+        private void ApplyAbilityEffects(Ability ability, bool secondaryHit, BattlerBehaviour target)
         {
-            for(int i = 0; i < ability.Effects.Count; i++)
+            for (int i = 0; i < ability.Effects.Count; i++)
             {
                 if (!secondaryHit && ability.Effects[i] is AdditionalStrike)
                 {
@@ -138,17 +193,17 @@ namespace BattleSystem
                 {
                     // TODO
                 }
-                else if(ability.Effects[i] is AutoAttackAfterAbility)
+                else if (ability.Effects[i] is AutoAttackAfterAbility)
                 {
                     // TODO
                 }
-                else if(ability.Effects[i] is Dispel)
+                else if (ability.Effects[i] is Dispel)
                 {
                     Dispel dispel = ability.Effects[i] as Dispel;
-                    if (ability.Targets[0].BattlerData.Character.ActiveEffects.Any(e => e.Effect == dispel.Value))
+                    if (target.BattlerData.Character.ActiveEffects.Any(e => e.Effect == dispel.Value))
                     {
-                        dispel.Apply(ability.Targets[0].BattlerData.Character);
-                        UiManager.RemoveStatus(ability.Targets[0].transform.position, dispel.Value);
+                        dispel.Apply(target.BattlerData.Character);
+                        UiManager.RemoveStatus(target.transform.position, dispel.Value);
                     }
                 }
                 else if (ability.Effects[i] is DrainFromDamage)
@@ -170,12 +225,12 @@ namespace BattleSystem
                 else if (ability.Effects[i] is Effects.InflictStatus)
                 {
                     Effects.InflictStatus inflictStatus = ability.Effects[i] as Effects.InflictStatus;
-                    if (!ability.Targets[0].BattlerData.Character.ActiveEffects.Any(e => e.Effect == inflictStatus.Value))
+                    if (!target.BattlerData.Character.ActiveEffects.Any(e => e.Effect == inflictStatus.Value))
                     {
-                        inflictStatus.Apply(ability.Targets[0].BattlerData.Character);
-                        UiManager.DisplayStatus(ability.Targets[0].transform.position, inflictStatus.Value);
+                        inflictStatus.Apply(target.BattlerData.Character);
+                        UiManager.DisplayStatus(target.transform.position, inflictStatus.Value);
                     }
-                }   
+                }
                 else if (ability.Effects[i] is NegativeStatusBonusDamage)
                 {
                     // TODO
@@ -184,8 +239,19 @@ namespace BattleSystem
             }
         }
 
+        private void ApplyAbilityEffects(Ability ability, bool secondaryHit)
+        {
+            ApplyAbilityEffects(ability, secondaryHit, ability.Targets[0]);
+        }
+
         public void FinishedTurn()
         {
+            if(LockedInAbility.HasChannelAnimation)
+                Animator.SetBool(LockedInAbility.Animation.BattlerChannelAnimationName, false);
+
+            if (LockedInAbility.HasStrikeAnimation)
+                Animator.SetBool(LockedInAbility.Animation.BattlerStrikeAnimationName, false);
+
             LockedInAbility = null;
             FinishedAction = true;
         }
@@ -208,7 +274,7 @@ namespace BattleSystem
         public void Die()
         {
             IsDead = true;
-            GetComponent<Animator>().Play("Die");
+            Animator.Play("Die");
         }
 
         public void PlaySound(string key)

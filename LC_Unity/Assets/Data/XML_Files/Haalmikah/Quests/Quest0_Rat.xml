@@ -2,10 +2,6 @@
 <EventsSequence>
   <QuestCondition Type="StepCompleted" QuestId="0" StepId="2">
     <true>
-      <SetMoveRoute SkipIfCannotMove="false" WaitForCompletion="true" RepeatAction="false" AgentId="tutorial_Rat">
-        <TurnTowards Target="louga" />
-      </SetMoveRoute>
-      <Wait Duration="0.25" />
       <BattleProcessing TroopId="1" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
       <Wait Duration="1" />
       <SetMoveRoute SkipIfCannotMove="false" WaitForCompletion="true" RepeatAction="false" AgentId="tutorial_Rat">

@@ -136,6 +136,8 @@ namespace BattleSystem
             LoadCharacters(troop);
             LoadBattlefield(troop);
 
+            UpdateBattlersOrientation();
+
             UpdateState(BattleState.Loaded);
             
             InitTimeline();
@@ -300,6 +302,38 @@ namespace BattleSystem
             UpdateState(BattleState.BattleStart);
         }
         #endregion
+
+        public void UpdateBattlersOrientation()
+        {
+            float minX = float.MaxValue;
+            float minY = float.MaxValue;
+            float maxX = float.MinValue;
+            float maxY = float.MinValue;
+
+            for(int i = 0; i < AllBattlers.Count; i++)
+            {
+                if (AllBattlers[i].transform.position.x < minX)
+                    minX = AllBattlers[i].transform.position.x;
+
+                if (AllBattlers[i].transform.position.y < minY)
+                    minY = AllBattlers[i].transform.position.y;
+
+                if (AllBattlers[i].transform.position.x > maxX)
+                    maxX = AllBattlers[i].transform.position.y;
+
+                if (AllBattlers[i].transform.position.y > maxY)
+                    maxY = AllBattlers[i].transform.position.y;
+            }
+
+            Vector3 center = new Vector2(Mathf.Lerp(minX, maxX, 0.5f), Mathf.Lerp(minY, maxY, 0.5f));
+
+            for (int i = 0; i < AllBattlers.Count; i++)
+            {
+                Vector3 lookAt = (center - AllBattlers[i].transform.position).normalized;
+                AllBattlers[i].GetComponent<Animator>().SetFloat("X", lookAt.x);
+                AllBattlers[i].GetComponent<Animator>().SetFloat("Y", lookAt.y);
+            }
+        }
 
         public void UpdateState(BattleState state)
         {
