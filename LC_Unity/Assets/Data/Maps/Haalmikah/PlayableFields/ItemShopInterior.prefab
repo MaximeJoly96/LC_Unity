@@ -1194,6 +1194,7 @@ GameObject:
   - component: {fileID: 9097383170081254855}
   - component: {fileID: 5905527174357417562}
   - component: {fileID: 7105746968629447894}
+  - component: {fileID: 5221614860694318340}
   m_Layer: 0
   m_Name: Merchant
   m_TagString: Untagged
@@ -1257,7 +1258,7 @@ SpriteRenderer:
   m_SortingLayerID: -2025963587
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2098796313, guid: cb3e4ec3fecd338408c22e0c68b9a3fe, type: 3}
+  m_Sprite: {fileID: 1472216860, guid: 1119873484c407746abbb45e26b80e67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1306,7 +1307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: itemMerchant
   _speed: 0
-  _currentDirection: 0
+  _currentDirection: 3
   _balloonIconSpot: {fileID: 0}
   _sequenceFile: {fileID: 4900000, guid: 7220ef2b813661b4fb1ee71edb3df31c, type: 3}
   _trigger: 0
@@ -1336,6 +1337,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16775441, y: 0.24579275}
   m_EdgeRadius: 0
+--- !u!95 &5221614860694318340
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3985622410589459627}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d5c346165133244d886dd8b57f7cc7c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5969803550148100775
 GameObject:
   m_ObjectHideFlags: 0
