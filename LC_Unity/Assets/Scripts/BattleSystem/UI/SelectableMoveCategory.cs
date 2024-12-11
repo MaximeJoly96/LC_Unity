@@ -17,6 +17,9 @@ namespace BattleSystem.UI
         {
             Category = category;
             _label.text = Localizer.Instance.GetString(category.ToString());
+
+            if (Category == AbilityCategory.FleeCommand && !BattleDataHolder.Instance.BattleData.CanEscape)
+                _label.color = Color.grey;
         }
     }
 }

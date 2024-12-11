@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using TMPro;
 using Actors;
+using Abilities;
+using Language;
 
 namespace BattleSystem.UI
 {
@@ -24,6 +26,12 @@ namespace BattleSystem.UI
         {
             _playerName.text = character.Name;
             _playerStatsPreview.Feed(character);
+            _currentAction.text = Localizer.Instance.GetString("noAction");
+        }
+
+        public void UpdateCharacterAction(Ability ability)
+        {
+            _currentAction.text = Localizer.Instance.GetString(ability.Name);
         }
     }
 }

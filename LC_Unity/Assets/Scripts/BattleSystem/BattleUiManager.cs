@@ -278,5 +278,10 @@ namespace BattleSystem
         {
             _targetInfoCanvas.Clear();
         }
+
+        public void UpdateAction(BattlerBehaviour battler)
+        {
+            _playerGlobalUi.UpdateCharacterAction(battler);
+        }
     }
 }

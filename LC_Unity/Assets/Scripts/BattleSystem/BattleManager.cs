@@ -200,7 +200,6 @@ namespace BattleSystem
                     UpdateInstructions();
                     break;
                 case BattleState.PlayerMoveSelection:
-                    CommonSounds.OptionSelected();
                     _uiManager.SelectMove();
                     break;
                 case BattleState.TargetSelection:
@@ -209,6 +208,7 @@ namespace BattleSystem
                     _targetManager.Clear();
                     _uiManager.CloseTargetInfo();
                     _uiManager.UpdateTimeline();
+                    _uiManager.UpdateAction(_turnManager.CurrentCharacter);
                     _turnManager.SwitchToNextCharacter();
                     UpdateState(BattleState.PlayerMoveSelection);
                     break;

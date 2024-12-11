@@ -3,6 +3,8 @@ using TMPro;
 using Abilities;
 using System.Collections.Generic;
 using System.Linq;
+using MusicAndSounds;
+using Utils;
 
 namespace BattleSystem.UI
 {
@@ -125,13 +127,28 @@ namespace BattleSystem.UI
             switch(abilityCategory)
             {
                 case AbilityCategory.Skill:
+                    CommonSounds.OptionSelected();
                     Debug.Log("Need to implement skill selection");
                     break;
                 case AbilityCategory.AttackCommand:
+                    CommonSounds.OptionSelected();
                     SelectTargetForAttackCommand();
                     break;
                 case AbilityCategory.FleeCommand:
-                    Debug.Log("Need to implement flee");
+                    if(BattleDataHolder.Instance.BattleData.CanEscape)
+                    {
+                        CommonSounds.OptionSelected();
+                        Debug.Log("Need to implement flee");
+                    }
+                    else
+                    {
+                        FindObjectOfType<AudioPlayer>().PlaySoundEffect(new Engine.MusicAndSounds.PlaySoundEffect
+                        {
+                            Name = "Error1",
+                            Pitch = 1.0f,
+                            Volume = 1.0f
+                        });
+                    }
                     break;
             }
         }
