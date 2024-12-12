@@ -651,7 +651,6 @@ GameObject:
   - component: {fileID: 7702744937525902156}
   - component: {fileID: 7309147931466081389}
   - component: {fileID: 3917832539288404851}
-  - component: {fileID: 8852665032056351283}
   m_Layer: 0
   m_Name: SoldierWall (11)
   m_TagString: Untagged
@@ -787,32 +786,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _routineData: {fileID: 4900000, guid: faa08c7eb7f0b5b49bc7eccbb8831864, type: 3}
---- !u!61 &8852665032056351283
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180008336537493947}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.006115675, y: -0.19569969}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.64}
-    newSize: {x: 0.32, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.10717678, y: 0.11161041}
-  m_EdgeRadius: 0
 --- !u!1 &210172412311080592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,6 +1635,9 @@ GameObject:
   - component: {fileID: 9058608193962017263}
   - component: {fileID: 5177935902297367853}
   - component: {fileID: 6440487887748468859}
+  - component: {fileID: 8868362201363897521}
+  - component: {fileID: 4658864067995515129}
+  - component: {fileID: 5208559858701825652}
   m_Layer: 0
   m_Name: SoldierWall (4)
   m_TagString: Untagged
@@ -1748,6 +1724,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8868362201363897521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213709067974148953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: f6230e615ebe43340a834777e7933251, type: 3}
+--- !u!114 &4658864067995515129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213709067974148953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall4
+  _speed: 0.5
+  _currentDirection: 2
+  _balloonIconSpot: {fileID: 0}
+--- !u!95 &5208559858701825652
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213709067974148953}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1333383934285949672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,6 +2011,9 @@ GameObject:
   - component: {fileID: 6541719110751764154}
   - component: {fileID: 2195317732235127682}
   - component: {fileID: 3679489152169081157}
+  - component: {fileID: 9024899661430835196}
+  - component: {fileID: 5465369438618979662}
+  - component: {fileID: 4147442301888791334}
   m_Layer: 0
   m_Name: SoldierWall (10)
   m_TagString: Untagged
@@ -2072,6 +2100,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &9024899661430835196
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726058865699979251}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5465369438618979662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726058865699979251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall10
+  _speed: 0.5
+  _currentDirection: 1
+  _balloonIconSpot: {fileID: 0}
+--- !u!114 &4147442301888791334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726058865699979251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: 60f74026792a6b24294e74a330358d7f, type: 3}
 --- !u!1 &1864489253776698416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,6 +3906,9 @@ GameObject:
   - component: {fileID: 3492181413316650768}
   - component: {fileID: 246186843597125349}
   - component: {fileID: 7142528853135505115}
+  - component: {fileID: 5896146273718443172}
+  - component: {fileID: 3975643530490037508}
+  - component: {fileID: 8027126786076473916}
   m_Layer: 0
   m_Name: SoldierWall (5)
   m_TagString: Untagged
@@ -3915,6 +3995,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5896146273718443172
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770359339498419708}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3975643530490037508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770359339498419708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: da7da31ad85354e45a3be53307e19923, type: 3}
+--- !u!114 &8027126786076473916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770359339498419708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall5
+  _speed: 0.5
+  _currentDirection: 2
+  _balloonIconSpot: {fileID: 0}
 --- !u!1 &2869834477701543717
 GameObject:
   m_ObjectHideFlags: 0
@@ -4462,6 +4591,9 @@ GameObject:
   - component: {fileID: 3181178429010821667}
   - component: {fileID: 1349857152920368989}
   - component: {fileID: 415627193360297132}
+  - component: {fileID: 3191453646378773682}
+  - component: {fileID: 4459378814219779556}
+  - component: {fileID: 7123875916968385074}
   m_Layer: 0
   m_Name: SoldierWall (13)
   m_TagString: Untagged
@@ -4548,6 +4680,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3191453646378773682
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981917220149159003}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4459378814219779556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981917220149159003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall13
+  _speed: 0.5
+  _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
+--- !u!114 &7123875916968385074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981917220149159003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: 876e26378ff37b64a81a6019d4b73fc3, type: 3}
 --- !u!1 &3112776081317623713
 GameObject:
   m_ObjectHideFlags: 0
@@ -4656,6 +4837,9 @@ GameObject:
   - component: {fileID: 3293987458659054844}
   - component: {fileID: 4910614792076196924}
   - component: {fileID: 6100021620270760241}
+  - component: {fileID: 215495696088115308}
+  - component: {fileID: 9089869682328604236}
+  - component: {fileID: 3681756278165127571}
   m_Layer: 0
   m_Name: SoldierWall (16)
   m_TagString: Untagged
@@ -4742,6 +4926,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &215495696088115308
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168291582220417202}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9089869682328604236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168291582220417202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall16
+  _speed: 0.5
+  _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
+--- !u!114 &3681756278165127571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3168291582220417202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: a3da42358e2abc547bef334990e4245d, type: 3}
 --- !u!1 &3179762259850247385
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,6 +5234,9 @@ GameObject:
   - component: {fileID: 3423120683867960596}
   - component: {fileID: 1753201363436234030}
   - component: {fileID: 4124350305575660126}
+  - component: {fileID: 2446042223840233090}
+  - component: {fileID: 6265154412069850009}
+  - component: {fileID: 7752347775375702620}
   m_Layer: 0
   m_Name: SoldierWall (8)
   m_TagString: Untagged
@@ -5087,6 +5323,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2446042223840233090
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3288364765279433463}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6265154412069850009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3288364765279433463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall8
+  _speed: 0.5
+  _currentDirection: 1
+  _balloonIconSpot: {fileID: 0}
+--- !u!114 &7752347775375702620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3288364765279433463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: e740c4c6e2b93c242b7485c27d321d13, type: 3}
 --- !u!1 &3289397965962121183
 GameObject:
   m_ObjectHideFlags: 0
@@ -5912,6 +6197,9 @@ GameObject:
   - component: {fileID: 584406634206792215}
   - component: {fileID: 3259476389574214469}
   - component: {fileID: 5738659879188646741}
+  - component: {fileID: 3446446172916918764}
+  - component: {fileID: 2973781232677821735}
+  - component: {fileID: 8341333348874318113}
   m_Layer: 0
   m_Name: SoldierWall (15)
   m_TagString: Untagged
@@ -5998,6 +6286,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3446446172916918764
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858057575949454981}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2973781232677821735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858057575949454981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall15
+  _speed: 0.5
+  _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
+--- !u!114 &8341333348874318113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3858057575949454981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: b33e5cc4eabe9634580d24f5167c6b7f, type: 3}
 --- !u!1 &4140777503141154412
 GameObject:
   m_ObjectHideFlags: 0
@@ -6532,6 +6869,9 @@ GameObject:
   - component: {fileID: 7272711046251610350}
   - component: {fileID: 6636080038224032035}
   - component: {fileID: 5281812685936928282}
+  - component: {fileID: 2770538949432231043}
+  - component: {fileID: 1256217506831126930}
+  - component: {fileID: 2196590152646556299}
   m_Layer: 0
   m_Name: SoldierWall (12)
   m_TagString: Untagged
@@ -6618,6 +6958,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2770538949432231043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389946688705103231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: 0718364d0941488469a58f6a29b3c8f8, type: 3}
+--- !u!114 &1256217506831126930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389946688705103231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall12
+  _speed: 0.5
+  _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
+--- !u!95 &2196590152646556299
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389946688705103231}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4461948307751274398
 GameObject:
   m_ObjectHideFlags: 0
@@ -6975,6 +7364,9 @@ GameObject:
   - component: {fileID: 3514205459489035676}
   - component: {fileID: 4362061943668622151}
   - component: {fileID: 2050273380881841789}
+  - component: {fileID: 1935943726456517518}
+  - component: {fileID: 3296438842731142744}
+  - component: {fileID: 8122142888867197495}
   m_Layer: 0
   m_Name: SoldierWall (9)
   m_TagString: Untagged
@@ -7061,6 +7453,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1935943726456517518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795726378741145515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: bf73a57530852844f9ec6e0d481fcd42, type: 3}
+--- !u!114 &3296438842731142744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795726378741145515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall9
+  _speed: 0.5
+  _currentDirection: 1
+  _balloonIconSpot: {fileID: 0}
+--- !u!95 &8122142888867197495
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795726378741145515}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4861272009412879669
 GameObject:
   m_ObjectHideFlags: 0
@@ -7072,6 +7513,9 @@ GameObject:
   - component: {fileID: 2473025559706817772}
   - component: {fileID: 2368951343515405974}
   - component: {fileID: 6664526527001237235}
+  - component: {fileID: 2647922328103752189}
+  - component: {fileID: 8439542683319311872}
+  - component: {fileID: 5144676183215866451}
   m_Layer: 0
   m_Name: SoldierWall (14)
   m_TagString: Untagged
@@ -7158,6 +7602,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2647922328103752189
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861272009412879669}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8439542683319311872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861272009412879669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall14
+  _speed: 0.5
+  _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
+--- !u!114 &5144676183215866451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861272009412879669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: b3ae03c5a9e65914c90dcccdaa68b074, type: 3}
 --- !u!1 &4993299896520827154
 GameObject:
   m_ObjectHideFlags: 0
@@ -7169,6 +7662,9 @@ GameObject:
   - component: {fileID: 842090364461049655}
   - component: {fileID: 663158445252081106}
   - component: {fileID: 6990616525175360290}
+  - component: {fileID: 3503539789083436685}
+  - component: {fileID: 8886600768059907876}
+  - component: {fileID: 8082996833005921741}
   m_Layer: 0
   m_Name: SoldierWall (6)
   m_TagString: Untagged
@@ -7184,7 +7680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4993299896520827154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.34, y: 3.39, z: 0}
+  m_LocalPosition: {x: 4.34, y: 2.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7255,6 +7751,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3503539789083436685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4993299896520827154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall6
+  _speed: 0.5
+  _currentDirection: 2
+  _balloonIconSpot: {fileID: 0}
+--- !u!95 &8886600768059907876
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4993299896520827154}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8082996833005921741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4993299896520827154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: 5a551ccebdb928042a58cad0b61afaff, type: 3}
 --- !u!1 &5000571933440845883
 GameObject:
   m_ObjectHideFlags: 0
@@ -7613,6 +8158,9 @@ GameObject:
   - component: {fileID: 5409032545041368640}
   - component: {fileID: 252690976675884257}
   - component: {fileID: 513324205495824474}
+  - component: {fileID: 885896782011039198}
+  - component: {fileID: 7369372024530477418}
+  - component: {fileID: 2124008263088497471}
   m_Layer: 0
   m_Name: SoldierWall (1)
   m_TagString: Untagged
@@ -7699,6 +8247,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &885896782011039198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479147519895194432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall1
+  _speed: 0.5
+  _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
+--- !u!95 &7369372024530477418
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479147519895194432}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2124008263088497471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479147519895194432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: e7d6bef9aa31c25409856c4f4f967d97, type: 3}
 --- !u!1 &5526048690110043660
 GameObject:
   m_ObjectHideFlags: 0
@@ -8029,6 +8626,9 @@ GameObject:
   - component: {fileID: 4427905478031426699}
   - component: {fileID: 2921468331478273096}
   - component: {fileID: 137951780176059617}
+  - component: {fileID: 4350686056730150385}
+  - component: {fileID: 6564855980321934090}
+  - component: {fileID: 6739185609267099927}
   m_Layer: 0
   m_Name: SoldierWall (7)
   m_TagString: Untagged
@@ -8115,6 +8715,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4350686056730150385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868357399772303792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: 84d4559c84acb87409db0c53330fa2ae, type: 3}
+--- !u!114 &6564855980321934090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868357399772303792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall7
+  _speed: 0.5
+  _currentDirection: 1
+  _balloonIconSpot: {fileID: 0}
+--- !u!95 &6739185609267099927
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868357399772303792}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5885848286618192448
 GameObject:
   m_ObjectHideFlags: 0
@@ -8126,6 +8775,9 @@ GameObject:
   - component: {fileID: 3902917526525600585}
   - component: {fileID: 8133529556038448223}
   - component: {fileID: 1464912232933475464}
+  - component: {fileID: 2212160533619825446}
+  - component: {fileID: 215466748806323760}
+  - component: {fileID: 5212066527050456483}
   m_Layer: 0
   m_Name: SoldierWall
   m_TagString: Untagged
@@ -8212,6 +8864,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2212160533619825446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885848286618192448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: 64339961393e40145914398513343444, type: 3}
+--- !u!114 &215466748806323760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885848286618192448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall0
+  _speed: 0.5
+  _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
+--- !u!95 &5212066527050456483
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885848286618192448}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6031135167211654374
 GameObject:
   m_ObjectHideFlags: 0
@@ -8451,6 +9152,9 @@ GameObject:
   - component: {fileID: 5827118774842425299}
   - component: {fileID: 4145757938214282612}
   - component: {fileID: 1091769851065597371}
+  - component: {fileID: 1761722795786694502}
+  - component: {fileID: 2512702100075157320}
+  - component: {fileID: 5335152483172842258}
   m_Layer: 0
   m_Name: SoldierWall (3)
   m_TagString: Untagged
@@ -8537,6 +9241,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1761722795786694502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296623950704680867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall3
+  _speed: 0.5
+  _currentDirection: 2
+  _balloonIconSpot: {fileID: 0}
+--- !u!95 &2512702100075157320
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296623950704680867}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5335152483172842258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296623950704680867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: e47663eec9612114ab0954c2718329f7, type: 3}
 --- !u!1 &6332941239446279351
 GameObject:
   m_ObjectHideFlags: 0
@@ -16852,6 +17605,9 @@ GameObject:
   - component: {fileID: 4739755375318422491}
   - component: {fileID: 7016339967087605123}
   - component: {fileID: 2025520251798465376}
+  - component: {fileID: 3090968193942936110}
+  - component: {fileID: 7030724083232071502}
+  - component: {fileID: 2749575552936703012}
   m_Layer: 0
   m_Name: SoldierWall (2)
   m_TagString: Untagged
@@ -16938,6 +17694,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3090968193942936110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078242154006311925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: ac1e2bf006a26c14db8ef75ae1e74617, type: 3}
+--- !u!95 &7030724083232071502
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078242154006311925}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2749575552936703012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078242154006311925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: soldierWall2
+  _speed: 0.5
+  _currentDirection: 2
+  _balloonIconSpot: {fileID: 0}
 --- !u!1 &8105061652764774780
 GameObject:
   m_ObjectHideFlags: 0
