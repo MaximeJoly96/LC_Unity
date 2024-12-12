@@ -9,9 +9,27 @@ namespace Movement
         protected Vector3 _destination;
         protected Vector3 _delta;
         protected Animator _animator;
+        protected bool _moving;
 
         public float Speed { get { return GetComponent<Agent>().Speed; } }
-        public bool Moving { get; protected set; }
+        public bool Moving
+        {
+            get { return _moving; }
+            set
+            { 
+                _moving = value; 
+
+                if(_moving)
+                {
+                    Animator.SetBool("Moving", true);
+                }
+                else
+                {
+                    Animator.SetBool("Moving", false);
+                    Animator.Play("Idle");
+                }
+            }
+        }
         public UnityEvent DestinationReached { get; protected set; }
         protected Animator Animator
         {

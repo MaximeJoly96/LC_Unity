@@ -13,9 +13,12 @@ namespace Field.Routines
 
         public TextAsset RoutineData { get { return _routineData; } set { _routineData = value; } }
         public Agent Agent { get { return GetComponent<Agent>(); } }
+        public bool Running { get; private set; }
 
         private void Start()
         {
+            Running = true;
+
             _routine = ParseRoutine();
             _routine[_routineIndex].Run(Agent);
         }
@@ -27,22 +30,37 @@ namespace Field.Routines
 
         private void Update()
         {
-            Move currentMove = _routine[_routineIndex];
-                
-            if(currentMove.IsFinished)
+            if(Running)
             {
-                if(_routineIndex == _routine.Count - 1)
-                {
-                    _routineIndex = 0;
-                    _routine.ForEach(r => r.IsFinished = false);
-                }
-                else
-                {
-                    _routineIndex++;
-                }
+                Move currentMove = _routine[_routineIndex];
 
-                _routine[_routineIndex].Run(Agent);
+                if (currentMove.IsFinished)
+                {
+                    if (_routineIndex == _routine.Count - 1)
+                    {
+                        _routineIndex = 0;
+                        _routine.ForEach(r => r.IsFinished = false);
+                    }
+                    else
+                    {
+                        _routineIndex++;
+                    }
+
+                    _routine[_routineIndex].Run(Agent);
+                }
             }
+        }
+
+        public void Interrupt()
+        {
+            Running = false;
+            _routine[_routineIndex].Interrupt(Agent);
+        }
+
+        public void Resume()
+        {
+            Running = true;
+            _routine[_routineIndex].Resume(Agent);
         }
     }
 }

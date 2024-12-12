@@ -2,6 +2,7 @@
 using UnityEngine;
 using Logging;
 using UnityEngine.Events;
+using Field.Routines;
 
 namespace Field
 {
@@ -67,9 +68,14 @@ namespace Field
                 SetSequence(EventsSequenceParser.ParseEventsSequence(_sequenceFile));
             }
 
+            InterruptRoutine();
             Runner.Finished.RemoveAllListeners();
 
-            Runner.Finished.AddListener(() => FinishedSequence.Invoke());
+            Runner.Finished.AddListener(() => 
+            {
+                FinishedSequence.Invoke();
+                ResumeRoutine();
+            });
             Runner.RunEvents(_sequence); 
         }
 
@@ -77,6 +83,22 @@ namespace Field
         {
             if (_trigger == AgentTrigger.Foreground)
                 RunSequence();
+        }
+
+        protected virtual void InterruptRoutine()
+        {
+            RoutineRunner routineRunner = GetComponent<RoutineRunner>();
+
+            if (routineRunner)
+                routineRunner.Interrupt();
+        }
+
+        protected virtual void ResumeRoutine()
+        {
+            RoutineRunner routineRunner = GetComponent<RoutineRunner>();
+
+            if (routineRunner)
+                routineRunner.Resume();
         }
     }
 }
