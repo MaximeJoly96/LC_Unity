@@ -648,6 +648,10 @@ GameObject:
   - component: {fileID: 9155948384178303824}
   - component: {fileID: 8243483892971252706}
   - component: {fileID: 2413612766619346689}
+  - component: {fileID: 7702744937525902156}
+  - component: {fileID: 7309147931466081389}
+  - component: {fileID: 3917832539288404851}
+  - component: {fileID: 8852665032056351283}
   m_Layer: 0
   m_Name: SoldierWall (11)
   m_TagString: Untagged
@@ -734,6 +738,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7702744937525902156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180008336537493947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: haalmikahSoldierWall11
+  _speed: 0.5
+  _currentDirection: 3
+  _balloonIconSpot: {fileID: 0}
+--- !u!95 &7309147931466081389
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180008336537493947}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35eabbbb834a008458640257d5521c51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3917832539288404851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180008336537493947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e9a1d483047a40a029a197d0d8bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _routineData: {fileID: 4900000, guid: faa08c7eb7f0b5b49bc7eccbb8831864, type: 3}
+--- !u!61 &8852665032056351283
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180008336537493947}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.006115675, y: -0.19569969}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.64}
+    newSize: {x: 0.32, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.10717678, y: 0.11161041}
+  m_EdgeRadius: 0
 --- !u!1 &210172412311080592
 GameObject:
   m_ObjectHideFlags: 0
