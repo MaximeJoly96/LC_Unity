@@ -14579,12 +14579,14 @@ GameObject:
   - component: {fileID: 2898086243591654875}
   - component: {fileID: 7413159980989498733}
   - component: {fileID: 776109533309459412}
-  - component: {fileID: 5699602772236637221}
   - component: {fileID: 2866213521947972564}
   - component: {fileID: 3263708027855463064}
   - component: {fileID: 4831729117501228110}
   - component: {fileID: 1622896005713949115}
   - component: {fileID: 4240823822877277485}
+  - component: {fileID: 1292576426101586640}
+  - component: {fileID: 4210836803939952928}
+  - component: {fileID: 1118970477972872261}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
@@ -14691,22 +14693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4384f3358a54fb44ea350e0c7567625e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5699602772236637221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7098677933093664156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d839d83c7e02e964bb8fca546998d86a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: wolf1Grove
-  _speed: 0.8
-  _currentDirection: 0
-  _balloonIconSpot: {fileID: 0}
 --- !u!114 &2866213521947972564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14866,6 +14852,60 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1292576426101586640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7098677933093664156}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b84fe4277f8fd4d95a72e5311fd432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fieldOfView: 130
+  _maxAggroDistance: 2
+  _maxChasingDistance: 5
+--- !u!50 &4210836803939952928
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7098677933093664156}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.01
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &1118970477972872261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7098677933093664156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ee6a4bb37250c438b32733acf53077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: wolf1Grove
+  _speed: 0.8
+  _currentDirection: 0
+  _balloonIconSpot: {fileID: 0}
+  _sequenceFile: {fileID: 4900000, guid: 342f90ac3714ce74b8a3b2ff3d36108b, type: 3}
+  _trigger: 3
 --- !u!1 &7116813406482017353
 GameObject:
   m_ObjectHideFlags: 0

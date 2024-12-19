@@ -68,6 +68,21 @@ namespace Field
             UpdateDirection(_currentDirection);
         }
 
+        protected virtual void Update()
+        {
+            UpdateDirectionFromAnimator();
+        }
+
+        private void UpdateDirectionFromAnimator()
+        {
+            Animator animator = GetComponent<Animator>();
+            if (animator)
+            {
+                Vector2 direction = new Vector2(animator.GetFloat("X"), animator.GetFloat("Y"));
+                _currentDirection = DirectionUtils.VectorToDirection(direction);
+            }
+        }
+
         public void UpdateDirection(Direction direction)
         {
             if(!FixedDirection)
