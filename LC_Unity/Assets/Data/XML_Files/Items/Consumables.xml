@@ -5,19 +5,21 @@
 		<Name>potion</Name>
 		<Description>potionDescription</Description>
 		<Icon>0</Icon>
-		<Price>10</Price>
+		<Price>30</Price>
 		<Usability>Always</Usability>
 		<Priority>0</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>15</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
       <RestoresResourceScaling Stat="HP" Value="40" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
 	</Item>
   <Item>
     <Id>1</Id>
@@ -26,17 +28,19 @@
     <Icon>1</Icon>
     <Price>500</Price>
     <Usability>Always</Usability>
-    <Priority>1</Priority>
+    <Priority>0</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>16</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
       <RestoresResourceScaling Stat="HP" Value="100" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
   </Item>
   <Item>
     <Id>2</Id>
@@ -45,147 +49,162 @@
     <Icon>2</Icon>
     <Price>500</Price>
     <Usability>Always</Usability>
-    <Priority>1</Priority>
+    <Priority>0</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>17</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
       <RestoresResourceScaling Stat="MP" Value="40" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
   </Item>
   <Item>
     <Id>3</Id>
     <Name>manaInfusion</Name>
     <Description>manaInfusionDescription</Description>
     <Icon>3</Icon>
-    <Price>500</Price>
+    <Price>2000</Price>
     <Usability>Always</Usability>
-    <Priority>1</Priority>
+    <Priority>0</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>18</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
       <RestoresResourceScaling Stat="MP" Value="100" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
   </Item>
   <Item>
     <Id>4</Id>
     <Name>phoenixAshes</Name>
     <Description>phoenixAshesDescription</Description>
     <Icon>4</Icon>
-    <Price>500</Price>
+    <Price>250</Price>
     <Usability>Always</Usability>
-    <Priority>1</Priority>
+    <Priority>0</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>19</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
       <Revives />
-      <RestoresResourceScaling Stat="HP" Value="40" />
+      <RestoresResourceScaling Stat="HP" Value="25" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
   </Item>
   <Item>
     <Id>5</Id>
     <Name>phoenixTears</Name>
     <Description>phoenixTearsDescription</Description>
     <Icon>5</Icon>
-    <Price>500</Price>
+    <Price>4000</Price>
     <Usability>Always</Usability>
-    <Priority>1</Priority>
+    <Priority>0</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>20</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
       <RevivesAndHeals />
       <RestoresResourceScaling Stat="HP" Value="100" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
   </Item>
   <Item>
     <Id>6</Id>
     <Name>antidote</Name>
     <Description>antidoteDescription</Description>
     <Icon>6</Icon>
-    <Price>500</Price>
+    <Price>25</Price>
     <Usability>Always</Usability>
-    <Priority>6</Priority>
+    <Priority>1</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>21</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
       <Dispel Value="Poison" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
   </Item>
   <Item>
     <Id>7</Id>
     <Name>echoHerbs</Name>
     <Description>echoHerbsDescription</Description>
     <Icon>6</Icon>
-    <Price>500</Price>
+    <Price>25</Price>
     <Usability>Always</Usability>
     <Priority>1</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>21</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
       <Dispel Value="Silence" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
   </Item>
   <Item>
     <Id>8</Id>
     <Name>eyeDrops</Name>
     <Description>eyeDropsDescription</Description>
     <Icon>6</Icon>
-    <Price>500</Price>
+    <Price>25</Price>
     <Usability>Always</Usability>
     <Priority>1</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>21</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
       <Dispel Value="Blind" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
   </Item>
   <Item>
     <Id>9</Id>
     <Name>bandage</Name>
     <Description>bandageDescription</Description>
     <Icon>7</Icon>
-    <Price>500</Price>
+    <Price>25</Price>
     <Usability>Always</Usability>
     <Priority>1</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>21</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
@@ -194,6 +213,7 @@
       <Dispel Value="BleedIII" />
       <Dispel Value="HemoI" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
   </Item>
   <Item>
     <Id>10</Id>
@@ -203,11 +223,12 @@
     <Price>500</Price>
     <Usability>Always</Usability>
     <Priority>1</Priority>
+    <Range>100</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
-      <Strike></Strike>
-      <ImpactParticles>-1</ImpactParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>22</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
     <Effects>
@@ -229,5 +250,1044 @@
       <Dispel Value="Silence" />
       <Dispel Value="Grounded" />
     </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>11</Id>
+    <Name>invigoratingTonic</Name>
+    <Description>invigoratingTonicDescription</Description>
+    <Icon>7</Icon>
+    <Price>75</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Range>100</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>21</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <Dispel Value="BreakI" />
+      <Dispel Value="BreakII" />
+      <Dispel Value="BreakIII" />
+      <Dispel Value="MagicBreakI" />
+      <Dispel Value="MagicBreakII" />
+      <Dispel Value="MagicBreakIII" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>12</Id>
+    <Name>hourglass</Name>
+    <Description>hourglassDescription</Description>
+    <Icon>7</Icon>
+    <Price>75</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Range>100</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>21</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <Dispel Value="SlowI" />
+      <Dispel Value="SlowII" />
+      <Dispel Value="SlowIII" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>13</Id>
+    <Name>undhinderer</Name>
+    <Description>unhindererDescription</Description>
+    <Icon>7</Icon>
+    <Price>75</Price>
+    <Usability>Always</Usability>
+    <Priority>1</Priority>
+    <Range>100</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>UseItem</Strike>
+      <ImpactParticles>21</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <Dispel Value="Grounded" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>14</Id>
+    <Name>dynamite</Name>
+    <Description>dynamiteDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>23</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="0" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>15</Id>
+    <Name>firecracker</Name>
+    <Description>firecrackerDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>24</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="1" />
+      <ElementalDamage Element="Fire" />
+      <AreaOfEffectAsSecondaryDamage Element="Fire" FormulaId="1" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>16</Id>
+    <Name>lightningGrenade</Name>
+    <Description>lightningGrenadeDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>25</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="2" />
+      <ElementalDamage Element="Thunder" />
+      <InflictStatus Value="MagicBreakI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>17</Id>
+    <Name>waterBomb</Name>
+    <Description>waterBombDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>26</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="3" />
+      <ElementalDamage Element="Water" />
+      <AreaOfEffectAsSecondaryDamage Element="Water" FormulaId="3" />
+      <InflictStatus Value="SlowI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>18</Id>
+    <Name>icyCocktail</Name>
+    <Description>icyCocktailDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>27</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="4" />
+      <ElementalDamage Element="Ice" />
+      <InflictStatus Value="Grounded" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>19</Id>
+    <Name>explosiveBoulder</Name>
+    <Description>explosiveBoulderDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>28</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="5" />
+      <ElementalDamage Element="Earth" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>20</Id>
+    <Name>squallBomb</Name>
+    <Description>squallBombDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>29</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="6" />
+      <ElementalDamage Element="Wind" />
+      <PushTarget Distance="300" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>21</Id>
+    <Name>holyGrenade</Name>
+    <Description>holyGrenadeDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>30</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="7" />
+      <ElementalDamage Element="Holy" />
+      <AreaOfEffectAsSecondaryDamage Element="Holy" FormulaId="7" />
+      <InflictStatus Value="Blind" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>22</Id>
+    <Name>darkMalice</Name>
+    <Description>darkMaliceDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>31</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="8" />
+      <ElementalDamage Element="Darkness" />
+      <InflictStatus Value="Poison" />
+      <InflictStatus Value="Silence" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>23</Id>
+    <Name>poisonFang</Name>
+    <Description>poisonFangDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>32</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="9" />
+      <InflictStatus Value="Poison" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>24</Id>
+    <Name>flashBomb</Name>
+    <Description>flashBombDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>33</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="10" />
+      <InflictStatus Value="Blind" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>25</Id>
+    <Name>silenceGrenade</Name>
+    <Description>silenceGrenadeDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>34</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="10" />
+      <InflictStatus Value="Silence" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>26</Id>
+    <Name>shellBreaker</Name>
+    <Description>shellBreakerDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>1000</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>35</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <DealDamage FormulaId="11" />
+      <InflictStatus Value="BreakI" />
+      <InflictStatus Value="MagicBreakI" />
+      <Dispel Value="Shell" />
+      <Dispel Value="Protect" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>27</Id>
+    <Name>rustyKnife</Name>
+    <Description>rustyKnifeDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>100</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>DaggerStrike</Strike>
+      <ImpactParticles>5</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <InflictStatus Value="BleedI" />
+      <InflictStatus Value="HemoI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>28</Id>
+    <Name>sandsOfTime</Name>
+    <Description>sandsOfTimeDescription</Description>
+    <Icon>7</Icon>
+    <Price>1500</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>100</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>36</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <InflictStatus Value="SlowI" />
+    </Effects>
+    <TargetEligibility>AllEnemies</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>29</Id>
+    <Name>net</Name>
+    <Description>netDescription</Description>
+    <Icon>7</Icon>
+    <Price>800</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>0</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>37</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <InflictStatus Value="Grounded" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>30</Id>
+    <Name>lightCurtain</Name>
+    <Description>lightCurtainDescription</Description>
+    <Icon>7</Icon>
+    <Price>800</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>1</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>38</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <InflictStatus Value="Shell" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>31</Id>
+    <Name>lightVeil</Name>
+    <Description>lightVeilDescription</Description>
+    <Icon>7</Icon>
+    <Price>800</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>1</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>39</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <InflictStatus Value="Protect" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>32</Id>
+    <Name>braveryTonic</Name>
+    <Description>braveryTonicDescription</Description>
+    <Icon>7</Icon>
+    <Price>800</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>1</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>40</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <InflictStatus Value="Bravery" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>33</Id>
+    <Name>faithTonic</Name>
+    <Description>faithTonicDescription</Description>
+    <Icon>7</Icon>
+    <Price>800</Price>
+    <Usability>BattleOnly</Usability>
+    <Priority>1</Priority>
+    <Range>800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Throw</Strike>
+      <ImpactParticles>41</ImpactParticles>
+      <ProjectileId>10</ProjectileId>
+    </Animation>
+    <Effects>
+      <InflictStatus Value="Faith" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>34</Id>
+    <Name>apple</Name>
+    <Description>appleDescription</Description>
+    <Icon>7</Icon>
+    <Price>100</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="StrengthI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>35</Id>
+    <Name>banana</Name>
+    <Description>bananaDescription</Description>
+    <Icon>7</Icon>
+    <Price>100</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="MagicI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>36</Id>
+    <Name>pear</Name>
+    <Description>pearDescription</Description>
+    <Icon>7</Icon>
+    <Price>100</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="DefenseI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>37</Id>
+    <Name>raisin</Name>
+    <Description>raisinDescription</Description>
+    <Icon>7</Icon>
+    <Price>100</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="MagicDefenseI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>38</Id>
+    <Name>lemon</Name>
+    <Description>lemonDescription</Description>
+    <Icon>7</Icon>
+    <Price>100</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="AgilityI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>39</Id>
+    <Name>orange</Name>
+    <Description>orangeDescription</Description>
+    <Icon>7</Icon>
+    <Price>100</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="LuckI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>40</Id>
+    <Name>bass</Name>
+    <Description>bassDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="HealthI" />
+      <FoodBonus Value="StrengthI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>41</Id>
+    <Name>cod</Name>
+    <Description>codDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="ManaI" />
+      <FoodBonus Value="MagicI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>42</Id>
+    <Name>trout</Name>
+    <Description>troutDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="PoisonResist" />
+      <FoodBonus Value="BlindResist" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>43</Id>
+    <Name>salmon</Name>
+    <Description>salmonDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="SilenceResist" />
+      <FoodBonus Value="SlowResist" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>44</Id>
+    <Name>eel</Name>
+    <Description>eelDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="FireResistI" />
+      <FoodBonus Value="ThunderResistI" />
+      <FoodBonus Value="WaterResistI" />
+      <FoodBonus Value="IceResistI" />
+      <FoodBonus Value="EarthResistI" />
+      <FoodBonus Value="WindResistI" />
+      <FoodBonus Value="HolyResistI" />
+      <FoodBonus Value="DarknessResistI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>45</Id>
+    <Name>sardine</Name>
+    <Description>sardineDescription</Description>
+    <Icon>7</Icon>
+    <Price>200</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="BreakResist" />
+      <FoodBonus Value="MagicBreakResist" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>46</Id>
+    <Name>tomato</Name>
+    <Description>tomatoDescription</Description>
+    <Icon>7</Icon>
+    <Price>150</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="AccuracyI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>47</Id>
+    <Name>leek</Name>
+    <Description>leekDescription</Description>
+    <Icon>7</Icon>
+    <Price>150</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="EvasionI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>48</Id>
+    <Name>cabbage</Name>
+    <Description>cabbageDescription</Description>
+    <Icon>7</Icon>
+    <Price>150</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="ParryI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>49</Id>
+    <Name>carrot</Name>
+    <Description>carrotDescription</Description>
+    <Icon>7</Icon>
+    <Price>150</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="CritDamageI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>50</Id>
+    <Name>potato</Name>
+    <Description>potatoDescription</Description>
+    <Icon>7</Icon>
+    <Price>150</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="CritChanceI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>51</Id>
+    <Name>lettuce</Name>
+    <Description>lettuceDescription</Description>
+    <Icon>7</Icon>
+    <Price>150</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="ProvocationI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>52</Id>
+    <Name>milk</Name>
+    <Description>milkDescription</Description>
+    <Icon>7</Icon>
+    <Price>300</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <RestoresResourceScaling Stat="HP" Value="30" />
+      <RestoresResourceScaling Stat="MP" Value="10" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>53</Id>
+    <Name>waterItem</Name>
+    <Description>waterItemDescription</Description>
+    <Icon>7</Icon>
+    <Price>100</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <RestoresResourceScaling Stat="HP" Value="20" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>54</Id>
+    <Name>beer</Name>
+    <Description>beerDescription</Description>
+    <Icon>7</Icon>
+    <Price>300</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <RestoresResourceScaling Stat="HP" Value="30" />
+      <FoodBonus Value="ReducedAgilityI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>55</Id>
+    <Name>wine</Name>
+    <Description>wineDescription</Description>
+    <Icon>7</Icon>
+    <Price>300</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <RestoresResourceScaling Stat="MP" Value="20" />
+      <FoodBonus Value="ReducedStrengthI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>56</Id>
+    <Name>mead</Name>
+    <Description>meadDescription</Description>
+    <Icon>7</Icon>
+    <Price>300</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="ReducedDefenseI" />
+      <FoodBonus Value="StrengthI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
+  </Item>
+  <Item>
+    <Id>57</Id>
+    <Name>spiritItem</Name>
+    <Description>spiritItemDescription</Description>
+    <Icon>7</Icon>
+    <Price>300</Price>
+    <Usability>MenuOnly</Usability>
+    <Priority>0</Priority>
+    <Range>0</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+    <Effects>
+      <FoodBonus Value="ReducedAccuracyI" />
+      <FoodBonus Value="DefenseI" />
+      <FoodBonus Value="MagicDefenseI" />
+    </Effects>
+    <TargetEligibility>Any</TargetEligibility>
   </Item>
 </Items>
