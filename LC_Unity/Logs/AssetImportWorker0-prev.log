@@ -1,0 +1,883 @@
+Using pre-set license
+Built from '2021.2/staging' branch; Version is '2021.2.13f1 (90b6766da538) revision 9483894'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'fr' Physical Memory: 8013 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\2021.2.13f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/maxad/Documents/git_projects/LC_Unity/LC_Unity
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+53849
+Successfully changed project path to: C:/Users/maxad/Documents/git_projects/LC_Unity/LC_Unity
+C:/Users/maxad/Documents/git_projects/LC_Unity/LC_Unity
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 141.01 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.2.13f1 (90b6766da538)
+[Subsystems] Discovering subsystems at path C:/Program Files/2021.2.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/maxad/Documents/git_projects/LC_Unity/LC_Unity/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 with Max-Q Design (ID=0x1f99)
+    Vendor:   NVIDIA
+    VRAM:     3935 MB
+    Driver:   32.0.15.6636
+Initialize mono
+Mono path[0] = 'C:/Program Files/2021.2.13f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/2021.2.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/2021.2.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56180
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/2021.2.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/2021.2.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.009363 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 38.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.754 seconds
+Domain Reload Profiling:
+	ReloadAssembly (755ms)
+		BeginReloadAssembly (137ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (484ms)
+			LoadAssemblies (133ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (126ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (266ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (58ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (39ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (119ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.003079 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.084 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1085ms)
+		BeginReloadAssembly (224ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (128ms)
+		EndReloadAssembly (743ms)
+			LoadAssemblies (108ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (207ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (336ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (215ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2319 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (56.3 KB). Loaded Objects now: 2791.
+Memory consumption went from 90.9 MB to 90.9 MB.
+Total: 3.435500 ms (FindLiveObjects: 0.226300 ms CreateObjectMapping: 0.171900 ms MarkObjects: 2.963500 ms  DeleteObjects: 0.073200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 30400.696202 seconds.
+  path: Assets/Data/Items
+  artifactKey: Guid(87666e56945eafa4a9b97ba5e12c6e9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items using Guid(87666e56945eafa4a9b97ba5e12c6e9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '077729c5b56eba8991fa755bcc91621a') in 0.006385 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Data/Items/potionAnimation.png
+  artifactKey: Guid(10b8cdc0b2d93964583e2047765f15a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/potionAnimation.png using Guid(10b8cdc0b2d93964583e2047765f15a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e72b17c8832134467326e0c238b0a74b') in 0.105418 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.276268 seconds.
+  path: Assets/Data/Weapons/ArbalestStrike.prefab
+  artifactKey: Guid(4d50f1e194462804c880861d15dd6411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/ArbalestStrike.prefab using Guid(4d50f1e194462804c880861d15dd6411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95f570397d2644318dbefacfbf7d885e') in 0.066572 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Data/Weapons/SpearStrike.prefab
+  artifactKey: Guid(0b8900e084f292a4ab19afa4c4b74b27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/SpearStrike.prefab using Guid(0b8900e084f292a4ab19afa4c4b74b27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d06fdf2f2e8008606ae7b1d58b44e76') in 0.017512 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Data/Weapons/ClawsStrike.prefab
+  artifactKey: Guid(899a0331f4633ca439d288f540d7704e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/ClawsStrike.prefab using Guid(899a0331f4633ca439d288f540d7704e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e04c4a7c9c1204f8be623c1294949c7') in 0.017881 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Data/Weapons/MaceStrike.prefab
+  artifactKey: Guid(0ceb8f2d3c6d6db4b831241f9bb6a54e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/MaceStrike.prefab using Guid(0ceb8f2d3c6d6db4b831241f9bb6a54e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20e2a0466af682a603605d3d4d5d0348') in 0.017634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Data/Weapons/AxeStrike.prefab
+  artifactKey: Guid(1f5847d960b2e5a42b8339e2de1a4b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/AxeStrike.prefab using Guid(1f5847d960b2e5a42b8339e2de1a4b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '797395293826b080512290698552b9b1') in 0.017904 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Data/Weapons/GrimoireStrike.prefab
+  artifactKey: Guid(8554355995f081946abbbc0582f24dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/GrimoireStrike.prefab using Guid(8554355995f081946abbbc0582f24dcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd78734551cb5d4c259410e2f2be7c66a') in 0.017768 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Data/Weapons/GunStrike.prefab
+  artifactKey: Guid(0bd61daf238a4bc4c98759e58cf68939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/GunStrike.prefab using Guid(0bd61daf238a4bc4c98759e58cf68939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a34fec052e37421f7915e01b5e9c5cd3') in 0.017332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Data/Weapons/ScepterStrike.prefab
+  artifactKey: Guid(afaeefeba2fb7e84b9272b28fe44e7b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/ScepterStrike.prefab using Guid(afaeefeba2fb7e84b9272b28fe44e7b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47d4173c3cca045074fbb30f9869663f') in 0.018787 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Data/Weapons/BowStrike.prefab
+  artifactKey: Guid(fbb904c29b4a9e744a30c3083668687f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/BowStrike.prefab using Guid(fbb904c29b4a9e744a30c3083668687f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f55ca7dd9e7858d59cbc81ace56ab58') in 0.017136 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Data/Weapons/DaggerStrike.prefab
+  artifactKey: Guid(5528778c12441ee4a8279d5886ab6e46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/DaggerStrike.prefab using Guid(5528778c12441ee4a8279d5886ab6e46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f6a857a98c3ba9cdef1a3d275d1c3f8') in 0.017060 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Data/Weapons/StaffStrike.prefab
+  artifactKey: Guid(717ba894112aab64f8559748630d5833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/StaffStrike.prefab using Guid(717ba894112aab64f8559748630d5833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac0cf84dd2cbd7ef49d9577373605e6e') in 0.017694 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Data/Weapons/ScytheStrike.prefab
+  artifactKey: Guid(03d99033e5f08c94db8bba8f0086b17a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/ScytheStrike.prefab using Guid(03d99033e5f08c94db8bba8f0086b17a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5bf4823fde55561ea3100bffcadb54d') in 0.019140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Data/Weapons/SwordStrike.prefab
+  artifactKey: Guid(c146344f564fcd749b215395dea2e95b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/SwordStrike.prefab using Guid(c146344f564fcd749b215395dea2e95b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6ce8842b44da729ed54992d9be1bc90') in 0.020532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Data/Weapons/FistStrike.prefab
+  artifactKey: Guid(deda251152343b948850e26f9a97adee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Weapons/FistStrike.prefab using Guid(deda251152343b948850e26f9a97adee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '219659e2bd3288c2e3b050fb6a350703') in 0.016147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.201116 seconds.
+  path: Assets/Data/Items/potionAnimation.png
+  artifactKey: Guid(10b8cdc0b2d93964583e2047765f15a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/potionAnimation.png using Guid(10b8cdc0b2d93964583e2047765f15a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3621935ae219aceddeed8520c45b6972') in 0.011769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.609396 seconds.
+  path: Assets/Data/Items/potionAnimation.png
+  artifactKey: Guid(10b8cdc0b2d93964583e2047765f15a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/potionAnimation.png using Guid(10b8cdc0b2d93964583e2047765f15a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61c4a230ef27803b71839f3de92987c0') in 0.041059 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 73.258251 seconds.
+  path: Assets/Data/Animations/Items
+  artifactKey: Guid(8a11a58bd86a49a47bc098f61a059ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items using Guid(8a11a58bd86a49a47bc098f61a059ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c11ad0dac3555637040465c6f274df10') in 0.001560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.986657 seconds.
+  path: Assets/Data/Animations/Items/Potion
+  artifactKey: Guid(66ec1190ef911ad41a5b928f5ccd64b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Potion using Guid(66ec1190ef911ad41a5b928f5ccd64b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95b6a0096e743fa69e562146e5e49bff') in 0.003244 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 36.426423 seconds.
+  path: Assets/Data/Animations/Items/Potion/PotionController.controller
+  artifactKey: Guid(f440c0d45c12d8640acb20785e86329a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Potion/PotionController.controller using Guid(f440c0d45c12d8640acb20785e86329a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '553b7770ec61d4954a5031a10976c2a5') in 0.004372 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.317182 seconds.
+  path: Assets/Data/Animations/Weapons/Axes/AxeController.controller
+  artifactKey: Guid(3f80e171c3bd13248b292b84f32f5be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Weapons/Axes/AxeController.controller using Guid(3f80e171c3bd13248b292b84f32f5be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94e2f85bdf03ff6dad0470723a5e4ba8') in 0.003043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.056310 seconds.
+  path: Assets/Data/Animations/Items/Potion/UseItem.anim
+  artifactKey: Guid(294c22f7560d84d4e95ece394d5b4fe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Potion/UseItem.anim using Guid(294c22f7560d84d4e95ece394d5b4fe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7cea105f0a6d8b9af2280aafe5010c0') in 0.003558 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.373904 seconds.
+  path: Assets/Data/Animations/Items/Potion/Use.anim
+  artifactKey: Guid(294c22f7560d84d4e95ece394d5b4fe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Potion/Use.anim using Guid(294c22f7560d84d4e95ece394d5b4fe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b0f596e0e2e9b64e237a7e01c57a5da') in 0.002667 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 303.280250 seconds.
+  path: Assets/Data/Items/PotionParticles.prefab
+  artifactKey: Guid(89beab5fd76f4c642992efe7696349e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/PotionParticles.prefab using Guid(89beab5fd76f4c642992efe7696349e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (PotionController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+
+The Animator Controller (PotionController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+
+ -> (artifact id: '944037fb87d402a51a50cc99e8147776') in 0.014350 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.906313 seconds.
+  path: Assets/Data/Items/PotionParticles.prefab
+  artifactKey: Guid(89beab5fd76f4c642992efe7696349e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/PotionParticles.prefab using Guid(89beab5fd76f4c642992efe7696349e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0550972d36618a0bacae500a732a5d25') in 0.012983 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.436637 seconds.
+  path: Assets/Scenes/Battle.unity
+  artifactKey: Guid(dda3f0be0156eb246a41a89ec4f1f827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Battle.unity using Guid(dda3f0be0156eb246a41a89ec4f1f827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37fd689e1e881534a6c264137ebaa5fa') in 0.002184 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3830.117776 seconds.
+  path: Assets/Data/Animations/Items/MaxPotion
+  artifactKey: Guid(9c66b034abc588047826741f82e3ee05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/MaxPotion using Guid(9c66b034abc588047826741f82e3ee05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25b0f36b79eba27148430db262e8df50') in 0.003272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.770436 seconds.
+  path: Assets/Data/Animations/Items/Potion/PotionController.controller
+  artifactKey: Guid(f440c0d45c12d8640acb20785e86329a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Potion/PotionController.controller using Guid(f440c0d45c12d8640acb20785e86329a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d105f9bdee3e024049024993d731fe4') in 0.006302 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.876065 seconds.
+  path: Assets/Data/Animations/Items/MaxPotion/PotionController.controller
+  artifactKey: Guid(c2b0aed3d28757e4e9588e241b106fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/MaxPotion/PotionController.controller using Guid(c2b0aed3d28757e4e9588e241b106fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31c69e246d851764215da27c6b2df94d') in 0.002983 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.843285 seconds.
+  path: Assets/Data/Animations/Items/MaxPotion/MaxPotionController.controller
+  artifactKey: Guid(c2b0aed3d28757e4e9588e241b106fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/MaxPotion/MaxPotionController.controller using Guid(c2b0aed3d28757e4e9588e241b106fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49a5106626bd95273fd90a11ef0df08f') in 0.003001 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.618203 seconds.
+  path: Assets/Data/Items/maxPotionAnimation.png
+  artifactKey: Guid(0d0f6d9e2e9f20f448b76868a51b36d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/maxPotionAnimation.png using Guid(0d0f6d9e2e9f20f448b76868a51b36d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ade8ddf4e7efb75e1c3a5c4c41b9e87') in 0.021786 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.773834 seconds.
+  path: Assets/Data/Items/maxPotionAnimation.png
+  artifactKey: Guid(0d0f6d9e2e9f20f448b76868a51b36d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/maxPotionAnimation.png using Guid(0d0f6d9e2e9f20f448b76868a51b36d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ba89337df54569b58771092cf774bd1') in 0.009451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.085449 seconds.
+  path: Assets/Data/Items/maxPotionAnimation.png
+  artifactKey: Guid(0d0f6d9e2e9f20f448b76868a51b36d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/maxPotionAnimation.png using Guid(0d0f6d9e2e9f20f448b76868a51b36d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b24cb4964808f4f06fd8069d3a0bc97') in 0.035268 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 207.281299 seconds.
+  path: Assets/Data/Items/MaxPotionParticles.prefab
+  artifactKey: Guid(62c7733d57894f44a8584167b9108a00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/MaxPotionParticles.prefab using Guid(62c7733d57894f44a8584167b9108a00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d9d236b4a9176eb0e5a3f6e04f92a3e') in 0.014898 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.181546 seconds.
+  path: Assets/Data/Animations/Items/MaxPotion/Use.anim
+  artifactKey: Guid(fbc9b2385306afd4780e0f2fe2a8b8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/MaxPotion/Use.anim using Guid(fbc9b2385306afd4780e0f2fe2a8b8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b79e833a8eeb77ed54361bb52ee0ff8') in 0.003107 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 135.521028 seconds.
+  path: Assets/Data/Animations/Items/MaxPotion 1
+  artifactKey: Guid(c93fbf3c8bfc318428d7a133c7222fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/MaxPotion 1 using Guid(c93fbf3c8bfc318428d7a133c7222fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c70390cb5dc00635e2fa2698a9ec4aa0') in 0.002998 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.836391 seconds.
+  path: Assets/Data/Animations/Items/ManaInfusion
+  artifactKey: Guid(c93fbf3c8bfc318428d7a133c7222fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaInfusion using Guid(c93fbf3c8bfc318428d7a133c7222fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95d53be55ba628b30005d09b240988f7') in 0.001992 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.947638 seconds.
+  path: Assets/Data/Animations/Items/Potion 1
+  artifactKey: Guid(da2d5c4660ab04f4694db7cdc265af60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Potion 1 using Guid(da2d5c4660ab04f4694db7cdc265af60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80115e2da17606e149721c4c9777f6c4') in 0.002258 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.605334 seconds.
+  path: Assets/Data/Animations/Items/ManaPotio
+  artifactKey: Guid(da2d5c4660ab04f4694db7cdc265af60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaPotio using Guid(da2d5c4660ab04f4694db7cdc265af60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '544187fe18a034bc34235d703a466380') in 0.004114 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.115048 seconds.
+  path: Assets/Data/Animations/Items/ManaPotion
+  artifactKey: Guid(da2d5c4660ab04f4694db7cdc265af60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaPotion using Guid(da2d5c4660ab04f4694db7cdc265af60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25627b646cf2b46701e7defaadd640e2') in 0.002295 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.109073 seconds.
+  path: Assets/Data/Animations/Items/ManaPotion/PotionController.controller
+  artifactKey: Guid(3502ba66153db904193d7d2cb4a22340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaPotion/PotionController.controller using Guid(3502ba66153db904193d7d2cb4a22340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '982d3486ca812d05c92dc5d87bc4f104') in 0.003059 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.274771 seconds.
+  path: Assets/Data/Animations/Items/ManaPotion/ManaPotionController.controller
+  artifactKey: Guid(3502ba66153db904193d7d2cb4a22340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaPotion/ManaPotionController.controller using Guid(3502ba66153db904193d7d2cb4a22340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa2bff9505503df162b4154769a203db') in 0.002646 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 296.898280 seconds.
+  path: Assets/Data/Animations/Items/ManaInfusion/MaxPotionController.controller
+  artifactKey: Guid(9ea44c03c2109d047bfacc519a32c705) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaInfusion/MaxPotionController.controller using Guid(9ea44c03c2109d047bfacc519a32c705) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20f5a62a502d875058bf8c86080df0fb') in 0.003248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.223366 seconds.
+  path: Assets/Data/Animations/Items/ManaInfusion/ManaInfusionController.controller
+  artifactKey: Guid(9ea44c03c2109d047bfacc519a32c705) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaInfusion/ManaInfusionController.controller using Guid(9ea44c03c2109d047bfacc519a32c705) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16d5baa044d220103e5a147c01c31749') in 0.002872 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 98.734886 seconds.
+  path: Assets/Data/Items/MaxPotionParticles.prefab
+  artifactKey: Guid(62c7733d57894f44a8584167b9108a00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/MaxPotionParticles.prefab using Guid(62c7733d57894f44a8584167b9108a00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11613caadf9c8681f3ba8425047f4b0b') in 0.012640 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.656131 seconds.
+  path: Assets/Data/Items/ManaPotionParticles.prefab
+  artifactKey: Guid(ce51edf695a7f224596dea002d9ea111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/ManaPotionParticles.prefab using Guid(ce51edf695a7f224596dea002d9ea111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8d95136e370f20ebf7087808ae32a9f') in 0.014198 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 88.071096 seconds.
+  path: Assets/Data/Items/ManaInfusionParticles.prefab
+  artifactKey: Guid(3c26693ac02110749951b2608dc1cf35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/ManaInfusionParticles.prefab using Guid(3c26693ac02110749951b2608dc1cf35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1bdc7a82d4578a84121f7edb43838d7') in 0.012788 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.769958 seconds.
+  path: Assets/Data/Items/ManaInfusionParticles.prefab
+  artifactKey: Guid(3c26693ac02110749951b2608dc1cf35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/ManaInfusionParticles.prefab using Guid(3c26693ac02110749951b2608dc1cf35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb886f91a0d14914f235c16d2f6dc555') in 0.013973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Data/Items/ManaPotionParticles.prefab
+  artifactKey: Guid(ce51edf695a7f224596dea002d9ea111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/ManaPotionParticles.prefab using Guid(ce51edf695a7f224596dea002d9ea111) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccb9fa290bd8b3d8956bc1d6599e77d8') in 0.014575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1040.398386 seconds.
+  path: Assets/Data/Items/phoenixAshesAnimation.png
+  artifactKey: Guid(ddd84f9ab974c1c48b50f51ca1c2a09c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/phoenixAshesAnimation.png using Guid(ddd84f9ab974c1c48b50f51ca1c2a09c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47798236db3e6c53ca972304d64de1e3') in 0.023726 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.923789 seconds.
+  path: Assets/Data/Items/phoenixAshesAnimation.png
+  artifactKey: Guid(ddd84f9ab974c1c48b50f51ca1c2a09c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/phoenixAshesAnimation.png using Guid(ddd84f9ab974c1c48b50f51ca1c2a09c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37bd60a090f95d53aeb195c6b907b291') in 0.009374 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.030275 seconds.
+  path: Assets/Data/Items/phoenixAshesAnimation.png
+  artifactKey: Guid(ddd84f9ab974c1c48b50f51ca1c2a09c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/phoenixAshesAnimation.png using Guid(ddd84f9ab974c1c48b50f51ca1c2a09c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75cd2352e165f8f17fece4b351390a17') in 0.040814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 351.917090 seconds.
+  path: Assets/Data/Animations/Items/ManaPotion/Use.anim
+  artifactKey: Guid(fb0849cfb59320f4785e32ab734726b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaPotion/Use.anim using Guid(fb0849cfb59320f4785e32ab734726b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08fd462d0c1485c09c02a9d5052fc109') in 0.004224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.059012 seconds.
+  path: Assets/Data/Animations/Items/ManaPotion/ManaPotionController.controller
+  artifactKey: Guid(3502ba66153db904193d7d2cb4a22340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaPotion/ManaPotionController.controller using Guid(3502ba66153db904193d7d2cb4a22340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15f01d2f1f906dffb300520517677a27') in 0.003225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.137556 seconds.
+  path: Assets/Data/Animations/Items/ManaInfusion/Use.anim
+  artifactKey: Guid(5dc4ceb3bd043b7468464413f0eaf869) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaInfusion/Use.anim using Guid(5dc4ceb3bd043b7468464413f0eaf869) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '608d857eb3d22248cc5f86ba7da59bc9') in 0.004445 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.615654 seconds.
+  path: Assets/Data/Animations/Items/ManaInfusion/ManaInfusionController.controller
+  artifactKey: Guid(9ea44c03c2109d047bfacc519a32c705) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/ManaInfusion/ManaInfusionController.controller using Guid(9ea44c03c2109d047bfacc519a32c705) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96c919a02d7cfcf192c46f9766c030e8') in 0.004408 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.907671 seconds.
+  path: Assets/Data/Animations/Items/PhoenixAshes
+  artifactKey: Guid(e72831918de7ae5489d9edf9cc39e6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/PhoenixAshes using Guid(e72831918de7ae5489d9edf9cc39e6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78b274a4d02c3a922865f53c8620248b') in 0.002935 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.489082 seconds.
+  path: Assets/Data/Animations/Items/PhoenixAshes/PhoenixAshesController.controller
+  artifactKey: Guid(415d185d52e308342b27d4e258179dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/PhoenixAshes/PhoenixAshesController.controller using Guid(415d185d52e308342b27d4e258179dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4c48d420ad9123737b352ab26327d84') in 0.003230 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.788501 seconds.
+  path: Assets/Data/Animations/Items/PhoenixAshes/Use.anim
+  artifactKey: Guid(9ebfabf74d5f2ae4991ecd06fc9eb2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/PhoenixAshes/Use.anim using Guid(9ebfabf74d5f2ae4991ecd06fc9eb2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79ae6bb293f0c6984923007649f276ca') in 0.002727 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 196.967256 seconds.
+  path: Assets/Data/Items/PhoenixAshesParticles.prefab
+  artifactKey: Guid(ca2e30db482b35a4b84b4d91ae246440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/PhoenixAshesParticles.prefab using Guid(ca2e30db482b35a4b84b4d91ae246440) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (PhoenixAshesController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+
+The Animator Controller (PhoenixAshesController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+
+ -> (artifact id: '0250347aca07dadf0646ff560aa3e98c') in 0.016458 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.743444 seconds.
+  path: Assets/Data/Items/PhoenixAshesParticles.prefab
+  artifactKey: Guid(ca2e30db482b35a4b84b4d91ae246440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/PhoenixAshesParticles.prefab using Guid(ca2e30db482b35a4b84b4d91ae246440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1edb3939216d6a900169b1a8aa99a276') in 0.014218 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1747.654920 seconds.
+  path: Assets/Data/Items/phoenixTearsAnimation.png
+  artifactKey: Guid(d55fe6088733bd84fbe24eebebfbf92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/phoenixTearsAnimation.png using Guid(d55fe6088733bd84fbe24eebebfbf92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e815c2c064c273f17ee99ee4996a452') in 0.025842 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.595389 seconds.
+  path: Assets/Data/Items/phoenixTearsAnimation.png
+  artifactKey: Guid(d55fe6088733bd84fbe24eebebfbf92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/phoenixTearsAnimation.png using Guid(d55fe6088733bd84fbe24eebebfbf92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5613ec41e2056adbcc29c479ce9c49a7') in 0.021135 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.983410 seconds.
+  path: Assets/Data/Items/phoenixTearsAnimation.png
+  artifactKey: Guid(d55fe6088733bd84fbe24eebebfbf92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/phoenixTearsAnimation.png using Guid(d55fe6088733bd84fbe24eebebfbf92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d1562eb3714aac5372ec8d9f8038091') in 0.010138 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.328953 seconds.
+  path: Assets/Data/Items/phoenixTearsAnimation.png
+  artifactKey: Guid(d55fe6088733bd84fbe24eebebfbf92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/phoenixTearsAnimation.png using Guid(d55fe6088733bd84fbe24eebebfbf92a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3115440e50fda00789a6542dba46f1ae') in 0.074507 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 56.307364 seconds.
+  path: Assets/Data/Animations/Items/PheonixTears
+  artifactKey: Guid(fbd8ab84bb38f2f49ab5025743e33d24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/PheonixTears using Guid(fbd8ab84bb38f2f49ab5025743e33d24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef835847b4d77b73050c8f803752d040') in 0.002628 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.805557 seconds.
+  path: Assets/Data/Animations/Items/PheonixTears/PheonixTearsControlle.controller
+  artifactKey: Guid(7bc2ef2d70c7e5941bb4b7cdd6b28e74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/PheonixTears/PheonixTearsControlle.controller using Guid(7bc2ef2d70c7e5941bb4b7cdd6b28e74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26c826e82f88003fae36eefbfbfa0c55') in 0.003589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.839490 seconds.
+  path: Assets/Data/Animations/Items/PheonixTears/PheonixTearsController.controller
+  artifactKey: Guid(7bc2ef2d70c7e5941bb4b7cdd6b28e74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/PheonixTears/PheonixTearsController.controller using Guid(7bc2ef2d70c7e5941bb4b7cdd6b28e74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6a907d7d7ee3b065364d28cf2fbe326') in 0.002657 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.563233 seconds.
+  path: Assets/Data/Animations/Items/PheonixTears/Use.anim
+  artifactKey: Guid(644f46312c9e2e241b3dddfa439fb51b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/PheonixTears/Use.anim using Guid(644f46312c9e2e241b3dddfa439fb51b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96dae99647acd087698889f8dd0c903a') in 0.003098 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 184.898889 seconds.
+  path: Assets/Data/Items/PheonixTearsParticles.prefab
+  artifactKey: Guid(78a7956e62e2de649b0081d3c5d51677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/PheonixTearsParticles.prefab using Guid(78a7956e62e2de649b0081d3c5d51677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c799288d5d8e117c64d1292172f6e2a3') in 0.012949 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.190449 seconds.
+  path: Assets/Data/Items/PheonixTearsParticles.prefab
+  artifactKey: Guid(78a7956e62e2de649b0081d3c5d51677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/PheonixTearsParticles.prefab using Guid(78a7956e62e2de649b0081d3c5d51677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6de18d29bc29957c30ede3aa6fadf47') in 0.013222 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 735.968749 seconds.
+  path: Assets/Data/Items/statusHealingItemAnimation.png
+  artifactKey: Guid(b01293be726256b4cb322b7ff5c90e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/statusHealingItemAnimation.png using Guid(b01293be726256b4cb322b7ff5c90e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '433617f5c8e172c49529e801f4cfd1f2') in 0.017353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.832748 seconds.
+  path: Assets/Data/Items/statusHealingItemAnimation.png
+  artifactKey: Guid(b01293be726256b4cb322b7ff5c90e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/statusHealingItemAnimation.png using Guid(b01293be726256b4cb322b7ff5c90e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f69f2bfa69f0a893975a9603c39ec841') in 0.007581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.077192 seconds.
+  path: Assets/Data/Items/statusHealingItemAnimation.png
+  artifactKey: Guid(b01293be726256b4cb322b7ff5c90e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/statusHealingItemAnimation.png using Guid(b01293be726256b4cb322b7ff5c90e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c30e2fa7bbb6dd6cbd325c5826a2a8f') in 0.039701 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 112.094515 seconds.
+  path: Assets/Data/Animations/Items/StatusHealingItems
+  artifactKey: Guid(6cd08609cac2f474999badda2d351483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/StatusHealingItems using Guid(6cd08609cac2f474999badda2d351483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6d9a44d7bc8df6a891c6200454ba1e3') in 0.002526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.137183 seconds.
+  path: Assets/Data/Animations/Items/StatusHealingItems/StatusHealingItemsController.controller
+  artifactKey: Guid(259a965928be20b4aae266e61cd45b52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/StatusHealingItems/StatusHealingItemsController.controller using Guid(259a965928be20b4aae266e61cd45b52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9328e237a27225c66a3dd6b783a69e24') in 0.002704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.102298 seconds.
+  path: Assets/Data/Animations/Items/StatusHealingItems/Use.anim
+  artifactKey: Guid(d4fa57de7e326e743b08b5888d01fac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/StatusHealingItems/Use.anim using Guid(d4fa57de7e326e743b08b5888d01fac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '295223115a5dbc8766803acd7ff0aadb') in 0.002251 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 95.496652 seconds.
+  path: Assets/Data/Items/StatusHealingItemParticles.prefab
+  artifactKey: Guid(5e9340223b6fc7b42ba21cc63061050a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/StatusHealingItemParticles.prefab using Guid(5e9340223b6fc7b42ba21cc63061050a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (StatusHealingItemsController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+
+The Animator Controller (StatusHealingItemsController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+
+ -> (artifact id: '7536046db8fb2607966fcfeb78e94a70') in 0.013046 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.922542 seconds.
+  path: Assets/Data/Items/Sprites
+  artifactKey: Guid(c7b843fbb61e7f04694add3b0880d4d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Sprites using Guid(c7b843fbb61e7f04694add3b0880d4d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfd6c433645c6b216be2f021e69a4da0') in 0.002303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.298177 seconds.
+  path: Assets/Data/Items/Prefabs
+  artifactKey: Guid(bb34c46f8e6e63342827528895918086) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Prefabs using Guid(bb34c46f8e6e63342827528895918086) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe80552d9c32b1b35e7047ffc9a2d57b') in 0.001930 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.208862 seconds.
+  path: Assets/Data/Items/Prefabs/StatusHealingItemParticles.prefab
+  artifactKey: Guid(5e9340223b6fc7b42ba21cc63061050a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Prefabs/StatusHealingItemParticles.prefab using Guid(5e9340223b6fc7b42ba21cc63061050a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54724fb13865dc8f03ccedf2c0dc33eb') in 0.015018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 586.411768 seconds.
+  path: Assets/Data/Items/Sprites/remedyAnimation.png
+  artifactKey: Guid(b82b7fb6e0d0c2e4e8b424f1a378c213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Sprites/remedyAnimation.png using Guid(b82b7fb6e0d0c2e4e8b424f1a378c213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f654f5a422755164d0561cba412e713') in 0.017287 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.582863 seconds.
+  path: Assets/Data/Items/Sprites/remedyAnimation.png
+  artifactKey: Guid(b82b7fb6e0d0c2e4e8b424f1a378c213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Sprites/remedyAnimation.png using Guid(b82b7fb6e0d0c2e4e8b424f1a378c213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0418837cbaa47c7b52b9d8b408162fcc') in 0.008272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.385342 seconds.
+  path: Assets/Data/Items/Sprites/remedyAnimation.png
+  artifactKey: Guid(b82b7fb6e0d0c2e4e8b424f1a378c213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Sprites/remedyAnimation.png using Guid(b82b7fb6e0d0c2e4e8b424f1a378c213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aa5d298e5d3dd7d19643026c6d788fc') in 0.038207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.792189 seconds.
+  path: Assets/Data/Animations/Items/Remedy
+  artifactKey: Guid(4067a148bb6ba104f8905964513ad212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Remedy using Guid(4067a148bb6ba104f8905964513ad212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1ad979215f21d6bae120aabc745d27d') in 0.003007 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.730303 seconds.
+  path: Assets/Data/Animations/Items/Remedy/RemedyController.controller
+  artifactKey: Guid(121cd2c424f1a0346821ead71b7ae018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Remedy/RemedyController.controller using Guid(121cd2c424f1a0346821ead71b7ae018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4308ca4f2b3dc85ebca8688bc7698b19') in 0.002785 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.223197 seconds.
+  path: Assets/Data/Animations/Items/Remedy/Use.anim
+  artifactKey: Guid(14c4d8e12becef24db261bc4feb2375b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Remedy/Use.anim using Guid(14c4d8e12becef24db261bc4feb2375b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9903e2a62e74d04ede1eb5f534ebe3d1') in 0.002321 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 101.926053 seconds.
+  path: Assets/Data/Items/Prefabs/RemedyParticles.prefab
+  artifactKey: Guid(f2691fb0914a0e74394574d4faecad56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Prefabs/RemedyParticles.prefab using Guid(f2691fb0914a0e74394574d4faecad56) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (RemedyController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+
+The Animator Controller (RemedyController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+
+ -> (artifact id: '13f8accf6cce87a490a696e222ec12ac') in 0.011846 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.716898 seconds.
+  path: Assets/Data/Items/Prefabs/RemedyParticles.prefab
+  artifactKey: Guid(f2691fb0914a0e74394574d4faecad56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Prefabs/RemedyParticles.prefab using Guid(f2691fb0914a0e74394574d4faecad56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bd82d5e34ec0f543f9bb48814e89ad0') in 0.013010 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1468.628527 seconds.
+  path: Assets/Data/Items/Sprites/dynamiteAnimation.png
+  artifactKey: Guid(8b70578b08cabfc4aabc8ecddc8cbd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Sprites/dynamiteAnimation.png using Guid(8b70578b08cabfc4aabc8ecddc8cbd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '504489b6a62f7152301230ae623c0358') in 0.021115 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.054056 seconds.
+  path: Assets/Data/Items/Sprites/dynamiteAnimation.png
+  artifactKey: Guid(8b70578b08cabfc4aabc8ecddc8cbd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Sprites/dynamiteAnimation.png using Guid(8b70578b08cabfc4aabc8ecddc8cbd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04f3fac288035c4d9854c20b1fc71dae') in 0.008141 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.136066 seconds.
+  path: Assets/Data/Items/Sprites/dynamiteAnimation.png
+  artifactKey: Guid(8b70578b08cabfc4aabc8ecddc8cbd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Sprites/dynamiteAnimation.png using Guid(8b70578b08cabfc4aabc8ecddc8cbd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8daab20a16ee18facd442d4eede0612') in 0.050198 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.225017 seconds.
+  path: Assets/Data/Animations/Items/Dynamite
+  artifactKey: Guid(bf1170d0ac04c77418502c9b2032a276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Dynamite using Guid(bf1170d0ac04c77418502c9b2032a276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7def88de0fef397bb9370ca4c11eebb') in 0.001780 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.333040 seconds.
+  path: Assets/Data/Animations/Items/Dynamite/DynamiteController.controller
+  artifactKey: Guid(5b739459160c3da4abba6b237fc49749) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Dynamite/DynamiteController.controller using Guid(5b739459160c3da4abba6b237fc49749) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a3d2bf975219d728bab1a8dbfa422f6') in 0.004277 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.890541 seconds.
+  path: Assets/Data/Animations/Items/Dynamite/Use.anim
+  artifactKey: Guid(cb7e789378e441d4ab213c26a1ab6e78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Animations/Items/Dynamite/Use.anim using Guid(cb7e789378e441d4ab213c26a1ab6e78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e726a039dc73284b7711bde440136821') in 0.003207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 112.060876 seconds.
+  path: Assets/Data/Items/Prefabs/DynamiteParticles.prefab
+  artifactKey: Guid(f0f21d29be8f175498ed11f55ee76d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Prefabs/DynamiteParticles.prefab using Guid(f0f21d29be8f175498ed11f55ee76d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (DynamiteController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+
+The Animator Controller (DynamiteController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules\Animation\Director\AnimatorControllerPlayable.cpp line 333]
+
+ -> (artifact id: '6f29a9b9b7ccbd221e8ca84c4d138f11') in 0.013035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.469248 seconds.
+  path: Assets/Data/Items/Prefabs/DynamiteParticles.prefab
+  artifactKey: Guid(f0f21d29be8f175498ed11f55ee76d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Items/Prefabs/DynamiteParticles.prefab using Guid(f0f21d29be8f175498ed11f55ee76d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae3d3560fc29c15367ce9a690831d966') in 0.013854 seconds 
