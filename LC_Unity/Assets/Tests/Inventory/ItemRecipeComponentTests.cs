@@ -4,7 +4,7 @@ using System;
 
 namespace Testing.Inventory
 {
-    public class ItemRecipeComponentTests
+    public class ItemRecipeComponentTests : TestFoundation
     {
         [Test]
         public void ComponentCanBeCreated()

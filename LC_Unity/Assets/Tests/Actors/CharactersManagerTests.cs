@@ -9,25 +9,8 @@ using System.Collections.Generic;
 
 namespace Testing.Actors
 {
-    public class CharactersManagerTests
+    public class CharactersManagerTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         [SetUp]
         public void Setup()
         {

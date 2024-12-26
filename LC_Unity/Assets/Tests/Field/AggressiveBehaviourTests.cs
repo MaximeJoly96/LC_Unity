@@ -11,6 +11,7 @@ namespace Testing.Field
         private AggressiveBehaviour CreateAggressiveBehaviour()
         {
             GameObject go = ComponentCreator.CreateEmptyGameObject();
+            go.AddComponent<Agent>();
 
             return go.AddComponent<AggressiveBehaviour>();
         }

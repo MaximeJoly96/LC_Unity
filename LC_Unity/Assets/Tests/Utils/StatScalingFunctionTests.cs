@@ -3,7 +3,7 @@ using Utils;
 
 namespace Testing.Utils
 {
-    public class StatScalingFunctionTests
+    public class StatScalingFunctionTests : TestFoundation
     {
         [Test]
         public void ComputeTest()

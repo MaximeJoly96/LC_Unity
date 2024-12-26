@@ -5,7 +5,7 @@ using Inventory;
 
 namespace Testing.Questing
 {
-    public class QuestRewardTests
+    public class QuestRewardTests : TestFoundation
     {
         [Test]
         public void QuestRewardCanBeCreated()

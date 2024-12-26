@@ -5,7 +5,7 @@ using System;
 
 namespace Testing.Actors
 {
-    public class ElementalAffinityTests
+    public class ElementalAffinityTests : TestFoundation
     {
         [Test]
         public void ElementalAffinityCanBeCreated()

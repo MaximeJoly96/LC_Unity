@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Testing.Save.Model
 {
-    public class SaveDescriptorTests
+    public class SaveDescriptorTests : TestFoundation
     {
         [Test]
         public void DescriptorCanBeCreated()

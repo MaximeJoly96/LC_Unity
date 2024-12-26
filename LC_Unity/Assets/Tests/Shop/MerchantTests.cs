@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Testing.Shop
 {
-    public class MerchantTests
+    public class MerchantTests : TestFoundation
     {
         [Test]
         public void EmptyMerchantCanBeCreated()
@@ -27,7 +27,7 @@ namespace Testing.Shop
 
             Consumable consumable = new Consumable(new ElementIdentifier(5, "cons", "consDesc"), 3, 10,
                                                    ItemCategory.Consumable, ItemUsability.MenuOnly, 1,
-                                                   new AbilityAnimation("", "", -1, -1, -1));
+                                                   new AbilityAnimation("", "", -1, -1, -1), TargetEligibility.All, 100);
             Weapon weapon = new Weapon(new ElementIdentifier(7, "weapon", "weaponDesc"), 5, 150,
                                        ItemCategory.Weapon, new AbilityAnimation("", "", -1, -1, -1), 3,
                                        WeaponType.Staff);
@@ -47,7 +47,7 @@ namespace Testing.Shop
 
             Consumable consumable = new Consumable(new ElementIdentifier(5, "cons", "consDesc"), 3, 10,
                                                    ItemCategory.Consumable, ItemUsability.MenuOnly, 1,
-                                                   new AbilityAnimation("", "", -1, -1, -1));
+                                                   new AbilityAnimation("", "", -1, -1, -1), TargetEligibility.All, 100);
             Weapon weapon = new Weapon(new ElementIdentifier(7, "weapon", "weaponDesc"), 5, 150,
                                        ItemCategory.Weapon, new AbilityAnimation("", "", -1, -1, -1), 3,
                                        WeaponType.Staff);

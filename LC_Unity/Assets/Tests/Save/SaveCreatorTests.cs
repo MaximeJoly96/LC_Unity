@@ -16,33 +16,18 @@ using Actors;
 using Inventory;
 using Engine.Party;
 using Engine.GameProgression;
+using Questing;
 
 namespace Testing.Save
 {
-    public class SaveCreatorTests
+    public class SaveCreatorTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         [SetUp]
         public void Setup()
         {
             PersistentDataHolder.Instance.Reset();
             PartyManager.Instance.Clear();
+            QuestManager.Instance.Reset();
             GlobalStateMachine.Instance.CurrentMapId = -1;
         }
 

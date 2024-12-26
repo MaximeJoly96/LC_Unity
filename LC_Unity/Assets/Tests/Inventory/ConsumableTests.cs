@@ -5,14 +5,14 @@ using Abilities;
 
 namespace Testing.Inventory
 {
-    public class ConsumableTests
+    public class ConsumableTests : TestFoundation
     {
         [Test]
         public void ConsumableCanBeCreated()
         {
             ElementIdentifier identifier = new ElementIdentifier(2, "cons", "consDesc");
             AbilityAnimation animation = new AbilityAnimation("channel", "strike", 10, 12, 15);
-            Consumable cons = new Consumable(identifier, 5, 8, ItemCategory.Consumable, ItemUsability.BattleOnly, 5, animation);
+            Consumable cons = new Consumable(identifier, 5, 8, ItemCategory.Consumable, ItemUsability.BattleOnly, 5, animation, TargetEligibility.All, 100);
 
             Assert.AreEqual(2, cons.Id);
             Assert.AreEqual("cons", cons.Name);

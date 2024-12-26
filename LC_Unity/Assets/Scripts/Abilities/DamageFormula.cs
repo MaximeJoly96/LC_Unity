@@ -16,6 +16,12 @@ namespace Abilities
                     return ClawsCommandFormula(source, target);
                 case 45:
                     return MagickaFormula(source, target);
+                case 1000:
+                    return DynamiteFormula(source, target);
+                case 1001:
+                    return ThrowableElementalItem(source, target);
+                case 1002:
+                    return ExplosiveBoulderFormula(source, target);
             }
 
             return 0;
@@ -37,6 +43,21 @@ namespace Abilities
         {
             return Mathf.Max(0, Mathf.RoundToInt(((source.Stats.BaseMagic + source.Stats.BonusMagic) * 2.2f - (target.Stats.BaseMagicDefense + target.Stats.BonusMagicDefense))
                                 * (1 + source.Stats.Level * 0.025f)));
+        }
+
+        private static int DynamiteFormula(Character source, Character target)
+        {
+            return Mathf.Max(0, source.Stats.Level * 15 - target.Stats.BaseMagicDefense - target.Stats.BonusMagicDefense);
+        }
+
+        private static int ThrowableElementalItem(Character source, Character target)
+        {
+            return Mathf.Max(0, source.Stats.Level * 20 - (target.Stats.BaseMagicDefense + target.Stats.BonusMagicDefense) * 2);
+        }
+
+        private static int ExplosiveBoulderFormula(Character source, Character target)
+        {
+            return Mathf.Max(0, source.Stats.Level * 30 - (target.Stats.BaseMagicDefense + target.Stats.BonusMagicDefense) * 2);
         }
     }
 }

@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Testing.Utils
 {
-    public class QuadraticFunctionTests
+    public class QuadraticFunctionTests : TestFoundation
     {
         [Test]
         public void ComputeTests()

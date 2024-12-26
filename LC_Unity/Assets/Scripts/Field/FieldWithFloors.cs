@@ -45,9 +45,12 @@ namespace Field
 
         public void UpdateVisuals()
         {
-            for(int i = 0; i < _floors.Count; i++)
+            if(_floors != null)
             {
-                _floors[i].gameObject.SetActive(i == CurrentFloorIndex);
+                for (int i = 0; i < _floors.Count; i++)
+                {
+                    _floors[i].gameObject.SetActive(i == CurrentFloorIndex);
+                }
             }
         }
 

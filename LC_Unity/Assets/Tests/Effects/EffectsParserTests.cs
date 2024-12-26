@@ -5,11 +5,10 @@ using UnityEditor;
 using UnityEngine;
 using Effects;
 using Actors;
-using Actions;
 
 namespace Testing.Effects
 {
-    public class EffectsParserTests
+    public class EffectsParserTests : TestFoundation
     {
         private readonly string BASE_FILE_PATH = "Assets/Tests/Effects/TestFiles/";
 
@@ -55,7 +54,7 @@ namespace Testing.Effects
 
             AreaOfEffectAsSecondaryDamage aoe = effects[0] as AreaOfEffectAsSecondaryDamage;
 
-            Assert.AreEqual(100, aoe.BaseDamage);
+            Assert.AreEqual(100, aoe.FormulaId);
             Assert.AreEqual(Element.Ice, aoe.Element);
         }
 

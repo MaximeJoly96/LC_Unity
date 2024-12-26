@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Testing.Logging
 {
-    public class LogsHandlerTests
+    public class LogsHandlerTests : TestFoundation
     {
         [Test]
         public void LogInformationTest()

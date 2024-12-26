@@ -9,29 +9,12 @@ using Inventory;
 
 namespace Testing.Engine.Questing
 {
-    public class StartQuestTests
+    public class StartQuestTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
         [SetUp]
         public void Setup()
         {
             QuestManager.Instance.Reset();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
         }
 
         [Test]
@@ -40,7 +23,7 @@ namespace Testing.Engine.Questing
             CreateQuestsWrapper();
 
             ItemsWrapper wrapper = CreateEmptyWrapper();
-            wrapper.FeedConsumables(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/TestConsumables.xml"));
+            wrapper.FeedConsumables(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Questing/TestData/TestConsumables.xml"));
 
             StartQuest start = new StartQuest
             {
@@ -51,7 +34,7 @@ namespace Testing.Engine.Questing
 
             Assert.IsTrue(QuestManager.Instance.RunningQuests.Count(x => x.Id == start.Id) == 1);
             Assert.AreEqual(QuestStatus.Running, QuestManager.Instance.GetQuest(start.Id).Status);
-            Assert.AreEqual("bounty", QuestManager.Instance.GetQuest(start.Id).NameKey);
+            Assert.AreEqual("quest2", QuestManager.Instance.GetQuest(start.Id).NameKey);
         }
 
         private QuestsWrapper CreateQuestsWrapper()
@@ -60,10 +43,10 @@ namespace Testing.Engine.Questing
             _usedGameObjects.Add(go);
 
             QuestsWrapper wrapper = go.AddComponent<QuestsWrapper>();
-            wrapper.Feed(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/MainQuests.xml"),
-                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/SideQuests.xml"),
-                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/Bounties.xml"),
-                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/ProfessionQuests.xml"));
+            wrapper.Feed(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Questing/TestData/TestQuests.xml"),
+                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Questing/TestData/TestQuests.xml"),
+                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Questing/TestData/TestQuests.xml"),
+                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Questing/TestData/TestQuests.xml"));
 
             return wrapper;
         }

@@ -7,7 +7,7 @@ using Effects;
 
 namespace Testing.Inventory
 {
-    public class AccessoriesParserTests
+    public class AccessoriesParserTests : TestFoundation
     {
         [Test]
         public void AccessoriesCanBeParsed()

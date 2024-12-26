@@ -3,7 +3,7 @@ using Core;
 
 namespace Testing.Core
 {
-    public class GlobalStateMachineTests
+    public class GlobalStateMachineTests : TestFoundation
     {
         [Test]
         public void GlobalStateMachineUpdateStateTest()

@@ -8,10 +8,8 @@ using System.Collections.Generic;
 
 namespace Testing.Timing
 {
-    public class WaiterTests
+    public class WaiterTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
         [UnityTest]
         public IEnumerator DetectWaitIsFinishedTest()
         {
@@ -25,21 +23,6 @@ namespace Testing.Timing
             waiter.Wait(wait);
 
             yield return new WaitForSeconds(1.0f);
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            for(int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
         }
     }
 }

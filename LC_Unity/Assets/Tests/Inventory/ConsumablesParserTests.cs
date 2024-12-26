@@ -8,7 +8,7 @@ using Actors;
 
 namespace Testing.Inventory
 {
-    public class ConsumablesParserTests
+    public class ConsumablesParserTests : TestFoundation
     {
         [Test]
         public void ConsumablesCanBeParsed()

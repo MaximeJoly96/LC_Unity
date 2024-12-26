@@ -4,7 +4,7 @@ using Utils;
 
 namespace Testing.Utils
 {
-    public class MeasuresConverterTests
+    public class MeasuresConverterTests : TestFoundation
     {
         [Test]
         public void WorldUnitsToRangeTest()

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Testing.Essence
 {
-    public class EssentialAffinitiesParserTests
+    public class EssentialAffinitiesParserTests : TestFoundation
     {
         [Test]
         public void EssentialAffinitiesCanBeParsed()

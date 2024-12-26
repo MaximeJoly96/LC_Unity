@@ -5,7 +5,7 @@ using Essence;
 
 namespace Testing.Actors
 {
-    public class EssenceAffinityTests
+    public class EssenceAffinityTests : TestFoundation
     {
         [Test]
         public void EssenceAffinityCanBeCreated()

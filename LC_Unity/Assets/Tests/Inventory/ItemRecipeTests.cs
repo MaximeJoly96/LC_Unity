@@ -3,7 +3,7 @@ using Inventory;
 
 namespace Testing.Inventory
 {
-    public class ItemRecipeTests
+    public class ItemRecipeTests : TestFoundation
     {
         [Test]
         public void BlankItemRecipeCanBeCreated()

@@ -91,7 +91,9 @@ namespace Abilities
 
         private static AbilityProjectile GetProjectileFromId(int id)
         {
-            return Object.FindObjectOfType<ProjectilesWrapper>().GetProjectileById(id);
+            ProjectilesWrapper wrapper = Object.FindObjectOfType<ProjectilesWrapper>();
+
+            return wrapper ? wrapper.GetProjectileById(id) : null;
         }
     }
 }

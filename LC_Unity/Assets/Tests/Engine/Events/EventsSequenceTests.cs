@@ -4,7 +4,7 @@ using Engine.Party;
 
 namespace Testing.Engine.Events
 {
-    public class EventsSequenceTests
+    public class EventsSequenceTests : TestFoundation
     {
         [Test]
         public void CreateEventsSequenceTest()

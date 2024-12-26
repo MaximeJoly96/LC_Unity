@@ -14,25 +14,8 @@ using UnityEditor;
 
 namespace Testing.Shop
 {
-    public class ShopConfirmationWindowTests
+    public class ShopConfirmationWindowTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         private ShopConfirmationWindow CreateConfirmationWindow()
         {
             GameObject go = new GameObject();

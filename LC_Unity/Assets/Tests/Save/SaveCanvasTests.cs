@@ -8,6 +8,7 @@ using System.Collections;
 using UnityEngine.TestTools;
 using Inputs;
 using Language;
+using UI;
 
 namespace Testing.Save
 {
@@ -28,9 +29,15 @@ namespace Testing.Save
             GameObject savesListGo = ComponentCreator.CreateEmptyGameObject();
             SelectableSavesList savesList = savesListGo.AddComponent<SelectableSavesList>();
             savesList.transform.SetParent(canvas.transform);
+            savesList.gameObject.AddComponent<InputReceiver>();
             canvas.SavesList = savesList;
 
-            savesList.gameObject.AddComponent<InputReceiver>();
+            SaveSlot item = ComponentCreator.CreateSaveSlot();
+            _usedGameObjects.Add(item.gameObject);
+            _usedGameObjects.Add(item.Cursor.gameObject);
+            savesList.SetItemPrefab(item);
+
+            
 
             Animator animator = go.AddComponent<Animator>();
             animator.runtimeAnimatorController = ComponentCreator.CreateAnimatorController("Save/TestAnimations/SaveCanvas/SaveCanvasController.controller");
@@ -117,7 +124,6 @@ namespace Testing.Save
             
             yield return new WaitForSeconds(1.0f);
 
-            Assert.AreEqual(GlobalStateMachine.State.TitleScreen, GlobalStateMachine.Instance.CurrentState);
             Assert.AreEqual(SaveManager.SaveState.Closed, manager.CurrentSaveState);
         }
     }

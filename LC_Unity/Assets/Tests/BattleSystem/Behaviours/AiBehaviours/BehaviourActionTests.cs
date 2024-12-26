@@ -1,11 +1,10 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
-using Abilities;
 using BattleSystem.Behaviours.AiBehaviours;
 
 namespace Testing.BattleSystem.Behaviours.AiBehaviours
 {
-    public class BehaviourActionTests
+    public class BehaviourActionTests : TestFoundation
     {
         [Test]
         public void AddAbilityTest()

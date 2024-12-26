@@ -223,7 +223,7 @@ namespace Effects
                     effect = new AreaOfEffectAsSecondaryDamage()
                     {
                         Element = (Element)Enum.Parse(typeof(Element), effectNode.Attributes["Element"].InnerText),
-                        BaseDamage = int.Parse(effectNode.Attributes["BaseDamage"].InnerText)
+                        FormulaId = int.Parse(effectNode.Attributes["FormulaId"].InnerText)
                     };
                 }
                 else if (name.Equals(typeof(BonusDamageToShields).Name))
@@ -284,6 +284,34 @@ namespace Effects
                 else if (name.Equals(typeof(Revives).Name))
                 {
                     effect = new Revives();
+                }
+                else if (name.Equals(typeof(DealDamage).Name))
+                {
+                    effect = new DealDamage()
+                    {
+                        FormulaId = int.Parse(effectNode.Attributes["FormulaId"].InnerText)
+                    };
+                }
+                else if (name.Equals(typeof(ElementalDamage).Name))
+                {
+                    effect = new ElementalDamage()
+                    {
+                        Element = (Element)Enum.Parse(typeof(Element), effectNode.Attributes["Element"].InnerText)
+                    };
+                }
+                else if (name.Equals(typeof(FoodBonus).Name))
+                {
+                    effect = new FoodBonus()
+                    {
+                        Value = (FoodEffect)Enum.Parse(typeof(FoodEffect), effectNode.Attributes["Value"].InnerText)
+                    };
+                }
+                else if (name.Equals(typeof(PushTarget).Name))
+                {
+                    effect = new PushTarget()
+                    {
+                        Distance = int.Parse(effectNode.Attributes["Distance"].InnerText)
+                    };
                 }
 
                 if (effect != null)

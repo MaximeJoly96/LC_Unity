@@ -6,7 +6,7 @@ namespace Effects
     public class AreaOfEffectAsSecondaryDamage : IEffect
     {
         public Element Element { get; set; }
-        public int BaseDamage { get; set; }
+        public int FormulaId { get; set; }
 
         public string GetDescription()
         {

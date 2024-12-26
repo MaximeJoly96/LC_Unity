@@ -8,7 +8,7 @@ using Actors;
 
 namespace Testing.Inventory
 {
-    public class WeaponsParserTests
+    public class WeaponsParserTests : TestFoundation
     {
         [Test]
         public void WeaponsCanBeParsed()

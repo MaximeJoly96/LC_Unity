@@ -5,7 +5,7 @@ using Inventory;
 
 namespace Testing.Questing
 {
-    public class QuestTests
+    public class QuestTests : TestFoundation
     {
         [Test]
         public void EmptyQuestCanBeCreated()

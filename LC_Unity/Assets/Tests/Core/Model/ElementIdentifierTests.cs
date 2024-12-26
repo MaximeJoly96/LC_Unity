@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Testing.Core.Model
 {
-    public class ElementIdentifierTests
+    public class ElementIdentifierTests : TestFoundation
     {
         [Test]
         public void ElementIdentifierCanBeCreated()

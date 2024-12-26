@@ -15,23 +15,6 @@ namespace Testing.Engine.Movement.Moves
     {
         protected override string TestFilePath { get { return "Assets/Tests/Engine/Movement/Moves/Transparent.xml"; } }
 
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         [UnityTest]
         public IEnumerator TransparentAppliesTransparencyToSpriteRenderer()
         {

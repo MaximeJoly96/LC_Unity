@@ -4,32 +4,13 @@ using UnityEngine;
 using BattleSystem;
 using System.Collections.Generic;
 using Abilities;
-using Utils;
-using Actors;
 using System.Linq;
 using Core.Model;
 
 namespace Testing.BattleSystem.Model
 {
-    public class TimelineActionTests
+    public class TimelineActionTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         [Test]
         public void TimelineActionCanBeCreatedFromValuesTest()
         {

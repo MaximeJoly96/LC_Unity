@@ -4,7 +4,7 @@ using UnityEditor;
 
 namespace Testing.Engine
 {
-    public abstract class XmlBaseParser
+    public abstract class XmlBaseParser : TestFoundation
     {
         protected abstract string TestFilePath { get; }
 

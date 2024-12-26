@@ -9,29 +9,12 @@ using UnityEditor;
 
 namespace Testing.Engine.Questing
 {
-    public class ProgressQuestTests
+    public class ProgressQuestTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
         [SetUp]
         public void Setup()
         {
             QuestManager.Instance.Reset();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
         }
 
         [Test]
@@ -40,18 +23,18 @@ namespace Testing.Engine.Questing
             CreateQuestsWrapper();
 
             ItemsWrapper wrapper = CreateEmptyWrapper();
-            wrapper.FeedConsumables(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/TestConsumables.xml"));
+            wrapper.FeedConsumables(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Questing/TestData/TestConsumables.xml"));
 
             StartQuest start = new StartQuest
             {
-                Id = 3
+                Id = 2
             };
 
             start.Run();
 
             ProgressQuest progress = new ProgressQuest
             {
-                Id = 3,
+                Id = 2,
                 StepId = 0,
                 StepStatus = QuestStepStatus.Completed
             };
@@ -69,10 +52,10 @@ namespace Testing.Engine.Questing
             _usedGameObjects.Add(go);
 
             QuestsWrapper wrapper = go.AddComponent<QuestsWrapper>();
-            wrapper.Feed(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/MainQuests.xml"),
-                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/SideQuests.xml"),
-                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/Bounties.xml"),
-                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Questing/TestData/ProfessionQuests.xml"));
+            wrapper.Feed(AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Questing/TestData/TestQuests.xml"),
+                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Questing/TestData/TestQuests.xml"),
+                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Questing/TestData/TestQuests.xml"),
+                         AssetDatabase.LoadAssetAtPath<TextAsset>("Assets/Tests/Engine/Questing/TestData/TestQuests.xml"));
 
             return wrapper;
         }

@@ -5,7 +5,7 @@ using UnityEditor;
 
 namespace Testing.Engine.Events
 {
-    public class EventsSequenceParserTests
+    public class EventsSequenceParserTests : TestFoundation
     {
         [Test]
         public void ParseEventsSequenceTest()

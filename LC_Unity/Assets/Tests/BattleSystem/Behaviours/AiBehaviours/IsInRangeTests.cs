@@ -2,31 +2,13 @@
 using BattleSystem.Behaviours.AiBehaviours;
 using NUnit.Framework;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 namespace Testing.BattleSystem.Behaviours.AiBehaviours
 {
-    public class IsInRangeTests
+    public class IsInRangeTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         [Test]
         public void CreateBasicIsInRangeTest()
         {

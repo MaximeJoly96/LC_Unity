@@ -32,9 +32,14 @@ namespace Testing.BattleSystem
             battlers[1].Feed(new Battler(c2));
             battlers[2].Feed(new Battler(c3));
 
+            _usedGameObjects.Add(battlers[0].gameObject);
+            _usedGameObjects.Add(battlers[1].gameObject);
+            _usedGameObjects.Add(battlers[2].gameObject);
+
             holder.Feed(battlers);
 
             BattlerBehaviour inst = holder.InstantiateBattler(battlerModel);
+            _usedGameObjects.Add(inst.gameObject);
 
             yield return null;
 

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Testing.Abilities
 {
-    public class AbilityTests
+    public class AbilityTests : TestFoundation
     {
         [Test]
         public void AbilityCanBeCreatedTest()

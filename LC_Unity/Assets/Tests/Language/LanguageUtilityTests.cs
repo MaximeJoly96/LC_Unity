@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 namespace Testing.Language
 {
-    public class LanguageUtilityTests
+    public class LanguageUtilityTests : TestFoundation
     {
         [Test]
         public void TranslateLanguageLabelTest()

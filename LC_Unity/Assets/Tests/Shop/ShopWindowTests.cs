@@ -16,25 +16,8 @@ using System.Collections;
 
 namespace Testing.Shop
 {
-    public class ShopWindowTests
+    public class ShopWindowTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         [UnityTest]
         public IEnumerator MerchantCanBeSetup()
         {

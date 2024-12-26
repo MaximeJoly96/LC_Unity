@@ -13,23 +13,6 @@ namespace Testing.Engine.Character
     {
         protected override string TestFilePath { get { return "Assets/Tests/Engine/Character/EnableDisableAgent.xml"; } }
 
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         [UnityTest]
         public IEnumerator EnableAgentTest()
         {

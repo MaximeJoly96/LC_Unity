@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Testing.BattleSystem.Behaviours.AiBehaviours
 {
-    public class BehaviourParserTests
+    public class BehaviourParserTests : TestFoundation
     {
         private readonly string _filePath = "Assets/Tests/BattleSystem/Behaviours/AiBehaviours/RangeAndResourcesTestBehaviour.xml";
 

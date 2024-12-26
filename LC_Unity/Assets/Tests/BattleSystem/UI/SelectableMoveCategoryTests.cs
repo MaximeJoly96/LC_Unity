@@ -6,6 +6,8 @@ using System.Collections;
 using UnityEngine.TestTools;
 using Abilities;
 using Language;
+using BattleSystem;
+using Engine.SceneControl;
 
 namespace Testing.BattleSystem.UI
 {
@@ -14,6 +16,11 @@ namespace Testing.BattleSystem.UI
         [UnityTest]
         public IEnumerator DataCanBeFed()
         {
+            BattleDataHolder.Instance.BattleData = new BattleProcessing
+            {
+                CanEscape = true
+            };
+
             SelectableMoveCategory category = CreateSelectableMoveCategory();
             Localizer localizer = ComponentCreator.CreateLocalizer("BattleSystem/UI/french.csv", global::Language.Language.French);
 

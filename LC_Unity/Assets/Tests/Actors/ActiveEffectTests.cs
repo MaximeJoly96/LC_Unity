@@ -3,7 +3,7 @@ using Actors;
 
 namespace Testing.Actors
 {
-    public class ActiveEffectTests
+    public class ActiveEffectTests : TestFoundation
     {
         [Test]
         public void ActiveEffectCanBeCreated()

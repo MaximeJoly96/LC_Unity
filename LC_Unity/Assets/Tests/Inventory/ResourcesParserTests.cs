@@ -6,7 +6,7 @@ using UnityEditor;
 
 namespace Testing.Inventory
 {
-    public class ResourcesParserTests
+    public class ResourcesParserTests : TestFoundation
     {
         [Test]
         public void ResourcesCanBeParsed()

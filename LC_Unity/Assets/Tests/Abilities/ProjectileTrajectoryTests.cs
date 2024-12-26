@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Testing.Abilities
 {
-    public class ProjectileTrajectoryTests
+    public class ProjectileTrajectoryTests : TestFoundation
     {
         [Test]
         public void CheckpointsCanBeAddedToTrajectoryTest()

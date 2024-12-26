@@ -4,7 +4,7 @@ using Inventory;
 
 namespace Testing.Inventory
 {
-    public class AccessoryTests
+    public class AccessoryTests : TestFoundation
     {
         [Test]
         public void AccessoryCanBeCreated()

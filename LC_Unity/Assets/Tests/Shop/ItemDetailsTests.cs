@@ -15,25 +15,8 @@ using Engine.Party;
 
 namespace Testing.Shop
 {
-    public class ItemDetailsTests
+    public class ItemDetailsTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         private ItemDetails CreateItemDetails()
         {
             ItemDetails details = CreateGenericGameObjectWithComponent<ItemDetails>();

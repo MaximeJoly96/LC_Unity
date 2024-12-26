@@ -6,7 +6,7 @@ using Inventory;
 
 namespace Testing.Inventory
 {
-    public class ItemParserTests
+    public class ItemParserTests : TestFoundation
     {
         [Test]
         public void RecipeCanBeParsed()

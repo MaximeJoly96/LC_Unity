@@ -15,25 +15,8 @@ using UnityEngine.UI;
 
 namespace Testing.Shop
 {
-    public class ShopManagerTests
+    public class ShopManagerTests : TestFoundation
     {
-        private List<GameObject> _usedGameObjects;
-
-        [TearDown]
-        public void TearDown()
-        {
-            for (int i = 0; i < _usedGameObjects.Count; i++)
-            {
-                GameObject.Destroy(_usedGameObjects[i]);
-            }
-        }
-
-        [OneTimeSetUp]
-        public void GlobalSetup()
-        {
-            _usedGameObjects = new List<GameObject>();
-        }
-
         private InputController CreateInputController()
         {
             GameObject go = new GameObject();

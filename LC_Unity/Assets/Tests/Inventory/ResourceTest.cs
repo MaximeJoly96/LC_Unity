@@ -4,7 +4,7 @@ using Core.Model;
 
 namespace Testing.Inventory
 {
-    public class ResourceTest
+    public class ResourceTest : TestFoundation
     {
         [Test]
         public void ResourceUsabilityShouldBeNever()

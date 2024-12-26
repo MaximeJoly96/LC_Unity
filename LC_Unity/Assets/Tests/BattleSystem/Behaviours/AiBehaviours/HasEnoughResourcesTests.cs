@@ -8,7 +8,7 @@ using Core.Model;
 
 namespace Testing.BattleSystem.Behaviours.AiBehaviours
 {
-    public class HasEnoughResourcesTests
+    public class HasEnoughResourcesTests : TestFoundation
     {
         [Test]
         public void CreateHasEnoughResourcesTest()

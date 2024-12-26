@@ -6,7 +6,7 @@ using Inventory;
 
 namespace Testing.Inventory
 {
-    public class KeyItemsParserTests
+    public class KeyItemsParserTests : TestFoundation
     {
         [Test]
         public void KeyItemsCanBeParsed()

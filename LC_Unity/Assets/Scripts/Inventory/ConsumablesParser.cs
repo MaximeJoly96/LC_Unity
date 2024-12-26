@@ -45,8 +45,10 @@ namespace Inventory
             ItemUsability usability = (ItemUsability)Enum.Parse(typeof(ItemUsability), node.SelectSingleNode("Usability").InnerText);
             int priority = int.Parse(node.SelectSingleNode("Priority").InnerText);
             AbilityAnimation animation = ParseAbilityAnimation(node.SelectSingleNode("Animation"));
+            TargetEligibility eligiblity = (TargetEligibility)Enum.Parse(typeof(TargetEligibility), node.SelectSingleNode("TargetEligibility").InnerText);
+            int range = int.Parse(node.SelectSingleNode("Range").InnerText);
 
-            Consumable cons = new Consumable(new ElementIdentifier(id, name, description), icon, price, ItemCategory.Consumable, usability, priority, animation);
+            Consumable cons = new Consumable(new ElementIdentifier(id, name, description), icon, price, ItemCategory.Consumable, usability, priority, animation, eligiblity, range);
 
             XmlNode effectsNode = node.SelectSingleNode("Effects");
             if (effectsNode != null)

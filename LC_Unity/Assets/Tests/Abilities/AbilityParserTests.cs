@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Testing.Abilities
 {
-    public class AbilityParserTests
+    public class AbilityParserTests : TestFoundation
     {
         private readonly string _filePath = "Assets/Tests/Abilities/TestAbilities.xml";
 

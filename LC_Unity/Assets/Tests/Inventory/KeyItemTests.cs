@@ -4,7 +4,7 @@ using Inventory;
 
 namespace Testing.Inventory
 {
-    public class KeyItemTests
+    public class KeyItemTests : TestFoundation
     {
         [Test]
         public void KeyItemCanBeCreated()

@@ -3,7 +3,7 @@ using Utils;
 
 namespace Testing.Utils
 {
-    public class TimeConverterTests
+    public class TimeConverterTests : TestFoundation
     {
         [Test]
         public void FormatTimeFromSecondsTest()

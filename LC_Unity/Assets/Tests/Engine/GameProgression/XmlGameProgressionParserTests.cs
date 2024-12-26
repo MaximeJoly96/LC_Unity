@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Testing.Engine.GameProgession
 {
-    public class XmlGameProgressionParserTests: XmlBaseParser
+    public class XmlGameProgressionParserTests : XmlBaseParser
     {
         protected override string TestFilePath { get { return "Assets/Tests/Engine/GameProgression/TestData.xml"; } }
 

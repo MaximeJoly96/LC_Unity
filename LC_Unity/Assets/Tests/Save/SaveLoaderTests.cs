@@ -10,7 +10,7 @@ using Save.Model;
 
 namespace Testing.Save
 {
-    public class SaveLoaderTests
+    public class SaveLoaderTests : TestFoundation
     {
         [SetUp]
         public void Setup()

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Testing.Questing
 {
-    public class QuestStepTests
+    public class QuestStepTests : TestFoundation
     {
         [Test]
         public void EmptyQuestStepCanBeCreated()

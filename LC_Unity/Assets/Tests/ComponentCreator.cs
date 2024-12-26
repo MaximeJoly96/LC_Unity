@@ -18,6 +18,7 @@ using Utils;
 using Actors;
 using BattleSystem;
 using BattleSystem.Fields;
+using Abilities;
 
 namespace Testing
 {
@@ -324,6 +325,7 @@ namespace Testing
         {
             GameObject go = CreateEmptyGameObject();
             BattlerBehaviour battler = go.AddComponent<BattlerBehaviour>();
+            go.AddComponent<Animator>();
 
             return battler;
         }
@@ -368,6 +370,15 @@ namespace Testing
             BattleStartTag tag = go.AddComponent<BattleStartTag>();
 
             return tag;
+        }
+
+        public static AbilityProjectile CreateDefaultProjectile()
+        {
+            GameObject go = CreateEmptyGameObject();
+
+            AbilityProjectile projectile = go.AddComponent<AbilityProjectile>();
+            go.AddComponent<CircleCollider2D>();
+            return projectile;
         }
     }
 }
