@@ -375,7 +375,7 @@ namespace Testing.Actors
             character.ChangeEquipment(2000);
             character.ChangeEquipment(2001);
 
-            Assert.AreEqual("1510,2001,-1,1216,2000,3000", character.Serialize());
+            Assert.AreEqual("1510,2001,-1,1216,2000,3000,278,31,100", character.Serialize());
         }
 
         [Test]
@@ -406,7 +406,7 @@ namespace Testing.Actors
                                                                   new StatScalingFunction(1.7f, 0.975f, 5),
                                                                   new StatScalingFunction(4, 0.85f, 6)));
 
-            Character character = Character.Deserialize("character0", "1510,2001,-1,1216,2000,3000");
+            Character character = Character.Deserialize("character0", "1510,2001,-1,1216,2000,3000,256,25,100");
 
             Assert.AreEqual(0, character.Id);
             Assert.AreEqual(1510, character.Stats.Exp);
@@ -415,6 +415,9 @@ namespace Testing.Actors
             Assert.AreEqual(2001, character.Equipment.Head.ItemId);
             Assert.AreEqual(2000, character.Equipment.Body.ItemId);
             Assert.AreEqual(3000, character.Equipment.Accessory.ItemId);
+            Assert.AreEqual(256, character.Stats.CurrentHealth);
+            Assert.AreEqual(25, character.Stats.CurrentMana);
+            Assert.AreEqual(100, character.Stats.CurrentEssence);
         }
     }
 }

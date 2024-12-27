@@ -35,9 +35,11 @@ namespace Menus
         private void Init()
         {
             _horizontalMainMenu.Init();
-            _characterSelector.Clear();
-            _characterSelector.Feed(PartyManager.Instance.GetParty());
-            _characterSelector.CharacterSelected.AddListener(OpenCharacterTab);
+            _horizontalMainMenu.MainMenuRefreshRequested.RemoveAllListeners();
+            _horizontalMainMenu.MainMenuRefreshRequested.AddListener(RefreshCharacters);
+
+            RefreshCharacters();
+
             _miscData.Open();
         }
 
@@ -121,6 +123,14 @@ namespace Menus
         public void ToggleAccess(bool canAccess)
         {
             CanOpen = canAccess;
+        }
+
+        private void RefreshCharacters()
+        {
+            _characterSelector.Clear();
+            _characterSelector.Feed(PartyManager.Instance.GetParty());
+            _characterSelector.CharacterSelected.RemoveAllListeners();
+            _characterSelector.CharacterSelected.AddListener(OpenCharacterTab);
         }
     }
 }

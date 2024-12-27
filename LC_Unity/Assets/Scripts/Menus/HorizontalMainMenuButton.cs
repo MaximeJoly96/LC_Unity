@@ -3,6 +3,7 @@ using Menus.SubMenus;
 using UI;
 using Actors;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Menus
 {
@@ -12,6 +13,19 @@ namespace Menus
         protected SubMenu _subMenu;
         [SerializeField]
         protected bool _needsTarget;
+
+        protected UnityEvent _mainMenuRefreshRequested;
+
+        public UnityEvent MainMenuRefreshRequested
+        {
+            get
+            {
+                if (_mainMenuRefreshRequested == null)
+                    _mainMenuRefreshRequested = new UnityEvent();
+
+                return _mainMenuRefreshRequested;
+            }
+        }
 
         #region Methods
         public override void SelectButton()
@@ -37,6 +51,8 @@ namespace Menus
 
         public void OpenSubMenu()
         {
+            _subMenu.MainMenuRefreshRequested.RemoveAllListeners();
+            _subMenu.MainMenuRefreshRequested.AddListener(() => MainMenuRefreshRequested.Invoke());
             _subMenu.Open();
         }
         #endregion

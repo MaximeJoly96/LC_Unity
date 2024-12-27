@@ -2,6 +2,7 @@
 using System.Collections;
 using Core;
 using Actors;
+using UnityEngine.Events;
 
 namespace Menus.SubMenus
 {
@@ -13,6 +14,18 @@ namespace Menus.SubMenus
         protected InputReceiver _inputReceiver;
         protected bool _busy;
         protected Character _fedCharacter;
+        protected UnityEvent _mainMenuRefreshRequested;
+
+        public UnityEvent MainMenuRefreshRequested
+        {
+            get
+            {
+                if(_mainMenuRefreshRequested == null)
+                    _mainMenuRefreshRequested = new UnityEvent();
+
+                return _mainMenuRefreshRequested;
+            }
+        }
 
         public abstract void Open();
         public abstract void Close();

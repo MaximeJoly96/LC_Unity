@@ -125,17 +125,17 @@ namespace Testing.Save
             SaveCreator creator = new SaveCreator();
             Dictionary<string, string> save = creator.CreateSaveData();
 
-            Assert.AreEqual("10,-1,-1,-1,-1,-1", save["character0"]);
+            Assert.AreEqual("10,-1,-1,-1,-1,-1,256,25,100", save["character0"]);
 
             character.GiveExp(300);
 
             save = creator.CreateSaveData();
-            Assert.AreEqual("310,-1,-1,-1,-1,-1", save["character0"]);
+            Assert.AreEqual("310,-1,-1,-1,-1,-1,256,25,100", save["character0"]);
 
             character.ChangeEquipment(new BaseItem(new ElementIdentifier(1000, "sword", "swordDesc"), 0, 150, ItemCategory.Weapon));
 
             save = creator.CreateSaveData();
-            Assert.AreEqual("310,-1,-1,1000,-1,-1", save["character0"]);
+            Assert.AreEqual("310,-1,-1,1000,-1,-1,256,25,100", save["character0"]);
         }
 
         [Test]

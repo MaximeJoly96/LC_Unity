@@ -54,7 +54,6 @@ namespace Menus.SubMenus
             _itemsList.ItemSelected.RemoveAllListeners();
             _itemsList.ItemSelected.AddListener(SelectItem);
 
-            PartyManager.Instance.InventoryChanged.RemoveListener(InventoryUpdated);
             PartyManager.Instance.InventoryChanged.AddListener(InventoryUpdated);
 
             StartCoroutine(DoOpen());
@@ -63,6 +62,9 @@ namespace Menus.SubMenus
 
         public override void Close()
         {
+            PartyManager.Instance.InventoryChanged.RemoveListener(InventoryUpdated);
+            MainMenuRefreshRequested.Invoke();
+
             StartCoroutine(DoClose());
         }
 
