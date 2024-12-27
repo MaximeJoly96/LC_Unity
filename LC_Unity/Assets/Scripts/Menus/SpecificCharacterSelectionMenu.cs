@@ -7,6 +7,8 @@ using Party;
 using System.Collections.Generic;
 using Actors;
 using Utils;
+using System.Linq;
+using Effects;
 
 namespace Menus
 {
@@ -177,7 +179,15 @@ namespace Menus
 
         private void SelectCharacter()
         {
-            Debug.Log("Selected " + _characters[_cursorPosition].Character.Name + " with " + _selectedItem.Item.ItemData.Name);
+            bool eligible = true;
+
+            for(int i = 0; i < _selectedItem.Item.ItemData.Effects.Count && eligible; i++)
+            {
+                eligible = _characters[_cursorPosition].Character.EligibleForMenuEffect(_selectedItem.Item.ItemData.Effects[i]);
+            }
+
+            if(eligible)
+                Debug.Log("Selected " + _characters[_cursorPosition].Character.Name + " with " + _selectedItem.Item.ItemData.Name);
         }
     }
 }

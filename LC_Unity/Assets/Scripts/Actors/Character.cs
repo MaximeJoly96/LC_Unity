@@ -260,5 +260,37 @@ namespace Actors
 
             return character;
         }
+
+        public bool EligibleForMenuEffect(IEffect effect)
+        {
+            if(effect is FoodBonus)
+            {
+                return Stats.CurrentHealth > 0;
+            }
+            else if(effect is RestoresResourceScaling)
+            {
+                RestoresResourceScaling restoringEffect = effect as RestoresResourceScaling;
+
+                if (restoringEffect.Stat == Stat.HP)
+                    return Stats.CurrentHealth < Stats.MaxHealth;
+                else if (restoringEffect.Stat == Stat.MP)
+                    return Stats.CurrentMana < Stats.MaxMana;
+                else if (restoringEffect.Stat == Stat.EP)
+                    return Stats.CurrentEssence < Stats.MaxEssence;
+                else
+                    return false;
+            }
+            else if(effect is Revives)
+            {
+                return Stats.CurrentHealth <= 0;
+            }
+            else if(effect is Dispel)
+            {
+                Dispel dispelEffect = effect as Dispel;
+                return ActiveEffects.Any(e => e.Effect == dispelEffect.Value);
+            }
+
+            return false;
+        }
     }
 }
