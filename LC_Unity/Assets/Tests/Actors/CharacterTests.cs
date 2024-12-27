@@ -31,12 +31,9 @@ namespace Testing.Actors
 
             Character character = new Character();
 
-            Assert.AreEqual(2, character.Abilities.Count);
+            Assert.AreEqual(3, character.Abilities.Count);
             Assert.AreEqual(10, character.ElementalAffinities.Count);
             Assert.AreEqual(0, character.ActiveEffects.Count);
-
-            Assert.AreEqual(AbilityCategory.AttackCommand, character.Abilities[0].Category);
-            Assert.AreEqual(AbilityCategory.FleeCommand, character.Abilities[1].Category);
 
             Assert.AreEqual(-1, character.Equipment.RightHand.ItemId);
             Assert.AreEqual(-1, character.Equipment.LeftHand.ItemId);
@@ -78,7 +75,6 @@ namespace Testing.Actors
                                                 new StatScalingFunction(4, 0.85f, 6));
 
             Assert.AreEqual(AbilityCategory.AttackCommand, character.Abilities[0].Category);
-            Assert.AreEqual(AbilityCategory.FleeCommand, character.Abilities[1].Category);
 
             Assert.AreEqual(10, character.Stats.Exp);
             Assert.AreEqual(256, character.Stats.MaxHealth);
@@ -220,12 +216,12 @@ namespace Testing.Actors
                                                 new StatScalingFunction(1.7f, 0.975f, 5),
                                                 new StatScalingFunction(4, 0.85f, 6));
 
-            Assert.AreEqual(2, character.Abilities.Count);
+            Assert.AreEqual(3, character.Abilities.Count);
 
             character.LearnSkill(2);
 
-            Assert.AreEqual(3, character.Abilities.Count);
-            Assert.AreEqual("magicka", character.Abilities[2].Name);
+            Assert.AreEqual(4, character.Abilities.Count);
+            Assert.AreEqual("fleeCommand", character.Abilities[2].Name);
         }
 
         [Test]
@@ -251,16 +247,16 @@ namespace Testing.Actors
                                                 new StatScalingFunction(1.7f, 0.975f, 5),
                                                 new StatScalingFunction(4, 0.85f, 6));
 
-            Assert.AreEqual(2, character.Abilities.Count);
+            Assert.AreEqual(3, character.Abilities.Count);
 
             character.ForgetSkill(0);
 
-            Assert.AreEqual(1, character.Abilities.Count);
-            Assert.AreEqual(AbilityCategory.FleeCommand, character.Abilities[0].Category);
+            Assert.AreEqual(2, character.Abilities.Count);
+            Assert.AreEqual(AbilityCategory.FleeCommand, character.Abilities[1].Category);
 
             character.ForgetSkill(2);
 
-            Assert.AreEqual(1, character.Abilities.Count);
+            Assert.AreEqual(2, character.Abilities.Count);
         }
 
         [Test]

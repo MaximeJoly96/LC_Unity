@@ -37,16 +37,16 @@ namespace Testing.Engine.Actor
             global::Actors.Character character = CharactersManager.Instance.GetCharacter(0);
             PartyManager.Instance.GetParty().Add(character);
 
-            Assert.AreEqual(2, character.Abilities.Count);
+            Assert.AreEqual(3, character.Abilities.Count);
             Assert.AreEqual(0, character.Abilities[0].Id);
-            Assert.AreEqual(1, character.Abilities[1].Id);
+            Assert.AreEqual(1, character.Abilities[2].Id);
 
             change.Run();
 
-            Assert.AreEqual(3, character.Abilities.Count);
+            Assert.AreEqual(4, character.Abilities.Count);
             Assert.AreEqual(0, character.Abilities[0].Id);
-            Assert.AreEqual(1, character.Abilities[1].Id);
-            Assert.AreEqual(5, character.Abilities[2].Id);
+            Assert.AreEqual(1, character.Abilities[2].Id);
+            Assert.AreEqual(5, character.Abilities[3].Id);
         }
 
         [Test]
@@ -62,13 +62,13 @@ namespace Testing.Engine.Actor
             global::Actors.Character character = CharactersManager.Instance.GetCharacter(1);
             PartyManager.Instance.GetParty().Add(character);
 
-            Assert.AreEqual(2, character.Abilities.Count);
+            Assert.AreEqual(3, character.Abilities.Count);
             Assert.AreEqual(0, character.Abilities[0].Id);
-            Assert.AreEqual(1, character.Abilities[1].Id);
+            Assert.AreEqual(1, character.Abilities[2].Id);
 
             change.Run();
 
-            Assert.AreEqual(1, character.Abilities.Count);
+            Assert.AreEqual(2, character.Abilities.Count);
             Assert.AreEqual(0, character.Abilities[0].Id);
         }
 

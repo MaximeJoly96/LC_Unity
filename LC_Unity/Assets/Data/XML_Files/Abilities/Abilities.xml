@@ -820,13 +820,30 @@
     <TargetEligibility>Enemy</TargetEligibility>
     <Category>Skill</Category>
     <Range>1000</Range>
-    <AnimationId>6</AnimationId>
     <Animation>
       <Channel>Channel</Channel>
       <ChannelParticles>14</ChannelParticles>
       <Strike>Strike</Strike>
       <ImpactParticles>6</ImpactParticles>
       <ProjectileId>0</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>46</Id>
+    <Name>ItemCommand</Name>
+    <Description>ItemCommandDescription</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost HP="0" MP="4" EP="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Any</TargetEligibility>
+    <Category>ItemCommand</Category>
+    <Range>100</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike></Strike>
+      <ImpactParticles>-1</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
     </Animation>
   </Ability>
 </Abilities>

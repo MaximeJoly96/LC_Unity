@@ -231,6 +231,9 @@ namespace BattleSystem
                     _uiManager.CloseTargetInfo();
                     UpdateState(BattleState.PlayerMoveSelection);
                     break;
+                case BattleState.PlayerMoveSelection:
+                    _uiManager.CancelSelection();
+                    break;
             }
         }
 

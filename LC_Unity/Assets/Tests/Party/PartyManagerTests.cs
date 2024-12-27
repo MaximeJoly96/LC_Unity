@@ -291,20 +291,20 @@ namespace Testing.Party
 
             manager.ChangePartyMember(new ChangePartyMember { Action = ChangePartyMember.ActionType.Add, Id = 0, Initialize = true });
 
-            Assert.AreEqual(2, manager.GetCharacter(0).Abilities.Count);
+            Assert.AreEqual(3, manager.GetCharacter(0).Abilities.Count);
             Assert.AreEqual(AbilityCategory.AttackCommand, manager.GetCharacter(0).Abilities[0].Category);
-            Assert.AreEqual(AbilityCategory.FleeCommand, manager.GetCharacter(0).Abilities[1].Category);
+            Assert.AreEqual(AbilityCategory.FleeCommand, manager.GetCharacter(0).Abilities[2].Category);
 
             manager.ChangeSkills(new ChangeSkills { CharacterId = 0, Action = ChangeSkills.ActionType.Learn, SkillId = 2 });
 
-            Assert.AreEqual(3, manager.GetCharacter(0).Abilities.Count);
-            Assert.AreEqual(AbilityCategory.Skill, manager.GetCharacter(0).Abilities[2].Category);
+            Assert.AreEqual(4, manager.GetCharacter(0).Abilities.Count);
+            Assert.AreEqual(AbilityCategory.Skill, manager.GetCharacter(0).Abilities[3].Category);
 
             manager.ChangeSkills(new ChangeSkills { CharacterId = 0, Action = ChangeSkills.ActionType.Forget, SkillId = 2 });
 
-            Assert.AreEqual(2, manager.GetCharacter(0).Abilities.Count);
+            Assert.AreEqual(3, manager.GetCharacter(0).Abilities.Count);
             Assert.AreEqual(AbilityCategory.AttackCommand, manager.GetCharacter(0).Abilities[0].Category);
-            Assert.AreEqual(AbilityCategory.FleeCommand, manager.GetCharacter(0).Abilities[1].Category);
+            Assert.AreEqual(AbilityCategory.FleeCommand, manager.GetCharacter(0).Abilities[2].Category);
         }
 
         [Test]

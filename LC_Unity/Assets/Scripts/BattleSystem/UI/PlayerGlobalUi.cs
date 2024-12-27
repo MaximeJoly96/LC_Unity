@@ -54,6 +54,11 @@ namespace BattleSystem.UI
             _moveSelectionWindow.UpPressed();
         }
 
+        public void CancelSelection()
+        {
+            _moveSelectionWindow.CancelSelection();
+        }
+
         public void DownPressedOnMoveSelection()
         {
             _moveSelectionWindow.DownPressed();

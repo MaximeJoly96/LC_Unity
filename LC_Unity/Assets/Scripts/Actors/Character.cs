@@ -35,6 +35,7 @@ namespace Actors
             InitBasicAffinities();
 
             LearnSkill(0);
+            LearnSkill(46);
             LearnSkill(1);
         }
 

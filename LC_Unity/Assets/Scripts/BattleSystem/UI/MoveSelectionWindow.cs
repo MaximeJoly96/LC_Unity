@@ -1,26 +1,27 @@
 ﻿using UnityEngine;
-using TMPro;
 using Abilities;
 using System.Collections.Generic;
 using System.Linq;
-using MusicAndSounds;
 using Utils;
+using Inventory;
+using Party;
+using UnityEngine.UI;
 
 namespace BattleSystem.UI
 {
     public class MoveSelectionWindow : MonoBehaviour
     {
-        public enum SelectionState { Category }
+        public enum SelectionState { Category, Items }
 
-        [SerializeField]
-        private Transform _cursor;
         [SerializeField]
         private Transform _listWrapper;
         [SerializeField]
         private SelectableMoveCategory _selectableMoveCategoryPrefab;
+        [SerializeField]
+        private BattleInventoryItem _inventoryItemPrefab;
 
         private BattlerBehaviour _currentCharacter;
-        private List<SelectableMoveCategory> _instMoveCategories;
+        private List<BattleMenuItem> _instMenuItems;
 
         private int _cursorCurrentPosition;
         private SelectionState _currentSelectionState;
@@ -31,7 +32,6 @@ namespace BattleSystem.UI
             get { return GetComponent<Animator>(); }
         }
 
-        public Transform Cursor { get { return _cursor; } set { _cursor = value; } }
         public Transform ListWrapper { get { return _listWrapper; } set { _listWrapper = value; } }
         #endregion
 
@@ -50,24 +50,30 @@ namespace BattleSystem.UI
             _currentCharacter = character;
             _currentSelectionState = SelectionState.Category;
 
-            CreateMoveCategories(_currentCharacter.BattlerData.Character.Abilities);
+            CreateMoveCategories();
         }
 
-        private void CreateMoveCategories(List<Ability> abilities)
+        private void CreateMoveCategories()
         {
             Clear();
-            _instMoveCategories = new List<SelectableMoveCategory>();
+            _instMenuItems = new List<BattleMenuItem>();
 
-            foreach(Ability ability in abilities)
-            {
-                if(_instMoveCategories.FirstOrDefault(c => c.Category == ability.Category) == null)
-                {
-                    SelectableMoveCategory smc = Instantiate(_selectableMoveCategoryPrefab, _listWrapper);
-                    smc.Feed(ability.Category);
+            CreateMoveCategory(AbilityCategory.AttackCommand);
+            CreateMoveCategory(AbilityCategory.Skill);
+            CreateMoveCategory(AbilityCategory.ItemCommand);
+            CreateMoveCategory(AbilityCategory.FleeCommand);
 
-                    _instMoveCategories.Add(smc);
-                }
-            }
+            _cursorCurrentPosition = 0;
+            UpdateCursor();
+        }
+
+        private void CreateMoveCategory(AbilityCategory category)
+        {
+            SelectableMoveCategory smc = Instantiate(_selectableMoveCategoryPrefab, _listWrapper);
+            smc.Feed(category);
+
+            _instMenuItems.Add(smc);
+            smc.ShowCursor(false);
         }
 
         private void Clear()
@@ -76,37 +82,37 @@ namespace BattleSystem.UI
                 Destroy(child.gameObject);
         }
 
-        public void UpPressed()
+        public void CancelSelection()
         {
             switch(_currentSelectionState)
             {
-                case SelectionState.Category:
-                    _cursorCurrentPosition = _cursorCurrentPosition == 0 ? _instMoveCategories.Count - 1 : --_cursorCurrentPosition;
+                case SelectionState.Items:
+                    CommonSounds.ActionCancelled();
+                    _currentSelectionState = SelectionState.Category;
+                    CreateMoveCategories();
                     break;
             }
+        }
+
+        public void UpPressed()
+        {
+            _cursorCurrentPosition = _cursorCurrentPosition == 0 ? _instMenuItems.Count - 1 : --_cursorCurrentPosition;
 
             UpdateCursor();
         }
 
         public void DownPressed()
         {
-            switch(_currentSelectionState)
-            {
-                case SelectionState.Category:
-                    _cursorCurrentPosition = _cursorCurrentPosition == _instMoveCategories.Count - 1 ? 0 : ++_cursorCurrentPosition;
-                    break;
-            }
+            _cursorCurrentPosition = _cursorCurrentPosition == _instMenuItems.Count - 1 ? 0 : ++_cursorCurrentPosition;
 
             UpdateCursor();
         }
 
         private void UpdateCursor()
         {
-            switch(_currentSelectionState)
+            for(int i = 0; i < _instMenuItems.Count; i++)
             {
-                case SelectionState.Category:
-                    _cursor.transform.position = _instMoveCategories[_cursorCurrentPosition].transform.position;
-                    break;
+                _instMenuItems[i].ShowCursor(_cursorCurrentPosition == i);
             }
         }
 
@@ -115,8 +121,7 @@ namespace BattleSystem.UI
             switch(_currentSelectionState)
             {
                 case SelectionState.Category:
-                    AbilityCategory abilityCategory = _instMoveCategories[_cursorCurrentPosition].Category;
-
+                    AbilityCategory abilityCategory = (_instMenuItems[_cursorCurrentPosition] as SelectableMoveCategory).Category;
                     AbilityCategorySelected(abilityCategory);
                     break;
             }
@@ -142,13 +147,13 @@ namespace BattleSystem.UI
                     }
                     else
                     {
-                        FindObjectOfType<AudioPlayer>().PlaySoundEffect(new Engine.MusicAndSounds.PlaySoundEffect
-                        {
-                            Name = "Error1",
-                            Pitch = 1.0f,
-                            Volume = 1.0f
-                        });
+                        CommonSounds.Error();
                     }
+                    break;
+                case AbilityCategory.ItemCommand:
+                    CommonSounds.OptionSelected();
+                    _currentSelectionState = SelectionState.Items;
+                    DisplayInventory();
                     break;
             }
         }
@@ -156,6 +161,28 @@ namespace BattleSystem.UI
         private void SelectTargetForAttackCommand()
         {
             FindObjectOfType<BattleManager>().SelectTargetWithAbility(AbilitiesManager.Instance.GetAbility(0));
+        }
+
+        private void DisplayInventory()
+        {
+            Clear();
+
+            List<InventoryItem> itemsToDisplay = PartyManager.Instance.Inventory.Where(i => i.ItemData.Category == ItemCategory.Consumable &&
+                                                                                            ((i.ItemData as Consumable).Usability == ItemUsability.Always ||
+                                                                                            (i.ItemData as Consumable).Usability == ItemUsability.BattleOnly)).ToList();
+            _instMenuItems = new List<BattleMenuItem>();
+
+            for(int i = 0; i < itemsToDisplay.Count; i++)
+            {
+                BattleInventoryItem item = Instantiate(_inventoryItemPrefab, _listWrapper);
+                item.Feed(itemsToDisplay[i]);
+
+                _instMenuItems.Add(item);
+                item.ShowCursor(false);
+            }
+
+            _cursorCurrentPosition = 0;
+            UpdateCursor();
         }
     }
 }

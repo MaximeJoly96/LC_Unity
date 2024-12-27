@@ -2,14 +2,12 @@
 using TMPro;
 using Abilities;
 using Language;
+using UnityEngine.UI;
 
 namespace BattleSystem.UI
 {
-    public class SelectableMoveCategory : MonoBehaviour
+    public class SelectableMoveCategory : BattleMenuItem
     {
-        [SerializeField]
-        private TMP_Text _label;
-
         public AbilityCategory Category { get; private set; }
         public TMP_Text Label { get { return _label; } set { _label = value; } }
 

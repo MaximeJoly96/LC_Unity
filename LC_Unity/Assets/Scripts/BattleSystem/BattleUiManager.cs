@@ -229,6 +229,11 @@ namespace BattleSystem
             _playerGlobalUi.FeedMoveSelectionWindow(character);
         }
 
+        public void CancelSelection()
+        {
+            _playerGlobalUi.CancelSelection();
+        }
+
         public void UpPressedOnMoveSelection()
         {
             _playerGlobalUi.UpPressedOnMoveSelection();
