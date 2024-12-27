@@ -242,7 +242,16 @@ namespace Actors
             sb.Append(Equipment.Body.ItemId);
             sb.Append(',');
             sb.Append(Equipment.Accessory.ItemId);
+            sb.Append(',');
             // Enf of the equipment block
+
+            // character current HP, MP and EP
+            sb.Append(Stats.CurrentHealth.ToString());
+            sb.Append(',');
+            sb.Append(Stats.CurrentMana.ToString());
+            sb.Append(',');
+            sb.Append(Stats.CurrentEssence.ToString());
+            // end of character block
 
             return sb.ToString();
         }
@@ -255,8 +264,12 @@ namespace Actors
             Character character = CharactersManager.Instance.GetCharacter(trueId);
             character.Stats.SetExperience(int.Parse(split[0]));
 
-            for (int i = 1; i < split.Length; i++)
+            for (int i = 1; i < 6; i++)
                 character.ChangeEquipment(int.Parse(split[i]));
+
+            character.Stats.CurrentHealth = int.Parse(split[6]);
+            character.Stats.CurrentMana = int.Parse(split[7]);
+            character.Stats.CurrentEssence = int.Parse(split[8]);
 
             return character;
         }
@@ -291,6 +304,18 @@ namespace Actors
             }
 
             return false;
+        }
+
+        public void GiveItem(BaseItem item)
+        {
+            for(int i = 0; i < item.Effects.Count; i++)
+            {
+                if (item.Effects[i] is RestoresResourceScaling)
+                {
+                    RestoresResourceScaling restoreEffect = item.Effects[i] as RestoresResourceScaling;
+                    restoreEffect.Apply(this);
+                }
+            }
         }
     }
 }

@@ -55,5 +55,15 @@ namespace Menus
         {
             GetComponent<Image>().enabled = show;
         }
+
+        public void Disable(bool disable)
+        {
+            Color toUse = disable ? Color.grey : Color.white;
+
+            _name.color = toUse;
+            _health.color = toUse;
+            _mana.color = toUse;
+            _essence.color = toUse;
+        }
     }
 }

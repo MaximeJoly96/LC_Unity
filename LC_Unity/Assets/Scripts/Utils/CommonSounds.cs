@@ -31,6 +31,11 @@ namespace Utils
             PlayMusicalEffect("defeat");
         }
 
+        public static void Error()
+        {
+            PlaySound("Error1");
+        }
+
         private static void PlaySound(string key)
         {
             GameObject.FindObjectOfType<AudioPlayer>().PlaySoundEffect(new PlaySoundEffect

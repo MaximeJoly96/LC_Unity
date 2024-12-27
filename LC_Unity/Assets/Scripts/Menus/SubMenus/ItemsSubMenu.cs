@@ -3,6 +3,8 @@ using UnityEngine;
 using Menus.SubMenus.Items;
 using Utils;
 using System.Collections;
+using Party;
+using Inventory;
 
 namespace Menus.SubMenus
 {
@@ -52,6 +54,9 @@ namespace Menus.SubMenus
             _itemsList.ItemSelected.RemoveAllListeners();
             _itemsList.ItemSelected.AddListener(SelectItem);
 
+            PartyManager.Instance.InventoryChanged.RemoveListener(InventoryUpdated);
+            PartyManager.Instance.InventoryChanged.AddListener(InventoryUpdated);
+
             StartCoroutine(DoOpen());
             ClearSelectedList();
         }
@@ -95,7 +100,22 @@ namespace Menus.SubMenus
 
         private void SelectItem()
         {
-            FindObjectOfType<MainMenuController>().OpenCharacterTargetingWithItem(_itemsList.SelectedItem as SelectableInventoryItem);
+            InventoryItem inventoryItem = (_itemsList.SelectedItem as SelectableInventoryItem).Item;
+            if (inventoryItem.ItemData.Category == ItemCategory.Consumable &&
+               ((inventoryItem.ItemData as Consumable).Usability == ItemUsability.Always ||
+               (inventoryItem.ItemData as Consumable).Usability == ItemUsability.MenuOnly))
+            {
+                CommonSounds.OptionSelected();
+                FindObjectOfType<MainMenuController>().OpenCharacterTargetingWithItem(_itemsList.SelectedItem as SelectableInventoryItem);
+            }
+            else
+                CommonSounds.Error();
+        }
+
+        private void InventoryUpdated()
+        {
+            _itemsList.ShowContent(_horizontalMenu.SelectedCategory);
+            UpdateItemDescription();
         }
     }
 }

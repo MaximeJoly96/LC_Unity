@@ -9,6 +9,7 @@ using Actors;
 using Utils;
 using System.Linq;
 using Effects;
+using Inventory;
 
 namespace Menus
 {
@@ -39,7 +40,6 @@ namespace Menus
             {
                 if(CanReceiveInput())
                 {
-                    CommonSounds.OptionSelected();
                     SelectCharacter();
                 }
             });
@@ -133,20 +133,8 @@ namespace Menus
 
         private void Init()
         {
-            List<Character> party = PartyManager.Instance.GetParty();
-            _characters = new List<TargetableCharacter>();
-
-            for (int i = 0; i < party.Count; i++)
-            {
-                TargetableCharacter character = Instantiate(_targetableCharacterPrefab, _wrapper);
-                character.Feed(party[i]);
-
-                _characters.Add(character);
-                character.ShowCursor(false);
-            }
-
             _cursorPosition = 0;
-            PlaceCursor();
+            Refresh();
         }
 
         private void Clear()
@@ -179,15 +167,55 @@ namespace Menus
 
         private void SelectCharacter()
         {
+            if (IsCharacterEligible(_characters[_cursorPosition].Character, _selectedItem.Item.ItemData))
+            {
+                CommonSounds.OptionSelected();
+                _characters[_cursorPosition].Character.GiveItem(_selectedItem.Item.ItemData);
+                PartyManager.Instance.ChangeItems(new Engine.Party.ChangeItems
+                {
+                    Id = _selectedItem.Item.ItemData.Id,
+                    Quantity = -1
+                });
+
+                if (PartyManager.Instance.IsItemAvailable(_selectedItem.Item.ItemData.Id))
+                    Refresh();
+                else
+                    Close();
+            }
+            else
+                CommonSounds.Error();
+        }
+
+        private bool IsCharacterEligible(Character character, BaseItem item)
+        {
             bool eligible = true;
 
-            for(int i = 0; i < _selectedItem.Item.ItemData.Effects.Count && eligible; i++)
+            for (int i = 0; i < item.Effects.Count && eligible; i++)
             {
-                eligible = _characters[_cursorPosition].Character.EligibleForMenuEffect(_selectedItem.Item.ItemData.Effects[i]);
+                eligible = character.EligibleForMenuEffect(item.Effects[i]);
             }
 
-            if(eligible)
-                Debug.Log("Selected " + _characters[_cursorPosition].Character.Name + " with " + _selectedItem.Item.ItemData.Name);
+            return eligible;
+        }
+
+        private void Refresh()
+        {
+            Clear();
+
+            List<Character> party = PartyManager.Instance.GetParty();
+            _characters = new List<TargetableCharacter>();
+
+            for (int i = 0; i < party.Count; i++)
+            {
+                TargetableCharacter character = Instantiate(_targetableCharacterPrefab, _wrapper);
+                character.Feed(party[i]);
+
+                _characters.Add(character);
+                character.ShowCursor(false);
+                character.Disable(!IsCharacterEligible(party[i], _selectedItem.Item.ItemData));
+            }
+
+            PlaceCursor();
         }
     }
 }

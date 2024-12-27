@@ -28,11 +28,21 @@ namespace Menus.SubMenus.Items
             {
                 case ItemCategory.Consumable:
                     _icon.sprite = FindObjectOfType<ConsumablesWrapper>().GetSpriteForConsumable(item.ItemData.Icon);
+                    Disable((item.ItemData as Consumable).Usability == ItemUsability.BattleOnly ||
+                            (item.ItemData as Consumable).Usability == ItemUsability.Never);
                     break;
                 case ItemCategory.Weapon:
                     _icon.sprite = FindObjectOfType<WeaponsWrapper>().GetSpriteForWeapon(item.ItemData.Icon);
                     break;
             }
+        }
+
+        private void Disable(bool disable)
+        {
+            Color toUse = disable ? Color.grey : Color.white;
+
+            _label.color = toUse;
+            _quantity.color = toUse;
         }
     }
 }

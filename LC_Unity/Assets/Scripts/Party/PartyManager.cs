@@ -5,6 +5,7 @@ using UnityEngine;
 using Inventory;
 using Engine.Party;
 using Engine.Actor;
+using UnityEngine.Events;
 
 namespace Party
 {
@@ -12,6 +13,7 @@ namespace Party
     {
         private readonly List<Character> _party;
         private List<InventoryItem> _inventory;
+        private UnityEvent _inventoryChanged;
 
         private static PartyManager _instance;
 
@@ -28,6 +30,16 @@ namespace Party
 
         public int Gold { get; private set; }
         public List<InventoryItem> Inventory { get { return _inventory; } }
+        public UnityEvent InventoryChanged
+        {
+            get
+            {
+                if (_inventoryChanged == null)
+                    _inventoryChanged = new UnityEvent();
+
+                return _inventoryChanged;
+            }
+        }
 
         private PartyManager()
         {
@@ -92,6 +104,8 @@ namespace Party
                     _inventory.Add(inventoryItem);
                 }
             }
+
+            InventoryChanged.Invoke();
         }
 
         public List<Character> GetParty()
@@ -183,6 +197,13 @@ namespace Party
             _party.Clear();
             _inventory.Clear();
             Gold = 0;
+        }
+
+        public bool IsItemAvailable(int id)
+        {
+            InventoryItem item = _inventory.FirstOrDefault(i => i.ItemData.Id == id);
+
+            return item != null && item.InPossession > 0;
         }
     }
 }
