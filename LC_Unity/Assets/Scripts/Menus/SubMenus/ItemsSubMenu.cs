@@ -1,8 +1,8 @@
 ﻿using Core;
 using UnityEngine;
 using Menus.SubMenus.Items;
-using Inputs;
 using Utils;
+using System.Collections;
 
 namespace Menus.SubMenus
 {
@@ -11,7 +11,7 @@ namespace Menus.SubMenus
         [SerializeField]
         private ItemsHorizontalMenu _horizontalMenu;
         [SerializeField]
-        private SelectableItemsList _itemsList;
+        private SelectableInventoryItemsList _itemsList;
         [SerializeField]
         private ItemDetails _itemDetails;
 
@@ -39,37 +39,21 @@ namespace Menus.SubMenus
                     Close();
                 }
             });
-
-            _inputReceiver.OnMoveDown.AddListener(() =>
-            {
-                if(CanReceiveInput())
-                {
-                    CommonSounds.CursorMoved();
-                    MoveCursorDown();
-                }
-            });
-
-            _inputReceiver.OnMoveUp.AddListener(() =>
-            {
-                if(CanReceiveInput())
-                {
-                    CommonSounds.CursorMoved();
-                    MoveCursorUp();
-                }
-            });
         }
 
         public override void Open()
         {
             _horizontalMenu.Init();
 
-            _itemsList.ItemHovered.RemoveAllListeners();
-            _itemsList.ItemHovered.AddListener(UpdateItemDescription);
+            _itemsList.SelectionChanged.RemoveAllListeners();
+            _itemsList.SelectionChanged.AddListener(UpdateItemDescription);
+            _itemsList.SelectionCancelled.RemoveAllListeners();
+            _itemsList.SelectionCancelled.AddListener(ClearSelectedList);
+            _itemsList.ItemSelected.RemoveAllListeners();
+            _itemsList.ItemSelected.AddListener(SelectItem);
 
-            PlaceCursor();
             StartCoroutine(DoOpen());
-
-            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuItemsTab);
+            ClearSelectedList();
         }
 
         public override void Close()
@@ -82,30 +66,36 @@ namespace Menus.SubMenus
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenu);
         }
 
-        private void PlaceCursor()
-        {
-            _itemDetails.Clear();
-            _itemsList.Init(_horizontalMenu.SelectedCategory);
-        }
-
-        private void MoveCursorDown()
-        {
-            _itemsList.MoveCursorDown();
-        }
-
-        private void MoveCursorUp()
-        {
-            _itemsList.MoveCursorUp();
-        }
-
         private void Select()
         {
-            _itemsList.Select();
+            StartCoroutine(DoSelect());
         }
 
-        private void UpdateItemDescription(SelectableItem item)
+        private IEnumerator DoSelect()
         {
-            _itemDetails.Feed(item.Item);
+            _itemsList.Init();
+            _itemsList.ShowContent(_horizontalMenu.SelectedCategory);
+            UpdateItemDescription();
+
+            yield return new WaitForSeconds(0.05f);
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.BrowsingInventory);
+        }
+
+        private void UpdateItemDescription()
+        {
+            _itemDetails.Feed((_itemsList.SelectedItem as SelectableInventoryItem).Item);
+        }
+
+        private void ClearSelectedList()
+        {
+            _itemDetails.Clear();
+            _itemsList.Clear();
+            GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuItemsTab);
+        }
+
+        private void SelectItem()
+        {
+            FindObjectOfType<MainMenuController>().OpenCharacterTargetingWithItem(_itemsList.SelectedItem as SelectableInventoryItem);
         }
     }
 }

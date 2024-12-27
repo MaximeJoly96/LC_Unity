@@ -16,13 +16,13 @@ namespace Menus.SubMenus
     public class EquipmentSubMenu : SubMenu
     {
         private int _cursorPosition;
-        private SelectableItem _hoveredItem;
+        private SelectableInventoryItem _hoveredItem;
         private BaseItem _currentItem;
 
         [SerializeField]
         private TMP_Text _characterName;
         [SerializeField]
-        private SelectableItemsList _itemsList;
+        private SelectableInventoryItemsList _itemsList;
         [SerializeField]
         private StatsPanel _stats;
         [SerializeField]
@@ -87,8 +87,8 @@ namespace Menus.SubMenus
 
             Init();
 
-            _itemsList.ItemHovered.RemoveAllListeners();
-            _itemsList.ItemHovered.AddListener(UpdateItemDescription);
+            /*_itemsList.ItemHovered.RemoveAllListeners();
+            _itemsList.ItemHovered.AddListener(UpdateItemDescription);*/
 
             StartCoroutine(DoOpen());
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuEquipmentTab);
@@ -108,7 +108,7 @@ namespace Menus.SubMenus
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SelectingCharacterPreview);
         }
 
-        private void UpdateItemDescription(SelectableItem item)
+        private void UpdateItemDescription(SelectableInventoryItem item)
         {
             if(item != null)
             {
@@ -147,7 +147,7 @@ namespace Menus.SubMenus
                     UpdateCurrentItemDetails();
                     break;
                 case GlobalStateMachine.State.ChangingEquipment:
-                    _itemsList.MoveCursorUp();
+                    
                     break;
             }
         }
@@ -162,7 +162,7 @@ namespace Menus.SubMenus
                     UpdateCurrentItemDetails();
                     break;
                 case GlobalStateMachine.State.ChangingEquipment:
-                    _itemsList.MoveCursorDown();
+                    
                     break;
             }
         }
@@ -198,7 +198,7 @@ namespace Menus.SubMenus
                 }
 
                 if(itemsToList != null)
-                    _itemsList.Init(itemsToList);
+                    _itemsList.ShowContent(itemsToList);
             }
             else
             {

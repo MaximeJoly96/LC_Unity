@@ -19,9 +19,12 @@ namespace Menus
         [SerializeField]
         private Image[] _effects;
 
+        public Character Character { get; private set; }
+
         public void Feed(Character character)
         {
             ClearEffects();
+            Character = character;
 
             _name.text = character.Name;
             _health.text = character.Stats.CurrentHealth + "/" + character.Stats.MaxHealth + " HP";
@@ -46,6 +49,11 @@ namespace Menus
             {
 
             }
+        }
+
+        public void ShowCursor(bool show)
+        {
+            GetComponent<Image>().enabled = show;
         }
     }
 }

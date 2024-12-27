@@ -112,7 +112,7 @@ namespace Menus
             _horizontalMainMenu.OpenCharacterTabWithSelectedCharacter(character);
         }
 
-        public void OpenCharacterTargetingWithItem(SelectableItem item)
+        public void OpenCharacterTargetingWithItem(SelectableInventoryItem item)
         {
             _characterSelectionMenu.FeedItem(item);
             _characterSelectionMenu.Open();

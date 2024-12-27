@@ -4,19 +4,16 @@ using UnityEngine.UI;
 using Inventory;
 using Language;
 using Utils;
+using UI;
 
 namespace Menus.SubMenus.Items
 {
-    public class SelectableItem : MonoBehaviour
+    public class SelectableInventoryItem : SelectableItem
     {
         [SerializeField]
         private Image _icon;
         [SerializeField]
-        private TMP_Text _name;
-        [SerializeField]
         private TMP_Text _quantity;
-        [SerializeField]
-        private Transform _cursor;
 
         public InventoryItem Item { get; private set; }
 
@@ -24,7 +21,7 @@ namespace Menus.SubMenus.Items
         {
             Item = item;
 
-            _name.text = Localizer.Instance.GetString(item.ItemData.Name);
+            _label.text = Localizer.Instance.GetString(item.ItemData.Name);
             _quantity.text = "x" + item.InPossession;
 
             switch(item.ItemData.Category)
@@ -36,11 +33,6 @@ namespace Menus.SubMenus.Items
                     _icon.sprite = FindObjectOfType<WeaponsWrapper>().GetSpriteForWeapon(item.ItemData.Icon);
                     break;
             }
-        }
-
-        public void ShowCursor(bool show)
-        {
-            _cursor.gameObject.SetActive(show);
         }
     }
 }

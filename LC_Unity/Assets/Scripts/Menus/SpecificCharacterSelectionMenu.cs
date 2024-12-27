@@ -18,10 +18,11 @@ namespace Menus
         private Transform _wrapper;
 
         private InputReceiver _inputReceiver;
-        private SelectableItem _selectedItem;
+        private SelectableInventoryItem _selectedItem;
         private List<TargetableCharacter> _characters;
 
         private GlobalStateMachine.State _previousState;
+        private int _cursorPosition;
 
         private void Start()
         {
@@ -37,6 +38,7 @@ namespace Menus
                 if(CanReceiveInput())
                 {
                     CommonSounds.OptionSelected();
+                    SelectCharacter();
                 }
             });
 
@@ -46,6 +48,24 @@ namespace Menus
                 {
                     CommonSounds.ActionCancelled();
                     Close();
+                }
+            });
+
+            _inputReceiver.OnMoveDown.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorDown();
+                }
+            });
+
+            _inputReceiver.OnMoveUp.AddListener(() =>
+            {
+                if (CanReceiveInput())
+                {
+                    CommonSounds.CursorMoved();
+                    MoveCursorUp();
                 }
             });
         }
@@ -104,7 +124,7 @@ namespace Menus
             GlobalStateMachine.Instance.UpdateState(_previousState);
         }
 
-        public void FeedItem(SelectableItem item)
+        public void FeedItem(SelectableInventoryItem item)
         {
             _selectedItem = item;
         }
@@ -120,7 +140,11 @@ namespace Menus
                 character.Feed(party[i]);
 
                 _characters.Add(character);
+                character.ShowCursor(false);
             }
+
+            _cursorPosition = 0;
+            PlaceCursor();
         }
 
         private void Clear()
@@ -129,6 +153,31 @@ namespace Menus
             {
                 Destroy(child.gameObject);
             }
+        }
+
+        private void MoveCursorDown()
+        {
+            _cursorPosition = _cursorPosition >= _characters.Count - 1 ? 0 : ++_cursorPosition;
+            PlaceCursor();
+        }
+
+        private void MoveCursorUp()
+        {
+            _cursorPosition = _cursorPosition == 0 ? _characters.Count - 1 : --_cursorPosition;
+            PlaceCursor();
+        }
+
+        private void PlaceCursor()
+        {
+            for(int i = 0; i < _characters.Count; i++)
+            {
+                _characters[i].ShowCursor(i == _cursorPosition);
+            }
+        }
+
+        private void SelectCharacter()
+        {
+            Debug.Log("Selected " + _characters[_cursorPosition].Character.Name + " with " + _selectedItem.Item.ItemData.Name);
         }
     }
 }

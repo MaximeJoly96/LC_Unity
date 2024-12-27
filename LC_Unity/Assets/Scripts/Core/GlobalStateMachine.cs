@@ -17,6 +17,7 @@ namespace Core
             OpeningMenu,
             SelectingCharacterPreview,
             InMenuItemsTab,
+            BrowsingInventory,
             InMenuEquipmentTab,
             ChangingEquipment,
             InMenuAbilitiesTab,
