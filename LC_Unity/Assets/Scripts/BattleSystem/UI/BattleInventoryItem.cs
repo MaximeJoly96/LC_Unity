@@ -16,6 +16,8 @@ namespace BattleSystem.UI
 
         private InventoryItem _item;
 
+        public InventoryItem Item { get { return _item; } }
+
         public void Feed(InventoryItem item)
         {
             _item = item;

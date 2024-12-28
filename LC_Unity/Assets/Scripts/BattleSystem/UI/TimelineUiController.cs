@@ -44,6 +44,8 @@ namespace BattleSystem.UI
             _battlers = battlers;
             _battlersTimelines = new List<BattlerTimeline>();
 
+            Clear();
+
             for (int i = 0; i < battlers.Count; i++)
             {
                 BattlerTimeline timeline = Instantiate(timelinePrefab, characters);
@@ -114,6 +116,12 @@ namespace BattleSystem.UI
         public void SetTimelinePrefab(BattlerTimeline prefab)
         {
             _battlerTimelinePrefab = prefab;
+        }
+
+        private void Clear()
+        {
+            foreach (Transform child in _characters)
+                Destroy(child.gameObject);
         }
     }
 }

@@ -154,6 +154,7 @@ namespace BattleSystem
                     AttackAnimationBehaviour aab = LockedInAbility.Animation.PlayImpactParticles(target.gameObject);
                     aab.AnimationEndedEvent.RemoveAllListeners();
                     aab.AnimationEndedEvent.AddListener(FinishedTurn);
+                    aab.AnimationEndedEvent.AddListener(() => Destroy(aab.gameObject));
                 }
             }
         }
@@ -175,7 +176,9 @@ namespace BattleSystem
 
             target.BattlerData.ChangeHealth(result);
 
-            UiManager.DisplayDamage(target.transform.position, result);
+            if(result > 0)
+                UiManager.DisplayDamage(target.transform.position, result);
+
             UiManager.UpdatePlayerGui(target.BattlerData.Character);
         }
 
@@ -233,6 +236,13 @@ namespace BattleSystem
                 else if (ability.Effects[i] is NegativeStatusBonusDamage)
                 {
                     // TODO
+                }
+                else if (ability.Effects[i] is RestoresResourceScaling)
+                {
+                    RestoresResourceScaling restoreEffect = ability.Effects[i] as RestoresResourceScaling;
+                    restoreEffect.Apply(target.BattlerData.Character);
+
+                    UiManager.DisplayHealing(target.transform.position, restoreEffect.Compute(target.BattlerData.Character));
                 }
 
             }

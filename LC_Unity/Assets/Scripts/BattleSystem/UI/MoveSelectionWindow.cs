@@ -25,6 +25,7 @@ namespace BattleSystem.UI
 
         private int _cursorCurrentPosition;
         private SelectionState _currentSelectionState;
+        private BattleManager _battleManager;
 
         #region Properties
         private Animator Animator
@@ -33,6 +34,17 @@ namespace BattleSystem.UI
         }
 
         public Transform ListWrapper { get { return _listWrapper; } set { _listWrapper = value; } }
+
+        private BattleManager BattleManager
+        {
+            get
+            {
+                if(!_battleManager)
+                    _battleManager = FindObjectOfType<BattleManager>();
+
+                return _battleManager;
+            }
+        }
         #endregion
 
         public void Show()
@@ -124,6 +136,10 @@ namespace BattleSystem.UI
                     AbilityCategory abilityCategory = (_instMenuItems[_cursorCurrentPosition] as SelectableMoveCategory).Category;
                     AbilityCategorySelected(abilityCategory);
                     break;
+                case SelectionState.Items:
+                    InventoryItem selectedItem = (_instMenuItems[_cursorCurrentPosition] as BattleInventoryItem).Item;
+                    InventoryItemSelected(selectedItem);
+                    break;
             }
         }
 
@@ -160,7 +176,19 @@ namespace BattleSystem.UI
 
         private void SelectTargetForAttackCommand()
         {
-            FindObjectOfType<BattleManager>().SelectTargetWithAbility(AbilitiesManager.Instance.GetAbility(0));
+            BattleManager.SelectTargetWithAbility(AbilitiesManager.Instance.GetAbility(0), _currentCharacter);
+        }
+
+        private void InventoryItemSelected(InventoryItem item)
+        {
+            // Fundamentally, using an item is binding its properties to the ItemCommand ability
+            Ability copy = new Ability(AbilitiesManager.Instance.GetAbility(46));
+            copy.Effects.Clear();
+            copy.SetEffects(item.ItemData.Effects);
+            copy.SetAnimation((item.ItemData as Consumable).Animation);
+
+            BattleManager.TargetManager.CurrentItem = item;
+            BattleManager.SelectTargetWithAbility(copy, _currentCharacter);
         }
 
         private void DisplayInventory()

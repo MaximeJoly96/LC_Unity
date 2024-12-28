@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Abilities;
 using Inventory;
+using Party;
 
 namespace BattleSystem
 {
@@ -17,6 +18,7 @@ namespace BattleSystem
         private List<BattlerBehaviour> _availableTargets;
         
         public Ability CurrentAbility { get; private set; }
+        public InventoryItem CurrentItem { get; set; }
         public BattlerBehaviour CurrentlySelectedTarget
         {
             get { return _availableTargets[_cursorPosition]; }
@@ -36,6 +38,7 @@ namespace BattleSystem
         {
             currentBattler.LockedInAbility = new Ability(CurrentAbility);
             currentBattler.LockedInAbility.Targets = new List<BattlerBehaviour> { _availableTargets[_cursorPosition] };
+            currentBattler.LockedInAbility.SetEffects(CurrentAbility.Effects);
 
             if(currentBattler.LockedInAbility.Category == AbilityCategory.AttackCommand)
             {
@@ -50,6 +53,16 @@ namespace BattleSystem
                     currentBattler.LockedInAbility.Range = 100;
                 }
                 
+            }
+            else if(currentBattler.LockedInAbility.Category == AbilityCategory.ItemCommand)
+            {
+                PartyManager.Instance.ChangeItems(new Engine.Party.ChangeItems
+                {
+                    Id = CurrentItem.ItemData.Id,
+                    Quantity = -1
+                });
+
+                CurrentItem = null;
             }
         }
 

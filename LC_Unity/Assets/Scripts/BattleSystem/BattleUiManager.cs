@@ -264,6 +264,11 @@ namespace BattleSystem
             _damageDisplay.DisplayStatusChange(worldPosition, effect, true);
         }
 
+        public void DisplayHealing(Vector3 worldPosition, int amount)
+        {
+            _damageDisplay.DisplayHealing(worldPosition, amount);
+        }
+
         public void RemoveStatus(Vector3 worldPosition, EffectType effect)
         {
             _damageDisplay.DisplayStatusChange(worldPosition, effect, false);

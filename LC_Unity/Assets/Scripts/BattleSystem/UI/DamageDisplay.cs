@@ -18,6 +18,13 @@ namespace BattleSystem.UI
 
         private Transform _instStatusWrapper;
 
+        public void DisplayHealing(Vector3 worldPosition, int amount)
+        {
+            DamageText instDmgText = Instantiate(_damageTextPrefab, _damageAndEffectsCanvas.transform);
+            instDmgText.transform.position = Camera.main.WorldToScreenPoint(worldPosition);
+            instDmgText.Show(-amount);
+        }
+
         public void DisplayDamage(Vector3 worldPosition, int damage)
         {
             DamageText instDmgText = Instantiate(_damageTextPrefab, _damageAndEffectsCanvas.transform);

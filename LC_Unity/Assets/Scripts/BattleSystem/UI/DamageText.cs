@@ -32,7 +32,8 @@ namespace BattleSystem.UI
 
         public void Show(int value)
         {
-            Text.text = value.ToString();
+            Text.text = value < 0 ? "+" + Mathf.Abs(value).ToString() : "-" + value.ToString();
+
             Animator.Play("Show");
         }
 

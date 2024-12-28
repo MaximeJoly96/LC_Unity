@@ -106,6 +106,7 @@ namespace BattleSystem
         public BattlersHolder CharactersHolder { get { return _charactersHolder; } set { _charactersHolder = value; } }
         public BattlersHolder BattlersHolder { get { return _battlersHolder; } set { _battlersHolder = value; } }
         public BattlefieldsHolder BattlefieldsHolder { get  { return _battlefieldsHolder; } set { _battlefieldsHolder = value; } }
+        public TargetManager TargetManager { get { return _targetManager; } }
         #endregion
 
         private void Start()
@@ -485,7 +486,7 @@ namespace BattleSystem
             UpdateState(BattleState.ComputingEnemyTurn);
         }
 
-        public void SelectTargetWithAbility(Ability ability)
+        public void SelectTargetWithAbility(Ability ability, BattlerBehaviour caster)
         {
             UpdateState(BattleState.TargetSelection);
 
@@ -498,6 +499,28 @@ namespace BattleSystem
                     break;
                 case TargetEligibility.Enemy:
                     targets.AddRange(_enemiesInCombat);
+                    break;
+                case TargetEligibility.Any:
+                    targets.AddRange(_charactersInCombat);
+                    targets.AddRange(_enemiesInCombat);
+                    break;
+                case TargetEligibility.AnyExceptSelf:
+                    targets.AddRange(_charactersInCombat);
+                    targets.AddRange(_enemiesInCombat);
+                    targets.Remove(targets.FirstOrDefault(t => t.BattlerData.Character.Name == caster.BattlerData.Character.Name));
+                    break;
+                case TargetEligibility.AllEnemies:
+                    targets.AddRange(_enemiesInCombat);
+                    break;
+                case TargetEligibility.AllAllies:
+                    targets.AddRange(_charactersInCombat);
+                    break;
+                case TargetEligibility.All:
+                    targets.AddRange(_charactersInCombat);
+                    targets.AddRange(_enemiesInCombat);
+                    break;
+                case TargetEligibility.Self:
+                    targets.Add(caster);
                     break;
                 default:
                     targets.AddRange(_enemiesInCombat);

@@ -36,5 +36,26 @@ namespace Effects
                     break;
             }
         }
+
+        public int Compute(Character target)
+        {
+            float percentage = Value / 100.0f;
+            int amount = 0;
+
+            switch (Stat)
+            {
+                case Stat.HP:
+                    amount = Mathf.RoundToInt(percentage * target.Stats.MaxHealth);
+                    break;
+                case Stat.MP:
+                    amount = Mathf.RoundToInt(percentage * target.Stats.MaxMana);
+                    break;
+                case Stat.EP:
+                    amount = Mathf.RoundToInt(percentage * target.Stats.MaxEssence);
+                    break;
+            }
+
+            return amount;
+        }
     }
 }
