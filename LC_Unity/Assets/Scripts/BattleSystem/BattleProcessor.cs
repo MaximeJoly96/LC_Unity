@@ -58,11 +58,15 @@ namespace BattleSystem
 
             while(Vector2.Distance(source.transform.position, target.transform.position) > MeasuresConverter.RangeToWorldUnits(range))
             {
-                Vector2 direction = (target.transform.position - source.transform.position).normalized;
-                animator.SetFloat("X", direction.x);
-                animator.SetFloat("Y", direction.y);
+                if(!source.IsDead && !source.TemporaryInterruption)
+                {
+                    Vector2 direction = (target.transform.position - source.transform.position).normalized;
+                    animator.SetFloat("X", direction.x);
+                    animator.SetFloat("Y", direction.y);
 
-                source.transform.Translate(direction * Time.deltaTime);
+                    source.transform.Translate(direction * Time.deltaTime);
+                }
+
                 yield return null;
             }
 

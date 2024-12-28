@@ -14,7 +14,12 @@ namespace Effects
 
         public void Apply(Character source, Character target)
         {
-            target.ChangeHealth(DamageFormula.ComputeResult(FormulaId, source, target));
+            target.ChangeHealth(Compute(source, target));
+        }
+
+        public int Compute(Character source, Character target)
+        {
+            return DamageFormula.ComputeResult(FormulaId, source, target);
         }
     }
 }

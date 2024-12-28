@@ -47,17 +47,17 @@ namespace Abilities
 
         private static int DynamiteFormula(Character source, Character target)
         {
-            return Mathf.Max(0, source.Stats.Level * 15 - target.Stats.BaseMagicDefense - target.Stats.BonusMagicDefense);
+            return Mathf.Max(0, (source.Stats.Level + 1) * 30 - target.Stats.BaseMagicDefense - target.Stats.BonusMagicDefense);
         }
 
         private static int ThrowableElementalItem(Character source, Character target)
         {
-            return Mathf.Max(0, source.Stats.Level * 20 - (target.Stats.BaseMagicDefense + target.Stats.BonusMagicDefense) * 2);
+            return Mathf.Max(0, (source.Stats.Level + 1) * 40 - (target.Stats.BaseMagicDefense + target.Stats.BonusMagicDefense) * 2);
         }
 
         private static int ExplosiveBoulderFormula(Character source, Character target)
         {
-            return Mathf.Max(0, source.Stats.Level * 30 - (target.Stats.BaseMagicDefense + target.Stats.BonusMagicDefense) * 2);
+            return Mathf.Max(0, (source.Stats.Level + 1) * 60 - (target.Stats.BaseMagicDefense + target.Stats.BonusMagicDefense) * 2);
         }
     }
 }

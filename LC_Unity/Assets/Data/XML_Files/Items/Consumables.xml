@@ -330,18 +330,18 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>23</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1000" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>15</Id>
@@ -351,20 +351,20 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>24</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
       <ElementalDamage Element="Fire" />
       <AreaOfEffectAsSecondaryDamage Element="Fire" FormulaId="1001" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>16</Id>
@@ -374,20 +374,20 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>25</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
       <ElementalDamage Element="Thunder" />
       <InflictStatus Value="MagicBreakI" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>17</Id>
@@ -397,13 +397,13 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>26</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
@@ -411,7 +411,7 @@
       <AreaOfEffectAsSecondaryDamage Element="Water" FormulaId="1001" />
       <InflictStatus Value="SlowI" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>18</Id>
@@ -421,20 +421,20 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>27</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
       <ElementalDamage Element="Ice" />
       <InflictStatus Value="Grounded" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>19</Id>
@@ -444,19 +444,19 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>28</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1002" />
       <ElementalDamage Element="Earth" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>20</Id>
@@ -466,20 +466,20 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>29</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
       <ElementalDamage Element="Wind" />
-      <PushTarget Distance="300" />
+      <PushTarget Distance="800" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>21</Id>
@@ -489,13 +489,13 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>30</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
@@ -503,7 +503,7 @@
       <AreaOfEffectAsSecondaryDamage Element="Holy" FormulaId="1001" />
       <InflictStatus Value="Blind" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>22</Id>
@@ -513,13 +513,13 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>31</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
@@ -527,7 +527,7 @@
       <InflictStatus Value="Poison" />
       <InflictStatus Value="Silence" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>23</Id>
@@ -537,19 +537,19 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>32</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
       <InflictStatus Value="Poison" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>24</Id>
@@ -559,19 +559,19 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>33</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
       <InflictStatus Value="Blind" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>25</Id>
@@ -581,19 +581,19 @@
     <Price>200</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>34</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
       <InflictStatus Value="Silence" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>26</Id>
@@ -609,7 +609,7 @@
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>35</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <DealDamage FormulaId="1001" />
@@ -618,7 +618,7 @@
       <Dispel Value="Shell" />
       <Dispel Value="Protect" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>27</Id>
@@ -640,7 +640,7 @@
       <InflictStatus Value="BleedI" />
       <InflictStatus Value="HemoI" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>28</Id>
@@ -671,18 +671,18 @@
     <Price>800</Price>
     <Usability>BattleOnly</Usability>
     <Priority>0</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>37</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <InflictStatus Value="Grounded" />
     </Effects>
-    <TargetEligibility>Any</TargetEligibility>
+    <TargetEligibility>AnyExceptSelf</TargetEligibility>
   </Item>
   <Item>
     <Id>30</Id>
@@ -692,13 +692,13 @@
     <Price>800</Price>
     <Usability>BattleOnly</Usability>
     <Priority>1</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>38</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <InflictStatus Value="Shell" />
@@ -713,13 +713,13 @@
     <Price>800</Price>
     <Usability>BattleOnly</Usability>
     <Priority>1</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>39</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <InflictStatus Value="Protect" />
@@ -734,13 +734,13 @@
     <Price>800</Price>
     <Usability>BattleOnly</Usability>
     <Priority>1</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>40</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <InflictStatus Value="Bravery" />
@@ -755,13 +755,13 @@
     <Price>800</Price>
     <Usability>BattleOnly</Usability>
     <Priority>1</Priority>
-    <Range>800</Range>
+    <Range>1000</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
       <Strike>Throw</Strike>
       <ImpactParticles>41</ImpactParticles>
-      <ProjectileId>10</ProjectileId>
+      <ProjectileId>1</ProjectileId>
     </Animation>
     <Effects>
       <InflictStatus Value="Faith" />

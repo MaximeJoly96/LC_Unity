@@ -29,6 +29,7 @@ namespace BattleSystem
         public int BattlerId { get { return _battlerId; } }
         public bool IsEnemy { get { return _isEnemy; } set { _isEnemy = value; } }
         public bool IsDead { get; private set; }
+        public bool TemporaryInterruption { get; set; }
 
         public Battler BattlerData { get; private set; }
         public Ability LockedInAbility { get; set; }
@@ -244,7 +245,18 @@ namespace BattleSystem
 
                     UiManager.DisplayHealing(target.transform.position, restoreEffect.Compute(target.BattlerData.Character));
                 }
+                else if (ability.Effects[i] is DealDamage)
+                {
+                    DealDamage dealDmg = ability.Effects[i] as DealDamage;
+                    dealDmg.Apply(BattlerData.Character, target.BattlerData.Character);
 
+                    UiManager.DisplayDamage(target.transform.position, dealDmg.Compute(BattlerData.Character, target.BattlerData.Character));
+                }
+                else if (ability.Effects[i] is PushTarget)
+                {
+                    PushTarget push = ability.Effects[i] as PushTarget;
+                    push.Apply(this, target);
+                }
             }
         }
 

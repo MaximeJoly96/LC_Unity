@@ -186,6 +186,8 @@ namespace BattleSystem.UI
             copy.Effects.Clear();
             copy.SetEffects(item.ItemData.Effects);
             copy.SetAnimation((item.ItemData as Consumable).Animation);
+            copy.Range = (item.ItemData as Consumable).Range;
+            copy.TargetEligibility = (item.ItemData as Consumable).TargetEligibility;
 
             BattleManager.TargetManager.CurrentItem = item;
             BattleManager.SelectTargetWithAbility(copy, _currentCharacter);

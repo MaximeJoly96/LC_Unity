@@ -67,7 +67,8 @@ namespace Abilities
         {
             if (_moving)
             {
-                transform.Translate(_currentCheckpoint * Time.deltaTime * _speed);
+                Vector3 delta = (_currentCheckpoint - transform.position).normalized;
+                transform.Translate(delta * Time.deltaTime * _speed);
 
                 if(Vector3.Distance(transform.position, _currentCheckpoint) < 0.05f)
                 {
@@ -109,7 +110,7 @@ namespace Abilities
             {
                 case TargetEligibility.Any:
                 case TargetEligibility.All:
-                    break;
+                    return true;
                 case TargetEligibility.Self:
                     break;
                 case TargetEligibility.Ally:
@@ -119,7 +120,7 @@ namespace Abilities
                 case TargetEligibility.AllEnemies:
                     return target.IsEnemy != OriginBattler.IsEnemy;
                 case TargetEligibility.AnyExceptSelf:
-                    break;
+                    return target != OriginBattler;
             }
 
             return false;
