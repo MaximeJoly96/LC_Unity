@@ -120,8 +120,11 @@ namespace BattleSystem.UI
 
         private void Clear()
         {
-            foreach (Transform child in _characters)
-                Destroy(child.gameObject);
+            if(_characters != null)
+            {
+                foreach (Transform child in _characters)
+                    Destroy(child.gameObject);
+            }
         }
     }
 }
