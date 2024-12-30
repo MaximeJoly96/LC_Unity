@@ -90,7 +90,7 @@ namespace Menus.SubMenus
 
         private void UpdateItemDescription()
         {
-            _itemDetails.Feed((_itemsList.SelectedItem as SelectableInventoryItem).Item);
+            _itemDetails.Feed(_itemsList.CurrentItem.Item);
         }
 
         private void ClearSelectedList()

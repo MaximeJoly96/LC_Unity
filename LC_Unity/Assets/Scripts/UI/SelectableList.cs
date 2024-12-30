@@ -11,6 +11,8 @@ namespace UI
     {
         [SerializeField]
         protected SelectableItem _selectableItemPrefab;
+        [SerializeField]
+        protected int _maxItemsToDisplay;
 
         protected List<SelectableItem> _createdItems;
         protected int _cursorPosition;
