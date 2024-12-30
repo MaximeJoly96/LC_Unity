@@ -63,6 +63,7 @@ namespace Abilities
         public AttackAnimationBehaviour PlayImpactParticles(GameObject battler)
         {
             AttackAnimationsWrapper wrapper = Object.FindObjectOfType<AttackAnimationsWrapper>();
+
             if (wrapper)
             {
                 GameObject animation = Object.Instantiate(wrapper.GetAttackAnimation(ImpactAnimationParticlesId),

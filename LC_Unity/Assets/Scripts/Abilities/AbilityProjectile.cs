@@ -8,6 +8,8 @@ namespace Abilities
 {
     public class AbilityProjectile : MonoBehaviour
     {
+        private const int MIN_LIFETIME = 3; // frames
+
         [SerializeField]
         private float _speed;
         [SerializeField]
@@ -18,6 +20,7 @@ namespace Abilities
         private int _currentCheckpointId;
         private Vector3 _currentCheckpoint;
         private UnityEvent<BattlerBehaviour> _projectileDestroyed;
+        private int _lifeTime;
 
         public float Speed { get { return _speed; } }
         public ProjectileTrajectory Trajectory { get { return _trajectory; } }
@@ -49,6 +52,7 @@ namespace Abilities
         public void StartMoving()
         {
             _moving = true;
+            _lifeTime = 0;
         }
 
         public void StopMoving(BattlerBehaviour target)
@@ -70,7 +74,7 @@ namespace Abilities
                 Vector3 delta = (_currentCheckpoint - transform.position).normalized;
                 transform.Translate(delta * Time.deltaTime * _speed);
 
-                if(Vector3.Distance(transform.position, _currentCheckpoint) < 0.05f)
+                if(Vector3.Distance(transform.position, _currentCheckpoint) < 0.05f && _lifeTime >= MIN_LIFETIME)
                 {
                     if (_currentCheckpointId < _trajectory.Checkpoints.Count - 1)
                     {
@@ -80,6 +84,8 @@ namespace Abilities
                     else
                         StopMoving();
                 }
+
+                _lifeTime++;
             }
         }
 
@@ -109,6 +115,7 @@ namespace Abilities
             switch(TargetEligibility)
             {
                 case TargetEligibility.Any:
+                    return OriginBattler.LockedInAbility.Targets.Contains(OriginBattler) ? true : target != OriginBattler;
                 case TargetEligibility.All:
                     return true;
                 case TargetEligibility.Self:
