@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 77
+  controlID: 48
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 78
+  controlID: 49
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,7 +201,7 @@ MonoBehaviour:
   - {fileID: 11}
   - {fileID: 12}
   m_Selected: 4
-  m_LastSelected: 3
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -288,7 +288,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 21802
+  m_LastSelectedObjectID: 26374
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -414,9 +414,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2e730000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c4e3feff0ee4feff5e12ffffe414ffff2e15ffff1017ffffe222ffff6825ffff3627ffff3c35ffff1c37ffff2efbffffccdf0000aae4000002ea0000fcec0000aa140100041a0100fe1c01005024010010270100e0280100e22901006c2b01003431010034320100f4340100c4360100c637010050390100183f0100065c01003c630100466301005a6401001c8c01007691010070940100
+      m_ExpandedIDs: 2efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -462,14 +462,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 278
     y: 73
-    width: 1102
+    width: 1025
     height: 660
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 22502
+    ID: 2645
     splitterInitialOffset: 522
     currentActiveSplitter: -1
     realSizes:
@@ -500,9 +500,9 @@ MonoBehaviour:
       uniqueId: '[LC][suite]'
       name: LC
       fullName: LC
-      resultStatus: 1
-      duration: 0.8584342
-      messages: 
+      resultStatus: 2
+      duration: 42.175354
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -516,9 +516,9 @@ MonoBehaviour:
       uniqueId: '[Tests.dll][suite]'
       name: Tests.dll
       fullName: E:/Unity_Projects/LC_Unity/LC_Unity/Library/ScriptAssemblies/Tests.dll
-      resultStatus: 1
-      duration: 0.8137947
-      messages: 
+      resultStatus: 2
+      duration: 42.13114
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -532,9 +532,9 @@ MonoBehaviour:
       uniqueId: Tests.dll/[Testing][suite]
       name: Testing
       fullName: Testing
-      resultStatus: 1
-      duration: 0.7934337
-      messages: 
+      resultStatus: 2
+      duration: 42.10298
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -549,7 +549,7 @@ MonoBehaviour:
       name: Abilities
       fullName: Testing.Abilities
       resultStatus: 1
-      duration: 0.094022
+      duration: 0.0826755
       messages: 
       output: 
       stacktrace: 
@@ -565,7 +565,7 @@ MonoBehaviour:
       name: AbilityAnimationTests
       fullName: Testing.Abilities.AbilityAnimationTests
       resultStatus: 1
-      duration: 0.0335223
+      duration: 0.0356223
       messages: 
       output: 
       stacktrace: 
@@ -581,7 +581,7 @@ MonoBehaviour:
       name: AbilityProjectileCanBeCreatedTest
       fullName: Testing.Abilities.AbilityAnimationTests.AbilityProjectileCanBeCreatedTest
       resultStatus: 1
-      duration: 0.0161172
+      duration: 0.0195931
       messages: 
       output: 
       stacktrace: 
@@ -598,7 +598,7 @@ MonoBehaviour:
       name: AbilityParserTests
       fullName: Testing.Abilities.AbilityParserTests
       resultStatus: 1
-      duration: 0.0237974
+      duration: 0.0235939
       messages: 
       output: 
       stacktrace: 
@@ -614,7 +614,7 @@ MonoBehaviour:
       name: AllAbilitiesCanBeLoadedFromFileTest
       fullName: Testing.Abilities.AbilityParserTests.AllAbilitiesCanBeLoadedFromFileTest
       resultStatus: 1
-      duration: 0.0188653
+      duration: 0.0191003
       messages: 
       output: 
       stacktrace: 
@@ -631,7 +631,7 @@ MonoBehaviour:
       name: AbilityProjectileTests
       fullName: Testing.Abilities.AbilityProjectileTests
       resultStatus: 1
-      duration: 0.0055949
+      duration: 0.0050939
       messages: 
       output: 
       stacktrace: 
@@ -647,7 +647,7 @@ MonoBehaviour:
       name: ProjectileSpeedCanBeSetByOtherObjectTest
       fullName: Testing.Abilities.AbilityProjectileTests.ProjectileSpeedCanBeSetByOtherObjectTest
       resultStatus: 1
-      duration: 0.0009332
+      duration: 0.0006061
       messages: 
       output: 
       stacktrace: 
@@ -664,7 +664,7 @@ MonoBehaviour:
       name: ProjectileTrajectoryCanBeSetByOtherObjectTest
       fullName: Testing.Abilities.AbilityProjectileTests.ProjectileTrajectoryCanBeSetByOtherObjectTest
       resultStatus: 1
-      duration: 0.0005704
+      duration: 0.000432
       messages: 
       output: 
       stacktrace: 
@@ -681,7 +681,7 @@ MonoBehaviour:
       name: AbilityTests
       fullName: Testing.Abilities.AbilityTests
       resultStatus: 1
-      duration: 0.0089392
+      duration: 0.0081309
       messages: 
       output: 
       stacktrace: 
@@ -697,7 +697,7 @@ MonoBehaviour:
       name: AbilityAnimationCanBeSetTest
       fullName: Testing.Abilities.AbilityTests.AbilityAnimationCanBeSetTest
       resultStatus: 1
-      duration: 0.000595
+      duration: 0.0004888
       messages: 
       output: 
       stacktrace: 
@@ -714,7 +714,7 @@ MonoBehaviour:
       name: AbilityAnimationsCanBeEasilyChecked
       fullName: Testing.Abilities.AbilityTests.AbilityAnimationsCanBeEasilyChecked
       resultStatus: 1
-      duration: 0.0006841
+      duration: 0.0005739
       messages: 
       output: 
       stacktrace: 
@@ -731,7 +731,7 @@ MonoBehaviour:
       name: AbilityCanBeCreatedTest
       fullName: Testing.Abilities.AbilityTests.AbilityCanBeCreatedTest
       resultStatus: 1
-      duration: 0.0021491
+      duration: 0.0025455
       messages: 
       output: 
       stacktrace: 
@@ -748,7 +748,7 @@ MonoBehaviour:
       name: AbilityCostCanBeSetTest
       fullName: Testing.Abilities.AbilityTests.AbilityCostCanBeSetTest
       resultStatus: 1
-      duration: 0.0003161
+      duration: 0.0002986
       messages: 
       output: 
       stacktrace: 
@@ -765,7 +765,7 @@ MonoBehaviour:
       name: AbilityEffectsCanBeSetTest
       fullName: Testing.Abilities.AbilityTests.AbilityEffectsCanBeSetTest
       resultStatus: 1
-      duration: 0.0004179
+      duration: 0.0004483
       messages: 
       output: 
       stacktrace: 
@@ -782,7 +782,7 @@ MonoBehaviour:
       name: ProjectileTrajectoryTests
       fullName: Testing.Abilities.ProjectileTrajectoryTests
       resultStatus: 1
-      duration: 0.0046838
+      duration: 0.0034346
       messages: 
       output: 
       stacktrace: 
@@ -798,7 +798,7 @@ MonoBehaviour:
       name: CheckpointsCanBeAddedToTrajectoryTest
       fullName: Testing.Abilities.ProjectileTrajectoryTests.CheckpointsCanBeAddedToTrajectoryTest
       resultStatus: 1
-      duration: 0.0005708
+      duration: 0.0003865
       messages: 
       output: 
       stacktrace: 
@@ -815,7 +815,7 @@ MonoBehaviour:
       name: Actors
       fullName: Testing.Actors
       resultStatus: 1
-      duration: 0.2132163
+      duration: 0.1994244
       messages: 
       output: 
       stacktrace: 
@@ -831,7 +831,7 @@ MonoBehaviour:
       name: ActiveEffectTests
       fullName: Testing.Actors.ActiveEffectTests
       resultStatus: 1
-      duration: 0.0046277
+      duration: 0.0029107
       messages: 
       output: 
       stacktrace: 
@@ -847,7 +847,7 @@ MonoBehaviour:
       name: ActiveEffectCanBeCreated
       fullName: Testing.Actors.ActiveEffectTests.ActiveEffectCanBeCreated
       resultStatus: 1
-      duration: 0.0005002
+      duration: 0.0003582
       messages: 
       output: 
       stacktrace: 
@@ -864,7 +864,7 @@ MonoBehaviour:
       name: CharactersManagerTests
       fullName: Testing.Actors.CharactersManagerTests
       resultStatus: 1
-      duration: 0.0288457
+      duration: 0.0292566
       messages: 
       output: 
       stacktrace: 
@@ -880,7 +880,7 @@ MonoBehaviour:
       name: CharactersCanBeLoadedFromFile
       fullName: Testing.Actors.CharactersManagerTests.CharactersCanBeLoadedFromFile
       resultStatus: 1
-      duration: 0.0205971
+      duration: 0.0213177
       messages: 
       output: 
       stacktrace: 
@@ -897,7 +897,7 @@ MonoBehaviour:
       name: CharactersManagerCanBeCreated
       fullName: Testing.Actors.CharactersManagerTests.CharactersManagerCanBeCreated
       resultStatus: 1
-      duration: 0.000323
+      duration: 0.0003347
       messages: 
       output: 
       stacktrace: 
@@ -914,7 +914,7 @@ MonoBehaviour:
       name: NewCharacterCanBeAdded
       fullName: Testing.Actors.CharactersManagerTests.NewCharacterCanBeAdded
       resultStatus: 1
-      duration: 0.002531
+      duration: 0.0037643
       messages: 
       output: 
       stacktrace: 
@@ -931,7 +931,7 @@ MonoBehaviour:
       name: CharacterStatsTests
       fullName: Testing.Actors.CharacterStatsTests
       resultStatus: 1
-      duration: 0.0540307
+      duration: 0.0487087
       messages: 
       output: 
       stacktrace: 
@@ -947,7 +947,7 @@ MonoBehaviour:
       name: BonusStatsCanBeObtained
       fullName: Testing.Actors.CharacterStatsTests.BonusStatsCanBeObtained
       resultStatus: 1
-      duration: 0.0218711
+      duration: 0.0239464
       messages: 
       output: 
       stacktrace: 
@@ -964,7 +964,7 @@ MonoBehaviour:
       name: CharacterStatsCanBeCreated
       fullName: Testing.Actors.CharacterStatsTests.CharacterStatsCanBeCreated
       resultStatus: 1
-      duration: 0.002311
+      duration: 0.0020719
       messages: 
       output: 
       stacktrace: 
@@ -981,7 +981,7 @@ MonoBehaviour:
       name: CurrentEssenceCanBeChanged
       fullName: Testing.Actors.CharacterStatsTests.CurrentEssenceCanBeChanged
       resultStatus: 1
-      duration: 0.0026872
+      duration: 0.0024078
       messages: 
       output: 
       stacktrace: 
@@ -998,7 +998,7 @@ MonoBehaviour:
       name: CurrentHealthCanBeChanged
       fullName: Testing.Actors.CharacterStatsTests.CurrentHealthCanBeChanged
       resultStatus: 1
-      duration: 0.0024658
+      duration: 0.0023942
       messages: 
       output: 
       stacktrace: 
@@ -1015,7 +1015,7 @@ MonoBehaviour:
       name: CurrentManaCanBeChanged
       fullName: Testing.Actors.CharacterStatsTests.CurrentManaCanBeChanged
       resultStatus: 1
-      duration: 0.0027009
+      duration: 0.0024255
       messages: 
       output: 
       stacktrace: 
@@ -1032,7 +1032,7 @@ MonoBehaviour:
       name: ExperienceNeededForNextLevelCanBeObtained
       fullName: Testing.Actors.CharacterStatsTests.ExperienceNeededForNextLevelCanBeObtained
       resultStatus: 1
-      duration: 0.0019532
+      duration: 0.0016901
       messages: 
       output: 
       stacktrace: 
@@ -1049,7 +1049,7 @@ MonoBehaviour:
       name: LevelCanBeComputedFromExperience
       fullName: Testing.Actors.CharacterStatsTests.LevelCanBeComputedFromExperience
       resultStatus: 1
-      duration: 0.001756
+      duration: 0.001523
       messages: 
       output: 
       stacktrace: 
@@ -1066,7 +1066,7 @@ MonoBehaviour:
       name: SecondaryStatsCanBeObtained
       fullName: Testing.Actors.CharacterStatsTests.SecondaryStatsCanBeObtained
       resultStatus: 1
-      duration: 0.0038643
+      duration: 0.0025911
       messages: 
       output: 
       stacktrace: 
@@ -1083,7 +1083,7 @@ MonoBehaviour:
       name: StatsCanBeComputedBasedOnLevel
       fullName: Testing.Actors.CharacterStatsTests.StatsCanBeComputedBasedOnLevel
       resultStatus: 1
-      duration: 0.0053095
+      duration: 0.0032958
       messages: 
       output: 
       stacktrace: 
@@ -1100,7 +1100,7 @@ MonoBehaviour:
       name: TotalExperienceNeededForLevelCanBeObtained
       fullName: Testing.Actors.CharacterStatsTests.TotalExperienceNeededForLevelCanBeObtained
       resultStatus: 1
-      duration: 0.0026239
+      duration: 0.0016576
       messages: 
       output: 
       stacktrace: 
@@ -1117,7 +1117,7 @@ MonoBehaviour:
       name: CharacterTests
       fullName: Testing.Actors.CharacterTests
       resultStatus: 1
-      duration: 0.0614205
+      duration: 0.0509957
       messages: 
       output: 
       stacktrace: 
@@ -1133,7 +1133,7 @@ MonoBehaviour:
       name: AbilityCanBeForgotten
       fullName: Testing.Actors.CharacterTests.AbilityCanBeForgotten
       resultStatus: 1
-      duration: 0.0024721
+      duration: 0.0021623
       messages: 
       output: 
       stacktrace: 
@@ -1150,7 +1150,7 @@ MonoBehaviour:
       name: AbilityCanBeLearnt
       fullName: Testing.Actors.CharacterTests.AbilityCanBeLearnt
       resultStatus: 1
-      duration: 0.0018341
+      duration: 0.0019881
       messages: 
       output: 
       stacktrace: 
@@ -1167,7 +1167,7 @@ MonoBehaviour:
       name: CanCheckIfItemIsEquipped
       fullName: Testing.Actors.CharacterTests.CanCheckIfItemIsEquipped
       resultStatus: 1
-      duration: 0.0046982
+      duration: 0.0047828
       messages: 
       output: 
       stacktrace: 
@@ -1184,7 +1184,7 @@ MonoBehaviour:
       name: CharacterCanBeDeserialized
       fullName: Testing.Actors.CharacterTests.CharacterCanBeDeserialized
       resultStatus: 1
-      duration: 0.0061274
+      duration: 0.0061544
       messages: 
       output: 
       stacktrace: 
@@ -1201,7 +1201,7 @@ MonoBehaviour:
       name: CharacterCanBeSerialized
       fullName: Testing.Actors.CharacterTests.CharacterCanBeSerialized
       resultStatus: 1
-      duration: 0.0060012
+      duration: 0.0056574
       messages: 
       output: 
       stacktrace: 
@@ -1218,7 +1218,7 @@ MonoBehaviour:
       name: CharacterNameCanBeUpdated
       fullName: Testing.Actors.CharacterTests.CharacterNameCanBeUpdated
       resultStatus: 1
-      duration: 0.0022211
+      duration: 0.0019882
       messages: 
       output: 
       stacktrace: 
@@ -1235,7 +1235,7 @@ MonoBehaviour:
       name: CharacterWithFunctionsCanBeCreated
       fullName: Testing.Actors.CharacterTests.CharacterWithFunctionsCanBeCreated
       resultStatus: 1
-      duration: 0.0032029
+      duration: 0.0031146
       messages: 
       output: 
       stacktrace: 
@@ -1252,7 +1252,7 @@ MonoBehaviour:
       name: ElementalAffinityCanBeObtainedFromElement
       fullName: Testing.Actors.CharacterTests.ElementalAffinityCanBeObtainedFromElement
       resultStatus: 1
-      duration: 0.0046324
+      duration: 0.0028084
       messages: 
       output: 
       stacktrace: 
@@ -1269,7 +1269,7 @@ MonoBehaviour:
       name: EquipmentCanBeChanged
       fullName: Testing.Actors.CharacterTests.EquipmentCanBeChanged
       resultStatus: 1
-      duration: 0.0045575
+      duration: 0.0043304
       messages: 
       output: 
       stacktrace: 
@@ -1286,7 +1286,7 @@ MonoBehaviour:
       name: ExperienceCanBeGiven
       fullName: Testing.Actors.CharacterTests.ExperienceCanBeGiven
       resultStatus: 1
-      duration: 0.0034796
+      duration: 0.003405
       messages: 
       output: 
       stacktrace: 
@@ -1303,7 +1303,7 @@ MonoBehaviour:
       name: LevelCanBeChanged
       fullName: Testing.Actors.CharacterTests.LevelCanBeChanged
       resultStatus: 1
-      duration: 0.0047585
+      duration: 0.004569
       messages: 
       output: 
       stacktrace: 
@@ -1320,7 +1320,7 @@ MonoBehaviour:
       name: ParameterlessCharacterCanBeCreated
       fullName: Testing.Actors.CharacterTests.ParameterlessCharacterCanBeCreated
       resultStatus: 1
-      duration: 0.0019848
+      duration: 0.0013322
       messages: 
       output: 
       stacktrace: 
@@ -1337,7 +1337,7 @@ MonoBehaviour:
       name: ResourcesCanBeRecovered
       fullName: Testing.Actors.CharacterTests.ResourcesCanBeRecovered
       resultStatus: 1
-      duration: 0.0052605
+      duration: 0.0037684
       messages: 
       output: 
       stacktrace: 
@@ -1354,7 +1354,7 @@ MonoBehaviour:
       name: ElementalAffinityTests
       fullName: Testing.Actors.ElementalAffinityTests
       resultStatus: 1
-      duration: 0.0091904
+      duration: 0.0109858
       messages: 
       output: 
       stacktrace: 
@@ -1370,7 +1370,7 @@ MonoBehaviour:
       name: ElementalAffinityCanBeCreated
       fullName: Testing.Actors.ElementalAffinityTests.ElementalAffinityCanBeCreated
       resultStatus: 1
-      duration: 0.0035225
+      duration: 0.0027932
       messages: 
       output: 
       stacktrace: 
@@ -1387,7 +1387,7 @@ MonoBehaviour:
       name: Equipment
       fullName: Testing.Actors.Equipment
       resultStatus: 1
-      duration: 0.0222158
+      duration: 0.0241698
       messages: 
       output: 
       stacktrace: 
@@ -1403,7 +1403,7 @@ MonoBehaviour:
       name: CharacterEquipmentTests
       fullName: Testing.Actors.Equipment.CharacterEquipmentTests
       resultStatus: 1
-      duration: 0.0074183
+      duration: 0.0094546
       messages: 
       output: 
       stacktrace: 
@@ -1419,7 +1419,7 @@ MonoBehaviour:
       name: AllEffectsFromEquippedItemsCanBeRetrieved
       fullName: Testing.Actors.Equipment.CharacterEquipmentTests.AllEffectsFromEquippedItemsCanBeRetrieved
       resultStatus: 1
-      duration: 0.0036252
+      duration: 0.0053439
       messages: 
       output: 
       stacktrace: 
@@ -1436,7 +1436,7 @@ MonoBehaviour:
       name: InitialEquipmentCanBeDefined
       fullName: Testing.Actors.Equipment.CharacterEquipmentTests.InitialEquipmentCanBeDefined
       resultStatus: 1
-      duration: 0.0004395
+      duration: 0.0006292
       messages: 
       output: 
       stacktrace: 
@@ -1453,7 +1453,7 @@ MonoBehaviour:
       name: EquipmentSlotTests
       fullName: Testing.Actors.Equipment.EquipmentSlotTests
       resultStatus: 1
-      duration: 0.009632
+      duration: 0.0093508
       messages: 
       output: 
       stacktrace: 
@@ -1469,7 +1469,7 @@ MonoBehaviour:
       name: EquipmentItemCanBeObtainedFromSlot
       fullName: Testing.Actors.Equipment.EquipmentSlotTests.EquipmentItemCanBeObtainedFromSlot
       resultStatus: 1
-      duration: 0.0017889
+      duration: 0.0017013
       messages: 
       output: 
       stacktrace: 
@@ -1486,7 +1486,7 @@ MonoBehaviour:
       name: EquipmentSlotCanBeCreated
       fullName: Testing.Actors.Equipment.EquipmentSlotTests.EquipmentSlotCanBeCreated
       resultStatus: 1
-      duration: 0.0002782
+      duration: 0.0003168
       messages: 
       output: 
       stacktrace: 
@@ -1503,7 +1503,7 @@ MonoBehaviour:
       name: ItemNameCanBeObtained
       fullName: Testing.Actors.Equipment.EquipmentSlotTests.ItemNameCanBeObtained
       resultStatus: 1
-      duration: 0.0032953
+      duration: 0.0032727
       messages: 
       output: 
       stacktrace: 
@@ -1520,7 +1520,7 @@ MonoBehaviour:
       name: EssenceAffinityTests
       fullName: Testing.Actors.EssenceAffinityTests
       resultStatus: 1
-      duration: 0.0041492
+      duration: 0.0035238
       messages: 
       output: 
       stacktrace: 
@@ -1536,7 +1536,7 @@ MonoBehaviour:
       name: EssenceAffinityCanBeCreated
       fullName: Testing.Actors.EssenceAffinityTests.EssenceAffinityCanBeCreated
       resultStatus: 1
-      duration: 0.0009731
+      duration: 0.0005768
       messages: 
       output: 
       stacktrace: 
@@ -1553,7 +1553,7 @@ MonoBehaviour:
       name: XmlCharacterParserTests
       fullName: Testing.Actors.XmlCharacterParserTests
       resultStatus: 1
-      duration: 0.0230602
+      duration: 0.0221411
       messages: 
       output: 
       stacktrace: 
@@ -1569,7 +1569,7 @@ MonoBehaviour:
       name: ListOfCharactersCanBeParsed
       fullName: Testing.Actors.XmlCharacterParserTests.ListOfCharactersCanBeParsed
       resultStatus: 1
-      duration: 0.0198836
+      duration: 0.0186921
       messages: 
       output: 
       stacktrace: 
@@ -1586,7 +1586,7 @@ MonoBehaviour:
       name: BattleSystem
       fullName: Testing.BattleSystem
       resultStatus: 1
-      duration: 0.7682423
+      duration: 0.518023
       messages: 
       output: 
       stacktrace: 
@@ -1602,7 +1602,7 @@ MonoBehaviour:
       name: BattleLoaderTests
       fullName: Testing.BattleSystem.BattleLoaderTests
       resultStatus: 1
-      duration: 0.0555465
+      duration: 0.0097041
       messages: 
       output: 
       stacktrace: 
@@ -1618,7 +1618,7 @@ MonoBehaviour:
       name: BattleDataCanBeLoaded
       fullName: Testing.BattleSystem.BattleLoaderTests.BattleDataCanBeLoaded
       resultStatus: 1
-      duration: 0.030554
+      duration: 0.0067185
       messages: 
       output: 
       stacktrace: 
@@ -1635,7 +1635,7 @@ MonoBehaviour:
       name: BattleManagerTests
       fullName: Testing.BattleSystem.BattleManagerTests
       resultStatus: 1
-      duration: 0.2596674
+      duration: 0.1329792
       messages: 
       output: 
       stacktrace: 
@@ -1651,7 +1651,7 @@ MonoBehaviour:
       name: BattleManagerCanBeInitialized
       fullName: Testing.BattleSystem.BattleManagerTests.BattleManagerCanBeInitialized
       resultStatus: 1
-      duration: 0.2022296
+      duration: 0.0910349
       messages: 
       output: 'Animator is not playing an AnimatorController
 
@@ -1673,7 +1673,7 @@ MonoBehaviour:
       name: BattleStateCanBeUpdated
       fullName: Testing.BattleSystem.BattleManagerTests.BattleStateCanBeUpdated
       resultStatus: 1
-      duration: 0.0512167
+      duration: 0.0375862
       messages: 
       output: 'Animator is not playing an AnimatorController
 
@@ -1695,7 +1695,7 @@ MonoBehaviour:
       name: BattlersHolderTests
       fullName: Testing.BattleSystem.BattlersHolderTests
       resultStatus: 1
-      duration: 0.0230489
+      duration: 0.0259513
       messages: 
       output: 
       stacktrace: 
@@ -1711,7 +1711,7 @@ MonoBehaviour:
       name: BattlerCanBeInstantiated
       fullName: Testing.BattleSystem.BattlersHolderTests.BattlerCanBeInstantiated
       resultStatus: 1
-      duration: 0.0168843
+      duration: 0.0181324
       messages: 
       output: 
       stacktrace: 
@@ -1728,7 +1728,7 @@ MonoBehaviour:
       name: Behaviours
       fullName: Testing.BattleSystem.Behaviours
       resultStatus: 1
-      duration: 0.2194598
+      duration: 0.1780648
       messages: 
       output: 
       stacktrace: 
@@ -1744,7 +1744,7 @@ MonoBehaviour:
       name: AiBehaviours
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours
       resultStatus: 1
-      duration: 0.1138211
+      duration: 0.0753001
       messages: 
       output: 
       stacktrace: 
@@ -1760,7 +1760,7 @@ MonoBehaviour:
       name: AiScriptTests
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.AiScriptTests
       resultStatus: 1
-      duration: 0.0251718
+      duration: 0.0163721
       messages: 
       output: 
       stacktrace: 
@@ -1776,7 +1776,7 @@ MonoBehaviour:
       name: AiShouldSelectCorrectAbilityWhenTargetInRangeTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.AiScriptTests.AiShouldSelectCorrectAbilityWhenTargetInRangeTest
       resultStatus: 1
-      duration: 0.0148543
+      duration: 0.0102341
       messages: 
       output: 
       stacktrace: 
@@ -1793,7 +1793,7 @@ MonoBehaviour:
       name: SetMainConditionTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.AiScriptTests.SetMainConditionTest
       resultStatus: 1
-      duration: 0.0025586
+      duration: 0.0003786
       messages: 
       output: 
       stacktrace: 
@@ -1810,7 +1810,7 @@ MonoBehaviour:
       name: BehaviourActionTests
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.BehaviourActionTests
       resultStatus: 1
-      duration: 0.0078527
+      duration: 0.005358
       messages: 
       output: 
       stacktrace: 
@@ -1826,7 +1826,7 @@ MonoBehaviour:
       name: AddAbilitiesTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.BehaviourActionTests.AddAbilitiesTest
       resultStatus: 1
-      duration: 0.0006837
+      duration: 0.0004273
       messages: 
       output: 
       stacktrace: 
@@ -1843,7 +1843,7 @@ MonoBehaviour:
       name: AddAbilityTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.BehaviourActionTests.AddAbilityTest
       resultStatus: 1
-      duration: 0.0003553
+      duration: 0.0002203
       messages: 
       output: 
       stacktrace: 
@@ -1860,7 +1860,7 @@ MonoBehaviour:
       name: SetConditionTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.BehaviourActionTests.SetConditionTest
       resultStatus: 1
-      duration: 0.0004294
+      duration: 0.0001726
       messages: 
       output: 
       stacktrace: 
@@ -1877,7 +1877,7 @@ MonoBehaviour:
       name: BehaviourParserTests
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.BehaviourParserTests
       resultStatus: 1
-      duration: 0.0122652
+      duration: 0.0075634
       messages: 
       output: 
       stacktrace: 
@@ -1893,7 +1893,7 @@ MonoBehaviour:
       name: ParseHasEnoughResourcesConditionTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.BehaviourParserTests.ParseHasEnoughResourcesConditionTest
       resultStatus: 1
-      duration: 0.0012582
+      duration: 0.0007732
       messages: 
       output: 
       stacktrace: 
@@ -1910,7 +1910,7 @@ MonoBehaviour:
       name: ParseIsInRangeConditionTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.BehaviourParserTests.ParseIsInRangeConditionTest
       resultStatus: 1
-      duration: 0.0008471
+      duration: 0.0005011
       messages: 
       output: 
       stacktrace: 
@@ -1927,7 +1927,7 @@ MonoBehaviour:
       name: ParseMainConditionTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.BehaviourParserTests.ParseMainConditionTest
       resultStatus: 1
-      duration: 0.001296
+      duration: 0.0004118
       messages: 
       output: 
       stacktrace: 
@@ -1944,7 +1944,7 @@ MonoBehaviour:
       name: ParseTestBehaviourTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.BehaviourParserTests.ParseTestBehaviourTest
       resultStatus: 1
-      duration: 0.0009852
+      duration: 0.0012372
       messages: 
       output: 
       stacktrace: 
@@ -1961,7 +1961,7 @@ MonoBehaviour:
       name: HasEnoughResourcesTests
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.HasEnoughResourcesTests
       resultStatus: 1
-      duration: 0.018146
+      duration: 0.0182656
       messages: 
       output: 
       stacktrace: 
@@ -1977,7 +1977,7 @@ MonoBehaviour:
       name: CheckCharacterHasEnoughFlatResourcesTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.HasEnoughResourcesTests.CheckCharacterHasEnoughFlatResourcesTest
       resultStatus: 1
-      duration: 0.0029357
+      duration: 0.0048536
       messages: 
       output: 
       stacktrace: 
@@ -1994,7 +1994,7 @@ MonoBehaviour:
       name: CheckCharacterHasEnoughPercentageResourcesTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.HasEnoughResourcesTests.CheckCharacterHasEnoughPercentageResourcesTest
       resultStatus: 1
-      duration: 0.0036634
+      duration: 0.0052657
       messages: 
       output: 
       stacktrace: 
@@ -2011,7 +2011,7 @@ MonoBehaviour:
       name: CheckCharacterHasEnoughResourcesForAbilityTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.HasEnoughResourcesTests.CheckCharacterHasEnoughResourcesForAbilityTest
       resultStatus: 1
-      duration: 0.0039917
+      duration: 0.004051
       messages: 
       output: 
       stacktrace: 
@@ -2028,7 +2028,7 @@ MonoBehaviour:
       name: CreateHasEnoughResourcesTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.HasEnoughResourcesTests.CreateHasEnoughResourcesTest
       resultStatus: 1
-      duration: 0.0005542
+      duration: 0.0002396
       messages: 
       output: 
       stacktrace: 
@@ -2045,7 +2045,7 @@ MonoBehaviour:
       name: IsInRangeTests
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.IsInRangeTests
       resultStatus: 1
-      duration: 0.0424282
+      duration: 0.0233468
       messages: 
       output: 
       stacktrace: 
@@ -2061,7 +2061,7 @@ MonoBehaviour:
       name: CheckIsInRangeTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.IsInRangeTests.CheckIsInRangeTest
       resultStatus: 1
-      duration: 0.0318692
+      duration: 0.0183756
       messages: 
       output: 
       stacktrace: 
@@ -2078,7 +2078,7 @@ MonoBehaviour:
       name: CreateBasicIsInRangeTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.IsInRangeTests.CreateBasicIsInRangeTest
       resultStatus: 1
-      duration: 0.0019976
+      duration: 0.000348
       messages: 
       output: 
       stacktrace: 
@@ -2095,7 +2095,7 @@ MonoBehaviour:
       name: SetValuesTest
       fullName: Testing.BattleSystem.Behaviours.AiBehaviours.IsInRangeTests.SetValuesTest
       resultStatus: 1
-      duration: 0.0004497
+      duration: 0.0002564
       messages: 
       output: 
       stacktrace: 
@@ -2112,7 +2112,7 @@ MonoBehaviour:
       name: UI
       fullName: Testing.BattleSystem.Behaviours.UI
       resultStatus: 1
-      duration: 0.1001412
+      duration: 0.0988249
       messages: 
       output: 
       stacktrace: 
@@ -2128,7 +2128,7 @@ MonoBehaviour:
       name: TimelineUiControllerTests
       fullName: Testing.BattleSystem.Behaviours.UI.TimelineUiControllerTests
       resultStatus: 1
-      duration: 0.0941264
+      duration: 0.0954441
       messages: 
       output: 
       stacktrace: 
@@ -2144,7 +2144,7 @@ MonoBehaviour:
       name: DataCanBeFedToControllerTest
       fullName: Testing.BattleSystem.Behaviours.UI.TimelineUiControllerTests.DataCanBeFedToControllerTest
       resultStatus: 1
-      duration: 0.0154751
+      duration: 0.0168525
       messages: 
       output: 
       stacktrace: 
@@ -2161,7 +2161,7 @@ MonoBehaviour:
       name: FinishedOpeningTest
       fullName: Testing.BattleSystem.Behaviours.UI.TimelineUiControllerTests.FinishedOpeningTest
       resultStatus: 1
-      duration: 0.0306108
+      duration: 0.0333712
       messages: 
       output: 
       stacktrace: 
@@ -2178,7 +2178,7 @@ MonoBehaviour:
       name: ShowTest
       fullName: Testing.BattleSystem.Behaviours.UI.TimelineUiControllerTests.ShowTest
       resultStatus: 1
-      duration: 0.0192329
+      duration: 0.0227562
       messages: 
       output: 
       stacktrace: 
@@ -2195,7 +2195,7 @@ MonoBehaviour:
       name: TimelineWithoutAbilityIsUpdatedCorrectlyTest
       fullName: Testing.BattleSystem.Behaviours.UI.TimelineUiControllerTests.TimelineWithoutAbilityIsUpdatedCorrectlyTest
       resultStatus: 1
-      duration: 0.0190897
+      duration: 0.0173735
       messages: 
       output: 
       stacktrace: 
@@ -2212,7 +2212,7 @@ MonoBehaviour:
       name: Data
       fullName: Testing.BattleSystem.Data
       resultStatus: 1
-      duration: 0.0309219
+      duration: 0.0318813
       messages: 
       output: 
       stacktrace: 
@@ -2228,7 +2228,7 @@ MonoBehaviour:
       name: EnemyParserTests
       fullName: Testing.BattleSystem.Data.EnemyParserTests
       resultStatus: 1
-      duration: 0.0192845
+      duration: 0.0231955
       messages: 
       output: 
       stacktrace: 
@@ -2244,7 +2244,7 @@ MonoBehaviour:
       name: EnemyCanBeParsed
       fullName: Testing.BattleSystem.Data.EnemyParserTests.EnemyCanBeParsed
       resultStatus: 1
-      duration: 0.0149353
+      duration: 0.0197669
       messages: 
       output: 
       stacktrace: 
@@ -2261,7 +2261,7 @@ MonoBehaviour:
       name: TroopParserTests
       fullName: Testing.BattleSystem.Data.TroopParserTests
       resultStatus: 1
-      duration: 0.0067778
+      duration: 0.0054061
       messages: 
       output: 
       stacktrace: 
@@ -2277,7 +2277,7 @@ MonoBehaviour:
       name: TroopCanBeParsed
       fullName: Testing.BattleSystem.Data.TroopParserTests.TroopCanBeParsed
       resultStatus: 1
-      duration: 0.0026574
+      duration: 0.0019298
       messages: 
       output: 
       stacktrace: 
@@ -2294,7 +2294,7 @@ MonoBehaviour:
       name: Fields
       fullName: Testing.BattleSystem.Fields
       resultStatus: 1
-      duration: 0.0191968
+      duration: 0.014626
       messages: 
       output: 
       stacktrace: 
@@ -2310,7 +2310,7 @@ MonoBehaviour:
       name: BattlefieldsHolderTests
       fullName: Testing.BattleSystem.Fields.BattlefieldsHolderTests
       resultStatus: 1
-      duration: 0.0078856
+      duration: 0.0049625
       messages: 
       output: 
       stacktrace: 
@@ -2326,7 +2326,7 @@ MonoBehaviour:
       name: FieldCanBeRetrievedById
       fullName: Testing.BattleSystem.Fields.BattlefieldsHolderTests.FieldCanBeRetrievedById
       resultStatus: 1
-      duration: 0.0014287
+      duration: 0.0013219
       messages: 
       output: 
       stacktrace: 
@@ -2343,7 +2343,7 @@ MonoBehaviour:
       name: BattlefieldTests
       fullName: Testing.BattleSystem.Fields.BattlefieldTests
       resultStatus: 1
-      duration: 0.0038186
+      duration: 0.0056391
       messages: 
       output: 
       stacktrace: 
@@ -2359,7 +2359,7 @@ MonoBehaviour:
       name: FieldIdCanBeObtained
       fullName: Testing.BattleSystem.Fields.BattlefieldTests.FieldIdCanBeObtained
       resultStatus: 1
-      duration: 0.0004574
+      duration: 0.0007762
       messages: 
       output: 
       stacktrace: 
@@ -2376,7 +2376,7 @@ MonoBehaviour:
       name: Model
       fullName: Testing.BattleSystem.Model
       resultStatus: 1
-      duration: 0.0702251
+      duration: 0.0710043
       messages: 
       output: 
       stacktrace: 
@@ -2392,7 +2392,7 @@ MonoBehaviour:
       name: BattlerTests
       fullName: Testing.BattleSystem.Model.BattlerTests
       resultStatus: 1
-      duration: 0.0089939
+      duration: 0.0094567
       messages: 
       output: 
       stacktrace: 
@@ -2408,7 +2408,7 @@ MonoBehaviour:
       name: BattlerHealthCanBeChanged
       fullName: Testing.BattleSystem.Model.BattlerTests.BattlerHealthCanBeChanged
       resultStatus: 1
-      duration: 0.0042731
+      duration: 0.0061594
       messages: 
       output: 
       stacktrace: 
@@ -2425,7 +2425,7 @@ MonoBehaviour:
       name: PlayerSpotTests
       fullName: Testing.BattleSystem.Model.PlayerSpotTests
       resultStatus: 1
-      duration: 0.0053389
+      duration: 0.004699
       messages: 
       output: 
       stacktrace: 
@@ -2441,7 +2441,7 @@ MonoBehaviour:
       name: PlayerSpotCanBeCreated
       fullName: Testing.BattleSystem.Model.PlayerSpotTests.PlayerSpotCanBeCreated
       resultStatus: 1
-      duration: 0.0004294
+      duration: 0.0003154
       messages: 
       output: 
       stacktrace: 
@@ -2458,7 +2458,7 @@ MonoBehaviour:
       name: TimelineActionTests
       fullName: Testing.BattleSystem.Model.TimelineActionTests
       resultStatus: 1
-      duration: 0.028599
+      duration: 0.0337647
       messages: 
       output: 
       stacktrace: 
@@ -2474,7 +2474,7 @@ MonoBehaviour:
       name: ComputeActionStartPointTest
       fullName: Testing.BattleSystem.Model.TimelineActionTests.ComputeActionStartPointTest
       resultStatus: 1
-      duration: 0.0172345
+      duration: 0.0218679
       messages: 
       output: 
       stacktrace: 
@@ -2491,7 +2491,7 @@ MonoBehaviour:
       name: TimelineActionCanBeCreatedFromBattlerBehaviourTest
       fullName: Testing.BattleSystem.Model.TimelineActionTests.TimelineActionCanBeCreatedFromBattlerBehaviourTest
       resultStatus: 1
-      duration: 0.0036636
+      duration: 0.0044046
       messages: 
       output: 
       stacktrace: 
@@ -2508,7 +2508,7 @@ MonoBehaviour:
       name: TimelineActionCanBeCreatedFromValuesTest
       fullName: Testing.BattleSystem.Model.TimelineActionTests.TimelineActionCanBeCreatedFromValuesTest
       resultStatus: 1
-      duration: 0.0004717
+      duration: 0.0003629
       messages: 
       output: 
       stacktrace: 
@@ -2525,7 +2525,7 @@ MonoBehaviour:
       name: TimelineSegmentTests
       fullName: Testing.BattleSystem.Model.TimelineSegmentTests
       resultStatus: 1
-      duration: 0.0070619
+      duration: 0.0064638
       messages: 
       output: 
       stacktrace: 
@@ -2541,7 +2541,7 @@ MonoBehaviour:
       name: SegmentLengthCanBeComputed
       fullName: Testing.BattleSystem.Model.TimelineSegmentTests.SegmentLengthCanBeComputed
       resultStatus: 1
-      duration: 0.0007823
+      duration: 0.000586
       messages: 
       output: 
       stacktrace: 
@@ -2558,7 +2558,7 @@ MonoBehaviour:
       name: TimelineSegmentCanBeCreated
       fullName: Testing.BattleSystem.Model.TimelineSegmentTests.TimelineSegmentCanBeCreated
       resultStatus: 1
-      duration: 0.0006885
+      duration: 0.0004252
       messages: 
       output: 
       stacktrace: 
@@ -2575,7 +2575,7 @@ MonoBehaviour:
       name: TroopMemberTests
       fullName: Testing.BattleSystem.Model.TroopMemberTests
       resultStatus: 1
-      duration: 0.0062415
+      duration: 0.0077609
       messages: 
       output: 
       stacktrace: 
@@ -2591,7 +2591,7 @@ MonoBehaviour:
       name: TroopMemberCanBeCreated
       fullName: Testing.BattleSystem.Model.TroopMemberTests.TroopMemberCanBeCreated
       resultStatus: 1
-      duration: 0.0005263
+      duration: 0.0003055
       messages: 
       output: 
       stacktrace: 
@@ -2608,7 +2608,7 @@ MonoBehaviour:
       name: TroopTests
       fullName: Testing.BattleSystem.Model.TroopTests
       resultStatus: 1
-      duration: 0.0065649
+      duration: 0.0037929
       messages: 
       output: 
       stacktrace: 
@@ -2624,7 +2624,7 @@ MonoBehaviour:
       name: TroopCanBeCreated
       fullName: Testing.BattleSystem.Model.TroopTests.TroopCanBeCreated
       resultStatus: 1
-      duration: 0.0004682
+      duration: 0.0004019
       messages: 
       output: 
       stacktrace: 
@@ -2641,7 +2641,7 @@ MonoBehaviour:
       name: UI
       fullName: Testing.BattleSystem.UI
       resultStatus: 1
-      duration: 0.078493
+      duration: 0.0482198
       messages: 
       output: 
       stacktrace: 
@@ -2657,7 +2657,7 @@ MonoBehaviour:
       name: SelectableMoveCategoryTests
       fullName: Testing.BattleSystem.UI.SelectableMoveCategoryTests
       resultStatus: 1
-      duration: 0.042796
+      duration: 0.0293425
       messages: 
       output: 
       stacktrace: 
@@ -2673,7 +2673,7 @@ MonoBehaviour:
       name: DataCanBeFed
       fullName: Testing.BattleSystem.UI.SelectableMoveCategoryTests.DataCanBeFed
       resultStatus: 1
-      duration: 0.0359437
+      duration: 0.0255691
       messages: 
       output: 
       stacktrace: 
@@ -2690,7 +2690,7 @@ MonoBehaviour:
       name: SimpleTextWindowTests
       fullName: Testing.BattleSystem.UI.SimpleTextWindowTests
       resultStatus: 1
-      duration: 0.0317575
+      duration: 0.0154088
       messages: 
       output: 
       stacktrace: 
@@ -2706,7 +2706,7 @@ MonoBehaviour:
       name: TextCanBeUpdated
       fullName: Testing.BattleSystem.UI.SimpleTextWindowTests.TextCanBeUpdated
       resultStatus: 1
-      duration: 0.0252776
+      duration: 0.0114554
       messages: 
       output: 
       stacktrace: 
@@ -2723,7 +2723,7 @@ MonoBehaviour:
       name: Core
       fullName: Testing.Core
       resultStatus: 1
-      duration: 2.1674862
+      duration: 2.1513555
       messages: 
       output: 
       stacktrace: 
@@ -2739,7 +2739,7 @@ MonoBehaviour:
       name: GlobalStateMachineTests
       fullName: Testing.Core.GlobalStateMachineTests
       resultStatus: 1
-      duration: 0.0064364
+      duration: 0.0065634
       messages: 
       output: 
       stacktrace: 
@@ -2755,7 +2755,7 @@ MonoBehaviour:
       name: GlobalStateMachineSpecificTransitionsTest
       fullName: Testing.Core.GlobalStateMachineTests.GlobalStateMachineSpecificTransitionsTest
       resultStatus: 1
-      duration: 0.0015044
+      duration: 0.0012562
       messages: 
       output: 
       stacktrace: 
@@ -2772,7 +2772,7 @@ MonoBehaviour:
       name: GlobalStateMachineUpdateStateTest
       fullName: Testing.Core.GlobalStateMachineTests.GlobalStateMachineUpdateStateTest
       resultStatus: 1
-      duration: 0.0002282
+      duration: 0.0002571
       messages: 
       output: 
       stacktrace: 
@@ -2789,7 +2789,7 @@ MonoBehaviour:
       name: StateCanBeRememberedAndReloaded
       fullName: Testing.Core.GlobalStateMachineTests.StateCanBeRememberedAndReloaded
       resultStatus: 1
-      duration: 0.0002845
+      duration: 0.0006323
       messages: 
       output: 
       stacktrace: 
@@ -2806,7 +2806,7 @@ MonoBehaviour:
       name: InputReceiverTests
       fullName: Testing.Core.InputReceiverTests
       resultStatus: 1
-      duration: 2.1460538
+      duration: 2.128806
       messages: 
       output: 
       stacktrace: 
@@ -2822,7 +2822,7 @@ MonoBehaviour:
       name: ProperEventsAreRaisedWhenInputsAreRecorded
       fullName: Testing.Core.InputReceiverTests.ProperEventsAreRaisedWhenInputsAreRecorded
       resultStatus: 1
-      duration: 2.1283877
+      duration: 2.1240318
       messages: 
       output: 
       stacktrace: 
@@ -2839,7 +2839,7 @@ MonoBehaviour:
       name: Model
       fullName: Testing.Core.Model
       resultStatus: 1
-      duration: 0.0105235
+      duration: 0.0113946
       messages: 
       output: 
       stacktrace: 
@@ -2855,7 +2855,7 @@ MonoBehaviour:
       name: ElementIdentifierTests
       fullName: Testing.Core.Model.ElementIdentifierTests
       resultStatus: 1
-      duration: 0.0063351
+      duration: 0.0069943
       messages: 
       output: 
       stacktrace: 
@@ -2871,7 +2871,7 @@ MonoBehaviour:
       name: ElementIdentifierCanBeCreated
       fullName: Testing.Core.Model.ElementIdentifierTests.ElementIdentifierCanBeCreated
       resultStatus: 1
-      duration: 0.0009158
+      duration: 0.0011325
       messages: 
       output: 
       stacktrace: 
@@ -2888,7 +2888,7 @@ MonoBehaviour:
       name: Effects
       fullName: Testing.Effects
       resultStatus: 1
-      duration: 0.1033643
+      duration: 0.0653914
       messages: 
       output: 
       stacktrace: 
@@ -2904,7 +2904,7 @@ MonoBehaviour:
       name: EffectsParserTests
       fullName: Testing.Effects.EffectsParserTests
       resultStatus: 1
-      duration: 0.0978998
+      duration: 0.0615769
       messages: 
       output: 
       stacktrace: 
@@ -2920,7 +2920,7 @@ MonoBehaviour:
       name: AdditionalStrikeCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.AdditionalStrikeCanBeParsed
       resultStatus: 1
-      duration: 0.0023883
+      duration: 0.002245
       messages: 
       output: 
       stacktrace: 
@@ -2937,7 +2937,7 @@ MonoBehaviour:
       name: AllElementalAbilitiesCostReductionCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.AllElementalAbilitiesCostReductionCanBeParsed
       resultStatus: 1
-      duration: 0.0038454
+      duration: 0.0022776
       messages: 
       output: 
       stacktrace: 
@@ -2954,7 +2954,7 @@ MonoBehaviour:
       name: AllElementalAffinitiesExploitManaRefundCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.AllElementalAffinitiesExploitManaRefundCanBeParsed
       resultStatus: 1
-      duration: 0.0020047
+      duration: 0.0013217
       messages: 
       output: 
       stacktrace: 
@@ -2971,7 +2971,7 @@ MonoBehaviour:
       name: AllElementalAffinitiesExploitSelfStatusCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.AllElementalAffinitiesExploitSelfStatusCanBeParsed
       resultStatus: 1
-      duration: 0.0083116
+      duration: 0.0015998
       messages: 
       output: 
       stacktrace: 
@@ -2988,7 +2988,7 @@ MonoBehaviour:
       name: AreaOfEffectAsSecondaryDamageCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.AreaOfEffectAsSecondaryDamageCanBeParsed
       resultStatus: 1
-      duration: 0.0030324
+      duration: 0.0014439
       messages: 
       output: 
       stacktrace: 
@@ -3005,7 +3005,7 @@ MonoBehaviour:
       name: AttackPriorityModifierCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.AttackPriorityModifierCanBeParsed
       resultStatus: 1
-      duration: 0.0022026
+      duration: 0.0013262
       messages: 
       output: 
       stacktrace: 
@@ -3022,7 +3022,7 @@ MonoBehaviour:
       name: AttacksIgnoreDefenseStatCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.AttacksIgnoreDefenseStatCanBeParsed
       resultStatus: 1
-      duration: 0.0022935
+      duration: 0.0011427
       messages: 
       output: 
       stacktrace: 
@@ -3039,7 +3039,7 @@ MonoBehaviour:
       name: AutoAttackAfterAbilityCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.AutoAttackAfterAbilityCanBeParsed
       resultStatus: 1
-      duration: 0.0014794
+      duration: 0.0019429
       messages: 
       output: 
       stacktrace: 
@@ -3056,7 +3056,7 @@ MonoBehaviour:
       name: BonusDamageToShieldsCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.BonusDamageToShieldsCanBeParsed
       resultStatus: 1
-      duration: 0.0014093
+      duration: 0.0014808
       messages: 
       output: 
       stacktrace: 
@@ -3073,7 +3073,7 @@ MonoBehaviour:
       name: BonusElementalDamageCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.BonusElementalDamageCanBeParsed
       resultStatus: 1
-      duration: 0.0014105
+      duration: 0.0012128
       messages: 
       output: 
       stacktrace: 
@@ -3090,7 +3090,7 @@ MonoBehaviour:
       name: BonusToAllElementalDamageCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.BonusToAllElementalDamageCanBeParsed
       resultStatus: 1
-      duration: 0.0016538
+      duration: 0.0011517
       messages: 
       output: 
       stacktrace: 
@@ -3107,7 +3107,7 @@ MonoBehaviour:
       name: BoundAbilityCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.BoundAbilityCanBeParsed
       resultStatus: 1
-      duration: 0.0017173
+      duration: 0.0013003
       messages: 
       output: 
       stacktrace: 
@@ -3124,7 +3124,7 @@ MonoBehaviour:
       name: CastPositiveStatusDurationExtensionCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.CastPositiveStatusDurationExtensionCanBeParsed
       resultStatus: 1
-      duration: 0.0013753
+      duration: 0.0010291
       messages: 
       output: 
       stacktrace: 
@@ -3141,7 +3141,7 @@ MonoBehaviour:
       name: ConeAttackWithBulletsCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.ConeAttackWithBulletsCanBeParsed
       resultStatus: 1
-      duration: 0.0015676
+      duration: 0.0010073
       messages: 
       output: 
       stacktrace: 
@@ -3158,7 +3158,7 @@ MonoBehaviour:
       name: CostReductionCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.CostReductionCanBeParsed
       resultStatus: 1
-      duration: 0.001646
+      duration: 0.0009035
       messages: 
       output: 
       stacktrace: 
@@ -3175,7 +3175,7 @@ MonoBehaviour:
       name: CounterattackAfterParryCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.CounterattackAfterParryCanBeParsed
       resultStatus: 1
-      duration: 0.0013085
+      duration: 0.0006789
       messages: 
       output: 
       stacktrace: 
@@ -3192,7 +3192,7 @@ MonoBehaviour:
       name: DegressiveRangeDamageCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.DegressiveRangeDamageCanBeParsed
       resultStatus: 1
-      duration: 0.0014487
+      duration: 0.0009493
       messages: 
       output: 
       stacktrace: 
@@ -3209,7 +3209,7 @@ MonoBehaviour:
       name: DispelCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.DispelCanBeParsed
       resultStatus: 1
-      duration: 0.0012024
+      duration: 0.0007937
       messages: 
       output: 
       stacktrace: 
@@ -3226,7 +3226,7 @@ MonoBehaviour:
       name: DrainFromDamageCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.DrainFromDamageCanBeParsed
       resultStatus: 1
-      duration: 0.0015191
+      duration: 0.0010379
       messages: 
       output: 
       stacktrace: 
@@ -3243,7 +3243,7 @@ MonoBehaviour:
       name: EffectsCanBeExtractedFromXmlNode
       fullName: Testing.Effects.EffectsParserTests.EffectsCanBeExtractedFromXmlNode
       resultStatus: 1
-      duration: 0.0053304
+      duration: 0.0010542
       messages: 
       output: 
       stacktrace: 
@@ -3260,7 +3260,7 @@ MonoBehaviour:
       name: ElementalAbilitiesCostReductionCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.ElementalAbilitiesCostReductionCanBeParsed
       resultStatus: 1
-      duration: 0.0012972
+      duration: 0.0009637
       messages: 
       output: 
       stacktrace: 
@@ -3277,7 +3277,7 @@ MonoBehaviour:
       name: ElementalAffinityExploitManaRefundCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.ElementalAffinityExploitManaRefundCanBeParsed
       resultStatus: 1
-      duration: 0.0012456
+      duration: 0.0009708
       messages: 
       output: 
       stacktrace: 
@@ -3294,7 +3294,7 @@ MonoBehaviour:
       name: ElementalAffinityExploitSelfStatusCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.ElementalAffinityExploitSelfStatusCanBeParsed
       resultStatus: 1
-      duration: 0.0012664
+      duration: 0.0008977
       messages: 
       output: 
       stacktrace: 
@@ -3311,7 +3311,7 @@ MonoBehaviour:
       name: ElementalAffinityModifierCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.ElementalAffinityModifierCanBeParsed
       resultStatus: 1
-      duration: 0.0016409
+      duration: 0.0009564
       messages: 
       output: 
       stacktrace: 
@@ -3328,7 +3328,7 @@ MonoBehaviour:
       name: HealingItemsEfficiencyCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.HealingItemsEfficiencyCanBeParsed
       resultStatus: 1
-      duration: 0.0016126
+      duration: 0.0010415
       messages: 
       output: 
       stacktrace: 
@@ -3345,7 +3345,7 @@ MonoBehaviour:
       name: HpThresholdBonusDamageCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.HpThresholdBonusDamageCanBeParsed
       resultStatus: 1
-      duration: 0.0013647
+      duration: 0.0008822
       messages: 
       output: 
       stacktrace: 
@@ -3362,7 +3362,7 @@ MonoBehaviour:
       name: InflictStatusCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.InflictStatusCanBeParsed
       resultStatus: 1
-      duration: 0.0012597
+      duration: 0.0007957
       messages: 
       output: 
       stacktrace: 
@@ -3379,7 +3379,7 @@ MonoBehaviour:
       name: MagicIgnoresDefenseStatCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.MagicIgnoresDefenseStatCanBeParsed
       resultStatus: 1
-      duration: 0.0015416
+      duration: 0.0009923
       messages: 
       output: 
       stacktrace: 
@@ -3396,7 +3396,7 @@ MonoBehaviour:
       name: MeleeDistanceScalingDamageCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.MeleeDistanceScalingDamageCanBeParsed
       resultStatus: 1
-      duration: 0.001575
+      duration: 0.000915
       messages: 
       output: 
       stacktrace: 
@@ -3413,7 +3413,7 @@ MonoBehaviour:
       name: NegativeStatusBonusDamageCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.NegativeStatusBonusDamageCanBeParsed
       resultStatus: 1
-      duration: 0.0015875
+      duration: 0.000808
       messages: 
       output: 
       stacktrace: 
@@ -3430,7 +3430,7 @@ MonoBehaviour:
       name: PiercingProjectileCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.PiercingProjectileCanBeParsed
       resultStatus: 1
-      duration: 0.001321
+      duration: 0.0008591
       messages: 
       output: 
       stacktrace: 
@@ -3447,7 +3447,7 @@ MonoBehaviour:
       name: RefillOnParryCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.RefillOnParryCanBeParsed
       resultStatus: 1
-      duration: 0.0012693
+      duration: 0.0009456
       messages: 
       output: 
       stacktrace: 
@@ -3464,7 +3464,7 @@ MonoBehaviour:
       name: RestoresResourceScalingCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.RestoresResourceScalingCanBeParsed
       resultStatus: 1
-      duration: 0.0013298
+      duration: 0.0010081
       messages: 
       output: 
       stacktrace: 
@@ -3481,7 +3481,7 @@ MonoBehaviour:
       name: RevivesCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.RevivesCanBeParsed
       resultStatus: 1
-      duration: 0.0008911
+      duration: 0.000764
       messages: 
       output: 
       stacktrace: 
@@ -3498,7 +3498,7 @@ MonoBehaviour:
       name: SelfStatusCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.SelfStatusCanBeParsed
       resultStatus: 1
-      duration: 0.0015064
+      duration: 0.0008446
       messages: 
       output: 
       stacktrace: 
@@ -3515,7 +3515,7 @@ MonoBehaviour:
       name: StatBoostCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.StatBoostCanBeParsed
       resultStatus: 1
-      duration: 0.0011823
+      duration: 0.0007323
       messages: 
       output: 
       stacktrace: 
@@ -3532,7 +3532,7 @@ MonoBehaviour:
       name: StatusImmunityCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.StatusImmunityCanBeParsed
       resultStatus: 1
-      duration: 0.0012363
+      duration: 0.0008036
       messages: 
       output: 
       stacktrace: 
@@ -3549,7 +3549,7 @@ MonoBehaviour:
       name: TargetEffectivenessCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.TargetEffectivenessCanBeParsed
       resultStatus: 1
-      duration: 0.0024762
+      duration: 0.0010149
       messages: 
       output: 
       stacktrace: 
@@ -3566,7 +3566,7 @@ MonoBehaviour:
       name: UndamagedTargetBonusDamageCanBeParsed
       fullName: Testing.Effects.EffectsParserTests.UndamagedTargetBonusDamageCanBeParsed
       resultStatus: 1
-      duration: 0.0013701
+      duration: 0.0007977
       messages: 
       output: 
       stacktrace: 
@@ -3583,7 +3583,7 @@ MonoBehaviour:
       name: Engine
       fullName: Testing.Engine
       resultStatus: 1
-      duration: 1.7824341
+      duration: 1.7813289
       messages: 
       output: 
       stacktrace: 
@@ -3599,7 +3599,7 @@ MonoBehaviour:
       name: Actor
       fullName: Testing.Engine.Actor
       resultStatus: 1
-      duration: 0.2072358
+      duration: 0.2063112
       messages: 
       output: 
       stacktrace: 
@@ -3615,7 +3615,7 @@ MonoBehaviour:
       name: ChangeEquipmentTests
       fullName: Testing.Engine.Actor.ChangeEquipmentTests
       resultStatus: 1
-      duration: 0.0345502
+      duration: 0.032867
       messages: 
       output: 
       stacktrace: 
@@ -3631,7 +3631,7 @@ MonoBehaviour:
       name: ItemWithGivenIdCanBeEquippedToCharacter
       fullName: Testing.Engine.Actor.ChangeEquipmentTests.ItemWithGivenIdCanBeEquippedToCharacter
       resultStatus: 1
-      duration: 0.0270151
+      duration: 0.0267626
       messages: 
       output: 
       stacktrace: 
@@ -3648,7 +3648,7 @@ MonoBehaviour:
       name: ChangeLevelTests
       fullName: Testing.Engine.Actor.ChangeLevelTests
       resultStatus: 1
-      duration: 0.0310457
+      duration: 0.0305587
       messages: 
       output: 
       stacktrace: 
@@ -3664,7 +3664,7 @@ MonoBehaviour:
       name: CharacterLevelCanBeChanged
       fullName: Testing.Engine.Actor.ChangeLevelTests.CharacterLevelCanBeChanged
       resultStatus: 1
-      duration: 0.0279539
+      duration: 0.0269617
       messages: 
       output: 
       stacktrace: 
@@ -3681,7 +3681,7 @@ MonoBehaviour:
       name: ChangeNameTests
       fullName: Testing.Engine.Actor.ChangeNameTests
       resultStatus: 1
-      duration: 0.0257146
+      duration: 0.0291219
       messages: 
       output: 
       stacktrace: 
@@ -3697,7 +3697,7 @@ MonoBehaviour:
       name: CharacterNameCanBeChanged
       fullName: Testing.Engine.Actor.ChangeNameTests.CharacterNameCanBeChanged
       resultStatus: 1
-      duration: 0.0228809
+      duration: 0.0251755
       messages: 
       output: 
       stacktrace: 
@@ -3714,7 +3714,7 @@ MonoBehaviour:
       name: ChangeSkillsTests
       fullName: Testing.Engine.Actor.ChangeSkillsTests
       resultStatus: 1
-      duration: 0.0496352
+      duration: 0.0524695
       messages: 
       output: 
       stacktrace: 
@@ -3730,7 +3730,7 @@ MonoBehaviour:
       name: ChangeSkillsCanLearnAbilityToCharacter
       fullName: Testing.Engine.Actor.ChangeSkillsTests.ChangeSkillsCanLearnAbilityToCharacter
       resultStatus: 1
-      duration: 0.0236597
+      duration: 0.0249411
       messages: 
       output: 
       stacktrace: 
@@ -3747,7 +3747,7 @@ MonoBehaviour:
       name: ChangeSkillsCanMakeCharacterForgetAbility
       fullName: Testing.Engine.Actor.ChangeSkillsTests.ChangeSkillsCanMakeCharacterForgetAbility
       resultStatus: 1
-      duration: 0.0221631
+      duration: 0.0233337
       messages: 
       output: 
       stacktrace: 
@@ -3764,7 +3764,7 @@ MonoBehaviour:
       name: RecoverAllTests
       fullName: Testing.Engine.Actor.RecoverAllTests
       resultStatus: 1
-      duration: 0.0430239
+      duration: 0.0425422
       messages: 
       output: 
       stacktrace: 
@@ -3780,7 +3780,7 @@ MonoBehaviour:
       name: RecoverAllHealsAllCharacters
       fullName: Testing.Engine.Actor.RecoverAllTests.RecoverAllHealsAllCharacters
       resultStatus: 1
-      duration: 0.0391899
+      duration: 0.0388856
       messages: 
       output: 
       stacktrace: 
@@ -3797,7 +3797,7 @@ MonoBehaviour:
       name: XmlActorParserTests
       fullName: Testing.Engine.Actor.XmlActorParserTests
       resultStatus: 1
-      duration: 0.0119715
+      duration: 0.0114689
       messages: 
       output: 
       stacktrace: 
@@ -3813,7 +3813,7 @@ MonoBehaviour:
       name: ParseChangeEquipmentTest
       fullName: Testing.Engine.Actor.XmlActorParserTests.ParseChangeEquipmentTest
       resultStatus: 1
-      duration: 0.0022259
+      duration: 0.0017629
       messages: 
       output: 
       stacktrace: 
@@ -3830,7 +3830,7 @@ MonoBehaviour:
       name: ParseChangeExpTest
       fullName: Testing.Engine.Actor.XmlActorParserTests.ParseChangeExpTest
       resultStatus: 1
-      duration: 0.0005999
+      duration: 0.000629
       messages: 
       output: 
       stacktrace: 
@@ -3847,7 +3847,7 @@ MonoBehaviour:
       name: ParseChangeLevelTest
       fullName: Testing.Engine.Actor.XmlActorParserTests.ParseChangeLevelTest
       resultStatus: 1
-      duration: 0.0003566
+      duration: 0.0005059
       messages: 
       output: 
       stacktrace: 
@@ -3864,7 +3864,7 @@ MonoBehaviour:
       name: ParseChangeNameTest
       fullName: Testing.Engine.Actor.XmlActorParserTests.ParseChangeNameTest
       resultStatus: 1
-      duration: 0.00035
+      duration: 0.0003688
       messages: 
       output: 
       stacktrace: 
@@ -3881,7 +3881,7 @@ MonoBehaviour:
       name: ParseChangeSkillsTest
       fullName: Testing.Engine.Actor.XmlActorParserTests.ParseChangeSkillsTest
       resultStatus: 1
-      duration: 0.0004198
+      duration: 0.0004462
       messages: 
       output: 
       stacktrace: 
@@ -3898,7 +3898,7 @@ MonoBehaviour:
       name: ParseRecoverAllTest
       fullName: Testing.Engine.Actor.XmlActorParserTests.ParseRecoverAllTest
       resultStatus: 1
-      duration: 0.0002946
+      duration: 0.0003022
       messages: 
       output: 
       stacktrace: 
@@ -3915,7 +3915,7 @@ MonoBehaviour:
       name: Character
       fullName: Testing.Engine.Character
       resultStatus: 1
-      duration: 0.0502978
+      duration: 0.0561703
       messages: 
       output: 
       stacktrace: 
@@ -3931,7 +3931,7 @@ MonoBehaviour:
       name: EnableDisableAgentTests
       fullName: Testing.Engine.Character.EnableDisableAgentTests
       resultStatus: 1
-      duration: 0.0353537
+      duration: 0.041963
       messages: 
       output: 
       stacktrace: 
@@ -3947,7 +3947,7 @@ MonoBehaviour:
       name: DisableAgentTest
       fullName: Testing.Engine.Character.EnableDisableAgentTests.DisableAgentTest
       resultStatus: 1
-      duration: 0.0185763
+      duration: 0.0186175
       messages: 
       output: 'Animator is not playing an AnimatorController
 
@@ -3977,7 +3977,7 @@ MonoBehaviour:
       name: EnableAgentTest
       fullName: Testing.Engine.Character.EnableDisableAgentTests.EnableAgentTest
       resultStatus: 1
-      duration: 0.0133786
+      duration: 0.018541
       messages: 
       output: 'Animator is not playing an AnimatorController
 
@@ -4007,7 +4007,7 @@ MonoBehaviour:
       name: XmlCharacterParserTests
       fullName: Testing.Engine.Character.XmlCharacterParserTests
       resultStatus: 1
-      duration: 0.0090135
+      duration: 0.0087639
       messages: 
       output: 
       stacktrace: 
@@ -4023,7 +4023,7 @@ MonoBehaviour:
       name: ParseDisableAgentTest
       fullName: Testing.Engine.Character.XmlCharacterParserTests.ParseDisableAgentTest
       resultStatus: 1
-      duration: 0.0026766
+      duration: 0.0010134
       messages: 
       output: 
       stacktrace: 
@@ -4040,7 +4040,7 @@ MonoBehaviour:
       name: ParseEnableAgentTest
       fullName: Testing.Engine.Character.XmlCharacterParserTests.ParseEnableAgentTest
       resultStatus: 1
-      duration: 0.0003783
+      duration: 0.0008009
       messages: 
       output: 
       stacktrace: 
@@ -4057,7 +4057,7 @@ MonoBehaviour:
       name: ParseShowAgentAnimationTest
       fullName: Testing.Engine.Character.XmlCharacterParserTests.ParseShowAgentAnimationTest
       resultStatus: 1
-      duration: 0.0005784
+      duration: 0.0006459
       messages: 
       output: 
       stacktrace: 
@@ -4074,7 +4074,7 @@ MonoBehaviour:
       name: ParseShowAnimationTest
       fullName: Testing.Engine.Character.XmlCharacterParserTests.ParseShowAnimationTest
       resultStatus: 1
-      duration: 0.0005955
+      duration: 0.0006094
       messages: 
       output: 
       stacktrace: 
@@ -4091,7 +4091,7 @@ MonoBehaviour:
       name: ShowBalloonIconTest
       fullName: Testing.Engine.Character.XmlCharacterParserTests.ShowBalloonIconTest
       resultStatus: 1
-      duration: 0.0006147
+      duration: 0.0006649
       messages: 
       output: 
       stacktrace: 
@@ -4108,7 +4108,7 @@ MonoBehaviour:
       name: Events
       fullName: Testing.Engine.Events
       resultStatus: 1
-      duration: 1.0547721
+      duration: 1.0482072
       messages: 
       output: 
       stacktrace: 
@@ -4124,7 +4124,7 @@ MonoBehaviour:
       name: EventsRunnerTests
       fullName: Testing.Engine.Events.EventsRunnerTests
       resultStatus: 1
-      duration: 1.024226
+      duration: 1.0217997
       messages: 
       output: 
       stacktrace: 
@@ -4140,7 +4140,7 @@ MonoBehaviour:
       name: RunBasicSequenceWithControlVariableAndWaitTest
       fullName: Testing.Engine.Events.EventsRunnerTests.RunBasicSequenceWithControlVariableAndWaitTest
       resultStatus: 1
-      duration: 1.0206813
+      duration: 1.0186148
       messages: 
       output: 
       stacktrace: 
@@ -4157,7 +4157,7 @@ MonoBehaviour:
       name: EventsSequenceParserTests
       fullName: Testing.Engine.Events.EventsSequenceParserTests
       resultStatus: 1
-      duration: 0.0213714
+      duration: 0.0171991
       messages: 
       output: 
       stacktrace: 
@@ -4173,7 +4173,7 @@ MonoBehaviour:
       name: ParseEventsSequenceTest
       fullName: Testing.Engine.Events.EventsSequenceParserTests.ParseEventsSequenceTest
       resultStatus: 1
-      duration: 0.0173294
+      duration: 0.0137437
       messages: 
       output: 
       stacktrace: 
@@ -4190,7 +4190,7 @@ MonoBehaviour:
       name: EventsSequenceTests
       fullName: Testing.Engine.Events.EventsSequenceTests
       resultStatus: 1
-      duration: 0.0057334
+      duration: 0.0049355
       messages: 
       output: 
       stacktrace: 
@@ -4206,7 +4206,7 @@ MonoBehaviour:
       name: AddEventToSequenceTest
       fullName: Testing.Engine.Events.EventsSequenceTests.AddEventToSequenceTest
       resultStatus: 1
-      duration: 0.0005866
+      duration: 0.0005404
       messages: 
       output: 
       stacktrace: 
@@ -4223,7 +4223,7 @@ MonoBehaviour:
       name: CreateEventsSequenceTest
       fullName: Testing.Engine.Events.EventsSequenceTests.CreateEventsSequenceTest
       resultStatus: 1
-      duration: 0.0006291
+      duration: 0.0009004
       messages: 
       output: 
       stacktrace: 
@@ -4240,7 +4240,7 @@ MonoBehaviour:
       name: FlowControl
       fullName: Testing.Engine.FlowControl
       resultStatus: 1
-      duration: 0.0887394
+      duration: 0.0883896
       messages: 
       output: 
       stacktrace: 
@@ -4256,7 +4256,7 @@ MonoBehaviour:
       name: QuestConditionTests
       fullName: Testing.Engine.FlowControl.QuestConditionTests
       resultStatus: 1
-      duration: 0.0750218
+      duration: 0.0736025
       messages: 
       output: 
       stacktrace: 
@@ -4272,7 +4272,7 @@ MonoBehaviour:
       name: QuestCompletedConditionCanBeExecuted
       fullName: Testing.Engine.FlowControl.QuestConditionTests.QuestCompletedConditionCanBeExecuted
       resultStatus: 1
-      duration: 0.01992
+      duration: 0.0211458
       messages: 
       output: 
       stacktrace: 
@@ -4289,7 +4289,7 @@ MonoBehaviour:
       name: QuestFailedConditionCanBeExecuted
       fullName: Testing.Engine.FlowControl.QuestConditionTests.QuestFailedConditionCanBeExecuted
       resultStatus: 1
-      duration: 0.0136242
+      duration: 0.0142338
       messages: 
       output: 
       stacktrace: 
@@ -4306,7 +4306,7 @@ MonoBehaviour:
       name: QuestStartedConditionCanBeExecuted
       fullName: Testing.Engine.FlowControl.QuestConditionTests.QuestStartedConditionCanBeExecuted
       resultStatus: 1
-      duration: 0.0178441
+      duration: 0.0132514
       messages: 
       output: 
       stacktrace: 
@@ -4323,7 +4323,7 @@ MonoBehaviour:
       name: QuestStepCompletedConditionCanBeExecuted
       fullName: Testing.Engine.FlowControl.QuestConditionTests.QuestStepCompletedConditionCanBeExecuted
       resultStatus: 1
-      duration: 0.0177798
+      duration: 0.0194862
       messages: 
       output: 
       stacktrace: 
@@ -4340,7 +4340,7 @@ MonoBehaviour:
       name: XmlFlowControlParserTests
       fullName: Testing.Engine.FlowControl.XmlFlowControlParserTests
       resultStatus: 1
-      duration: 0.0107234
+      duration: 0.0110616
       messages: 
       output: 
       stacktrace: 
@@ -4356,7 +4356,7 @@ MonoBehaviour:
       name: ParseItemEquippedConditionTest
       fullName: Testing.Engine.FlowControl.XmlFlowControlParserTests.ParseItemEquippedConditionTest
       resultStatus: 1
-      duration: 0.0019769
+      duration: 0.0016077
       messages: 
       output: 
       stacktrace: 
@@ -4373,7 +4373,7 @@ MonoBehaviour:
       name: ParseItemPossessedConditionTest
       fullName: Testing.Engine.FlowControl.XmlFlowControlParserTests.ParseItemPossessedConditionTest
       resultStatus: 1
-      duration: 0.0004847
+      duration: 0.0004705
       messages: 
       output: 
       stacktrace: 
@@ -4390,7 +4390,7 @@ MonoBehaviour:
       name: ParseSwitchConditionTest
       fullName: Testing.Engine.FlowControl.XmlFlowControlParserTests.ParseSwitchConditionTest
       resultStatus: 1
-      duration: 0.000461
+      duration: 0.0004688
       messages: 
       output: 
       stacktrace: 
@@ -4407,7 +4407,7 @@ MonoBehaviour:
       name: ParseTimerConditionTest
       fullName: Testing.Engine.FlowControl.XmlFlowControlParserTests.ParseTimerConditionTest
       resultStatus: 1
-      duration: 0.0003834
+      duration: 0.0004975
       messages: 
       output: 
       stacktrace: 
@@ -4424,7 +4424,7 @@ MonoBehaviour:
       name: ParseVariableConditionTest
       fullName: Testing.Engine.FlowControl.XmlFlowControlParserTests.ParseVariableConditionTest
       resultStatus: 1
-      duration: 0.0003888
+      duration: 0.0008831
       messages: 
       output: 
       stacktrace: 
@@ -4441,7 +4441,7 @@ MonoBehaviour:
       name: QuestCompletedConditionCanBeParsed
       fullName: Testing.Engine.FlowControl.XmlFlowControlParserTests.QuestCompletedConditionCanBeParsed
       resultStatus: 1
-      duration: 0.0005686
+      duration: 0.0006236
       messages: 
       output: 
       stacktrace: 
@@ -4458,7 +4458,7 @@ MonoBehaviour:
       name: QuestFailedConditionCanBeParsed
       fullName: Testing.Engine.FlowControl.XmlFlowControlParserTests.QuestFailedConditionCanBeParsed
       resultStatus: 1
-      duration: 0.0003209
+      duration: 0.0003477
       messages: 
       output: 
       stacktrace: 
@@ -4475,7 +4475,7 @@ MonoBehaviour:
       name: QuestStartedConditionCanBeParsed
       fullName: Testing.Engine.FlowControl.XmlFlowControlParserTests.QuestStartedConditionCanBeParsed
       resultStatus: 1
-      duration: 0.0003236
+      duration: 0.0003406
       messages: 
       output: 
       stacktrace: 
@@ -4492,7 +4492,7 @@ MonoBehaviour:
       name: QuestStepCompletedConditionCanBeParsed
       fullName: Testing.Engine.FlowControl.XmlFlowControlParserTests.QuestStepCompletedConditionCanBeParsed
       resultStatus: 1
-      duration: 0.0003495
+      duration: 0.0003499
       messages: 
       output: 
       stacktrace: 
@@ -4509,7 +4509,7 @@ MonoBehaviour:
       name: GameProgession
       fullName: Testing.Engine.GameProgession
       resultStatus: 1
-      duration: 0.0096559
+      duration: 0.0100587
       messages: 
       output: 
       stacktrace: 
@@ -4525,7 +4525,7 @@ MonoBehaviour:
       name: XmlGameProgressionParserTests
       fullName: Testing.Engine.GameProgession.XmlGameProgressionParserTests
       resultStatus: 1
-      duration: 0.0072334
+      duration: 0.0074999
       messages: 
       output: 
       stacktrace: 
@@ -4541,7 +4541,7 @@ MonoBehaviour:
       name: ParseControlSwitchTest
       fullName: Testing.Engine.GameProgession.XmlGameProgressionParserTests.ParseControlSwitchTest
       resultStatus: 1
-      duration: 0.0019005
+      duration: 0.001822
       messages: 
       output: 
       stacktrace: 
@@ -4558,7 +4558,7 @@ MonoBehaviour:
       name: ParseControlTimerTest
       fullName: Testing.Engine.GameProgession.XmlGameProgressionParserTests.ParseControlTimerTest
       resultStatus: 1
-      duration: 0.0007807
+      duration: 0.0008585
       messages: 
       output: 
       stacktrace: 
@@ -4575,7 +4575,7 @@ MonoBehaviour:
       name: ParseControlVariableTest
       fullName: Testing.Engine.GameProgession.XmlGameProgressionParserTests.ParseControlVariableTest
       resultStatus: 1
-      duration: 0.0007493
+      duration: 0.0007697
       messages: 
       output: 
       stacktrace: 
@@ -4592,7 +4592,7 @@ MonoBehaviour:
       name: Map
       fullName: Testing.Engine.Map
       resultStatus: 1
-      duration: 0.0159517
+      duration: 0.0157972
       messages: 
       output: 
       stacktrace: 
@@ -4608,7 +4608,7 @@ MonoBehaviour:
       name: ChangeMapNameDisplayTests
       fullName: Testing.Engine.Map.ChangeMapNameDisplayTests
       resultStatus: 1
-      duration: 0.0085395
+      duration: 0.0081342
       messages: 
       output: 
       stacktrace: 
@@ -4624,7 +4624,7 @@ MonoBehaviour:
       name: ChangeStatusOfMapNameDisplayTest
       fullName: Testing.Engine.Map.ChangeMapNameDisplayTests.ChangeStatusOfMapNameDisplayTest
       resultStatus: 1
-      duration: 0.002806
+      duration: 0.0021676
       messages: 
       output: 
       stacktrace: 
@@ -4641,7 +4641,7 @@ MonoBehaviour:
       name: ShowNameTest
       fullName: Testing.Engine.Map.ChangeMapNameDisplayTests.ShowNameTest
       resultStatus: 1
-      duration: 0.0021952
+      duration: 0.0021815
       messages: 
       output: 
       stacktrace: 
@@ -4658,7 +4658,7 @@ MonoBehaviour:
       name: XmlMapParserTests
       fullName: Testing.Engine.Map.XmlMapParserTests
       resultStatus: 1
-      duration: 0.0047295
+      duration: 0.0042936
       messages: 
       output: 
       stacktrace: 
@@ -4674,7 +4674,7 @@ MonoBehaviour:
       name: ParseChangeMapNameDisplayTest
       fullName: Testing.Engine.Map.XmlMapParserTests.ParseChangeMapNameDisplayTest
       resultStatus: 1
-      duration: 0.0017952
+      duration: 0.0015145
       messages: 
       output: 
       stacktrace: 
@@ -4691,7 +4691,7 @@ MonoBehaviour:
       name: Message
       fullName: Testing.Engine.Message
       resultStatus: 1
-      duration: 0.0096376
+      duration: 0.0111399
       messages: 
       output: 
       stacktrace: 
@@ -4707,7 +4707,7 @@ MonoBehaviour:
       name: XmlMessageParserTests
       fullName: Testing.Engine.Message.XmlMessageParserTests
       resultStatus: 1
-      duration: 0.0073077
+      duration: 0.0087442
       messages: 
       output: 
       stacktrace: 
@@ -4723,7 +4723,7 @@ MonoBehaviour:
       name: ParseDisplayChoiceListTest
       fullName: Testing.Engine.Message.XmlMessageParserTests.ParseDisplayChoiceListTest
       resultStatus: 1
-      duration: 0.0025047
+      duration: 0.0024728
       messages: 
       output: 
       stacktrace: 
@@ -4740,7 +4740,7 @@ MonoBehaviour:
       name: ParseDisplayDialogTests
       fullName: Testing.Engine.Message.XmlMessageParserTests.ParseDisplayDialogTests
       resultStatus: 1
-      duration: 0.0005853
+      duration: 0.0007479
       messages: 
       output: 
       stacktrace: 
@@ -4757,7 +4757,7 @@ MonoBehaviour:
       name: ParseDisplayInputNumberTest
       fullName: Testing.Engine.Message.XmlMessageParserTests.ParseDisplayInputNumberTest
       resultStatus: 1
-      duration: 0.000323
+      duration: 0.0003836
       messages: 
       output: 
       stacktrace: 
@@ -4774,7 +4774,7 @@ MonoBehaviour:
       name: Movement
       fullName: Testing.Engine.Movement
       resultStatus: 1
-      duration: 0.1323458
+      duration: 0.1307409
       messages: 
       output: 
       stacktrace: 
@@ -4790,7 +4790,7 @@ MonoBehaviour:
       name: Moves
       fullName: Testing.Engine.Movement.Moves
       resultStatus: 1
-      duration: 0.1179797
+      duration: 0.1152523
       messages: 
       output: 
       stacktrace: 
@@ -4806,7 +4806,7 @@ MonoBehaviour:
       name: TransparentTests
       fullName: Testing.Engine.Movement.Moves.TransparentTests
       resultStatus: 1
-      duration: 0.1148067
+      duration: 0.1124335
       messages: 
       output: 
       stacktrace: 
@@ -4822,7 +4822,7 @@ MonoBehaviour:
       name: TransparentAppliesTransparencyToSpriteRenderer
       fullName: Testing.Engine.Movement.Moves.TransparentTests.TransparentAppliesTransparencyToSpriteRenderer
       resultStatus: 1
-      duration: 0.1111519
+      duration: 0.1085119
       messages: 
       output: 
       stacktrace: 
@@ -4839,7 +4839,7 @@ MonoBehaviour:
       name: XmlMovementParserTests
       fullName: Testing.Engine.Movement.XmlMovementParserTests
       resultStatus: 1
-      duration: 0.0117286
+      duration: 0.0122749
       messages: 
       output: 
       stacktrace: 
@@ -4855,7 +4855,7 @@ MonoBehaviour:
       name: ParseCameraFollowPlayerTest
       fullName: Testing.Engine.Movement.XmlMovementParserTests.ParseCameraFollowPlayerTest
       resultStatus: 1
-      duration: 0.0020008
+      duration: 0.0028386
       messages: 
       output: 
       stacktrace: 
@@ -4872,7 +4872,7 @@ MonoBehaviour:
       name: ParseGetOnOffVehicleTest
       fullName: Testing.Engine.Movement.XmlMovementParserTests.ParseGetOnOffVehicleTest
       resultStatus: 1
-      duration: 0.0003751
+      duration: 0.0004243
       messages: 
       output: 
       stacktrace: 
@@ -4889,7 +4889,7 @@ MonoBehaviour:
       name: ParseScrollMapTest
       fullName: Testing.Engine.Movement.XmlMovementParserTests.ParseScrollMapTest
       resultStatus: 1
-      duration: 0.001023
+      duration: 0.0010068
       messages: 
       output: 
       stacktrace: 
@@ -4906,7 +4906,7 @@ MonoBehaviour:
       name: ParseSetMoveRouteTest
       fullName: Testing.Engine.Movement.XmlMovementParserTests.ParseSetMoveRouteTest
       resultStatus: 1
-      duration: 0.0029128
+      duration: 0.0023745
       messages: 
       output: 
       stacktrace: 
@@ -4923,7 +4923,7 @@ MonoBehaviour:
       name: ParseTransferObjectTest
       fullName: Testing.Engine.Movement.XmlMovementParserTests.ParseTransferObjectTest
       resultStatus: 1
-      duration: 0.0006566
+      duration: 0.0005677
       messages: 
       output: 
       stacktrace: 
@@ -4940,7 +4940,7 @@ MonoBehaviour:
       name: MusicAndSounds
       fullName: Testing.Engine.MusicAndSounds
       resultStatus: 1
-      duration: 0.0112552
+      duration: 0.0124779
       messages: 
       output: 
       stacktrace: 
@@ -4956,7 +4956,7 @@ MonoBehaviour:
       name: XmlMusicAndSoundsParserTests
       fullName: Testing.Engine.MusicAndSounds.XmlMusicAndSoundsParserTests
       resultStatus: 1
-      duration: 0.0087604
+      duration: 0.009816
       messages: 
       output: 
       stacktrace: 
@@ -4972,7 +4972,7 @@ MonoBehaviour:
       name: ParseFadeOutBgmTest
       fullName: Testing.Engine.MusicAndSounds.XmlMusicAndSoundsParserTests.ParseFadeOutBgmTest
       resultStatus: 1
-      duration: 0.0019021
+      duration: 0.0016744
       messages: 
       output: 
       stacktrace: 
@@ -4989,7 +4989,7 @@ MonoBehaviour:
       name: ParseFadeOutBgsTest
       fullName: Testing.Engine.MusicAndSounds.XmlMusicAndSoundsParserTests.ParseFadeOutBgsTest
       resultStatus: 1
-      duration: 0.000353
+      duration: 0.0003557
       messages: 
       output: 
       stacktrace: 
@@ -5006,7 +5006,7 @@ MonoBehaviour:
       name: ParsePlayBgmTest
       fullName: Testing.Engine.MusicAndSounds.XmlMusicAndSoundsParserTests.ParsePlayBgmTest
       resultStatus: 1
-      duration: 0.0003926
+      duration: 0.0004056
       messages: 
       output: 
       stacktrace: 
@@ -5023,7 +5023,7 @@ MonoBehaviour:
       name: ParsePlayBgsTest
       fullName: Testing.Engine.MusicAndSounds.XmlMusicAndSoundsParserTests.ParsePlayBgsTest
       resultStatus: 1
-      duration: 0.000286
+      duration: 0.0003228
       messages: 
       output: 
       stacktrace: 
@@ -5040,7 +5040,7 @@ MonoBehaviour:
       name: ParsePlayMusicalEffectTest
       fullName: Testing.Engine.MusicAndSounds.XmlMusicAndSoundsParserTests.ParsePlayMusicalEffectTest
       resultStatus: 1
-      duration: 0.0002909
+      duration: 0.0007813
       messages: 
       output: 
       stacktrace: 
@@ -5057,7 +5057,7 @@ MonoBehaviour:
       name: ParsePlaySoundEffectTest
       fullName: Testing.Engine.MusicAndSounds.XmlMusicAndSoundsParserTests.ParsePlaySoundEffectTest
       resultStatus: 1
-      duration: 0.0002878
+      duration: 0.0003668
       messages: 
       output: 
       stacktrace: 
@@ -5074,7 +5074,7 @@ MonoBehaviour:
       name: ParseStopAllAudioTest
       fullName: Testing.Engine.MusicAndSounds.XmlMusicAndSoundsParserTests.ParseStopAllAudioTest
       resultStatus: 1
-      duration: 0.0004134
+      duration: 0.0003906
       messages: 
       output: 
       stacktrace: 
@@ -5091,7 +5091,7 @@ MonoBehaviour:
       name: Party
       fullName: Testing.Engine.Party
       resultStatus: 1
-      duration: 0.0102519
+      duration: 0.0087307
       messages: 
       output: 
       stacktrace: 
@@ -5107,7 +5107,7 @@ MonoBehaviour:
       name: XmlPartyParserTests
       fullName: Testing.Engine.Party.XmlPartyParserTests
       resultStatus: 1
-      duration: 0.0077081
+      duration: 0.0063768
       messages: 
       output: 
       stacktrace: 
@@ -5123,7 +5123,7 @@ MonoBehaviour:
       name: ParseChangeGoldTest
       fullName: Testing.Engine.Party.XmlPartyParserTests.ParseChangeGoldTest
       resultStatus: 1
-      duration: 0.0016944
+      duration: 0.0016542
       messages: 
       output: 
       stacktrace: 
@@ -5140,7 +5140,7 @@ MonoBehaviour:
       name: ParseChangeItemsTest
       fullName: Testing.Engine.Party.XmlPartyParserTests.ParseChangeItemsTest
       resultStatus: 1
-      duration: 0.0003794
+      duration: 0.000405
       messages: 
       output: 
       stacktrace: 
@@ -5157,7 +5157,7 @@ MonoBehaviour:
       name: ParseChangePartyMemberTest
       fullName: Testing.Engine.Party.XmlPartyParserTests.ParseChangePartyMemberTest
       resultStatus: 1
-      duration: 0.0006343
+      duration: 0.0005568
       messages: 
       output: 
       stacktrace: 
@@ -5174,7 +5174,7 @@ MonoBehaviour:
       name: PictureAndWeather
       fullName: Testing.Engine.PictureAndWeather
       resultStatus: 1
-      duration: 0.022072
+      duration: 0.0115877
       messages: 
       output: 
       stacktrace: 
@@ -5190,7 +5190,7 @@ MonoBehaviour:
       name: XmlPictureAndWeatherParserTests
       fullName: Testing.Engine.PictureAndWeather.XmlPictureAndWeatherParserTests
       resultStatus: 1
-      duration: 0.0197008
+      duration: 0.0092413
       messages: 
       output: 
       stacktrace: 
@@ -5206,7 +5206,7 @@ MonoBehaviour:
       name: ParseMovePictureTest
       fullName: Testing.Engine.PictureAndWeather.XmlPictureAndWeatherParserTests.ParseMovePictureTest
       resultStatus: 1
-      duration: 0.0020896
+      duration: 0.0018422
       messages: 
       output: 
       stacktrace: 
@@ -5223,7 +5223,7 @@ MonoBehaviour:
       name: ParseRotatePictureTest
       fullName: Testing.Engine.PictureAndWeather.XmlPictureAndWeatherParserTests.ParseRotatePictureTest
       resultStatus: 1
-      duration: 0.0006016
+      duration: 0.0004544
       messages: 
       output: 
       stacktrace: 
@@ -5240,7 +5240,7 @@ MonoBehaviour:
       name: ParseSetWeatherEffectsTest
       fullName: Testing.Engine.PictureAndWeather.XmlPictureAndWeatherParserTests.ParseSetWeatherEffectsTest
       resultStatus: 1
-      duration: 0.0004928
+      duration: 0.0005783
       messages: 
       output: 
       stacktrace: 
@@ -5257,7 +5257,7 @@ MonoBehaviour:
       name: ParseShowPictureTest
       fullName: Testing.Engine.PictureAndWeather.XmlPictureAndWeatherParserTests.ParseShowPictureTest
       resultStatus: 1
-      duration: 0.0007438
+      duration: 0.0007411
       messages: 
       output: 
       stacktrace: 
@@ -5274,7 +5274,7 @@ MonoBehaviour:
       name: ParseTintPictureTest
       fullName: Testing.Engine.PictureAndWeather.XmlPictureAndWeatherParserTests.ParseTintPictureTest
       resultStatus: 1
-      duration: 0.0005096
+      duration: 0.0005117
       messages: 
       output: 
       stacktrace: 
@@ -5291,7 +5291,7 @@ MonoBehaviour:
       name: Questing
       fullName: Testing.Engine.Questing
       resultStatus: 1
-      duration: 0.1153509
+      duration: 0.1313442
       messages: 
       output: 
       stacktrace: 
@@ -5307,7 +5307,7 @@ MonoBehaviour:
       name: CompleteQuestTests
       fullName: Testing.Engine.Questing.CompleteQuestTests
       resultStatus: 1
-      duration: 0.0092501
+      duration: 0.0085419
       messages: 
       output: 
       stacktrace: 
@@ -5323,7 +5323,7 @@ MonoBehaviour:
       name: CompleteQuestCanRun
       fullName: Testing.Engine.Questing.CompleteQuestTests.CompleteQuestCanRun
       resultStatus: 1
-      duration: 0.0048604
+      duration: 0.0050498
       messages: 
       output: 
       stacktrace: 
@@ -5340,7 +5340,7 @@ MonoBehaviour:
       name: FailQuestTests
       fullName: Testing.Engine.Questing.FailQuestTests
       resultStatus: 1
-      duration: 0.007012
+      duration: 0.0069157
       messages: 
       output: 
       stacktrace: 
@@ -5356,7 +5356,7 @@ MonoBehaviour:
       name: FailQuestCanRun
       fullName: Testing.Engine.Questing.FailQuestTests.FailQuestCanRun
       resultStatus: 1
-      duration: 0.0042699
+      duration: 0.0042204
       messages: 
       output: 
       stacktrace: 
@@ -5373,7 +5373,7 @@ MonoBehaviour:
       name: ProgressQuestTests
       fullName: Testing.Engine.Questing.ProgressQuestTests
       resultStatus: 1
-      duration: 0.0070666
+      duration: 0.0155977
       messages: 
       output: 
       stacktrace: 
@@ -5389,7 +5389,7 @@ MonoBehaviour:
       name: ProgressQuestCanRun
       fullName: Testing.Engine.Questing.ProgressQuestTests.ProgressQuestCanRun
       resultStatus: 1
-      duration: 0.0037472
+      duration: 0.0127762
       messages: 
       output: 
       stacktrace: 
@@ -5406,7 +5406,7 @@ MonoBehaviour:
       name: QuestRunTests
       fullName: Testing.Engine.Questing.QuestRunTests
       resultStatus: 1
-      duration: 0.074275
+      duration: 0.0818327
       messages: 
       output: 
       stacktrace: 
@@ -5422,7 +5422,7 @@ MonoBehaviour:
       name: AQuestCanBeStartedAndCompleted
       fullName: Testing.Engine.Questing.QuestRunTests.AQuestCanBeStartedAndCompleted
       resultStatus: 1
-      duration: 0.0238954
+      duration: 0.0282277
       messages: 
       output: 'You are trying to start quest with ID 2 but the quest is already running,
         has already been completed or failed.
@@ -5442,7 +5442,7 @@ MonoBehaviour:
       name: AQuestCanBeStartedAndFailed
       fullName: Testing.Engine.Questing.QuestRunTests.AQuestCanBeStartedAndFailed
       resultStatus: 1
-      duration: 0.0270274
+      duration: 0.032286
       messages: 
       output: 
       stacktrace: 
@@ -5459,7 +5459,7 @@ MonoBehaviour:
       name: AQuestCanBeStartedAndProgressed
       fullName: Testing.Engine.Questing.QuestRunTests.AQuestCanBeStartedAndProgressed
       resultStatus: 1
-      duration: 0.0185725
+      duration: 0.017508
       messages: 
       output: 
       stacktrace: 
@@ -5476,7 +5476,7 @@ MonoBehaviour:
       name: StartQuestTests
       fullName: Testing.Engine.Questing.StartQuestTests
       resultStatus: 1
-      duration: 0.0081389
+      duration: 0.0074166
       messages: 
       output: 
       stacktrace: 
@@ -5492,7 +5492,7 @@ MonoBehaviour:
       name: StartQuestCanRun
       fullName: Testing.Engine.Questing.StartQuestTests.StartQuestCanRun
       resultStatus: 1
-      duration: 0.0038065
+      duration: 0.003735
       messages: 
       output: 
       stacktrace: 
@@ -5509,7 +5509,7 @@ MonoBehaviour:
       name: XmlQuestingParserTests
       fullName: Testing.Engine.Questing.XmlQuestingParserTests
       resultStatus: 1
-      duration: 0.0058822
+      duration: 0.007114
       messages: 
       output: 
       stacktrace: 
@@ -5525,7 +5525,7 @@ MonoBehaviour:
       name: CompleteQuestCanBeParsed
       fullName: Testing.Engine.Questing.XmlQuestingParserTests.CompleteQuestCanBeParsed
       resultStatus: 1
-      duration: 0.0010128
+      duration: 0.001667
       messages: 
       output: 
       stacktrace: 
@@ -5542,7 +5542,7 @@ MonoBehaviour:
       name: FailQuestCanBeParsed
       fullName: Testing.Engine.Questing.XmlQuestingParserTests.FailQuestCanBeParsed
       resultStatus: 1
-      duration: 0.000311
+      duration: 0.0003372
       messages: 
       output: 
       stacktrace: 
@@ -5559,7 +5559,7 @@ MonoBehaviour:
       name: ProgressQuestCanBeParsed
       fullName: Testing.Engine.Questing.XmlQuestingParserTests.ProgressQuestCanBeParsed
       resultStatus: 1
-      duration: 0.0006738
+      duration: 0.0002989
       messages: 
       output: 
       stacktrace: 
@@ -5576,7 +5576,7 @@ MonoBehaviour:
       name: StartQuestCanBeParsed
       fullName: Testing.Engine.Questing.XmlQuestingParserTests.StartQuestCanBeParsed
       resultStatus: 1
-      duration: 0.0002876
+      duration: 0.0002467
       messages: 
       output: 
       stacktrace: 
@@ -5593,7 +5593,7 @@ MonoBehaviour:
       name: SceneControl
       fullName: Testing.Engine.SceneControl
       resultStatus: 1
-      duration: 0.0116839
+      duration: 0.0111011
       messages: 
       output: 
       stacktrace: 
@@ -5609,7 +5609,7 @@ MonoBehaviour:
       name: XmlSceneControlParserTests
       fullName: Testing.Engine.SceneControl.XmlSceneControlParserTests
       resultStatus: 1
-      duration: 0.0091808
+      duration: 0.008572
       messages: 
       output: 
       stacktrace: 
@@ -5625,7 +5625,7 @@ MonoBehaviour:
       name: ParseBattleProcessingTest
       fullName: Testing.Engine.SceneControl.XmlSceneControlParserTests.ParseBattleProcessingTest
       resultStatus: 1
-      duration: 0.0015104
+      duration: 0.001824
       messages: 
       output: 
       stacktrace: 
@@ -5642,7 +5642,7 @@ MonoBehaviour:
       name: ParseGameOverTest
       fullName: Testing.Engine.SceneControl.XmlSceneControlParserTests.ParseGameOverTest
       resultStatus: 1
-      duration: 0.0003494
+      duration: 0.0003209
       messages: 
       output: 
       stacktrace: 
@@ -5659,7 +5659,7 @@ MonoBehaviour:
       name: ParseNameInputProcessingTest
       fullName: Testing.Engine.SceneControl.XmlSceneControlParserTests.ParseNameInputProcessingTest
       resultStatus: 1
-      duration: 0.0003695
+      duration: 0.0003563
       messages: 
       output: 
       stacktrace: 
@@ -5676,7 +5676,7 @@ MonoBehaviour:
       name: ParseOpenMenuTest
       fullName: Testing.Engine.SceneControl.XmlSceneControlParserTests.ParseOpenMenuTest
       resultStatus: 1
-      duration: 0.000263
+      duration: 0.0002496
       messages: 
       output: 
       stacktrace: 
@@ -5693,7 +5693,7 @@ MonoBehaviour:
       name: ParseOpenSaveTest
       fullName: Testing.Engine.SceneControl.XmlSceneControlParserTests.ParseOpenSaveTest
       resultStatus: 1
-      duration: 0.0002486
+      duration: 0.0002479
       messages: 
       output: 
       stacktrace: 
@@ -5710,7 +5710,7 @@ MonoBehaviour:
       name: ParseReturnToTitleTest
       fullName: Testing.Engine.SceneControl.XmlSceneControlParserTests.ParseReturnToTitleTest
       resultStatus: 1
-      duration: 0.0002407
+      duration: 0.0002475
       messages: 
       output: 
       stacktrace: 
@@ -5727,7 +5727,7 @@ MonoBehaviour:
       name: ParseShopProcessingTest
       fullName: Testing.Engine.SceneControl.XmlSceneControlParserTests.ParseShopProcessingTest
       resultStatus: 1
-      duration: 0.000321
+      duration: 0.0002973
       messages: 
       output: 
       stacktrace: 
@@ -5744,7 +5744,7 @@ MonoBehaviour:
       name: ScreenEffects
       fullName: Testing.Engine.ScreenEffects
       resultStatus: 1
-      duration: 0.0098757
+      duration: 0.0100714
       messages: 
       output: 
       stacktrace: 
@@ -5760,7 +5760,7 @@ MonoBehaviour:
       name: XmlScreenEffectsParserTests
       fullName: Testing.Engine.ScreenEffects.XmlScreenEffectsParserTests
       resultStatus: 1
-      duration: 0.0074883
+      duration: 0.0071597
       messages: 
       output: 
       stacktrace: 
@@ -5776,7 +5776,7 @@ MonoBehaviour:
       name: ParseFadeScreenTest
       fullName: Testing.Engine.ScreenEffects.XmlScreenEffectsParserTests.ParseFadeScreenTest
       resultStatus: 1
-      duration: 0.0015671
+      duration: 0.0017664
       messages: 
       output: 
       stacktrace: 
@@ -5793,7 +5793,7 @@ MonoBehaviour:
       name: ParseFlashScreenTest
       fullName: Testing.Engine.ScreenEffects.XmlScreenEffectsParserTests.ParseFlashScreenTest
       resultStatus: 1
-      duration: 0.0006003
+      duration: 0.0006507
       messages: 
       output: 
       stacktrace: 
@@ -5810,7 +5810,7 @@ MonoBehaviour:
       name: ParseTintScreenTest
       fullName: Testing.Engine.ScreenEffects.XmlScreenEffectsParserTests.ParseTintScreenTest
       resultStatus: 1
-      duration: 0.0010899
+      duration: 0.0005392
       messages: 
       output: 
       stacktrace: 
@@ -5827,7 +5827,7 @@ MonoBehaviour:
       name: SystemSettings
       fullName: Testing.Engine.SystemSettings
       resultStatus: 1
-      duration: 0.0146064
+      duration: 0.0143732
       messages: 
       output: 
       stacktrace: 
@@ -5843,7 +5843,7 @@ MonoBehaviour:
       name: XmlSystemSettingsParserTests
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests
       resultStatus: 1
-      duration: 0.0121353
+      duration: 0.0119086
       messages: 
       output: 
       stacktrace: 
@@ -5859,7 +5859,7 @@ MonoBehaviour:
       name: ParseAllowCutsceneSkipTest
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests.ParseAllowCutsceneSkipTest
       resultStatus: 1
-      duration: 0.0026938
+      duration: 0.002283
       messages: 
       output: 
       stacktrace: 
@@ -5876,7 +5876,7 @@ MonoBehaviour:
       name: ParseChangeActorGraphicTest
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests.ParseChangeActorGraphicTest
       resultStatus: 1
-      duration: 0.0005141
+      duration: 0.000484
       messages: 
       output: 
       stacktrace: 
@@ -5893,7 +5893,7 @@ MonoBehaviour:
       name: ParseChangeBattleBgmTest
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests.ParseChangeBattleBgmTest
       resultStatus: 1
-      duration: 0.000497
+      duration: 0.0004047
       messages: 
       output: 
       stacktrace: 
@@ -5910,7 +5910,7 @@ MonoBehaviour:
       name: ParseChangeBattleEndMusicalEffectTest
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests.ParseChangeBattleEndMusicalEffectTest
       resultStatus: 1
-      duration: 0.0003424
+      duration: 0.0003132
       messages: 
       output: 
       stacktrace: 
@@ -5927,7 +5927,7 @@ MonoBehaviour:
       name: ParseChangeEncounterAccessTest
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests.ParseChangeEncounterAccessTest
       resultStatus: 1
-      duration: 0.0003387
+      duration: 0.0003396
       messages: 
       output: 
       stacktrace: 
@@ -5944,7 +5944,7 @@ MonoBehaviour:
       name: ParseChangeFormationTest
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests.ParseChangeFormationTest
       resultStatus: 1
-      duration: 0.0002891
+      duration: 0.0002938
       messages: 
       output: 
       stacktrace: 
@@ -5961,7 +5961,7 @@ MonoBehaviour:
       name: ParseChangeGameStateTest
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests.ParseChangeGameStateTest
       resultStatus: 1
-      duration: 0.0004437
+      duration: 0.0004579
       messages: 
       output: 
       stacktrace: 
@@ -5978,7 +5978,7 @@ MonoBehaviour:
       name: ParseChangeMenuAccessTest
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests.ParseChangeMenuAccessTest
       resultStatus: 1
-      duration: 0.0002885
+      duration: 0.0002915
       messages: 
       output: 
       stacktrace: 
@@ -5995,7 +5995,7 @@ MonoBehaviour:
       name: ParseChangeSaveAccessTest
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests.ParseChangeSaveAccessTest
       resultStatus: 1
-      duration: 0.0002907
+      duration: 0.0003021
       messages: 
       output: 
       stacktrace: 
@@ -6012,7 +6012,7 @@ MonoBehaviour:
       name: ParseChangeWindowColorTest
       fullName: Testing.Engine.SystemSettings.XmlSystemSettingsParserTests.ParseChangeWindowColorTest
       resultStatus: 1
-      duration: 0.0003657
+      duration: 0.0003861
       messages: 
       output: 
       stacktrace: 
@@ -6029,7 +6029,7 @@ MonoBehaviour:
       name: Timing
       fullName: Testing.Engine.Timing
       resultStatus: 1
-      duration: 0.0081948
+      duration: 0.0073951
       messages: 
       output: 
       stacktrace: 
@@ -6045,7 +6045,7 @@ MonoBehaviour:
       name: XmlTimingParserTests
       fullName: Testing.Engine.Timing.XmlTimingParserTests
       resultStatus: 1
-      duration: 0.0053114
+      duration: 0.0050872
       messages: 
       output: 
       stacktrace: 
@@ -6061,7 +6061,7 @@ MonoBehaviour:
       name: ParseWaitTest
       fullName: Testing.Engine.Timing.XmlTimingParserTests.ParseWaitTest
       resultStatus: 1
-      duration: 0.0019607
+      duration: 0.0018487
       messages: 
       output: 
       stacktrace: 
@@ -6078,7 +6078,7 @@ MonoBehaviour:
       name: Essence
       fullName: Testing.Essence
       resultStatus: 1
-      duration: 0.0138106
+      duration: 0.0127483
       messages: 
       output: 
       stacktrace: 
@@ -6094,7 +6094,7 @@ MonoBehaviour:
       name: EssencesWrapperTests
       fullName: Testing.Essence.EssencesWrapperTests
       resultStatus: 1
-      duration: 0.0060472
+      duration: 0.0051812
       messages: 
       output: 
       stacktrace: 
@@ -6110,7 +6110,7 @@ MonoBehaviour:
       name: EssentialAffinitiesCanBeProvidedToWrapper
       fullName: Testing.Essence.EssencesWrapperTests.EssentialAffinitiesCanBeProvidedToWrapper
       resultStatus: 1
-      duration: 0.002055
+      duration: 0.0019253
       messages: 
       output: 
       stacktrace: 
@@ -6127,7 +6127,7 @@ MonoBehaviour:
       name: EssentialAffinitiesParserTests
       fullName: Testing.Essence.EssentialAffinitiesParserTests
       resultStatus: 1
-      duration: 0.0047713
+      duration: 0.0047179
       messages: 
       output: 
       stacktrace: 
@@ -6143,7 +6143,7 @@ MonoBehaviour:
       name: EssentialAffinitiesCanBeParsed
       fullName: Testing.Essence.EssentialAffinitiesParserTests.EssentialAffinitiesCanBeParsed
       resultStatus: 1
-      duration: 0.0016517
+      duration: 0.0019337
       messages: 
       output: 
       stacktrace: 
@@ -6160,7 +6160,7 @@ MonoBehaviour:
       name: Field
       fullName: Testing.Field
       resultStatus: 1
-      duration: 14.975807
+      duration: 14.99057
       messages: 
       output: 
       stacktrace: 
@@ -6176,7 +6176,7 @@ MonoBehaviour:
       name: AgentTests
       fullName: Testing.Field.AgentTests
       resultStatus: 1
-      duration: 0.0057676
+      duration: 0.0067191
       messages: 
       output: 
       stacktrace: 
@@ -6192,7 +6192,7 @@ MonoBehaviour:
       name: UpdateAgentCurrentDirectionTest
       fullName: Testing.Field.AgentTests.UpdateAgentCurrentDirectionTest
       resultStatus: 1
-      duration: 0.0013917
+      duration: 0.0019442
       messages: 
       output: 'Animator is not playing an AnimatorController
 
@@ -6211,7 +6211,7 @@ MonoBehaviour:
       name: UpdateAgentSpeedTest
       fullName: Testing.Field.AgentTests.UpdateAgentSpeedTest
       resultStatus: 1
-      duration: 0.0003663
+      duration: 0.0005133
       messages: 
       output: 
       stacktrace: 
@@ -6228,7 +6228,7 @@ MonoBehaviour:
       name: AggressiveBehaviourTests
       fullName: Testing.Field.AggressiveBehaviourTests
       resultStatus: 1
-      duration: 0.0137661
+      duration: 0.0142818
       messages: 
       output: 
       stacktrace: 
@@ -6244,7 +6244,7 @@ MonoBehaviour:
       name: RaysCanBeComputed
       fullName: Testing.Field.AggressiveBehaviourTests.RaysCanBeComputed
       resultStatus: 1
-      duration: 0.0102712
+      duration: 0.0110987
       messages: 
       output: 
       stacktrace: 
@@ -6261,7 +6261,7 @@ MonoBehaviour:
       name: AutoplayChangeToFieldTests
       fullName: Testing.Field.AutoplayChangeToFieldTests
       resultStatus: 1
-      duration: 0.0196185
+      duration: 0.0189418
       messages: 
       output: 
       stacktrace: 
@@ -6277,7 +6277,7 @@ MonoBehaviour:
       name: GlobalStateChangesToOnFieldAfterInstantiation
       fullName: Testing.Field.AutoplayChangeToFieldTests.GlobalStateChangesToOnFieldAfterInstantiation
       resultStatus: 1
-      duration: 0.0159531
+      duration: 0.0155378
       messages: 
       output: 
       stacktrace: 
@@ -6294,7 +6294,7 @@ MonoBehaviour:
       name: FieldWithFloorsTests
       fullName: Testing.Field.FieldWithFloorsTests
       resultStatus: 1
-      duration: 0.0138548
+      duration: 0.0143017
       messages: 
       output: 
       stacktrace: 
@@ -6310,7 +6310,7 @@ MonoBehaviour:
       name: FloorIndexChangesWithMovement
       fullName: Testing.Field.FieldWithFloorsTests.FloorIndexChangesWithMovement
       resultStatus: 1
-      duration: 0.0098444
+      duration: 0.0106448
       messages: 
       output: 
       stacktrace: 
@@ -6327,7 +6327,7 @@ MonoBehaviour:
       name: MapTransitionTests
       fullName: Testing.Field.MapTransitionTests
       resultStatus: 1
-      duration: 0.0083434
+      duration: 0.0068987
       messages: 
       output: 
       stacktrace: 
@@ -6343,7 +6343,7 @@ MonoBehaviour:
       name: TransitionCanBeTriggeredManually
       fullName: Testing.Field.MapTransitionTests.TransitionCanBeTriggeredManually
       resultStatus: 1
-      duration: 0.0038063
+      duration: 0.0023557
       messages: 
       output: 
       stacktrace: 
@@ -6360,7 +6360,7 @@ MonoBehaviour:
       name: TransitionCanBeTriggeredUsingRaycast
       fullName: Testing.Field.MapTransitionTests.TransitionCanBeTriggeredUsingRaycast
       resultStatus: 1
-      duration: 0.0007335
+      duration: 0.0007693
       messages: 
       output: 
       stacktrace: 
@@ -6377,7 +6377,7 @@ MonoBehaviour:
       name: Routines
       fullName: Testing.Field.Routines
       resultStatus: 1
-      duration: 13.870995
+      duration: 13.88443
       messages: 
       output: 
       stacktrace: 
@@ -6393,7 +6393,7 @@ MonoBehaviour:
       name: RoutineRunnerTests
       fullName: Testing.Field.Routines.RoutineRunnerTests
       resultStatus: 1
-      duration: 13.863037
+      duration: 13.871757
       messages: 
       output: 
       stacktrace: 
@@ -6409,7 +6409,7 @@ MonoBehaviour:
       name: ProvidedRoutineCanRun
       fullName: Testing.Field.Routines.RoutineRunnerTests.ProvidedRoutineCanRun
       resultStatus: 1
-      duration: 6.183298
+      duration: 6.1845098
       messages: 
       output: 
       stacktrace: 
@@ -6426,7 +6426,7 @@ MonoBehaviour:
       name: RoutineCanBeInterruptedAndResumed
       fullName: Testing.Field.Routines.RoutineRunnerTests.RoutineCanBeInterruptedAndResumed
       resultStatus: 1
-      duration: 7.675489
+      duration: 7.6826406
       messages: 
       output: 
       stacktrace: 
@@ -6443,7 +6443,7 @@ MonoBehaviour:
       name: XmlRoutineParserTests
       fullName: Testing.Field.Routines.XmlRoutineParserTests
       resultStatus: 1
-      duration: 0.0051506
+      duration: 0.0055408
       messages: 
       output: 
       stacktrace: 
@@ -6459,7 +6459,7 @@ MonoBehaviour:
       name: RoutineCanBeParsed
       fullName: Testing.Field.Routines.XmlRoutineParserTests.RoutineCanBeParsed
       resultStatus: 1
-      duration: 0.0013456
+      duration: 0.0015223
       messages: 
       output: 
       stacktrace: 
@@ -6476,7 +6476,7 @@ MonoBehaviour:
       name: RunnableAgentTests
       fullName: Testing.Field.RunnableAgentTests
       resultStatus: 1
-      duration: 1.0223099
+      duration: 1.0245686
       messages: 
       output: 
       stacktrace: 
@@ -6492,7 +6492,7 @@ MonoBehaviour:
       name: RunSequenceOfRunnableAgentTest
       fullName: Testing.Field.RunnableAgentTests.RunSequenceOfRunnableAgentTest
       resultStatus: 1
-      duration: 1.0191065
+      duration: 1.0192965
       messages: 
       output: 
       stacktrace: 
@@ -6509,7 +6509,7 @@ MonoBehaviour:
       name: SpriteOverlapHandlerTests
       fullName: Testing.Field.SpriteOverlapHandlerTests
       resultStatus: 1
-      duration: 0.0165095
+      duration: 0.0159126
       messages: 
       output: 
       stacktrace: 
@@ -6525,7 +6525,7 @@ MonoBehaviour:
       name: SortingOrderIsAdjustedWhenYPositionChanges
       fullName: Testing.Field.SpriteOverlapHandlerTests.SortingOrderIsAdjustedWhenYPositionChanges
       resultStatus: 1
-      duration: 0.0129221
+      duration: 0.0125388
       messages: 
       output: 
       stacktrace: 
@@ -6542,7 +6542,7 @@ MonoBehaviour:
       name: FlowControl
       fullName: Testing.FlowControl
       resultStatus: 1
-      duration: 0.058252
+      duration: 0.0660594
       messages: 
       output: 
       stacktrace: 
@@ -6558,7 +6558,7 @@ MonoBehaviour:
       name: InventoryConditionTests
       fullName: Testing.FlowControl.InventoryConditionTests
       resultStatus: 1
-      duration: 0.0091165
+      duration: 0.0084729
       messages: 
       output: 
       stacktrace: 
@@ -6574,7 +6574,7 @@ MonoBehaviour:
       name: RunItemEquippedConditionTest
       fullName: Testing.FlowControl.InventoryConditionTests.RunItemEquippedConditionTest
       resultStatus: 1
-      duration: 0.0030967
+      duration: 0.0027981
       messages: 
       output: 
       stacktrace: 
@@ -6591,7 +6591,7 @@ MonoBehaviour:
       name: RunItemPossessedConditionTest
       fullName: Testing.FlowControl.InventoryConditionTests.RunItemPossessedConditionTest
       resultStatus: 1
-      duration: 0.002237
+      duration: 0.0014697
       messages: 
       output: 
       stacktrace: 
@@ -6608,7 +6608,7 @@ MonoBehaviour:
       name: SwitchConditionTests
       fullName: Testing.FlowControl.SwitchConditionTests
       resultStatus: 1
-      duration: 0.011784
+      duration: 0.0113394
       messages: 
       output: 
       stacktrace: 
@@ -6624,7 +6624,7 @@ MonoBehaviour:
       name: BothMembersAsVariableAreNotEqualTest
       fullName: Testing.FlowControl.SwitchConditionTests.BothMembersAsVariableAreNotEqualTest
       resultStatus: 1
-      duration: 0.003252
+      duration: 0.0028454
       messages: 
       output: 
       stacktrace: 
@@ -6641,7 +6641,7 @@ MonoBehaviour:
       name: BothMembersAsVariableEqualsTest
       fullName: Testing.FlowControl.SwitchConditionTests.BothMembersAsVariableEqualsTest
       resultStatus: 1
-      duration: 0.0008842
+      duration: 0.0008477
       messages: 
       output: 
       stacktrace: 
@@ -6658,7 +6658,7 @@ MonoBehaviour:
       name: FirstMemberAsVariableEqualsConstantTest
       fullName: Testing.FlowControl.SwitchConditionTests.FirstMemberAsVariableEqualsConstantTest
       resultStatus: 1
-      duration: 0.0008607
+      duration: 0.0008199
       messages: 
       output: 
       stacktrace: 
@@ -6675,7 +6675,7 @@ MonoBehaviour:
       name: FirstMemberAsVariableNotEqualToConstantTest
       fullName: Testing.FlowControl.SwitchConditionTests.FirstMemberAsVariableNotEqualToConstantTest
       resultStatus: 1
-      duration: 0.0007154
+      duration: 0.0007136
       messages: 
       output: 
       stacktrace: 
@@ -6692,7 +6692,7 @@ MonoBehaviour:
       name: SecondMemberAsVariableEqualsConstantTest
       fullName: Testing.FlowControl.SwitchConditionTests.SecondMemberAsVariableEqualsConstantTest
       resultStatus: 1
-      duration: 0.0007107
+      duration: 0.0011299
       messages: 
       output: 
       stacktrace: 
@@ -6709,7 +6709,7 @@ MonoBehaviour:
       name: SecondMemberAsVariableNotEqualToConstantTest
       fullName: Testing.FlowControl.SwitchConditionTests.SecondMemberAsVariableNotEqualToConstantTest
       resultStatus: 1
-      duration: 0.0007907
+      duration: 0.0008388
       messages: 
       output: 
       stacktrace: 
@@ -6726,7 +6726,7 @@ MonoBehaviour:
       name: VariableConditionTests
       fullName: Testing.FlowControl.VariableConditionTests
       resultStatus: 1
-      duration: 0.0337054
+      duration: 0.0427192
       messages: 
       output: 
       stacktrace: 
@@ -6742,7 +6742,7 @@ MonoBehaviour:
       name: VariableAsFirstMemberEqualsConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsFirstMemberEqualsConstantTest
       resultStatus: 1
-      duration: 0.0037221
+      duration: 0.0036339
       messages: 
       output: 
       stacktrace: 
@@ -6759,7 +6759,7 @@ MonoBehaviour:
       name: VariableAsFirstMemberIsDifferentThanConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsFirstMemberIsDifferentThanConstantTest
       resultStatus: 1
-      duration: 0.0012331
+      duration: 0.0012317
       messages: 
       output: 
       stacktrace: 
@@ -6776,7 +6776,7 @@ MonoBehaviour:
       name: VariableAsFirstMemberIsEqualOrGreaterThanConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsFirstMemberIsEqualOrGreaterThanConstantTest
       resultStatus: 1
-      duration: 0.0013617
+      duration: 0.0013113
       messages: 
       output: 
       stacktrace: 
@@ -6793,7 +6793,7 @@ MonoBehaviour:
       name: VariableAsFirstMemberIsEqualOrSmallerThanConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsFirstMemberIsEqualOrSmallerThanConstantTest
       resultStatus: 1
-      duration: 0.0012988
+      duration: 0.0013101
       messages: 
       output: 
       stacktrace: 
@@ -6810,7 +6810,7 @@ MonoBehaviour:
       name: VariableAsFirstMemberIsGreaterThanConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsFirstMemberIsGreaterThanConstantTest
       resultStatus: 1
-      duration: 0.001126
+      duration: 0.0011759
       messages: 
       output: 
       stacktrace: 
@@ -6827,7 +6827,7 @@ MonoBehaviour:
       name: VariableAsFirstMemberIsSmallerThanConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsFirstMemberIsSmallerThanConstantTest
       resultStatus: 1
-      duration: 0.0011479
+      duration: 0.0017058
       messages: 
       output: 
       stacktrace: 
@@ -6844,7 +6844,7 @@ MonoBehaviour:
       name: VariableAsSecondMemberEqualsConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsSecondMemberEqualsConstantTest
       resultStatus: 1
-      duration: 0.0011711
+      duration: 0.0012897
       messages: 
       output: 
       stacktrace: 
@@ -6861,7 +6861,7 @@ MonoBehaviour:
       name: VariableAsSecondMemberIsDifferentThanConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsSecondMemberIsDifferentThanConstantTest
       resultStatus: 1
-      duration: 0.0011666
+      duration: 0.001169
       messages: 
       output: 
       stacktrace: 
@@ -6878,7 +6878,7 @@ MonoBehaviour:
       name: VariableAsSecondMemberIsEqualOrGreaterThanConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsSecondMemberIsEqualOrGreaterThanConstantTest
       resultStatus: 1
-      duration: 0.0019163
+      duration: 0.0013321
       messages: 
       output: 
       stacktrace: 
@@ -6895,7 +6895,7 @@ MonoBehaviour:
       name: VariableAsSecondMemberIsEqualOrSmallerThanConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsSecondMemberIsEqualOrSmallerThanConstantTest
       resultStatus: 1
-      duration: 0.001365
+      duration: 0.0013298
       messages: 
       output: 
       stacktrace: 
@@ -6912,7 +6912,7 @@ MonoBehaviour:
       name: VariableAsSecondMemberIsGreaterThanConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsSecondMemberIsGreaterThanConstantTest
       resultStatus: 1
-      duration: 0.0011412
+      duration: 0.0012509
       messages: 
       output: 
       stacktrace: 
@@ -6929,7 +6929,7 @@ MonoBehaviour:
       name: VariableAsSecondMemberIsSmallerThanConstantTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableAsSecondMemberIsSmallerThanConstantTest
       resultStatus: 1
-      duration: 0.0011346
+      duration: 0.001347
       messages: 
       output: 
       stacktrace: 
@@ -6946,7 +6946,7 @@ MonoBehaviour:
       name: VariableIsDifferentThanAnotherVariableTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableIsDifferentThanAnotherVariableTest
       resultStatus: 1
-      duration: 0.0013612
+      duration: 0.0014066
       messages: 
       output: 
       stacktrace: 
@@ -6963,7 +6963,7 @@ MonoBehaviour:
       name: VariableIsEqualOrGreaterThanAnotherVariableTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableIsEqualOrGreaterThanAnotherVariableTest
       resultStatus: 1
-      duration: 0.0013291
+      duration: 0.001358
       messages: 
       output: 
       stacktrace: 
@@ -6980,7 +6980,7 @@ MonoBehaviour:
       name: VariableIsEqualOrSmallerThanAnotherVariableTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableIsEqualOrSmallerThanAnotherVariableTest
       resultStatus: 1
-      duration: 0.0013344
+      duration: 0.0103596
       messages: 
       output: 
       stacktrace: 
@@ -6997,7 +6997,7 @@ MonoBehaviour:
       name: VariableIsGreaterThanAnotherVariableTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableIsGreaterThanAnotherVariableTest
       resultStatus: 1
-      duration: 0.0012053
+      duration: 0.0013231
       messages: 
       output: 
       stacktrace: 
@@ -7014,7 +7014,7 @@ MonoBehaviour:
       name: VariableIsSmallerThanAnotherVariableTest
       fullName: Testing.FlowControl.VariableConditionTests.VariableIsSmallerThanAnotherVariableTest
       resultStatus: 1
-      duration: 0.0012904
+      duration: 0.0011959
       messages: 
       output: 
       stacktrace: 
@@ -7031,7 +7031,7 @@ MonoBehaviour:
       name: VariablesAreEqualTest
       fullName: Testing.FlowControl.VariableConditionTests.VariablesAreEqualTest
       resultStatus: 1
-      duration: 0.0011981
+      duration: 0.0011732
       messages: 
       output: 
       stacktrace: 
@@ -7048,7 +7048,7 @@ MonoBehaviour:
       name: Inventory
       fullName: Testing.Inventory
       resultStatus: 1
-      duration: 0.1204479
+      duration: 0.1231335
       messages: 
       output: 
       stacktrace: 
@@ -7064,7 +7064,7 @@ MonoBehaviour:
       name: AccessoriesParserTests
       fullName: Testing.Inventory.AccessoriesParserTests
       resultStatus: 1
-      duration: 0.0074522
+      duration: 0.0072014
       messages: 
       output: 
       stacktrace: 
@@ -7080,7 +7080,7 @@ MonoBehaviour:
       name: AccessoriesCanBeParsed
       fullName: Testing.Inventory.AccessoriesParserTests.AccessoriesCanBeParsed
       resultStatus: 1
-      duration: 0.0012414
+      duration: 0.0016006
       messages: 
       output: 
       stacktrace: 
@@ -7097,7 +7097,7 @@ MonoBehaviour:
       name: AccessoryTests
       fullName: Testing.Inventory.AccessoryTests
       resultStatus: 1
-      duration: 0.0059887
+      duration: 0.0029984
       messages: 
       output: 
       stacktrace: 
@@ -7113,7 +7113,7 @@ MonoBehaviour:
       name: AccessoryCanBeCreated
       fullName: Testing.Inventory.AccessoryTests.AccessoryCanBeCreated
       resultStatus: 1
-      duration: 0.0005896
+      duration: 0.0004034
       messages: 
       output: 
       stacktrace: 
@@ -7130,7 +7130,7 @@ MonoBehaviour:
       name: ArmoursParserTests
       fullName: Testing.Inventory.ArmoursParserTests
       resultStatus: 1
-      duration: 0.0044202
+      duration: 0.0058692
       messages: 
       output: 
       stacktrace: 
@@ -7146,7 +7146,7 @@ MonoBehaviour:
       name: ArmoursCanBeParsed
       fullName: Testing.Inventory.ArmoursParserTests.ArmoursCanBeParsed
       resultStatus: 1
-      duration: 0.0017051
+      duration: 0.00253
       messages: 
       output: 
       stacktrace: 
@@ -7163,7 +7163,7 @@ MonoBehaviour:
       name: ArmourTests
       fullName: Testing.Inventory.ArmourTests
       resultStatus: 1
-      duration: 0.0030129
+      duration: 0.003043
       messages: 
       output: 
       stacktrace: 
@@ -7179,7 +7179,7 @@ MonoBehaviour:
       name: ArmourCanBeCreated
       fullName: Testing.Inventory.ArmourTests.ArmourCanBeCreated
       resultStatus: 1
-      duration: 0.0004114
+      duration: 0.00038
       messages: 
       output: 
       stacktrace: 
@@ -7196,7 +7196,7 @@ MonoBehaviour:
       name: BaseItemTests
       fullName: Testing.Inventory.BaseItemTests
       resultStatus: 1
-      duration: 0.0072144
+      duration: 0.0064995
       messages: 
       output: 
       stacktrace: 
@@ -7212,7 +7212,7 @@ MonoBehaviour:
       name: BaseItemCanBeCreated
       fullName: Testing.Inventory.BaseItemTests.BaseItemCanBeCreated
       resultStatus: 1
-      duration: 0.0004148
+      duration: 0.0005777
       messages: 
       output: 
       stacktrace: 
@@ -7229,7 +7229,7 @@ MonoBehaviour:
       name: DetailedDescriptionOfBaseItemCanBeObtained
       fullName: Testing.Inventory.BaseItemTests.DetailedDescriptionOfBaseItemCanBeObtained
       resultStatus: 1
-      duration: 0.0026698
+      duration: 0.0017699
       messages: 
       output: 
       stacktrace: 
@@ -7246,7 +7246,7 @@ MonoBehaviour:
       name: EffectsCanBeAddedToBaseItem
       fullName: Testing.Inventory.BaseItemTests.EffectsCanBeAddedToBaseItem
       resultStatus: 1
-      duration: 0.0003699
+      duration: 0.0003722
       messages: 
       output: 
       stacktrace: 
@@ -7263,7 +7263,7 @@ MonoBehaviour:
       name: ConsumablesParserTests
       fullName: Testing.Inventory.ConsumablesParserTests
       resultStatus: 1
-      duration: 0.0070497
+      duration: 0.0068338
       messages: 
       output: 
       stacktrace: 
@@ -7279,7 +7279,7 @@ MonoBehaviour:
       name: ConsumablesCanBeParsed
       fullName: Testing.Inventory.ConsumablesParserTests.ConsumablesCanBeParsed
       resultStatus: 1
-      duration: 0.0035355
+      duration: 0.0041269
       messages: 
       output: 
       stacktrace: 
@@ -7296,7 +7296,7 @@ MonoBehaviour:
       name: ConsumableTests
       fullName: Testing.Inventory.ConsumableTests
       resultStatus: 1
-      duration: 0.0038788
+      duration: 0.0034394
       messages: 
       output: 
       stacktrace: 
@@ -7312,7 +7312,7 @@ MonoBehaviour:
       name: ConsumableCanBeCreated
       fullName: Testing.Inventory.ConsumableTests.ConsumableCanBeCreated
       resultStatus: 1
-      duration: 0.0008916
+      duration: 0.0007184
       messages: 
       output: 
       stacktrace: 
@@ -7329,7 +7329,7 @@ MonoBehaviour:
       name: EquipmentItemTests
       fullName: Testing.Inventory.EquipmentItemTests
       resultStatus: 1
-      duration: 0.0050108
+      duration: 0.0050707
       messages: 
       output: 
       stacktrace: 
@@ -7345,7 +7345,7 @@ MonoBehaviour:
       name: DetailedDescriptionCanBeObtained
       fullName: Testing.Inventory.EquipmentItemTests.DetailedDescriptionCanBeObtained
       resultStatus: 1
-      duration: 0.0017671
+      duration: 0.0018019
       messages: 
       output: 
       stacktrace: 
@@ -7362,7 +7362,7 @@ MonoBehaviour:
       name: EquipmentItemCanBeCreated
       fullName: Testing.Inventory.EquipmentItemTests.EquipmentItemCanBeCreated
       resultStatus: 1
-      duration: 0.0002715
+      duration: 0.0002685
       messages: 
       output: 
       stacktrace: 
@@ -7379,7 +7379,7 @@ MonoBehaviour:
       name: InventoryItemTests
       fullName: Testing.Inventory.InventoryItemTests
       resultStatus: 1
-      duration: 0.0103683
+      duration: 0.0107946
       messages: 
       output: 
       stacktrace: 
@@ -7395,7 +7395,7 @@ MonoBehaviour:
       name: CanCreateInventoryItemFromBaseItem
       fullName: Testing.Inventory.InventoryItemTests.CanCreateInventoryItemFromBaseItem
       resultStatus: 1
-      duration: 0.00046
+      duration: 0.0005597
       messages: 
       output: 
       stacktrace: 
@@ -7412,7 +7412,7 @@ MonoBehaviour:
       name: CanCreateInventoryItemFromIdOnly
       fullName: Testing.Inventory.InventoryItemTests.CanCreateInventoryItemFromIdOnly
       resultStatus: 1
-      duration: 0.0020282
+      duration: 0.003039
       messages: 
       output: 
       stacktrace: 
@@ -7429,7 +7429,7 @@ MonoBehaviour:
       name: InventoryItemCanBeDeserialized
       fullName: Testing.Inventory.InventoryItemTests.InventoryItemCanBeDeserialized
       resultStatus: 1
-      duration: 0.001484
+      duration: 0.001512
       messages: 
       output: 
       stacktrace: 
@@ -7446,7 +7446,7 @@ MonoBehaviour:
       name: InventoryItemCanBeSerialized
       fullName: Testing.Inventory.InventoryItemTests.InventoryItemCanBeSerialized
       resultStatus: 1
-      duration: 0.0002371
+      duration: 0.0002451
       messages: 
       output: 
       stacktrace: 
@@ -7463,7 +7463,7 @@ MonoBehaviour:
       name: ItemAmountCanBeChanged
       fullName: Testing.Inventory.InventoryItemTests.ItemAmountCanBeChanged
       resultStatus: 1
-      duration: 0.0014968
+      duration: 0.0013465
       messages: 
       output: '
 
@@ -7490,7 +7490,7 @@ MonoBehaviour:
       name: ItemParserTests
       fullName: Testing.Inventory.ItemParserTests
       resultStatus: 1
-      duration: 0.0052297
+      duration: 0.0051851
       messages: 
       output: 
       stacktrace: 
@@ -7506,7 +7506,7 @@ MonoBehaviour:
       name: ItemStatsCanBeParsed
       fullName: Testing.Inventory.ItemParserTests.ItemStatsCanBeParsed
       resultStatus: 1
-      duration: 0.0012815
+      duration: 0.001517
       messages: 
       output: 
       stacktrace: 
@@ -7523,7 +7523,7 @@ MonoBehaviour:
       name: RecipeCanBeParsed
       fullName: Testing.Inventory.ItemParserTests.RecipeCanBeParsed
       resultStatus: 1
-      duration: 0.0007409
+      duration: 0.0006865
       messages: 
       output: 
       stacktrace: 
@@ -7540,7 +7540,7 @@ MonoBehaviour:
       name: ItemRecipeComponentTests
       fullName: Testing.Inventory.ItemRecipeComponentTests
       resultStatus: 1
-      duration: 0.0037307
+      duration: 0.0030946
       messages: 
       output: 
       stacktrace: 
@@ -7556,7 +7556,7 @@ MonoBehaviour:
       name: ComponentCanBeCreated
       fullName: Testing.Inventory.ItemRecipeComponentTests.ComponentCanBeCreated
       resultStatus: 1
-      duration: 0.000537
+      duration: 0.0004931
       messages: 
       output: 
       stacktrace: 
@@ -7573,7 +7573,7 @@ MonoBehaviour:
       name: ItemRecipeTests
       fullName: Testing.Inventory.ItemRecipeTests
       resultStatus: 1
-      duration: 0.0045301
+      duration: 0.0053001
       messages: 
       output: 
       stacktrace: 
@@ -7589,7 +7589,7 @@ MonoBehaviour:
       name: BlankItemRecipeCanBeCreated
       fullName: Testing.Inventory.ItemRecipeTests.BlankItemRecipeCanBeCreated
       resultStatus: 1
-      duration: 0.0003713
+      duration: 0.0003247
       messages: 
       output: 
       stacktrace: 
@@ -7606,7 +7606,7 @@ MonoBehaviour:
       name: ComponentsCanBeAddedToItemRecipe
       fullName: Testing.Inventory.ItemRecipeTests.ComponentsCanBeAddedToItemRecipe
       resultStatus: 1
-      duration: 0.0005832
+      duration: 0.0007076
       messages: 
       output: 
       stacktrace: 
@@ -7623,7 +7623,7 @@ MonoBehaviour:
       name: ItemStatsTests
       fullName: Testing.Inventory.ItemStatsTests
       resultStatus: 1
-      duration: 0.0042638
+      duration: 0.0042592
       messages: 
       output: 
       stacktrace: 
@@ -7639,7 +7639,7 @@ MonoBehaviour:
       name: ItemStatsCanBeCreated
       fullName: Testing.Inventory.ItemStatsTests.ItemStatsCanBeCreated
       resultStatus: 1
-      duration: 0.0003543
+      duration: 0.0003693
       messages: 
       output: 
       stacktrace: 
@@ -7656,7 +7656,7 @@ MonoBehaviour:
       name: StatsCanBePrinted
       fullName: Testing.Inventory.ItemStatsTests.StatsCanBePrinted
       resultStatus: 1
-      duration: 0.0008088
+      duration: 0.0009583
       messages: 
       output: 
       stacktrace: 
@@ -7673,7 +7673,7 @@ MonoBehaviour:
       name: ItemsWrapperTests
       fullName: Testing.Inventory.ItemsWrapperTests
       resultStatus: 1
-      duration: 0.0144187
+      duration: 0.0143554
       messages: 
       output: 
       stacktrace: 
@@ -7689,7 +7689,7 @@ MonoBehaviour:
       name: AccessoriesCanBeFed
       fullName: Testing.Inventory.ItemsWrapperTests.AccessoriesCanBeFed
       resultStatus: 1
-      duration: 0.0008601
+      duration: 0.0007361
       messages: 
       output: 
       stacktrace: 
@@ -7706,7 +7706,7 @@ MonoBehaviour:
       name: ArmoursCanBeFed
       fullName: Testing.Inventory.ItemsWrapperTests.ArmoursCanBeFed
       resultStatus: 1
-      duration: 0.0011602
+      duration: 0.0008373
       messages: 
       output: 
       stacktrace: 
@@ -7723,7 +7723,7 @@ MonoBehaviour:
       name: CanGetItemFromId
       fullName: Testing.Inventory.ItemsWrapperTests.CanGetItemFromId
       resultStatus: 1
-      duration: 0.0039203
+      duration: 0.0043515
       messages: 
       output: 
       stacktrace: 
@@ -7740,7 +7740,7 @@ MonoBehaviour:
       name: ConsumablesCanBeFed
       fullName: Testing.Inventory.ItemsWrapperTests.ConsumablesCanBeFed
       resultStatus: 1
-      duration: 0.0013624
+      duration: 0.00157
       messages: 
       output: 
       stacktrace: 
@@ -7757,7 +7757,7 @@ MonoBehaviour:
       name: KeyItemsCanBeFed
       fullName: Testing.Inventory.ItemsWrapperTests.KeyItemsCanBeFed
       resultStatus: 1
-      duration: 0.000396
+      duration: 0.0004232
       messages: 
       output: 
       stacktrace: 
@@ -7774,7 +7774,7 @@ MonoBehaviour:
       name: ResourcesCanBeFed
       fullName: Testing.Inventory.ItemsWrapperTests.ResourcesCanBeFed
       resultStatus: 1
-      duration: 0.0003451
+      duration: 0.0003546
       messages: 
       output: 
       stacktrace: 
@@ -7791,7 +7791,7 @@ MonoBehaviour:
       name: WeaponsCanBeFed
       fullName: Testing.Inventory.ItemsWrapperTests.WeaponsCanBeFed
       resultStatus: 1
-      duration: 0.0014439
+      duration: 0.001467
       messages: 
       output: 
       stacktrace: 
@@ -7808,7 +7808,7 @@ MonoBehaviour:
       name: KeyItemsParserTests
       fullName: Testing.Inventory.KeyItemsParserTests
       resultStatus: 1
-      duration: 0.0033512
+      duration: 0.0035525
       messages: 
       output: 
       stacktrace: 
@@ -7824,7 +7824,7 @@ MonoBehaviour:
       name: KeyItemsCanBeParsed
       fullName: Testing.Inventory.KeyItemsParserTests.KeyItemsCanBeParsed
       resultStatus: 1
-      duration: 0.0006131
+      duration: 0.0006004
       messages: 
       output: 
       stacktrace: 
@@ -7841,7 +7841,7 @@ MonoBehaviour:
       name: KeyItemTests
       fullName: Testing.Inventory.KeyItemTests
       resultStatus: 1
-      duration: 0.0047061
+      duration: 0.0032152
       messages: 
       output: 
       stacktrace: 
@@ -7857,7 +7857,7 @@ MonoBehaviour:
       name: KeyItemCanBeCreated
       fullName: Testing.Inventory.KeyItemTests.KeyItemCanBeCreated
       resultStatus: 1
-      duration: 0.0006854
+      duration: 0.0004526
       messages: 
       output: 
       stacktrace: 
@@ -7874,7 +7874,7 @@ MonoBehaviour:
       name: ResourcesParserTests
       fullName: Testing.Inventory.ResourcesParserTests
       resultStatus: 1
-      duration: 0.0045878
+      duration: 0.0042507
       messages: 
       output: 
       stacktrace: 
@@ -7890,7 +7890,7 @@ MonoBehaviour:
       name: ResourcesCanBeParsed
       fullName: Testing.Inventory.ResourcesParserTests.ResourcesCanBeParsed
       resultStatus: 1
-      duration: 0.0006832
+      duration: 0.0006556
       messages: 
       output: 
       stacktrace: 
@@ -7907,7 +7907,7 @@ MonoBehaviour:
       name: ResourceTest
       fullName: Testing.Inventory.ResourceTest
       resultStatus: 1
-      duration: 0.0048354
+      duration: 0.005219
       messages: 
       output: 
       stacktrace: 
@@ -7923,7 +7923,7 @@ MonoBehaviour:
       name: ResourceCanBeCreated
       fullName: Testing.Inventory.ResourceTest.ResourceCanBeCreated
       resultStatus: 1
-      duration: 0.0004162
+      duration: 0.0006909
       messages: 
       output: 
       stacktrace: 
@@ -7940,7 +7940,7 @@ MonoBehaviour:
       name: ResourceUsabilityShouldBeNever
       fullName: Testing.Inventory.ResourceTest.ResourceUsabilityShouldBeNever
       resultStatus: 1
-      duration: 0.0004672
+      duration: 0.0003168
       messages: 
       output: 
       stacktrace: 
@@ -7957,7 +7957,7 @@ MonoBehaviour:
       name: WeaponsParserTests
       fullName: Testing.Inventory.WeaponsParserTests
       resultStatus: 1
-      duration: 0.007775
+      duration: 0.0114588
       messages: 
       output: 
       stacktrace: 
@@ -7973,7 +7973,7 @@ MonoBehaviour:
       name: WeaponsCanBeParsed
       fullName: Testing.Inventory.WeaponsParserTests.WeaponsCanBeParsed
       resultStatus: 1
-      duration: 0.0049835
+      duration: 0.005109
       messages: 
       output: 
       stacktrace: 
@@ -7990,7 +7990,7 @@ MonoBehaviour:
       name: Language
       fullName: Testing.Language
       resultStatus: 1
-      duration: 0.0252728
+      duration: 0.0250126
       messages: 
       output: 
       stacktrace: 
@@ -8006,7 +8006,7 @@ MonoBehaviour:
       name: LanguageUtilityTests
       fullName: Testing.Language.LanguageUtilityTests
       resultStatus: 1
-      duration: 0.0056363
+      duration: 0.0093338
       messages: 
       output: 
       stacktrace: 
@@ -8022,7 +8022,7 @@ MonoBehaviour:
       name: GetEffectTypeLanguageKeyTest
       fullName: Testing.Language.LanguageUtilityTests.GetEffectTypeLanguageKeyTest
       resultStatus: 1
-      duration: 0.0005546
+      duration: 0.0005714
       messages: 
       output: 
       stacktrace: 
@@ -8039,7 +8039,7 @@ MonoBehaviour:
       name: GetStatLanguageKeyTest
       fullName: Testing.Language.LanguageUtilityTests.GetStatLanguageKeyTest
       resultStatus: 1
-      duration: 0.000502
+      duration: 0.000575
       messages: 
       output: 
       stacktrace: 
@@ -8056,7 +8056,7 @@ MonoBehaviour:
       name: GetTribeLanguageKeyTest
       fullName: Testing.Language.LanguageUtilityTests.GetTribeLanguageKeyTest
       resultStatus: 1
-      duration: 0.0002215
+      duration: 0.0002848
       messages: 
       output: 
       stacktrace: 
@@ -8073,7 +8073,7 @@ MonoBehaviour:
       name: TranslateLanguageLabelTest
       fullName: Testing.Language.LanguageUtilityTests.TranslateLanguageLabelTest
       resultStatus: 1
-      duration: 0.0001927
+      duration: 0.0007985
       messages: 
       output: 
       stacktrace: 
@@ -8090,7 +8090,7 @@ MonoBehaviour:
       name: LocalizedTextTests
       fullName: Testing.Language.LocalizedTextTests
       resultStatus: 1
-      duration: 0.0066622
+      duration: 0.0050467
       messages: 
       output: 
       stacktrace: 
@@ -8106,7 +8106,7 @@ MonoBehaviour:
       name: UpdateTextTest
       fullName: Testing.Language.LocalizedTextTests.UpdateTextTest
       resultStatus: 1
-      duration: 0.0039407
+      duration: 0.0023677
       messages: 
       output: 
       stacktrace: 
@@ -8123,7 +8123,7 @@ MonoBehaviour:
       name: LocalizerTests
       fullName: Testing.Language.LocalizerTests
       resultStatus: 1
-      duration: 0.0099065
+      duration: 0.0043571
       messages: 
       output: 
       stacktrace: 
@@ -8139,7 +8139,7 @@ MonoBehaviour:
       name: LoadLanguageTest
       fullName: Testing.Language.LocalizerTests.LoadLanguageTest
       resultStatus: 1
-      duration: 0.0068746
+      duration: 0.0016238
       messages: 
       output: 
       stacktrace: 
@@ -8156,7 +8156,7 @@ MonoBehaviour:
       name: Logging
       fullName: Testing.Logging
       resultStatus: 1
-      duration: 0.010984
+      duration: 0.0106195
       messages: 
       output: 
       stacktrace: 
@@ -8172,7 +8172,7 @@ MonoBehaviour:
       name: LogsHandlerTests
       fullName: Testing.Logging.LogsHandlerTests
       resultStatus: 1
-      duration: 0.0086637
+      duration: 0.0082302
       messages: 
       output: 
       stacktrace: 
@@ -8188,7 +8188,7 @@ MonoBehaviour:
       name: LogErrorTest
       fullName: Testing.Logging.LogsHandlerTests.LogErrorTest
       resultStatus: 1
-      duration: 0.0013519
+      duration: 0.0012645
       messages: 
       output: 'Error message
 
@@ -8207,7 +8207,7 @@ MonoBehaviour:
       name: LogFatalErrorTest
       fullName: Testing.Logging.LogsHandlerTests.LogFatalErrorTest
       resultStatus: 1
-      duration: 0.0007092
+      duration: 0.0006473
       messages: 
       output: 'Fatal error message
 
@@ -8226,7 +8226,7 @@ MonoBehaviour:
       name: LogInformationTest
       fullName: Testing.Logging.LogsHandlerTests.LogInformationTest
       resultStatus: 1
-      duration: 0.0005696
+      duration: 0.000568
       messages: 
       output: 'Information message
 
@@ -8245,7 +8245,7 @@ MonoBehaviour:
       name: LogWarningTest
       fullName: Testing.Logging.LogsHandlerTests.LogWarningTest
       resultStatus: 1
-      duration: 0.0005376
+      duration: 0.0005471
       messages: 
       output: 'Warning message
 
@@ -8264,7 +8264,7 @@ MonoBehaviour:
       name: Menus
       fullName: Testing.Menus
       resultStatus: 1
-      duration: 11.054942
+      duration: 11.058407
       messages: 
       output: 
       stacktrace: 
@@ -8280,7 +8280,7 @@ MonoBehaviour:
       name: CharacterPreviewTests
       fullName: Testing.Menus.CharacterPreviewTests
       resultStatus: 1
-      duration: 0.0355039
+      duration: 0.0334036
       messages: 
       output: 
       stacktrace: 
@@ -8296,7 +8296,7 @@ MonoBehaviour:
       name: CharacterDataCanBeFedToPreview
       fullName: Testing.Menus.CharacterPreviewTests.CharacterDataCanBeFedToPreview
       resultStatus: 1
-      duration: 0.0287675
+      duration: 0.0300324
       messages: 
       output: 
       stacktrace: 
@@ -8313,7 +8313,7 @@ MonoBehaviour:
       name: CharacterSelectorTests
       fullName: Testing.Menus.CharacterSelectorTests
       resultStatus: 1
-      duration: 9.555076
+      duration: 9.564541
       messages: 
       output: 
       stacktrace: 
@@ -8329,7 +8329,7 @@ MonoBehaviour:
       name: ChildrenObjectsCanBeCleared
       fullName: Testing.Menus.CharacterSelectorTests.ChildrenObjectsCanBeCleared
       resultStatus: 1
-      duration: 0.0680269
+      duration: 0.0693573
       messages: 
       output: 
       stacktrace: 
@@ -8346,7 +8346,7 @@ MonoBehaviour:
       name: CursorIsSetToInitialPositionWhenHoveringAllCharacters
       fullName: Testing.Menus.CharacterSelectorTests.CursorIsSetToInitialPositionWhenHoveringAllCharacters
       resultStatus: 1
-      duration: 0.0620508
+      duration: 0.0666212
       messages: 
       output: 
       stacktrace: 
@@ -8363,7 +8363,7 @@ MonoBehaviour:
       name: CursorMovingAccordinglyToInputs
       fullName: Testing.Menus.CharacterSelectorTests.CursorMovingAccordinglyToInputs
       resultStatus: 1
-      duration: 8.218594
+      duration: 8.217262
       messages: 
       output: 
       stacktrace: 
@@ -8380,7 +8380,7 @@ MonoBehaviour:
       name: PreviewsCanBeFed
       fullName: Testing.Menus.CharacterSelectorTests.PreviewsCanBeFed
       resultStatus: 1
-      duration: 0.0655606
+      duration: 0.0665579
       messages: 
       output: 
       stacktrace: 
@@ -8397,7 +8397,7 @@ MonoBehaviour:
       name: SelectedCharacterIsStoredInRaisedEvent
       fullName: Testing.Menus.CharacterSelectorTests.SelectedCharacterIsStoredInRaisedEvent
       resultStatus: 1
-      duration: 0.5685711
+      duration: 0.5721857
       messages: 
       output: 
       stacktrace: 
@@ -8414,7 +8414,7 @@ MonoBehaviour:
       name: StateMachineIsUpdatedWhenPressingCancel
       fullName: Testing.Menus.CharacterSelectorTests.StateMachineIsUpdatedWhenPressingCancel
       resultStatus: 1
-      duration: 0.5660101
+      duration: 0.5653594
       messages: 
       output: 
       stacktrace: 
@@ -8431,7 +8431,7 @@ MonoBehaviour:
       name: StatGaugeTests
       fullName: Testing.Menus.StatGaugeTests
       resultStatus: 1
-      duration: 0.0051882
+      duration: 0.0052428
       messages: 
       output: 
       stacktrace: 
@@ -8447,7 +8447,7 @@ MonoBehaviour:
       name: GaugeCanBeSet
       fullName: Testing.Menus.StatGaugeTests.GaugeCanBeSet
       resultStatus: 1
-      duration: 0.0017807
+      duration: 0.0016748
       messages: 
       output: 
       stacktrace: 
@@ -8464,7 +8464,7 @@ MonoBehaviour:
       name: SubMenus
       fullName: Testing.Menus.SubMenus
       resultStatus: 1
-      duration: 1.4459935
+      duration: 1.4445893
       messages: 
       output: 
       stacktrace: 
@@ -8480,7 +8480,7 @@ MonoBehaviour:
       name: Quests
       fullName: Testing.Menus.SubMenus.Quests
       resultStatus: 1
-      duration: 1.4425741
+      duration: 1.4411912
       messages: 
       output: 
       stacktrace: 
@@ -8496,7 +8496,7 @@ MonoBehaviour:
       name: IndividualQuestStepDisplayTests
       fullName: Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests
       resultStatus: 1
-      duration: 0.0442371
+      duration: 0.0436586
       messages: 
       output: 
       stacktrace: 
@@ -8512,7 +8512,7 @@ MonoBehaviour:
       name: StepCanBeInitialized
       fullName: Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests.StepCanBeInitialized
       resultStatus: 1
-      duration: 0.0158389
+      duration: 0.016041
       messages: 
       output: 
       stacktrace: 
@@ -8529,7 +8529,7 @@ MonoBehaviour:
       name: VisualStatusCanBeUpdated
       fullName: Testing.Menus.SubMenus.Quests.IndividualQuestStepDisplayTests.VisualStatusCanBeUpdated
       resultStatus: 1
-      duration: 0.0221378
+      duration: 0.0214415
       messages: 
       output: 
       stacktrace: 
@@ -8546,7 +8546,7 @@ MonoBehaviour:
       name: QuestDetailsDisplayTests
       fullName: Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests
       resultStatus: 1
-      duration: 0.0396847
+      duration: 0.0405563
       messages: 
       output: 
       stacktrace: 
@@ -8562,7 +8562,7 @@ MonoBehaviour:
       name: DetailsCanBeCleared
       fullName: Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests.DetailsCanBeCleared
       resultStatus: 1
-      duration: 0.0146273
+      duration: 0.0143435
       messages: 
       output: 
       stacktrace: 
@@ -8579,7 +8579,7 @@ MonoBehaviour:
       name: DetailsCanBeShown
       fullName: Testing.Menus.SubMenus.Quests.QuestDetailsDisplayTests.DetailsCanBeShown
       resultStatus: 1
-      duration: 0.0209547
+      duration: 0.0220118
       messages: 
       output: 
       stacktrace: 
@@ -8596,7 +8596,7 @@ MonoBehaviour:
       name: QuestRewardDisplayTests
       fullName: Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests
       resultStatus: 1
-      duration: 0.0388389
+      duration: 0.0384414
       messages: 
       output: 
       stacktrace: 
@@ -8612,7 +8612,7 @@ MonoBehaviour:
       name: QuestRewardDisplayCanBeCleared
       fullName: Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests.QuestRewardDisplayCanBeCleared
       resultStatus: 1
-      duration: 0.0115332
+      duration: 0.0117161
       messages: 
       output: 
       stacktrace: 
@@ -8629,7 +8629,7 @@ MonoBehaviour:
       name: QuestRewardDisplayCanBeInited
       fullName: Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests.QuestRewardDisplayCanBeInited
       resultStatus: 1
-      duration: 0.0118585
+      duration: 0.0112183
       messages: 
       output: 
       stacktrace: 
@@ -8646,7 +8646,7 @@ MonoBehaviour:
       name: VisualStatusCanBeUpdated
       fullName: Testing.Menus.SubMenus.Quests.QuestRewardDisplayTests.VisualStatusCanBeUpdated
       resultStatus: 1
-      duration: 0.0106657
+      duration: 0.010872
       messages: 
       output: 
       stacktrace: 
@@ -8663,7 +8663,7 @@ MonoBehaviour:
       name: QuestsHorizontalMenuTests
       fullName: Testing.Menus.SubMenus.Quests.QuestsHorizontalMenuTests
       resultStatus: 1
-      duration: 1.2812704
+      duration: 1.2808923
       messages: 
       output: 
       stacktrace: 
@@ -8679,7 +8679,7 @@ MonoBehaviour:
       name: SelectedQuestStatusCanBeObtained
       fullName: Testing.Menus.SubMenus.Quests.QuestsHorizontalMenuTests.SelectedQuestStatusCanBeObtained
       resultStatus: 1
-      duration: 1.2767786
+      duration: 1.277218
       messages: 
       output: 
       stacktrace: 
@@ -8696,7 +8696,7 @@ MonoBehaviour:
       name: QuestStepsDisplayTests
       fullName: Testing.Menus.SubMenus.Quests.QuestStepsDisplayTests
       resultStatus: 1
-      duration: 0.0152232
+      duration: 0.014629
       messages: 
       output: 
       stacktrace: 
@@ -8712,7 +8712,7 @@ MonoBehaviour:
       name: DisplayCanBeCleared
       fullName: Testing.Menus.SubMenus.Quests.QuestStepsDisplayTests.DisplayCanBeCleared
       resultStatus: 1
-      duration: 0.011113
+      duration: 0.0104631
       messages: 
       output: 
       stacktrace: 
@@ -8729,7 +8729,7 @@ MonoBehaviour:
       name: RewardComponentDisplayTests
       fullName: Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests
       resultStatus: 1
-      duration: 0.0100643
+      duration: 0.0096016
       messages: 
       output: 
       stacktrace: 
@@ -8745,7 +8745,7 @@ MonoBehaviour:
       name: ComponentCanBeInitedWithExperience
       fullName: Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests.ComponentCanBeInitedWithExperience
       resultStatus: 1
-      duration: 0.0021156
+      duration: 0.0014918
       messages: 
       output: 
       stacktrace: 
@@ -8762,7 +8762,7 @@ MonoBehaviour:
       name: ComponentCanBeInitedWithGold
       fullName: Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests.ComponentCanBeInitedWithGold
       resultStatus: 1
-      duration: 0.0009085
+      duration: 0.0008817
       messages: 
       output: 
       stacktrace: 
@@ -8779,7 +8779,7 @@ MonoBehaviour:
       name: ComponentCanBeInitedWithItem
       fullName: Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests.ComponentCanBeInitedWithItem
       resultStatus: 1
-      duration: 0.0014306
+      duration: 0.0014407
       messages: 
       output: 
       stacktrace: 
@@ -8796,7 +8796,7 @@ MonoBehaviour:
       name: VisualStatusCanBeUpdated
       fullName: Testing.Menus.SubMenus.Quests.RewardComponentDisplayTests.VisualStatusCanBeUpdated
       resultStatus: 1
-      duration: 0.0009354
+      duration: 0.0009702
       messages: 
       output: 
       stacktrace: 
@@ -8813,7 +8813,7 @@ MonoBehaviour:
       name: SelectableQuestTests
       fullName: Testing.Menus.SubMenus.Quests.SelectableQuestTests
       resultStatus: 1
-      duration: 0.0054361
+      duration: 0.0054795
       messages: 
       output: 
       stacktrace: 
@@ -8829,7 +8829,7 @@ MonoBehaviour:
       name: QuestDataCanBeFed
       fullName: Testing.Menus.SubMenus.Quests.SelectableQuestTests.QuestDataCanBeFed
       resultStatus: 1
-      duration: 0.002516
+      duration: 0.0025345
       messages: 
       output: 
       stacktrace: 
@@ -8846,7 +8846,7 @@ MonoBehaviour:
       name: XpGaugeTests
       fullName: Testing.Menus.XpGaugeTests
       resultStatus: 1
-      duration: 0.0060695
+      duration: 0.0065127
       messages: 
       output: 
       stacktrace: 
@@ -8862,7 +8862,7 @@ MonoBehaviour:
       name: LevelCanBeSet
       fullName: Testing.Menus.XpGaugeTests.LevelCanBeSet
       resultStatus: 1
-      duration: 0.0027825
+      duration: 0.002415
       messages: 
       output: 
       stacktrace: 
@@ -8879,7 +8879,7 @@ MonoBehaviour:
       name: Party
       fullName: Testing.Party
       resultStatus: 1
-      duration: 1.128695
+      duration: 1.1281325
       messages: 
       output: 
       stacktrace: 
@@ -8895,7 +8895,7 @@ MonoBehaviour:
       name: PartyManagerTests
       fullName: Testing.Party.PartyManagerTests
       resultStatus: 1
-      duration: 1.1257584
+      duration: 1.1252859
       messages: 
       output: 
       stacktrace: 
@@ -8911,7 +8911,7 @@ MonoBehaviour:
       name: CharacterExpCanBeChanged
       fullName: Testing.Party.PartyManagerTests.CharacterExpCanBeChanged
       resultStatus: 1
-      duration: 0.1141718
+      duration: 0.1137717
       messages: 
       output: 
       stacktrace: 
@@ -8928,7 +8928,7 @@ MonoBehaviour:
       name: CharacterLevelCanBeChanged
       fullName: Testing.Party.PartyManagerTests.CharacterLevelCanBeChanged
       resultStatus: 1
-      duration: 0.1213253
+      duration: 0.123002
       messages: 
       output: 
       stacktrace: 
@@ -8945,7 +8945,7 @@ MonoBehaviour:
       name: CharacterNameCanBeChanged
       fullName: Testing.Party.PartyManagerTests.CharacterNameCanBeChanged
       resultStatus: 1
-      duration: 0.1104849
+      duration: 0.1106874
       messages: 
       output: 
       stacktrace: 
@@ -8962,7 +8962,7 @@ MonoBehaviour:
       name: CharacterSkillsCanBeChanged
       fullName: Testing.Party.PartyManagerTests.CharacterSkillsCanBeChanged
       resultStatus: 1
-      duration: 0.1128996
+      duration: 0.1130314
       messages: 
       output: 
       stacktrace: 
@@ -8979,7 +8979,7 @@ MonoBehaviour:
       name: EquipmentCanBeChanged
       fullName: Testing.Party.PartyManagerTests.EquipmentCanBeChanged
       resultStatus: 1
-      duration: 0.1143685
+      duration: 0.1126781
       messages: 
       output: 
       stacktrace: 
@@ -8996,7 +8996,7 @@ MonoBehaviour:
       name: GoldValueCanBeChanged
       fullName: Testing.Party.PartyManagerTests.GoldValueCanBeChanged
       resultStatus: 1
-      duration: 0.001299
+      duration: 0.0013456
       messages: 
       output: 
       stacktrace: 
@@ -9013,7 +9013,7 @@ MonoBehaviour:
       name: InventoryCanBeSet
       fullName: Testing.Party.PartyManagerTests.InventoryCanBeSet
       resultStatus: 1
-      duration: 0.0011955
+      duration: 0.0013201
       messages: 
       output: 
       stacktrace: 
@@ -9030,7 +9030,7 @@ MonoBehaviour:
       name: ItemsCanBeChanged
       fullName: Testing.Party.PartyManagerTests.ItemsCanBeChanged
       resultStatus: 1
-      duration: 0.0034495
+      duration: 0.003486
       messages: 
       output: 
       stacktrace: 
@@ -9047,7 +9047,7 @@ MonoBehaviour:
       name: PartyCanBeLoadedFromSave
       fullName: Testing.Party.PartyManagerTests.PartyCanBeLoadedFromSave
       resultStatus: 1
-      duration: 0.151541
+      duration: 0.1504214
       messages: 
       output: 
       stacktrace: 
@@ -9064,7 +9064,7 @@ MonoBehaviour:
       name: PartyManagerCanBeCreated
       fullName: Testing.Party.PartyManagerTests.PartyManagerCanBeCreated
       resultStatus: 1
-      duration: 0.0012944
+      duration: 0.0012448
       messages: 
       output: 
       stacktrace: 
@@ -9081,7 +9081,7 @@ MonoBehaviour:
       name: PartyMemberCanBeAdded
       fullName: Testing.Party.PartyManagerTests.PartyMemberCanBeAdded
       resultStatus: 1
-      duration: 0.1143848
+      duration: 0.1156196
       messages: 
       output: 
       stacktrace: 
@@ -9098,7 +9098,7 @@ MonoBehaviour:
       name: PartyMemberCanBeRemoved
       fullName: Testing.Party.PartyManagerTests.PartyMemberCanBeRemoved
       resultStatus: 1
-      duration: 0.1157035
+      duration: 0.114517
       messages: 
       output: 
       stacktrace: 
@@ -9115,7 +9115,7 @@ MonoBehaviour:
       name: WholePartyCanRecover
       fullName: Testing.Party.PartyManagerTests.WholePartyCanRecover
       resultStatus: 1
-      duration: 0.156127
+      duration: 0.1565327
       messages: 
       output: 
       stacktrace: 
@@ -9132,7 +9132,7 @@ MonoBehaviour:
       name: Questing
       fullName: Testing.Questing
       resultStatus: 1
-      duration: 0.0499383
+      duration: 0.0511206
       messages: 
       output: 
       stacktrace: 
@@ -9148,7 +9148,7 @@ MonoBehaviour:
       name: QuestManagerTests
       fullName: Testing.Questing.QuestManagerTests
       resultStatus: 1
-      duration: 0.0184473
+      duration: 0.0182378
       messages: 
       output: 
       stacktrace: 
@@ -9164,7 +9164,7 @@ MonoBehaviour:
       name: QuestManagerDataCanBeDeserialized
       fullName: Testing.Questing.QuestManagerTests.QuestManagerDataCanBeDeserialized
       resultStatus: 1
-      duration: 0.0070186
+      duration: 0.0075269
       messages: 
       output: 
       stacktrace: 
@@ -9181,7 +9181,7 @@ MonoBehaviour:
       name: QuestManagerDataCanBeSerialized
       fullName: Testing.Questing.QuestManagerTests.QuestManagerDataCanBeSerialized
       resultStatus: 1
-      duration: 0.0036557
+      duration: 0.003811
       messages: 
       output: 
       stacktrace: 
@@ -9198,7 +9198,7 @@ MonoBehaviour:
       name: QuestRewardTests
       fullName: Testing.Questing.QuestRewardTests
       resultStatus: 1
-      duration: 0.0070085
+      duration: 0.0061373
       messages: 
       output: 
       stacktrace: 
@@ -9214,7 +9214,7 @@ MonoBehaviour:
       name: QuestRewardCanBeCreated
       fullName: Testing.Questing.QuestRewardTests.QuestRewardCanBeCreated
       resultStatus: 1
-      duration: 0.000506
+      duration: 0.0003549
       messages: 
       output: 
       stacktrace: 
@@ -9231,7 +9231,7 @@ MonoBehaviour:
       name: QuestsParserTests
       fullName: Testing.Questing.QuestsParserTests
       resultStatus: 1
-      duration: 0.0091357
+      duration: 0.0098042
       messages: 
       output: 
       stacktrace: 
@@ -9247,7 +9247,7 @@ MonoBehaviour:
       name: QuestDataCanBeParsed
       fullName: Testing.Questing.QuestsParserTests.QuestDataCanBeParsed
       resultStatus: 1
-      duration: 0.0025889
+      duration: 0.0028599
       messages: 
       output: 
       stacktrace: 
@@ -9264,7 +9264,7 @@ MonoBehaviour:
       name: QuestStepTests
       fullName: Testing.Questing.QuestStepTests
       resultStatus: 1
-      duration: 0.0048059
+      duration: 0.0056918
       messages: 
       output: 
       stacktrace: 
@@ -9280,7 +9280,7 @@ MonoBehaviour:
       name: EmptyQuestStepCanBeCreated
       fullName: Testing.Questing.QuestStepTests.EmptyQuestStepCanBeCreated
       resultStatus: 1
-      duration: 0.0003638
+      duration: 0.0004316
       messages: 
       output: 
       stacktrace: 
@@ -9297,7 +9297,7 @@ MonoBehaviour:
       name: QuestStepCanBeDeserialized
       fullName: Testing.Questing.QuestStepTests.QuestStepCanBeDeserialized
       resultStatus: 1
-      duration: 0.0003221
+      duration: 0.0003622
       messages: 
       output: 
       stacktrace: 
@@ -9314,7 +9314,7 @@ MonoBehaviour:
       name: QuestStepCanBeSerialized
       fullName: Testing.Questing.QuestStepTests.QuestStepCanBeSerialized
       resultStatus: 1
-      duration: 0.0002309
+      duration: 0.0005532
       messages: 
       output: 
       stacktrace: 
@@ -9331,7 +9331,7 @@ MonoBehaviour:
       name: QuestStepStatusCanBeChanged
       fullName: Testing.Questing.QuestStepTests.QuestStepStatusCanBeChanged
       resultStatus: 1
-      duration: 0.0003866
+      duration: 0.0002502
       messages: 
       output: 
       stacktrace: 
@@ -9348,7 +9348,7 @@ MonoBehaviour:
       name: QuestTests
       fullName: Testing.Questing.QuestTests
       resultStatus: 1
-      duration: 0.0053182
+      duration: 0.0063387
       messages: 
       output: 
       stacktrace: 
@@ -9364,7 +9364,7 @@ MonoBehaviour:
       name: EmptyQuestCanBeCreated
       fullName: Testing.Questing.QuestTests.EmptyQuestCanBeCreated
       resultStatus: 1
-      duration: 0.0004042
+      duration: 0.0004008
       messages: 
       output: 
       stacktrace: 
@@ -9381,7 +9381,7 @@ MonoBehaviour:
       name: QuestCanBeDeserialized
       fullName: Testing.Questing.QuestTests.QuestCanBeDeserialized
       resultStatus: 1
-      duration: 0.0002969
+      duration: 0.0003215
       messages: 
       output: 
       stacktrace: 
@@ -9398,7 +9398,7 @@ MonoBehaviour:
       name: QuestCanBeSerialized
       fullName: Testing.Questing.QuestTests.QuestCanBeSerialized
       resultStatus: 1
-      duration: 0.0002333
+      duration: 0.0004046
       messages: 
       output: 
       stacktrace: 
@@ -9415,7 +9415,7 @@ MonoBehaviour:
       name: QuestStatusCanBeChanged
       fullName: Testing.Questing.QuestTests.QuestStatusCanBeChanged
       resultStatus: 1
-      duration: 0.0002236
+      duration: 0.0002826
       messages: 
       output: 
       stacktrace: 
@@ -9432,7 +9432,7 @@ MonoBehaviour:
       name: QuestStepCanBeAdded
       fullName: Testing.Questing.QuestTests.QuestStepCanBeAdded
       resultStatus: 1
-      duration: 0.0003853
+      duration: 0.0008022
       messages: 
       output: 
       stacktrace: 
@@ -9449,7 +9449,7 @@ MonoBehaviour:
       name: Save
       fullName: Testing.Save
       resultStatus: 1
-      duration: 3.8863215
+      duration: 3.8759668
       messages: 
       output: 
       stacktrace: 
@@ -9465,7 +9465,7 @@ MonoBehaviour:
       name: Model
       fullName: Testing.Save.Model
       resultStatus: 1
-      duration: 0.0068997
+      duration: 0.00677
       messages: 
       output: 
       stacktrace: 
@@ -9481,7 +9481,7 @@ MonoBehaviour:
       name: SaveDescriptorTests
       fullName: Testing.Save.Model.SaveDescriptorTests
       resultStatus: 1
-      duration: 0.0046076
+      duration: 0.0039952
       messages: 
       output: 
       stacktrace: 
@@ -9497,7 +9497,7 @@ MonoBehaviour:
       name: DescriptorCanBeCreated
       fullName: Testing.Save.Model.SaveDescriptorTests.DescriptorCanBeCreated
       resultStatus: 1
-      duration: 0.0004907
+      duration: 0.0005672
       messages: 
       output: 
       stacktrace: 
@@ -9514,7 +9514,7 @@ MonoBehaviour:
       name: SaveCanvasTests
       fullName: Testing.Save.SaveCanvasTests
       resultStatus: 1
-      duration: 3.0687616
+      duration: 3.0641348
       messages: 
       output: 
       stacktrace: 
@@ -9530,7 +9530,7 @@ MonoBehaviour:
       name: CancelEventIsDetected
       fullName: Testing.Save.SaveCanvasTests.CancelEventIsDetected
       resultStatus: 1
-      duration: 2.024776
+      duration: 2.0219913
       messages: 
       output: 
       stacktrace: 
@@ -9547,7 +9547,7 @@ MonoBehaviour:
       name: GlobalStateIsUpdatedAfterOpening
       fullName: Testing.Save.SaveCanvasTests.GlobalStateIsUpdatedAfterOpening
       resultStatus: 1
-      duration: 1.0170095
+      duration: 1.0160567
       messages: 
       output: 
       stacktrace: 
@@ -9564,7 +9564,7 @@ MonoBehaviour:
       name: SaveStateChangesAreDetected
       fullName: Testing.Save.SaveCanvasTests.SaveStateChangesAreDetected
       resultStatus: 1
-      duration: 0.0112508
+      duration: 0.0105675
       messages: 
       output: 
       stacktrace: 
@@ -9581,7 +9581,7 @@ MonoBehaviour:
       name: TooltipIsUpdatedWhenSaveStateChanges
       fullName: Testing.Save.SaveCanvasTests.TooltipIsUpdatedWhenSaveStateChanges
       resultStatus: 1
-      duration: 0.010651
+      duration: 0.0108769
       messages: 
       output: 
       stacktrace: 
@@ -9598,7 +9598,7 @@ MonoBehaviour:
       name: SaveCreatorTests
       fullName: Testing.Save.SaveCreatorTests
       resultStatus: 1
-      duration: 0.7650813
+      duration: 0.7629444
       messages: 
       output: 
       stacktrace: 
@@ -9614,7 +9614,7 @@ MonoBehaviour:
       name: AdditionalTimersCanBeSaved
       fullName: Testing.Save.SaveCreatorTests.AdditionalTimersCanBeSaved
       resultStatus: 1
-      duration: 0.5131202
+      duration: 0.513986
       messages: 
       output: 
       stacktrace: 
@@ -9631,7 +9631,7 @@ MonoBehaviour:
       name: BlankSaveDataCanBeCreated
       fullName: Testing.Save.SaveCreatorTests.BlankSaveDataCanBeCreated
       resultStatus: 1
-      duration: 0.0023666
+      duration: 0.0020701
       messages: 
       output: 
       stacktrace: 
@@ -9648,7 +9648,7 @@ MonoBehaviour:
       name: BlankSaveDataCanBeSavedOnDisk
       fullName: Testing.Save.SaveCreatorTests.BlankSaveDataCanBeSavedOnDisk
       resultStatus: 1
-      duration: 0.0034369
+      duration: 0.0033315
       messages: 
       output: 
       stacktrace: 
@@ -9665,7 +9665,7 @@ MonoBehaviour:
       name: CharactersDataCanBeSaved
       fullName: Testing.Save.SaveCreatorTests.CharactersDataCanBeSaved
       resultStatus: 1
-      duration: 0.0197387
+      duration: 0.0194829
       messages: 
       output: 
       stacktrace: 
@@ -9682,7 +9682,7 @@ MonoBehaviour:
       name: InGameTimerCanBeSaved
       fullName: Testing.Save.SaveCreatorTests.InGameTimerCanBeSaved
       resultStatus: 1
-      duration: 0.2154302
+      duration: 0.2142486
       messages: 
       output: 
       stacktrace: 
@@ -9699,7 +9699,7 @@ MonoBehaviour:
       name: InventoryDataCanBeSaved
       fullName: Testing.Save.SaveCreatorTests.InventoryDataCanBeSaved
       resultStatus: 1
-      duration: 0.0021062
+      duration: 0.0018952
       messages: 
       output: 
       stacktrace: 
@@ -9716,7 +9716,7 @@ MonoBehaviour:
       name: PersistentDataCanBeSaved
       fullName: Testing.Save.SaveCreatorTests.PersistentDataCanBeSaved
       resultStatus: 1
-      duration: 0.0011104
+      duration: 0.0010703
       messages: 
       output: 
       stacktrace: 
@@ -9733,7 +9733,7 @@ MonoBehaviour:
       name: SaveDataCanBeCreatedAfterMapTransition
       fullName: Testing.Save.SaveCreatorTests.SaveDataCanBeCreatedAfterMapTransition
       resultStatus: 1
-      duration: 0.0008256
+      duration: 0.0008379
       messages: 
       output: 
       stacktrace: 
@@ -9750,7 +9750,7 @@ MonoBehaviour:
       name: SaveLoaderTests
       fullName: Testing.Save.SaveLoaderTests
       resultStatus: 1
-      duration: 0.0090255
+      duration: 0.0080265
       messages: 
       output: 
       stacktrace: 
@@ -9766,7 +9766,7 @@ MonoBehaviour:
       name: DefaultSaveFileCanBeLoaded
       fullName: Testing.Save.SaveLoaderTests.DefaultSaveFileCanBeLoaded
       resultStatus: 1
-      duration: 0.0038385
+      duration: 0.0031419
       messages: 
       output: 
       stacktrace: 
@@ -9783,7 +9783,7 @@ MonoBehaviour:
       name: SaveDescriptorsCanBeObtained
       fullName: Testing.Save.SaveLoaderTests.SaveDescriptorsCanBeObtained
       resultStatus: 1
-      duration: 0.0020014
+      duration: 0.0018503
       messages: 
       output: 
       stacktrace: 
@@ -9800,7 +9800,7 @@ MonoBehaviour:
       name: SaveManagerTests
       fullName: Testing.Save.SaveManagerTests
       resultStatus: 1
-      duration: 0.0057456
+      duration: 0.0060846
       messages: 
       output: 
       stacktrace: 
@@ -9816,7 +9816,7 @@ MonoBehaviour:
       name: DescriptorsCanBeMerged
       fullName: Testing.Save.SaveManagerTests.DescriptorsCanBeMerged
       resultStatus: 1
-      duration: 0.0008541
+      duration: 0.0010895
       messages: 
       output: 
       stacktrace: 
@@ -9833,7 +9833,7 @@ MonoBehaviour:
       name: EmptySlotsCanBeCreated
       fullName: Testing.Save.SaveManagerTests.EmptySlotsCanBeCreated
       resultStatus: 1
-      duration: 0.0004809
+      duration: 0.0003578
       messages: 
       output: 
       stacktrace: 
@@ -9850,7 +9850,7 @@ MonoBehaviour:
       name: SaveCreationRequestIsDetected
       fullName: Testing.Save.SaveManagerTests.SaveCreationRequestIsDetected
       resultStatus: 1
-      duration: 0.0003078
+      duration: 0.0003219
       messages: 
       output: 
       stacktrace: 
@@ -9867,7 +9867,7 @@ MonoBehaviour:
       name: SaveLoadRequestIsDetected
       fullName: Testing.Save.SaveManagerTests.SaveLoadRequestIsDetected
       resultStatus: 1
-      duration: 0.0002558
+      duration: 0.0002634
       messages: 
       output: 
       stacktrace: 
@@ -9884,7 +9884,7 @@ MonoBehaviour:
       name: SaveSlotTests
       fullName: Testing.Save.SaveSlotTests
       resultStatus: 1
-      duration: 0.0058566
+      duration: 0.0043955
       messages: 
       output: 
       stacktrace: 
@@ -9900,7 +9900,7 @@ MonoBehaviour:
       name: SlotCanBeInited
       fullName: Testing.Save.SaveSlotTests.SlotCanBeInited
       resultStatus: 1
-      duration: 0.0026443
+      duration: 0.0016975
       messages: 
       output: 
       stacktrace: 
@@ -9917,7 +9917,7 @@ MonoBehaviour:
       name: SelectableSavesListTests
       fullName: Testing.Save.SelectableSavesListTests
       resultStatus: 1
-      duration: 0.019661
+      duration: 0.0187754
       messages: 
       output: 
       stacktrace: 
@@ -9933,7 +9933,7 @@ MonoBehaviour:
       name: ListCanBeFedWithSaves
       fullName: Testing.Save.SelectableSavesListTests.ListCanBeFedWithSaves
       resultStatus: 1
-      duration: 0.01649
+      duration: 0.0157483
       messages: 
       output: 
       stacktrace: 
@@ -9950,7 +9950,7 @@ MonoBehaviour:
       name: Shop
       fullName: Testing.Shop
       resultStatus: 2
-      duration: 0.1380984
+      duration: 0.126667
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -9966,7 +9966,7 @@ MonoBehaviour:
       name: ItemDetailsTests
       fullName: Testing.Shop.ItemDetailsTests
       resultStatus: 1
-      duration: 0.0157711
+      duration: 0.0117147
       messages: 
       output: 
       stacktrace: 
@@ -9982,7 +9982,7 @@ MonoBehaviour:
       name: DataCanBeFedToItemDetails
       fullName: Testing.Shop.ItemDetailsTests.DataCanBeFedToItemDetails
       resultStatus: 1
-      duration: 0.0064721
+      duration: 0.0063459
       messages: 
       output: 
       stacktrace: 
@@ -9999,7 +9999,7 @@ MonoBehaviour:
       name: ItemDetailsCanBeShownAndHidden
       fullName: Testing.Shop.ItemDetailsTests.ItemDetailsCanBeShownAndHidden
       resultStatus: 1
-      duration: 0.0014591
+      duration: 0.001474
       messages: 
       output: 
       stacktrace: 
@@ -10016,7 +10016,7 @@ MonoBehaviour:
       name: MerchantParserTests
       fullName: Testing.Shop.MerchantParserTests
       resultStatus: 1
-      duration: 0.0127183
+      duration: 0.0099326
       messages: 
       output: 
       stacktrace: 
@@ -10032,7 +10032,7 @@ MonoBehaviour:
       name: MerchantsCanBeParsedFromFile
       fullName: Testing.Shop.MerchantParserTests.MerchantsCanBeParsedFromFile
       resultStatus: 1
-      duration: 0.0066801
+      duration: 0.006784
       messages: 
       output: 
       stacktrace: 
@@ -10049,7 +10049,7 @@ MonoBehaviour:
       name: MerchantTests
       fullName: Testing.Shop.MerchantTests
       resultStatus: 1
-      duration: 0.0089887
+      duration: 0.0088408
       messages: 
       output: 
       stacktrace: 
@@ -10065,7 +10065,7 @@ MonoBehaviour:
       name: EmptyMerchantCanBeCreated
       fullName: Testing.Shop.MerchantTests.EmptyMerchantCanBeCreated
       resultStatus: 1
-      duration: 0.0005392
+      duration: 0.0004718
       messages: 
       output: 
       stacktrace: 
@@ -10082,7 +10082,7 @@ MonoBehaviour:
       name: ItemsCanBeAddedToMerchant
       fullName: Testing.Shop.MerchantTests.ItemsCanBeAddedToMerchant
       resultStatus: 1
-      duration: 0.0008761
+      duration: 0.0013704
       messages: 
       output: 
       stacktrace: 
@@ -10099,7 +10099,7 @@ MonoBehaviour:
       name: TypesOfSoldItemsCanBeObtained
       fullName: Testing.Shop.MerchantTests.TypesOfSoldItemsCanBeObtained
       resultStatus: 1
-      duration: 0.0007334
+      duration: 0.0007622
       messages: 
       output: 
       stacktrace: 
@@ -10116,7 +10116,7 @@ MonoBehaviour:
       name: QuantitySelectorTests
       fullName: Testing.Shop.QuantitySelectorTests
       resultStatus: 1
-      duration: 0.0235791
+      duration: 0.0225144
       messages: 
       output: 
       stacktrace: 
@@ -10132,7 +10132,7 @@ MonoBehaviour:
       name: QuantityCanBeChanged
       fullName: Testing.Shop.QuantitySelectorTests.QuantityCanBeChanged
       resultStatus: 1
-      duration: 0.0017801
+      duration: 0.0023455
       messages: 
       output: 
       stacktrace: 
@@ -10149,7 +10149,7 @@ MonoBehaviour:
       name: SelectorCanBeSelected
       fullName: Testing.Shop.QuantitySelectorTests.SelectorCanBeSelected
       resultStatus: 1
-      duration: 0.0143027
+      duration: 0.0136042
       messages: 
       output: 
       stacktrace: 
@@ -10166,7 +10166,7 @@ MonoBehaviour:
       name: SelectableItemTests
       fullName: Testing.Shop.SelectableItemTests
       resultStatus: 1
-      duration: 0.006809
+      duration: 0.0068862
       messages: 
       output: 
       stacktrace: 
@@ -10182,7 +10182,7 @@ MonoBehaviour:
       name: DataCanBeFedToSelectableItem
       fullName: Testing.Shop.SelectableItemTests.DataCanBeFedToSelectableItem
       resultStatus: 1
-      duration: 0.0032345
+      duration: 0.003445
       messages: 
       output: 
       stacktrace: 
@@ -10199,7 +10199,7 @@ MonoBehaviour:
       name: ShopConfirmationWindowTests
       fullName: Testing.Shop.ShopConfirmationWindowTests
       resultStatus: 1
-      duration: 0.0154511
+      duration: 0.0147651
       messages: 
       output: 
       stacktrace: 
@@ -10215,7 +10215,7 @@ MonoBehaviour:
       name: EventsCanBeCaught
       fullName: Testing.Shop.ShopConfirmationWindowTests.EventsCanBeCaught
       resultStatus: 1
-      duration: 0.0066939
+      duration: 0.0069202
       messages: 
       output: 
       stacktrace: 
@@ -10232,7 +10232,7 @@ MonoBehaviour:
       name: QuantityCanBeAdjusted
       fullName: Testing.Shop.ShopConfirmationWindowTests.QuantityCanBeAdjusted
       resultStatus: 1
-      duration: 0.0026598
+      duration: 0.0021746
       messages: 
       output: 
       stacktrace: 
@@ -10249,7 +10249,7 @@ MonoBehaviour:
       name: WindowCanBeOpened
       fullName: Testing.Shop.ShopConfirmationWindowTests.WindowCanBeOpened
       resultStatus: 1
-      duration: 0.0024828
+      duration: 0.0022691
       messages: 
       output: 
       stacktrace: 
@@ -10266,7 +10266,7 @@ MonoBehaviour:
       name: ShopManagerTests
       fullName: Testing.Shop.ShopManagerTests
       resultStatus: 2
-      duration: 0.0297825
+      duration: 0.0278381
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -10282,7 +10282,7 @@ MonoBehaviour:
       name: ShopCanBeSetup
       fullName: Testing.Shop.ShopManagerTests.ShopCanBeSetup
       resultStatus: 2
-      duration: 0.0258894
+      duration: 0.0241497
       messages: 'System.NullReferenceException : Object reference not set to an instance
         of an object'
       output: 
@@ -10307,7 +10307,7 @@ MonoBehaviour:
       name: ShopOptionsTests
       fullName: Testing.Shop.ShopOptionsTests
       resultStatus: 1
-      duration: 0.00375
+      duration: 0.0035731
       messages: 
       output: 
       stacktrace: 
@@ -10323,7 +10323,7 @@ MonoBehaviour:
       name: ShopOptionCanBeCreated
       fullName: Testing.Shop.ShopOptionsTests.ShopOptionCanBeCreated
       resultStatus: 1
-      duration: 0.0004835
+      duration: 0.0004543
       messages: 
       output: 
       stacktrace: 
@@ -10340,7 +10340,7 @@ MonoBehaviour:
       name: ShopWindowTests
       fullName: Testing.Shop.ShopWindowTests
       resultStatus: 2
-      duration: 0.0154914
+      duration: 0.0144025
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -10356,7 +10356,7 @@ MonoBehaviour:
       name: MerchantCanBeSetup
       fullName: Testing.Shop.ShopWindowTests.MerchantCanBeSetup
       resultStatus: 2
-      duration: 0.0121666
+      duration: 0.0110225
       messages: 'System.NullReferenceException : Object reference not set to an instance
         of an object'
       output: 
@@ -10379,7 +10379,7 @@ MonoBehaviour:
       name: Timing
       fullName: Testing.Timing
       resultStatus: 1
-      duration: 2.0483358
+      duration: 2.0567217
       messages: 
       output: 
       stacktrace: 
@@ -10395,7 +10395,7 @@ MonoBehaviour:
       name: GlobalTimerTests
       fullName: Testing.Timing.GlobalTimerTests
       resultStatus: 1
-      duration: 1.0323128
+      duration: 1.0387942
       messages: 
       output: 
       stacktrace: 
@@ -10411,7 +10411,7 @@ MonoBehaviour:
       name: ChangeOfSecondIsDetectedTest
       fullName: Testing.Timing.GlobalTimerTests.ChangeOfSecondIsDetectedTest
       resultStatus: 1
-      duration: 1.0102236
+      duration: 1.0121412
       messages: 
       output: 
       stacktrace: 
@@ -10428,7 +10428,7 @@ MonoBehaviour:
       name: InitInGameTimerTest
       fullName: Testing.Timing.GlobalTimerTests.InitInGameTimerTest
       resultStatus: 1
-      duration: 0.0091255
+      duration: 0.0099083
       messages: 
       output: 
       stacktrace: 
@@ -10445,7 +10445,7 @@ MonoBehaviour:
       name: TrackGlobalTimerTest
       fullName: Testing.Timing.GlobalTimerTests.TrackGlobalTimerTest
       resultStatus: 1
-      duration: 0.0083598
+      duration: 0.0118333
       messages: 
       output: 
       stacktrace: 
@@ -10462,7 +10462,7 @@ MonoBehaviour:
       name: WaiterTests
       fullName: Testing.Timing.WaiterTests
       resultStatus: 1
-      duration: 1.0130378
+      duration: 1.014816
       messages: 
       output: 
       stacktrace: 
@@ -10478,7 +10478,7 @@ MonoBehaviour:
       name: DetectWaitIsFinishedTest
       fullName: Testing.Timing.WaiterTests.DetectWaitIsFinishedTest
       resultStatus: 1
-      duration: 1.0094441
+      duration: 1.0099993
       messages: 
       output: 
       stacktrace: 
@@ -10495,7 +10495,7 @@ MonoBehaviour:
       name: UI
       fullName: Testing.UI
       resultStatus: 1
-      duration: 3.73245
+      duration: 3.733592
       messages: 
       output: 
       stacktrace: 
@@ -10511,7 +10511,7 @@ MonoBehaviour:
       name: HorizontalMenuButtonTests
       fullName: Testing.UI.HorizontalMenuButtonTests
       resultStatus: 1
-      duration: 0.0172602
+      duration: 0.0184222
       messages: 
       output: 
       stacktrace: 
@@ -10527,7 +10527,7 @@ MonoBehaviour:
       name: ButtonCanBeHovered
       fullName: Testing.UI.HorizontalMenuButtonTests.ButtonCanBeHovered
       resultStatus: 1
-      duration: 0.013717
+      duration: 0.0146566
       messages: 
       output: 
       stacktrace: 
@@ -10544,7 +10544,7 @@ MonoBehaviour:
       name: HorizontalMenuTests
       fullName: Testing.UI.HorizontalMenuTests
       resultStatus: 1
-      duration: 1.5591719
+      duration: 1.5651015
       messages: 
       output: 
       stacktrace: 
@@ -10560,7 +10560,7 @@ MonoBehaviour:
       name: CursorCanBeMoved
       fullName: Testing.UI.HorizontalMenuTests.CursorCanBeMoved
       resultStatus: 1
-      duration: 1.5408727
+      duration: 1.5452425
       messages: 
       output: 
       stacktrace: 
@@ -10577,7 +10577,7 @@ MonoBehaviour:
       name: MenuIsInitedProperly
       fullName: Testing.UI.HorizontalMenuTests.MenuIsInitedProperly
       resultStatus: 1
-      duration: 0.0134504
+      duration: 0.0142281
       messages: 
       output: 
       stacktrace: 
@@ -10594,7 +10594,7 @@ MonoBehaviour:
       name: SelectableItemTests
       fullName: Testing.UI.SelectableItemTests
       resultStatus: 1
-      duration: 0.0189728
+      duration: 0.0204801
       messages: 
       output: 
       stacktrace: 
@@ -10610,7 +10610,7 @@ MonoBehaviour:
       name: CursorCanBeShownAndHidden
       fullName: Testing.UI.SelectableItemTests.CursorCanBeShownAndHidden
       resultStatus: 1
-      duration: 0.0153533
+      duration: 0.0165239
       messages: 
       output: 
       stacktrace: 
@@ -10627,7 +10627,7 @@ MonoBehaviour:
       name: SelectableListTests
       fullName: Testing.UI.SelectableListTests
       resultStatus: 1
-      duration: 2.132958
+      duration: 2.1246812
       messages: 
       output: 
       stacktrace: 
@@ -10643,7 +10643,7 @@ MonoBehaviour:
       name: CancelOperationIsDetected
       fullName: Testing.UI.SelectableListTests.CancelOperationIsDetected
       resultStatus: 1
-      duration: 0.017449
+      duration: 0.0193083
       messages: 
       output: 
       stacktrace: 
@@ -10660,7 +10660,7 @@ MonoBehaviour:
       name: CursorCanBeMoved
       fullName: Testing.UI.SelectableListTests.CursorCanBeMoved
       resultStatus: 1
-      duration: 1.7853545
+      duration: 1.7777051
       messages: 
       output: 
       stacktrace: 
@@ -10677,7 +10677,7 @@ MonoBehaviour:
       name: FirstItemCanBeHovered
       fullName: Testing.UI.SelectableListTests.FirstItemCanBeHovered
       resultStatus: 1
-      duration: 0.0157471
+      duration: 0.0150013
       messages: 
       output: 
       stacktrace: 
@@ -10694,7 +10694,7 @@ MonoBehaviour:
       name: ItemCanBeAddedToTheList
       fullName: Testing.UI.SelectableListTests.ItemCanBeAddedToTheList
       resultStatus: 1
-      duration: 0.0230203
+      duration: 0.0189022
       messages: 
       output: 
       stacktrace: 
@@ -10711,7 +10711,7 @@ MonoBehaviour:
       name: ListCanBeCleared
       fullName: Testing.UI.SelectableListTests.ListCanBeCleared
       resultStatus: 1
-      duration: 0.0154987
+      duration: 0.0161462
       messages: 
       output: 
       stacktrace: 
@@ -10728,7 +10728,7 @@ MonoBehaviour:
       name: SelectedItemCanBeObtained
       fullName: Testing.UI.SelectableListTests.SelectedItemCanBeObtained
       resultStatus: 1
-      duration: 0.2698687
+      duration: 0.2709246
       messages: 
       output: 
       stacktrace: 
@@ -10745,7 +10745,7 @@ MonoBehaviour:
       name: Utils
       fullName: Testing.Utils
       resultStatus: 1
-      duration: 0.0189589
+      duration: 0.0189379
       messages: 
       output: 
       stacktrace: 
@@ -10761,7 +10761,7 @@ MonoBehaviour:
       name: MeasuresConverterTests
       fullName: Testing.Utils.MeasuresConverterTests
       resultStatus: 1
-      duration: 0.0047378
+      duration: 0.004255
       messages: 
       output: 
       stacktrace: 
@@ -10777,7 +10777,7 @@ MonoBehaviour:
       name: RangeToWorldUnitsTest
       fullName: Testing.Utils.MeasuresConverterTests.RangeToWorldUnitsTest
       resultStatus: 1
-      duration: 0.0002984
+      duration: 0.0002979
       messages: 
       output: 
       stacktrace: 
@@ -10794,7 +10794,7 @@ MonoBehaviour:
       name: WorldUnitsToRangeTest
       fullName: Testing.Utils.MeasuresConverterTests.WorldUnitsToRangeTest
       resultStatus: 1
-      duration: 0.0002313
+      duration: 0.000198
       messages: 
       output: 
       stacktrace: 
@@ -10811,7 +10811,7 @@ MonoBehaviour:
       name: QuadraticFunctionTests
       fullName: Testing.Utils.QuadraticFunctionTests
       resultStatus: 1
-      duration: 0.0029923
+      duration: 0.003015
       messages: 
       output: 
       stacktrace: 
@@ -10827,7 +10827,7 @@ MonoBehaviour:
       name: ComputeTests
       fullName: Testing.Utils.QuadraticFunctionTests.ComputeTests
       resultStatus: 1
-      duration: 0.0002972
+      duration: 0.0003134
       messages: 
       output: 
       stacktrace: 
@@ -10844,7 +10844,7 @@ MonoBehaviour:
       name: StatScalingFunctionTests
       fullName: Testing.Utils.StatScalingFunctionTests
       resultStatus: 1
-      duration: 0.00364
+      duration: 0.0036976
       messages: 
       output: 
       stacktrace: 
@@ -10860,7 +10860,7 @@ MonoBehaviour:
       name: ComputeTest
       fullName: Testing.Utils.StatScalingFunctionTests.ComputeTest
       resultStatus: 1
-      duration: 0.000319
+      duration: 0.0003839
       messages: 
       output: 
       stacktrace: 
@@ -10877,7 +10877,7 @@ MonoBehaviour:
       name: TimeConverterTests
       fullName: Testing.Utils.TimeConverterTests
       resultStatus: 1
-      duration: 0.003552
+      duration: 0.004045
       messages: 
       output: 
       stacktrace: 
@@ -10893,7 +10893,7 @@ MonoBehaviour:
       name: FormatTimeFromSecondsTest
       fullName: Testing.Utils.TimeConverterTests.FormatTimeFromSecondsTest
       resultStatus: 1
-      duration: 0.0004258
+      duration: 0.0003542
       messages: 
       output: 
       stacktrace: 
@@ -10905,13 +10905,20 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1008
       parentUniqueId: Tests.dll/Testing/Utils/[Tests][Testing.Utils.TimeConverterTests][suite]
-    m_ResultText: BattleSystem (0,768s)
+    m_ResultText: 'BattleStateCanBeUpdated (0,038s)
+
+      ---
+
+      Animator is
+      not playing an AnimatorController
+
+      Animator is not playing an AnimatorController'
     m_ResultStacktrace: 
     m_TestListState:
-      scrollPos: {x: 0, y: 420}
-      m_SelectedIDs: f3d264b9
-      m_LastClickedID: -1184574733
-      m_ExpandedIDs: 0cdece80ea94e580e95922837e2f0084b9faa3857d27c088d1e1e588ddd5208b5155378cc3f7618cd887a28e2a9e4c93d1a19494c87ae496241beb9756cc44987348a09becc6539c2382bb9c8330b39d02715a9e09add29e759bef9ed340b9a1e1b600a27bf06da2d4aaefa42f8e10a5b76bf0a5a4ca3fa66d33aca75f79f2a829bf73aa914bb5ad079c34aef87addb1dfba42b23bf28fb7b75f6dbe3c9679be944c81be024969c1ad0dd3c21665e8c598d140c68c3bacc713d282c802a7b6c95c8600ca2bab08cd80cb9ccdcbc54bd2d14892d2213404d737d566d76e3b5fd9a5300eda1eda61da1031dddcc77613dd7c6e4bdd8c60acde925181e25d006de6427858ea02b6e9ea6b36cdee4eaf28ef2f67adefe05140f1afd157f2fde983f3d5f817f6809dbaf65bc100f7e557abf787cbe0f8cf7f5cf9390acefbd34366fcf586d3fcbbb68d003872b7030ff1870471ab9407b8935908e9ea6b094deeca0900b5fa09b24fa80bed029313d84bb217d67107199adf451a7bd7f21a4522021b01d8b11c720b2f1e6e83a91ec48194229038d02384ebdf2506d9b6268d11e02627116227da52eb285410cf293ae17a2a1867542fcc405a316e478e31afaa083888ba9e3a5900253b91c1773cf504303e79dc0a40a67fca4232d0ec4353adc94484f5ef448dd8cb468a2075497e134b4b4bc765507441155175b2fe5299b4b856958cc95ad40d6d61d0dfe362a31ce0657899ab6637ca336b8092776b15b5276c2b342b6e1640d16f12e13e719f3f9473a67d017432871475accef176ca400a77c3313d77f2293b78158eb47be4ff637efd6e247f199a897fffffff7f
+      scrollPos: {x: 0, y: 480}
+      m_SelectedIDs: a3eba601
+      m_LastClickedID: 27716515
+      m_ExpandedIDs: 0cdece80ea94e580e95922837e2f0084b9faa3857d27c088d1e1e588ddd5208b5155378cc3f7618cd887a28e2a9e4c93d1a19494c87ae496241beb9756cc44987348a09becc6539c2382bb9c8330b39d02715a9e09add29e759bef9ed340b9a1e1b600a27bf06da2d4aaefa42f8e10a5b76bf0a5a4ca3fa66d33aca75f79f2a829bf73aa914bb5ad079c34aef87addb1dfba42b23bf28fb7f3d264b9b75f6dbe3c9679be944c81be024969c1ad0dd3c21665e8c598d140c68c3bacc713d282c802a7b6c95c8600ca2bab08cd80cb9ccdcbc54bd2d14892d2213404d737d566d76e3b5fd9a5300eda1eda61da1031dddcc77613dd7c6e4bdd8c60acde925181e25d006de6427858ea02b6e9ea6b36cdee4eaf28ef2f67adefe05140f1afd157f2fde983f3d5f817f6809dbaf65bc100f7e557abf787cbe0f8cf7f5cf9390acefbd34366fcf586d3fcbbb68d003872b7030ff1870471ab9407b8935908e9ea6b094deeca0900b5fa09b24fa80bed029313d84bb217d67107199adf451a7bd7f21a4522021b01d8b11c720b2f1e6e83a91ec48194229038d02384ebdf2506d9b6268d11e02627116227da52eb285410cf293ae17a2a1867542fcc405a316e478e31afaa083888ba9e3a5900253b91c1773cf504303e79dc0a40a67fca4232d0ec4353adc94484f5ef448dd8cb468a2075497e134b4b4bc765507441155175b2fe5299b4b856958cc95ad40d6d61d0dfe362a31ce0657899ab6637ca336b8092776b15b5276c2b342b6e1640d16f12e13e719f3f9473a67d017432871475accef176ca400a77c3313d77f2293b78158eb47be4ff637efd6e247f199a897fffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -12970,10 +12977,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 255}
-    m_SelectedIDs: 82630000
-    m_LastClickedID: 25474
-    m_ExpandedIDs: 0000000046630000486300004a6300004c6300004e6300005063000052630000746300007663000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 191}
+    m_SelectedIDs: e8630000
+    m_LastClickedID: 25576
+    m_ExpandedIDs: 00000000a6630000a8630000aa630000ac630000ae630000b0630000b2630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -13001,7 +13008,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000046630000486300004a6300004c6300004e6300005063000052630000
+    m_ExpandedIDs: 00000000a6630000a8630000aa630000ac630000ae630000b0630000b2630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -13026,9 +13033,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 2e730000
-    m_LastClickedInstanceID: 29486
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000000000000b26c0000445000003a16000054670000a84f0000e4150000ca510000b6150000888d0000149effff3aca0000306f00002a60000002e3000008760100f4c703001e3c0400dac50100c27300001a8300000259000000590000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
