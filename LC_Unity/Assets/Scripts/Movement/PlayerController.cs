@@ -113,7 +113,7 @@ namespace Movement
                 _animator.SetBool("Moving", true);
             }
             else
-                _animator.SetBool("Moving", false);
+                StopMovement();
         }
 
         private void CheckMapTransitions()
@@ -198,6 +198,8 @@ namespace Movement
         {
             _change = Vector3.zero;
             _animator.SetBool("Moving", false);
+            _rb.velocity = Vector3.zero;
+            _rb.angularVelocity = 0.0f;
         }
     }
 }
