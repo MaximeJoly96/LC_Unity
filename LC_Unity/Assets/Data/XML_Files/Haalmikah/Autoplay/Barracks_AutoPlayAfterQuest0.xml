@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <Wait Duration="0.02" />
+  <DisableAgent Target="assaultSoldier1" />
+  <QuestCondition Type="Completed" QuestId="0">
+    <true>
+      <EnableAgent Target="warlockBarracks" />
+      <Wait Duration="1.5" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog0</Message>
+        <Locutor>louga</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.2" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog1</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <EnableAgent Target="assaultSoldier1" />
+      <PlaySoundEffect Name="OpenWoodenDoor" Pitch="1" Volume="1" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="assaultSoldier1">
+        <Through Status="true" />
+        <MoveRelative DeltaX="0" DeltaY="0.6" />
+        <MoveRelative DeltaX="0.6" DeltaY="0" />
+        <Turn Direction="Down" />
+      </SetMoveRoute>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlockBarracks">
+        <Turn Direction="Up" />
+      </SetMoveRoute>
+      <ShowBalloonIcon AgentId="warlockBarracks" BalloonIcon="Exclamation" WaitForCompletion="false" />
+      <ShowBalloonIcon AgentId="louga" BalloonIcon="Exclamation" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog2</Message>
+        <Locutor>pernambulisSoldier</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog3</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.5" />
+      <ShowBalloonIcon AgentId="warlockBarracks" BalloonIcon="Exclamation" WaitForCompletion="false" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog4</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlockBarracks">
+        <MoveRelative DeltaX="0" DeltaY="0.4" />
+        <Turn Direction="Down" />
+      </SetMoveRoute>
+      <Wait Duration="0.2" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog5</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.1" />
+      <ShowBalloonIcon AgentId="louga" BalloonIcon="Sweat" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog6</Message>
+        <Locutor>louga</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <ShowBalloonIcon AgentId="warlockBarracks" BalloonIcon="Anger" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog7</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlockBarracks">
+        <Turn Direction="Up" />
+      </SetMoveRoute>
+      <Wait Duration="0.2" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog8</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.3" />
+      <ShowBalloonIcon AgentId="assaultSoldier1" BalloonIcon="Exclamation" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog9</Message>
+        <Locutor>pernambulisSoldier</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlockBarracks">
+        <Through Status="true" />
+        <MoveRelative DeltaX="-0.6" DeltaY="0" />
+        <MoveRelative DeltaX="0" DeltaY="-0.4" />
+      </SetMoveRoute>
+      <PlaySoundEffect Name="CloseWoodenDoor" Pitch="1" Volume="1" />
+      <DisableAgent Target="warlockBarracks" />
+      <TintScreen Duration="2" WaitForCompletion="true">
+        <TargetColor R="0" G="0" B="0" A="1" />
+      </TintScreen>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
+        <Transparent Status="true" />
+        <Through Status="true" />
+      </SetMoveRoute>
+      <TransferObject Target="player">
+        <Direction>Top</Direction>
+        <Destination X="-38" Y="18.5" MapId="13" Inside="false" />
+      </TransferObject>
+    </true>
+    <false>
+      <DisableAgent Target="warlockBarracks" />
+    </false>
+  </QuestCondition>
+</EventsSequence>

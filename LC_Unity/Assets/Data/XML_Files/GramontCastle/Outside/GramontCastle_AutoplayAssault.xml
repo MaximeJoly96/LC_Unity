@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <Wait Duration="0.02" />
+  <QuestCondition Type="Completed" QuestId="0">
+    <true>
+      <TintScreen Duration="2.5" WaitForCompletion="false">
+        <TargetColor R="0" G="0" B="0" A="0" />
+      </TintScreen>
+      <EnableAgent Target="skeletonAssault0" />
+      <EnableAgent Target="skeletonAssault1" />
+      <EnableAgent Target="skeletonAssault2" />
+      <EnableAgent Target="skeletonAssault3" />
+      <EnableAgent Target="skeletonAssault4" />
+      <EnableAgent Target="gazerAssault0" />
+      <EnableAgent Target="gazerAssault1" />
+      <EnableAgent Target="gazerAssault2" />
+      <EnableAgent Target="gazerAssault3" />
+      <EnableAgent Target="gazerAssault4" />
+      <EnableAgent Target="shadowAssault0" />
+      <EnableAgent Target="shadowAssault1" />
+      <EnableAgent Target="shadowAssault2" />
+      <EnableAgent Target="shadowAssault3" />
+      <EnableAgent Target="shadowAssault4" />
+      <Wait Duration="1" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
+        <Through Status="true" />
+        <MoveRelative DeltaX="0" DeltaY="-2" />
+      </SetMoveRoute>
+    </true>
+    <false>
+      <DisableAgent Target="skeletonAssault0" />
+      <DisableAgent Target="skeletonAssault1" />
+      <DisableAgent Target="skeletonAssault2" />
+      <DisableAgent Target="skeletonAssault3" />
+      <DisableAgent Target="skeletonAssault4" />
+      <DisableAgent Target="gazerAssault0" />
+      <DisableAgent Target="gazerAssault1" />
+      <DisableAgent Target="gazerAssault2" />
+      <DisableAgent Target="gazerAssault3" />
+      <DisableAgent Target="gazerAssault4" />
+      <DisableAgent Target="shadowAssault0" />
+      <DisableAgent Target="shadowAssault1" />
+      <DisableAgent Target="shadowAssault2" />
+      <DisableAgent Target="shadowAssault3" />
+      <DisableAgent Target="shadowAssault4" />
+    </false>
+  </QuestCondition>
+</EventsSequence>

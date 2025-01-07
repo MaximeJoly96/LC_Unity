@@ -42,7 +42,6 @@ namespace Menus.SubMenus
             {
                 if(CanReceiveInput())
                 {
-                    CommonSounds.OptionSelected();
                     Select();
                 }
             });
@@ -87,15 +86,16 @@ namespace Menus.SubMenus
 
             Init();
 
-            /*_itemsList.ItemHovered.RemoveAllListeners();
-            _itemsList.ItemHovered.AddListener(UpdateItemDescription);*/
+            _itemsList.ItemSelected.RemoveAllListeners();
+            _itemsList.ItemSelected.AddListener(UpdateItemDescription);
 
             StartCoroutine(DoOpen());
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuEquipmentTab);
 
             UpdateCursor();
             UpdateCurrentItemDetails();
-            UpdateItemDescription(null);
+            UpdateItemDescription();
+            ClearHoveredItem();
         }
 
         public override void Close()
@@ -108,18 +108,17 @@ namespace Menus.SubMenus
             GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.SelectingCharacterPreview);
         }
 
-        private void UpdateItemDescription(SelectableInventoryItem item)
+        private void UpdateItemDescription()
         {
-            if(item != null)
+            SelectableInventoryItem item = (_itemsList.SelectedItem as SelectableInventoryItem);
+            if (item != null)
             {
-                _hoveredItemName.text = Localizer.Instance.GetString(item.Item.ItemData.Name);
+                _hoveredItem = (_itemsList.SelectedItem as SelectableInventoryItem);
                 _hoveredItemDescription.text = item.Item.ItemData.DetailedDescription();
-                _hoveredItem = item;
+                _hoveredItemName.text = Localizer.Instance.GetString(item.Item.ItemData.Name);
             }
             else
-            {
                 ClearHoveredItem();
-            }
         }
 
         private void Init()
@@ -147,7 +146,7 @@ namespace Menus.SubMenus
                     UpdateCurrentItemDetails();
                     break;
                 case GlobalStateMachine.State.ChangingEquipment:
-                    
+
                     break;
             }
         }
@@ -198,18 +197,26 @@ namespace Menus.SubMenus
                 }
 
                 if(itemsToList != null)
+                {
+                    _itemsList.Init();
                     _itemsList.ShowContent(itemsToList);
+                }
             }
             else
             {
-                ModifyEquipment(_fedCharacter, _hoveredItem.Item.ItemData, _cursorPosition);
-                _itemsList.Clear();
-                ClearHoveredItem();
+                if (_hoveredItem != null)
+                {
+                    ModifyEquipment(_fedCharacter, _hoveredItem.Item.ItemData, _cursorPosition);
+                    _itemsList.Clear();
+                    ClearHoveredItem();
 
-                UpdateCursor();
-                UpdateCurrentItemDetails();
-                UpdateItemDescription(null);
-                GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuEquipmentTab);
+                    UpdateCursor();
+                    UpdateCurrentItemDetails();
+                    UpdateItemDescription();
+                    GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.InMenuEquipmentTab);
+                }
+                else
+                    CommonSounds.Error();
             }
                 
         }

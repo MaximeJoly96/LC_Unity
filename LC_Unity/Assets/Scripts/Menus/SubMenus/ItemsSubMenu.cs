@@ -90,7 +90,8 @@ namespace Menus.SubMenus
 
         private void UpdateItemDescription()
         {
-            _itemDetails.Feed(_itemsList.CurrentItem.Item);
+            if(_itemsList.CurrentItem != null)
+                _itemDetails.Feed(_itemsList.CurrentItem.Item);
         }
 
         private void ClearSelectedList()
@@ -102,13 +103,20 @@ namespace Menus.SubMenus
 
         private void SelectItem()
         {
-            InventoryItem inventoryItem = (_itemsList.SelectedItem as SelectableInventoryItem).Item;
-            if (inventoryItem.ItemData.Category == ItemCategory.Consumable &&
-               ((inventoryItem.ItemData as Consumable).Usability == ItemUsability.Always ||
-               (inventoryItem.ItemData as Consumable).Usability == ItemUsability.MenuOnly))
+            SelectableInventoryItem selectable = _itemsList.SelectedItem as SelectableInventoryItem;
+
+            if (selectable != null)
             {
-                CommonSounds.OptionSelected();
-                FindObjectOfType<MainMenuController>().OpenCharacterTargetingWithItem(_itemsList.SelectedItem as SelectableInventoryItem);
+                InventoryItem inventoryItem = selectable.Item;
+                if (inventoryItem.ItemData.Category == ItemCategory.Consumable &&
+                   ((inventoryItem.ItemData as Consumable).Usability == ItemUsability.Always ||
+                   (inventoryItem.ItemData as Consumable).Usability == ItemUsability.MenuOnly))
+                {
+                    CommonSounds.OptionSelected();
+                    FindObjectOfType<MainMenuController>().OpenCharacterTargetingWithItem(selectable);
+                }
+                else
+                    CommonSounds.Error();
             }
             else
                 CommonSounds.Error();

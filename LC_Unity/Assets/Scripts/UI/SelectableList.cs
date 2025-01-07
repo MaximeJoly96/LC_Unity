@@ -23,7 +23,13 @@ namespace UI
 
         public List<SelectableItem> CreatedItems { get { return _createdItems; } }
         public int CursorPosition { get { return _cursorPosition; } }
-        public SelectableItem SelectedItem { get { return _createdItems[_cursorPosition]; } }
+        public SelectableItem SelectedItem 
+        { 
+            get 
+            { 
+                return _cursorPosition < _createdItems.Count ? _createdItems[_cursorPosition] : null; 
+            } 
+        }
         public UnityEvent SelectionCancelled
         {
             get

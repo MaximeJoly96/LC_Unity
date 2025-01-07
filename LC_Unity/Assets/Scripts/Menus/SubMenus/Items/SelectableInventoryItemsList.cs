@@ -16,7 +16,11 @@ namespace Menus.SubMenus.Items
 
         public SelectableInventoryItem CurrentItem
         {
-            get { return _createdItems[_currentPageIndex * _maxItemsToDisplay + _cursorPosition] as SelectableInventoryItem; }
+            get
+            {
+                int actualIndex = _currentPageIndex * _maxItemsToDisplay + _cursorPosition;
+                return actualIndex < _createdItems.Count ? _createdItems[_currentPageIndex * _maxItemsToDisplay + _cursorPosition] as SelectableInventoryItem : null; 
+            }
         }
 
         public void ShowContent(ItemCategory category)
@@ -40,7 +44,8 @@ namespace Menus.SubMenus.Items
 
         protected override bool CanReceiveInputs()
         {
-            return GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BrowsingInventory;
+            return GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.BrowsingInventory ||
+                   GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.ChangingEquipment;
         }
 
         protected void CreatePages(IEnumerable<InventoryItem> items)
