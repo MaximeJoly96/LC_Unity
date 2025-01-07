@@ -15,7 +15,7 @@ E:/Unity_Projects/LC_Unity/LC_Unity
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56634
+62790
 Successfully changed project path to: E:/Unity_Projects/LC_Unity/LC_Unity
 E:/Unity_Projects/LC_Unity/LC_Unity
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ E:/Unity_Projects/LC_Unity/LC_Unity
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 63.22 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 55.99 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.13f1 (90b6766da538)
 [Subsystems] Discovering subsystems at path E:/Unity/2021.2.13f1/Editor/Data/Resources/UnitySubsystems
@@ -63,313 +63,90 @@ Initialize mono
 Mono path[0] = 'E:/Unity/2021.2.13f1/Editor/Data/Managed'
 Mono path[1] = 'E:/Unity/2021.2.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'E:/Unity/2021.2.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56436
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56160
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/Unity/2021.2.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: E:/Unity/2021.2.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004073 seconds.
+Registered in 0.004266 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 60.49 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 108.84 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.827 seconds
+- Completed reload, in  1.319 seconds
 Domain Reload Profiling:
-	ReloadAssembly (828ms)
-		BeginReloadAssembly (89ms)
+	ReloadAssembly (1320ms)
+		BeginReloadAssembly (107ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (609ms)
-			LoadAssemblies (89ms)
+		EndReloadAssembly (1072ms)
+			LoadAssemblies (106ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (132ms)
+			SetupTypeCache (156ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (369ms)
+			RebuildScriptCaches (310ms)
+			SetupLoadedEditorAssemblies (488ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (69ms)
+				InitializePlatformSupportModulesInManaged (112ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (61ms)
+				RefreshPlugins (109ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (160ms)
-				ProcessInitializeOnLoadMethodAttributes (77ms)
+				ProcessInitializeOnLoadAttributes (150ms)
+				ProcessInitializeOnLoadMethodAttributes (113ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (0ms)
+				EditorAssembliesLoaded (2ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003096 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.343 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1346ms)
-		BeginReloadAssembly (295ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (147ms)
-		EndReloadAssembly (907ms)
-			LoadAssemblies (124ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (270ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (75ms)
-			SetupLoadedEditorAssemblies (426ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (20ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (65ms)
-				ProcessInitializeOnLoadAttributes (290ms)
-				ProcessInitializeOnLoadMethodAttributes (46ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
-Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2320 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 20 unused Assets / (56.1 KB). Loaded Objects now: 2792.
-Memory consumption went from 91.1 MB to 91.0 MB.
-Total: 3.921900 ms (FindLiveObjects: 0.272000 ms CreateObjectMapping: 0.069300 ms MarkObjects: 3.474800 ms  DeleteObjects: 0.104100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 2220325.716113 seconds.
-  path: Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab
-  artifactKey: Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '794173193426341b490df93e536e5409') in 4.917421 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Right.prefab
-  artifactKey: Guid(4fcbd06cb96c41f43a663295534de165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Right.prefab using Guid(4fcbd06cb96c41f43a663295534de165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dde648fe72be31b399f8d35d751fef6') in 0.361575 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopRight.prefab
-  artifactKey: Guid(5398dab3f827e7741a8e22aae88cfe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopRight.prefab using Guid(5398dab3f827e7741a8e22aae88cfe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a04b3ca3329ea7858e02fcdb8207eaf9') in 0.280475 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors_Props.png
-  artifactKey: Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors_Props.png using Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44202d4d47d0bc4469268e1d08accff0') in 0.257425 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopLeft.prefab
-  artifactKey: Guid(5abf2b3ff152e7e48aed58295f2903ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopLeft.prefab using Guid(5abf2b3ff152e7e48aed58295f2903ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e20c424e955b6cdb7a66222aa805d32') in 0.297988 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThirdFloor.prefab
-  artifactKey: Guid(be30fb38fad6e9148854de3b4a879baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThirdFloor.prefab using Guid(be30fb38fad6e9148854de3b4a879baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46e1eb1af999aeb37c3057f555a015bb') in 0.347960 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThroneRoom.prefab
-  artifactKey: Guid(cbaeb54f7f65f17449f2854dd34b0f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThroneRoom.prefab using Guid(cbaeb54f7f65f17449f2854dd34b0f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '552d61cb181a27e23fce42bc4b22b9a7') in 0.314624 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Left.prefab
-  artifactKey: Guid(2793102d9fe00b5488755eaf7002e0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Left.prefab using Guid(2793102d9fe00b5488755eaf7002e0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dbef2c4f81211e80fdbebc44fd03b76') in 0.313540 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_FirstFloor.prefab
-  artifactKey: Guid(863a112d70f8ea6458ae9f8cb79e78c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_FirstFloor.prefab using Guid(863a112d70f8ea6458ae9f8cb79e78c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2edd3beef52a37ddeab6402a5e15301') in 0.453568 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor.prefab
-  artifactKey: Guid(eb18fb301f1279644802ca75e3c417c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor.prefab using Guid(eb18fb301f1279644802ca75e3c417c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95006414f3260a4cb6a9aa3c22b805c1') in 0.408640 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.451455 seconds.
-  path: Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab
-  artifactKey: Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a575a9b4d2b9514dbe6d79f00b1638e') in 0.312436 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors_Props.png
-  artifactKey: Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors_Props.png using Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ca6fc6da528676fdeb96b092ff405af') in 0.201233 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.603642 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Left.prefab
-  artifactKey: Guid(2793102d9fe00b5488755eaf7002e0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Left.prefab using Guid(2793102d9fe00b5488755eaf7002e0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b1f2cafd71af650491f14a7082d7846') in 0.315273 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Right.prefab
-  artifactKey: Guid(4fcbd06cb96c41f43a663295534de165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Right.prefab using Guid(4fcbd06cb96c41f43a663295534de165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5748aa4ab9affb501bffe31495a3adc') in 0.318699 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopRight.prefab
-  artifactKey: Guid(5398dab3f827e7741a8e22aae88cfe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopRight.prefab using Guid(5398dab3f827e7741a8e22aae88cfe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8479c9ad527a0d796c12d3b7eb503d71') in 0.284933 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopLeft.prefab
-  artifactKey: Guid(5abf2b3ff152e7e48aed58295f2903ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopLeft.prefab using Guid(5abf2b3ff152e7e48aed58295f2903ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b6d410a1210044ad460ca644a9f9205') in 0.319050 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThirdFloor.prefab
-  artifactKey: Guid(be30fb38fad6e9148854de3b4a879baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThirdFloor.prefab using Guid(be30fb38fad6e9148854de3b4a879baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67cc3cf8575c8905ea7a214168e0c51a') in 0.290985 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThroneRoom.prefab
-  artifactKey: Guid(cbaeb54f7f65f17449f2854dd34b0f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThroneRoom.prefab using Guid(cbaeb54f7f65f17449f2854dd34b0f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c9c097e295599a52883e927a572fa01') in 0.299459 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000113 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_FirstFloor.prefab
-  artifactKey: Guid(863a112d70f8ea6458ae9f8cb79e78c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_FirstFloor.prefab using Guid(863a112d70f8ea6458ae9f8cb79e78c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4890e47675d3553165f6b7f26debc2cf') in 0.326550 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor.prefab
-  artifactKey: Guid(eb18fb301f1279644802ca75e3c417c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor.prefab using Guid(eb18fb301f1279644802ca75e3c417c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0cb5cf6b2a9fbfba843ad219d493bdd') in 0.291398 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 91.753978 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Left.prefab
-  artifactKey: Guid(2793102d9fe00b5488755eaf7002e0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Left.prefab using Guid(2793102d9fe00b5488755eaf7002e0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e49d969ef473aeb2df7f7cd4f2bb16e9') in 0.382063 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Right.prefab
-  artifactKey: Guid(4fcbd06cb96c41f43a663295534de165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Right.prefab using Guid(4fcbd06cb96c41f43a663295534de165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccfe53f24dfdd7a056c9ca6f01031b15') in 0.371928 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopRight.prefab
-  artifactKey: Guid(5398dab3f827e7741a8e22aae88cfe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopRight.prefab using Guid(5398dab3f827e7741a8e22aae88cfe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46118f3b202391456d64cecd5b6b1376') in 0.305893 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopLeft.prefab
-  artifactKey: Guid(5abf2b3ff152e7e48aed58295f2903ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopLeft.prefab using Guid(5abf2b3ff152e7e48aed58295f2903ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fa7ed5e09741d968f8c2b363343a5de') in 0.314304 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThirdFloor.prefab
-  artifactKey: Guid(be30fb38fad6e9148854de3b4a879baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThirdFloor.prefab using Guid(be30fb38fad6e9148854de3b4a879baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '623a0e9675ee11c180fff30156669bc1') in 0.391861 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThroneRoom.prefab
-  artifactKey: Guid(cbaeb54f7f65f17449f2854dd34b0f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThroneRoom.prefab using Guid(cbaeb54f7f65f17449f2854dd34b0f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '363cdd0a1c0550aafc3e3ac4afa4d924') in 0.293663 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_FirstFloor.prefab
-  artifactKey: Guid(863a112d70f8ea6458ae9f8cb79e78c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_FirstFloor.prefab using Guid(863a112d70f8ea6458ae9f8cb79e78c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34aab034c83eb7db9561cc3f139cb15c') in 0.295816 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor.prefab
-  artifactKey: Guid(eb18fb301f1279644802ca75e3c417c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor.prefab using Guid(eb18fb301f1279644802ca75e3c417c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e6cf53153638a648c325a27aee2554c') in 0.278621 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002549 seconds.
+Registered in 0.003457 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.290 seconds
+- Completed reload, in  1.424 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1291ms)
-		BeginReloadAssembly (153ms)
+	ReloadAssembly (1427ms)
+		BeginReloadAssembly (258ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
+			DisableScriptedObjects (13ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (38ms)
-		EndReloadAssembly (1002ms)
-			LoadAssemblies (93ms)
+			CreateAndSetChildDomain (132ms)
+		EndReloadAssembly (1022ms)
+			LoadAssemblies (90ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (230ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (74ms)
-			SetupLoadedEditorAssemblies (544ms)
+			SetupTypeCache (273ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (111ms)
+			SetupLoadedEditorAssemblies (493ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (27ms)
+				InitializePlatformSupportModulesInManaged (19ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (86ms)
-				ProcessInitializeOnLoadAttributes (378ms)
-				ProcessInitializeOnLoadMethodAttributes (46ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (345ms)
+				ProcessInitializeOnLoadMethodAttributes (58ms)
 				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.32 ms, found 2 plugins.
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2302 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 9 unused Assets / (31.7 KB). Loaded Objects now: 2853.
-Memory consumption went from 95.5 MB to 95.5 MB.
-Total: 3.799600 ms (FindLiveObjects: 0.225600 ms CreateObjectMapping: 0.057800 ms MarkObjects: 3.487600 ms  DeleteObjects: 0.027000 ms)
+Unloading 2320 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (56.1 KB). Loaded Objects now: 2792.
+Memory consumption went from 91.0 MB to 91.0 MB.
+Total: 4.564600 ms (FindLiveObjects: 0.277000 ms CreateObjectMapping: 0.076000 ms MarkObjects: 4.119100 ms  DeleteObjects: 0.091100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -383,265 +160,168 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 926.335116 seconds.
+  Time since last request: 2290339.185276 seconds.
   path: Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab
   artifactKey: Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '676e679255b194cc21bb95368989a032') in 0.427567 seconds 
+Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21092d23d7bff6b0d3dfb10ab336b33b') in 1.088985 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.605384 seconds.
+  Time since last request: 224.884187 seconds.
   path: Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab
   artifactKey: Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9848bb745f301a6f8bd9917181b10528') in 0.442505 seconds 
+Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8c4fa235b1b8084a59fb8c298a309dc') in 0.376235 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000249 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors_Props.png
-  artifactKey: Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors_Props.png using Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c658fd27c3d90a8c0b50b4069873899') in 0.251865 seconds 
+  Time since last request: 4.906085 seconds.
+  path: Assets/Data/Maps/GornichBay/GornichBay_WesternShore.prefab
+  artifactKey: Guid(c8b4b70134fdaf24f871cdb03c708d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/GornichBay/GornichBay_WesternShore.prefab using Guid(c8b4b70134fdaf24f871cdb03c708d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61a38f4928dfc16360686dc2fa946305') in 0.310212 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.846122 seconds.
+  Time since last request: 87.959952 seconds.
+  path: Assets/Data/Maps/GornichBay/GornichBay_WesternShore.prefab
+  artifactKey: Guid(c8b4b70134fdaf24f871cdb03c708d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/GornichBay/GornichBay_WesternShore.prefab using Guid(c8b4b70134fdaf24f871cdb03c708d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4aadd6f753eecd8eeb2f79385449303') in 0.317475 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.101448 seconds.
   path: Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab
   artifactKey: Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d3d5fbef88c083596636b165fc72b15') in 0.402251 seconds 
+Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f8fe3cfd3870b819ad3b7b8b3105827') in 0.283927 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors_Props.png
-  artifactKey: Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors_Props.png using Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '464c814785414471145ef308e15f8a89') in 0.243163 seconds 
+  Time since last request: 8.077073 seconds.
+  path: Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab
+  artifactKey: Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab using Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ce2ac099a744ce6240aa0b0d823e418') in 0.350068 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.143990 seconds.
-  path: Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab
-  artifactKey: Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '595dbbfa19f843bef949d94bdd74a5dd') in 0.351557 seconds 
+  Time since last request: 50.460850 seconds.
+  path: Assets/Data/Maps/GornichBay/GornichBay_WesternShore.prefab
+  artifactKey: Guid(c8b4b70134fdaf24f871cdb03c708d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/GornichBay/GornichBay_WesternShore.prefab using Guid(c8b4b70134fdaf24f871cdb03c708d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa97d67129482240a07fe194d38760d0') in 0.328936 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors_Props.png
-  artifactKey: Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors_Props.png using Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '896986d653f34530ec4e735905de98ea') in 0.233134 seconds 
+  Time since last request: 6.473613 seconds.
+  path: Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab
+  artifactKey: Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab using Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffcf2ba708955c8f0e4d69311a71ccc6') in 0.311153 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.066376 seconds.
-  path: Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab
-  artifactKey: Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95dd23b17629454683c936c47ea7c221') in 0.326075 seconds 
+  Time since last request: 80.796902 seconds.
+  path: Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab
+  artifactKey: Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab using Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5ea02dcf7ae705ee2c73822e1fd0e0f') in 0.322034 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors_Props.png
-  artifactKey: Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors_Props.png using Guid(ba866d372cd484a43a3828ab818f155a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41d0e74559f68c56ec9134d176f997aa') in 0.209895 seconds 
+  Time since last request: 1.747221 seconds.
+  path: Assets/Data/Maps/HaalmikahRegion_West/Haalmikah_Region_West.prefab
+  artifactKey: Guid(afd9d565517cc8244821807bed53a3c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahRegion_West/Haalmikah_Region_West.prefab using Guid(afd9d565517cc8244821807bed53a3c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '500b53ddea33c16ed9955cb3d7c9d30e') in 0.483355 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 494.983828 seconds.
-  path: Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab
-  artifactKey: Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/GramontCastle_Outside.prefab using Guid(0d258f27aae38b64ab79b615d2b7c5ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae15c34c09185879c0ece0d5d4b6bbe8') in 0.356397 seconds 
+  Time since last request: 86.550642 seconds.
+  path: Assets/Data/Maps/HaalmikahRegion_West/Haalmikah_Region_West.prefab
+  artifactKey: Guid(afd9d565517cc8244821807bed53a3c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahRegion_West/Haalmikah_Region_West.prefab using Guid(afd9d565517cc8244821807bed53a3c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e27f9f222d8c2a0299b8dc235801120') in 0.378521 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.773729 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea051cb87fda4a928efabe9dbd41aeb4') in 0.483004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 82.282040 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d1dbb542c264be370fb1293a122c1e5') in 0.384213 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.907146 seconds.
+  path: Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab
+  artifactKey: Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab using Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c414f77cf5902ca181e04bbd4b817dbe') in 0.345915 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.996040 seconds.
+  path: Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab
+  artifactKey: Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab using Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eda037c3beb63b1a41fa0b7effe97ea1') in 0.333614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.912804 seconds.
+  path: Assets/Data/Maps/HaalmikahGrove/Haalmikah_Region_Grove.prefab
+  artifactKey: Guid(8f4bd4d3025e1f546a786ce1db1c6586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahGrove/Haalmikah_Region_Grove.prefab using Guid(8f4bd4d3025e1f546a786ce1db1c6586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c71922db890eaf04a9f2cad33e6d34e1') in 0.415171 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 57.174146 seconds.
+  path: Assets/Data/Maps/HaalmikahGrove/Haalmikah_Region_Grove.prefab
+  artifactKey: Guid(8f4bd4d3025e1f546a786ce1db1c6586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahGrove/Haalmikah_Region_Grove.prefab using Guid(8f4bd4d3025e1f546a786ce1db1c6586) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8d262ed2c9bb70722a79a87833fbfaf') in 0.410539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.463933 seconds.
+  path: Assets/Data/Maps/HaalmikahRegion_West/Haalmikah_Region_West.prefab
+  artifactKey: Guid(afd9d565517cc8244821807bed53a3c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahRegion_West/Haalmikah_Region_West.prefab using Guid(afd9d565517cc8244821807bed53a3c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06a0f377ba590045d790dc5e95c81946') in 0.330715 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.805554 seconds.
+  path: Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab
+  artifactKey: Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab using Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd82aafb9a20d99004ae329fe1f9c3d75') in 0.313316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.539213 seconds.
+  path: Assets/Data/Maps/GornichBay/GornichBay_WesternShore.prefab
+  artifactKey: Guid(c8b4b70134fdaf24f871cdb03c708d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/GornichBay/GornichBay_WesternShore.prefab using Guid(c8b4b70134fdaf24f871cdb03c708d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cdb698f4a717a8de8633eb17a7e2e4b') in 0.325408 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002412 seconds.
+Registered in 0.002524 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.86 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.264 seconds
+- Completed reload, in  1.247 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1266ms)
-		BeginReloadAssembly (178ms)
+	ReloadAssembly (1248ms)
+		BeginReloadAssembly (147ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (40ms)
-		EndReloadAssembly (976ms)
-			LoadAssemblies (116ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (988ms)
+			LoadAssemblies (88ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (225ms)
+			SetupTypeCache (222ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (75ms)
-			SetupLoadedEditorAssemblies (509ms)
+			RebuildScriptCaches (73ms)
+			SetupLoadedEditorAssemblies (533ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (35ms)
+				InitializePlatformSupportModulesInManaged (32ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (78ms)
-				ProcessInitializeOnLoadAttributes (328ms)
-				ProcessInitializeOnLoadMethodAttributes (60ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.79 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2302 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2859.
-Memory consumption went from 95.7 MB to 95.6 MB.
-Total: 4.022400 ms (FindLiveObjects: 0.221400 ms CreateObjectMapping: 0.059400 ms MarkObjects: 3.709600 ms  DeleteObjects: 0.030100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 91.799960 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Left.prefab
-  artifactKey: Guid(2793102d9fe00b5488755eaf7002e0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Left.prefab using Guid(2793102d9fe00b5488755eaf7002e0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd319cb2d031a8f3ada9356c1e65f1038') in 0.397603 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Right.prefab
-  artifactKey: Guid(4fcbd06cb96c41f43a663295534de165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Right.prefab using Guid(4fcbd06cb96c41f43a663295534de165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0a5e919677495c4abe106844ff8de54') in 0.326045 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopRight.prefab
-  artifactKey: Guid(5398dab3f827e7741a8e22aae88cfe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopRight.prefab using Guid(5398dab3f827e7741a8e22aae88cfe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba63ff48c8142f4fec30214a097ba8d8') in 0.301445 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopLeft.prefab
-  artifactKey: Guid(5abf2b3ff152e7e48aed58295f2903ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopLeft.prefab using Guid(5abf2b3ff152e7e48aed58295f2903ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60f109f18d28d6ccb9ebce44513409d6') in 0.295145 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThirdFloor.prefab
-  artifactKey: Guid(be30fb38fad6e9148854de3b4a879baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThirdFloor.prefab using Guid(be30fb38fad6e9148854de3b4a879baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '016fa2da39edc23872d518f8e1630500') in 0.300121 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThroneRoom.prefab
-  artifactKey: Guid(cbaeb54f7f65f17449f2854dd34b0f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThroneRoom.prefab using Guid(cbaeb54f7f65f17449f2854dd34b0f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f2fa6ef42255466ae660b5e8c54994a') in 0.314931 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_FirstFloor.prefab
-  artifactKey: Guid(863a112d70f8ea6458ae9f8cb79e78c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_FirstFloor.prefab using Guid(863a112d70f8ea6458ae9f8cb79e78c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '953eeef92e2d4cb450e8211243cf281a') in 0.289847 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor.prefab
-  artifactKey: Guid(eb18fb301f1279644802ca75e3c417c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor.prefab using Guid(eb18fb301f1279644802ca75e3c417c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f044f17984593fd872ee7104ea682191') in 0.305237 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 379.632620 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor_Shadow.png
-  artifactKey: Guid(87aa499dfbaa8134eb20be030d438d44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor_Shadow.png using Guid(87aa499dfbaa8134eb20be030d438d44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df871c3bbabf3efcdebe53672e9ee44b') in 0.083650 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 31.416102 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Left.prefab
-  artifactKey: Guid(2793102d9fe00b5488755eaf7002e0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Left.prefab using Guid(2793102d9fe00b5488755eaf7002e0be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0ed78c6222623f27b4c71ee8c7f010e') in 0.374163 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Right.prefab
-  artifactKey: Guid(4fcbd06cb96c41f43a663295534de165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_Right.prefab using Guid(4fcbd06cb96c41f43a663295534de165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3224608be9e9e6a8f6bb2f112003375f') in 0.309365 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000054 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopRight.prefab
-  artifactKey: Guid(5398dab3f827e7741a8e22aae88cfe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopRight.prefab using Guid(5398dab3f827e7741a8e22aae88cfe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b111912afc9e813d166b486599ad7a06') in 0.274096 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopLeft.prefab
-  artifactKey: Guid(5abf2b3ff152e7e48aed58295f2903ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/CastleTowerFirst_TopLeft.prefab using Guid(5abf2b3ff152e7e48aed58295f2903ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ae522e434661e1994cbe60ec231cdf1') in 0.277913 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThirdFloor.prefab
-  artifactKey: Guid(be30fb38fad6e9148854de3b4a879baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThirdFloor.prefab using Guid(be30fb38fad6e9148854de3b4a879baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd95a702184f333924bfc014f6be04f65') in 0.316346 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThroneRoom.prefab
-  artifactKey: Guid(cbaeb54f7f65f17449f2854dd34b0f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_ThroneRoom.prefab using Guid(cbaeb54f7f65f17449f2854dd34b0f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '496e69da5b85642e3bdd10a1397d2503') in 0.302324 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_FirstFloor.prefab
-  artifactKey: Guid(863a112d70f8ea6458ae9f8cb79e78c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_FirstFloor.prefab using Guid(863a112d70f8ea6458ae9f8cb79e78c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e158414f8fe9e5ba52e46a49c53fdbd5') in 0.284846 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor.prefab
-  artifactKey: Guid(eb18fb301f1279644802ca75e3c417c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Data/Maps/GramontCastle/Interiors/GramontCastle_SecondFloor.prefab using Guid(eb18fb301f1279644802ca75e3c417c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '273471d07cf52e1f9cb8d235ed743630') in 0.269691 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002501 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.67 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.258 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1259ms)
-		BeginReloadAssembly (158ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (42ms)
-		EndReloadAssembly (987ms)
-			LoadAssemblies (93ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (221ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (79ms)
-			SetupLoadedEditorAssemblies (514ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (34ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (80ms)
-				ProcessInitializeOnLoadAttributes (330ms)
-				ProcessInitializeOnLoadMethodAttributes (63ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				BeforeProcessingInitializeOnLoad (100ms)
+				ProcessInitializeOnLoadAttributes (348ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
+				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.65 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.67 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2302 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 9 unused Assets / (31.7 KB). Loaded Objects now: 2864.
+Unloading 9 unused Assets / (31.8 KB). Loaded Objects now: 2800.
 Memory consumption went from 95.9 MB to 95.9 MB.
-Total: 4.651100 ms (FindLiveObjects: 0.229700 ms CreateObjectMapping: 0.056600 ms MarkObjects: 4.343000 ms  DeleteObjects: 0.020100 ms)
+Total: 3.923900 ms (FindLiveObjects: 0.221700 ms CreateObjectMapping: 0.057700 ms MarkObjects: 3.625200 ms  DeleteObjects: 0.018100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -653,3 +333,33 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 225.000190 seconds.
+  path: Assets/Scenes/Field.unity
+  artifactKey: Guid(821aea5891f4fda46880a2119fb0441b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Field.unity using Guid(821aea5891f4fda46880a2119fb0441b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9744b0ab8836bcfb3289bed2094e199b') in 0.006774 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.291273 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26ac653c46585d309c4090b092be0d46') in 0.415880 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42.703520 seconds.
+  path: Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab
+  artifactKey: Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/HaalmikahRegion_East/Haalmikah_Region_East.prefab using Guid(9d4a6aa3aad1ba546bfddf02ca81e2a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6321f9b3cdc91468a92e258f2fc52a8d') in 0.358240 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.518827 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a36a50ff8201adb9372ac9d624b6ea02') in 0.347981 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.384814 seconds.
+  path: Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab
+  artifactKey: Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Maps/Haalmikah/Haalmikah_Bastion.prefab using Guid(b9535f99b707b6142a90ecea9ee7a9de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39d72520ed9aac7dec685b92d5c9911f') in 0.360977 seconds 
