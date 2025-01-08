@@ -216,4 +216,20 @@
     <Locutor>pernambulisSoldier</Locutor>
     <FaceGraphics></FaceGraphics>
   </DisplayDialog>
+  <Wait Duration="0.3" />
+  <TintScreen Duration="1" WaitForCompletion="true">
+    <TargetColor R="0" G="0" B="0" A="1" />
+  </TintScreen>
+  <ProgressQuest Id="1" StepId="2" Status="Completed" />
+  <ProgressQuest Id="1" StepId="3" Status="Unlocked" />
+  <DisableAgent Target="magnusOutside" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
+    <Through Status="true" />
+    <MoveRelative DeltaX="-5" DeltaY="0" />
+    <Through Status="false" />
+    <SetPosition X="-14" Y="0" />
+  </SetMoveRoute>
+  <TintScreen Duration="1" WaitForCompletion="true">
+    <TargetColor R="0" G="0" B="0" A="0" />
+  </TintScreen>
 </EventsSequence>
