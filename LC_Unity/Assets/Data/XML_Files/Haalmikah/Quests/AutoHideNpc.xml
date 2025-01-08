@@ -9,4 +9,24 @@
       <EnableAgent Target="warlokOutside" />
     </false>
   </QuestCondition>
+  <QuestCondition Type="StepCompleted" QuestId="1" StepId="0">
+    <true>
+      <EnableAgent Target="magnusOutside" />
+      <EnableAgent Target="guardEntrance1" />
+      <EnableAgent Target="guardEntrance2" />
+      <EnableAgent Target="guardEntrance3" />
+      <EnableAgent Target="guardEntrance4" />
+      <EnableAgent Target="guardEntrance5" />
+      <EnableAgent Target="guardEntrance6" />
+    </true>
+    <false>
+      <DisableAgent Target="magnusOutside" />
+      <DisableAgent Target="guardEntrance1" />
+      <DisableAgent Target="guardEntrance2" />
+      <DisableAgent Target="guardEntrance3" />
+      <DisableAgent Target="guardEntrance4" />
+      <DisableAgent Target="guardEntrance5" />
+      <DisableAgent Target="guardEntrance6" />
+    </false>
+  </QuestCondition>
 </EventsSequence>

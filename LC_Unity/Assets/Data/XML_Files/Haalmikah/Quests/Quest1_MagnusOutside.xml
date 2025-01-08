@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog27</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <ShowBalloonIcon AgentId="louga" BalloonIcon="Silence" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog28</Message>
+    <Locutor>louga</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.2" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog29</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.4" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog30</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.2" />
+  <ShowBalloonIcon AgentId="louga" BalloonIcon="Exclamation" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog31</Message>
+    <Locutor>louga</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.2" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog32</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.2" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog33</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.5" />
+  <ShowBalloonIcon AgentId="magnusOutside" BalloonIcon="Silence" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog34</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.5" />
+  <ShowBalloonIcon AgentId="louga" BalloonIcon="Silence" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog35</Message>
+    <Locutor>louga</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog36</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.2" />
+  <ShowBalloonIcon AgentId="magnusOutside" BalloonIcon="Silence" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog37</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.5" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="magnusOutside">
+    <Through Status="true" />
+    <MoveRelative DeltaX="-2.5" DeltaY="-1.4" />
+    <Turn Direction="Left" />
+    <Through Status="false" />
+  </SetMoveRoute>
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="louga">
+    <Through Status="true" />
+    <MoveTowards Target="magnusOutside" Distance="2.3" />
+    <Through Status="true" />
+  </SetMoveRoute>
+  <ShowBalloonIcon AgentId="magnusOutside" BalloonIcon="Exclamation" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog38</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.3" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog39</Message>
+    <Locutor>pernambulisSoldier</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="guardEntrance2">
+    <Turn Direction="Up" />
+  </SetMoveRoute>
+  <ShowBalloonIcon AgentId="guardEntrance2" BalloonIcon="Exclamation" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog40</Message>
+    <Locutor>pernambulisSoldier</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.4" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="guardEntrance2">
+    <Turn Direction="Right" />
+  </SetMoveRoute>
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog41</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.3" />
+  <ShowBalloonIcon AgentId="guardEntrance1" BalloonIcon="Silence" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog42</Message>
+    <Locutor>pernambulisSoldier</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <ShowBalloonIcon AgentId="guardEntrance2" BalloonIcon="Anger" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog43</Message>
+    <Locutor>pernambulisSoldier</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.2" />
+  <ShowBalloonIcon AgentId="magnusOutside" BalloonIcon="Silence" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog44</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.5" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog45</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.2" />
+  <ShowBalloonIcon AgentId="guardEntrance1" BalloonIcon="Silence" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog46</Message>
+    <Locutor>pernambulisSoldier</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog47</Message>
+    <Locutor>pernambulisSoldier</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.5" />
+  <ShowBalloonIcon AgentId="guardEntrance1" BalloonIcon="Silence" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog48</Message>
+    <Locutor>pernambulisSoldier</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.3" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog49</Message>
+    <Locutor>magnus</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+  <Wait Duration="0.1" />
+  <ShowBalloonIcon AgentId="guardEntrance2" BalloonIcon="Anger" WaitForCompletion="true" />
+  <DisplayDialog>
+    <DialogBoxStyle>Classic</DialogBoxStyle>
+    <DialogBoxPosition>Bottom</DialogBoxPosition>
+    <Message>quest1Dialog50</Message>
+    <Locutor>pernambulisSoldier</Locutor>
+    <FaceGraphics></FaceGraphics>
+  </DisplayDialog>
+</EventsSequence>
