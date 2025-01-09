@@ -21,6 +21,8 @@ namespace Abilities
         private Vector3 _currentCheckpoint;
         private UnityEvent<BattlerBehaviour> _projectileDestroyed;
         private int _lifeTime;
+        private bool _needsDirection;
+        private Animator _animator;
 
         public float Speed { get { return _speed; } }
         public ProjectileTrajectory Trajectory { get { return _trajectory; } }
@@ -51,6 +53,8 @@ namespace Abilities
 
         public void StartMoving()
         {
+            _needsDirection = CheckIfDirectionIsNeeded();
+
             _moving = true;
             _lifeTime = 0;
         }
@@ -73,6 +77,7 @@ namespace Abilities
             {
                 Vector3 delta = (_currentCheckpoint - transform.position).normalized;
                 transform.Translate(delta * Time.deltaTime * _speed);
+                UpdateProjectileDirection(delta);
 
                 if(Vector3.Distance(transform.position, _currentCheckpoint) < 0.05f && _lifeTime >= MIN_LIFETIME)
                 {
@@ -86,6 +91,28 @@ namespace Abilities
                 }
 
                 _lifeTime++;
+            }
+        }
+
+        private bool CheckIfDirectionIsNeeded()
+        {
+            _animator = GetComponent<Animator>();
+
+            if (_animator)
+            {
+                AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+                return stateInfo.IsName("Shot");
+            }
+
+            return false;
+        }
+
+        private void UpdateProjectileDirection(Vector3 delta)
+        {
+            if (_needsDirection)
+            {
+                _animator.SetFloat("X", delta.x);
+                _animator.SetFloat("Y", delta.y);
             }
         }
 
