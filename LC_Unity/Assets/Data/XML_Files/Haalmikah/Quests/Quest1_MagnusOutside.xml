@@ -224,11 +224,14 @@
   <ProgressQuest Id="1" StepId="3" Status="Unlocked" />
   <DisableAgent Target="magnusOutside" />
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
-    <Through Status="true" />
-    <MoveRelative DeltaX="-5" DeltaY="0" />
-    <Through Status="false" />
-    <SetPosition X="-14" Y="0" />
+    <SetPosition X="-7" Y="0" />
   </SetMoveRoute>
+  <Wait Duration="1.5" />
+  <ChangePartyMember Id="4" Action="Add" Initialize="true" />
+  <ChangeLevel Target="4" Amount="2" />
+  <ChangeItems Id="1135" Quantity="1" />
+  <ChangeEquipment CharacterId="4" ItemId="1135" />
+  <RecoverAll />
   <TintScreen Duration="1" WaitForCompletion="true">
     <TargetColor R="0" G="0" B="0" A="0" />
   </TintScreen>

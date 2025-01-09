@@ -3,92 +3,102 @@
   <Wait Duration="0.02" />
   <QuestCondition Type="StepCompleted" QuestId="1" StepId="0">
     <true>
-      <TintScreen Duration="2.5" WaitForCompletion="false">
-        <TargetColor R="0" G="0" B="0" A="0" />
-      </TintScreen>
-      <EnableAgent Target="skeletonAssault0" />
-      <EnableAgent Target="skeletonAssault1" />
-      <EnableAgent Target="skeletonAssault2" />
-      <EnableAgent Target="skeletonAssault3" />
-      <EnableAgent Target="skeletonAssault4" />
-      <EnableAgent Target="gazerAssault0" />
-      <EnableAgent Target="gazerAssault1" />
-      <EnableAgent Target="gazerAssault2" />
-      <EnableAgent Target="gazerAssault3" />
-      <EnableAgent Target="gazerAssault4" />
-      <EnableAgent Target="shadowAssault0" />
-      <EnableAgent Target="shadowAssault1" />
-      <EnableAgent Target="shadowAssault2" />
-      <EnableAgent Target="shadowAssault3" />
-      <EnableAgent Target="shadowAssault4" />
-      <EnableAgent Target="warlokCastleAssaultOutside" />
-      <EnableAgent Target="soldierCastleAssault1" />
-      <EnableAgent Target="soldierCastleAssault2" />
-      <EnableAgent Target="soldierCastleAssault3" />
-      <Wait Duration="1" />
-      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
-        <Through Status="true" />
-        <MoveRelative DeltaX="0" DeltaY="-2" />
-      </SetMoveRoute>
-      <DisplayDialog>
-        <DialogBoxStyle>Classic</DialogBoxStyle>
-        <DialogBoxPosition>Bottom</DialogBoxPosition>
-        <Message>quest1Dialog10</Message>
-        <Locutor>warlok</Locutor>
-        <FaceGraphics></FaceGraphics>
-      </DisplayDialog>
-      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
-        <Through Status="true" />
-        <MoveRelative DeltaX="0" DeltaY="-1" />
-      </SetMoveRoute>
-      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokCastleAssaultOutside">
-        <Through Status="true" />
-        <Turn Direction="Down" />
-      </SetMoveRoute>
-      <Wait Duration="0.2" />
-      <DisplayDialog>
-        <DialogBoxStyle>Classic</DialogBoxStyle>
-        <DialogBoxPosition>Bottom</DialogBoxPosition>
-        <Message>quest1Dialog11</Message>
-        <Locutor>warlok</Locutor>
-        <FaceGraphics></FaceGraphics>
-      </DisplayDialog>
-      <Wait Duration="0.2" />
-      <DisplayDialog>
-        <DialogBoxStyle>Classic</DialogBoxStyle>
-        <DialogBoxPosition>Bottom</DialogBoxPosition>
-        <Message>quest1Dialog12</Message>
-        <Locutor>pernambulisSoldier</Locutor>
-        <FaceGraphics></FaceGraphics>
-      </DisplayDialog>
-      <TintScreen Duration="2" WaitForCompletion="false">
-        <TargetColor R="0" G="0" B="0" A="1" />
-      </TintScreen>
-      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="warlokCastleAssaultOutside">
-        <Through Status="true" />
-        <MoveRelative DeltaX="0" DeltaY="1.5" />
-      </SetMoveRoute>
-      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierCastleAssault1">
-        <Through Status="true" />
-        <MoveRelative DeltaX="0" DeltaY="1.5" />
-      </SetMoveRoute>
-      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierCastleAssault2">
-        <Through Status="true" />
-        <MoveRelative DeltaX="0" DeltaY="1.5" />
-      </SetMoveRoute>
-      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierCastleAssault3">
-        <Through Status="true" />
-        <MoveRelative DeltaX="0" DeltaY="1.5" />
-      </SetMoveRoute>
-      <Wait Duration="3" />
-      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
-        <Through Status="false" />
-        <Transparent Status="false" />
-      </SetMoveRoute>
-      <TransferObject Target="player">
-        <Direction>Left</Direction>
-        <Destination X="0.89" Y="-0.3" MapId="11" Inside="true" />
-      </TransferObject>
+      <QuestCondition Type="StepCompleted" QuestId="1" StepId="2">
+        <true>
+          <DisableAgent Target="warlokCastleAssaultOutside" />
+          <DisableAgent Target="soldierCastleAssault1" />
+          <DisableAgent Target="soldierCastleAssault2" />
+          <DisableAgent Target="soldierCastleAssault3" />
+        </true>
+        <false>
+          <TintScreen Duration="2.5" WaitForCompletion="false">
+            <TargetColor R="0" G="0" B="0" A="0" />
+          </TintScreen>
+          <EnableAgent Target="skeletonAssault0" />
+          <EnableAgent Target="skeletonAssault1" />
+          <EnableAgent Target="skeletonAssault2" />
+          <EnableAgent Target="skeletonAssault3" />
+          <EnableAgent Target="skeletonAssault4" />
+          <EnableAgent Target="gazerAssault0" />
+          <EnableAgent Target="gazerAssault1" />
+          <EnableAgent Target="gazerAssault2" />
+          <EnableAgent Target="gazerAssault3" />
+          <EnableAgent Target="gazerAssault4" />
+          <EnableAgent Target="shadowAssault0" />
+          <EnableAgent Target="shadowAssault1" />
+          <EnableAgent Target="shadowAssault2" />
+          <EnableAgent Target="shadowAssault3" />
+          <EnableAgent Target="shadowAssault4" />
+          <EnableAgent Target="warlokCastleAssaultOutside" />
+          <EnableAgent Target="soldierCastleAssault1" />
+          <EnableAgent Target="soldierCastleAssault2" />
+          <EnableAgent Target="soldierCastleAssault3" />
+          <Wait Duration="1" />
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="-2" />
+          </SetMoveRoute>
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog10</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="-1" />
+          </SetMoveRoute>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokCastleAssaultOutside">
+            <Through Status="true" />
+            <Turn Direction="Down" />
+          </SetMoveRoute>
+          <Wait Duration="0.2" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog11</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <Wait Duration="0.2" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog12</Message>
+            <Locutor>pernambulisSoldier</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <TintScreen Duration="2" WaitForCompletion="false">
+            <TargetColor R="0" G="0" B="0" A="1" />
+          </TintScreen>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="warlokCastleAssaultOutside">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="1.5" />
+          </SetMoveRoute>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierCastleAssault1">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="1.5" />
+          </SetMoveRoute>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierCastleAssault2">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="1.5" />
+          </SetMoveRoute>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierCastleAssault3">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="1.5" />
+          </SetMoveRoute>
+          <Wait Duration="3" />
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
+            <Through Status="false" />
+            <Transparent Status="false" />
+          </SetMoveRoute>
+          <TransferObject Target="player">
+            <Direction>Left</Direction>
+            <Destination X="0.89" Y="-0.3" MapId="11" Inside="true" />
+          </TransferObject>
+        </false>
+      </QuestCondition>
     </true>
     <false>
       <DisableAgent Target="skeletonAssault0" />
