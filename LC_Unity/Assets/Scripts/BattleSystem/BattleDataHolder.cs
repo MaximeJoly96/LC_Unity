@@ -18,6 +18,7 @@ namespace BattleSystem
         }
 
         public BattleProcessing BattleData { get; set; }
+        public bool Loading { get; set; }
 
         private BattleDataHolder()
         {

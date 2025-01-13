@@ -25,6 +25,7 @@ namespace BattleSystem
         private bool _isEnemy;
         private BattleUiManager _uiManager;
         private AttackAnimationsWrapper _attackAnimationsWrapper;
+        private bool _channeling;
 
         public int BattlerId { get { return _battlerId; } }
         public bool IsEnemy { get { return _isEnemy; } set { _isEnemy = value; } }
@@ -100,8 +101,9 @@ namespace BattleSystem
 
         public void ChannelBreakpoint()
         {
-            if(LockedInAbility.HasProjectile)
+            if(LockedInAbility.HasProjectile && !_channeling)
             {
+                _channeling = true;
                 foreach(BattlerBehaviour target in LockedInAbility.Targets)
                 {
                     ProjectileTrajectory trajectory = new ProjectileTrajectory();
@@ -139,6 +141,8 @@ namespace BattleSystem
         {
             if (LockedInAbility.HasChannelAnimation)
                 Animator.SetBool(LockedInAbility.Animation.BattlerChannelAnimationName, false);
+
+            _channeling = false;
         }
 
         private void Strike()
@@ -267,10 +271,10 @@ namespace BattleSystem
 
         public void FinishedTurn()
         {
-            if(LockedInAbility.HasChannelAnimation)
+            if(LockedInAbility != null && LockedInAbility.HasChannelAnimation)
                 Animator.SetBool(LockedInAbility.Animation.BattlerChannelAnimationName, false);
 
-            if (LockedInAbility.HasStrikeAnimation)
+            if (LockedInAbility != null && LockedInAbility.HasStrikeAnimation)
                 Animator.SetBool(LockedInAbility.Animation.BattlerStrikeAnimationName, false);
 
             LockedInAbility = null;

@@ -833,7 +833,7 @@
     <Name>ItemCommand</Name>
     <Description>ItemCommandDescription</Description>
     <Usability>BattleOnly</Usability>
-    <Cost HP="0" MP="4" EP="0" />
+    <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
     <TargetEligibility>Any</TargetEligibility>
     <Category>ItemCommand</Category>
@@ -844,6 +844,60 @@
       <Strike></Strike>
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>47</Id>
+    <Name>SkeletonSwordStrike</Name>
+    <Description>SkeletonSwordStrikeDescription</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Enemy</TargetEligibility>
+    <Category>Skill</Category>
+    <Range>100</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SwordStrike</Strike>
+      <ImpactParticles>13</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>48</Id>
+    <Name>SkeletonSpearStrike</Name>
+    <Description>SkeletonSpearStrikeDescription</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Enemy</TargetEligibility>
+    <Category>Skill</Category>
+    <Range>125</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>SpearStrike</Strike>
+      <ImpactParticles>11</ImpactParticles>
+      <ProjectileId>-1</ProjectileId>
+    </Animation>
+  </Ability>
+  <Ability>
+    <Id>49</Id>
+    <Name>CursedGaze</Name>
+    <Description>CursedGazeDescription</Description>
+    <Usability>BattleOnly</Usability>
+    <Cost HP="0" MP="0" EP="0" />
+    <Priority>0</Priority>
+    <TargetEligibility>Enemy</TargetEligibility>
+    <Category>Skill</Category>
+    <Range>1800</Range>
+    <Animation>
+      <Channel></Channel>
+      <ChannelParticles>-1</ChannelParticles>
+      <Strike>Gaze</Strike>
+      <ImpactParticles>6</ImpactParticles>
+      <ProjectileId>3</ProjectileId>
     </Animation>
   </Ability>
 </Abilities>

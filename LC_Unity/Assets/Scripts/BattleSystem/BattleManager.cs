@@ -111,6 +111,7 @@ namespace BattleSystem
 
         private void Start()
         {
+            BattleDataHolder.Instance.Loading = false;
             BindInputs();
 
             StopAllAudio();

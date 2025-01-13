@@ -42,7 +42,9 @@ namespace Core
             BuyingItems,
             SellingItems,
             ClosingShop,
-            PromptedToSkipScene
+            PromptedToSkipScene,
+
+            LoadingBattle
         }
 
         private State _rememberedState;

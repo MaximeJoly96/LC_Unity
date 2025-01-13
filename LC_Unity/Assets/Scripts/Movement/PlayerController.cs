@@ -155,14 +155,17 @@ namespace Movement
 
         private void CheckForContactEvents()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(_collider.bounds.center, 0.05f);
-
-            Collider2D interactible = colliders.FirstOrDefault(c => c.gameObject.GetComponent<RunnableAgent>());
-            if(interactible != null && interactible.GetComponent<RunnableAgent>().Trigger == AgentTrigger.Contact)
+            if(GlobalStateMachine.Instance.CurrentState == GlobalStateMachine.State.OnField)
             {
-                RunnableAgent agent = interactible.GetComponent<RunnableAgent>();
-                agent.FinishedSequence.AddListener(() => GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField));
-                agent.RunSequence();
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(_collider.bounds.center, 0.05f);
+
+                Collider2D interactible = colliders.FirstOrDefault(c => c.gameObject.GetComponent<RunnableAgent>());
+                if (interactible != null && interactible.GetComponent<RunnableAgent>().Trigger == AgentTrigger.Contact)
+                {
+                    RunnableAgent agent = interactible.GetComponent<RunnableAgent>();
+                    agent.FinishedSequence.AddListener(() => GlobalStateMachine.Instance.UpdateState(GlobalStateMachine.State.OnField));
+                    agent.RunSequence();
+                }
             }
         }
 

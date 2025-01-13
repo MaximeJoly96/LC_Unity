@@ -11,6 +11,8 @@ namespace Abilities
             switch(abilityId)
             {
                 case 0:
+                case 47:
+                case 48:
                     return AttackCommandFormula(source, target);
                 case 2:
                     return ClawsCommandFormula(source, target);
@@ -22,6 +24,8 @@ namespace Abilities
                     return ThrowableElementalItem(source, target);
                 case 1002:
                     return ExplosiveBoulderFormula(source, target);
+                case 49:
+                    return CursedGazeFormula(source, target);
             }
 
             return 0;
@@ -58,6 +62,11 @@ namespace Abilities
         private static int ExplosiveBoulderFormula(Character source, Character target)
         {
             return Mathf.Max(0, (source.Stats.Level + 1) * 60 - (target.Stats.BaseMagicDefense + target.Stats.BonusMagicDefense) * 2);
+        }
+
+        private static int CursedGazeFormula(Character source, Character target)
+        {
+            return Mathf.Max(0, (source.Stats.Level + 1) * 20 - (target.Stats.BaseMagicDefense + target.Stats.BaseMagicDefense));
         }
     }
 }
