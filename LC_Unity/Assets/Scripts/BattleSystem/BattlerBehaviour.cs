@@ -123,10 +123,12 @@ namespace BattleSystem
 
         private void ProjectileWasDestroyed(BattlerBehaviour target)
         {
-            if(target)
+            if (target)
             {
                 Strike(false, target);
             }
+            else
+                FinishedTurn();
         }
 
         public void ShowChannelParticles()

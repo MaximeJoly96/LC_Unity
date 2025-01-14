@@ -2,7 +2,160 @@
 <EventsSequence>
   <QuestCondition Type="StepCompleted" QuestId="1" StepId="2">
     <true>
-      <BattleProcessing TroopId="3" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
+      <QuestCondition Type="StepCompleted" QuestId="1" StepId="3">
+        <false>
+          <BattleProcessing TroopId="3" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
+          <ChangeGameState State="Interacting" />
+          <ProgressQuest Id="1" StepId="3" Status="Completed" />
+          <ProgressQuest Id="1" StepId="4" Status="Unlocked" />
+          <Wait Duration="1.5" />
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="1.5" />
+            <Through Status="false" />
+          </SetMoveRoute>
+          <PlaySoundEffect Name="OpenWoodenDoor" Volume="1" Pitch="1" />
+          <EnableAgent Target="warlokExitingCastle" />
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="warlokExitingCastle">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="-1" />
+          </SetMoveRoute>
+          <Wait Duration="0.5" />
+          <EnableAgent Target="soldierExitingCastle1" />
+          <EnableAgent Target="soldierExitingCastle2" />
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierExitingCastle1">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="-1" />
+          </SetMoveRoute>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="soldierExitingCastle2">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="-0.8" />
+          </SetMoveRoute>
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog54</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <ShowBalloonIcon AgentId="warlokExitingCastle" BalloonIcon="Anger" WaitForCompletion="true" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog55</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <Wait Duration="0.5" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog56</Message>
+            <Locutor>magnus</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <Wait Duration="0.2" />
+          <ShowBalloonIcon AgentId="louga" BalloonIcon="Sweat" WaitForCompletion="true" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog57</Message>
+            <Locutor>louga</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <Wait Duration="1" />
+          <ShowBalloonIcon AgentId="warlokExitingCastle" BalloonIcon="Silence" WaitForCompletion="true" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog58</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <Wait Duration="0.2" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog59</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog60</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <Wait Duration="0.3" />
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokExitingCastle">
+            <Through Status="true" />
+            <Turn Direction="Up" />
+          </SetMoveRoute>
+          <Wait Duration="0.5" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog61</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <Wait Duration="0.5" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog62</Message>
+            <Locutor>pernambulisSoldier</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierExitingCastle1">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="1" />
+          </SetMoveRoute>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="soldierExitingCastle2">
+            <Through Status="true" />
+            <MoveRelative DeltaX="0" DeltaY="0.8" />
+          </SetMoveRoute>
+          <DisableAgent Target="soldierExitingCastle1" />
+          <DisableAgent Target="soldierExitingCastle2" />
+          <PlaySoundEffect Name="OpenWoodenDoor" Volume="1" Pitch="1" />
+          <Wait Duration="1" />
+          <ShowBalloonIcon AgentId="louga" BalloonIcon="Silence" WaitForCompletion="true" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog63</Message>
+            <Locutor>louga</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokExitingCastle">
+            <Through Status="true" />
+            <Turn Direction="Down" />
+          </SetMoveRoute>
+          <Wait Duration="0.5" />
+          <ShowBalloonIcon AgentId="warlokExitingCastle" BalloonIcon="Exclamation" WaitForCompletion="true" />
+          <DisplayDialog>
+            <DialogBoxStyle>Classic</DialogBoxStyle>
+            <DialogBoxPosition>Bottom</DialogBoxPosition>
+            <Message>quest1Dialog64</Message>
+            <Locutor>warlok</Locutor>
+            <FaceGraphics></FaceGraphics>
+          </DisplayDialog>
+          <Wait Duration="0.5" />
+          <TintScreen Duration="1" WaitForCompletion="true">
+            <TargetColor R="0" G="0" B="0" A="1" />
+          </TintScreen>
+          <ChangePartyMember Id="3" Action="Add" Initialize="true" />
+          <ChangeLevel Target="4" Amount="2" />
+          <ChangeItems Id="1053" Quantity="1" />
+          <ChangeEquipment CharacterId="3" ItemId="1053" />
+          <Wait Duration="1.5" />
+          <DisableAgent Target="warlokExitingCastle" />
+          <TintScreen Duration="1" WaitForCompletion="true">
+            <TargetColor R="0" G="0" B="0" A="0" />
+          </TintScreen>
+        </false>
+      </QuestCondition>
     </true>
   </QuestCondition>
 </EventsSequence>
