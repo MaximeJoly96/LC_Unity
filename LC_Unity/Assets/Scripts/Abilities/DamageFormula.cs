@@ -26,6 +26,15 @@ namespace Abilities
                     return ExplosiveBoulderFormula(source, target);
                 case 49:
                     return CursedGazeFormula(source, target);
+                case 51:
+                case 52:
+                case 53:
+                case 54:
+                case 55:
+                case 56:
+                case 57:
+                case 58:
+                    return Rank1ElementalMagicFormula(source, target);
             }
 
             return 0;
@@ -67,6 +76,11 @@ namespace Abilities
         private static int CursedGazeFormula(Character source, Character target)
         {
             return Mathf.Max(0, (source.Stats.Level + 1) * 20 - (target.Stats.BaseMagicDefense + target.Stats.BaseMagicDefense));
+        }
+
+        private static int Rank1ElementalMagicFormula(Character source, Character target)
+        {
+            return Mathf.Max(0, (source.Stats.Level + 1) * 10 + source.Stats.BaseMagic + source.Stats.BonusMagic - target.Stats.BaseMagicDefense - target.Stats.BonusMagicDefense);
         }
     }
 }
