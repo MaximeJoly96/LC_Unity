@@ -35,6 +35,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <Flee />
+    </Effects>
   </Ability>
   <Ability>
     <Id>2</Id>
@@ -53,6 +56,9 @@
       <ImpactParticles>4</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="2" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>3</Id>
@@ -71,6 +77,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="3" />
+      <DrainFromDamage Stat="HP" Value="40" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>4</Id>
@@ -89,6 +99,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="4" />
+      <InflictStatus Value="WeakPoint" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>5</Id>
@@ -107,6 +121,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="KnightsVow" />
+      <SelfStatus Value="KnightsVowGuardian" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>6</Id>
@@ -125,6 +143,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="6" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>7</Id>
@@ -143,6 +164,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <SoulStealing />
+    </Effects>
   </Ability>
   <Ability>
     <Id>8</Id>
@@ -161,6 +185,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="Trance" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>9</Id>
@@ -179,6 +206,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="CrystalGuard" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>10</Id>
@@ -197,6 +227,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="EvasiveDance" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>11</Id>
@@ -215,6 +248,13 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="11" />
+      <ElementalDamage Element="Holy" />
+      <AreaOfEffectAsSecondaryDamage Element="Holy" FormulaId="111" />
+      <InflictStatusAroundTarget Eligible="Allies" Value="Bravery" />
+      <InflictStatusAroundTarget Eligible="Allies" Value="Faith" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>12</Id>
@@ -233,6 +273,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="12" />
+      <NegativeStatusBonusDamage Value="20" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>13</Id>
@@ -251,6 +295,13 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <Dispel Value="BleedI" />
+      <Dispel Value="BleedII" />
+      <Dispel Value="BleedIII" />
+      <Dispel Value="HemoI" />
+      <RestoreResourceScalingBasedOnMissing Value="25" Stat="HP" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>14</Id>
@@ -269,6 +320,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="Camouflage" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>15</Id>
@@ -287,6 +341,11 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="15" />
+      <HpThresholdBonusDamage Threshold="20" />
+      <RestoreStatOnKill FormulaId="151" Stat="HP" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>16</Id>
@@ -305,6 +364,18 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <Dispel Value="Poison" />
+      <Dispel Value="Blind" />
+      <Dispel Value="Silence" />
+      <Dispel Value="SlowI" />
+      <Dispel Value="SlowII" />
+      <Dispel Value="SlowIII" />
+      <Dispel Value="HemoI" />
+      <Dispel Value="BleedI" />
+      <Dispel Value="BleedII" />
+      <Dispel Value="BleedIII" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>17</Id>
@@ -323,6 +394,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="17" />
+      <InflictStatus Value="BleedIII" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>18</Id>
@@ -341,6 +416,11 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="18" />
+      <AreaOfEffectAsSecondaryDamage Element="Neutral" FormulaId="18" />
+      <InflictStatusAroundTarget Eligible="Enemies" Value="BreakI" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>19</Id>
@@ -359,6 +439,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="19" />
+      <InflictStatus Value="Grounded" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>20</Id>
@@ -377,6 +461,11 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="20" />
+      <AreaOfEffectAsSecondaryDamage Element="Neutral" FormulaId="20" />
+      <RestoreMissingResourceScalingForEachHit Stat="HP" Value="25" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>21</Id>
@@ -395,6 +484,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="21" />
+      <ExecuteUnderThreshold Stat="HP" Threshold="15" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>22</Id>
@@ -413,6 +506,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="EndlessRampage" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>23</Id>
@@ -431,6 +527,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="HowlingMoon" />
+      <InflictStatusAroundTarget Eligible="Enemies" Value="HowlingMoonDebuff" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>24</Id>
@@ -449,6 +549,12 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="24" />
+      <AdditionalStrike Amount="4" />
+      <JumpToClosestTargetInRangeIfTargetIsDead MaxRange="400" />
+      <DamageModifierOnConsecutiveHit Value="40" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>25</Id>
@@ -467,6 +573,11 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="25" />
+      <InflictStatus Value="BreakII" />
+      <InflictStatus Value="MagicBreakII" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>26</Id>
@@ -485,11 +596,14 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <RestoreResourceFlat Stat="EP" Value="50" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>27</Id>
     <Name>Hand of Protection</Name>
-    <Description>Grants a Protect, Shell and Regen.</Description>
+    <Description>Grants Protect, Shell and Regen to a target.</Description>
     <Usability>BattleOnly</Usability>
     <Cost HP="0" MP="0" EP="0" />
     <Priority>0</Priority>
@@ -503,6 +617,11 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="Protect" />
+      <InflictStatus Value="Shell" />
+      <InflictStatus Value="Regen" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>28</Id>
@@ -521,6 +640,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <TransferResourceScalingWithExcessConversion Quantity="100" Stat="EP" ConvertedInto="HP" FormulaId="28" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>29</Id>
@@ -539,6 +661,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="Lifeguard" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>30</Id>
@@ -557,6 +682,26 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <Dispel Value="Protect" />
+      <Dispel Value="Shell" />
+      <Dispel Value="Regen" />
+      <Dispel Value="ManaRegen" />
+      <Dispel Value="Bravery" />
+      <Dispel Value="Faith" />
+      <Dispel Value="Lifeguard" />
+      <Dispel Value="KnightsVow" />
+      <Dispel Value="KnightsVowGuardian" />
+      <Dispel Value="Trance" />
+      <Dispel Value="CrystalGuard" />
+      <Dispel Value="EvasiveDance" />
+      <Dispel Value="Camouflage" />
+      <Dispel Value="EndlessRampage" />
+      <Dispel Value="HowlingMoon" />
+      <Dispel Value="MagicCounter" />
+      <Dispel Value="Wisdom" />
+      <Dispel Value="ManaWell" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>31</Id>
@@ -575,6 +720,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="31" />
+      <PiercingProjectile MinDamage="100" DamageReduction="-25" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>32</Id>
@@ -593,6 +742,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="MagicCounter" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>33</Id>
@@ -611,6 +763,28 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <RestoreResourceScaling Stat="HP" Value="100" />
+      <Dispel Value="Poison" />
+      <Dispel Value="BleedI" />
+      <Dispel Value="BleedII" />
+      <Dispel Value="BleedIII" />
+      <Dispel Value="HemoI" />
+      <Dispel Value="BreakI" />
+      <Dispel Value="BreakII" />
+      <Dispel Value="BreakIII" />
+      <Dispel Value="MagicBreakI" />
+      <Dispel Value="MagicBreakII" />
+      <Dispel Value="MagicBreakIII" />
+      <Dispel Value="SlowI" />
+      <Dispel Value="SlowII" />
+      <Dispel Value="SlowIII" />
+      <Dispel Value="Blind" />
+      <Dispel Value="Silence" />
+      <Dispel Value="Grounded" />
+      <Dispel Value="WeakPoint" />
+      <Dispel Value="HowlingMoonDebuff" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>34</Id>
@@ -629,6 +803,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="Wisdom" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>35</Id>
@@ -647,6 +824,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="ManaWell" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>36</Id>
@@ -665,6 +845,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="36" />
+      <CriticalStrikeEffectiveness Bonus="50" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>37</Id>
@@ -683,6 +867,28 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <Dispel Value="Poison" />
+      <Dispel Value="BleedI" />
+      <Dispel Value="BleedII" />
+      <Dispel Value="BleedIII" />
+      <Dispel Value="HemoI" />
+      <Dispel Value="BreakI" />
+      <Dispel Value="BreakII" />
+      <Dispel Value="BreakIII" />
+      <Dispel Value="MagicBreakI" />
+      <Dispel Value="MagicBreakII" />
+      <Dispel Value="MagicBreakIII" />
+      <Dispel Value="SlowI" />
+      <Dispel Value="SlowII" />
+      <Dispel Value="SlowIII" />
+      <Dispel Value="Blind" />
+      <Dispel Value="Silence" />
+      <Dispel Value="Grounded" />
+      <Dispel Value="WeakPoint" />
+      <Dispel Value="HowlingMoonDebuff" />
+      <GrantBonusStatusWhenCleasingBadStatus />
+    </Effects>
   </Ability>
   <Ability>
     <Id>38</Id>
@@ -701,6 +907,11 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="38" />
+      <AreaOfEffectAsSecondaryDamage Element="Neutral" FormulaId="38" />
+      <RefundsOnKill Stat="MP" Value="20" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>39</Id>
@@ -719,6 +930,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <InflictStatus Value="Doom" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>40</Id>
@@ -737,6 +951,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="40" />
+      <AreaOfEffectAsSecondaryDamage Element="Neutral" FormulaId="40" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>41</Id>
@@ -755,6 +973,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="41" />
+      <InflictStatus Value="BreakIII" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>42</Id>
@@ -773,6 +995,11 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="42" />
+      <InflictStatus Value="Grounded" />
+      <BonusDamageIfTargetHasStatus Status="Grounded" Value="25" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>43</Id>
@@ -791,6 +1018,9 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="43" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>44</Id>
@@ -809,6 +1039,10 @@
       <ImpactParticles>-1</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <PullUntilWeaponRange />
+      <CancelMovement />
+    </Effects>
   </Ability>
   <Ability>
     <Id>45</Id>
@@ -827,6 +1061,9 @@
       <ImpactParticles>6</ImpactParticles>
       <ProjectileId>0</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="45" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>46</Id>
@@ -863,6 +1100,9 @@
       <ImpactParticles>13</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="47" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>48</Id>
@@ -873,7 +1113,7 @@
     <Priority>0</Priority>
     <TargetEligibility>Enemy</TargetEligibility>
     <Category>Skill</Category>
-    <Range>125</Range>
+    <Range>150</Range>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>
@@ -881,6 +1121,9 @@
       <ImpactParticles>11</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="48" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>49</Id>
@@ -899,6 +1142,9 @@
       <ImpactParticles>6</ImpactParticles>
       <ProjectileId>3</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="49" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>50</Id>
@@ -917,6 +1163,11 @@
       <ImpactParticles>24</ImpactParticles>
       <ProjectileId>4</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="58" />
+      <ElementalDamage Element="Fire" />
+      <AreaOfEffectAsSecondaryDamage Element="Fire" FormulaId="581" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>51</Id>
@@ -935,6 +1186,10 @@
       <ImpactParticles>6</ImpactParticles>
       <ProjectileId>3</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="58" />
+      <ElementalDamage Element="Thunder" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>52</Id>
@@ -953,6 +1208,10 @@
       <ImpactParticles>6</ImpactParticles>
       <ProjectileId>3</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="58" />
+      <ElementalDamage Element="Water" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>53</Id>
@@ -971,6 +1230,10 @@
       <ImpactParticles>6</ImpactParticles>
       <ProjectileId>3</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="58" />
+      <ElementalDamage Element="Ice" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>54</Id>
@@ -989,6 +1252,10 @@
       <ImpactParticles>6</ImpactParticles>
       <ProjectileId>3</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="58" />
+      <ElementalDamage Element="Earth" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>55</Id>
@@ -1007,6 +1274,10 @@
       <ImpactParticles>6</ImpactParticles>
       <ProjectileId>3</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="58" />
+      <ElementalDamage Element="Wind" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>56</Id>
@@ -1025,6 +1296,10 @@
       <ImpactParticles>6</ImpactParticles>
       <ProjectileId>3</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="58" />
+      <ElementalDamage Element="Holy" />
+    </Effects>
   </Ability>
   <Ability>
     <Id>58</Id>
@@ -1043,5 +1318,9 @@
       <ImpactParticles>31</ImpactParticles>
       <ProjectileId>5</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="58" />
+      <ElementalDamage Element="Darkness" />
+    </Effects>
   </Ability>
 </Abilities>

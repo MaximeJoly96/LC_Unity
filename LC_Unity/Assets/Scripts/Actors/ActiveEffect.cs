@@ -24,7 +24,23 @@
         ManaRegen,
         Bravery,
         Faith,
-        Grounded
+        Grounded,
+        // Specific ability effects
+        WeakPoint,
+        KnightsVow,
+        KnightsVowGuardian,
+        Trance,
+        CrystalGuard,
+        EvasiveDance,
+        Camouflage,
+        EndlessRampage,
+        HowlingMoon,
+        HowlingMoonDebuff,
+        Lifeguard,
+        MagicCounter,
+        Wisdom,
+        ManaWell,
+        Doom
     }
 
     public class ActiveEffect
