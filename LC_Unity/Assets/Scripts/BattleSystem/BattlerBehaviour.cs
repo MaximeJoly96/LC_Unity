@@ -177,15 +177,6 @@ namespace BattleSystem
 
             ApplyAbilityEffects(LockedInAbility, secondaryHit);
 
-            int result = DamageFormula.ComputeResult(LockedInAbility.Id,
-                                                     BattlerData.Character,
-                                                     target.BattlerData.Character);
-
-            target.BattlerData.ChangeHealth(result);
-
-            if(result > 0)
-                UiManager.DisplayDamage(target.transform.position, result);
-
             UiManager.UpdatePlayerGui(target.BattlerData.Character);
         }
 

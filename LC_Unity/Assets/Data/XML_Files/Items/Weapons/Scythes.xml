@@ -23,6 +23,9 @@
       <ImpactParticles>10</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="0" />
+    </Effects>
   </Item>
   <Item>
     <Id>1217</Id>
@@ -36,6 +39,7 @@
     <Range>200</Range>
     <Effects>
       <BoundAbility Id="44" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1216" Quantity="1" />
@@ -67,6 +71,7 @@
     <Effects>
       <StatBoost Stat="Agility" Value="0" />
       <HealingItemsEfficiency Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Stats>
       <Health>25</Health>
@@ -95,6 +100,7 @@
     <Effects>
       <StatBoost Stat="Magic" Value="0" />
       <HealingItemsEfficiency Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Stats>
       <Health>20</Health>
@@ -124,6 +130,7 @@
       <StatBoost Stat="Parry" Value="0" />
       <BoundAbility Id="44" />
       <AutoAttackAfterAbility />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1217" Quantity="1" />
@@ -156,6 +163,7 @@
       <StatBoost Stat="Magic" Value="0" />
       <StatBoost Stat="Agility" Value="0" />
       <HealingItemsEfficiency Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1218" Quantity="1" />
@@ -189,6 +197,7 @@
       <BonusElementalDamage Element="Darkness" Value="30" />
       <StatBoost Stat="Magic" Value="0" />
       <DrainFromDamage Stat="HP" Value="10" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Stats>
       <Health>120</Health>
@@ -218,6 +227,7 @@
       <BonusElementalDamage Element="Holy" Value="30" />
       <StatBoost Stat="Magic" Value="0" />
       <SelfStatus Value="Faith" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Stats>
       <Health>80</Health>
@@ -249,13 +259,14 @@
       <StatBoost Stat="Magic" Value="0" />
       <SelfStatus Value="Faith" />
       <DrainFromDamage Stat="HP" Value="10" />
-      <Stats>
-        <Health>120</Health>
-        <Mana>160</Mana>
-        <Strength>46</Strength>
-        <Magic>100</Magic>
-      </Stats>
+      <DealDamage FormulaId="0" />
     </Effects>
+    <Stats>
+      <Health>120</Health>
+      <Mana>160</Mana>
+      <Strength>46</Strength>
+      <Magic>100</Magic>
+    </Stats>
     <Animation>
       <Channel></Channel>
       <ChannelParticles>-1</ChannelParticles>

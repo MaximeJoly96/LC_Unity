@@ -84,6 +84,7 @@ namespace Abilities
                                                ability.Category, ability.Range)
         {
             SetAnimation(ability.Animation);
+            SetEffects(ability.Effects);
         }
 
         public void SetCost(int hp, int mp, int ep)
@@ -107,6 +108,8 @@ namespace Abilities
 
         public void SetEffects(IEnumerable<IEffect> effects)
         {
+            Effects = new List<IEffect>();
+
             foreach(IEffect effect in effects)
             {
                 Effects.Add(effect);

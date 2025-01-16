@@ -21,6 +21,9 @@
       <ImpactParticles>5</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="0" />
+    </Effects>
   </Item>
   <Item>
     <Id>1033</Id>
@@ -46,6 +49,9 @@
       <ImpactParticles>5</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="0" />
+    </Effects>
   </Item>
   <Item>
     <Id>1034</Id>
@@ -59,6 +65,7 @@
     <Range>100</Range>
     <Effects>
       <HealingItemsEfficiency Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Stats>
       <Strength>2</Strength>
@@ -84,6 +91,7 @@
     <Range>100</Range>
     <Effects>
       <InflictStatus Value="Poison" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Stats>
       <Strength>5</Strength>
@@ -109,6 +117,7 @@
     <Range>100</Range>
     <Effects>
       <StatBoost Stat="Provocation" Value="-10" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1033" Quantity="1" />
@@ -138,6 +147,7 @@
     <Effects>
       <InflictStatus Value="Poison" />
       <BoundAbility Id="12" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1035" Quantity="1" />
@@ -167,6 +177,7 @@
     <Effects>
       <StatBoost Stat="Provocation" Value="-10" />
       <TargetEffectiveness Type="Undead" Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1036" Quantity="1" />
@@ -196,6 +207,7 @@
     <Effects>
       <HealingItemsEfficiency Value="0" />
       <BoundAbility Id="13" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1034" Quantity="1" />
@@ -226,6 +238,7 @@
     <Effects>
       <StatBoost Stat="Provocation" Value="-10" />
       <TargetEffectiveness Type="Undead" Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1038" Quantity="1" />
@@ -255,6 +268,7 @@
     <Effects>
       <StatBoost Stat="Provocation" Value="-30" />
       <TargetEffectiveness Type="Undead" Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1040" Quantity="1" />
@@ -287,6 +301,7 @@
       <InflictStatus Value="Blind" />
       <BoundAbility Id="12" />
       <StatBoost Stat="CritChance" Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1037" Quantity="1" />
@@ -317,6 +332,7 @@
       <HealingItemsEfficiency Value="0" />
       <BoundAbility Id="13" />
       <StatBoost Stat="Magic" Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1039" Quantity="1" />
@@ -347,6 +363,7 @@
     <Effects>
       <InflictStatus Value="BleedI" />
       <InflictStatus Value="HemoI" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Stats>
       <Strength>28</Strength>
@@ -373,6 +390,7 @@
     <Effects>
       <TargetEffectiveness Type="Undead" Value="30" />
       <BoundAbility Id="14" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1041" Quantity="1" />
@@ -404,6 +422,7 @@
       <InflictStatus Value="BleedI" />
       <InflictStatus Value="HemoI" />
       <ElementalAffinityModifier Value="-50" Element="Darkness" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1044" Quantity="1" />
@@ -434,6 +453,7 @@
       <TargetEffectiveness Type="Undead" Value="30" />
       <BoundAbility Id="14" />
       <StatBoost Stat="CritDmg" Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1045" Quantity="1" />
@@ -465,6 +485,7 @@
       <InflictStatus Value="BleedI" />
       <InflictStatus Value="HemoI" />
       <NegativeStatusBonusDamage Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1044" Quantity="1" />
@@ -498,6 +519,7 @@
       <BoundAbility Id="12" />
       <BoundAbility Id="15" />
       <StatBoost Stat="CritChance" Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1042" Quantity="1" />
@@ -530,6 +552,7 @@
       <BoundAbility Id="16" />
       <StatBoost Stat="Magic" Value="0" />
       <StatBoost Stat="MagicDefense" Value="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1043" Quantity="1" />
@@ -561,6 +584,7 @@
       <TargetEffectiveness Type="Undead" Value="30" />
       <BoundAbility Id="14" />
       <StatBoost Stat="CritDmg" Value="40" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1045" Quantity="1" />
@@ -595,5 +619,8 @@
       <ImpactParticles>5</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="0" />
+    </Effects>
   </Item>
 </Items>

@@ -13,6 +13,7 @@
     <ProjectileSpeed>2500</ProjectileSpeed>
     <Effects>
       <StatBoost Stat="Accuracy" Value="-20" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Stats>
       <Mana>20</Mana>
@@ -51,6 +52,9 @@
       <ImpactParticles>7</ImpactParticles>
       <ProjectileId>-1</ProjectileId>
     </Animation>
+    <Effects>
+      <DealDamage FormulaId="0" />
+    </Effects>
   </Item>
   <Item>
     <Id>1208</Id>
@@ -66,6 +70,7 @@
     <Effects>
       <StatBoost Stat="Accuracy" Value="-20" />
       <InflictStatus Value="BreakI" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1206" Quantity="1" />
@@ -96,6 +101,7 @@
     <ProjectileSpeed>2500</ProjectileSpeed>
     <Effects>
       <AreaOfEffectAsSecondaryDamage Element="Neutral" FormulaId="0" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Stats>
       <Mana>40</Mana>
@@ -124,6 +130,7 @@
     <ProjectileSpeed>2000</ProjectileSpeed>
     <Effects>
       <InflictStatus Value="BleedI" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1207" Quantity="1" />
@@ -156,6 +163,7 @@
     <Effects>
       <StatBoost Stat="Accuracy" Value="50" />
       <AdditionalStrike Amount="1" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Stats>
       <Mana>50</Mana>
@@ -184,6 +192,7 @@
     <ProjectileSpeed>2200</ProjectileSpeed>
     <Effects>
       <ConeAttackWithBullets Angle="130" Bullets="7" DamageReduction="30" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1209" Quantity="1" />
@@ -215,6 +224,7 @@
     <ProjectileSpeed>2200</ProjectileSpeed>
     <Effects>
       <ConeAttackWithBullets Angle="90" Bullets="3" DamageReduction="60" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1209" Quantity="1" />
@@ -247,6 +257,7 @@
     <Effects>
       <InflictStatus Value="BreakII" />
       <InflictStatus Value="MagicBreakII" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1208" Quantity="1" />
@@ -279,6 +290,7 @@
       <StatBoost Stat="Accuracy" Value="60" />
       <InflictStatus Value="BleedII" />
       <PiercingProjectile DamageReduction="10" MinDamage="60" />
+      <DealDamage FormulaId="0" />
     </Effects>
     <Recipe>
       <Item Id="1210" Quantity="1" />
