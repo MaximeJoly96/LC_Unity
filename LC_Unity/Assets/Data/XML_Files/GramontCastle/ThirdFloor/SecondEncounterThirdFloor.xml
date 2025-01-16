@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="castleAssaultKillFirstEncounter" SecondMember="false">
+  <ConditionalBranch Type="SwitchCondition" Condition="Equal" FirstMember="castleAssaultKillFourthEncounter" SecondMember="false">
     <true>
-      <ControlSwitch Key="castleAssaultKillFirstEncounter" Value="true" />
+      <ControlSwitch Key="castleAssaultKillFourthEncounter" Value="true" />
       <ChangeGameState State="Interacting" />
+      <BattleProcessing TroopId="7" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
       <ControlVariable Key="killCountCastleAssault">
         <Operation>Add</Operation>
         <Operand Type="Constant">1</Operand>
       </ControlVariable>
-      <BattleProcessing TroopId="4" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
       <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="killCountCastleAssault" SecondMember="4">
         <true>
           <ProgressQuest Id="1" StepId="4" Status="Completed" />

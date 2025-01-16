@@ -141,7 +141,7 @@ namespace BattleSystem
 
         public void ConcludeChannel()
         {
-            if (LockedInAbility.HasChannelAnimation)
+            if (LockedInAbility != null && LockedInAbility.HasChannelAnimation)
                 Animator.SetBool(LockedInAbility.Animation.BattlerChannelAnimationName, false);
 
             _channeling = false;

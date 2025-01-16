@@ -151,6 +151,14 @@
           <ChangeEquipment CharacterId="3" ItemId="1053" />
           <Wait Duration="1.5" />
           <DisableAgent Target="warlokExitingCastle" />
+          <ControlSwitch Key="castleAssaultKillFirstEncounter" Value="false" />
+          <ControlSwitch Key="castleAssaultKillSecondEncounter" Value="false" />
+          <ControlSwitch Key="castleAssaultKillThirdEncounter" Value="false" />
+          <ControlSwitch Key="castleAssaultKillFourthEncounter" Value="false" />
+          <ControlVariable Key="killCountCastleAssault">
+            <Operation>Set</Operation>
+            <Operand Type="Constant">0</Operand>
+          </ControlVariable>
           <TintScreen Duration="1" WaitForCompletion="true">
             <TargetColor R="0" G="0" B="0" A="0" />
           </TintScreen>

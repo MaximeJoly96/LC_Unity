@@ -1,8 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <PlaySoundEffect Name="OpenWoodenDoor" Volume="1" Pitch="1" />
-  <TransferObject Target="player">
-    <Direction>Top</Direction>
-    <Destination X="0" Y="-2.3" MapId="14" Inside="true" />
-  </TransferObject>
+  <QuestCondition Type="StepCompleted" QuestId="1" StepId="4">
+    <true>
+      <PlaySoundEffect Name="OpenWoodenDoor" Volume="1" Pitch="1" />
+      <TransferObject Target="player">
+        <Direction>Top</Direction>
+        <Destination X="0" Y="-2.3" MapId="14" Inside="true" />
+      </TransferObject>
+    </true>
+    <false>
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1CannotAccessMainHall</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+    </false>
+  </QuestCondition>
 </EventsSequence>
