@@ -1,4 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <BattleProcessing TroopId="8" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
+  <QuestCondition Type="StepCompleted" QuestId="1" StepId="6">
+    <false>
+      <ProgressQuest Id="1" StepId="6" Status="Completed" />
+      <ProgressQuest Id="1" StepId="7" Status="Unlocked" />
+      <BattleProcessing TroopId="8" DefeatAllowed="false" CanEscape="false" FromRandomEncounter="false" />
+      <Wait Duration="2" />
+      <ShowBalloonIcon AgentId="warlokMainHall" BalloonIcon="Silence" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog65</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.3" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokMainHall">
+        <Turn Direction="Down" />
+      </SetMoveRoute>
+      <Wait Duration="0.2" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokMainHall">
+        <MoveRelative DeltaX="0" DeltaY="-0.3" />
+      </SetMoveRoute>
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog66</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.2" />
+      <ShowBalloonIcon AgentId="magnusMainHall" BalloonIcon="Silence" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog67</Message>
+        <Locutor>magnus</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <ShowBalloonIcon AgentId="warlokMainHall" BalloonIcon="Anger" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog68</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.5" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog69</Message>
+        <Locutor>louga</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.2" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokMainHall">
+        <Turn Direction="Up" />
+      </SetMoveRoute>
+      <ShowBalloonIcon AgentId="warlokMainHall" BalloonIcon="Exclamation" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog70</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+    </false>
+  </QuestCondition>
 </EventsSequence>
