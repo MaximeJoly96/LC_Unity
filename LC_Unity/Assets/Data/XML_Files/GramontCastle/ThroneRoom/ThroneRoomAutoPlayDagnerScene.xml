@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EventsSequence>
+  <QuestCondition Type="StepCompleted" QuestId="1" StepId="6">
+    <true>
+      <Wait Duration="0.5" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="warlokThroneRoom">
+        <MoveRelative DeltaX="0" DeltaY="1.1" />
+      </SetMoveRoute>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="magnusThroneRoom">
+        <MoveRelative DeltaX="0" DeltaY="0.9" />
+      </SetMoveRoute>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
+        <MoveRelative DeltaX="0" DeltaY="0.5" />
+      </SetMoveRoute>
+      <ShowBalloonIcon AgentId="warlokThroneRoom" BalloonIcon="Exclamation" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog71</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog72</Message>
+        <Locutor>louga</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="1" />
+      <ShowBalloonIcon AgentId="kingGravisThroneRoom" BalloonIcon="Silence" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog73</Message>
+        <Locutor>kingGravis</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog74</Message>
+        <Locutor>???</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.5" />
+      <ShowBalloonIcon AgentId="magnusThroneRoom" BalloonIcon="Silence" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog75</Message>
+        <Locutor>magnus</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <ShowBalloonIcon AgentId="warlokThroneRoom" BalloonIcon="Anger" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog76</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog77</Message>
+        <Locutor>dagner</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <EnableAgent Target="dagnerThroneRoom" />
+      <Wait Duration="2" />
+      <ShowBalloonIcon AgentId="kingGravisThroneRoom" BalloonIcon="Sweat" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog78</Message>
+        <Locutor>kingGravis</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.3" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog79</Message>
+        <Locutor>dagner</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <ShowBalloonIcon AgentId="kingGravisThroneRoom" BalloonIcon="Exclamation" WaitForCompletion="true" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog80</Message>
+        <Locutor>kingGravis</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierThroneRoom1">
+        <MoveTowards Target="dagnerThroneRoom" Distance="0.3" />
+      </SetMoveRoute>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierThroneRoom2">
+        <MoveTowards Target="dagnerThroneRoom" Distance="0.3" />
+      </SetMoveRoute>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierThroneRoom3">
+        <MoveTowards Target="dagnerThroneRoom" Distance="0.3" />
+      </SetMoveRoute>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="soldierThroneRoom4">
+        <MoveTowards Target="dagnerThroneRoom" Distance="0.3" />
+      </SetMoveRoute>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="soldierThroneRoom5">
+        <MoveTowards Target="dagnerThroneRoom" Distance="0.3" />
+      </SetMoveRoute>
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog81</Message>
+        <Locutor>dagner</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.5" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog82</Message>
+        <Locutor>warlok</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.5" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="dagnerThroneRoom">
+        <Turn Direction="Up" />
+        <MoveRelative DeltaX="0" DeltaY="-0.2" />
+      </SetMoveRoute>
+      <Wait Duration="0.5" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog83</Message>
+        <Locutor>dagner</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.3" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog84</Message>
+        <Locutor>dagner</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.3" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog85</Message>
+        <Locutor>dagner</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="louga">
+        <MoveRelative DeltaX="0" DeltaY="0.5" />
+      </SetMoveRoute>
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog86</Message>
+        <Locutor>louga</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+      <Wait Duration="0.3" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="dagnerThroneRoom">
+        <Turn Direction="Down" />
+      </SetMoveRoute>
+      <Wait Duration="1" />
+      <DisplayDialog>
+        <DialogBoxStyle>Classic</DialogBoxStyle>
+        <DialogBoxPosition>Bottom</DialogBoxPosition>
+        <Message>quest1Dialog87</Message>
+        <Locutor>dagner</Locutor>
+        <FaceGraphics></FaceGraphics>
+      </DisplayDialog>
+    </true>
+  </QuestCondition>
+</EventsSequence>
