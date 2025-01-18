@@ -8,5 +8,6 @@ namespace Language
     {
         public Language language;
         public TextAsset[] languageFiles;
+        public Sprite flag;
     }
 }

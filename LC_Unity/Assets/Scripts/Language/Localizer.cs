@@ -27,6 +27,7 @@ namespace Language
         }
 
         public static Localizer Instance { get; private set; }
+        public Localization[] Localizations { get { return _localizations; } }
 
         private void Awake()
         {
