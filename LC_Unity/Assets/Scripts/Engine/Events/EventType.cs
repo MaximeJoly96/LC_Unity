@@ -45,6 +45,7 @@
         ShowAgentAnimation,
         DisableAgent,
         EnableAgent,
+        ResetAgentAnimationState,
 
         // ScreenEffects
         FadeScreen,

@@ -34,6 +34,7 @@ namespace Engine.Character
 
             show.AnimationName = data.Attributes["AnimationName"].InnerText;
             show.WaitForCompletion = bool.Parse(data.Attributes["WaitForCompletion"].InnerText);
+            show.Target = data.Attributes["Target"].InnerText;
 
             return show;
         }
@@ -54,6 +55,15 @@ namespace Engine.Character
             enable.Target = data.Attributes["Target"].InnerText;
 
             return enable;
+        }
+
+        public static ResetAgentAnimationState ParseResetAgentAnimationState(XmlNode data)
+        {
+            ResetAgentAnimationState reset = new ResetAgentAnimationState();
+
+            reset.Target = data.Attributes["Target"].InnerText;
+
+            return reset;
         }
     }
 }

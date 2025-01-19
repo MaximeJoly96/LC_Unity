@@ -6,7 +6,7 @@
   <ChangeName CharacterId="0" Value="NewName" />
   <ChangeSkills CharacterId="2" SkillId="5" Action="Learn" />
   <RecoverAll />
-  <ShowAgentAnimation AnimationName="animation" WaitForCompletion="false" />
+  <ShowAgentAnimation AnimationName="animation" WaitForCompletion="false" Target="agent" />
   <ShowAnimation Target="target" AnimationId="3" WaitForCompletion="false" />
   <ShowBalloonIcon AgentId="3" BalloonIcon="Silence" WaitForCompletion="true" />
   <ConditionalBranch Type="SwitchCondition" Condition="NotEqual" FirstMember="var1" SecondMember="false" />

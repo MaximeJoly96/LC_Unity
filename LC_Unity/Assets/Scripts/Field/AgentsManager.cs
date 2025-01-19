@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Engine.Character;
+using Logging;
+using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace Field
 {
@@ -39,5 +42,30 @@ namespace Field
         {
             _registeredAgents = new Dictionary<string, Agent>();
         }
+
+        public void ShowAgentAnimation(ShowAgentAnimation showAction)
+        {
+            Agent agent = GetAgent(showAction.Target);
+            if (!agent)
+            {
+                LogsHandler.Instance.LogError("Agent " + showAction.Target + " does not exist, but you're trying to play one of its animations.");
+                return;
+            }
+
+            agent.PlayAnimation(showAction.AnimationName);
+        }
+
+        public void ResetAgentAnimation(ResetAgentAnimationState resetAction)
+        {
+            Agent agent = GetAgent(resetAction.Target);
+            if (!agent)
+            {
+                LogsHandler.Instance.LogError("Agent " + resetAction.Target + " does not exist, but you're trying to reset its animation state.");
+                return;
+            }
+
+            agent.ResetAnimation();
+        }
+
     }
 }

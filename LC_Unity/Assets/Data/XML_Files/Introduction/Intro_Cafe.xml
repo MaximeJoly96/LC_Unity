@@ -4,6 +4,10 @@
     <false>
       <AllowCutsceneSkip Allow="false" />
       <ChangeMapNameDisplay Enabled="true" />
+      <Wait Duration="0.02" />
+      <DisableAgent Target="stoolBarLow" />
+      <DisableAgent Target="stoolBarUp" />
+      <ShowAgentAnimation Target="louga" AnimationName="Sitting" WaitForCompletion="true" />
       <PlayBgm Name="haalmikah" Volume="0.75" Pitch="1" />
       <CameraFollowPlayer Follow="true" />
       <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
@@ -85,6 +89,7 @@
       <Wait Duration="2" />
       <StartQuest Id="0" />
       <ProgressQuest Id="0" StepId="0" Status="Unlocked" />
+      <ResetAgentAnimationState Target="louga" />
       <TransferObject Target="player">
         <Direction>Bottom</Direction>
         <Destination X="0" Y="1" MapId="0" Inside="false" />

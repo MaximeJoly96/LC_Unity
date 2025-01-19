@@ -145,5 +145,16 @@ namespace Field
         {
             Disabled = false;
         }
+
+        public void PlayAnimation(string animationName)
+        {
+            GetComponent<Animator>().SetBool(animationName, true);
+        }
+
+        public void ResetAnimation()
+        {
+            Animator animator = GetComponent<Animator>();
+            animator.Rebind();
+        }
     }
 }
