@@ -36,7 +36,20 @@ namespace Notifications
 
         public void ShowItemNotification(ChangeItems changeItems)
         {
-            NotificationDisplay.ShowItemNotification(changeItems);
+            if(NotificationDisplay)
+                NotificationDisplay.ShowItemNotification(changeItems);
+        }
+
+        public void ShowPartyUpdateNotification(ChangePartyMember changeParty)
+        {
+            if (NotificationDisplay)
+                NotificationDisplay.ShowPartyUpdateNotification(changeParty);
+        }
+
+        public void ShowGoldNotification(ChangeGold changeGold)
+        {
+            if (NotificationDisplay)
+                NotificationDisplay.ShowGoldNotification(changeGold);
         }
     }
 }

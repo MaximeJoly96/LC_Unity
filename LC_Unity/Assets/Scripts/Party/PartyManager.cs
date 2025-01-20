@@ -53,6 +53,8 @@ namespace Party
         {
             Gold += change.Value;
             Gold = Mathf.Clamp(Gold, 0, int.MaxValue);
+
+            NotificationCenter.Instance.ShowGoldNotification(change);
         }
 
         public void ChangePartyMember(ChangePartyMember change)
@@ -66,6 +68,8 @@ namespace Party
                     RemoveFromParty(change);
                     break;
             }
+
+            NotificationCenter.Instance.ShowPartyUpdateNotification(change);
         }
 
         public void AddToParty(ChangePartyMember change)

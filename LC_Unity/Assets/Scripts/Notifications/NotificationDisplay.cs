@@ -1,4 +1,5 @@
-﻿using Engine.Party;
+﻿using Actors;
+using Engine.Party;
 using Inventory;
 using UnityEngine;
 
@@ -8,6 +9,10 @@ namespace Notifications
     {
         [SerializeField]
         private ItemNotification _itemNotificationPrefab;
+        [SerializeField]
+        private PartyUpdateNotification _partyUpdateNotificationPrefab;
+        [SerializeField]
+        private GoldNotification _goldNotificationPrefab;
 
         private ItemsWrapper _itemsWrapper;
 
@@ -26,6 +31,22 @@ namespace Notifications
         {
             ItemNotification notif = Instantiate(_itemNotificationPrefab, transform);
             notif.Feed(ItemsWrapper.GetItemFromId(changeItems.Id), changeItems.Quantity);
+
+            notif.Show();
+        }
+
+        public void ShowPartyUpdateNotification(ChangePartyMember changeParty)
+        {
+            PartyUpdateNotification notif = Instantiate(_partyUpdateNotificationPrefab, transform);
+            notif.Feed(CharactersManager.Instance.GetCharacter(changeParty.Id), changeParty.Action == ChangePartyMember.ActionType.Add);
+
+            notif.Show();
+        }
+
+        public void ShowGoldNotification(ChangeGold changeGold)
+        {
+            GoldNotification notif = Instantiate(_goldNotificationPrefab, transform);
+            notif.Feed(changeGold.Value);
 
             notif.Show();
         }
