@@ -6,6 +6,7 @@ using Inventory;
 using Engine.Party;
 using Engine.Actor;
 using UnityEngine.Events;
+using Notifications;
 
 namespace Party
 {
@@ -106,6 +107,7 @@ namespace Party
             }
 
             InventoryChanged.Invoke();
+            NotificationCenter.Instance.ShowItemNotification(change);
         }
 
         public List<Character> GetParty()

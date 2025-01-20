@@ -1,11 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
-  <QuestCondition Type="Started" QuestId="0">
-    <true>
+  <QuestCondition Type="StepCompleted" QuestId="0" StepId="0">
+    <false>
+      <ChangeGameState State="Interacting" />
+      <ProgressQuest Id="0" StepId="0" Status="Completed" />
+      <ProgressQuest Id="0" StepId="1" Status="Unlocked" />
       <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="warlokOutside">
         <TurnTowards Target="louga" />
       </SetMoveRoute>
-      <Wait Duration="0.25" />
+      <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
+        <TurnTowards Target="warlokOutside" />
+      </SetMoveRoute>
       <DisplayDialog>
         <DialogBoxStyle>Classic</DialogBoxStyle>
         <DialogBoxPosition>Bottom</DialogBoxPosition>
@@ -24,8 +29,7 @@
         <Operation>Set</Operation>
         <Operand Type="Constant">1</Operand>
       </ControlVariable>
-      <ProgressQuest Id="0" StepId="0" Status="Completed" />
-      <ProgressQuest Id="0" StepId="1" Status="Unlocked" />
-    </true>
+      <ChangeGameState State="OnField" />
+    </false>
   </QuestCondition>
 </EventsSequence>
