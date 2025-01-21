@@ -12,6 +12,7 @@ namespace Dialogs
     public class UiBox<T> : MonoBehaviour where T : IRunnable
     {
         protected T _element;
+        protected AudioSource _audio;
 
         public Animator Animator { get { return GetComponent<Animator>(); } }
         public UnityEvent HasClosed { get; set; }
@@ -23,6 +24,7 @@ namespace Dialogs
         public virtual void Feed(T element)
         {
             _element = element;
+            _audio = GetComponent<AudioSource>();
         }
 
         public virtual void Open()
@@ -55,6 +57,8 @@ namespace Dialogs
             {
                 builder = builder.Append(message[i]);
                 text.text = builder.ToString();
+                if (_audio)
+                    _audio.Play();
                 yield return wait;
             }
         }
