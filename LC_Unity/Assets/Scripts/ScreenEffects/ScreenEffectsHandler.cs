@@ -13,6 +13,11 @@ namespace ScreenEffects
 
         private Image CanvasBackground { get { return _screenEffectsCanvas.transform.Find("Background").GetComponent<Image>(); } }
 
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+
         public void FadeScreen(FadeScreen fade)
         {
             if (_screenEffectsCanvas)

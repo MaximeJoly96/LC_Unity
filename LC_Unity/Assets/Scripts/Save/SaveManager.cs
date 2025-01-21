@@ -17,6 +17,8 @@ using MusicAndSounds;
 using System.Text;
 using Questing;
 using Save.Model;
+using System.Collections;
+using Engine.ScreenEffects;
 
 namespace Save
 {
@@ -57,6 +59,7 @@ namespace Save
         
         private readonly SaveCreator _creator;
         private readonly SaveLoader _loader;
+        private SaveScreenFader _fader;
         
         public SaveCanvas SaveCanvasCache
         {
@@ -83,6 +86,16 @@ namespace Save
         public SaveState CurrentSaveState { get; private set; }
         public SavedData Data { get; private set; }
         public List<int> SavesId { get { return _loader.GetSavesId(); } }
+        public SaveScreenFader Fader
+        {
+            get
+            {
+                if(!_fader)
+                    _fader = GameObject.FindObjectOfType<SaveScreenFader>();
+
+                return _fader;
+            }
+        }
 
         private SaveManager() 
         {
@@ -164,6 +177,7 @@ namespace Save
                 GlobalStateMachine.Instance.CurrentMapId = Data.MapID;
                 GameObject.FindObjectOfType<GlobalTimer>().InitInGameTimer(Data.InGameTimeSeconds);
                 GameObject.FindObjectOfType<AudioPlayer>().StopAllAudio();
+
                 SceneManager.LoadScene("Field");
             }
             catch(Exception e)
