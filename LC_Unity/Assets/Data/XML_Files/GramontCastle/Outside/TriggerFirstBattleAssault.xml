@@ -145,9 +145,9 @@
           <TintScreen Duration="1" WaitForCompletion="true">
             <TargetColor R="0" G="0" B="0" A="1" />
           </TintScreen>
-          <ChangePartyMember Id="3" Action="Add" Initialize="true" />
+          <ChangePartyMember Id="3" Action="Add" Initialize="true" Notify="true" />
           <ChangeLevel Target="4" Amount="2" />
-          <ChangeItems Id="1053" Quantity="1" />
+          <ChangeItems Id="1053" Quantity="1" Notify="false" />
           <ChangeEquipment CharacterId="3" ItemId="1053" />
           <Wait Duration="1.5" />
           <DisableAgent Target="warlokExitingCastle" />

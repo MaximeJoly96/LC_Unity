@@ -11,6 +11,7 @@ namespace Engine.Party
         public int Id { get; set; }
         public ActionType Action { get; set; }
         public bool Initialize { get; set; }
+        public bool Notify { get; set; } = true;
         public UnityEvent Finished { get; set; }
         public bool IsFinished { get; set; }
 

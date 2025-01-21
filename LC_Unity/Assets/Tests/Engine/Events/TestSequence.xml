@@ -53,9 +53,9 @@
   <PlaySoundEffect Name="se" Volume="0.5" Pitch="0.52" />
   <FadeOutBgm Name="music" TransitionDuration="3" />
   <FadeOutBgs Name="bgs" TransitionDuration="4.5" />
-  <ChangeGold Value="500" />
-  <ChangeItems Id="3" Quantity="2" />
-  <ChangePartyMember Id="0" Action="Remove" />
+  <ChangeGold Value="500" Notify="true" />
+  <ChangeItems Id="3" Quantity="2" Notify="true" />
+  <ChangePartyMember Id="0" Action="Remove" Notify="true" />
   <MovePicture Id="0" X="200" Y="150" Alpha="1" Duration="7" WaitForCompletion="false" />
   <RotatePicture Id="1" Angle="45" Duration="2" />
   <SetWeatherEffects Weather="Snow" Power="5" TransitionDuration="0" WaitForCompletion="true" />

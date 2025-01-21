@@ -54,7 +54,8 @@ namespace Party
             Gold += change.Value;
             Gold = Mathf.Clamp(Gold, 0, int.MaxValue);
 
-            NotificationCenter.Instance.ShowGoldNotification(change);
+            if (change.Notify)
+                NotificationCenter.Instance.ShowGoldNotification(change);
         }
 
         public void ChangePartyMember(ChangePartyMember change)
@@ -69,7 +70,8 @@ namespace Party
                     break;
             }
 
-            NotificationCenter.Instance.ShowPartyUpdateNotification(change);
+            if(change.Notify)
+                NotificationCenter.Instance.ShowPartyUpdateNotification(change);
         }
 
         public void AddToParty(ChangePartyMember change)
@@ -111,7 +113,9 @@ namespace Party
             }
 
             InventoryChanged.Invoke();
-            NotificationCenter.Instance.ShowItemNotification(change);
+
+            if (change.Notify)
+                NotificationCenter.Instance.ShowItemNotification(change);
         }
 
         public List<Character> GetParty()

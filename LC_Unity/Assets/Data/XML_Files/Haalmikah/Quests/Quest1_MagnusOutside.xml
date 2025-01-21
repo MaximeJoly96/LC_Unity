@@ -227,9 +227,9 @@
     <SetPosition X="-7" Y="0" />
   </SetMoveRoute>
   <Wait Duration="1.5" />
-  <ChangePartyMember Id="4" Action="Add" Initialize="true" />
+  <ChangePartyMember Id="4" Action="Add" Initialize="true" Notify="true" />
   <ChangeLevel Target="4" Amount="2" />
-  <ChangeItems Id="1135" Quantity="1" />
+  <ChangeItems Id="1135" Quantity="1" Notify="false" />
   <ChangeEquipment CharacterId="4" ItemId="1135" />
   <RecoverAll />
   <TintScreen Duration="1" WaitForCompletion="true">

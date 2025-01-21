@@ -10,6 +10,7 @@ namespace Engine.Party
             ChangeGold change = new ChangeGold();
 
             change.Value = int.Parse(data.Attributes["Value"].InnerText);
+            change.Notify = bool.Parse(data.Attributes["Notify"].InnerText);
 
             return change;
         }
@@ -20,6 +21,7 @@ namespace Engine.Party
 
             change.Id = int.Parse(data.Attributes["Id"].InnerText);
             change.Quantity = int.Parse(data.Attributes["Quantity"].InnerText);
+            change.Notify = bool.Parse(data.Attributes["Notify"].InnerText);
 
             return change;
         }
@@ -30,6 +32,7 @@ namespace Engine.Party
 
             change.Id = int.Parse(data.Attributes["Id"].InnerText);
             change.Action = (ChangePartyMember.ActionType)Enum.Parse(typeof(ChangePartyMember.ActionType), data.Attributes["Action"].InnerText);
+            change.Notify = bool.Parse(data.Attributes["Notify"].InnerText);
 
             if (change.Action == ChangePartyMember.ActionType.Add)
                 change.Initialize = bool.Parse(data.Attributes["Initialize"].InnerText);
