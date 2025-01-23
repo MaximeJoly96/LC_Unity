@@ -14,17 +14,13 @@
   </AllowCutsceneSkip>
   <ChangePartyMember Action="Add" Id="0" Initialize="true" Notify="false" />
   <ChangeMapNameDisplay Enabled="false" />
-  <ControlSwitch Key="introCompleted" Value="false" />
-  <ControlVariable Key="quest0Progress">
-    <Operation>Set</Operation>
-    <Operand Type="Constant">0</Operand>
-  </ControlVariable>
+  <SetWeatherEffects Weather="Rain" WaitForCompletion="false" TransitionDuration="1" Power="5" />
   <CameraFollowPlayer Follow="false" />
   <ChangeMenuAccess Enabled="false" />
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
     <Transparent Status="true" />
   </SetMoveRoute>
-  <PlayBgs Name="wind" Volume="0.5" Pitch="1" />
+  <PlayBgs Name="wind" Volume="0.1" Pitch="1" />
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1006">
     <Turn Direction="Up" />
   </SetMoveRoute>
@@ -124,6 +120,7 @@
     <MoveTowards Target="1007" Distance="1.1" />
   </SetMoveRoute>
   <Wait Duration="1.5" />
+  <SetWeatherEffects Weather="None" TransitionDuration="1" WaitForCompletion="false" Power="0" />
   <DisplayDialog>
     <DialogBoxStyle>Transparent</DialogBoxStyle>
     <DialogBoxPosition>Bottom</DialogBoxPosition>

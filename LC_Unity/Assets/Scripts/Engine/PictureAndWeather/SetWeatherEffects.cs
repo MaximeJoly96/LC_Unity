@@ -1,5 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using UnityEngine;
+using PictureAndWeather;
 
 namespace Engine.PictureAndWeather
 {
@@ -21,7 +23,10 @@ namespace Engine.PictureAndWeather
 
         public void Run()
         {
+            Object.FindObjectOfType<WeatherMaker>().SetWeather(this);
 
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }
