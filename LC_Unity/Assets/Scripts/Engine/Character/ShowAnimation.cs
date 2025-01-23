@@ -1,5 +1,7 @@
 ﻿using Engine.Events;
 using UnityEngine.Events;
+using UnityEngine;
+using Field;
 
 namespace Engine.Character
 {
@@ -18,7 +20,10 @@ namespace Engine.Character
 
         public void Run()
         {
+            AgentsManager.Instance.PlayAnimationOnAgent(this);
 
+            Finished.Invoke();
+            IsFinished = true;
         }
     }
 }

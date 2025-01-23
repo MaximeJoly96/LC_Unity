@@ -98,7 +98,17 @@
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="True" AgentId="1006">
     <MoveTowards Target="1008" Distance="0.5" />
   </SetMoveRoute>
+  <ShowAgentAnimation Target="1006" AnimationName="Punch" WaitForCompletion="true" />
+  <ShowAnimation Target="1008" AnimationId="0" WaitForCompletion="true" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1008">
+    <DirectionFix Status="true" />
+    <ChangeSpeed Speed="2" />
+    <MoveRelative DeltaX="-0.3" DeltaY="0" />
+    <Turn Direction="Left" />
+  </SetMoveRoute>
+  <ShowAgentAnimation Target="1008" AnimationName="LieOnFloor" WaitForCompletion="true" />
   <Wait Duration="2" />
+  <ResetAgentAnimationState Target="1006" />
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="True" AgentId="1006">
     <Turn Direction="Down" />
   </SetMoveRoute>
