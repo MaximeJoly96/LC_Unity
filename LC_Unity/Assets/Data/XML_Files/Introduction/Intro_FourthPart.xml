@@ -138,20 +138,7 @@
     <FaceGraphics></FaceGraphics>
   </DisplayDialog>
   <Wait Duration="0.3" />
-  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="gamera">
-    <ChangeOpacity Alpha="0.5" />
-    <Wait Duration="0.15" />
-    <ChangeOpacity Alpha="0" />
-  </SetMoveRoute>
   <FadeOutBgs Name="drips" TransitionDuration="3" />
-  <Wait Duration="0.5" />
-  <DisplayDialog>
-    <DialogBoxStyle>Classic</DialogBoxStyle>
-    <DialogBoxPosition>Bottom</DialogBoxPosition>
-    <Message>introText43</Message>
-    <Locutor>dagner</Locutor>
-    <FaceGraphics></FaceGraphics>
-  </DisplayDialog>
   <Wait Duration="0.75" />
   <TintScreen Duration="0.1" WaitForCompletion="true">
     <TargetColor R="0" G="0" B="0" A="0" />
