@@ -4,6 +4,12 @@
   <DisableAgent Target="assaultSoldier1" />
   <QuestCondition Type="Completed" QuestId="0">
     <true>
+      <DisableAgent Target="soldierBarracks1" />
+      <DisableAgent Target="soldierBarracks2" />
+      <DisableAgent Target="soldierBarracks3" />
+      <DisableAgent Target="soldierBarracks4" />
+      <DisableAgent Target="soldierBarracks5" />
+      <DisableAgent Target="soldierBarracksNearStairs" />
       <QuestCondition Type="StepCompleted" QuestId="1" StepId="1">
         <true>
           <DisableAgent Target="magnusBarracks" />
@@ -293,6 +299,12 @@
       <DisableAgent Target="assaultSoldier3" />
       <DisableAgent Target="assaultSoldier4" />
       <DisableAgent Target="magnusBarracks" />
+      <EnableAgent Target="soldierBarracks1" />
+      <EnableAgent Target="soldierBarracks2" />
+      <EnableAgent Target="soldierBarracks3" />
+      <EnableAgent Target="soldierBarracks4" />
+      <EnableAgent Target="soldierBarracks5" />
+      <EnableAgent Target="soldierBarracksNearStairs" />
     </false>
   </QuestCondition>
 </EventsSequence>

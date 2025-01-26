@@ -32,6 +32,9 @@
     <FaceGraphics></FaceGraphics>
   </DisplayDialog>
   <Wait Duration="0.2" />
+  <ChangeItems Id="0" Quantity="3" Notify="true" />
+  <ChangeGold Value="500" Notify="true" />
+  <PlaySoundEffect Name="gainItem" Volume="1" Pitch="1" />
   <ShowBalloonIcon AgentId="louga" BalloonIcon="Exclamation" WaitForCompletion="true" />
   <DisplayDialog>
     <DialogBoxStyle>Classic</DialogBoxStyle>
@@ -225,6 +228,7 @@
   <DisableAgent Target="magnusOutside" />
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
     <SetPosition X="-7" Y="0" />
+    <Through Status="false" />
   </SetMoveRoute>
   <Wait Duration="1.5" />
   <ChangePartyMember Id="4" Action="Add" Initialize="true" Notify="true" />

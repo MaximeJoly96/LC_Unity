@@ -14,7 +14,7 @@
 		<DialogBoxPosition>Bottom</DialogBoxPosition>
 		<Message>haalmikahDrunkardLine2
 		</Message>
-		<Locutor>Louga</Locutor>
+		<Locutor>louga</Locutor>
 		<FaceGraphics></FaceGraphics>
 	</DisplayDialog>
 	<Wait Duration="0.25" />
@@ -26,4 +26,7 @@
 		<Locutor>haalmikahDrunkard</Locutor>
 		<FaceGraphics></FaceGraphics>
 	</DisplayDialog>
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="drunkyard">
+    <Turn Direction="Up" />
+  </SetMoveRoute>
 </EventsSequence>
