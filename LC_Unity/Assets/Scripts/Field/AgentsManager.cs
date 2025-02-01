@@ -1,4 +1,5 @@
-﻿using Engine.Character;
+﻿using BattleSystem;
+using Engine.Character;
 using Logging;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,25 @@ namespace Field
             }
 
             agent.PlayAnimation(showAction.AnimationName);
+        }
+
+        public void PlayAnimationOnAgent(ShowAnimation showAnimation)
+        {
+            Agent agent = GetAgent(showAnimation.Target);
+            if (!agent)
+            {
+                LogsHandler.Instance.LogError("Agent " + showAnimation.Target + " does not exist, but you're trying to play an animation on it.");
+                return;
+            }
+
+            GameObject animation = GameObject.FindObjectOfType<AttackAnimationsWrapper>().GetAttackAnimation(showAnimation.AnimationId);
+            if (!animation)
+            {
+                LogsHandler.Instance.LogError("Animation " + showAnimation.AnimationId + " does not exist, but you're trying to play it on an agent.");
+                return;
+            }
+
+            GameObject.Instantiate(animation, agent.transform.position, Quaternion.identity);
         }
 
         public void ResetAgentAnimation(ResetAgentAnimationState resetAction)

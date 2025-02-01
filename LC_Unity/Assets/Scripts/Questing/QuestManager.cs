@@ -39,6 +39,11 @@ namespace Questing
             get { return _allQuests.Where(q => q.Status == QuestStatus.Running).ToList(); }
         }
 
+        public List<Quest> AllQuests
+        {
+            get { return _allQuests; }
+        }
+
         private QuestManager()
         {
             _allQuests = new List<Quest>();

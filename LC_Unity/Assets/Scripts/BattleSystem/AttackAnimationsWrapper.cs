@@ -20,5 +20,10 @@ namespace BattleSystem
         {
             return _animations.FirstOrDefault(anim => anim.Id == id).AttackAnimation;
         }
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

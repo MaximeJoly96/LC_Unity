@@ -2,6 +2,7 @@
 <EventsSequence>
   <AllowCutsceneSkip Allow="true">
     <Actions>
+      <SetWeatherEffects Weather="None" TransitionDuration="1" WaitForCompletion="false" Power="0" />
       <StopAllAudio />
       <TintScreen Duration="0.2" WaitForCompletion="true">
         <TargetColor R="0" G="0" B="0" A="1" />
@@ -14,17 +15,13 @@
   </AllowCutsceneSkip>
   <ChangePartyMember Action="Add" Id="0" Initialize="true" Notify="false" />
   <ChangeMapNameDisplay Enabled="false" />
-  <ControlSwitch Key="introCompleted" Value="false" />
-  <ControlVariable Key="quest0Progress">
-    <Operation>Set</Operation>
-    <Operand Type="Constant">0</Operand>
-  </ControlVariable>
+  <SetWeatherEffects Weather="Rain" WaitForCompletion="false" TransitionDuration="1" Power="5" />
   <CameraFollowPlayer Follow="false" />
   <ChangeMenuAccess Enabled="false" />
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="true" AgentId="louga">
     <Transparent Status="true" />
   </SetMoveRoute>
-  <PlayBgs Name="wind" Volume="0.5" Pitch="1" />
+  <PlayBgs Name="wind" Volume="0.1" Pitch="1" />
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1006">
     <Turn Direction="Up" />
   </SetMoveRoute>
@@ -102,7 +99,17 @@
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="True" AgentId="1006">
     <MoveTowards Target="1008" Distance="0.5" />
   </SetMoveRoute>
+  <ShowAgentAnimation Target="1006" AnimationName="Punch" WaitForCompletion="true" />
+  <ShowAnimation Target="1008" AnimationId="0" WaitForCompletion="true" />
+  <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="false" AgentId="1008">
+    <DirectionFix Status="true" />
+    <ChangeSpeed Speed="2" />
+    <MoveRelative DeltaX="-0.3" DeltaY="0" />
+    <Turn Direction="Left" />
+  </SetMoveRoute>
+  <ShowAgentAnimation Target="1008" AnimationName="LieOnFloor" WaitForCompletion="true" />
   <Wait Duration="2" />
+  <ResetAgentAnimationState Target="1006" />
   <SetMoveRoute RepeatAction="false" SkipIfCannotMove="true" WaitForCompletion="True" AgentId="1006">
     <Turn Direction="Down" />
   </SetMoveRoute>
@@ -124,6 +131,7 @@
     <MoveTowards Target="1007" Distance="1.1" />
   </SetMoveRoute>
   <Wait Duration="1.5" />
+  <SetWeatherEffects Weather="None" TransitionDuration="1" WaitForCompletion="false" Power="0" />
   <DisplayDialog>
     <DialogBoxStyle>Transparent</DialogBoxStyle>
     <DialogBoxPosition>Bottom</DialogBoxPosition>

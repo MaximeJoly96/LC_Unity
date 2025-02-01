@@ -9,7 +9,7 @@ namespace Engine.FlowControl
 
         public override void Run()
         {
-            Quest relatedQuest = QuestManager.Instance.RunningQuests.FirstOrDefault(q => q.Id == QuestId);
+            Quest relatedQuest = QuestManager.Instance.AllQuests.FirstOrDefault(q => q.Id == QuestId);
 
             if (relatedQuest == null)
             {

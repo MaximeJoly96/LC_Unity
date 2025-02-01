@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <EventsSequence>
   <Wait Duration="0.05" />
-  <ConditionalBranch Type="VariableCondition" Condition="Equal" FirstMember="quest0Progress" SecondMember="0">
+  <QuestCondition Type="Completed" QuestId="0">
     <true>
       <DisableAgent Target="warlokQuest0Step2" />
     </true>
     <false>
       <EnableAgent Target="warlokQuest0Step2" />
     </false>
-  </ConditionalBranch>
+  </QuestCondition>
 </EventsSequence>

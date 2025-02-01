@@ -6473,6 +6473,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260258788}
   m_CullTransparentMesh: 1
+--- !u!1 &263633541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263633542}
+  - component: {fileID: 263633543}
+  m_Layer: 0
+  m_Name: WeatherMaker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &263633542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263633541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 287938427}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &263633543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263633541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471e8b80a32749944a7daade26ebabdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rainyWeather:
+    WeatherType: 1
+    Prefab: {fileID: 3092936004718880744, guid: 642c7da6621cd8e4fb5695f90c520305,
+      type: 3}
 --- !u!1 &279440473
 GameObject:
   m_ObjectHideFlags: 0
@@ -6666,6 +6714,7 @@ Transform:
   - {fileID: 692836907}
   - {fileID: 1581015016}
   - {fileID: 348183593}
+  - {fileID: 263633542}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12209,6 +12258,201 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556140048}
   m_CullTransparentMesh: 1
+--- !u!1 &563727492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563727494}
+  - component: {fileID: 563727493}
+  m_Layer: 0
+  m_Name: AnimationsWrapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &563727493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563727492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd67a3d610eb2d84980443246583d72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animations:
+  - Id: 0
+    AttackAnimation: {fileID: 8443033861038886343, guid: deda251152343b948850e26f9a97adee,
+      type: 3}
+  - Id: 1
+    AttackAnimation: {fileID: 1019320649226366604, guid: 4d50f1e194462804c880861d15dd6411,
+      type: 3}
+  - Id: 2
+    AttackAnimation: {fileID: 9211394281261252447, guid: 1f5847d960b2e5a42b8339e2de1a4b1c,
+      type: 3}
+  - Id: 3
+    AttackAnimation: {fileID: 3020111106181650224, guid: fbb904c29b4a9e744a30c3083668687f,
+      type: 3}
+  - Id: 4
+    AttackAnimation: {fileID: 5812749027619475997, guid: 899a0331f4633ca439d288f540d7704e,
+      type: 3}
+  - Id: 5
+    AttackAnimation: {fileID: 7224518936534723573, guid: 5528778c12441ee4a8279d5886ab6e46,
+      type: 3}
+  - Id: 6
+    AttackAnimation: {fileID: 7261304702510338619, guid: 8554355995f081946abbbc0582f24dcb,
+      type: 3}
+  - Id: 7
+    AttackAnimation: {fileID: 3845614759036581993, guid: 0bd61daf238a4bc4c98759e58cf68939,
+      type: 3}
+  - Id: 8
+    AttackAnimation: {fileID: 4187050997272082875, guid: 0ceb8f2d3c6d6db4b831241f9bb6a54e,
+      type: 3}
+  - Id: 9
+    AttackAnimation: {fileID: 2474621176345043604, guid: afaeefeba2fb7e84b9272b28fe44e7b7,
+      type: 3}
+  - Id: 10
+    AttackAnimation: {fileID: 2785581416271827194, guid: 03d99033e5f08c94db8bba8f0086b17a,
+      type: 3}
+  - Id: 11
+    AttackAnimation: {fileID: 6396177906257483155, guid: 0b8900e084f292a4ab19afa4c4b74b27,
+      type: 3}
+  - Id: 12
+    AttackAnimation: {fileID: 4135944479258706088, guid: 717ba894112aab64f8559748630d5833,
+      type: 3}
+  - Id: 13
+    AttackAnimation: {fileID: 6635490327574282814, guid: c146344f564fcd749b215395dea2e95b,
+      type: 3}
+  - Id: 14
+    AttackAnimation: {fileID: 9149492838111214876, guid: 7c4f8ead446ae5547aa07badac53d919,
+      type: 3}
+  - Id: 15
+    AttackAnimation: {fileID: 9071392934172368832, guid: 89beab5fd76f4c642992efe7696349e2,
+      type: 3}
+  - Id: 16
+    AttackAnimation: {fileID: 5252027645678244275, guid: 62c7733d57894f44a8584167b9108a00,
+      type: 3}
+  - Id: 17
+    AttackAnimation: {fileID: 7877229890209101017, guid: ce51edf695a7f224596dea002d9ea111,
+      type: 3}
+  - Id: 18
+    AttackAnimation: {fileID: 4010519282732906401, guid: 3c26693ac02110749951b2608dc1cf35,
+      type: 3}
+  - Id: 19
+    AttackAnimation: {fileID: 6954796896367877480, guid: ca2e30db482b35a4b84b4d91ae246440,
+      type: 3}
+  - Id: 20
+    AttackAnimation: {fileID: 5629662341587090163, guid: 78a7956e62e2de649b0081d3c5d51677,
+      type: 3}
+  - Id: 21
+    AttackAnimation: {fileID: 294343328827817493, guid: 5e9340223b6fc7b42ba21cc63061050a,
+      type: 3}
+  - Id: 22
+    AttackAnimation: {fileID: 5648254018974569015, guid: f2691fb0914a0e74394574d4faecad56,
+      type: 3}
+  - Id: 23
+    AttackAnimation: {fileID: 3653701880141844281, guid: f0f21d29be8f175498ed11f55ee76d52,
+      type: 3}
+  - Id: 24
+    AttackAnimation: {fileID: 2736244110395418822, guid: f904bfa9b8d128c4a83fb596c1392cbe,
+      type: 3}
+  - Id: 25
+    AttackAnimation: {fileID: 5899493996938520815, guid: 713e885e5eed8244f9c3698229a3a9e0,
+      type: 3}
+  - Id: 26
+    AttackAnimation: {fileID: 2319120512424040654, guid: 4f908918c783d974db492c98ac0f87fb,
+      type: 3}
+  - Id: 27
+    AttackAnimation: {fileID: 6249216729498433918, guid: 1ae6ed140b3eb3c478ba50d6efb2e298,
+      type: 3}
+  - Id: 28
+    AttackAnimation: {fileID: 1727952468786806863, guid: a1f937000c5b1d946acd6d1efa78bbdb,
+      type: 3}
+  - Id: 29
+    AttackAnimation: {fileID: 2722880544080900491, guid: 0cab67856646aa34eb10f2464eb23e95,
+      type: 3}
+  - Id: 30
+    AttackAnimation: {fileID: 5468633252251228887, guid: 194f3dc654f05cf42b1bf4e1e3911a7e,
+      type: 3}
+  - Id: 31
+    AttackAnimation: {fileID: 5842977531619237329, guid: 24a171044cfad5741a2230005b9094a9,
+      type: 3}
+  - Id: 32
+    AttackAnimation: {fileID: 924834755756183954, guid: fedd080b903392c47ac886a62c95466a,
+      type: 3}
+  - Id: 33
+    AttackAnimation: {fileID: 1720546719944440809, guid: 9bd290b47766fad408e1420be6aff890,
+      type: 3}
+  - Id: 34
+    AttackAnimation: {fileID: 3653701880141844281, guid: f0f21d29be8f175498ed11f55ee76d52,
+      type: 3}
+  - Id: 35
+    AttackAnimation: {fileID: 7059299017994605718, guid: 13df5aea3d52b89499ae9128a297a147,
+      type: 3}
+  - Id: 36
+    AttackAnimation: {fileID: 6147796065736499171, guid: 93fa49e9b58b5f044a37017b982e36b8,
+      type: 3}
+  - Id: 37
+    AttackAnimation: {fileID: 50415302709463302, guid: 90b9cb58dc4741640b8708b8e931291b,
+      type: 3}
+  - Id: 38
+    AttackAnimation: {fileID: 8261633039583581526, guid: fc2769c2fd11b9b40bdd1af5ce875ae9,
+      type: 3}
+  - Id: 39
+    AttackAnimation: {fileID: 3437912323991330967, guid: 09028390a668dcd4182c47c503b5d6fe,
+      type: 3}
+  - Id: 40
+    AttackAnimation: {fileID: 2146350744032222264, guid: 9ccca4ad76c1660498a119fd51e404a0,
+      type: 3}
+  - Id: 41
+    AttackAnimation: {fileID: 593616807392640364, guid: 29edf4458abad5147935053679d87ec9,
+      type: 3}
+  - Id: 42
+    AttackAnimation: {fileID: 7425479062703967096, guid: 7331d73182011354e8b02a2622afdc7a,
+      type: 3}
+  - Id: 43
+    AttackAnimation: {fileID: 1304773404070815478, guid: 210de531853a9d24eae680b1f5ebd842,
+      type: 3}
+  - Id: 44
+    AttackAnimation: {fileID: 4078666863297528854, guid: 4d5edd119ab152c4d9212e2a00f7771f,
+      type: 3}
+  - Id: 45
+    AttackAnimation: {fileID: 8963579009204081277, guid: 04829e0ce91cc5d40b0064874e1ac010,
+      type: 3}
+  - Id: 46
+    AttackAnimation: {fileID: 6821514868683638612, guid: af51fc16ca7d4414083ae7b6ed6675bf,
+      type: 3}
+  - Id: 47
+    AttackAnimation: {fileID: 5064221079306613731, guid: c2b25c0d366145d489473efbdd0b7079,
+      type: 3}
+  - Id: 48
+    AttackAnimation: {fileID: 5882224058519496501, guid: b1ecba5a4ad82034095f4810449cae1d,
+      type: 3}
+  - Id: 49
+    AttackAnimation: {fileID: 1106899152405141251, guid: c3e45eef053ec79448fd4bd3cf3a4d19,
+      type: 3}
+--- !u!4 &563727494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563727492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &565565810
 GameObject:
   m_ObjectHideFlags: 0
